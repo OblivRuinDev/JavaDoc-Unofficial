@@ -1,24 +1,41 @@
-# License for the Java SE 25 API Documentation
+# 许可证 (License) for the Java SE 25 API 中文翻译分支
 
-All original documentation and materials contained in this repository, including but not limited to HTML files, images, specifications, and legal notices, are the exclusive property of **Oracle America, Inc. and/or its affiliates**.
+本文件说明了 **Java SE 25 API 文档中文翻译分支** 的版权归属和许可条款。
 
-## Original Licensing Terms
+## 1. 原始英文内容版权与许可
 
-Your use of this documentation is governed by the terms and conditions set forth by Oracle in the following original documents, which are included in this repository for your reference:
+本仓库 `zh` 分支中包含的所有英文原始内容（包括但不限于：所有 HTML 文件、代码示例、技术规范、接口定义、法律声明、以及任何未翻译的文本、图片和资源）的版权完全归 **Oracle America, Inc. 和/或其附属公司** 所有。
 
-1.  **JSR-400 Specification License**: The complete legal agreement governing the use of the Java SE 25 Specification is available in [license.html](https://download.oracle.com/otndocs/jcp/java_se-25-final-spec/license.html). Key terms include:
-    *   A limited license for **internal evaluation purposes only** (Section 1).
-    *   **No right to modify, distribute, or publicly display** the Specification itself (Section 2).
-    *   Comprehensive disclaimers of warranties and limitations of liability.
+这些内容的使用受 Oracle 官方提供的原始许可条款约束，这些条款在以下文件中有完整定义：
 
-2.  **Documentation Redistribution Policy**: Oracle's general policies regarding the redistribution of its documentation can be found in [redistribution-policy.html](https://www.oracle.com/java/technologies/redistribution-policy.html). This policy explicitly states that the **"Java SE API Specification is not redistributable"** for public purposes without explicit permission.
+*   **JSR-400 规范许可证**：[license.html](https://download.oracle.com/otndocs/jcp/java_se-25-final-spec/license.html)
+*   **文档重新分发政策**：[redistribution-policy.html](https://www.oracle.com/java/technologies/redistribution-policy.html)
+*   **Oracle 版权声明**：[copyright.html](./legal/copyright.html)
 
-## Repository Purpose and Disclaimer
+根据上述条款，特别是重新分发政策，**Java SE API 规范本身不可公开重新分发**。此翻译分支作为个人学习项目存在，不构成对规范的公开重新分发。任何对原始内容的访问和使用都必须遵守 Oracle 的条款。
 
-This repository is a **non-official, technical mirror** created solely for personal learning, offline reference, and potential translation workflows. It is **not** an official distribution channel.
+## 2. 中文翻译文本许可
 
-By accessing or using any content from this repository, you acknowledge and agree to be bound by the original Oracle licensing terms referenced above. This repository and its maintainers do not grant any additional rights, licenses, or permissions beyond those already provided by Oracle. If you do not agree with Oracle's terms, you must not access or use this material.
+对于本分支中由贡献者创作的**中文翻译文本**（即对原始英文文档中文字内容的翻译部分），我们采用以下许可证授权：
 
-## Trademark Notice
+### 知识共享署名-相同方式共享 4.0 国际 (CC BY-SA 4.0)
 
-Java and all Java-based trademarks and logos are trademarks or registered trademarks of Oracle and/or its affiliates in the U.S. and other countries. All other trademarks are the property of their respective owners.
+这是一个人类可读的许可证概要，仅替代完整许可证文本的摘要。完整法律文本请见：[https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-Hans](https://creativecommons.org/licenses/by-sa/4.0/legalcode.zh-Hans)
+
+**您可以自由地：**
+
+*   **共享** — 在任何媒介以任何形式复制、发行本作品（中文翻译文本）。
+*   **演绎** — 修改、转换或以本作品为基础进行创作。
+
+**惟须遵守下列条件：**
+
+*   **署名** — 您必须给出**适当的署名**，提供指向本许可证的链接，同时标明是否对原始作品作了修改。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人认可您或您的使用。适当的署名应包括：指向本仓库 `zh` 分支的链接，并注明“基于 Java SE 25 API 中文翻译项目”。
+*   **相同方式共享** — 如果您再混合、转换或者基于本作品进行创作，您必须基于**与原先许可相同的许可协议**来分发您贡献的作品。
+
+**无额外限制：** 您不得使用法律条款或技术措施，来合法地限制他人行使本许可证所允许的行为。
+
+**请注意：** 此许可证**仅适用于贡献者创作的中文翻译文本**，绝不改变或替代 Oracle 对其原始英文内容的版权和许可条款。在原始内容与翻译内容之间出现解释冲突时，以原始英文内容为准。
+
+## 3. 商标声明
+
+Java 及所有基于 Java 的商标和徽标是 Oracle 和/或其附属公司在美国及其他国家的商标或注册商标。所有其他商标均为其各自所有者的财产。
