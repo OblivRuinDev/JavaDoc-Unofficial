@@ -124,7 +124,7 @@
   3. 在本文档中更新模板描述（包括搜索模板代码、变量说明等）。  
   4. 提交一个独立的 commit，包含 `structuralSearch.xml` 的变更和本文档的更新，Commit message 格式：`Structural-Replace|MODIFY=search: <模板名称>`。
 
-- **修改替换模板**：<br>
+- **修改替换模板**：  
   这种情况通常
   1. 在 IDEA 中修改替换内容。  
   2. 保存后，在本文档中更新替换模板代码。  
@@ -139,6 +139,7 @@
 ---
 
 ### 索引文件：类...中的静态变量  <-  Static variable in class ...
+name: index: Static variable in class ...  
 将索引文件中`Static variable in class className`替换为`类 className 中的静态变量`，
 且将`class in package.name`翻译为`package.name 包中的类`。
 
