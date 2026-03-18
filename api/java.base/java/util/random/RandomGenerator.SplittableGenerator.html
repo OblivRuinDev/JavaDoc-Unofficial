@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="RandomGenerator.html">RandomGenerator</a></li>
 <li><a href="RandomGenerator.SplittableGenerator.html" class="current-selection">SplittableGenerator</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,12 +62,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#of(java.lang.String)" tabindex="0">of(String)</a></li>
 <li><a href="#split()" tabindex="0">split()</a></li>
@@ -85,49 +85,49 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface RandomGenerator.SplittableGenerator" class="title">Interface RandomGenerator.SplittableGenerator</h1>
+<h1 title="接口 RandomGenerator.SplittableGenerator" class="title">接口 RandomGenerator.SplittableGenerator</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>, <a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>, <a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../SplittableRandom.html" title="class in java.util">SplittableRandom</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="../SplittableRandom.html" title="java.util 包中的类">SplittableRandom</a></code></dd>
 </dl>
 <dl class="notes">
 <dt>Enclosing interface:</dt>
-<dd><code><a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a></code></dd>
+<dd><code><a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public static interface </span><span class="element-name type-name-label">RandomGenerator.SplittableGenerator</span><span class="extends-implements">
-extends <a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></span></div>
+extends <a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></span></div>
 <div class="block">This interface is designed to provide a common protocol for objects that
 generate sequences of pseudorandom values and can be <i>split</i> into
 two objects (the original one and a new one) each of which obey that same
 protocol (and therefore can be recursively split indefinitely).
 
-<p> Ideally, all <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> objects produced by
-recursive splitting from a single original <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>
+<p> Ideally, all <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> objects produced by
+recursive splitting from a single original <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>
 object are statistically independent of one another and individually
 uniform. Therefore we would expect the set of values collectively
 generated by a set of such objects to have the same statistical
 properties as if the same quantity of values were generated by a single
-thread using a single <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> object. In practice,
+thread using a single <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> object. In practice,
 one must settle for some approximation to independence and uniformity.
 
 <p> Methods are provided to perform a single splitting operation and also
 to produce a stream of generators split off from the original (by either
 iterative or recursive splitting, or a combination).
 
-<p> Objects that implement <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> are typically not
-cryptographically secure. Consider instead using <a href="../../security/SecureRandom.html" title="class in java.security"><code>SecureRandom</code></a> to
+<p> Objects that implement <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> are typically not
+cryptographically secure. Consider instead using <a href="../../security/SecureRandom.html" title="java.security 包中的类"><code>SecureRandom</code></a> to
 get a cryptographically secure pseudo-random number generator for use by
 security-sensitive applications.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -137,91 +137,91 @@ security-sensitive applications.</div>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-java.util.random.RandomGenerator">Nested classes/interfaces declared in interface&nbsp;<a href="RandomGenerator.html#nested-class-summary" title="interface in java.util.random">RandomGenerator</a></h3>
-<code><a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="interface in java.util.random">RandomGenerator.ArbitrarilyJumpableGenerator</a>, <a href="RandomGenerator.JumpableGenerator.html" title="interface in java.util.random">RandomGenerator.JumpableGenerator</a>, <a href="RandomGenerator.LeapableGenerator.html" title="interface in java.util.random">RandomGenerator.LeapableGenerator</a>, <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>, <a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></code></div>
+<h3 id="nested-classes-inherited-from-class-java.util.random.RandomGenerator">在接口 <a href="RandomGenerator.html#nested-class-summary" title="java.util.random 包中的接口">RandomGenerator</a> 中声明的嵌套类/接口</h3>
+<code><a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.ArbitrarilyJumpableGenerator</a>, <a href="RandomGenerator.JumpableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.JumpableGenerator</a>, <a href="RandomGenerator.LeapableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.LeapableGenerator</a>, <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>, <a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
-<div class="block">Returns an instance of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> that utilizes the
+<div class="block">Returns an instance of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> that utilizes the
 <code>name</code> <a href="package-summary.html#algorithms">algorithm</a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#rngs()" class="member-name-link">rngs</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a>
 interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#rngs(long)" class="member-name-link">rngs</a><wbr>(long&nbsp;streamSize)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface.</div>
+<a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#split()" class="member-name-link">split</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a new pseudorandom number generator, split off from this one,
-that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
+that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#split(java.util.random.RandomGenerator.SplittableGenerator)" class="member-name-link">split</a><wbr>(<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#split(java.util.random.RandomGenerator.SplittableGenerator)" class="member-name-link">split</a><wbr>(<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a new pseudorandom number generator, split off from this one,
-that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
+that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#splits()" class="member-name-link">splits</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>
 interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#splits(long)" class="member-name-link">splits</a><wbr>(long&nbsp;streamSize)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#splits(long,java.util.random.RandomGenerator.SplittableGenerator)" class="member-name-link">splits</a><wbr>(long&nbsp;streamSize,
- <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
+ <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#splits(java.util.random.RandomGenerator.SplittableGenerator)" class="member-name-link">splits</a><wbr>(<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#splits(java.util.random.RandomGenerator.SplittableGenerator)" class="member-name-link">splits</a><wbr>(<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>
 interface.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.random.RandomGenerator">Methods declared in interface&nbsp;<a href="RandomGenerator.html#method-summary" title="interface in java.util.random">RandomGenerator</a></h3>
+<h3 id="methods-inherited-from-class-java.util.random.RandomGenerator">在接口 <a href="RandomGenerator.html#method-summary" title="java.util.random 包中的接口">RandomGenerator</a> 中声明的方法</h3>
 <code><a href="RandomGenerator.html#doubles()" title="doubles()">doubles</a>, <a href="RandomGenerator.html#doubles(double,double)" title="doubles(double, double)">doubles</a>, <a href="RandomGenerator.html#doubles(long)" title="doubles(long)">doubles</a>, <a href="RandomGenerator.html#doubles(long,double,double)" title="doubles(long, double, double)">doubles</a>, <a href="RandomGenerator.html#equiDoubles(double,double,boolean,boolean)" title="equiDoubles(double, double, boolean, boolean)">equiDoubles</a>, <a href="RandomGenerator.html#ints()" title="ints()">ints</a>, <a href="RandomGenerator.html#ints(int,int)" title="ints(int, int)">ints</a>, <a href="RandomGenerator.html#ints(long)" title="ints(long)">ints</a>, <a href="RandomGenerator.html#ints(long,int,int)" title="ints(long, int, int)">ints</a>, <a href="RandomGenerator.html#isDeprecated()" title="isDeprecated()">isDeprecated</a>, <a href="RandomGenerator.html#longs()" title="longs()">longs</a>, <a href="RandomGenerator.html#longs(long)" title="longs(long)">longs</a>, <a href="RandomGenerator.html#longs(long,long)" title="longs(long, long)">longs</a>, <a href="RandomGenerator.html#longs(long,long,long)" title="longs(long, long, long)">longs</a>, <a href="RandomGenerator.html#nextBoolean()" title="nextBoolean()">nextBoolean</a>, <a href="RandomGenerator.html#nextBytes(byte%5B%5D)" title="nextBytes(byte[])">nextBytes</a>, <a href="RandomGenerator.html#nextDouble()" title="nextDouble()">nextDouble</a>, <a href="RandomGenerator.html#nextDouble(double)" title="nextDouble(double)">nextDouble</a>, <a href="RandomGenerator.html#nextDouble(double,double)" title="nextDouble(double, double)">nextDouble</a>, <a href="RandomGenerator.html#nextExponential()" title="nextExponential()">nextExponential</a>, <a href="RandomGenerator.html#nextFloat()" title="nextFloat()">nextFloat</a>, <a href="RandomGenerator.html#nextFloat(float)" title="nextFloat(float)">nextFloat</a>, <a href="RandomGenerator.html#nextFloat(float,float)" title="nextFloat(float, float)">nextFloat</a>, <a href="RandomGenerator.html#nextGaussian()" title="nextGaussian()">nextGaussian</a>, <a href="RandomGenerator.html#nextGaussian(double,double)" title="nextGaussian(double, double)">nextGaussian</a>, <a href="RandomGenerator.html#nextInt()" title="nextInt()">nextInt</a>, <a href="RandomGenerator.html#nextInt(int)" title="nextInt(int)">nextInt</a>, <a href="RandomGenerator.html#nextInt(int,int)" title="nextInt(int, int)">nextInt</a>, <a href="RandomGenerator.html#nextLong()" title="nextLong()">nextLong</a>, <a href="RandomGenerator.html#nextLong(long)" title="nextLong(long)">nextLong</a>, <a href="RandomGenerator.html#nextLong(long,long)" title="nextLong(long, long)">nextLong</a></code></div>
 </section>
 </li>
@@ -232,24 +232,24 @@ interface.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="of(java.lang.String)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
-<div class="block">Returns an instance of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> that utilizes the
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
+<div class="block">Returns an instance of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> that utilizes the
 <code>name</code> <a href="package-summary.html#algorithms">algorithm</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - Name of random number generator
              <a href="package-summary.html#algorithms">algorithm</a></dd>
-<dt>Returns:</dt>
-<dd>An instance of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if name is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the named algorithm is not found</dd>
+<dt>返回:</dt>
+<dd>An instance of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if name is null</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the named algorithm is not found</dd>
 </dl>
 </div>
 </section>
@@ -258,17 +258,17 @@ interface.</div>
 <section class="detail" id="split()">
 <h3>split</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">split</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">split</span>()</div>
 <div class="block">Returns a new pseudorandom number generator, split off from this one,
-that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.
+that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.
 
 <p> This pseudorandom number generator may be used as a source of
 pseudorandom bits used to initialize the state of the new one.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a new object that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-        <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces</dd>
+<dt>返回:</dt>
+<dd>a new object that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+        <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces</dd>
 </dl>
 </div>
 </section>
@@ -277,20 +277,20 @@ pseudorandom bits used to initialize the state of the new one.</div>
 <section class="detail" id="split(java.util.random.RandomGenerator.SplittableGenerator)">
 <h3>split</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">split</span><wbr><span class="parameters">(<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="return-type"><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></span>&nbsp;<span class="element-name">split</span><wbr><span class="parameters">(<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
 <div class="block">Returns a new pseudorandom number generator, split off from this one,
-that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
+that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
+<dt>参数:</dt>
+<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
               of this one as a source of pseudorandom bits used to
               initialize the state of the new ones.</dd>
-<dt>Returns:</dt>
-<dd>an object that implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> and
-        <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interfaces</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if source is null</dd>
+<dt>返回:</dt>
+<dd>an object that implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> and
+        <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interfaces</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if source is null</dd>
 </dl>
 </div>
 </section>
@@ -299,23 +299,23 @@ that implements the <a href="RandomGenerator.html" title="interface in java.util
 <section class="detail" id="splits()">
 <h3>splits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span>()</div>
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>
 interface.
 
 <p> This pseudorandom number generator may be used as a source of
 pseudorandom bits used to initialize the state the new ones.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes
 <a href="#splits(java.util.random.RandomGenerator.SplittableGenerator)"><code>splits(this)</code></a>.</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>It is permitted to implement this method in a manner
 equivalent to <a href="#splits(long)"><code>splits</code></a>
 (<a href="../../lang/Long.html#MAX_VALUE"><code>Long.MAX_VALUE</code></a>).</dd>
-<dt>Returns:</dt>
-<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
+<dt>返回:</dt>
+<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
 </dl>
 </div>
 </section>
@@ -324,20 +324,20 @@ equivalent to <a href="#splits(long)"><code>splits</code></a>
 <section class="detail" id="splits(long)">
 <h3>splits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(long&nbsp;streamSize)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(long&nbsp;streamSize)</span></div>
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interface.
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interface.
 
 <p> This pseudorandom number generator may be used as a source of
 pseudorandom bits used to initialize the state the new ones.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>streamSize</code> - the number of values to generate</dd>
-<dt>Returns:</dt>
-<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>streamSize</code> is
+<dt>返回:</dt>
+<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>streamSize</code> is
         less than zero</dd>
 </dl>
 </div>
@@ -347,23 +347,23 @@ pseudorandom bits used to initialize the state the new ones.</div>
 <section class="detail" id="splits(java.util.random.RandomGenerator.SplittableGenerator)">
 <h3>splits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>
 interface.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>It is permitted to implement this method in a manner
           equivalent to <a href="#splits(long,java.util.random.RandomGenerator.SplittableGenerator)"><code>splits</code></a>
           (<a href="../../lang/Long.html#MAX_VALUE"><code>Long.MAX_VALUE</code></a>, source).</dd>
-<dt>Parameters:</dt>
-<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
+<dt>参数:</dt>
+<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
               of this one as a source of pseudorandom bits used to
               initialize the state of the new ones.</dd>
-<dt>Returns:</dt>
-<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if source is null</dd>
+<dt>返回:</dt>
+<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if source is null</dd>
 </dl>
 </div>
 </section>
@@ -372,23 +372,23 @@ interface.</div>
 <section class="detail" id="splits(long,java.util.random.RandomGenerator.SplittableGenerator)">
 <h3>splits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(long&nbsp;streamSize,
- <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&gt;</span>&nbsp;<span class="element-name">splits</span><wbr><span class="parameters">(long&nbsp;streamSize,
+ <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a>&nbsp;source)</span></div>
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> interface.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>streamSize</code> - the number of values to generate</dd>
-<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
+<dd><code>source</code> - a <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> instance to be used instead
               of this one as a source of pseudorandom bits used to
               initialize the state of the new ones.</dd>
-<dt>Returns:</dt>
-<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>streamSize</code> is
+<dt>返回:</dt>
+<dd>a stream of <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a> objects</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>streamSize</code> is
         less than zero</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if source is null</dd>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if source is null</dd>
 </dl>
 </div>
 </section>
@@ -397,18 +397,18 @@ pseudorandom number generators, each of which implements the
 <section class="detail" id="rngs()">
 <h3>rngs</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>&gt;</span>&nbsp;<span class="element-name">rngs</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>&gt;</span>&nbsp;<span class="element-name">rngs</span>()</div>
 <div class="block">Returns an effectively unlimited stream of new pseudorandom number
-generators, each of which implements the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a>
+generators, each of which implements the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a>
 interface. Ideally the generators in the stream will appear to be
 statistically independent.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="RandomGenerator.StreamableGenerator.html#rngs()">rngs</a></code>&nbsp;in interface&nbsp;<code><a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="RandomGenerator.StreamableGenerator.html#rngs()">rngs</a></code>&nbsp;in interface&nbsp;<code><a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation calls <a href="#splits()"><code>splits</code></a>().</dd>
-<dt>Returns:</dt>
-<dd>a stream of objects that implement the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface</dd>
+<dt>返回:</dt>
+<dd>a stream of objects that implement the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface</dd>
 </dl>
 </div>
 </section>
@@ -417,22 +417,22 @@ statistically independent.</div>
 <section class="detail" id="rngs(long)">
 <h3>rngs</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>&gt;</span>&nbsp;<span class="element-name">rngs</span><wbr><span class="parameters">(long&nbsp;streamSize)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>&gt;</span>&nbsp;<span class="element-name">rngs</span><wbr><span class="parameters">(long&nbsp;streamSize)</span></div>
 <div class="block">Returns a stream producing the given <code>streamSize</code> number of new
 pseudorandom number generators, each of which implements the
-<a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface. Ideally the generators in the
+<a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface. Ideally the generators in the
 stream will appear to be statistically independent.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="RandomGenerator.StreamableGenerator.html#rngs(long)">rngs</a></code>&nbsp;in interface&nbsp;<code><a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="RandomGenerator.StreamableGenerator.html#rngs(long)">rngs</a></code>&nbsp;in interface&nbsp;<code><a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation calls <a href="#splits(long)"><code>splits</code></a>(streamSize).</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>streamSize</code> - the number of generators to generate</dd>
-<dt>Returns:</dt>
-<dd>a stream of objects that implement the <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>streamSize</code> is
+<dt>返回:</dt>
+<dd>a stream of objects that implement the <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>streamSize</code> is
         less than zero</dd>
 </dl>
 </div>

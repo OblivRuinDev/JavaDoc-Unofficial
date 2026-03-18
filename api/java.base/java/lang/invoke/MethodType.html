@@ -75,7 +75,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.invoke</a></li>
 <li><a href="MethodType.html" class="current-selection">MethodType</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -83,12 +83,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)" tabindex="0">methodType(Class, Class[])</a></li>
 <li><a href="#methodType(java.lang.Class,java.util.List)" tabindex="0">methodType(Class, List)</a></li>
@@ -131,21 +131,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class MethodType" class="title">Class MethodType</h1>
+<h1 title="类 MethodType" class="title">类 MethodType</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.invoke.MethodType</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a>, <a href="TypeDescriptor.html" title="interface in java.lang.invoke">TypeDescriptor</a>, <a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a>, <a href="TypeDescriptor.html" title="java.lang.invoke 包中的接口">TypeDescriptor</a>, <a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">MethodType</span>
-<span class="extends-implements">extends <a href="../Object.html" title="class in java.lang">Object</a>
-implements <a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a>, <a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;, <a href="../../io/Serializable.html" title="interface in java.io">Serializable</a></span></div>
+<span class="extends-implements">extends <a href="../Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a>, <a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;, <a href="../../io/Serializable.html" title="java.io 包中的接口">Serializable</a></span></div>
 <div class="block">A method type represents the arguments and return type accepted and
 returned by a method handle, or the arguments and return type passed
 and expected  by a method handle caller.  Method types must be properly
@@ -156,7 +156,7 @@ and <a href="MethodHandle.html#invoke(java.lang.Object...)"><code>MethodHandle.i
 of <code>invokedynamic</code> instructions.
 <p>
 The structure is a return type accompanied by any number of parameter types.
-The types (primitive, <code>void</code>, and reference) are represented by <a href="../Class.html" title="class in java.lang"><code>Class</code></a> objects.
+The types (primitive, <code>void</code>, and reference) are represented by <a href="../Class.html" title="java.lang 包中的类"><code>Class</code></a> objects.
 (For ease of exposition, we treat <code>void</code> as if it were a type.
 In fact, it denotes the absence of a return type.)
 <p>
@@ -194,12 +194,12 @@ This loading may occur at any time before the <code>MethodType</code> object is 
 <p>
 <b><a id="descriptor">Nominal Descriptors</a></b>
 <p>
-A <code>MethodType</code> can be described in <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">nominal form</a>
+A <code>MethodType</code> can be described in <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">nominal form</a>
 if and only if all of the parameter types and return type can be described
 with a <a href="../Class.html#describeConstable()"><code>nominal descriptor</code></a> represented by
-<a href="../constant/ClassDesc.html" title="interface in java.lang.constant"><code>ClassDesc</code></a>.  If a method type can be described nominally, then:
+<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口"><code>ClassDesc</code></a>.  If a method type can be described nominally, then:
 <ul>
-<li>The method type has a <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant"><code>nominal descriptor</code></a>
+<li>The method type has a <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口"><code>nominal descriptor</code></a>
     returned by <a href="#describeConstable()"><code>MethodType::describeConstable</code></a>.</li>
 <li>The descriptor string returned by
     <a href="#descriptorString()"><code>MethodType::descriptorString</code></a> or
@@ -212,7 +212,7 @@ nominally, i.e. <a href="../Class.html#describeConstable()"><code>Class::describ
 returns an empty optional for that type,
 then the method type cannot be described nominally:
 <ul>
-<li>The method type has no <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant"><code>nominal descriptor</code></a> and
+<li>The method type has no <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口"><code>nominal descriptor</code></a> and
     <a href="#describeConstable()"><code>MethodType::describeConstable</code></a> returns
     an empty optional.</li>
 <li>The descriptor string returned by
@@ -221,9 +221,9 @@ then the method type cannot be described nominally:
     for the method type is not a type descriptor.</li>
 </ul></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../serialized-form.html#java.lang.invoke.MethodType">Serialized Form</a></li>
@@ -237,89 +237,89 @@ then the method type cannot be described nominally:
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-java.lang.invoke.TypeDescriptor">Nested classes/interfaces declared in interface&nbsp;<a href="TypeDescriptor.html#nested-class-summary" title="interface in java.lang.invoke">TypeDescriptor</a></h3>
-<code><a href="TypeDescriptor.OfField.html" title="interface in java.lang.invoke">TypeDescriptor.OfField</a>&lt;F&gt;, <a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;F,<wbr>M&gt;</code></div>
+<h3 id="nested-classes-inherited-from-class-java.lang.invoke.TypeDescriptor">在接口 <a href="TypeDescriptor.html#nested-class-summary" title="java.lang.invoke 包中的接口">TypeDescriptor</a> 中声明的嵌套类/接口</h3>
+<code><a href="TypeDescriptor.OfField.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfField</a>&lt;F&gt;, <a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;F,<wbr>M&gt;</code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendParameterTypes(java.lang.Class...)" class="member-name-link">appendParameterTypes</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendParameterTypes(java.lang.Class...)" class="member-name-link">appendParameterTypes</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with additional parameter types.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendParameterTypes(java.util.List)" class="member-name-link">appendParameterTypes</a><wbr>(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#appendParameterTypes(java.util.List)" class="member-name-link">appendParameterTypes</a><wbr>(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with additional parameter types.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeParameterType(int,java.lang.Class)" class="member-name-link">changeParameterType</a><wbr>(int&nbsp;num,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;nptype)</code></div>
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;nptype)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with a single different parameter type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeReturnType(java.lang.Class)" class="member-name-link">changeReturnType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;nrtype)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeReturnType(java.lang.Class)" class="member-name-link">changeReturnType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;nrtype)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with a different return type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#describeConstable()" class="member-name-link">describeConstable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#descriptorString()" class="member-name-link">descriptorString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the descriptor string for this method type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dropParameterTypes(int,int)" class="member-name-link">dropParameterTypes</a><wbr>(int&nbsp;start,
  int&nbsp;end)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with some parameter types omitted.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;x)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;x)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Compares the specified object with this type for equality.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#erase()" class="member-name-link">erase</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Erases all reference types to <code>Object</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)" class="member-name-link">fromMethodDescriptorString</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;descriptor,
- <a href="../ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)" class="member-name-link">fromMethodDescriptorString</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;descriptor,
+ <a href="../ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates an instance of a method type of the given method descriptor
 (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3</a>).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generic()" class="member-name-link">generic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts all types, both reference and primitive, to <code>Object</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#genericMethodType(int)" class="member-name-link">genericMethodType</a><wbr>(int&nbsp;objectArgCount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type whose components are all <code>Object</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#genericMethodType(int,boolean)" class="member-name-link">genericMethodType</a><wbr>(int&nbsp;objectArgCount,
  boolean&nbsp;finalArray)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -340,60 +340,60 @@ constructed, or an empty <a href="../../util/Optional.html" title="class in java
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reports if this type contains a wrapper argument or return value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertParameterTypes(int,java.lang.Class...)" class="member-name-link">insertParameterTypes</a><wbr>(int&nbsp;num,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</code></div>
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with additional parameter types.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#insertParameterTypes(int,java.util.List)" class="member-name-link">insertParameterTypes</a><wbr>(int&nbsp;num,
- <a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</code></div>
+ <a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with additional parameter types.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lastParameterType()" class="member-name-link">lastParameterType</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the last parameter type of this method type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with the given components.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;ptype0)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;ptype0)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with the given components.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;[]&nbsp;ptypes)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;[]&nbsp;ptypes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates an instance of the given method type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class,java.lang.Class...)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;ptype0,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypes)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.Class,java.lang.Class...)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;ptype0,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with the given components.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.invoke.MethodType)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;ptypes)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.lang.invoke.MethodType)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;ptypes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with the given components.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.util.List)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypes)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#methodType(java.lang.Class,java.util.List)" class="member-name-link">methodType</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds or creates a method type with the given components.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parameterArray()" class="member-name-link">parameterArray</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Presents the parameter types as an array (a convenience method).</div>
@@ -403,38 +403,38 @@ constructed, or an empty <a href="../../util/Optional.html" title="class in java
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of parameter types in this method type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parameterList()" class="member-name-link">parameterList</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Presents the parameter types as a list (a convenience method).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parameterType(int)" class="member-name-link">parameterType</a><wbr>(int&nbsp;num)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the parameter type at the specified index, within this method type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#returnType()" class="member-name-link">returnType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the return type of this method type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMethodDescriptorString()" class="member-name-link">toMethodDescriptorString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the descriptor string for this method type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of the method type,
 of the form <code>"(PT0,PT1...)RT"</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap()" class="member-name-link">unwrap</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts all wrapper types to their corresponding primitive types.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap()" class="member-name-link">wrap</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts all primitive types to their corresponding wrapper types.</div>
@@ -443,7 +443,7 @@ of the form <code>"(PT0,PT1...)RT"</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../Object.html#clone()" title="clone()">clone</a>, <a href="../Object.html#finalize()" title="finalize()">finalize</a>, <a href="../Object.html#getClass()" title="getClass()">getClass</a>, <a href="../Object.html#notify()" title="notify()">notify</a>, <a href="../Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../Object.html#wait()" title="wait()">wait</a>, <a href="../Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -454,24 +454,24 @@ of the form <code>"(PT0,PT1...)RT"</code>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="methodType(java.lang.Class,java.lang.Class[])">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;[]&nbsp;ptypes)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;[]&nbsp;ptypes)</span></div>
 <div class="block">Finds or creates an instance of the given method type.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
 <dd><code>ptypes</code> - the parameter types</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given components</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypes</code> is <code>void.class</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypes</code> is <code>void.class</code></dd>
 </dl>
 </div>
 </section>
@@ -480,19 +480,19 @@ of the form <code>"(PT0,PT1...)RT"</code>.</div>
 <section class="detail" id="methodType(java.lang.Class,java.util.List)">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypes)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypes)</span></div>
 <div class="block">Finds or creates a method type with the given components.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
 <dd><code>ptypes</code> - the parameter types</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given components</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypes</code> is <code>void.class</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypes</code> is <code>void.class</code></dd>
 </dl>
 </div>
 </section>
@@ -501,22 +501,22 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="methodType(java.lang.Class,java.lang.Class,java.lang.Class...)">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;ptype0,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypes)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;ptype0,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypes)</span></div>
 <div class="block">Finds or creates a method type with the given components.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 The leading parameter type is prepended to the remaining array.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
 <dd><code>ptype0</code> - the first parameter type</dd>
 <dd><code>ptypes</code> - the remaining parameter types</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given components</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> or <code>ptype0</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>ptype0</code> or <code>ptypes</code> or any element of <code>ptypes</code> is <code>void.class</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> or <code>ptype0</code> or <code>ptypes</code> or any element of <code>ptypes</code> is null</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>ptype0</code> or <code>ptypes</code> or any element of <code>ptypes</code> is <code>void.class</code></dd>
 </dl>
 </div>
 </section>
@@ -525,17 +525,17 @@ The leading parameter type is prepended to the remaining array.</div>
 <section class="detail" id="methodType(java.lang.Class)">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype)</span></div>
 <div class="block">Finds or creates a method type with the given components.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 The resulting method has no parameter types.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given return value</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -544,20 +544,20 @@ The resulting method has no parameter types.</div>
 <section class="detail" id="methodType(java.lang.Class,java.lang.Class)">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;ptype0)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;ptype0)</span></div>
 <div class="block">Finds or creates a method type with the given components.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 The resulting method has the single given parameter type.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
 <dd><code>ptype0</code> - the parameter type</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given return value and parameter type</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> or <code>ptype0</code> is null</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>ptype0</code> is <code>void.class</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> or <code>ptype0</code> is null</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>ptype0</code> is <code>void.class</code></dd>
 </dl>
 </div>
 </section>
@@ -566,20 +566,20 @@ The resulting method has the single given parameter type.</div>
 <section class="detail" id="methodType(java.lang.Class,java.lang.invoke.MethodType)">
 <h3>methodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;rtype,
- <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;ptypes)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">methodType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;rtype,
+ <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;ptypes)</span></div>
 <div class="block">Finds or creates a method type with the given components.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 The resulting method has the same parameter types as <code>ptypes</code>,
 and the specified return type.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rtype</code> - the return type</dd>
 <dd><code>ptypes</code> - the method type which supplies the parameter types</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type with the given components</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>rtype</code> or <code>ptypes</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -588,21 +588,21 @@ and the specified return type.</div>
 <section class="detail" id="genericMethodType(int,boolean)">
 <h3>genericMethodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">genericMethodType</span><wbr><span class="parameters">(int&nbsp;objectArgCount,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">genericMethodType</span><wbr><span class="parameters">(int&nbsp;objectArgCount,
  boolean&nbsp;finalArray)</span></div>
 <div class="block">Finds or creates a method type whose components are <code>Object</code> with an optional trailing <code>Object[]</code> array.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 All parameters and the return type will be <code>Object</code>,
 except the final array parameter if any, which will be <code>Object[]</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>objectArgCount</code> - number of parameters (excluding the final array parameter if any)</dd>
 <dd><code>finalArray</code> - whether there will be a trailing array parameter, of type <code>Object[]</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a generally applicable method type, for all calls of the given fixed argument count and a collected array of further arguments</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>objectArgCount</code> is negative or greater than 255 (or 254, if <code>finalArray</code> is true)</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>objectArgCount</code> is negative or greater than 255 (or 254, if <code>finalArray</code> is true)</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#genericMethodType(int)"><code>genericMethodType(int)</code></a></li>
@@ -616,18 +616,18 @@ except the final array parameter if any, which will be <code>Object[]</code>.</d
 <section class="detail" id="genericMethodType(int)">
 <h3>genericMethodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">genericMethodType</span><wbr><span class="parameters">(int&nbsp;objectArgCount)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">genericMethodType</span><wbr><span class="parameters">(int&nbsp;objectArgCount)</span></div>
 <div class="block">Finds or creates a method type whose components are all <code>Object</code>.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 All parameters and the return type will be Object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>objectArgCount</code> - number of parameters</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a generally applicable method type, for all calls of the given argument count</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>objectArgCount</code> is negative or greater than 255</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>objectArgCount</code> is negative or greater than 255</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#genericMethodType(int,boolean)"><code>genericMethodType(int, boolean)</code></a></li>
@@ -641,22 +641,22 @@ All parameters and the return type will be Object.</div>
 <section class="detail" id="changeParameterType(int,java.lang.Class)">
 <h3>changeParameterType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">changeParameterType</span><wbr><span class="parameters">(int&nbsp;num,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;nptype)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">changeParameterType</span><wbr><span class="parameters">(int&nbsp;num,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;nptype)</span></div>
 <div class="block">Finds or creates a method type with a single different parameter type.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#changeParameterType(int,F)">changeParameterType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#changeParameterType(int,F)">changeParameterType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>num</code> - the index (zero-based) of the parameter type to change</dd>
 <dd><code>nptype</code> - a new parameter type to replace the old one with</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter changed</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>num</code> is not a valid index into <code>parameterArray()</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>nptype</code> is <code>void.class</code></dd>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>nptype</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>num</code> is not a valid index into <code>parameterArray()</code></dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>nptype</code> is <code>void.class</code></dd>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>nptype</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -665,23 +665,23 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="insertParameterTypes(int,java.lang.Class...)">
 <h3>insertParameterTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">insertParameterTypes</span><wbr><span class="parameters">(int&nbsp;num,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">insertParameterTypes</span><wbr><span class="parameters">(int&nbsp;num,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</span></div>
 <div class="block">Finds or creates a method type with additional parameter types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#insertParameterTypes(int,F...)">insertParameterTypes</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#insertParameterTypes(int,F...)">insertParameterTypes</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>num</code> - the position (zero-based) of the inserted parameter type(s)</dd>
 <dd><code>ptypesToInsert</code> - zero or more new parameter types to insert into the parameter list</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter(s) inserted</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>num</code> is negative or greater than <code>parameterCount()</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
+<dt>抛出:</dt>
+<dd><code><a href="../IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>num</code> is negative or greater than <code>parameterCount()</code></dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
                                  or if the resulting method type would have more than 255 parameter slots</dd>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
 </dl>
 </div>
 </section>
@@ -690,18 +690,18 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="appendParameterTypes(java.lang.Class...)">
 <h3>appendParameterTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">appendParameterTypes</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">appendParameterTypes</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;...&nbsp;ptypesToInsert)</span></div>
 <div class="block">Finds or creates a method type with additional parameter types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ptypesToInsert</code> - zero or more new parameter types to insert after the end of the parameter list</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter(s) appended</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
                                  or if the resulting method type would have more than 255 parameter slots</dd>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
 </dl>
 </div>
 </section>
@@ -710,21 +710,21 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="insertParameterTypes(int,java.util.List)">
 <h3>insertParameterTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">insertParameterTypes</span><wbr><span class="parameters">(int&nbsp;num,
- <a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">insertParameterTypes</span><wbr><span class="parameters">(int&nbsp;num,
+ <a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</span></div>
 <div class="block">Finds or creates a method type with additional parameter types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>num</code> - the position (zero-based) of the inserted parameter type(s)</dd>
 <dd><code>ptypesToInsert</code> - zero or more new parameter types to insert into the parameter list</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter(s) inserted</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>num</code> is negative or greater than <code>parameterCount()</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
+<dt>抛出:</dt>
+<dd><code><a href="../IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>num</code> is negative or greater than <code>parameterCount()</code></dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
                                  or if the resulting method type would have more than 255 parameter slots</dd>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
 </dl>
 </div>
 </section>
@@ -733,18 +733,18 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="appendParameterTypes(java.util.List)">
 <h3>appendParameterTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">appendParameterTypes</span><wbr><span class="parameters">(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">appendParameterTypes</span><wbr><span class="parameters">(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;&nbsp;ptypesToInsert)</span></div>
 <div class="block">Finds or creates a method type with additional parameter types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ptypesToInsert</code> - zero or more new parameter types to insert after the end of the parameter list</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter(s) appended</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>ptypesToInsert</code> is <code>void.class</code>
                                  or if the resulting method type would have more than 255 parameter slots</dd>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>ptypesToInsert</code> or any of its elements is null</dd>
 </dl>
 </div>
 </section>
@@ -753,20 +753,20 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="dropParameterTypes(int,int)">
 <h3>dropParameterTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">dropParameterTypes</span><wbr><span class="parameters">(int&nbsp;start,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">dropParameterTypes</span><wbr><span class="parameters">(int&nbsp;start,
  int&nbsp;end)</span></div>
 <div class="block">Finds or creates a method type with some parameter types omitted.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#dropParameterTypes(int,int)">dropParameterTypes</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#dropParameterTypes(int,int)">dropParameterTypes</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>start</code> - the index (zero-based) of the first parameter type to remove</dd>
 <dd><code>end</code> - the index (greater than <code>start</code>) of the first parameter type after not to remove</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the selected parameter(s) removed</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>start</code> is negative or greater than <code>parameterCount()</code>
+<dt>抛出:</dt>
+<dd><code><a href="../IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>start</code> is negative or greater than <code>parameterCount()</code>
                                  or if <code>end</code> is negative or greater than <code>parameterCount()</code>
                                  or if <code>start</code> is greater than <code>end</code></dd>
 </dl>
@@ -777,18 +777,18 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <section class="detail" id="changeReturnType(java.lang.Class)">
 <h3>changeReturnType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">changeReturnType</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;nrtype)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">changeReturnType</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;nrtype)</span></div>
 <div class="block">Finds or creates a method type with a different return type.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#changeReturnType(F)">changeReturnType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#changeReturnType(F)">changeReturnType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>nrtype</code> - a return parameter type to replace the old one with</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the same type, except with the return type change</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>nrtype</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>nrtype</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -801,7 +801,7 @@ Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5
 <div class="block">Reports if this type contains a primitive argument or return value.
 The return type <code>void</code> counts as a primitive.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if any of the types are primitives</dd>
 </dl>
 </div>
@@ -813,11 +813,11 @@ The return type <code>void</code> counts as a primitive.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasWrappers</span>()</div>
 <div class="block">Reports if this type contains a wrapper argument or return value.
-Wrappers are types which box primitive values, such as <a href="../Integer.html" title="class in java.lang"><code>Integer</code></a>.
+Wrappers are types which box primitive values, such as <a href="../Integer.html" title="java.lang 包中的类"><code>Integer</code></a>.
 The reference type <code>java.lang.Void</code> counts as a wrapper,
 if it occurs as a return type.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if any of the types are wrappers</dd>
 </dl>
 </div>
@@ -827,12 +827,12 @@ if it occurs as a return type.</div>
 <section class="detail" id="erase()">
 <h3>erase</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">erase</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">erase</span>()</div>
 <div class="block">Erases all reference types to <code>Object</code>.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 All primitive types (including <code>void</code>) will remain unchanged.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a version of the original type with all reference types replaced</dd>
 </dl>
 </div>
@@ -842,13 +842,13 @@ All primitive types (including <code>void</code>) will remain unchanged.</div>
 <section class="detail" id="generic()">
 <h3>generic</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">generic</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">generic</span>()</div>
 <div class="block">Converts all types, both reference and primitive, to <code>Object</code>.
 Convenience method for <a href="#genericMethodType(int)"><code>genericMethodType</code></a>.
 The expression <code>type.wrap().erase()</code> produces the same value
 as <code>type.generic()</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a version of the original type with all types replaced</dd>
 </dl>
 </div>
@@ -858,7 +858,7 @@ as <code>type.generic()</code>.</div>
 <section class="detail" id="wrap()">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">wrap</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">wrap</span>()</div>
 <div class="block">Converts all primitive types to their corresponding wrapper types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 All reference types (including wrapper types) will remain unchanged.
@@ -866,7 +866,7 @@ A <code>void</code> return type is changed to the type <code>java.lang.Void</cod
 The expression <code>type.wrap().erase()</code> produces the same value
 as <code>type.generic()</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a version of the original type with all primitive types replaced</dd>
 </dl>
 </div>
@@ -876,13 +876,13 @@ as <code>type.generic()</code>.</div>
 <section class="detail" id="unwrap()">
 <h3>unwrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">unwrap</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">unwrap</span>()</div>
 <div class="block">Converts all wrapper types to their corresponding primitive types.
 Convenience method for <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 All primitive types (including <code>void</code>) will remain unchanged.
 A return type of <code>java.lang.Void</code> is changed to <code>void</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a version of the original type with all wrapper types replaced</dd>
 </dl>
 </div>
@@ -892,17 +892,17 @@ A return type of <code>java.lang.Void</code> is changed to <code>void</code>.</d
 <section class="detail" id="parameterType(int)">
 <h3>parameterType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">parameterType</span><wbr><span class="parameters">(int&nbsp;num)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">parameterType</span><wbr><span class="parameters">(int&nbsp;num)</span></div>
 <div class="block">Returns the parameter type at the specified index, within this method type.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#parameterType(int)">parameterType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#parameterType(int)">parameterType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>num</code> - the index (zero-based) of the desired parameter type</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the selected parameter type</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>num</code> is not a valid index into <code>parameterArray()</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>num</code> is not a valid index into <code>parameterArray()</code></dd>
 </dl>
 </div>
 </section>
@@ -914,9 +914,9 @@ A return type of <code>java.lang.Void</code> is changed to <code>void</code>.</d
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">parameterCount</span>()</div>
 <div class="block">Returns the number of parameter types in this method type.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#parameterCount()">parameterCount</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#parameterCount()">parameterCount</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the number of parameter types</dd>
 </dl>
 </div>
@@ -926,12 +926,12 @@ A return type of <code>java.lang.Void</code> is changed to <code>void</code>.</d
 <section class="detail" id="returnType()">
 <h3>returnType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">returnType</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">returnType</span>()</div>
 <div class="block">Returns the return type of this method type.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#returnType()">returnType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#returnType()">returnType</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the return type</dd>
 </dl>
 </div>
@@ -941,13 +941,13 @@ A return type of <code>java.lang.Void</code> is changed to <code>void</code>.</d
 <section class="detail" id="parameterList()">
 <h3>parameterList</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">parameterList</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">parameterList</span>()</div>
 <div class="block">Presents the parameter types as a list (a convenience method).
 The list will be immutable.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#parameterList()">parameterList</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#parameterList()">parameterList</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the parameter types (as an immutable list)</dd>
 </dl>
 </div>
@@ -957,12 +957,12 @@ The list will be immutable.</div>
 <section class="detail" id="lastParameterType()">
 <h3>lastParameterType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">lastParameterType</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">lastParameterType</span>()</div>
 <div class="block">Returns the last parameter type of this method type.
 If this type has no parameters, the sentinel value
 <code>void.class</code> is returned instead.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd><p>
 The sentinel value is chosen so that reflective queries can be
 made directly against the result value.
@@ -971,9 +971,9 @@ since <code>void</code> is never acceptable as a parameter type.
 For variable arity invocation modes, the expression
 <a href="../Class.html#getComponentType()"><code>lastParameterType().getComponentType()</code></a>
 is useful to query the type of the "varargs" parameter.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the last parameter type if any, else <code>void.class</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -983,13 +983,13 @@ is useful to query the type of the "varargs" parameter.</dd>
 <section class="detail" id="parameterArray()">
 <h3>parameterArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;[]</span>&nbsp;<span class="element-name">parameterArray</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;[]</span>&nbsp;<span class="element-name">parameterArray</span>()</div>
 <div class="block">Presents the parameter types as an array (a convenience method).
 Changes to the array will not result in changes to the type.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.OfMethod.html#parameterArray()">parameterArray</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;, <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.OfMethod.html#parameterArray()">parameterArray</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;, <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the parameter types (as a fresh copy if necessary)</dd>
 </dl>
 </div>
@@ -999,19 +999,19 @@ Changes to the array will not result in changes to the type.</div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;x)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;x)</span></div>
 <div class="block">Compares the specified object with this type for equality.
 That is, it returns <code>true</code> if and only if the specified object
 is also a method type with exactly the same parameters and return type.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>x</code> - object to compare</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this object is the same as the obj
          argument; <code>false</code> otherwise.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a></li>
@@ -1031,11 +1031,11 @@ It is defined to be the same as the hashcode of a List
 whose elements are the return type followed by the
 parameter types.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>the hash code value for this method type</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
@@ -1051,7 +1051,7 @@ parameter types.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string representation of the method type,
 of the form <code>"(PT0,PT1...)RT"</code>.
 The string representation of a method type is a
@@ -1061,9 +1061,9 @@ followed immediately by the return type.
 Each type is represented by its
 <a href="../Class.html#getSimpleName()"><code>simple name</code></a>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>
@@ -1073,32 +1073,32 @@ Each type is represented by its
 <section class="detail" id="fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)">
 <h3>fromMethodDescriptorString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">fromMethodDescriptorString</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;descriptor,
- <a href="../ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span>
-                                             throws <span class="exceptions"><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a>,
-<a href="../TypeNotPresentException.html" title="class in java.lang">TypeNotPresentException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">fromMethodDescriptorString</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;descriptor,
+ <a href="../ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span>
+                                             throws <span class="exceptions"><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a>,
+<a href="../TypeNotPresentException.html" title="java.lang 包中的类">TypeNotPresentException</a></span></div>
 <div class="block">Finds or creates an instance of a method type of the given method descriptor
 (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3</a>). This method is a convenience method for
 <a href="#methodType(java.lang.Class,java.lang.Class%5B%5D)"><code>methodType</code></a>.
 Any class or interface name embedded in the descriptor string will be
 resolved by the given loader (or if it is <code>null</code>, on the system class loader).</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>It is possible to encounter method types that have valid descriptors but
 cannot be constructed by this method, because their component types are
 not visible from a common class loader.
 <p>
 This method is included for the benefit of applications that must
 generate bytecodes that process method handles and <code>invokedynamic</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>descriptor</code> - a method descriptor string</dd>
 <dd><code>loader</code> - the class loader in which to look up the types</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method type of the given method descriptor</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the string is <code>null</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the string is not a method descriptor</dd>
-<dd><code><a href="../TypeNotPresentException.html" title="class in java.lang">TypeNotPresentException</a></code> - if a named type cannot be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the string is <code>null</code></dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the string is not a method descriptor</dd>
+<dd><code><a href="../TypeNotPresentException.html" title="java.lang 包中的类">TypeNotPresentException</a></code> - if a named type cannot be found</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3 Method Descriptors</a><br></dd></dl>
@@ -1109,11 +1109,11 @@ generate bytecodes that process method handles and <code>invokedynamic</code>.</
 <section class="detail" id="toMethodDescriptorString()">
 <h3>toMethodDescriptorString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toMethodDescriptorString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toMethodDescriptorString</span>()</div>
 <div class="block">Returns the descriptor string for this method type. This method
 is equivalent to calling <a href="#descriptorString()"><code>MethodType::descriptorString</code></a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This is not a strict inverse of <a href="#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)"><code>fromMethodDescriptorString</code></a> which requires a method type descriptor
 (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3</a>) and a suitable class loader argument.
 Two distinct <code>MethodType</code> objects can have an identical
@@ -1123,12 +1123,12 @@ but different class loaders.
 <p>
 This method is included for the benefit of applications that must
 generate bytecodes that process method handles and <code>invokedynamic</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the descriptor string for this method type</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3 Method Descriptors</a><br></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#descriptor">Nominal Descriptor for <code>MethodType</code></a></li>
@@ -1142,13 +1142,13 @@ generate bytecodes that process method handles and <code>invokedynamic</code>.</
 <section class="detail" id="descriptorString()">
 <h3>descriptorString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">descriptorString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">descriptorString</span>()</div>
 <div class="block">Returns the descriptor string for this method type.
 
 <p>
 If this method type can be <a href="#descriptor">described nominally</a>,
 then the result is a method type descriptor (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3</a>).
-<a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant"><code>MethodTypeDesc</code></a> for this method type
+<a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口"><code>MethodTypeDesc</code></a> for this method type
 can be produced by calling <a href="../constant/MethodTypeDesc.html#ofDescriptor(java.lang.String)"><code>MethodTypeDesc::ofDescriptor</code></a> with the result descriptor string.
 <p>
 If this method type cannot be <a href="#descriptor">described nominally</a>
@@ -1157,19 +1157,19 @@ and the result is a string of the form:
 where <code>&lt;parameter-descriptors&gt;</code> is the concatenation of the
 <a href="../Class.html#descriptorString()">descriptor string</a> of all
 of the parameter types and the <a href="../Class.html#descriptorString()">descriptor string</a>
-of the return type. No <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant"><code>MethodTypeDesc</code></a>
+of the return type. No <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口"><code>MethodTypeDesc</code></a>
 can be produced from the result string.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="TypeDescriptor.html#descriptorString()">descriptorString</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.html" title="interface in java.lang.invoke">TypeDescriptor</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="TypeDescriptor.html#descriptorString()">descriptorString</a></code>&nbsp;in interface&nbsp;<code><a href="TypeDescriptor.html" title="java.lang.invoke 包中的接口">TypeDescriptor</a></code></dd>
+<dt>返回:</dt>
 <dd>the descriptor string for this method type</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3 Method Descriptors</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>12</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#descriptor">Nominal Descriptor for <code>MethodType</code></a></li>
@@ -1183,18 +1183,18 @@ can be produced from the result string.</div>
 <section class="detail" id="describeConstable()">
 <h3>describeConstable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
 <div class="block">Returns a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></code></dd>
-<dt>Returns:</dt>
-<dd>An <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> containing the resulting nominal descriptor,
-or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be constructed.</dd>
-<dt>Since:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></code></dd>
+<dt>返回:</dt>
+<dd>An <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> containing the resulting nominal descriptor,
+or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be constructed.</dd>
+<dt>自:</dt>
 <dd>12</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#descriptor">Nominal Descriptor for <code>MethodType</code></a></li>

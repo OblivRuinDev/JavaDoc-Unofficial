@@ -64,7 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.tools.attach</a></li>
 <li><a href="VirtualMachine.html" class="current-selection">VirtualMachine</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -72,17 +72,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(com.sun.tools.attach.spi.AttachProvider,java.lang.String)" tabindex="0">VirtualMachine(AttachProvider, String)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#list()" tabindex="0">list()</a></li>
 <li><a href="#attach(java.lang.String)" tabindex="0">attach(String)</a></li>
@@ -110,16 +110,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class VirtualMachine" class="title">Class VirtualMachine</h1>
+<h1 title="类 VirtualMachine" class="title">类 VirtualMachine</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">com.sun.tools.attach.VirtualMachine</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">VirtualMachine</span>
-<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A Java virtual machine.
 
 <p> A <code>VirtualMachine</code> represents a Java virtual machine to which this
@@ -135,12 +135,12 @@ with an identifier that identifies the target virtual machine. The identifier is
 implementation-dependent but is typically the process identifier (or pid) in
 environments where each Java virtual machine runs in its own operating system process.
 Alternatively, a <code>VirtualMachine</code> instance is obtained by invoking the
-<a href="#attach(com.sun.tools.attach.VirtualMachineDescriptor)"><code>attach</code></a> method with a <a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach"><code>VirtualMachineDescriptor</code></a> obtained
+<a href="#attach(com.sun.tools.attach.VirtualMachineDescriptor)"><code>attach</code></a> method with a <a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类"><code>VirtualMachineDescriptor</code></a> obtained
 from the list of virtual machine descriptors returned by the <a href="#list()"><code>list</code></a> method.
 Once a reference to a virtual machine is obtained, the <a href="#loadAgent(java.lang.String,java.lang.String)"><code>loadAgent</code></a>,
 <a href="#loadAgentLibrary(java.lang.String,java.lang.String)"><code>loadAgentLibrary</code></a>, and <a href="#loadAgentPath(java.lang.String,java.lang.String)"><code>loadAgentPath</code></a>
 methods are used to load agents into target virtual machine. The <a href="#loadAgent(java.lang.String,java.lang.String)"><code>loadAgent</code></a> method is used to load agents that are written in the Java
-Language and deployed in a <a href="../../../../../java.base/java/util/jar/JarFile.html" title="class in java.util.jar"><code>JAR file</code></a>. (See
+Language and deployed in a <a href="../../../../../java.base/java/util/jar/JarFile.html" title="java.util.jar 包中的类"><code>JAR file</code></a>. (See
 <a href="../../../../../java.instrument/java/lang/instrument/package-summary.html"><code>java.lang.instrument</code></a> for a detailed description on how these agents
 are loaded and started). The <a href="#loadAgentLibrary(java.lang.String,java.lang.String)"><code>loadAgentLibrary</code></a> and
 <a href="#loadAgentPath(java.lang.String,java.lang.String)"><code>loadAgentPath</code></a> methods are used to load agents that
@@ -178,7 +178,7 @@ client detaches from the target VM. </p>
 
 <p> A VirtualMachine is safe for use by multiple concurrent threads. </p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -188,15 +188,15 @@ client detaches from the target VM. </p>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.sun.tools.attach.spi.AttachProvider,java.lang.String)" class="member-name-link">VirtualMachine</a><wbr>(<a href="spi/AttachProvider.html" title="class in com.sun.tools.attach.spi">AttachProvider</a>&nbsp;provider,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;id)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(com.sun.tools.attach.spi.AttachProvider,java.lang.String)" class="member-name-link">VirtualMachine</a><wbr>(<a href="spi/AttachProvider.html" title="com.sun.tools.attach.spi 包中的类">AttachProvider</a>&nbsp;provider,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Initializes a new instance of this class.</div>
 </div>
@@ -206,21 +206,21 @@ client detaches from the target VM. </p>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VirtualMachine.html" title="class in com.sun.tools.attach">VirtualMachine</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#attach(com.sun.tools.attach.VirtualMachineDescriptor)" class="member-name-link">attach</a><wbr>(<a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach">VirtualMachineDescriptor</a>&nbsp;vmd)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VirtualMachine.html" title="com.sun.tools.attach 包中的类">VirtualMachine</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#attach(com.sun.tools.attach.VirtualMachineDescriptor)" class="member-name-link">attach</a><wbr>(<a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类">VirtualMachineDescriptor</a>&nbsp;vmd)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Attaches to a Java virtual machine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VirtualMachine.html" title="class in com.sun.tools.attach">VirtualMachine</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#attach(java.lang.String)" class="member-name-link">attach</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;id)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="VirtualMachine.html" title="com.sun.tools.attach 包中的类">VirtualMachine</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#attach(java.lang.String)" class="member-name-link">attach</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Attaches to a Java virtual machine.</div>
 </div>
@@ -230,17 +230,17 @@ client detaches from the target VM. </p>
 <div class="block">Detach from the virtual machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;ob)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;ob)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tests this VirtualMachine for equality with another object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAgentProperties()" class="member-name-link">getAgentProperties</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the current <i>agent properties</i> in the target virtual
 machine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSystemProperties()" class="member-name-link">getSystemProperties</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the current system properties in the target virtual machine.</div>
@@ -250,65 +250,65 @@ machine.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a hash-code value for this VirtualMachine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#id()" class="member-name-link">id</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the identifier for this Java virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach">VirtualMachineDescriptor</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类">VirtualMachineDescriptor</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#list()" class="member-name-link">list</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a list of Java virtual machines.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgent(java.lang.String)" class="member-name-link">loadAgent</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agent)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgent(java.lang.String)" class="member-name-link">loadAgent</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agent)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Loads an agent.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgent(java.lang.String,java.lang.String)" class="member-name-link">loadAgent</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agent,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgent(java.lang.String,java.lang.String)" class="member-name-link">loadAgent</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agent,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Loads an agent.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgentLibrary(java.lang.String)" class="member-name-link">loadAgentLibrary</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentLibrary)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgentLibrary(java.lang.String)" class="member-name-link">loadAgentLibrary</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentLibrary)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Loads an agent library.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgentLibrary(java.lang.String,java.lang.String)" class="member-name-link">loadAgentLibrary</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentLibrary,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgentLibrary(java.lang.String,java.lang.String)" class="member-name-link">loadAgentLibrary</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentLibrary,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Loads an agent library.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgentPath(java.lang.String)" class="member-name-link">loadAgentPath</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentPath)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadAgentPath(java.lang.String)" class="member-name-link">loadAgentPath</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentPath)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load a native agent library by full pathname.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgentPath(java.lang.String,java.lang.String)" class="member-name-link">loadAgentPath</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentPath,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#loadAgentPath(java.lang.String,java.lang.String)" class="member-name-link">loadAgentPath</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentPath,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Load a native agent library by full pathname.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="spi/AttachProvider.html" title="class in com.sun.tools.attach.spi">AttachProvider</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="spi/AttachProvider.html" title="com.sun.tools.attach.spi 包中的类">AttachProvider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the provider that created this virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startLocalManagementAgent()" class="member-name-link">startLocalManagementAgent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Starts the local JMX management agent in the target virtual machine.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startManagementAgent(java.util.Properties)" class="member-name-link">startManagementAgent</a><wbr>(<a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a>&nbsp;agentProperties)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startManagementAgent(java.util.Properties)" class="member-name-link">startManagementAgent</a><wbr>(<a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a>&nbsp;agentProperties)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Starts the JMX management agent in the target virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the string representation of the <code>VirtualMachine</code>.</div>
@@ -317,7 +317,7 @@ machine.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -328,21 +328,21 @@ machine.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(com.sun.tools.attach.spi.AttachProvider,java.lang.String)">
 <h3>VirtualMachine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">VirtualMachine</span><wbr><span class="parameters">(<a href="spi/AttachProvider.html" title="class in com.sun.tools.attach.spi">AttachProvider</a>&nbsp;provider,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;id)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">VirtualMachine</span><wbr><span class="parameters">(<a href="spi/AttachProvider.html" title="com.sun.tools.attach.spi 包中的类">AttachProvider</a>&nbsp;provider,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;id)</span></div>
 <div class="block">Initializes a new instance of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>provider</code> - The attach provider creating this class.</dd>
 <dd><code>id</code> - The abstract identifier that identifies the Java virtual machine.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>provider</code> or <code>id</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>provider</code> or <code>id</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -353,23 +353,23 @@ machine.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="list()">
 <h3>list</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach">VirtualMachineDescriptor</a>&gt;</span>&nbsp;<span class="element-name">list</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类">VirtualMachineDescriptor</a>&gt;</span>&nbsp;<span class="element-name">list</span>()</div>
 <div class="block">Return a list of Java virtual machines.
 
-<p> This method returns a list of Java <a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach"><code>VirtualMachineDescriptor</code></a> elements.
+<p> This method returns a list of Java <a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类"><code>VirtualMachineDescriptor</code></a> elements.
 The list is an aggregation of the virtual machine
 descriptor lists obtained by invoking the <a href="spi/AttachProvider.html#listVirtualMachines()"><code>listVirtualMachines</code></a> method of all installed
-<a href="spi/AttachProvider.html" title="class in com.sun.tools.attach.spi"><code>attach providers</code></a>.
+<a href="spi/AttachProvider.html" title="com.sun.tools.attach.spi 包中的类"><code>attach providers</code></a>.
 If there are no Java virtual machines known to any provider
 then an empty list is returned.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The list of virtual machine descriptors.</dd>
 </dl>
 </div>
@@ -379,9 +379,9 @@ then an empty list is returned.</div>
 <section class="detail" id="attach(java.lang.String)">
 <h3>attach</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="VirtualMachine.html" title="class in com.sun.tools.attach">VirtualMachine</a></span>&nbsp;<span class="element-name">attach</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;id)</span>
-                             throws <span class="exceptions"><a href="AttachNotSupportedException.html" title="class in com.sun.tools.attach">AttachNotSupportedException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="VirtualMachine.html" title="com.sun.tools.attach 包中的类">VirtualMachine</a></span>&nbsp;<span class="element-name">attach</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;id)</span>
+                             throws <span class="exceptions"><a href="AttachNotSupportedException.html" title="com.sun.tools.attach 包中的类">AttachNotSupportedException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Attaches to a Java virtual machine.
 
 <p> This method obtains the list of attach providers by invoking the
@@ -390,7 +390,7 @@ and invokes each provider's <a href="spi/AttachProvider.html#attachVirtualMachin
 attaches then the iteration terminates, and the VirtualMachine created
 by the provider that successfully attached is returned by this method.
 If the <code>attachVirtualMachine</code> method of all providers throws
-<a href="AttachNotSupportedException.html" title="class in com.sun.tools.attach"><code>AttachNotSupportedException</code></a>
+<a href="AttachNotSupportedException.html" title="com.sun.tools.attach 包中的类"><code>AttachNotSupportedException</code></a>
 then this method also throws <code>AttachNotSupportedException</code>.
 This means that <code>AttachNotSupportedException</code> is thrown when
 the identifier provided to this method is invalid, or the identifier
@@ -398,16 +398,16 @@ corresponds to a Java virtual machine that does not exist, or none
 of the providers can attach to it. This exception is also thrown if
 <a href="spi/AttachProvider.html#providers()"><code>AttachProvider.providers()</code></a> returns an empty list. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>id</code> - The abstract identifier that identifies the Java virtual machine.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A VirtualMachine representing the target VM.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachNotSupportedException.html" title="class in com.sun.tools.attach">AttachNotSupportedException</a></code> - If the <code>attachVirtualmachine</code> method of all installed
+<dt>抛出:</dt>
+<dd><code><a href="AttachNotSupportedException.html" title="com.sun.tools.attach 包中的类">AttachNotSupportedException</a></code> - If the <code>attachVirtualmachine</code> method of all installed
          providers throws <code>AttachNotSupportedException</code>, or
          there aren't any providers installed.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>id</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>id</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -416,24 +416,24 @@ of the providers can attach to it. This exception is also thrown if
 <section class="detail" id="attach(com.sun.tools.attach.VirtualMachineDescriptor)">
 <h3>attach</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="VirtualMachine.html" title="class in com.sun.tools.attach">VirtualMachine</a></span>&nbsp;<span class="element-name">attach</span><wbr><span class="parameters">(<a href="VirtualMachineDescriptor.html" title="class in com.sun.tools.attach">VirtualMachineDescriptor</a>&nbsp;vmd)</span>
-                             throws <span class="exceptions"><a href="AttachNotSupportedException.html" title="class in com.sun.tools.attach">AttachNotSupportedException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="VirtualMachine.html" title="com.sun.tools.attach 包中的类">VirtualMachine</a></span>&nbsp;<span class="element-name">attach</span><wbr><span class="parameters">(<a href="VirtualMachineDescriptor.html" title="com.sun.tools.attach 包中的类">VirtualMachineDescriptor</a>&nbsp;vmd)</span>
+                             throws <span class="exceptions"><a href="AttachNotSupportedException.html" title="com.sun.tools.attach 包中的类">AttachNotSupportedException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Attaches to a Java virtual machine.
 
 <p> This method first invokes the <a href="VirtualMachineDescriptor.html#provider()"><code>provider()</code></a> method
 of the given virtual machine descriptor to obtain the attach provider. It
 then invokes the attach provider's <a href="spi/AttachProvider.html#attachVirtualMachine(com.sun.tools.attach.VirtualMachineDescriptor)"><code>attachVirtualMachine</code></a> to attach to the target VM.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>vmd</code> - The virtual machine descriptor.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A VirtualMachine representing the target VM.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachNotSupportedException.html" title="class in com.sun.tools.attach">AttachNotSupportedException</a></code> - If the attach provider's <code>attachVirtualmachine</code>
+<dt>抛出:</dt>
+<dd><code><a href="AttachNotSupportedException.html" title="com.sun.tools.attach 包中的类">AttachNotSupportedException</a></code> - If the attach provider's <code>attachVirtualmachine</code>
          throws <code>AttachNotSupportedException</code>.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>vmd</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>vmd</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -443,11 +443,11 @@ then invokes the attach provider's <a href="spi/AttachProvider.html#attachVirtua
 <h3>detach</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">detach</span>()
-                     throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+                     throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Detach from the virtual machine.
 
 <p> After detaching from the virtual machine, any further attempt to invoke
-operations on that virtual machine will cause an <a href="../../../../../java.base/java/io/IOException.html" title="class in java.io"><code>IOException</code></a> to be thrown. If an operation (such as <a href="#loadAgent(java.lang.String,java.lang.String)"><code>loadAgent</code></a> for example) is in progress when this method is invoked then
+operations on that virtual machine will cause an <a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类"><code>IOException</code></a> to be thrown. If an operation (such as <a href="#loadAgent(java.lang.String,java.lang.String)"><code>loadAgent</code></a> for example) is in progress when this method is invoked then
 the behaviour is implementation dependent. In other words, it is
 implementation specific if the operation completes or throws
 <code>IOException</code>.
@@ -455,8 +455,8 @@ implementation specific if the operation completes or throws
 <p> If already detached from the virtual machine then invoking this
 method has no effect. </p></div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -465,10 +465,10 @@ method has no effect. </p></div>
 <section class="detail" id="provider()">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="spi/AttachProvider.html" title="class in com.sun.tools.attach.spi">AttachProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="spi/AttachProvider.html" title="com.sun.tools.attach.spi 包中的类">AttachProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
 <div class="block">Returns the provider that created this virtual machine.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The provider that created this virtual machine.</dd>
 </dl>
 </div>
@@ -478,10 +478,10 @@ method has no effect. </p></div>
 <section class="detail" id="id()">
 <h3>id</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">id</span>()</div>
 <div class="block">Returns the identifier for this Java virtual machine.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The identifier for this Java virtual machine.</dd>
 </dl>
 </div>
@@ -491,11 +491,11 @@ method has no effect. </p></div>
 <section class="detail" id="loadAgentLibrary(java.lang.String,java.lang.String)">
 <h3>loadAgentLibrary</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentLibrary</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentLibrary,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</span>
-                               throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentLibrary</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentLibrary,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</span>
+                               throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Loads an agent library.
 
 <p> A <a href="../../../../../../specs/jvmti.html">JVM TI</a>
@@ -522,23 +522,23 @@ statically linked into the VM then the VM must export a function named
 <code>Agent_OnAttach_L</code>.</p>
 
 <p> If the <code>Agent_OnAttach[_L]</code> function in the agent library returns
-an error then an <a href="AgentInitializationException.html" title="class in com.sun.tools.attach"><code>AgentInitializationException</code></a> is
+an error then an <a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类"><code>AgentInitializationException</code></a> is
 thrown. The return value from the <code>Agent_OnAttach[_L]</code> can then be
 obtained by invoking the <a href="AgentInitializationException.html#returnValue()"><code>returnValue</code></a>
 method on the exception. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentLibrary</code> - The name of the agent library.</dd>
 <dd><code>options</code> - The options to provide to the <code>Agent_OnAttach[_L]</code>
          function (can be <code>null</code>).</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
          statically linked with the VM, or the agent library cannot be
          loaded for another reason.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agentLibrary</code> is <code>null</code>.</dd>
-<dt>See Also:</dt>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agentLibrary</code> is <code>null</code>.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="AgentInitializationException.html#returnValue()"><code>AgentInitializationException.returnValue()</code></a></li>
@@ -552,10 +552,10 @@ method on the exception. </p></div>
 <section class="detail" id="loadAgentLibrary(java.lang.String)">
 <h3>loadAgentLibrary</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentLibrary</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentLibrary)</span>
-                      throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentLibrary</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentLibrary)</span>
+                      throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Loads an agent library.
 
 <p> This convenience method works as if by invoking:
@@ -564,15 +564,15 @@ method on the exception. </p></div>
 <a href="#loadAgentLibrary(java.lang.String,java.lang.String)"><code>loadAgentLibrary</code></a>(agentLibrary,&nbsp;null);
 </code></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentLibrary</code> - The name of the agent library.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
          statically linked with the VM, or the agent library cannot be
          loaded for another reason.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agentLibrary</code> is <code>null</code>.</dd>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agentLibrary</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -581,11 +581,11 @@ method on the exception. </p></div>
 <section class="detail" id="loadAgentPath(java.lang.String,java.lang.String)">
 <h3>loadAgentPath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentPath</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentPath,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</span>
-                            throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentPath</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentPath,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</span>
+                            throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Load a native agent library by full pathname.
 
 <p> A <a href="../../../../../../specs/jvmti.html">JVM TI</a>
@@ -615,23 +615,23 @@ agent library. Unlike <a href="#loadAgentLibrary(java.lang.String,java.lang.Stri
 is not expanded in the target virtual machine. </p>
 
 <p> If the <code>Agent_OnAttach[_L]</code> function in the agent library returns
-an error then an <a href="AgentInitializationException.html" title="class in com.sun.tools.attach"><code>AgentInitializationException</code></a> is
+an error then an <a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类"><code>AgentInitializationException</code></a> is
 thrown. The return value from the <code>Agent_OnAttach[_L]</code> can then be
 obtained by invoking the <a href="AgentInitializationException.html#returnValue()"><code>returnValue</code></a>
 method on the exception. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentPath</code> - The full path of the agent library.</dd>
 <dd><code>options</code> - The options to provide to the <code>Agent_OnAttach[_L]</code>
          function (can be <code>null</code>).</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
          statically linked with the VM, or the agent library cannot be
          loaded for another reason.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agentPath</code> is <code>null</code>.</dd>
-<dt>See Also:</dt>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agentPath</code> is <code>null</code>.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="AgentInitializationException.html#returnValue()"><code>AgentInitializationException.returnValue()</code></a></li>
@@ -645,10 +645,10 @@ method on the exception. </p></div>
 <section class="detail" id="loadAgentPath(java.lang.String)">
 <h3>loadAgentPath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentPath</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentPath)</span>
-                   throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgentPath</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentPath)</span>
+                   throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Load a native agent library by full pathname.
 
 <p> This convenience method works as if by invoking:
@@ -657,15 +657,15 @@ method on the exception. </p></div>
 <a href="#loadAgentPath(java.lang.String,java.lang.String)"><code>loadAgentPath</code></a>(agentLibrary,&nbsp;null);
 </code></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentPath</code> - The full path to the agent library.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent library does not exist, the agent library is not
          statically linked with the VM, or the agent library cannot be
          loaded for another reason.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agentPath</code> is <code>null</code>.</dd>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>Agent_OnAttach[_L]</code> function returns an error.</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agentPath</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -674,11 +674,11 @@ method on the exception. </p></div>
 <section class="detail" id="loadAgent(java.lang.String,java.lang.String)">
 <h3>loadAgent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agent,
- <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;options)</span>
-                        throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agent,
+ <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;options)</span>
+                        throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Loads an agent.
 
 <p> The agent provided to this method is a path name to a JAR file on the file
@@ -690,16 +690,16 @@ virtual machine), and the <code>agentmain</code> method of the agent class, spec
 by the <code>Agent-Class</code> attribute in the JAR manifest, is invoked. This
 method completes when the <code>agentmain</code> method completes.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agent</code> - Path to the JAR file containing the agent.</dd>
 <dd><code>options</code> - The options to provide to the agent's <code>agentmain</code>
          method (can be <code>null</code>).</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent does not exist, or cannot be started in the manner
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent does not exist, or cannot be started in the manner
          specified in the <a href="../../../../../java.instrument/java/lang/instrument/package-summary.html"><code>java.lang.instrument</code></a> specification.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>agentmain</code> throws an exception</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agent</code> is <code>null</code>.</dd>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>agentmain</code> throws an exception</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agent</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -708,10 +708,10 @@ method completes when the <code>agentmain</code> method completes.</div>
 <section class="detail" id="loadAgent(java.lang.String)">
 <h3>loadAgent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agent)</span>
-               throws <span class="exceptions"><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a>,
-<a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a>,
-<a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">loadAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agent)</span>
+               throws <span class="exceptions"><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a>,
+<a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a>,
+<a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Loads an agent.
 
 <p> This convenience method works as if by invoking:
@@ -720,14 +720,14 @@ method completes when the <code>agentmain</code> method completes.</div>
 <a href="#loadAgent(java.lang.String,java.lang.String)"><code>loadAgent</code></a>(agent,&nbsp;null);
 </code></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agent</code> - Path to the JAR file containing the agent.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AgentLoadException.html" title="class in com.sun.tools.attach">AgentLoadException</a></code> - If the agent does not exist, or cannot be started in the manner
+<dt>抛出:</dt>
+<dd><code><a href="AgentLoadException.html" title="com.sun.tools.attach 包中的类">AgentLoadException</a></code> - If the agent does not exist, or cannot be started in the manner
          specified in the <a href="../../../../../java.instrument/java/lang/instrument/package-summary.html"><code>java.lang.instrument</code></a> specification.</dd>
-<dd><code><a href="AgentInitializationException.html" title="class in com.sun.tools.attach">AgentInitializationException</a></code> - If the <code>agentmain</code> throws an exception</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>agent</code> is <code>null</code>.</dd>
+<dd><code><a href="AgentInitializationException.html" title="com.sun.tools.attach 包中的类">AgentInitializationException</a></code> - If the <code>agentmain</code> throws an exception</dd>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>agent</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -736,8 +736,8 @@ method completes when the <code>agentmain</code> method completes.</div>
 <section class="detail" id="getSystemProperties()">
 <h3>getSystemProperties</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a></span>&nbsp;<span class="element-name">getSystemProperties</span>()
-                                        throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a></span>&nbsp;<span class="element-name">getSystemProperties</span>()
+                                        throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Returns the current system properties in the target virtual machine.
 
 <p> This method returns the system properties in the target virtual
@@ -753,16 +753,16 @@ the target virtual machine with <a href="#loadAgent(java.lang.String,java.lang.S
 <code>java.home</code> or <code>user.dir</code> properties might be
 use to create the path to the agent library or JAR file.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The system properties</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachOperationFailedException.html" title="class in com.sun.tools.attach">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
+<dt>抛出:</dt>
+<dd><code><a href="AttachOperationFailedException.html" title="com.sun.tools.attach 包中的类">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
          attach operation. A more specific error message will be
          given by <a href="../../../../../java.base/java/lang/Throwable.html#getMessage()"><code>Throwable.getMessage()</code></a>.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs, a communication error for example,
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs, a communication error for example,
          that cannot be identified as an error to indicate that the
          operation failed in the target VM.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../java.base/java/lang/System.html#getProperties()"><code>System.getProperties()</code></a></li>
@@ -778,8 +778,8 @@ use to create the path to the agent library or JAR file.</div>
 <section class="detail" id="getAgentProperties()">
 <h3>getAgentProperties</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a></span>&nbsp;<span class="element-name">getAgentProperties</span>()
-                                       throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a></span>&nbsp;<span class="element-name">getAgentProperties</span>()
+                                       throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Returns the current <i>agent properties</i> in the target virtual
 machine.
 
@@ -795,13 +795,13 @@ agent might create an agent property for its transport address.
 are omitted. If there are no agent properties maintained in the target
 virtual machine then an empty property list is returned.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The agent properties</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachOperationFailedException.html" title="class in com.sun.tools.attach">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
+<dt>抛出:</dt>
+<dd><code><a href="AttachOperationFailedException.html" title="com.sun.tools.attach 包中的类">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
               attach operation. A more specific error message will be
               given by <a href="../../../../../java.base/java/lang/Throwable.html#getMessage()"><code>Throwable.getMessage()</code></a>.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs, a communication error for example,
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs, a communication error for example,
               that cannot be identified as an error to indicate that the
               operation failed in the target VM.</dd>
 </dl>
@@ -812,8 +812,8 @@ virtual machine then an empty property list is returned.</div>
 <section class="detail" id="startManagementAgent(java.util.Properties)">
 <h3>startManagementAgent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startManagementAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/util/Properties.html" title="class in java.util">Properties</a>&nbsp;agentProperties)</span>
-                                   throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startManagementAgent</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/util/Properties.html" title="java.util 包中的类">Properties</a>&nbsp;agentProperties)</span>
+                                   throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Starts the JMX management agent in the target virtual machine.
 
 <p> The configuration properties are the same as those specified on
@@ -824,19 +824,19 @@ way as on the command line, you need to specify at least the
 <p> See the online documentation for
 <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase25&amp;id=monitoring_and_management_using_jmx_technology">Monitoring and Management Using JMX Technology</a> for further details.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentProperties</code> - A Properties object containing the configuration properties
          for the agent.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachOperationFailedException.html" title="class in com.sun.tools.attach">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
+<dt>抛出:</dt>
+<dd><code><a href="AttachOperationFailedException.html" title="com.sun.tools.attach 包中的类">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
          attach operation. A more specific error message will be
          given by <a href="../../../../../java.base/java/lang/Throwable.html#getMessage()"><code>Throwable.getMessage()</code></a>.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs, a communication error for example,
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs, a communication error for example,
          that cannot be identified as an error to indicate that the
          operation failed in the target VM.</dd>
-<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If keys or values in agentProperties are invalid.</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If agentProperties is null.</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If keys or values in agentProperties are invalid.</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If agentProperties is null.</dd>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -846,26 +846,26 @@ way as on the command line, you need to specify at least the
 <section class="detail" id="startLocalManagementAgent()">
 <h3>startLocalManagementAgent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">startLocalManagementAgent</span>()
-                                          throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">startLocalManagementAgent</span>()
+                                          throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Starts the local JMX management agent in the target virtual machine.
 
 <p> See the online documentation for
 <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase25&amp;id=monitoring_and_management_using_jmx_technology">Monitoring and Management Using JMX Technology</a> for further details.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The String representation of the local connector's service address.
          The value can be parsed by the
          <a href="../../../../../java.management/javax/management/remote/JMXServiceURL.html#%3Cinit%3E(java.lang.String)"><code>JMXServiceURL(String)</code></a>
          constructor.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="AttachOperationFailedException.html" title="class in com.sun.tools.attach">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
+<dt>抛出:</dt>
+<dd><code><a href="AttachOperationFailedException.html" title="com.sun.tools.attach 包中的类">AttachOperationFailedException</a></code> - If the target virtual machine is unable to complete the
          attach operation. A more specific error message will be
          given by <a href="../../../../../java.base/java/lang/Throwable.html#getMessage()"><code>Throwable.getMessage()</code></a>.</dd>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs, a communication error for example,
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs, a communication error for example,
          that cannot be identified as an error to indicate that the
          operation failed in the target VM.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -880,11 +880,11 @@ way as on the command line, you need to specify at least the
 code is based upon the VirtualMachine's components, and satisfies
 the general contract of the <a href="../../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode</code></a> method.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>A hash-code value for this virtual machine</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -899,7 +899,7 @@ the general contract of the <a href="../../../../../java.base/java/lang/Object.h
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;ob)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;ob)</span></div>
 <div class="block">Tests this VirtualMachine for equality with another object.
 
 <p> If the given object is not a VirtualMachine then this
@@ -909,19 +909,19 @@ provider, and their <a href="VirtualMachineDescriptor.html#id()"><code>identifie
 
 <p> This method satisfies the general contract of the <a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals</code></a> method. </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>ob</code> - The object to which this object is to be compared</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, the given object is
                a VirtualMachine that is equal to this
                VirtualMachine.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -932,12 +932,12 @@ provider, and their <a href="VirtualMachineDescriptor.html#id()"><code>identifie
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns the string representation of the <code>VirtualMachine</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>

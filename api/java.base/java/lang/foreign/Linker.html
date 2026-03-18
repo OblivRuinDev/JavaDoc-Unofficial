@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.foreign</a></li>
 <li><a href="Linker.html" class="current-selection">Linker</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,9 +62,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#native-linker" tabindex="0">Calling native functions</a>
 <ol class="toc-list">
@@ -77,9 +77,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#safety" tabindex="0">Safety considerations</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#nativeLinker()" tabindex="0">nativeLinker()</a></li>
 <li><a href="#downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" tabindex="0">downcallHandle(MemorySegment, FunctionDescriptor, Linker.Option...)</a></li>
@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Linker" class="title">Interface Linker</h1>
+<h1 title="接口 Linker" class="title">接口 Linker</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -162,7 +162,7 @@ MethodHandle strlen = linker.downcallHandle(
  to the native functions defined by the C libraries loaded with the Java runtime.
  Above, the default lookup is used to search the address of the <code>strlen</code> native
  function. That address is then passed, along with a <em>platform-dependent description</em>
- of the signature of the function expressed as a <a href="FunctionDescriptor.html" title="interface in java.lang.foreign"><code>FunctionDescriptor</code></a> (more on
+ of the signature of the function expressed as a <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口"><code>FunctionDescriptor</code></a> (more on
  that below) to the native linker's <a href="#downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)"><code>downcallHandle(MemorySegment, FunctionDescriptor, Option...)</code></a><sup class="restricted-mark"><a href="#restricted-downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">RESTRICTED</a></sup>
  method. The obtained downcall method handle is then invoked as follows:
 
@@ -179,24 +179,24 @@ MethodHandle strlen = linker.downcallHandle(
 
  When interacting with the native linker, clients must provide a platform-dependent
  description of the signature of the C function they wish to link against. This
- description, a <a href="FunctionDescriptor.html" title="interface in java.lang.foreign"><code>function descriptor</code></a>, defines the layouts
+ description, a <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口"><code>function descriptor</code></a>, defines the layouts
  associated with the parameter types and return type (if any) of the C function.
  <p>
  Scalar C types such as <code>bool</code>, <code>int</code> are modeled as
- <a href="ValueLayout.html" title="interface in java.lang.foreign">value layouts</a> of a suitable carrier. The
+ <a href="ValueLayout.html" title="java.lang.foreign 包中的接口">value layouts</a> of a suitable carrier. The
  <a href="#canonicalLayouts()">mapping</a> between a scalar type and its corresponding
  canonical layout is dependent on the ABI implemented by the native linker (see below).
  <p>
- Composite types are modeled as <a href="GroupLayout.html" title="interface in java.lang.foreign">group layouts</a>. More
- specifically, a C <code>struct</code> type maps to a <a href="StructLayout.html" title="interface in java.lang.foreign">struct layout</a>,
- whereas a C <code>union</code> type maps to a <a href="UnionLayout.html" title="interface in java.lang.foreign"><code>union layout</code></a>. When defining
+ Composite types are modeled as <a href="GroupLayout.html" title="java.lang.foreign 包中的接口">group layouts</a>. More
+ specifically, a C <code>struct</code> type maps to a <a href="StructLayout.html" title="java.lang.foreign 包中的接口">struct layout</a>,
+ whereas a C <code>union</code> type maps to a <a href="UnionLayout.html" title="java.lang.foreign 包中的接口"><code>union layout</code></a>. When defining
  a struct or union layout, clients must pay attention to the size and alignment constraint
  of the corresponding composite type definition in C. For instance, padding between two
  struct fields must be modeled explicitly, by adding an adequately sized
- <a href="PaddingLayout.html" title="interface in java.lang.foreign">padding layout</a> member to the resulting struct layout.
+ <a href="PaddingLayout.html" title="java.lang.foreign 包中的接口">padding layout</a> member to the resulting struct layout.
  <p>
  Finally, pointer types such as <code>int**</code> and <code>int(*)(size_t*, size_t*)</code>
- are modeled as <a href="AddressLayout.html" title="interface in java.lang.foreign">address layouts</a>. When the spatial bounds of
+ are modeled as <a href="AddressLayout.html" title="java.lang.foreign 包中的接口">address layouts</a>. When the spatial bounds of
  the pointer type are known statically, the address layout can be associated with a
  <a href="AddressLayout.html#targetLayout()">target layout</a>. For instance, a pointer that
  is known to point to a C <code>int[2]</code> array can be modeled as an address layout
@@ -275,7 +275,7 @@ MethodHandle strlen = linker.downcallHandle(
      <td style="text-align:center;"><code>long</code></td>
  <tr><th scope="row" style="font-weight:normal"><code>char*</code>, <code>int**</code>, <code>struct Point*</code></th>
      <td style="text-align:center;"><a href="ValueLayout.html#ADDRESS"><code>ValueLayout.ADDRESS</code></a></td>
-     <td style="text-align:center;"><a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a></td>
+     <td style="text-align:center;"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a></td>
  <tr><th scope="row" style="font-weight:normal"><code>int (*ptr)[10]</code></th>
      <td style="text-align:left;">
  <pre>
@@ -284,7 +284,7 @@ MethodHandle strlen = linker.downcallHandle(
          ValueLayout.JAVA_INT)
  );
  </pre>
-     <td style="text-align:center;"><a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a></td>
+     <td style="text-align:center;"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a></td>
  <tr><th scope="row" style="font-weight:normal"><code>struct Point { int x; long y; };</code></th>
      <td style="text-align:left;">
  <pre>
@@ -295,7 +295,7 @@ MethodHandle strlen = linker.downcallHandle(
  );
  </pre>
      </td>
-     <td style="text-align:center;"><a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a></td>
+     <td style="text-align:center;"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a></td>
  <tr><th scope="row" style="font-weight:normal"><code>union Choice { float a; int b; }</code></th>
      <td style="text-align:left;">
  <pre>
@@ -305,7 +305,7 @@ MethodHandle strlen = linker.downcallHandle(
  );
  </pre>
      </td>
-     <td style="text-align:center;"><a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a></td>
+     <td style="text-align:center;"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a></td>
  </tbody>
  </table></blockquote>
  <p>
@@ -382,7 +382,7 @@ MethodHandle qsort = linker.downcallHandle(
  To invoke the <code>qsort</code> downcall handle obtained above, we need a function pointer
  to be passed as the last parameter. That is, we need to create a function pointer out
  of an existing method handle. First, let's write a Java method that can compare two
- int elements passed as pointers (i.e. as <a href="MemorySegment.html" title="interface in java.lang.foreign">memory segments</a>):
+ int elements passed as pointers (i.e. as <a href="MemorySegment.html" title="java.lang.foreign 包中的接口">memory segments</a>):
 
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -415,7 +415,7 @@ MethodHandle comparHandle = MethodHandles.lookup()
  layout for the address layouts of both parameters. This will allow the comparator
  method to access the contents of the array elements to be compared. We then
  <a href="FunctionDescriptor.html#toMethodType()">turn</a> that function descriptor into
- a suitable <a href="../invoke/MethodType.html" title="class in java.lang.invoke">method type</a> which we then use to
+ a suitable <a href="../invoke/MethodType.html" title="java.lang.invoke 包中的类">method type</a> which we then use to
  look up the comparator method handle. We can now create an upcall stub that points to
  that method, and pass it, as a function pointer, to the <code>qsort</code> downcall handle,
  as follows:
@@ -504,7 +504,7 @@ MethodHandle free = linker.downcallHandle(
  <a href="MemorySegment.html#wrapping-addresses">zero</a>. Moreover, the scope of the
  returned segment is the global scope. To provide safe access to the segment, we must,
  unsafely, resize the segment to the desired size (100, in this case). It might also
- be desirable to attach the segment to some existing <a href="Arena.html" title="interface in java.lang.foreign">arena</a>, so that
+ be desirable to attach the segment to some existing <a href="Arena.html" title="java.lang.foreign 包中的接口">arena</a>, so that
  the lifetime of the region of memory backing the segment can be managed automatically,
  as for any other native segment created directly from Java code. Both of these
  operations are accomplished using the restricted method
@@ -662,15 +662,15 @@ MethodHandle printf = linker.downcallHandle(
  foreign code casts the function pointer associated with the upcall stub to a type that
  is incompatible with the type of the upcall stub, and then attempts to invoke the
  function through the resulting function pointer. Moreover, if the method handle
- associated with an upcall stub returns a <a href="MemorySegment.html" title="interface in java.lang.foreign">memory segment</a>,
+ associated with an upcall stub returns a <a href="MemorySegment.html" title="java.lang.foreign 包中的接口">memory segment</a>,
  clients must ensure that this address cannot become invalid after the upcall is
  completed. This can lead to unspecified behavior, and even JVM crashes, since an
  upcall is typically executed in the context of a downcall method handle invocation.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>Implementations of this interface are immutable, thread-safe and
  <a href="../../../../java.base/java/lang/doc-files/ValueBased.html">value-based</a>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>22</dd>
 </dl>
 </div>
@@ -680,14 +680,14 @@ MethodHandle printf = linker.downcallHandle(
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Linker.Option.html" class="type-name-link" title="interface in java.lang.foreign">Linker.Option</a></code></div>
+<div class="col-second even-row-color"><code><a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">A linker option is used to provide additional parameters to a linkage request.</div>
 </div>
@@ -697,52 +697,52 @@ MethodHandle printf = linker.downcallHandle(
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Map.html" title="interface in java.util">Map</a><wbr>&lt;<a href="../String.html" title="class in java.lang">String</a>, <a href="MemoryLayout.html" title="interface in java.lang.foreign">MemoryLayout</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Map.html" title="java.util 包中的接口">Map</a><wbr>&lt;<a href="../String.html" title="java.lang 包中的类">String</a>, <a href="MemoryLayout.html" title="java.lang.foreign 包中的接口">MemoryLayout</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canonicalLayouts()" class="member-name-link">canonicalLayouts</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an unmodifiable mapping between the names of data types used by the ABI
          implemented by this linker and their <em>canonical layouts</em>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#defaultLookup()" class="member-name-link">defaultLookup</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a symbol lookup for symbols in a set of commonly used libraries.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallHandle</a><wbr>(<a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallHandle</a><wbr>(<a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block"><span class="restricted-label">Restricted.</span></div>
 <div class="block">Creates a method handle that is used to call a foreign function with
  the given signature.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallHandle</a><wbr>(<a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a>&nbsp;address,
- <a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)" class="member-name-link">downcallHandle</a><wbr>(<a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a>&nbsp;address,
+ <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block"><span class="restricted-label">Restricted.</span></div>
 <div class="block">Creates a method handle that is used to call a foreign function with
 the given signature and address.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Linker.html" title="interface in java.lang.foreign">Linker</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Linker.html" title="java.lang.foreign 包中的接口">Linker</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#nativeLinker()" class="member-name-link">nativeLinker</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a linker for the ABI associated with the underlying native platform.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upcallStub(java.lang.invoke.MethodHandle,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Arena,java.lang.foreign.Linker.Option...)" class="member-name-link">upcallStub</a><wbr>(<a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a>&nbsp;target,
- <a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#upcallStub(java.lang.invoke.MethodHandle,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Arena,java.lang.foreign.Linker.Option...)" class="member-name-link">upcallStub</a><wbr>(<a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a>&nbsp;target,
+ <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block"><span class="restricted-label">Restricted.</span></div>
 <div class="block">Creates an upcall stub which can be passed to other foreign functions as a
@@ -760,31 +760,31 @@ function pointer, associated with the given arena.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="nativeLinker()">
 <h3>nativeLinker</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Linker.html" title="interface in java.lang.foreign">Linker</a></span>&nbsp;<span class="element-name">nativeLinker</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Linker.html" title="java.lang.foreign 包中的接口">Linker</a></span>&nbsp;<span class="element-name">nativeLinker</span>()</div>
 <div class="block">Returns a linker for the ABI associated with the underlying native platform.
 <p>
 The underlying native platform is the combination of OS and processor where the
 Java runtime is currently executing.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>It is not currently possible to obtain a linker for a different
          combination of OS and processor.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>A native linker implementation is guaranteed to provide canonical
           layouts for <a href="#describing-c-sigs">basic C types</a>.</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The libraries exposed by the <a href="#defaultLookup()">default lookup</a>
           associated with the returned linker are the native libraries loaded in
           the process where the Java runtime is currently executing. For example,
           on Linux, these libraries typically include <code>libc</code>, <code>libm</code>
           and <code>libdl</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a linker for the ABI associated with the underlying native platform</dd>
 </dl>
 </div>
@@ -794,9 +794,9 @@ Java runtime is currently executing.</div>
 <section class="detail" id="downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">
 <h3>downcallHandle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">downcallHandle</span><wbr><span class="parameters">(<a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a>&nbsp;address,
- <a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">downcallHandle</span><wbr><span class="parameters">(<a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a>&nbsp;address,
+ <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</span></div>
 <div class="restricted-block" id="restricted-downcallHandle(java.lang.foreign.MemorySegment,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)"><span class="restricted-label"><code>downcallHandle</code> is a <a href="../doc-files/RestrictedMethods.html">restricted method</a> of the Java platform.</span>
 <div class="restricted-comment">Programs can only use <code>downcallHandle</code> when access to restricted methods is enabled.</div>
 <div class="restricted-comment">Restricted methods are unsafe, and, if used incorrectly, might crash the JVM or result in memory corruption.</div>
@@ -811,27 +811,27 @@ Calling this method is equivalent to the following code:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>address</code> - the native memory segment whose
                 <a href="MemorySegment.html#address()">base address</a> is the address
                 of the target foreign function</dd>
 <dd><code>function</code> - the function descriptor of the target foreign function</dd>
 <dd><code>options</code> - the linker options associated with this linkage request</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a downcall method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the provided function descriptor is not
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the provided function descriptor is not
         supported by this linker</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>!address.isNative()</code>, or if
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>!address.isNative()</code>, or if
         <code>address.equals(MemorySegment.NULL)</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if an invalid combination of linker options
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if an invalid combination of linker options
         is given</dd>
-<dd><code><a href="../IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is in a module that does not have
+<dd><code><a href="../IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is in a module that does not have
         native access enabled</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SymbolLookup.html" title="interface in java.lang.foreign"><code>SymbolLookup</code></a></li>
+<li><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口"><code>SymbolLookup</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -842,8 +842,8 @@ Calling this method is equivalent to the following code:
 <section class="detail" id="downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">
 <h3>downcallHandle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">downcallHandle</span><wbr><span class="parameters">(<a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">downcallHandle</span><wbr><span class="parameters">(<a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</span></div>
 <div class="restricted-block" id="restricted-downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)"><span class="restricted-label"><code>downcallHandle</code> is a <a href="../doc-files/RestrictedMethods.html">restricted method</a> of the Java platform.</span>
 <div class="restricted-comment">Programs can only use <code>downcallHandle</code> when access to restricted methods is enabled.</div>
 <div class="restricted-comment">Restricted methods are unsafe, and, if used incorrectly, might crash the JVM or result in memory corruption.</div>
@@ -851,66 +851,66 @@ Calling this method is equivalent to the following code:
 <div class="block">Creates a method handle that is used to call a foreign function with
  the given signature.
  <p>
- The Java <a href="../invoke/MethodType.html" title="class in java.lang.invoke">method type</a> associated with the
+ The Java <a href="../invoke/MethodType.html" title="java.lang.invoke 包中的类">method type</a> associated with the
  returned method handle is <a href="FunctionDescriptor.html#toMethodType()">derived</a>
  from the argument and return layouts in the function descriptor, but features an
- additional leading parameter of type <a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a>, from which the address
+ additional leading parameter of type <a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a>, from which the address
  of the target foreign function is derived. Moreover, if the function descriptor's
  return layout is a group layout, the resulting downcall method handle accepts an
- additional leading parameter of type <a href="SegmentAllocator.html" title="interface in java.lang.foreign"><code>SegmentAllocator</code></a>, which is used by
+ additional leading parameter of type <a href="SegmentAllocator.html" title="java.lang.foreign 包中的接口"><code>SegmentAllocator</code></a>, which is used by
  the linker runtime to allocate the memory region associated with the struct
  returned by the downcall method handle.
  <p>
  Upon invoking a downcall method handle, the linker provides the following
- guarantees for any argument <code>A</code> of type <a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a> whose
- corresponding layout is an <a href="AddressLayout.html" title="interface in java.lang.foreign">address layout</a>:
+ guarantees for any argument <code>A</code> of type <a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a> whose
+ corresponding layout is an <a href="AddressLayout.html" title="java.lang.foreign 包中的接口">address layout</a>:
  <ul>
      <li><code>A.scope().isAlive() == true</code>. Otherwise, the invocation
-         throws <a href="../IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>;</li>
+         throws <a href="../IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>;</li>
      <li>The invocation occurs in a thread <code>T</code> such that
          <code>A.isAccessibleBy(T) == true</code>.
-         Otherwise, the invocation throws <a href="../WrongThreadException.html" title="class in java.lang"><code>WrongThreadException</code></a>; and</li>
+         Otherwise, the invocation throws <a href="../WrongThreadException.html" title="java.lang 包中的类"><code>WrongThreadException</code></a>; and</li>
      <li><code>A</code> is kept alive during the invocation. For instance,
          if <code>A</code> has been obtained using a <a href="Arena.html#ofShared()">shared arena</a>,
          any attempt to <a href="Arena.html#close()">close</a> the arena while the
          downcall method handle is still executing will result in an
-         <a href="../IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>.</li>
+         <a href="../IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>.</li>
 </ul>
  <p>
  Moreover, if the provided function descriptor's return layout is an
- <a href="AddressLayout.html" title="interface in java.lang.foreign">address layout</a>, invoking the returned method handle
+ <a href="AddressLayout.html" title="java.lang.foreign 包中的接口">address layout</a>, invoking the returned method handle
  will return a native segment associated with the global scope. Under normal
  conditions, the size of the returned segment is <code>0</code>. However, if the
  function descriptor's return layout has a
  <a href="AddressLayout.html#targetLayout()">target layout</a> <code>T</code>, then the size
  of the returned segment is set to <code>T.byteSize()</code>.
  <p>
- The returned method handle will throw an <a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> if the
- <a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a> representing the target address of the foreign function is
- the <a href="MemorySegment.html#NULL"><code>MemorySegment.NULL</code></a> address. If an argument is a <a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a>,
- whose corresponding layout is a <a href="GroupLayout.html" title="interface in java.lang.foreign">group layout</a>, the linker
+ The returned method handle will throw an <a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> if the
+ <a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a> representing the target address of the foreign function is
+ the <a href="MemorySegment.html#NULL"><code>MemorySegment.NULL</code></a> address. If an argument is a <a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a>,
+ whose corresponding layout is a <a href="GroupLayout.html" title="java.lang.foreign 包中的接口">group layout</a>, the linker
  might attempt to access the contents of the segment. As such, one of the
  exceptions specified by the <a href="MemorySegment.html#get(java.lang.foreign.ValueLayout.OfByte,long)"><code>MemorySegment.get(ValueLayout.OfByte, long)</code></a> or
  the <a href="MemorySegment.html#copy(java.lang.foreign.MemorySegment,long,java.lang.foreign.MemorySegment,long,long)"><code>MemorySegment.copy(MemorySegment, long, MemorySegment, long, long)</code></a>
- methods may be thrown. If an argument is a <a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a> whose
- corresponding layout is an <a href="AddressLayout.html" title="interface in java.lang.foreign">address layout</a>, the linker
- will throw an <a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> if the segment is a heap memory
+ methods may be thrown. If an argument is a <a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a> whose
+ corresponding layout is an <a href="AddressLayout.html" title="java.lang.foreign 包中的接口">address layout</a>, the linker
+ will throw an <a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> if the segment is a heap memory
  segment, unless heap memory segments are explicitly allowed through the
  <a href="Linker.Option.html#critical(boolean)"><code>Linker.Option.critical(boolean)</code></a> linker option. The returned method handle
- will additionally throw <a href="../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> if any argument passed to it
+ will additionally throw <a href="../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> if any argument passed to it
  is <code>null</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>function</code> - the function descriptor of the target foreign function</dd>
 <dd><code>options</code> - the linker options associated with this linkage request</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a downcall method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the provided function descriptor is not
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the provided function descriptor is not
          supported by this linker</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if an invalid combination of linker options
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if an invalid combination of linker options
          is given</dd>
-<dd><code><a href="../IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is in a module that does not have
+<dd><code><a href="../IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is in a module that does not have
          native access enabled</dd>
 </dl>
 </div>
@@ -920,10 +920,10 @@ Calling this method is equivalent to the following code:
 <section class="detail" id="upcallStub(java.lang.invoke.MethodHandle,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Arena,java.lang.foreign.Linker.Option...)">
 <h3>upcallStub</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></span>&nbsp;<span class="element-name">upcallStub</span><wbr><span class="parameters">(<a href="../invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a>&nbsp;target,
- <a href="FunctionDescriptor.html" title="interface in java.lang.foreign">FunctionDescriptor</a>&nbsp;function,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena,
- <a href="Linker.Option.html" title="interface in java.lang.foreign">Linker.Option</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="return-type"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></span>&nbsp;<span class="element-name">upcallStub</span><wbr><span class="parameters">(<a href="../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a>&nbsp;target,
+ <a href="FunctionDescriptor.html" title="java.lang.foreign 包中的接口">FunctionDescriptor</a>&nbsp;function,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena,
+ <a href="Linker.Option.html" title="java.lang.foreign 包中的接口">Linker.Option</a>...&nbsp;options)</span></div>
 <div class="restricted-block" id="restricted-upcallStub(java.lang.invoke.MethodHandle,java.lang.foreign.FunctionDescriptor,java.lang.foreign.Arena,java.lang.foreign.Linker.Option...)"><span class="restricted-label"><code>upcallStub</code> is a <a href="../doc-files/RestrictedMethods.html">restricted method</a> of the Java platform.</span>
 <div class="restricted-comment">Programs can only use <code>upcallStub</code> when access to restricted methods is enabled.</div>
 <div class="restricted-comment">Restricted methods are unsafe, and, if used incorrectly, might crash the JVM or result in memory corruption.</div>
@@ -940,7 +940,7 @@ provided arena is a confined arena, the returned upcall stub segment will be
 deallocated when the provided confined arena is <a href="Arena.html#close()">closed</a>.
 <p>
 An upcall stub argument whose corresponding layout is an
-<a href="AddressLayout.html" title="interface in java.lang.foreign">address layout</a> is a native segment associated with the
+<a href="AddressLayout.html" title="java.lang.foreign 包中的接口">address layout</a> is a native segment associated with the
 global scope. Under normal conditions, the size of this segment argument is
 <code>0</code>. However, if the address layout has a
 <a href="AddressLayout.html#targetLayout()">target layout</a> <code>T</code>, then the size
@@ -954,25 +954,25 @@ catch any unexpected exceptions. This can be done using the
 method handle combinator, and handle exceptions as desired in the corresponding
 catch block.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>target</code> - the target method handle</dd>
 <dd><code>function</code> - the upcall stub function descriptor</dd>
 <dd><code>arena</code> - the arena associated with the returned upcall stub segment</dd>
 <dd><code>options</code> - the linker options associated with this linkage request</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a zero-length segment whose address is the address of the upcall stub</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the provided function descriptor is not
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the provided function descriptor is not
         supported by this linker</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the type of <code>target</code> is incompatible
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the type of <code>target</code> is incompatible
         with the type <a href="FunctionDescriptor.html#toMethodType()">derived</a>
         from <code>function</code></dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if it is determined that the target method handle
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if it is determined that the target method handle
         can throw an exception</dd>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
-<dd><code><a href="../WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
+<dd><code><a href="../WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
         is called from a thread <code>T</code>, other than the arena's owner thread</dd>
-<dd><code><a href="../IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is in a module that does not have
+<dd><code><a href="../IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is in a module that does not have
         native access enabled</dd>
 </dl>
 </div>
@@ -982,25 +982,25 @@ catch block.</div>
 <section class="detail" id="defaultLookup()">
 <h3>defaultLookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></span>&nbsp;<span class="element-name">defaultLookup</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></span>&nbsp;<span class="element-name">defaultLookup</span>()</div>
 <div class="block">Returns a symbol lookup for symbols in a set of commonly used libraries.
 <p>
-Each <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> is responsible for choosing libraries that are widely
+Each <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> is responsible for choosing libraries that are widely
 recognized as useful on the OS and processor combination supported by the
-<a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a>. Accordingly, the precise set of symbols exposed by the symbol
-lookup is unspecified; it varies from one <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> to another.</div>
+<a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a>. Accordingly, the precise set of symbols exposed by the symbol
+lookup is unspecified; it varies from one <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> to another.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>It is strongly recommended that the result of <a href="#defaultLookup()"><code>defaultLookup()</code></a>
           exposes a set of symbols that is stable over time. Clients of
           <a href="#defaultLookup()"><code>defaultLookup()</code></a> are likely to fail if a symbol that was
           previously exposed by the symbol lookup is no longer exposed.
-          <p>If an implementer provides <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> implementations for
+          <p>If an implementer provides <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> implementations for
           multiple OS and processor combinations, then it is strongly
           recommended that the result of <a href="#defaultLookup()"><code>defaultLookup()</code></a> exposes, as much
           as possible, a consistent set of symbols across all the OS and processor
           combinations.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a symbol lookup for symbols in a set of commonly used libraries</dd>
 </dl>
 </div>
@@ -1010,27 +1010,27 @@ lookup is unspecified; it varies from one <a href="Linker.html" title="interface
 <section class="detail" id="canonicalLayouts()">
 <h3>canonicalLayouts</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../String.html" title="class in java.lang">String</a>, <a href="MemoryLayout.html" title="interface in java.lang.foreign">MemoryLayout</a>&gt;</span>&nbsp;<span class="element-name">canonicalLayouts</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../String.html" title="java.lang 包中的类">String</a>, <a href="MemoryLayout.html" title="java.lang.foreign 包中的接口">MemoryLayout</a>&gt;</span>&nbsp;<span class="element-name">canonicalLayouts</span>()</div>
 <div class="block">Returns an unmodifiable mapping between the names of data types used by the ABI
          implemented by this linker and their <em>canonical layouts</em>.
 <p>
-Each <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> is responsible for choosing the data types that are widely
+Each <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> is responsible for choosing the data types that are widely
 recognized as useful on the OS and processor combination supported by the
-<a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a>. Accordingly, the precise set of data type names and canonical
-layouts exposed by the linker are unspecified; they vary from one <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a>
+<a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a>. Accordingly, the precise set of data type names and canonical
+layouts exposed by the linker are unspecified; they vary from one <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a>
 to another.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>It is strongly recommended that the result of <a href="#canonicalLayouts()"><code>canonicalLayouts()</code></a>
           exposes a set of symbols that is stable over time. Clients of
           <a href="#canonicalLayouts()"><code>canonicalLayouts()</code></a> are likely to fail if a data type that was
           previously exposed by the linker is no longer exposed, or if its
           canonical layout is updated.
-          <p>If an implementer provides <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> implementations for multiple
+          <p>If an implementer provides <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> implementations for multiple
           OS and processor combinations, then it is strongly recommended that the
           result of <a href="#canonicalLayouts()"><code>canonicalLayouts()</code></a> exposes, as much as possible,
           a consistent set of symbols across all the OS and processor combinations.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an unmodifiable mapping between the names of data types used by the ABI
          implemented by this linker and their <em>canonical layouts</em></dd>
 </dl>

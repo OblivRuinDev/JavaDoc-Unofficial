@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.invoke</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#jvm_mods" tabindex="0">Dynamic resolution of call sites and constants</a>
 <ol class="toc-list">
@@ -71,13 +71,13 @@ loadScripts(document, 'script');</script>
 </li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.invoke" class="title">Package java.lang.invoke</h1>
+<h1 title="包 java.lang.invoke" class="title">包 java.lang.invoke</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -90,16 +90,16 @@ with the Java Virtual Machine.
 As described in the Java Virtual Machine Specification, certain types in this package
 are given special treatment by the virtual machine:
 <ul>
-<li>The classes <a href="MethodHandle.html" title="class in java.lang.invoke"><code>MethodHandle</code></a> and
-<a href="VarHandle.html" title="class in java.lang.invoke"><code>VarHandle</code></a> contain
+<li>The classes <a href="MethodHandle.html" title="java.lang.invoke 包中的类"><code>MethodHandle</code></a> and
+<a href="VarHandle.html" title="java.lang.invoke 包中的类"><code>VarHandle</code></a> contain
 <a href="MethodHandle.html#sigpoly">signature polymorphic methods</a>
 which can be linked regardless of their type descriptor.
 Normally, method linkage requires exact matching of type descriptors.
 </li>
 
 <li>The JVM bytecode format supports immediate constants of
-the classes <a href="MethodHandle.html" title="class in java.lang.invoke"><code>MethodHandle</code></a> and
-<a href="MethodType.html" title="class in java.lang.invoke"><code>MethodType</code></a>.
+the classes <a href="MethodHandle.html" title="java.lang.invoke 包中的类"><code>MethodHandle</code></a> and
+<a href="MethodType.html" title="java.lang.invoke 包中的类"><code>MethodType</code></a>.
 </li>
 
 <li>The <code>invokedynamic</code> instruction makes use of bootstrap <code>MethodHandle</code>
@@ -125,7 +125,7 @@ Before the JVM can execute an <code>invokedynamic</code> instruction,
 the instruction must first be <em>linked</em>.
 Linking is accomplished by calling a <em>bootstrap method</em>
 which is given the static information content of the call,
-and which must produce a <a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a>
+and which must produce a <a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a>
 that gives the behavior of the invocation.
 <p>
 Each <code>invokedynamic</code> instruction statically specifies its own
@@ -174,7 +174,7 @@ in which dynamically-computed constant or call site occurs</li>
 </ul>
 <p>
 For a dynamically-computed call site, the returned result must be a non-null reference to a
-<a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a>.
+<a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a>.
 The type of the call site's target must be exactly equal to the type
 derived from the invocation's type descriptor and passed to
 the bootstrap method. If these conditions are not met, a <code>BootstrapMethodError</code> is thrown.
@@ -211,7 +211,7 @@ unlinked or linked to a unique <code>CallSite</code> object.
 <p>
 In an application which requires <code>invokedynamic</code> instructions with individually
 mutable behaviors, their bootstrap methods should produce distinct
-<a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a> objects, one for each linkage request.
+<a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a> objects, one for each linkage request.
 Alternatively, an application can link a single <code>CallSite</code> object
 to several <code>invokedynamic</code> instructions, in which case
 a change to the target method will become visible at each of
@@ -324,7 +324,7 @@ dynamic constant has a field type descriptor of <code>"C"</code>
 <code>Object</code>, <code>Character</code>, or <code>char</code>, but not
 <code>int</code> or <code>Integer</code>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </section>
@@ -333,10 +333,10 @@ dynamic constant has a field type descriptor of <code>"C"</code>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.lang</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classes that are fundamental to the design of the Java
@@ -347,135 +347,135 @@ programming language.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">异常类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CallSite.html" title="class in java.lang.invoke">CallSite</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CallSite.html" title="java.lang.invoke 包中的类">CallSite</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <code>CallSite</code> is a holder for a variable <a href="MethodHandle.html" title="class in java.lang.invoke"><code>MethodHandle</code></a>,
+<div class="block">A <code>CallSite</code> is a holder for a variable <a href="MethodHandle.html" title="java.lang.invoke 包中的类"><code>MethodHandle</code></a>,
  which is called its <code>target</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConstantBootstraps.html" title="class in java.lang.invoke">ConstantBootstraps</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConstantBootstraps.html" title="java.lang.invoke 包中的类">ConstantBootstraps</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Bootstrap methods for dynamically-computed constants.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConstantCallSite.html" title="class in java.lang.invoke">ConstantCallSite</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConstantCallSite.html" title="java.lang.invoke 包中的类">ConstantCallSite</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <code>ConstantCallSite</code> is a <a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a> whose target is permanent, and can never be changed.</div>
+<div class="block">A <code>ConstantCallSite</code> is a <a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a> whose target is permanent, and can never be changed.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="LambdaConversionException.html" title="class in java.lang.invoke">LambdaConversionException</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="LambdaConversionException.html" title="java.lang.invoke 包中的类">LambdaConversionException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">LambdaConversionException</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LambdaMetafactory.html" title="class in java.lang.invoke">LambdaMetafactory</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LambdaMetafactory.html" title="java.lang.invoke 包中的类">LambdaMetafactory</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Methods to facilitate the creation of simple "function objects" that
-implement one or more interfaces by delegation to a provided <a href="MethodHandle.html" title="class in java.lang.invoke"><code>MethodHandle</code></a>,
+implement one or more interfaces by delegation to a provided <a href="MethodHandle.html" title="java.lang.invoke 包中的类"><code>MethodHandle</code></a>,
 possibly after type adaptation and partial evaluation of arguments.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A method handle is a typed, directly executable reference to an underlying method,
  constructor, field, or similar low-level operation, with optional
  transformations of arguments or return values.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodHandleInfo.html" title="interface in java.lang.invoke">MethodHandleInfo</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodHandleInfo.html" title="java.lang.invoke 包中的接口">MethodHandleInfo</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A symbolic reference obtained by cracking a direct method handle
 into its constituent symbolic parts.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandleProxies.html" title="class in java.lang.invoke">MethodHandleProxies</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandleProxies.html" title="java.lang.invoke 包中的类">MethodHandleProxies</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">This class consists exclusively of static methods that help adapt
 method handles to other JVM types, such as interfaces.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MethodHandles.html" title="class in java.lang.invoke">MethodHandles</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MethodHandles.html" title="java.lang.invoke 包中的类">MethodHandles</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">This class consists exclusively of static methods that operate on or return
 method handles.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandles.Lookup.html" title="class in java.lang.invoke">MethodHandles.Lookup</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类">MethodHandles.Lookup</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <em>lookup object</em> is a factory for creating method handles,
 when the creation requires access checking.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="MethodHandles.Lookup.ClassOption.html" title="enum class in java.lang.invoke">MethodHandles.Lookup.ClassOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="MethodHandles.Lookup.ClassOption.html" title="java.lang.invoke 包中的枚举类">MethodHandles.Lookup.ClassOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The set of class options that specify whether a hidden class created by
 <a href="MethodHandles.Lookup.html#defineHiddenClass(byte%5B%5D,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)"><code>Lookup::defineHiddenClass</code></a> method is dynamically added as a new member
 to the nest of a lookup class and/or whether a hidden class has
 a strong relationship with the class loader marked as its defining loader.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A method type represents the arguments and return type accepted and
 returned by a method handle, or the arguments and return type passed
 and expected  by a method handle caller.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MutableCallSite.html" title="class in java.lang.invoke">MutableCallSite</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MutableCallSite.html" title="java.lang.invoke 包中的类">MutableCallSite</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <code>MutableCallSite</code> is a <a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a> whose target variable
+<div class="block">A <code>MutableCallSite</code> is a <a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a> whose target variable
  behaves like an ordinary field.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SerializedLambda.html" title="class in java.lang.invoke">SerializedLambda</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SerializedLambda.html" title="java.lang.invoke 包中的类">SerializedLambda</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Serialized form of a lambda expression.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="StringConcatException.html" title="class in java.lang.invoke">StringConcatException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="StringConcatException.html" title="java.lang.invoke 包中的类">StringConcatException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">StringConcatException is thrown by <a href="StringConcatFactory.html" title="class in java.lang.invoke"><code>StringConcatFactory</code></a> when linkage
+<div class="block">StringConcatException is thrown by <a href="StringConcatFactory.html" title="java.lang.invoke 包中的类"><code>StringConcatFactory</code></a> when linkage
 invariants are violated.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StringConcatFactory.html" title="class in java.lang.invoke">StringConcatFactory</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StringConcatFactory.html" title="java.lang.invoke 包中的类">StringConcatFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Methods to facilitate the creation of String concatenation methods, that
 can be used to efficiently concatenate a known number of arguments of known
 types, possibly after type adaptation and partial evaluation of arguments.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SwitchPoint.html" title="class in java.lang.invoke">SwitchPoint</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SwitchPoint.html" title="java.lang.invoke 包中的类">SwitchPoint</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">
 A <code>SwitchPoint</code> is an object which can publish state transitions to other threads.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.html" title="interface in java.lang.invoke">TypeDescriptor</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.html" title="java.lang.invoke 包中的接口">TypeDescriptor</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An entity that has a type descriptor.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.OfField.html" title="interface in java.lang.invoke">TypeDescriptor.OfField</a>&lt;F extends <a href="TypeDescriptor.OfField.html" title="interface in java.lang.invoke">TypeDescriptor.OfField</a>&lt;F&gt;&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.OfField.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfField</a>&lt;F extends <a href="TypeDescriptor.OfField.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfField</a>&lt;F&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">An entity that has a field type descriptor.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;F extends <a href="TypeDescriptor.OfField.html" title="interface in java.lang.invoke">TypeDescriptor.OfField</a>&lt;F&gt;, M extends <a href="TypeDescriptor.OfMethod.html" title="interface in java.lang.invoke">TypeDescriptor.OfMethod</a>&lt;F,<wbr>M&gt;&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;F extends <a href="TypeDescriptor.OfField.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfField</a>&lt;F&gt;, M extends <a href="TypeDescriptor.OfMethod.html" title="java.lang.invoke 包中的接口">TypeDescriptor.OfMethod</a>&lt;F,<wbr>M&gt;&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An entity that has a method type descriptor
 Method descriptors conforming to JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.3.3">4.3.3</a> can be described
 nominally via <a href="MethodType.html#describeConstable()"><code>MethodType::describeConstable</code></a>;
 otherwise they cannot be described nominally.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A VarHandle is a dynamically strongly typed reference to a variable, or to a
 parametrically-defined family of variables, including static fields,
 non-static fields, array elements, or components of an off-heap data
 structure.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">The set of access modes that specify how a variable, referenced by a
 VarHandle, is accessed.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VarHandle.VarHandleDesc.html" title="class in java.lang.invoke">VarHandle.VarHandleDesc</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VarHandle.VarHandleDesc.html" title="java.lang.invoke 包中的类">VarHandle.VarHandleDesc</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <a href="../../../../java.base/java/lang/constant/package-summary.html#nominal">nominal descriptor</a> for a
-<a href="VarHandle.html" title="class in java.lang.invoke"><code>VarHandle</code></a> constant.</div>
+<a href="VarHandle.html" title="java.lang.invoke 包中的类"><code>VarHandle</code></a> constant.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="VolatileCallSite.html" title="class in java.lang.invoke">VolatileCallSite</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="VolatileCallSite.html" title="java.lang.invoke 包中的类">VolatileCallSite</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <code>VolatileCallSite</code> is a <a href="CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a> whose target acts like a volatile variable.</div>
+<div class="block">A <code>VolatileCallSite</code> is a <a href="CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a> whose target acts like a volatile variable.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Thrown to indicate that code has attempted to call a method handle
 via the wrong method type.</div>

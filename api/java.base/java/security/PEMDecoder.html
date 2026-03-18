@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.security</a></li>
 <li><a href="PEMDecoder.html" class="current-selection">PEMDecoder</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,11 +61,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#of()" tabindex="0">of()</a></li>
 <li><a href="#decode(java.lang.String)" tabindex="0">decode(String)</a></li>
@@ -81,16 +81,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class PEMDecoder" class="title">Class PEMDecoder</h1>
+<h1 title="类 PEMDecoder" class="title">类 PEMDecoder</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.security.PEMDecoder</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">PEMDecoder</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="preview-block" id="preview-java.security.PEMDecoder"><span class="preview-label"><code>PEMDecoder</code> is a preview API of the Java platform.</span>
 <div class="preview-comment">Programs can only use <code>PEMDecoder</code> when preview features are enabled.</div>
 <div class="preview-comment">Preview features may be removed in a future release, or upgraded to permanent features of the Java platform.</div>
@@ -104,7 +104,7 @@ and footer.
 
 <p> The <a href="#decode(java.lang.String)">decode(String)</a> and <a href="#decode(java.io.InputStream)">decode(InputStream)</a>
 methods return an instance of a class that matches the data
-type and implements <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>.
+type and implements <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>.
 
 <p> The following lists the supported PEM types and the <code>DEREncodable</code>
 types that each are decoded as:
@@ -131,7 +131,7 @@ ECPublicKey and ECPrivateKey for Elliptic Curve keys.
 
 <p> If the PEM type does not have a corresponding class,
 <code>decode(String)</code> and <code>decode(InputStream)</code> will return a
-<a href="PEMRecord.html" title="class in java.security"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">PREVIEW</a></sup>.
+<a href="PEMRecord.html" title="java.security 包中的类"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">预览</a></sup>.
 
 <p> The <a href="#decode(java.lang.String,java.lang.Class)">decode(String, Class)</a> and
 <a href="#decode(java.io.InputStream,java.lang.Class)">decode(InputStream, Class)</a> methods take a class parameter
@@ -144,20 +144,20 @@ If the class parameter is set to <code>X509EncodedKeySpec.class</code>, the
 public key will be returned in that format.  Any type of PEM data can be
 decoded into a <code>PEMRecord</code> by specifying <code>PEMRecord.class</code>.
 If the class parameter doesn't match the PEM content, a
-<a href="../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a> will be thrown.
+<a href="../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a> will be thrown.
 
 <p> A new <code>PEMDecoder</code> instance is created when configured
 with <a href="#withFactory(java.security.Provider)">withFactory(Provider)</a> and/or
 <a href="#withDecryption(char%5B%5D)">withDecryption(char[])</a>. <a href="#withFactory(java.security.Provider)">withFactory(Provider)</a>
-configures the decoder to use only <a href="KeyFactory.html" title="class in java.security">KeyFactory</a> and
-<a href="cert/CertificateFactory.html" title="class in java.security.cert">CertificateFactory</a> instances from the given <code>Provider</code>.
+configures the decoder to use only <a href="KeyFactory.html" title="java.security 包中的类">KeyFactory</a> and
+<a href="cert/CertificateFactory.html" title="java.security.cert 包中的类">CertificateFactory</a> instances from the given <code>Provider</code>.
 <a href="#withDecryption(char%5B%5D)">withDecryption(char[])</a> configures the decoder to decrypt all
 encrypted private key PEM data using the given password.
 Configuring an instance for decryption does not prevent decoding with
 unencrypted PEM. Any encrypted PEM that fails decryption
-will throw a <a href="../lang/RuntimeException.html" title="class in java.lang"><code>RuntimeException</code></a>. When an encrypted private key PEM is
+will throw a <a href="../lang/RuntimeException.html" title="java.lang 包中的类"><code>RuntimeException</code></a>. When an encrypted private key PEM is
 used with a decoder not configured for decryption, an
-<a href="../../javax/crypto/EncryptedPrivateKeyInfo.html" title="class in javax.crypto"><code>EncryptedPrivateKeyInfo</code></a> object is returned.
+<a href="../../javax/crypto/EncryptedPrivateKeyInfo.html" title="javax.crypto 包中的类"><code>EncryptedPrivateKeyInfo</code></a> object is returned.
 
 <p>This class is immutable and thread-safe.
 
@@ -179,26 +179,26 @@ and a factory provider:
 </div>
 </div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>An implementation may support other PEM types and
 <code>DEREncodable</code> objects. This implementation additionally supports
 the following PEM types:  <code>X509 CERTIFICATE</code>,
 <code>X.509 CERTIFICATE</code>, <code>CRL</code>, and <code>RSA PRIVATE KEY</code>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc1421"><span id="RFC1421:PrivacyEnhancementforInternetElectronicMail" class="search-tag-result">RFC 1421: Privacy Enhancement for Internet Electronic Mail</span></a></li>
 <li><a href="https://www.rfc-editor.org/info/rfc7468"><span id="RFC7468:TextualEncodingsofPKIX,PKCS,andCMSStructures" class="search-tag-result">RFC 7468: Textual Encodings of PKIX, PKCS, and CMS Structures</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="PEMEncoder.html" title="class in java.security"><code>PEMEncoder</code></a><sup class="preview-mark"><a href="PEMEncoder.html#preview-java.security.PEMEncoder">PREVIEW</a></sup></li>
-<li><a href="PEMRecord.html" title="class in java.security"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">PREVIEW</a></sup></li>
-<li><a href="../../javax/crypto/EncryptedPrivateKeyInfo.html" title="class in javax.crypto"><code>EncryptedPrivateKeyInfo</code></a></li>
+<li><a href="PEMEncoder.html" title="java.security 包中的类"><code>PEMEncoder</code></a><sup class="preview-mark"><a href="PEMEncoder.html#preview-java.security.PEMEncoder">预览</a></sup></li>
+<li><a href="PEMRecord.html" title="java.security 包中的类"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">预览</a></sup></li>
+<li><a href="../../javax/crypto/EncryptedPrivateKeyInfo.html" title="javax.crypto 包中的类"><code>EncryptedPrivateKeyInfo</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -209,62 +209,62 @@ the following PEM types:  <code>X509 CERTIFICATE</code>,
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.io.InputStream)" class="member-name-link">decode</a><wbr>(<a href="../io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.io.InputStream)" class="member-name-link">decode</a><wbr>(<a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Decodes and returns a <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup> from the given
+<div class="block">Decodes and returns a <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup> from the given
 <code>InputStream</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S extends <a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>&gt;<br>S</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.io.InputStream,java.lang.Class)" class="member-name-link">decode</a><wbr>(<a href="../io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;tClass)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S extends <a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>&gt;<br>S</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.io.InputStream,java.lang.Class)" class="member-name-link">decode</a><wbr>(<a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;tClass)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Decodes and returns the specified class for the given
-<a href="../io/InputStream.html" title="class in java.io"><code>InputStream</code></a>.</div>
+<a href="../io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.lang.String)" class="member-name-link">decode</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;str)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.lang.String)" class="member-name-link">decode</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;str)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Decodes and returns a <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup> from the given <code>String</code>.</div>
+<div class="block">Decodes and returns a <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup> from the given <code>String</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S extends <a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>&gt;<br>S</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.lang.String,java.lang.Class)" class="member-name-link">decode</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;str,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;tClass)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;S extends <a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>&gt;<br>S</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decode(java.lang.String,java.lang.Class)" class="member-name-link">decode</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;str,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;tClass)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Decodes and returns a <code>DEREncodable</code> of the specified class from
 the given PEM string.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of()" class="member-name-link">of</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an instance of <code>PEMDecoder</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withDecryption(char%5B%5D)" class="member-name-link">withDecryption</a><wbr>(char[]&nbsp;password)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this <code>PEMDecoder</code> that decodes and decrypts
 encrypted private keys using the specified password.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFactory(java.security.Provider)" class="member-name-link">withFactory</a><wbr>(<a href="Provider.html" title="class in java.security">Provider</a>&nbsp;provider)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withFactory(java.security.Provider)" class="member-name-link">withFactory</a><wbr>(<a href="Provider.html" title="java.security 包中的类">Provider</a>&nbsp;provider)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this <code>PEMDecoder</code> instance that uses
-<a href="KeyFactory.html" title="class in java.security"><code>KeyFactory</code></a> and <a href="cert/CertificateFactory.html" title="class in java.security.cert"><code>CertificateFactory</code></a> implementations
-from the specified <a href="Provider.html" title="class in java.security"><code>Provider</code></a> to produce cryptographic objects.</div>
+<a href="KeyFactory.html" title="java.security 包中的类"><code>KeyFactory</code></a> and <a href="cert/CertificateFactory.html" title="java.security.cert 包中的类"><code>CertificateFactory</code></a> implementations
+from the specified <a href="Provider.html" title="java.security 包中的类"><code>Provider</code></a> to produce cryptographic objects.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -275,16 +275,16 @@ from the specified <a href="Provider.html" title="class in java.security"><code>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="of()">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></span>&nbsp;<span class="element-name">of</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></span>&nbsp;<span class="element-name">of</span>()</div>
 <div class="block">Returns an instance of <code>PEMDecoder</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>PEMDecoder</code> instance</dd>
 </dl>
 </div>
@@ -294,8 +294,8 @@ from the specified <a href="Provider.html" title="class in java.security"><code>
 <section class="detail" id="decode(java.lang.String)">
 <h3>decode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;str)</span></div>
-<div class="block">Decodes and returns a <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup> from the given <code>String</code>.
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;str)</span></div>
+<div class="block">Decodes and returns a <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup> from the given <code>String</code>.
 
 <p> This method reads the <code>String</code> until PEM data is found
 or the end of the <code>String</code> is reached.  If no PEM data is found,
@@ -304,7 +304,7 @@ an <code>IllegalArgumentException</code> is thrown.
 <p> This method returns a Java API cryptographic object,
 such as a <code>PrivateKey</code>, if the PEM type is supported.
 Any non-PEM data preceding the PEM header is ignored by the decoder.
-Otherwise, a <a href="PEMRecord.html" title="class in java.security"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">PREVIEW</a></sup> will be returned containing
+Otherwise, a <a href="PEMRecord.html" title="java.security 包中的类"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">预览</a></sup> will be returned containing
 the type identifier and Base64-encoded data.
 Any non-PEM data preceding the PEM header will be stored in
 <code>leadingData</code>.
@@ -312,14 +312,14 @@ Any non-PEM data preceding the PEM header will be stored in
 <p> Input consumed by this method is read in as
 <a href="../nio/charset/StandardCharsets.html#UTF_8"><code>UTF-8</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>str</code> - a String containing PEM data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>DEREncodable</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - on error in decoding or no PEM data
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - on error in decoding or no PEM data
 found</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - when <code>str</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - when <code>str</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -328,9 +328,9 @@ found</dd>
 <section class="detail" id="decode(java.io.InputStream)">
 <h3>decode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is)</span>
-                           throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
-<div class="block">Decodes and returns a <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup> from the given
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is)</span>
+                           throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
+<div class="block">Decodes and returns a <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup> from the given
 <code>InputStream</code>.
 
 <p> This method reads from the <code>InputStream</code> until the end of
@@ -342,7 +342,7 @@ on the <code>InputStream</code>.
 <p> This method returns a Java API cryptographic object,
 such as a <code>PrivateKey</code>, if the PEM type is supported.
 Any non-PEM data preceding the PEM header is ignored by the decoder.
-Otherwise, a <a href="PEMRecord.html" title="class in java.security"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">PREVIEW</a></sup> will be returned containing
+Otherwise, a <a href="PEMRecord.html" title="java.security 包中的类"><code>PEMRecord</code></a><sup class="preview-mark"><a href="PEMRecord.html#preview-java.security.PEMRecord">预览</a></sup> will be returned containing
 the type identifier and Base64-encoded data.
 Any non-PEM data preceding the PEM header will be stored in
 <code>leadingData</code>.
@@ -350,16 +350,16 @@ Any non-PEM data preceding the PEM header will be stored in
 <p> If no PEM data is found, an <code>IllegalArgumentException</code> is
 thrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>is</code> - InputStream containing PEM data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>DEREncodable</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - on IO or PEM syntax error where the
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - on IO or PEM syntax error where the
 <code>InputStream</code> did not complete decoding.</dd>
-<dd><code><a href="../io/EOFException.html" title="class in java.io">EOFException</a></code> - at the end of the <code>InputStream</code></dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - on error in decoding</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - when <code>is</code> is null</dd>
+<dd><code><a href="../io/EOFException.html" title="java.io 包中的类">EOFException</a></code> - at the end of the <code>InputStream</code></dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - on error in decoding</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - when <code>is</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -368,10 +368,10 @@ thrown.</div>
 <section class="detail" id="decode(java.lang.String,java.lang.Class)">
 <h3>decode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;S extends <a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>&gt;</span>&nbsp;<span class="return-type">S</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;str,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;tClass)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;S extends <a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>&gt;</span>&nbsp;<span class="return-type">S</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;str,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;tClass)</span></div>
 <div class="block">Decodes and returns a <code>DEREncodable</code> of the specified class from
-the given PEM string. <code>tClass</code> must extend <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>
+the given PEM string. <code>tClass</code> must extend <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>
 and be an appropriate class for the PEM type.
 
 <p> This method reads the <code>String</code> until PEM data is found
@@ -379,7 +379,7 @@ or the end of the <code>String</code> is reached.  If no PEM data is found,
 an <code>IllegalArgumentException</code> is thrown.
 
 <p> If the class parameter is <code>PEMRecord.class</code>,
-a <a href="PEMRecord.html" title="class in java.security">PEMRecord</a> is returned containing the
+a <a href="PEMRecord.html" title="java.security 包中的类">PEMRecord</a> is returned containing the
 type identifier and Base64 encoding. Any non-PEM data preceding
 the PEM header will be stored in <code>leadingData</code>.  Other
 class parameters will not return preceding non-PEM data.
@@ -387,19 +387,19 @@ class parameters will not return preceding non-PEM data.
 <p> Input consumed by this method is read in as
 <a href="../nio/charset/StandardCharsets.html#UTF_8"><code>UTF-8</code></a>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="decode(java.lang.String,java.lang.Class)-type-param-S"><code>S</code> - Class type parameter that extends <code>DEREncodable</code></span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>str</code> - the String containing PEM data</dd>
 <dd><code>tClass</code> - the returned object class that implements
 <code>DEREncodable</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>DEREncodable</code> specified by <code>tClass</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - on error in decoding or no PEM data
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - on error in decoding or no PEM data
 found</dd>
-<dd><code><a href="../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if <code>tClass</code> is invalid for the PEM type</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - when any input values are null</dd>
+<dd><code><a href="../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if <code>tClass</code> is invalid for the PEM type</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - when any input values are null</dd>
 </dl>
 </div>
 </section>
@@ -408,11 +408,11 @@ found</dd>
 <section class="detail" id="decode(java.io.InputStream,java.lang.Class)">
 <h3>decode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;S extends <a href="DEREncodable.html" title="interface in java.security">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup>&gt;</span>&nbsp;<span class="return-type">S</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;tClass)</span>
-                                         throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;S extends <a href="DEREncodable.html" title="java.security 包中的接口">DEREncodable</a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup>&gt;</span>&nbsp;<span class="return-type">S</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;tClass)</span>
+                                         throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Decodes and returns the specified class for the given
-<a href="../io/InputStream.html" title="class in java.io"><code>InputStream</code></a>.  The class must extend <a href="DEREncodable.html" title="interface in java.security"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">PREVIEW</a></sup> and be
+<a href="../io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a>.  The class must extend <a href="DEREncodable.html" title="java.security 包中的接口"><code>DEREncodable</code></a><sup class="preview-mark"><a href="DEREncodable.html#preview-java.security.DEREncodable">预览</a></sup> and be
 an appropriate class for the PEM type.
 
 <p> This method reads from the <code>InputStream</code> until the end of
@@ -422,7 +422,7 @@ It is recommended to perform no further decoding operations
 on the <code>InputStream</code>.
 
 <p> If the class parameter is <code>PEMRecord.class</code>,
-a <a href="PEMRecord.html" title="class in java.security">PEMRecord</a> is returned containing the
+a <a href="PEMRecord.html" title="java.security 包中的类">PEMRecord</a> is returned containing the
 type identifier and Base64 encoding. Any non-PEM data preceding
 the PEM header will be stored in <code>leadingData</code>.  Other
 class parameters will not return preceding non-PEM data.
@@ -430,22 +430,22 @@ class parameters will not return preceding non-PEM data.
 <p> If no PEM data is found, an <code>IllegalArgumentException</code> is
 thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="decode(java.io.InputStream,java.lang.Class)-type-param-S"><code>S</code> - Class type parameter that extends <code>DEREncodable</code>.</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>is</code> - an InputStream containing PEM data</dd>
 <dd><code>tClass</code> - the returned object class that implements
   <code>DEREncodable</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>DEREncodable</code> typecast to <code>tClass</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - on IO or PEM syntax error where the
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - on IO or PEM syntax error where the
 <code>InputStream</code> did not complete decoding.</dd>
-<dd><code><a href="../io/EOFException.html" title="class in java.io">EOFException</a></code> - at the end of the <code>InputStream</code></dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - on error in decoding</dd>
-<dd><code><a href="../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if <code>tClass</code> is invalid for the PEM type</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - when any input values are null</dd>
-<dt>See Also:</dt>
+<dd><code><a href="../io/EOFException.html" title="java.io 包中的类">EOFException</a></code> - at the end of the <code>InputStream</code></dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - on error in decoding</dd>
+<dd><code><a href="../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if <code>tClass</code> is invalid for the PEM type</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - when any input values are null</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#decode(java.io.InputStream)"><code>decode(InputStream)</code></a></li>
@@ -460,18 +460,18 @@ thrown.</div>
 <section class="detail" id="withFactory(java.security.Provider)">
 <h3>withFactory</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></span>&nbsp;<span class="element-name">withFactory</span><wbr><span class="parameters">(<a href="Provider.html" title="class in java.security">Provider</a>&nbsp;provider)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></span>&nbsp;<span class="element-name">withFactory</span><wbr><span class="parameters">(<a href="Provider.html" title="java.security 包中的类">Provider</a>&nbsp;provider)</span></div>
 <div class="block">Returns a copy of this <code>PEMDecoder</code> instance that uses
-<a href="KeyFactory.html" title="class in java.security"><code>KeyFactory</code></a> and <a href="cert/CertificateFactory.html" title="class in java.security.cert"><code>CertificateFactory</code></a> implementations
-from the specified <a href="Provider.html" title="class in java.security"><code>Provider</code></a> to produce cryptographic objects.
+<a href="KeyFactory.html" title="java.security 包中的类"><code>KeyFactory</code></a> and <a href="cert/CertificateFactory.html" title="java.security.cert 包中的类"><code>CertificateFactory</code></a> implementations
+from the specified <a href="Provider.html" title="java.security 包中的类"><code>Provider</code></a> to produce cryptographic objects.
 Any errors using the <code>Provider</code> will occur during decoding.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>provider</code> - the factory provider</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new PEMEncoder instance configured to the <code>Provider</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>provider</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>provider</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -480,18 +480,18 @@ Any errors using the <code>Provider</code> will occur during decoding.</div>
 <section class="detail" id="withDecryption(char[])">
 <h3>withDecryption</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="class in java.security">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">PREVIEW</a></sup></span>&nbsp;<span class="element-name">withDecryption</span><wbr><span class="parameters">(char[]&nbsp;password)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PEMDecoder.html" title="java.security 包中的类">PEMDecoder</a><sup class="preview-mark"><a href="#preview-java.security.PEMDecoder">预览</a></sup></span>&nbsp;<span class="element-name">withDecryption</span><wbr><span class="parameters">(char[]&nbsp;password)</span></div>
 <div class="block">Returns a copy of this <code>PEMDecoder</code> that decodes and decrypts
 encrypted private keys using the specified password.
 Non-encrypted PEM can still be decoded from this instance.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>password</code> - the password to decrypt encrypted PEM data.  This array
                 is cloned and stored in the new instance.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new PEMEncoder instance configured for decryption</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>password</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>password</code> is null</dd>
 </dl>
 </div>
 </section>

@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time</a></li>
 <li><a href="ZoneId.html" class="current-selection">ZoneId</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -70,22 +70,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#time-zone-ids-heading" tabindex="0">Time-zone IDs</a></li>
 <li><a href="#serialization-heading" tabindex="0">Serialization</a></li>
 </ol>
 </li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#SHORT_IDS" tabindex="0">SHORT_IDS</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#systemDefault()" tabindex="0">systemDefault()</a></li>
 <li><a href="#getAvailableZoneIds()" tabindex="0">getAvailableZoneIds()</a></li>
@@ -107,30 +107,30 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ZoneId" class="title">Class ZoneId</h1>
+<h1 title="类 ZoneId" class="title">类 ZoneId</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.time.ZoneId</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../io/Serializable.html" title="interface in java.io">Serializable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../io/Serializable.html" title="java.io 包中的接口">Serializable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="ZoneOffset.html" title="class in java.time">ZoneOffset</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="ZoneOffset.html" title="java.time 包中的类">ZoneOffset</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract sealed class </span><span class="element-name type-name-label">ZoneId</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../io/Serializable.html" title="interface in java.io">Serializable</a></span>
-<span class="permits">permits <a href="ZoneOffset.html" title="class in java.time">ZoneOffset</a> <span class="permits-note">(not exhaustive)</span></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../io/Serializable.html" title="java.io 包中的接口">Serializable</a></span>
+<span class="permits">permits <a href="ZoneOffset.html" title="java.time 包中的类">ZoneOffset</a> <span class="permits-note">(not exhaustive)</span></span></div>
 <div class="block">A time-zone ID, such as <code>Europe/Paris</code>.
 <p>
 A <code>ZoneId</code> is used to identify the rules used to convert between
-an <a href="Instant.html" title="class in java.time"><code>Instant</code></a> and a <a href="LocalDateTime.html" title="class in java.time"><code>LocalDateTime</code></a>.
+an <a href="Instant.html" title="java.time 包中的类"><code>Instant</code></a> and a <a href="LocalDateTime.html" title="java.time 包中的类"><code>LocalDateTime</code></a>.
 There are two distinct types of ID:
 <ul>
 <li>Fixed offsets - a fully resolved offset from UTC/Greenwich, that uses
@@ -138,11 +138,11 @@ There are two distinct types of ID:
 <li>Geographical regions - an area where a specific set of rules for finding
  the offset from UTC/Greenwich apply
 </ul>
-Most fixed offsets are represented by <a href="ZoneOffset.html" title="class in java.time"><code>ZoneOffset</code></a>.
+Most fixed offsets are represented by <a href="ZoneOffset.html" title="java.time 包中的类"><code>ZoneOffset</code></a>.
 Calling <a href="#normalized()"><code>normalized()</code></a> on any <code>ZoneId</code> will ensure that a
 fixed offset ID will be represented as a <code>ZoneOffset</code>.
 <p>
-The actual rules, describing when and how the offset changes, are defined by <a href="zone/ZoneRules.html" title="class in java.time.zone"><code>ZoneRules</code></a>.
+The actual rules, describing when and how the offset changes, are defined by <a href="zone/ZoneRules.html" title="java.time.zone 包中的类"><code>ZoneRules</code></a>.
 This class is simply an ID used to obtain the underlying rules.
 This approach is taken because rules are defined by governments and change
 frequently, whereas the ID is stable.
@@ -167,7 +167,7 @@ These IDs can be normalized to a <code>ZoneOffset</code> using <code>normalized(
 <p>
 The third type of ID are region-based IDs. A region-based ID must be of
 two or more characters, and not start with 'UTC', 'GMT', 'UT' '+' or '-'.
-Region-based IDs are defined by configuration, see <a href="zone/ZoneRulesProvider.html" title="class in java.time.zone"><code>ZoneRulesProvider</code></a>.
+Region-based IDs are defined by configuration, see <a href="zone/ZoneRulesProvider.html" title="java.time.zone 包中的类"><code>ZoneRulesProvider</code></a>.
 The configuration focuses on providing the lookup from the ID to the
 underlying <code>ZoneRules</code>.
 <p>
@@ -199,7 +199,7 @@ the client-side Java Runtime has not been updated. In this case, the <code>ZoneI
 object will exist, and can be queried using <code>getId</code>, <code>equals</code>,
 <code>hashCode</code>, <code>toString</code>, <code>getDisplayName</code> and <code>normalized</code>.
 However, any call to <code>getRules</code> will fail with <code>ZoneRulesException</code>.
-This approach is designed to allow a <a href="ZonedDateTime.html" title="class in java.time"><code>ZonedDateTime</code></a> to be loaded and
+This approach is designed to allow a <a href="ZonedDateTime.html" title="java.time 包中的类"><code>ZonedDateTime</code></a> to be loaded and
 queried, but not modified, on a Java Runtime with incomplete time-zone information.
 <p>
 This is a <a href="../../../java.base/java/lang/doc-files/ValueBased.html">value-based</a>
@@ -209,14 +209,14 @@ use instances for synchronization, or unpredictable behavior may
 occur. For example, in a future release, synchronization may fail.
 The <code>equals</code> method should be used for comparisons.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This abstract sealed class permits two implementations, both of which are immutable and
 thread-safe. One implementation models region-based IDs, the other is <code>ZoneOffset</code>
 modelling offset-based IDs. This difference is visible in serialization.</dd>
 <dt>Sealed Class Hierarchy Graph:</dt><dd><a class="sealed-graph" href="ZoneId-sealed-graph.svg"><img style="vertical-align:top" alt="Sealed class hierarchy graph for ZoneId" src="ZoneId-sealed-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Sealed class hierarchy graph for ZoneId" src="ZoneId-sealed-graph.svg"></span></a></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../serialized-form.html#java.time.ZoneId">Serialized Form</a></li>
@@ -230,13 +230,13 @@ modelling offset-based IDs. This difference is visible in serialization.</dd>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="../util/Map.html" title="interface in java.util">Map</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><code>static final <a href="../util/Map.html" title="java.util 包中的接口">Map</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color"><code><a href="#SHORT_IDS" class="member-name-link">SHORT_IDS</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">A map of zone overrides to enable the short time-zone names to be used.</div>
@@ -247,42 +247,42 @@ modelling offset-based IDs. This difference is visible in serialization.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if this time-zone ID is equal to another time-zone ID.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#from(java.time.temporal.TemporalAccessor)" class="member-name-link">from</a><wbr>(<a href="temporal/TemporalAccessor.html" title="interface in java.time.temporal">TemporalAccessor</a>&nbsp;temporal)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#from(java.time.temporal.TemporalAccessor)" class="member-name-link">from</a><wbr>(<a href="temporal/TemporalAccessor.html" title="java.time.temporal 包中的接口">TemporalAccessor</a>&nbsp;temporal)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains an instance of <code>ZoneId</code> from a temporal object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAvailableZoneIds()" class="member-name-link">getAvailableZoneIds</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the set of available zone IDs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName(java.time.format.TextStyle,java.util.Locale)" class="member-name-link">getDisplayName</a><wbr>(<a href="format/TextStyle.html" title="enum class in java.time.format">TextStyle</a>&nbsp;style,
- <a href="../util/Locale.html" title="class in java.util">Locale</a>&nbsp;locale)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDisplayName(java.time.format.TextStyle,java.util.Locale)" class="member-name-link">getDisplayName</a><wbr>(<a href="format/TextStyle.html" title="java.time.format 包中的枚举类">TextStyle</a>&nbsp;style,
+ <a href="../util/Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the textual representation of the zone, such as 'British Time' or
 '+02:00'.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the unique time-zone ID.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="zone/ZoneRules.html" title="class in java.time.zone">ZoneRules</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="zone/ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRules()" class="member-name-link">getRules</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the time-zone rules for this ID allowing calculations to be performed.</div>
@@ -292,36 +292,36 @@ modelling offset-based IDs. This difference is visible in serialization.</dd>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A hash code for this time-zone ID.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#normalized()" class="member-name-link">normalized</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Normalizes the time-zone ID, returning a <code>ZoneOffset</code> where possible.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String)" class="member-name-link">of</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains an instance of <code>ZoneId</code> from an ID ensuring that the
 ID is valid and available for use.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String,java.util.Map)" class="member-name-link">of</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;aliasMap)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(java.lang.String,java.util.Map)" class="member-name-link">of</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;aliasMap)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains an instance of <code>ZoneId</code> using its ID using a map
 of aliases to supplement the standard zone IDs.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofOffset(java.lang.String,java.time.ZoneOffset)" class="member-name-link">ofOffset</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;prefix,
- <a href="ZoneOffset.html" title="class in java.time">ZoneOffset</a>&nbsp;offset)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofOffset(java.lang.String,java.time.ZoneOffset)" class="member-name-link">ofOffset</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;prefix,
+ <a href="ZoneOffset.html" title="java.time 包中的类">ZoneOffset</a>&nbsp;offset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains an instance of <code>ZoneId</code> wrapping an offset.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemDefault()" class="member-name-link">systemDefault</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the system default time-zone.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Outputs this zone as a <code>String</code>, using the ID.</div>
@@ -330,7 +330,7 @@ of aliases to supplement the standard zone IDs.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -341,13 +341,13 @@ of aliases to supplement the standard zone IDs.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="SHORT_IDS">
 <h3>SHORT_IDS</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">SHORT_IDS</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">SHORT_IDS</span></div>
 <div class="block">A map of zone overrides to enable the short time-zone names to be used.
 <p>
 Use of short zone IDs has been deprecated in <code>java.util.TimeZone</code>.
@@ -399,24 +399,24 @@ The map is unmodifiable.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="systemDefault()">
 <h3>systemDefault</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">systemDefault</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">systemDefault</span>()</div>
 <div class="block">Gets the system default time-zone.
 <p>
 This queries <a href="../util/TimeZone.html#getDefault()"><code>TimeZone.getDefault()</code></a> to find the default time-zone
 and converts it to a <code>ZoneId</code>. If the system default time-zone is changed,
 then the result of this method will also change.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the zone ID, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the converted zone ID has an invalid format</dd>
-<dd><code><a href="zone/ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if the converted zone region ID cannot be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the converted zone ID has an invalid format</dd>
+<dd><code><a href="zone/ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if the converted zone region ID cannot be found</dd>
 </dl>
 </div>
 </section>
@@ -425,7 +425,7 @@ then the result of this method will also change.</div>
 <section class="detail" id="getAvailableZoneIds()">
 <h3>getAvailableZoneIds</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/Set.html" title="interface in java.util">Set</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">getAvailableZoneIds</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">getAvailableZoneIds</span>()</div>
 <div class="block">Gets the set of available zone IDs.
 <p>
 This set includes the string form of all available region-based IDs.
@@ -435,7 +435,7 @@ The ID can be passed to <a href="#of(java.lang.String)"><code>of(String)</code><
 The set of zone IDs can increase over time, although in a typical application
 the set of IDs is fixed. Each call to this method is thread-safe.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a modifiable copy of the set of zone IDs, not null</dd>
 </dl>
 </div>
@@ -445,8 +445,8 @@ the set of IDs is fixed. Each call to this method is thread-safe.</div>
 <section class="detail" id="of(java.lang.String,java.util.Map)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;aliasMap)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;aliasMap)</span></div>
 <div class="block">Obtains an instance of <code>ZoneId</code> using its ID using a map
 of aliases to supplement the standard zone IDs.
 <p>
@@ -456,14 +456,14 @@ These abbreviations are not unique, and so cannot be used as IDs.
 This method allows a map of string to time-zone to be setup and reused
 within an application.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the time-zone ID, not null</dd>
 <dd><code>aliasMap</code> - a map of alias zone IDs (typically abbreviations) to real zone IDs, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the zone ID, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the zone ID has an invalid format</dd>
-<dd><code><a href="zone/ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if the zone ID is a region ID that cannot be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the zone ID has an invalid format</dd>
+<dd><code><a href="zone/ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if the zone ID is a region ID that cannot be found</dd>
 </dl>
 </div>
 </section>
@@ -472,13 +472,13 @@ within an application.</div>
 <section class="detail" id="of(java.lang.String)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</span></div>
 <div class="block">Obtains an instance of <code>ZoneId</code> from an ID ensuring that the
 ID is valid and available for use.
 <p>
 This method parses the ID producing a <code>ZoneId</code> or <code>ZoneOffset</code>.
 A <code>ZoneOffset</code> is returned if the ID is 'Z', or starts with '+' or '-'.
-The result will always be a valid ID for which <a href="zone/ZoneRules.html" title="class in java.time.zone"><code>ZoneRules</code></a> can be obtained.
+The result will always be a valid ID for which <a href="zone/ZoneRules.html" title="java.time.zone 包中的类"><code>ZoneRules</code></a> can be obtained.
 <p>
 Parsing matches the zone ID step by step as follows.
 <ul>
@@ -504,16 +504,16 @@ Parsing matches the zone ID step by step as follows.
  The detailed format of the region ID depends on the group supplying the data.
  The default set of data is supplied by the IANA Time Zone Database (TZDB).
  This has region IDs of the form '{area}/{city}', such as 'Europe/Paris' or 'America/New_York'.
- This is compatible with most IDs from <a href="../util/TimeZone.html" title="class in java.util"><code>TimeZone</code></a>.
+ This is compatible with most IDs from <a href="../util/TimeZone.html" title="java.util 包中的类"><code>TimeZone</code></a>.
 </ul></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the time-zone ID, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the zone ID, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the zone ID has an invalid format</dd>
-<dd><code><a href="zone/ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if the zone ID is a region ID that cannot be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the zone ID has an invalid format</dd>
+<dd><code><a href="zone/ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if the zone ID is a region ID that cannot be found</dd>
 </dl>
 </div>
 </section>
@@ -522,21 +522,21 @@ Parsing matches the zone ID step by step as follows.
 <section class="detail" id="ofOffset(java.lang.String,java.time.ZoneOffset)">
 <h3>ofOffset</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">ofOffset</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;prefix,
- <a href="ZoneOffset.html" title="class in java.time">ZoneOffset</a>&nbsp;offset)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">ofOffset</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;prefix,
+ <a href="ZoneOffset.html" title="java.time 包中的类">ZoneOffset</a>&nbsp;offset)</span></div>
 <div class="block">Obtains an instance of <code>ZoneId</code> wrapping an offset.
 <p>
 If the prefix is "GMT", "UTC", or "UT" a <code>ZoneId</code>
 with the prefix and the non-zero offset is returned.
 If the prefix is empty <code>""</code> the <code>ZoneOffset</code> is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>prefix</code> - the time-zone ID, not null</dd>
 <dd><code>offset</code> - the offset, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the zone ID, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the prefix is not one of
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the prefix is not one of
     "GMT", "UTC", or "UT", or ""</dd>
 </dl>
 </div>
@@ -546,7 +546,7 @@ If the prefix is empty <code>""</code> the <code>ZoneOffset</code> is returned.<
 <section class="detail" id="from(java.time.temporal.TemporalAccessor)">
 <h3>from</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="temporal/TemporalAccessor.html" title="interface in java.time.temporal">TemporalAccessor</a>&nbsp;temporal)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="temporal/TemporalAccessor.html" title="java.time.temporal 包中的接口">TemporalAccessor</a>&nbsp;temporal)</span></div>
 <div class="block">Obtains an instance of <code>ZoneId</code> from a temporal object.
 <p>
 This obtains a zone based on the specified temporal.
@@ -559,15 +559,15 @@ This factory converts the arbitrary temporal object to an instance of <code>Zone
 The conversion will try to obtain the zone in a way that favours region-based
 zones over offset-based zones using <a href="temporal/TemporalQueries.html#zone()"><code>TemporalQueries.zone()</code></a>.
 <p>
-This method matches the signature of the functional interface <a href="temporal/TemporalQuery.html" title="interface in java.time.temporal"><code>TemporalQuery</code></a>
+This method matches the signature of the functional interface <a href="temporal/TemporalQuery.html" title="java.time.temporal 包中的接口"><code>TemporalQuery</code></a>
 allowing it to be used as a query via method reference, <code>ZoneId::from</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>temporal</code> - the temporal object to convert, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the zone ID, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to convert to a <code>ZoneId</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to convert to a <code>ZoneId</code></dd>
 </dl>
 </div>
 </section>
@@ -576,13 +576,13 @@ allowing it to be used as a query via method reference, <code>ZoneId::from</code
 <section class="detail" id="getId()">
 <h3>getId</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getId</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getId</span>()</div>
 <div class="block">Gets the unique time-zone ID.
 <p>
 This ID uniquely defines this object.
 The format of an offset based ID is defined by <a href="ZoneOffset.html#getId()"><code>ZoneOffset.getId()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the time-zone unique ID, not null</dd>
 </dl>
 </div>
@@ -592,8 +592,8 @@ The format of an offset based ID is defined by <a href="ZoneOffset.html#getId()"
 <section class="detail" id="getDisplayName(java.time.format.TextStyle,java.util.Locale)">
 <h3>getDisplayName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getDisplayName</span><wbr><span class="parameters">(<a href="format/TextStyle.html" title="enum class in java.time.format">TextStyle</a>&nbsp;style,
- <a href="../util/Locale.html" title="class in java.util">Locale</a>&nbsp;locale)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getDisplayName</span><wbr><span class="parameters">(<a href="format/TextStyle.html" title="java.time.format 包中的枚举类">TextStyle</a>&nbsp;style,
+ <a href="../util/Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale)</span></div>
 <div class="block">Gets the textual representation of the zone, such as 'British Time' or
 '+02:00'.
 <p>
@@ -603,10 +603,10 @@ The parameters control the style of the returned text and the locale.
 <p>
 If no textual mapping is found then the <a href="#getId()"><code>full ID</code></a> is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>style</code> - the length of the text required, not null</dd>
 <dd><code>locale</code> - the locale to use, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the text value of the zone, not null</dd>
 </dl>
 </div>
@@ -616,7 +616,7 @@ If no textual mapping is found then the <a href="#getId()"><code>full ID</code><
 <section class="detail" id="getRules()">
 <h3>getRules</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="zone/ZoneRules.html" title="class in java.time.zone">ZoneRules</a></span>&nbsp;<span class="element-name">getRules</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="zone/ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></span>&nbsp;<span class="element-name">getRules</span>()</div>
 <div class="block">Gets the time-zone rules for this ID allowing calculations to be performed.
 <p>
 The rules provide the functionality associated with a time-zone,
@@ -626,17 +626,17 @@ A time-zone can be invalid if it is deserialized in a Java Runtime which
 does not have the same rules loaded as the Java Runtime that stored it.
 In this case, calling this method will throw a <code>ZoneRulesException</code>.
 <p>
-The rules are supplied by <a href="zone/ZoneRulesProvider.html" title="class in java.time.zone"><code>ZoneRulesProvider</code></a>. An advanced provider may
+The rules are supplied by <a href="zone/ZoneRulesProvider.html" title="java.time.zone 包中的类"><code>ZoneRulesProvider</code></a>. An advanced provider may
 support dynamic updates to the rules without restarting the Java Runtime.
 If so, then the result of this method may change over time.
 Each individual call will be still remain thread-safe.
 <p>
-<a href="ZoneOffset.html" title="class in java.time"><code>ZoneOffset</code></a> will always return a set of rules where the offset never changes.</div>
+<a href="ZoneOffset.html" title="java.time 包中的类"><code>ZoneOffset</code></a> will always return a set of rules where the offset never changes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the rules, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="zone/ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if no rules are available for this ID</dd>
+<dt>抛出:</dt>
+<dd><code><a href="zone/ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if no rules are available for this ID</dd>
 </dl>
 </div>
 </section>
@@ -645,7 +645,7 @@ Each individual call will be still remain thread-safe.
 <section class="detail" id="normalized()">
 <h3>normalized</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">normalized</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">normalized</span>()</div>
 <div class="block">Normalizes the time-zone ID, returning a <code>ZoneOffset</code> where possible.
 <p>
 The returns a normalized <code>ZoneId</code> that can be used in place of this ID.
@@ -656,7 +656,7 @@ The normalization checks if the rules of this <code>ZoneId</code> have a fixed o
 If they do, then the <code>ZoneOffset</code> equal to that offset is returned.
 Otherwise <code>this</code> is returned.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the time-zone unique ID, not null</dd>
 </dl>
 </div>
@@ -666,22 +666,22 @@ Otherwise <code>this</code> is returned.</div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Checks if this time-zone ID is equal to another time-zone ID.
 <p>
 The comparison is based on the ID.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to check, null returns false</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if this is equal to the other time-zone ID</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -695,11 +695,11 @@ The comparison is based on the ID.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
 <div class="block">A hash code for this time-zone ID.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a suitable hash code</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -714,12 +714,12 @@ The comparison is based on the ID.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Outputs this zone as a <code>String</code>, using the ID.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of this time-zone ID, not null</dd>
 </dl>
 </div>

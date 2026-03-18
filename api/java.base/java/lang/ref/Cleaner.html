@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.ref</a></li>
 <li><a href="Cleaner.html" class="current-selection">Cleaner</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,12 +59,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#create()" tabindex="0">create()</a></li>
 <li><a href="#create(java.util.concurrent.ThreadFactory)" tabindex="0">create(ThreadFactory)</a></li>
@@ -76,32 +76,32 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Cleaner" class="title">Class Cleaner</h1>
+<h1 title="类 Cleaner" class="title">类 Cleaner</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.ref.Cleaner</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Cleaner</span>
-<span class="extends-implements">extends <a href="../Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block"><code>Cleaner</code> manages a set of object references and corresponding cleaning actions.
 <p>
 Cleaning actions are <a href="#register(java.lang.Object,java.lang.Runnable)">registered</a>
 to run after the cleaner is notified that the object has become
 phantom reachable.
-The cleaner uses <a href="PhantomReference.html" title="class in java.lang.ref"><code>PhantomReference</code></a> and <a href="ReferenceQueue.html" title="class in java.lang.ref"><code>ReferenceQueue</code></a> to be
+The cleaner uses <a href="PhantomReference.html" title="java.lang.ref 包中的类"><code>PhantomReference</code></a> and <a href="ReferenceQueue.html" title="java.lang.ref 包中的类"><code>ReferenceQueue</code></a> to be
 notified when the <a href="package-summary.html#reachability">reachability</a>
 changes.
 <p>
 Each cleaner operates independently, managing the pending cleaning actions
 and handling threading and termination when the cleaner is no longer in use.
 Registering an object reference and corresponding cleaning action returns
-a <a href="Cleaner.Cleanable.html" title="interface in java.lang.ref"><code>Cleanable</code></a>. The most efficient use is to explicitly invoke
+a <a href="Cleaner.Cleanable.html" title="java.lang.ref 包中的接口"><code>Cleanable</code></a>. The most efficient use is to explicitly invoke
 the <a href="Cleaner.Cleanable.html#clean()"><code>clean</code></a> method when the object is closed or
 no longer needed.
-The cleaning action is a <a href="../Runnable.html" title="interface in java.lang"><code>Runnable</code></a> to be invoked at most once when
+The cleaning action is a <a href="../Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a> to be invoked at most once when
 the object has become phantom reachable unless it has already been explicitly cleaned.
 Note that the cleaning action must not refer to the object being registered.
 If so, the object will not become phantom reachable and the cleaning action
@@ -121,9 +121,9 @@ to whether cleaning actions are invoked or not.
 <p>
 Unless otherwise noted, passing a <code>null</code> argument to a constructor or
 method in this class will cause a
-<a href="../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown.</div>
+<a href="../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The cleaning action is invoked only after the associated object becomes
 phantom reachable, so it is important that the object implementing the
 cleaning action does not hold references to the object.
@@ -183,7 +183,7 @@ Typically the cleaning actions should be very quick to execute
 and not block. If the cleaning action blocks, it may delay processing
 other cleaning actions registered to the same cleaner.
 All cleaning actions registered to a cleaner should be mutually compatible.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -193,14 +193,14 @@ All cleaning actions registered to a cleaner should be mutually compatible.</dd>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">类</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Cleaner.Cleanable.html" class="type-name-link" title="interface in java.lang.ref">Cleaner.Cleanable</a></code></div>
+<div class="col-second even-row-color"><code><a href="Cleaner.Cleanable.html" title="java.lang.ref 包中的接口">Cleaner.Cleanable</a></code></div>
 <div class="col-last even-row-color">
 <div class="block"><code>Cleanable</code> represents an object and a
 cleaning action registered in a <code>Cleaner</code>.</div>
@@ -211,27 +211,27 @@ cleaning action registered in a <code>Cleaner</code>.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Cleaner.html" title="class in java.lang.ref">Cleaner</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Cleaner.html" title="java.lang.ref 包中的类">Cleaner</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create()" class="member-name-link">create</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a new <code>Cleaner</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Cleaner.html" title="class in java.lang.ref">Cleaner</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(java.util.concurrent.ThreadFactory)" class="member-name-link">create</a><wbr>(<a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent">ThreadFactory</a>&nbsp;threadFactory)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Cleaner.html" title="java.lang.ref 包中的类">Cleaner</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#create(java.util.concurrent.ThreadFactory)" class="member-name-link">create</a><wbr>(<a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口">ThreadFactory</a>&nbsp;threadFactory)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a new <code>Cleaner</code> using a <code>Thread</code> from the <code>ThreadFactory</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cleaner.Cleanable.html" title="interface in java.lang.ref">Cleaner.Cleanable</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(java.lang.Object,java.lang.Runnable)" class="member-name-link">register</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;obj,
- <a href="../Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;action)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Cleaner.Cleanable.html" title="java.lang.ref 包中的接口">Cleaner.Cleanable</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(java.lang.Object,java.lang.Runnable)" class="member-name-link">register</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj,
+ <a href="../Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Registers an object and a cleaning action to run when the object
 becomes phantom reachable.</div>
@@ -240,7 +240,7 @@ becomes phantom reachable.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../Object.html#clone()" title="clone()">clone</a>, <a href="../Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../Object.html#finalize()" title="finalize()">finalize</a>, <a href="../Object.html#getClass()" title="getClass()">getClass</a>, <a href="../Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../Object.html#notify()" title="notify()">notify</a>, <a href="../Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../Object.html#toString()" title="toString()">toString</a>, <a href="../Object.html#wait()" title="wait()">wait</a>, <a href="../Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -251,13 +251,13 @@ becomes phantom reachable.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="create()">
 <h3>create</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Cleaner.html" title="class in java.lang.ref">Cleaner</a></span>&nbsp;<span class="element-name">create</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Cleaner.html" title="java.lang.ref 包中的类">Cleaner</a></span>&nbsp;<span class="element-name">create</span>()</div>
 <div class="block">Returns a new <code>Cleaner</code>.
 <p>
 The cleaner creates a <a href="../Thread.html#setDaemon(boolean)"><code>daemon thread</code></a>
@@ -269,7 +269,7 @@ of the thread is set to the
 The cleaner terminates when it is phantom reachable and all of the
 registered cleaning actions are complete.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>Cleaner</code></dd>
 </dl>
 </div>
@@ -279,7 +279,7 @@ registered cleaning actions are complete.</div>
 <section class="detail" id="create(java.util.concurrent.ThreadFactory)">
 <h3>create</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Cleaner.html" title="class in java.lang.ref">Cleaner</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent">ThreadFactory</a>&nbsp;threadFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Cleaner.html" title="java.lang.ref 包中的类">Cleaner</a></span>&nbsp;<span class="element-name">create</span><wbr><span class="parameters">(<a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口">ThreadFactory</a>&nbsp;threadFactory)</span></div>
 <div class="block">Returns a new <code>Cleaner</code> using a <code>Thread</code> from the <code>ThreadFactory</code>.
 <p>
 A thread from the thread factory's <a href="../../util/concurrent/ThreadFactory.html#newThread(java.lang.Runnable)"><code>newThread</code></a>
@@ -291,13 +291,13 @@ must provide a Thread that is suitable for performing the cleaning actions.
 The cleaner terminates when it is phantom reachable and all of the
 registered cleaning actions are complete.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>threadFactory</code> - a <code>ThreadFactory</code> to return a new <code>Thread</code>
                      to process cleaning actions</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>Cleaner</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalThreadStateException.html" title="class in java.lang">IllegalThreadStateException</a></code> - if the thread from the thread
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalThreadStateException.html" title="java.lang 包中的类">IllegalThreadStateException</a></code> - if the thread from the thread
               factory was <a href="../Thread.State.html#NEW">not a new thread</a>.</dd>
 </dl>
 </div>
@@ -307,8 +307,8 @@ registered cleaning actions are complete.</div>
 <section class="detail" id="register(java.lang.Object,java.lang.Runnable)">
 <h3>register</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cleaner.Cleanable.html" title="interface in java.lang.ref">Cleaner.Cleanable</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;obj,
- <a href="../Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;action)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Cleaner.Cleanable.html" title="java.lang.ref 包中的接口">Cleaner.Cleanable</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj,
+ <a href="../Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;action)</span></div>
 <div class="block">Registers an object and a cleaning action to run when the object
 becomes phantom reachable.
 Refer to the <a href="#compatible-cleaners">API Note</a> above for
@@ -322,10 +322,10 @@ Actions in a thread prior to calling <code>Cleaner.register()</code>
 <a href="../../../../java.base/java/util/concurrent/package-summary.html#MemoryVisibility"><i>happen-before</i></a>
 the cleaning action is run by the Cleaner's thread.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to monitor</dd>
 <dd><code>action</code> - a <code>Runnable</code> to invoke when the object becomes phantom reachable</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Cleanable</code> instance</dd>
 </dl>
 </div>

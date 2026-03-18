@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile</a></li>
 <li><a href="MethodBuilder.html" class="current-selection">MethodBuilder</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,11 +60,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#withFlags(int)" tabindex="0">withFlags(int)</a></li>
 <li><a href="#withFlags(java.lang.reflect.AccessFlag...)" tabindex="0">withFlags(AccessFlag...)</a></li>
@@ -77,33 +77,33 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface MethodBuilder" class="title">Interface MethodBuilder</h1>
+<h1 title="接口 MethodBuilder" class="title">接口 MethodBuilder</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;<a href="MethodElement.html" title="interface in java.lang.classfile">MethodElement</a>, <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;, <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="MethodElement.html" title="interface in java.lang.classfile">MethodElement</a>&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;<a href="MethodElement.html" title="java.lang.classfile 包中的接口">MethodElement</a>, <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;, <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="MethodElement.html" title="java.lang.classfile 包中的接口">MethodElement</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">MethodBuilder</span><span class="extends-implements">
-extends <a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;<a href="MethodElement.html" title="interface in java.lang.classfile">MethodElement</a>, <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;</span></div>
+extends <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;<a href="MethodElement.html" title="java.lang.classfile 包中的接口">MethodElement</a>, <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;</span></div>
 <div class="block">A builder for methods.  The main way to obtain a method builder is via <a href="ClassBuilder.html#withMethod(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)"><code>ClassBuilder.withMethod(String, MethodTypeDesc, int, Consumer)</code></a>.  <a href="ClassBuilder.html#withMethodBody(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)"><code>ClassBuilder.withMethodBody(String, MethodTypeDesc, int, Consumer)</code></a> is
-useful if no attribute on the method except <a href="CodeModel.html" title="interface in java.lang.classfile"><code>Code</code></a> needs to
+useful if no attribute on the method except <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>Code</code></a> needs to
 be configured, skipping the method handler.
 <p>
-Refer to <a href="ClassFileBuilder.html" title="interface in java.lang.classfile"><code>ClassFileBuilder</code></a> for general guidance and caution around
+Refer to <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassFileBuilder</code></a> for general guidance and caution around
 the use of builders for structures in the <code>class</code> file format.</div>
 <dl class="notes"><dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.6">4.6 Methods</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a></li>
-<li><a href="MethodTransform.html" title="interface in java.lang.classfile"><code>MethodTransform</code></a></li>
+<li><a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a></li>
+<li><a href="MethodTransform.html" title="java.lang.classfile 包中的接口"><code>MethodTransform</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -114,33 +114,33 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformCode(java.lang.classfile.CodeModel,java.lang.classfile.CodeTransform)" class="member-name-link">transformCode</a><wbr>(<a href="CodeModel.html" title="interface in java.lang.classfile">CodeModel</a>&nbsp;code,
- <a href="CodeTransform.html" title="interface in java.lang.classfile">CodeTransform</a>&nbsp;transform)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformCode(java.lang.classfile.CodeModel,java.lang.classfile.CodeTransform)" class="member-name-link">transformCode</a><wbr>(<a href="CodeModel.html" title="java.lang.classfile 包中的接口">CodeModel</a>&nbsp;code,
+ <a href="CodeTransform.html" title="java.lang.classfile 包中的接口">CodeTransform</a>&nbsp;transform)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Build the method body for this method by transforming the body of another
 method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withCode(java.util.function.Consumer)" class="member-name-link">withCode</a><wbr>(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;code)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withCode(java.util.function.Consumer)" class="member-name-link">withCode</a><wbr>(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;code)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Build the method body for this method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(int)" class="member-name-link">withFlags</a><wbr>(int&nbsp;flags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the method access flags.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(java.lang.reflect.AccessFlag...)" class="member-name-link">withFlags</a><wbr>(<a href="../reflect/AccessFlag.html" title="enum class in java.lang.reflect">AccessFlag</a>...&nbsp;flags)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(java.lang.reflect.AccessFlag...)" class="member-name-link">withFlags</a><wbr>(<a href="../reflect/AccessFlag.html" title="java.lang.reflect 包中的枚举类">AccessFlag</a>...&nbsp;flags)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the method access flags.</div>
 </div>
@@ -148,10 +148,10 @@ method.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.ClassFileBuilder">Methods declared in interface&nbsp;<a href="ClassFileBuilder.html#method-summary" title="interface in java.lang.classfile">ClassFileBuilder</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.ClassFileBuilder">在接口 <a href="ClassFileBuilder.html#method-summary" title="java.lang.classfile 包中的接口">ClassFileBuilder</a> 中声明的方法</h3>
 <code><a href="ClassFileBuilder.html#accept(E)" title="accept(MethodElement)">accept</a>, <a href="ClassFileBuilder.html#constantPool()" title="constantPool()">constantPool</a>, <a href="ClassFileBuilder.html#transform(java.lang.classfile.CompoundElement,java.lang.classfile.ClassFileTransform)" title="transform(CompoundElement, ClassFileTransform)">transform</a>, <a href="ClassFileBuilder.html#with(E)" title="with(MethodElement)">with</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.function.Consumer">Methods declared in interface&nbsp;<a href="../../util/function/Consumer.html#method-summary" title="interface in java.util.function">Consumer</a></h3>
+<h3 id="methods-inherited-from-class-java.util.function.Consumer">在接口 <a href="../../util/function/Consumer.html#method-summary" title="java.util.function 包中的接口">Consumer</a> 中声明的方法</h3>
 <code><a href="../../util/function/Consumer.html#andThen(java.util.function.Consumer)" title="andThen(Consumer)">andThen</a></code></div>
 </section>
 </li>
@@ -162,26 +162,26 @@ method.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="withFlags(int)">
 <h3>withFlags</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(int&nbsp;flags)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(int&nbsp;flags)</span></div>
 <div class="block">Sets the method access flags.  The <a href="../reflect/AccessFlag.html#STATIC"><code>AccessFlag.STATIC</code></a> flag cannot
 be modified after the builder is created.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>flags</code> - the access flags, as a bit mask</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag is modified</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag is modified</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="AccessFlags.html" title="interface in java.lang.classfile"><code>AccessFlags</code></a></li>
+<li><a href="AccessFlags.html" title="java.lang.classfile 包中的接口"><code>AccessFlags</code></a></li>
 <li><a href="../reflect/AccessFlag.Location.html#METHOD"><code>AccessFlag.Location.METHOD</code></a></li>
 </ul>
 </dd>
@@ -193,20 +193,20 @@ be modified after the builder is created.</div>
 <section class="detail" id="withFlags(java.lang.reflect.AccessFlag...)">
 <h3>withFlags</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(<a href="../reflect/AccessFlag.html" title="enum class in java.lang.reflect">AccessFlag</a>...&nbsp;flags)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(<a href="../reflect/AccessFlag.html" title="java.lang.reflect 包中的枚举类">AccessFlag</a>...&nbsp;flags)</span></div>
 <div class="block">Sets the method access flags.  The <a href="../reflect/AccessFlag.html#STATIC"><code>AccessFlag.STATIC</code></a> flag cannot
 be modified after the builder is created.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>flags</code> - the access flags, as a bit mask</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag is modified</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag is modified</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="AccessFlags.html" title="interface in java.lang.classfile"><code>AccessFlags</code></a></li>
+<li><a href="AccessFlags.html" title="java.lang.classfile 包中的接口"><code>AccessFlags</code></a></li>
 <li><a href="../reflect/AccessFlag.Location.html#METHOD"><code>AccessFlag.Location.METHOD</code></a></li>
 </ul>
 </dd>
@@ -218,17 +218,17 @@ be modified after the builder is created.</div>
 <section class="detail" id="withCode(java.util.function.Consumer)">
 <h3>withCode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></span>&nbsp;<span class="element-name">withCode</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;code)</span></div>
+<div class="member-signature"><span class="return-type"><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></span>&nbsp;<span class="element-name">withCode</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;code)</span></div>
 <div class="block">Build the method body for this method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>code</code> - a handler receiving a <a href="CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a></dd>
-<dt>Returns:</dt>
+<dt>参数:</dt>
+<dd><code>code</code> - a handler receiving a <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a></dd>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a></li>
+<li><a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -239,8 +239,8 @@ be modified after the builder is created.</div>
 <section class="detail" id="transformCode(java.lang.classfile.CodeModel,java.lang.classfile.CodeTransform)">
 <h3>transformCode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></span>&nbsp;<span class="element-name">transformCode</span><wbr><span class="parameters">(<a href="CodeModel.html" title="interface in java.lang.classfile">CodeModel</a>&nbsp;code,
- <a href="CodeTransform.html" title="interface in java.lang.classfile">CodeTransform</a>&nbsp;transform)</span></div>
+<div class="member-signature"><span class="return-type"><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></span>&nbsp;<span class="element-name">transformCode</span><wbr><span class="parameters">(<a href="CodeModel.html" title="java.lang.classfile 包中的接口">CodeModel</a>&nbsp;code,
+ <a href="CodeTransform.html" title="java.lang.classfile 包中的接口">CodeTransform</a>&nbsp;transform)</span></div>
 <div class="block">Build the method body for this method by transforming the body of another
 method.
 <p>
@@ -251,15 +251,15 @@ This method behaves as if:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>code</code> - the method body to be transformed</dd>
 <dd><code>transform</code> - the transform to apply to the method body</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="CodeTransform.html" title="interface in java.lang.classfile"><code>CodeTransform</code></a></li>
+<li><a href="CodeTransform.html" title="java.lang.classfile 包中的接口"><code>CodeTransform</code></a></li>
 </ul>
 </dd>
 </dl>

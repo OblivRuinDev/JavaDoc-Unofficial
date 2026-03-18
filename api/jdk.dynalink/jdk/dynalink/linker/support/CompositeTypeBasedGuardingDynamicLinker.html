@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.dynalink.linker.support</a></li>
 <li><a href="CompositeTypeBasedGuardingDynamicLinker.html" class="current-selection">CompositeTypeBasedGuardingDynamicLinker</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,17 +60,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.lang.Iterable)" tabindex="0">CompositeTypeBasedGuardingDynamicLinker(Iterable)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#canLinkType(java.lang.Class)" tabindex="0">canLinkType(Class)</a></li>
 <li><a href="#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" tabindex="0">getGuardedInvocation(LinkRequest, LinkerServices)</a></li>
@@ -82,21 +82,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class CompositeTypeBasedGuardingDynamicLinker" class="title">Class CompositeTypeBasedGuardingDynamicLinker</h1>
+<h1 title="类 CompositeTypeBasedGuardingDynamicLinker" class="title">类 CompositeTypeBasedGuardingDynamicLinker</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">jdk.dynalink.linker.support.CompositeTypeBasedGuardingDynamicLinker</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a>, <a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a>, <a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CompositeTypeBasedGuardingDynamicLinker</span>
-<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a></span></div>
+<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a></span></div>
 <div class="block">A composite type-based guarding dynamic linker. When a receiver of a not yet
 seen class is encountered, all linkers are queried sequentially on their
 <a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)"><code>TypeBasedGuardingDynamicLinker.canLinkType(Class)</code></a> method. The linkers
@@ -104,7 +104,7 @@ returning true are then bound to the class, and next time a receiver of same
 type is encountered, the linking is delegated to those linkers only, speeding
 up dispatch.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -114,12 +114,12 @@ up dispatch.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable)" class="member-name-link">CompositeTypeBasedGuardingDynamicLinker</a><wbr>(<a href="../../../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a>&gt;&nbsp;linkers)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Iterable)" class="member-name-link">CompositeTypeBasedGuardingDynamicLinker</a><wbr>(<a href="../../../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a>&gt;&nbsp;linkers)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new composite type-based linker.</div>
 </div>
@@ -129,29 +129,29 @@ up dispatch.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canLinkType(java.lang.Class)" class="member-name-link">canLinkType</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;type)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#canLinkType(java.lang.Class)" class="member-name-link">canLinkType</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;type)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if at least one of the composite linkers returns true from
 <a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)"><code>TypeBasedGuardingDynamicLinker.canLinkType(Class)</code></a> for the type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../GuardedInvocation.html" title="class in jdk.dynalink.linker">GuardedInvocation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" class="member-name-link">getGuardedInvocation</a><wbr>(<a href="../LinkRequest.html" title="interface in jdk.dynalink.linker">LinkRequest</a>&nbsp;linkRequest,
- <a href="../LinkerServices.html" title="interface in jdk.dynalink.linker">LinkerServices</a>&nbsp;linkerServices)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../GuardedInvocation.html" title="jdk.dynalink.linker 包中的类">GuardedInvocation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" class="member-name-link">getGuardedInvocation</a><wbr>(<a href="../LinkRequest.html" title="jdk.dynalink.linker 包中的接口">LinkRequest</a>&nbsp;linkRequest,
+ <a href="../LinkerServices.html" title="jdk.dynalink.linker 包中的接口">LinkerServices</a>&nbsp;linkerServices)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a guarded invocation appropriate for a particular invocation with
 the specified arguments at a call site.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#optimize(java.lang.Iterable)" class="member-name-link">optimize</a><wbr>(<a href="../../../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a>&gt;&nbsp;linkers)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#optimize(java.lang.Iterable)" class="member-name-link">optimize</a><wbr>(<a href="../../../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a>&gt;&nbsp;linkers)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Optimizes a list of type-based linkers.</div>
 </div>
@@ -159,7 +159,7 @@ the specified arguments at a call site.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -170,19 +170,19 @@ the specified arguments at a call site.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.Iterable)">
 <h3>CompositeTypeBasedGuardingDynamicLinker</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CompositeTypeBasedGuardingDynamicLinker</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a>&gt;&nbsp;linkers)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CompositeTypeBasedGuardingDynamicLinker</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a>&gt;&nbsp;linkers)</span></div>
 <div class="block">Creates a new composite type-based linker.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>linkers</code> - the component linkers</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>linkers</code> or any of its elements
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>linkers</code> or any of its elements
 are null.</dd>
 </dl>
 </div>
@@ -194,21 +194,21 @@ are null.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="canLinkType(java.lang.Class)">
 <h3>canLinkType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canLinkType</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;type)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canLinkType</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;type)</span></div>
 <div class="block">Returns true if at least one of the composite linkers returns true from
 <a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)"><code>TypeBasedGuardingDynamicLinker.canLinkType(Class)</code></a> for the type.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)">canLinkType</a></code>&nbsp;in interface&nbsp;<code><a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)">canLinkType</a></code>&nbsp;in interface&nbsp;<code><a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a></code></dd>
+<dt>参数:</dt>
 <dd><code>type</code> - the type to link</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true true if at least one of the composite linkers returns true
 from <a href="../TypeBasedGuardingDynamicLinker.html#canLinkType(java.lang.Class)"><code>TypeBasedGuardingDynamicLinker.canLinkType(Class)</code></a>, false
 otherwise.</dd>
@@ -220,29 +220,29 @@ otherwise.</dd>
 <section class="detail" id="getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)">
 <h3>getGuardedInvocation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../GuardedInvocation.html" title="class in jdk.dynalink.linker">GuardedInvocation</a></span>&nbsp;<span class="element-name">getGuardedInvocation</span><wbr><span class="parameters">(<a href="../LinkRequest.html" title="interface in jdk.dynalink.linker">LinkRequest</a>&nbsp;linkRequest,
- <a href="../LinkerServices.html" title="interface in jdk.dynalink.linker">LinkerServices</a>&nbsp;linkerServices)</span>
-                                       throws <span class="exceptions"><a href="../../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../GuardedInvocation.html" title="jdk.dynalink.linker 包中的类">GuardedInvocation</a></span>&nbsp;<span class="element-name">getGuardedInvocation</span><wbr><span class="parameters">(<a href="../LinkRequest.html" title="jdk.dynalink.linker 包中的接口">LinkRequest</a>&nbsp;linkRequest,
+ <a href="../LinkerServices.html" title="jdk.dynalink.linker 包中的接口">LinkerServices</a>&nbsp;linkerServices)</span>
+                                       throws <span class="exceptions"><a href="../../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../GuardingDynamicLinker.html#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)">GuardingDynamicLinker</a></code></span></div>
 <div class="block">Creates a guarded invocation appropriate for a particular invocation with
 the specified arguments at a call site.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../GuardingDynamicLinker.html#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)">getGuardedInvocation</a></code>&nbsp;in interface&nbsp;<code><a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../GuardingDynamicLinker.html#getGuardedInvocation(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)">getGuardedInvocation</a></code>&nbsp;in interface&nbsp;<code><a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a></code></dd>
+<dt>参数:</dt>
 <dd><code>linkRequest</code> - the object describing the request for linking a
 particular invocation</dd>
 <dd><code>linkerServices</code> - linker services</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a guarded invocation with a method handle suitable for the
 arguments, as well as a guard condition that if fails should trigger
 relinking. Must return null if it can't resolve the invocation. If the
 returned invocation is unconditional (which is actually quite rare), the
 guard in the return value can be null. The invocation can also have any
 number of switch points for asynchronous invalidation of the linkage, as
-well as a <a href="../../../../../java.base/java/lang/Throwable.html" title="class in java.lang"><code>Throwable</code></a> subclass that describes an expected exception
+well as a <a href="../../../../../java.base/java/lang/Throwable.html" title="java.lang 包中的类"><code>Throwable</code></a> subclass that describes an expected exception
 condition that also triggers relinking (often it is faster to rely on an
-infrequent but expected <a href="../../../../../java.base/java/lang/ClassCastException.html" title="class in java.lang"><code>ClassCastException</code></a> than on an always
+infrequent but expected <a href="../../../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类"><code>ClassCastException</code></a> than on an always
 evaluated <code>instanceof</code> guard). While the linker must produce an
 invocation with parameter types matching those in the call site
 descriptor of the link request, it should not try to match the return
@@ -250,8 +250,8 @@ type expected at the call site except when it can do it with only the
 conversions that lose neither precision nor magnitude, see
 <a href="../LinkerServices.html#asTypeLosslessReturn(java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)"><code>LinkerServices.asTypeLosslessReturn(MethodHandle, MethodType)</code></a> for
 further explanation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></code> - if the operation fails for whatever reason</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></code> - if the operation fails for whatever reason</dd>
 </dl>
 </div>
 </section>
@@ -260,18 +260,18 @@ further explanation.</dd>
 <section class="detail" id="optimize(java.lang.Iterable)">
 <h3>optimize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a>&gt;</span>&nbsp;<span class="element-name">optimize</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a>&gt;&nbsp;linkers)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a>&gt;</span>&nbsp;<span class="element-name">optimize</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a>&gt;&nbsp;linkers)</span></div>
 <div class="block">Optimizes a list of type-based linkers. If a group of adjacent linkers in
-the list all implement <a href="../TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>TypeBasedGuardingDynamicLinker</code></a>, they will
+the list all implement <a href="../TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>TypeBasedGuardingDynamicLinker</code></a>, they will
 be replaced with a single instance of
-<a href="CompositeTypeBasedGuardingDynamicLinker.html" title="class in jdk.dynalink.linker.support"><code>CompositeTypeBasedGuardingDynamicLinker</code></a> that contains them.</div>
+<a href="CompositeTypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker.support 包中的类"><code>CompositeTypeBasedGuardingDynamicLinker</code></a> that contains them.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>linkers</code> - the list of linkers to optimize</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the optimized list</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>linkers</code> or any of its elements
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>linkers</code> or any of its elements
 are null.</dd>
 </dl>
 </div>

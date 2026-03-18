@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.security</a></li>
 <li><a href="DrbgParameters.html" class="current-selection">DrbgParameters</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,12 +60,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#instantiation(int,java.security.DrbgParameters.Capability,byte%5B%5D)" tabindex="0">instantiation(int, DrbgParameters.Capability, byte[])</a></li>
 <li><a href="#nextBytes(int,boolean,byte%5B%5D)" tabindex="0">nextBytes(int, boolean, byte[])</a></li>
@@ -77,16 +77,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class DrbgParameters" class="title">Class DrbgParameters</h1>
+<h1 title="类 DrbgParameters" class="title">类 DrbgParameters</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.security.DrbgParameters</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">DrbgParameters</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">This class specifies the parameters used by a DRBG (Deterministic
 Random Bit Generator).
 <p>
@@ -129,12 +129,12 @@ options, such as:
 </ul>
 <p>
 A DRBG instance can be instantiated with parameters from an
-<a href="DrbgParameters.Instantiation.html" title="class in java.security"><code>DrbgParameters.Instantiation</code></a> object and other information
+<a href="DrbgParameters.Instantiation.html" title="java.security 包中的类"><code>DrbgParameters.Instantiation</code></a> object and other information
 (for example, the nonce, which is not managed by this API). This maps
 to the <code>Instantiate_function</code> defined in NIST SP 800-90Ar1.
 <p>
 A DRBG instance can be reseeded with parameters from a
-<a href="DrbgParameters.Reseed.html" title="class in java.security"><code>DrbgParameters.Reseed</code></a> object. This maps to the
+<a href="DrbgParameters.Reseed.html" title="java.security 包中的类"><code>DrbgParameters.Reseed</code></a> object. This maps to the
 <code>Reseed_function</code> defined in NIST SP 800-90Ar1. Calling
 <a href="SecureRandom.html#reseed()"><code>SecureRandom.reseed()</code></a> is equivalent to calling
 <a href="SecureRandom.html#reseed(java.security.SecureRandomParameters)"><code>SecureRandom.reseed(SecureRandomParameters)</code></a> with the effective
@@ -142,7 +142,7 @@ instantiated prediction resistance flag (as returned by
 <a href="SecureRandom.html#getParameters()"><code>SecureRandom.getParameters()</code></a>) with no additional input.
 <p>
 A DRBG instance generates data with additional parameters from a
-<a href="DrbgParameters.NextBytes.html" title="class in java.security"><code>DrbgParameters.NextBytes</code></a> object. This maps to the
+<a href="DrbgParameters.NextBytes.html" title="java.security 包中的类"><code>DrbgParameters.NextBytes</code></a> object. This maps to the
 <code>Generate_function</code> defined in NIST SP 800-90Ar1. Calling
 <a href="SecureRandom.html#nextBytes(byte%5B%5D)"><code>SecureRandom.nextBytes(byte[])</code></a> is equivalent to calling
 <a href="SecureRandom.html#nextBytes(byte%5B%5D,java.security.SecureRandomParameters)"><code>SecureRandom.nextBytes(byte[], SecureRandomParameters)</code></a>
@@ -150,13 +150,13 @@ with the effective instantiated strength and prediction resistance flag
 (as returned by <a href="SecureRandom.html#getParameters()"><code>SecureRandom.getParameters()</code></a>) with no
 additional input.
 <p>
-A DRBG should be implemented as a subclass of <a href="SecureRandomSpi.html" title="class in java.security"><code>SecureRandomSpi</code></a>.
+A DRBG should be implemented as a subclass of <a href="SecureRandomSpi.html" title="java.security 包中的类"><code>SecureRandomSpi</code></a>.
 It is recommended that the implementation contain the 1-arg
 <a href="SecureRandomSpi.html#%3Cinit%3E(java.security.SecureRandomParameters)">constructor</a>
 that takes a <code>DrbgParameters.Instantiation</code> argument. If implemented
 this way, this implementation can be chosen by any
 <code>SecureRandom.getInstance()</code> method. If it is chosen by a
-<code>SecureRandom.getInstance()</code> with a <a href="SecureRandomParameters.html" title="interface in java.security"><code>SecureRandomParameters</code></a>
+<code>SecureRandom.getInstance()</code> with a <a href="SecureRandomParameters.html" title="java.security 包中的接口"><code>SecureRandomParameters</code></a>
 parameter, the parameter is passed into this constructor. If it is chosen
 by a <code>SecureRandom.getInstance()</code> without a
 <code>SecureRandomParameters</code> parameter, the constructor is called with
@@ -243,11 +243,11 @@ drbg.nextBytes(buffer,
 drbg.reseed(DrbgParameters.reseed(false, "extra".getBytes()));</pre>
 </blockquote></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>By convention, a provider should name its primary DRBG implementation
 with the <a href="../../../../specs/security/standard-names.html#securerandom-number-generation-algorithms">
 standard <code>SecureRandom</code> algorithm name</a> "DRBG".</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The following notes apply to the "DRBG" implementation in the SUN provider
 of the JDK reference implementation.
 <p>
@@ -266,11 +266,11 @@ up to the highest strength it supports. Both reseeding and prediction
 resistance are supported.
 <p>
 Personalization string is supported through the
-<a href="DrbgParameters.Instantiation.html" title="class in java.security"><code>DrbgParameters.Instantiation</code></a> class and additional input is supported
-through the <a href="DrbgParameters.NextBytes.html" title="class in java.security"><code>DrbgParameters.NextBytes</code></a> and
-<a href="DrbgParameters.Reseed.html" title="class in java.security"><code>DrbgParameters.Reseed</code></a> classes.
+<a href="DrbgParameters.Instantiation.html" title="java.security 包中的类"><code>DrbgParameters.Instantiation</code></a> class and additional input is supported
+through the <a href="DrbgParameters.NextBytes.html" title="java.security 包中的类"><code>DrbgParameters.NextBytes</code></a> and
+<a href="DrbgParameters.Reseed.html" title="java.security 包中的类"><code>DrbgParameters.Reseed</code></a> classes.
 <p>
-If a DRBG is not instantiated with a <a href="DrbgParameters.Instantiation.html" title="class in java.security"><code>DrbgParameters.Instantiation</code></a>
+If a DRBG is not instantiated with a <a href="DrbgParameters.Instantiation.html" title="java.security 包中的类"><code>DrbgParameters.Instantiation</code></a>
 object explicitly, this implementation instantiates it with a default
 requested strength of 128 bits, no prediction resistance request, and
 no personalization string. These default instantiation parameters can also
@@ -281,9 +281,9 @@ source determined by the security property <code>securerandom.source</code>.
 <p>
 Calling <a href="SecureRandom.html#generateSeed(int)"><code>SecureRandom.generateSeed(int)</code></a> will directly read
 from this system default entropy source.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90Ar1.pdf"><span id="RecommendationforRandomNumberGenerationUsingDeterministicRandomBitGenerators" class="search-tag-result">Recommendation for Random Number Generation Using Deterministic Random Bit Generators</span></a></li>
@@ -298,29 +298,29 @@ from this system default entropy source.</dd>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">类</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DrbgParameters.Capability.html" class="type-name-link" title="enum class in java.security">DrbgParameters.Capability</a></code></div>
+<div class="col-second even-row-color"><code><a href="DrbgParameters.Capability.html" title="java.security 包中的枚举类">DrbgParameters.Capability</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The reseedable and prediction resistance capabilities of a DRBG.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="DrbgParameters.Instantiation.html" class="type-name-link" title="class in java.security">DrbgParameters.Instantiation</a></code></div>
+<div class="col-second odd-row-color"><code><a href="DrbgParameters.Instantiation.html" title="java.security 包中的类">DrbgParameters.Instantiation</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">DRBG parameters for instantiation.</div>
 </div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="DrbgParameters.NextBytes.html" class="type-name-link" title="class in java.security">DrbgParameters.NextBytes</a></code></div>
+<div class="col-second even-row-color"><code><a href="DrbgParameters.NextBytes.html" title="java.security 包中的类">DrbgParameters.NextBytes</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">DRBG parameters for random bits generation.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="DrbgParameters.Reseed.html" class="type-name-link" title="class in java.security">DrbgParameters.Reseed</a></code></div>
+<div class="col-second odd-row-color"><code><a href="DrbgParameters.Reseed.html" title="java.security 包中的类">DrbgParameters.Reseed</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">DRBG parameters for reseed.</div>
 </div>
@@ -330,39 +330,39 @@ from this system default entropy source.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.Instantiation.html" title="class in java.security">DrbgParameters.Instantiation</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.Instantiation.html" title="java.security 包中的类">DrbgParameters.Instantiation</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#instantiation(int,java.security.DrbgParameters.Capability,byte%5B%5D)" class="member-name-link">instantiation</a><wbr>(int&nbsp;strength,
- <a href="DrbgParameters.Capability.html" title="enum class in java.security">DrbgParameters.Capability</a>&nbsp;capability,
+ <a href="DrbgParameters.Capability.html" title="java.security 包中的枚举类">DrbgParameters.Capability</a>&nbsp;capability,
  byte[]&nbsp;personalizationString)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Generates a <a href="DrbgParameters.Instantiation.html" title="class in java.security"><code>DrbgParameters.Instantiation</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.Instantiation.html" title="java.security 包中的类"><code>DrbgParameters.Instantiation</code></a> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.NextBytes.html" title="class in java.security">DrbgParameters.NextBytes</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.NextBytes.html" title="java.security 包中的类">DrbgParameters.NextBytes</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#nextBytes(int,boolean,byte%5B%5D)" class="member-name-link">nextBytes</a><wbr>(int&nbsp;strength,
  boolean&nbsp;predictionResistance,
  byte[]&nbsp;additionalInput)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Generates a <a href="DrbgParameters.NextBytes.html" title="class in java.security"><code>DrbgParameters.NextBytes</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.NextBytes.html" title="java.security 包中的类"><code>DrbgParameters.NextBytes</code></a> object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.Reseed.html" title="class in java.security">DrbgParameters.Reseed</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="DrbgParameters.Reseed.html" title="java.security 包中的类">DrbgParameters.Reseed</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#reseed(boolean,byte%5B%5D)" class="member-name-link">reseed</a><wbr>(boolean&nbsp;predictionResistance,
  byte[]&nbsp;additionalInput)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Generates a <a href="DrbgParameters.Reseed.html" title="class in java.security"><code>DrbgParameters.Reseed</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.Reseed.html" title="java.security 包中的类"><code>DrbgParameters.Reseed</code></a> object.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -373,29 +373,29 @@ from this system default entropy source.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="instantiation(int,java.security.DrbgParameters.Capability,byte[])">
 <h3>instantiation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.Instantiation.html" title="class in java.security">DrbgParameters.Instantiation</a></span>&nbsp;<span class="element-name">instantiation</span><wbr><span class="parameters">(int&nbsp;strength,
- <a href="DrbgParameters.Capability.html" title="enum class in java.security">DrbgParameters.Capability</a>&nbsp;capability,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.Instantiation.html" title="java.security 包中的类">DrbgParameters.Instantiation</a></span>&nbsp;<span class="element-name">instantiation</span><wbr><span class="parameters">(int&nbsp;strength,
+ <a href="DrbgParameters.Capability.html" title="java.security 包中的枚举类">DrbgParameters.Capability</a>&nbsp;capability,
  byte[]&nbsp;personalizationString)</span></div>
-<div class="block">Generates a <a href="DrbgParameters.Instantiation.html" title="class in java.security"><code>DrbgParameters.Instantiation</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.Instantiation.html" title="java.security 包中的类"><code>DrbgParameters.Instantiation</code></a> object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>strength</code> - security strength in bits, -1 for default strength
                 if used in <code>getInstance</code>.</dd>
 <dd><code>capability</code> - capability</dd>
 <dd><code>personalizationString</code> - personalization string as a byte array,
                              can be <code>null</code>. The content of this
                              byte array will be copied.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>Instantiation</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>capability</code> is <code>null</code></dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>strength</code> is less than -1</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>capability</code> is <code>null</code></dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>strength</code> is less than -1</dd>
 </dl>
 </div>
 </section>
@@ -404,21 +404,21 @@ from this system default entropy source.</dd>
 <section class="detail" id="nextBytes(int,boolean,byte[])">
 <h3>nextBytes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.NextBytes.html" title="class in java.security">DrbgParameters.NextBytes</a></span>&nbsp;<span class="element-name">nextBytes</span><wbr><span class="parameters">(int&nbsp;strength,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.NextBytes.html" title="java.security 包中的类">DrbgParameters.NextBytes</a></span>&nbsp;<span class="element-name">nextBytes</span><wbr><span class="parameters">(int&nbsp;strength,
  boolean&nbsp;predictionResistance,
  byte[]&nbsp;additionalInput)</span></div>
-<div class="block">Generates a <a href="DrbgParameters.NextBytes.html" title="class in java.security"><code>DrbgParameters.NextBytes</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.NextBytes.html" title="java.security 包中的类"><code>DrbgParameters.NextBytes</code></a> object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>strength</code> - requested security strength in bits. If set to -1, the
                 effective strength will be used.</dd>
 <dd><code>predictionResistance</code> - prediction resistance requested</dd>
 <dd><code>additionalInput</code> - additional input, can be <code>null</code>.
                        The content of this byte array will be copied.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>NextBytes</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>strength</code> is less than -1</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>strength</code> is less than -1</dd>
 </dl>
 </div>
 </section>
@@ -427,15 +427,15 @@ from this system default entropy source.</dd>
 <section class="detail" id="reseed(boolean,byte[])">
 <h3>reseed</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.Reseed.html" title="class in java.security">DrbgParameters.Reseed</a></span>&nbsp;<span class="element-name">reseed</span><wbr><span class="parameters">(boolean&nbsp;predictionResistance,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="DrbgParameters.Reseed.html" title="java.security 包中的类">DrbgParameters.Reseed</a></span>&nbsp;<span class="element-name">reseed</span><wbr><span class="parameters">(boolean&nbsp;predictionResistance,
  byte[]&nbsp;additionalInput)</span></div>
-<div class="block">Generates a <a href="DrbgParameters.Reseed.html" title="class in java.security"><code>DrbgParameters.Reseed</code></a> object.</div>
+<div class="block">Generates a <a href="DrbgParameters.Reseed.html" title="java.security 包中的类"><code>DrbgParameters.Reseed</code></a> object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predictionResistance</code> - prediction resistance requested</dd>
 <dd><code>additionalInput</code> - additional input, can be <code>null</code>.
                        The content of this byte array will be copied.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>Reseed</code> object</dd>
 </dl>
 </div>

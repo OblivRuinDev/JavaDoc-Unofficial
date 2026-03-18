@@ -61,7 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.print.attribute</a></li>
 <li><a href="AttributeSet.html" class="current-selection">AttributeSet</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -69,11 +69,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#get(java.lang.Class)" tabindex="0">get(Class)</a></li>
 <li><a href="#add(javax.print.attribute.Attribute)" tabindex="0">add(Attribute)</a></li>
@@ -95,36 +95,36 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface AttributeSet" class="title">Interface AttributeSet</h1>
+<h1 title="接口 AttributeSet" class="title">接口 AttributeSet</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="DocAttributeSet.html" title="interface in javax.print.attribute">DocAttributeSet</a>, <a href="PrintJobAttributeSet.html" title="interface in javax.print.attribute">PrintJobAttributeSet</a>, <a href="PrintRequestAttributeSet.html" title="interface in javax.print.attribute">PrintRequestAttributeSet</a>, <a href="PrintServiceAttributeSet.html" title="interface in javax.print.attribute">PrintServiceAttributeSet</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="DocAttributeSet.html" title="javax.print.attribute 包中的接口">DocAttributeSet</a>, <a href="PrintJobAttributeSet.html" title="javax.print.attribute 包中的接口">PrintJobAttributeSet</a>, <a href="PrintRequestAttributeSet.html" title="javax.print.attribute 包中的接口">PrintRequestAttributeSet</a>, <a href="PrintServiceAttributeSet.html" title="javax.print.attribute 包中的接口">PrintServiceAttributeSet</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="HashAttributeSet.html" title="class in javax.print.attribute">HashAttributeSet</a>, <a href="HashDocAttributeSet.html" title="class in javax.print.attribute">HashDocAttributeSet</a>, <a href="HashPrintJobAttributeSet.html" title="class in javax.print.attribute">HashPrintJobAttributeSet</a>, <a href="HashPrintRequestAttributeSet.html" title="class in javax.print.attribute">HashPrintRequestAttributeSet</a>, <a href="HashPrintServiceAttributeSet.html" title="class in javax.print.attribute">HashPrintServiceAttributeSet</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="HashAttributeSet.html" title="javax.print.attribute 包中的类">HashAttributeSet</a>, <a href="HashDocAttributeSet.html" title="javax.print.attribute 包中的类">HashDocAttributeSet</a>, <a href="HashPrintJobAttributeSet.html" title="javax.print.attribute 包中的类">HashPrintJobAttributeSet</a>, <a href="HashPrintRequestAttributeSet.html" title="javax.print.attribute 包中的类">HashPrintRequestAttributeSet</a>, <a href="HashPrintServiceAttributeSet.html" title="javax.print.attribute 包中的类">HashPrintServiceAttributeSet</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">AttributeSet</span></div>
 <div class="block">Interface <code>AttributeSet</code> specifies the interface for a set of printing
 attributes. A printing attribute is an object whose class implements
-interface <a href="Attribute.html" title="interface in javax.print.attribute"><code>Attribute</code></a>.
+interface <a href="Attribute.html" title="javax.print.attribute 包中的接口"><code>Attribute</code></a>.
 <p>
 An attribute set contains a group of <i>attribute values,</i> where duplicate
 values are not allowed in the set. Furthermore, each value in an attribute
 set is a member of some <i>category,</i> and at most one value in any
 particular category is allowed in the set. For an attribute set, the values
-are <a href="Attribute.html" title="interface in javax.print.attribute"><code>Attribute</code></a> objects, and the categories are
-<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a> objects. An attribute's category is the class (or
+are <a href="Attribute.html" title="javax.print.attribute 包中的接口"><code>Attribute</code></a> objects, and the categories are
+<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类"><code>Class</code></a> objects. An attribute's category is the class (or
 interface) at the root of the class hierarchy for that kind of attribute.
 Note that an attribute object's category may be a superclass of the attribute
 object's class rather than the attribute object's class itself. An attribute
 object's category is determined by calling the
 <a href="Attribute.html#getCategory()"><code>getCategory()</code></a> method defined in interface
-<a href="Attribute.html" title="interface in javax.print.attribute"><code>Attribute</code></a>.
+<a href="Attribute.html" title="javax.print.attribute 包中的接口"><code>Attribute</code></a>.
 <p>
 The interfaces of an <code>AttributeSet</code> resemble those of the Java
 Collections API's <code>java.util.Map</code> interface, but is more restrictive in
@@ -134,32 +134,33 @@ the types it will accept, and combines keys and values into an
 Attribute sets are used in several places in the Print Service API. In each
 context, only certain kinds of attributes are allowed to appear in the
 attribute set, as determined by the tagging interfaces which the attribute
-class implements -- <a href="DocAttribute.html" title="interface in javax.print.attribute"><code>DocAttribute</code></a>,
-<a href="PrintRequestAttribute.html" title="interface in javax.print.attribute"><code>PrintRequestAttribute</code></a>,
-<a href="PrintJobAttribute.html" title="interface in javax.print.attribute"><code>PrintJobAttribute</code></a>, and
-<a href="PrintServiceAttribute.html" title="interface in javax.print.attribute"><code>PrintServiceAttribute</code></a>.
+class implements -- <a href="DocAttribute.html" title="javax.print.attribute 包中的接口"><code>DocAttribute</code></a>,
+<a href="PrintRequestAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintRequestAttribute</code></a>,
+<a href="PrintJobAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintJobAttribute</code></a>, and
+<a href="PrintServiceAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintServiceAttribute</code></a>.
 There are four specializations of an attribute set that are restricted to
 contain just one of the four kinds of attribute --
-<a href="DocAttributeSet.html" title="interface in javax.print.attribute"><code>DocAttributeSet</code></a>,
-<a href="PrintRequestAttributeSet.html" title="interface in javax.print.attribute"><code>PrintRequestAttributeSet</code></a>,
-<a href="PrintJobAttributeSet.html" title="interface in javax.print.attribute"><code>PrintJobAttributeSet</code></a>, and
-<a href="PrintServiceAttributeSet.html" title="interface in javax.print.attribute"><code>PrintServiceAttributeSet</code></a>, respectively. Note
+<a href="DocAttributeSet.html" title="javax.print.attribute 包中的接口"><code>DocAttributeSet</code></a>,
+<a href="PrintRequestAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintRequestAttributeSet</code></a>,
+<a href="PrintJobAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintJobAttributeSet</code></a>, and
+<a href="PrintServiceAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintServiceAttributeSet</code></a>, respectively. Note
 that many attribute classes implement more than one tagging interface and so
 may appear in more than one context.
 <ul>
-  <li>A <a href="DocAttributeSet.html" title="interface in javax.print.attribute"><code>DocAttributeSet</code></a>, containing
-  <a href="DocAttribute.html" title="interface in javax.print.attribute"><code>DocAttribute</code></a>s, specifies the characteristics of an
+  <li>A <a href="DocAttributeSet.html" title="javax.print.attribute 包中的接口"><code>DocAttributeSet</code></a>, containing
+  <a href="DocAttribute.html" title="javax.print.attribute 包中的接口"><code>DocAttribute</code></a>s, specifies the characteristics of an
   individual doc and the print job settings to be applied to an individual
   doc.
-  <li>A <a href="PrintRequestAttributeSet.html" title="interface in javax.print.attribute"><code>PrintRequestAttributeSet</code></a>, containing
-  <a href="PrintRequestAttribute.html" title="interface in javax.print.attribute"><code>PrintRequestAttribute</code></a>s, specifies the
+  <li>A <a href="PrintRequestAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintRequestAttributeSet</code></a>, containing
+  <a href="PrintRequestAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintRequestAttribute</code></a>s, specifies the
   settings to be applied to a whole print job and to all the docs in the
   print job.
-  <li>A <a href="PrintJobAttributeSet.html" title="interface in javax.print.attribute"><code>PrintJobAttributeSet</code></a>, containing
-  <a href="PrintJobAttribute.html" title="interface in javax.print.attribute"><code>PrintJobAttribute</code></a>s, reports the status of a print
+  <li>A <a href="PrintJobAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintJobAttributeSet</code></a>, containing
+  <a href="PrintJobAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintJobAttribute</code></a>s, reports the status of a print
   job.
-  <li>A <a href="PrintServiceAttributeSet.html" title="interface in javax.print.attribute"><code>PrintServiceAttributeSet</code></a>, containing
-  <a href="PrintServiceAttribute.html" title="interface in javax.print.attribute"><code>PrintServiceAttribute</code></a>s, reports the status of
+  <li>A <a href="PrintServiceAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintServiceAttributeSet</code></a>, containing
+  </li><li>A <a href="PrintServiceAttributeSet.html" title="javax.print.attribute 包中的接口"><code>PrintServiceAttributeSet</code></a>, containing
+  <a href="PrintServiceAttribute.html" title="javax.print.attribute 包中的接口"><code>PrintServiceAttribute</code></a>s, reports the status of
   a Print Service instance.
 </ul>
 In some contexts, the client is only allowed to examine an attribute set's
@@ -169,15 +170,15 @@ client is allowed both to examine and to change an attribute set's contents
 operation throws an <code>UnmodifiableSetException</code>.
 <p>
 The Print Service API provides one implementation of interface
-<code>AttributeSet</code>, class <a href="HashAttributeSet.html" title="class in javax.print.attribute"><code>HashAttributeSet</code></a>. A
-client can use class <a href="HashAttributeSet.html" title="class in javax.print.attribute"><code>HashAttributeSet</code></a> or provide its
+<code>AttributeSet</code>, class <a href="HashAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashAttributeSet</code></a>. A
+client can use class <a href="HashAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashAttributeSet</code></a> or provide its
 own implementation of interface <code>AttributeSet</code>. The Print Service API
 also provides implementations of interface <code>AttributeSet</code>'s
 subinterfaces -- classes
-<a href="HashDocAttributeSet.html" title="class in javax.print.attribute"><code>HashDocAttributeSet</code></a>,
-<a href="HashPrintRequestAttributeSet.html" title="class in javax.print.attribute"><code>HashPrintRequestAttributeSet</code></a>,
-<a href="HashPrintJobAttributeSet.html" title="class in javax.print.attribute"><code>HashPrintJobAttributeSet</code></a>, and
-<a href="HashPrintServiceAttributeSet.html" title="class in javax.print.attribute"><code>HashPrintServiceAttributeSet</code></a>.</div>
+<a href="HashDocAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashDocAttributeSet</code></a>,
+<a href="HashPrintRequestAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashPrintRequestAttributeSet</code></a>,
+<a href="HashPrintJobAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashPrintJobAttributeSet</code></a>, and
+<a href="HashPrintServiceAttributeSet.html" title="javax.print.attribute 包中的类"><code>HashPrintServiceAttributeSet</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -185,23 +186,23 @@ subinterfaces -- classes
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(javax.print.attribute.Attribute)" class="member-name-link">add</a><wbr>(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#add(javax.print.attribute.Attribute)" class="member-name-link">add</a><wbr>(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds the specified attribute to this attribute set if it is not already
 present, first removing any existing value in the same attribute category
 as the specified attribute value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addAll(javax.print.attribute.AttributeSet)" class="member-name-link">addAll</a><wbr>(<a href="AttributeSet.html" title="interface in javax.print.attribute">AttributeSet</a>&nbsp;attributes)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addAll(javax.print.attribute.AttributeSet)" class="member-name-link">addAll</a><wbr>(<a href="AttributeSet.html" title="javax.print.attribute 包中的接口">AttributeSet</a>&nbsp;attributes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds all of the elements in the specified set to this attribute.</div>
 </div>
@@ -211,24 +212,24 @@ as the specified attribute value.</div>
 <div class="block">Removes all attributes from this attribute set.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsKey(java.lang.Class)" class="member-name-link">containsKey</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsKey(java.lang.Class)" class="member-name-link">containsKey</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if this attribute set contains an attribute for the
 specified category.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsValue(javax.print.attribute.Attribute)" class="member-name-link">containsValue</a><wbr>(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsValue(javax.print.attribute.Attribute)" class="member-name-link">containsValue</a><wbr>(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if this attribute set contains the given attribute
 value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compares the specified object with this attribute set for equality.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.Class)" class="member-name-link">get</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.Class)" class="member-name-link">get</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the attribute value which this attribute set contains in the
 given attribute category.</div>
@@ -244,13 +245,13 @@ given attribute category.</div>
 <div class="block">Returns <code>true</code> if this attribute set contains no attributes.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.Class)" class="member-name-link">remove</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.Class)" class="member-name-link">remove</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes any attribute for this category from this attribute set if
 present.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(javax.print.attribute.Attribute)" class="member-name-link">remove</a><wbr>(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(javax.print.attribute.Attribute)" class="member-name-link">remove</a><wbr>(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes the specified attribute from this attribute set if present.</div>
 </div>
@@ -259,7 +260,7 @@ present.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the number of attributes in this attribute set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toArray()" class="member-name-link">toArray</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an array of the attributes contained in this set.</div>
@@ -276,30 +277,30 @@ present.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="get(java.lang.Class)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</span></div>
 <div class="block">Returns the attribute value which this attribute set contains in the
 given attribute category. Returns <code>null</code> if this attribute set does
 not contain any attribute value in the given attribute category.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>category</code> - attribute category whose associated attribute value is
-        to be returned. It must be a <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a> that implements
-        interface <a href="Attribute.html" title="interface in javax.print.attribute"><code>Attribute</code></a>.</dd>
-<dt>Returns:</dt>
+        to be returned. It must be a <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类"><code>Class</code></a> that implements
+        interface <a href="Attribute.html" title="javax.print.attribute 包中的接口"><code>Attribute</code></a>.</dd>
+<dt>返回:</dt>
 <dd>the attribute value in the given attribute category contained in
         this attribute set, or <code>null</code> if this attribute set does
         not contain any attribute value in the given attribute category</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the <code>category</code> is <code>null</code></dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the <code>category</code> is not a
-        <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang"><code>Class</code></a> that implements interface
-        <a href="Attribute.html" title="interface in javax.print.attribute"><code>Attribute</code></a></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the <code>category</code> is <code>null</code></dd>
+<dd><code><a href="../../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the <code>category</code> is not a
+        <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类"><code>Class</code></a> that implements interface
+        <a href="Attribute.html" title="javax.print.attribute 包中的接口"><code>Attribute</code></a></dd>
 </dl>
 </div>
 </section>
@@ -308,20 +309,20 @@ not contain any attribute value in the given attribute category.</div>
 <section class="detail" id="add(javax.print.attribute.Attribute)">
 <h3>add</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</span></div>
 <div class="block">Adds the specified attribute to this attribute set if it is not already
 present, first removing any existing value in the same attribute category
 as the specified attribute value.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>attribute</code> - attribute value to be added to this attribute set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set changed as a result of the
         call, i.e., the given attribute value was not already a member of
         this attribute set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the <code>attribute</code> is <code>null</code></dd>
-<dd><code><a href="UnmodifiableSetException.html" title="class in javax.print.attribute">UnmodifiableSetException</a></code> - if this attribute set does not support
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the <code>attribute</code> is <code>null</code></dd>
+<dd><code><a href="UnmodifiableSetException.html" title="javax.print.attribute 包中的类">UnmodifiableSetException</a></code> - if this attribute set does not support
         the <code>add()</code> operation</dd>
 </dl>
 </div>
@@ -331,19 +332,19 @@ as the specified attribute value.</div>
 <section class="detail" id="remove(java.lang.Class)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</span></div>
 <div class="block">Removes any attribute for this category from this attribute set if
 present. If <code>category</code> is <code>null</code>, then <code>remove()</code> does
 nothing and returns <code>false</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>category</code> - attribute category to be removed from this attribute set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set changed as a result of the
         call, i.e., the given attribute value had been a member of this
         attribute set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnmodifiableSetException.html" title="class in javax.print.attribute">UnmodifiableSetException</a></code> - if this attribute set does not support
+<dt>抛出:</dt>
+<dd><code><a href="UnmodifiableSetException.html" title="javax.print.attribute 包中的类">UnmodifiableSetException</a></code> - if this attribute set does not support
         the <code>remove()</code> operation</dd>
 </dl>
 </div>
@@ -353,19 +354,19 @@ nothing and returns <code>false</code>.</div>
 <section class="detail" id="remove(javax.print.attribute.Attribute)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</span></div>
 <div class="block">Removes the specified attribute from this attribute set if present. If
 <code>attribute</code> is <code>null</code>, then <code>remove()</code> does nothing and
 returns <code>false</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>attribute</code> - attribute value to be removed from this attribute set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set changed as a result of the
         call, i.e., the given attribute value had been a member of this
         attribute set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnmodifiableSetException.html" title="class in javax.print.attribute">UnmodifiableSetException</a></code> - if this attribute set does not support
+<dt>抛出:</dt>
+<dd><code><a href="UnmodifiableSetException.html" title="javax.print.attribute 包中的类">UnmodifiableSetException</a></code> - if this attribute set does not support
         the <code>remove()</code> operation</dd>
 </dl>
 </div>
@@ -375,13 +376,13 @@ returns <code>false</code>.</div>
 <section class="detail" id="containsKey(java.lang.Class)">
 <h3>containsKey</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsKey</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;category)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsKey</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;category)</span></div>
 <div class="block">Returns <code>true</code> if this attribute set contains an attribute for the
 specified category.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>category</code> - whose presence in this attribute set is to be tested</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set contains an attribute value
         for the specified category</dd>
 </dl>
@@ -392,14 +393,14 @@ specified category.</div>
 <section class="detail" id="containsValue(javax.print.attribute.Attribute)">
 <h3>containsValue</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsValue</span><wbr><span class="parameters">(<a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>&nbsp;attribute)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsValue</span><wbr><span class="parameters">(<a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>&nbsp;attribute)</span></div>
 <div class="block">Returns <code>true</code> if this attribute set contains the given attribute
 value.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>attribute</code> - attribute value whose presence in this attribute set is
         to be tested</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set contains the given attribute
         value</dd>
 </dl>
@@ -410,7 +411,7 @@ value.</div>
 <section class="detail" id="addAll(javax.print.attribute.AttributeSet)">
 <h3>addAll</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">addAll</span><wbr><span class="parameters">(<a href="AttributeSet.html" title="interface in javax.print.attribute">AttributeSet</a>&nbsp;attributes)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">addAll</span><wbr><span class="parameters">(<a href="AttributeSet.html" title="javax.print.attribute 包中的接口">AttributeSet</a>&nbsp;attributes)</span></div>
 <div class="block">Adds all of the elements in the specified set to this attribute. The
 outcome is the same as if the = <a href="#add(javax.print.attribute.Attribute)"><code>add(Attribute)</code></a>
 operation had been applied to this attribute set successively with each
@@ -423,17 +424,17 @@ effect on this attribute set's state is implementation dependent;
 elements from the specified set before the point of the exception may or
 may not have been added to this attribute set.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>attributes</code> - whose elements are to be added to this attribute set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set changed as a result of the
         call</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnmodifiableSetException.html" title="class in javax.print.attribute">UnmodifiableSetException</a></code> - if this attribute set does not support
+<dt>抛出:</dt>
+<dd><code><a href="UnmodifiableSetException.html" title="javax.print.attribute 包中的类">UnmodifiableSetException</a></code> - if this attribute set does not support
         the <code>addAll(AttributeSet)</code> method</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if some element in the specified set is
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if some element in the specified set is
         <code>null</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#add(javax.print.attribute.Attribute)"><code>add(Attribute)</code></a></li>
@@ -452,7 +453,7 @@ may not have been added to this attribute set.</div>
 set contains more than <code>Integer.MAX_VALUE</code> elements, returns
 <code>Integer.MAX_VALUE</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of attributes in this attribute set</dd>
 </dl>
 </div>
@@ -462,10 +463,10 @@ set contains more than <code>Integer.MAX_VALUE</code> elements, returns
 <section class="detail" id="toArray()">
 <h3>toArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Attribute.html" title="interface in javax.print.attribute">Attribute</a>[]</span>&nbsp;<span class="element-name">toArray</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Attribute.html" title="javax.print.attribute 包中的接口">Attribute</a>[]</span>&nbsp;<span class="element-name">toArray</span>()</div>
 <div class="block">Returns an array of the attributes contained in this set.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>Attributes</code> contained in this set as an array, zero
         length if the <code>AttributeSet</code> is empty</dd>
 </dl>
@@ -479,8 +480,8 @@ set contains more than <code>Integer.MAX_VALUE</code> elements, returns
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
 <div class="block">Removes all attributes from this attribute set.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="UnmodifiableSetException.html" title="class in javax.print.attribute">UnmodifiableSetException</a></code> - if this attribute set does not support
+<dt>抛出:</dt>
+<dd><code><a href="UnmodifiableSetException.html" title="javax.print.attribute 包中的类">UnmodifiableSetException</a></code> - if this attribute set does not support
         the <code>clear()</code> operation</dd>
 </dl>
 </div>
@@ -493,7 +494,7 @@ set contains more than <code>Integer.MAX_VALUE</code> elements, returns
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
 <div class="block">Returns <code>true</code> if this attribute set contains no attributes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this attribute set contains no attributes</dd>
 </dl>
 </div>
@@ -503,25 +504,25 @@ set contains more than <code>Integer.MAX_VALUE</code> elements, returns
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;object)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;object)</span></div>
 <div class="block">Compares the specified object with this attribute set for equality.
 Returns <code>true</code> if the given object is also an attribute set and the
 two attribute sets contain the same attribute category-attribute value
 mappings. This ensures that the <code>equals()</code> method works properly
 across different implementations of the <code>AttributeSet</code> interface.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>object</code> - to be compared for equality with this attribute set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the specified object is equal to this attribute
         set</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -540,11 +541,11 @@ that <code>t1.hashCode()==t2.hashCode()</code> for any two attribute sets
 <code>t1</code> and <code>t2</code>, as required by the general contract of
 <a href="../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>the hash code value for this attribute set</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>

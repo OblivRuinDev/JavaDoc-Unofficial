@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.jshell.execution</a></li>
 <li><a href="RemoteExecutionControl.html" class="current-selection">RemoteExecutionControl</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,19 +66,19 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(jdk.jshell.execution.LoaderDelegate)" tabindex="0">RemoteExecutionControl(LoaderDelegate)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">RemoteExecutionControl()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#main(java.lang.String%5B%5D)" tabindex="0">main(String[])</a></li>
 <li><a href="#redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" tabindex="0">redefine(ExecutionControl.ClassBytecodes[])</a></li>
@@ -92,30 +92,30 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class RemoteExecutionControl" class="title">Class RemoteExecutionControl</h1>
+<h1 title="类 RemoteExecutionControl" class="title">类 RemoteExecutionControl</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="DirectExecutionControl.html" title="class in jdk.jshell.execution">jdk.jshell.execution.DirectExecutionControl</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类">jdk.jshell.execution.DirectExecutionControl</a>
 <div class="inheritance">jdk.jshell.execution.RemoteExecutionControl</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="../spi/ExecutionControl.html" title="interface in jdk.jshell.spi">ExecutionControl</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="../spi/ExecutionControl.html" title="jdk.jshell.spi 包中的接口">ExecutionControl</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">RemoteExecutionControl</span>
-<span class="extends-implements">extends <a href="DirectExecutionControl.html" title="class in jdk.jshell.execution">DirectExecutionControl</a>
-implements <a href="../spi/ExecutionControl.html" title="interface in jdk.jshell.spi">ExecutionControl</a></span></div>
+<span class="extends-implements">extends <a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类">DirectExecutionControl</a>
+implements <a href="../spi/ExecutionControl.html" title="jdk.jshell.spi 包中的接口">ExecutionControl</a></span></div>
 <div class="block">The remote agent runs in the execution process (separate from the main JShell
 process). This agent loads code over a socket from the main JShell process,
 executes the code, and other misc, Specialization of
-<a href="DirectExecutionControl.html" title="class in jdk.jshell.execution"><code>DirectExecutionControl</code></a> which adds stop support controlled by
-an external process. Designed to work with <a href="JdiDefaultExecutionControl.html" title="class in jdk.jshell.execution"><code>JdiDefaultExecutionControl</code></a>.</div>
+<a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类"><code>DirectExecutionControl</code></a> which adds stop support controlled by
+an external process. Designed to work with <a href="JdiDefaultExecutionControl.html" title="jdk.jshell.execution 包中的类"><code>JdiDefaultExecutionControl</code></a>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -125,25 +125,25 @@ an external process. Designed to work with <a href="JdiDefaultExecutionControl.h
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-jdk.jshell.spi.ExecutionControl">Nested classes/interfaces declared in interface&nbsp;<a href="../spi/ExecutionControl.html#nested-class-summary" title="interface in jdk.jshell.spi">ExecutionControl</a></h3>
-<code><a href="../spi/ExecutionControl.ClassBytecodes.html" title="class in jdk.jshell.spi">ExecutionControl.ClassBytecodes</a>, <a href="../spi/ExecutionControl.ClassInstallException.html" title="class in jdk.jshell.spi">ExecutionControl.ClassInstallException</a>, <a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a>, <a href="../spi/ExecutionControl.ExecutionControlException.html" title="class in jdk.jshell.spi">ExecutionControl.ExecutionControlException</a>, <a href="../spi/ExecutionControl.InternalException.html" title="class in jdk.jshell.spi">ExecutionControl.InternalException</a>, <a href="../spi/ExecutionControl.NotImplementedException.html" title="class in jdk.jshell.spi">ExecutionControl.NotImplementedException</a>, <a href="../spi/ExecutionControl.ResolutionException.html" title="class in jdk.jshell.spi">ExecutionControl.ResolutionException</a>, <a href="../spi/ExecutionControl.RunException.html" title="class in jdk.jshell.spi">ExecutionControl.RunException</a>, <a href="../spi/ExecutionControl.StoppedException.html" title="class in jdk.jshell.spi">ExecutionControl.StoppedException</a>, <a href="../spi/ExecutionControl.UserException.html" title="class in jdk.jshell.spi">ExecutionControl.UserException</a></code></div>
+<h3 id="nested-classes-inherited-from-class-jdk.jshell.spi.ExecutionControl">在接口 <a href="../spi/ExecutionControl.html#nested-class-summary" title="jdk.jshell.spi 包中的接口">ExecutionControl</a> 中声明的嵌套类/接口</h3>
+<code><a href="../spi/ExecutionControl.ClassBytecodes.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassBytecodes</a>, <a href="../spi/ExecutionControl.ClassInstallException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassInstallException</a>, <a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a>, <a href="../spi/ExecutionControl.ExecutionControlException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ExecutionControlException</a>, <a href="../spi/ExecutionControl.InternalException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.InternalException</a>, <a href="../spi/ExecutionControl.NotImplementedException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.NotImplementedException</a>, <a href="../spi/ExecutionControl.ResolutionException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ResolutionException</a>, <a href="../spi/ExecutionControl.RunException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.RunException</a>, <a href="../spi/ExecutionControl.StoppedException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.StoppedException</a>, <a href="../spi/ExecutionControl.UserException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.UserException</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">RemoteExecutionControl</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create an instance using the default class loading.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(jdk.jshell.execution.LoaderDelegate)" class="member-name-link">RemoteExecutionControl</a><wbr>(<a href="LoaderDelegate.html" title="interface in jdk.jshell.execution">LoaderDelegate</a>&nbsp;loaderDelegate)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(jdk.jshell.execution.LoaderDelegate)" class="member-name-link">RemoteExecutionControl</a><wbr>(<a href="LoaderDelegate.html" title="jdk.jshell.execution 包中的接口">LoaderDelegate</a>&nbsp;loaderDelegate)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates an instance, delegating loader operations to the specified
 delegate.</div>
@@ -154,27 +154,27 @@ delegate.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clientCodeEnter()" class="member-name-link">clientCodeEnter</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Marks entry into user code.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#main(java.lang.String%5B%5D)" class="member-name-link">main</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Launch the agent, connecting to the JShell-core over the socket specified
 in the command-line argument.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" class="member-name-link">redefine</a><wbr>(<a href="../spi/ExecutionControl.ClassBytecodes.html" title="class in jdk.jshell.spi">ExecutionControl.ClassBytecodes</a>[]&nbsp;cbcs)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" class="member-name-link">redefine</a><wbr>(<a href="../spi/ExecutionControl.ClassBytecodes.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassBytecodes</a>[]&nbsp;cbcs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Redefine processing on the remote end is only to register the redefined classes</div>
 </div>
@@ -183,9 +183,9 @@ in the command-line argument.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Interrupts a running invoke.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#varValue(java.lang.String,java.lang.String)" class="member-name-link">varValue</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;className,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;varName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#varValue(java.lang.String,java.lang.String)" class="member-name-link">varValue</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;className,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;varName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of a variable.</div>
 </div>
@@ -193,13 +193,13 @@ in the command-line argument.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-jdk.jshell.execution.DirectExecutionControl">Methods declared in class&nbsp;<a href="DirectExecutionControl.html#method-summary" title="class in jdk.jshell.execution">DirectExecutionControl</a></h3>
+<h3 id="methods-inherited-from-class-jdk.jshell.execution.DirectExecutionControl">在类 <a href="DirectExecutionControl.html#method-summary" title="jdk.jshell.execution 包中的类">DirectExecutionControl</a> 中声明的方法</h3>
 <code><a href="DirectExecutionControl.html#addToClasspath(java.lang.String)" title="addToClasspath(String)">addToClasspath</a>, <a href="DirectExecutionControl.html#classesRedefined(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" title="classesRedefined(ExecutionControl.ClassBytecodes[])">classesRedefined</a>, <a href="DirectExecutionControl.html#clientCodeLeave()" title="clientCodeLeave()">clientCodeLeave</a>, <a href="DirectExecutionControl.html#close()" title="close()">close</a>, <a href="DirectExecutionControl.html#extensionCommand(java.lang.String,java.lang.Object)" title="extensionCommand(String, Object)">extensionCommand</a>, <a href="DirectExecutionControl.html#findClass(java.lang.String)" title="findClass(String)">findClass</a>, <a href="DirectExecutionControl.html#invoke(java.lang.reflect.Method)" title="invoke(Method)">invoke</a>, <a href="DirectExecutionControl.html#invoke(java.lang.String,java.lang.String)" title="invoke(String, String)">invoke</a>, <a href="DirectExecutionControl.html#load(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" title="load(ExecutionControl.ClassBytecodes[])">load</a>, <a href="DirectExecutionControl.html#stop()" title="stop()">stop</a>, <a href="DirectExecutionControl.html#throwConvertedInvocationException(java.lang.Throwable)" title="throwConvertedInvocationException(Throwable)">throwConvertedInvocationException</a>, <a href="DirectExecutionControl.html#throwConvertedOtherException(java.lang.Throwable)" title="throwConvertedOtherException(Throwable)">throwConvertedOtherException</a>, <a href="DirectExecutionControl.html#valueString(java.lang.Object)" title="valueString(Object)">valueString</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-jdk.jshell.spi.ExecutionControl">Methods declared in interface&nbsp;<a href="../spi/ExecutionControl.html#method-summary" title="interface in jdk.jshell.spi">ExecutionControl</a></h3>
+<h3 id="methods-inherited-from-class-jdk.jshell.spi.ExecutionControl">在接口 <a href="../spi/ExecutionControl.html#method-summary" title="jdk.jshell.spi 包中的接口">ExecutionControl</a> 中声明的方法</h3>
 <code><a href="../spi/ExecutionControl.html#addToClasspath(java.lang.String)" title="addToClasspath(String)">addToClasspath</a>, <a href="../spi/ExecutionControl.html#close()" title="close()">close</a>, <a href="../spi/ExecutionControl.html#extensionCommand(java.lang.String,java.lang.Object)" title="extensionCommand(String, Object)">extensionCommand</a>, <a href="../spi/ExecutionControl.html#invoke(java.lang.String,java.lang.String)" title="invoke(String, String)">invoke</a>, <a href="../spi/ExecutionControl.html#load(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)" title="load(ExecutionControl.ClassBytecodes[])">load</a></code></div>
 </section>
 </li>
@@ -210,17 +210,17 @@ in the command-line argument.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(jdk.jshell.execution.LoaderDelegate)">
 <h3>RemoteExecutionControl</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RemoteExecutionControl</span><wbr><span class="parameters">(<a href="LoaderDelegate.html" title="interface in jdk.jshell.execution">LoaderDelegate</a>&nbsp;loaderDelegate)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">RemoteExecutionControl</span><wbr><span class="parameters">(<a href="LoaderDelegate.html" title="jdk.jshell.execution 包中的接口">LoaderDelegate</a>&nbsp;loaderDelegate)</span></div>
 <div class="block">Creates an instance, delegating loader operations to the specified
 delegate.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>loaderDelegate</code> - the delegate to handle loading classes</dd>
 </dl>
 </div>
@@ -241,22 +241,22 @@ delegate.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="main(java.lang.String[])">
 <h3>main</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;args)</span>
-                 throws <span class="exceptions"><a href="../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">main</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;args)</span>
+                 throws <span class="exceptions"><a href="../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></span></div>
 <div class="block">Launch the agent, connecting to the JShell-core over the socket specified
 in the command-line argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - standard command-line arguments, expectation is the socket
 number is the only argument</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></code> - any unexpected exception</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></code> - any unexpected exception</dd>
 </dl>
 </div>
 </section>
@@ -265,21 +265,21 @@ number is the only argument</dd>
 <section class="detail" id="redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes[])">
 <h3>redefine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">redefine</span><wbr><span class="parameters">(<a href="../spi/ExecutionControl.ClassBytecodes.html" title="class in jdk.jshell.spi">ExecutionControl.ClassBytecodes</a>[]&nbsp;cbcs)</span>
-              throws <span class="exceptions"><a href="../spi/ExecutionControl.ClassInstallException.html" title="class in jdk.jshell.spi">ExecutionControl.ClassInstallException</a>,
-<a href="../spi/ExecutionControl.NotImplementedException.html" title="class in jdk.jshell.spi">ExecutionControl.NotImplementedException</a>,
-<a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">redefine</span><wbr><span class="parameters">(<a href="../spi/ExecutionControl.ClassBytecodes.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassBytecodes</a>[]&nbsp;cbcs)</span>
+              throws <span class="exceptions"><a href="../spi/ExecutionControl.ClassInstallException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassInstallException</a>,
+<a href="../spi/ExecutionControl.NotImplementedException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.NotImplementedException</a>,
+<a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a></span></div>
 <div class="block">Redefine processing on the remote end is only to register the redefined classes</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../spi/ExecutionControl.html#redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)">redefine</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="interface in jdk.jshell.spi">ExecutionControl</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../spi/ExecutionControl.html#redefine(jdk.jshell.spi.ExecutionControl.ClassBytecodes%5B%5D)">redefine</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="jdk.jshell.spi 包中的接口">ExecutionControl</a></code></dd>
+<dt>参数:</dt>
 <dd><code>cbcs</code> - the class name and bytecodes to redefine</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../spi/ExecutionControl.ClassInstallException.html" title="class in jdk.jshell.spi">ExecutionControl.ClassInstallException</a></code> - exception occurred redefining the classes,
+<dt>抛出:</dt>
+<dd><code><a href="../spi/ExecutionControl.ClassInstallException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ClassInstallException</a></code> - exception occurred redefining the classes,
 some or all were not redefined</dd>
-<dd><code><a href="../spi/ExecutionControl.NotImplementedException.html" title="class in jdk.jshell.spi">ExecutionControl.NotImplementedException</a></code> - if not implemented</dd>
-<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
+<dd><code><a href="../spi/ExecutionControl.NotImplementedException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.NotImplementedException</a></code> - if not implemented</dd>
+<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
 </dl>
 </div>
 </section>
@@ -289,20 +289,20 @@ some or all were not redefined</dd>
 <h3>stop</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">stop</span>()
-          throws <span class="exceptions"><a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a>,
-<a href="../spi/ExecutionControl.InternalException.html" title="class in jdk.jshell.spi">ExecutionControl.InternalException</a></span></div>
+          throws <span class="exceptions"><a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a>,
+<a href="../spi/ExecutionControl.InternalException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.InternalException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="DirectExecutionControl.html#stop()">DirectExecutionControl</a></code></span></div>
 <div class="block">Interrupts a running invoke.
 <p>
 Not supported.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../spi/ExecutionControl.html#stop()">stop</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="interface in jdk.jshell.spi">ExecutionControl</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="DirectExecutionControl.html#stop()">stop</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="class in jdk.jshell.execution">DirectExecutionControl</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
-<dd><code><a href="../spi/ExecutionControl.InternalException.html" title="class in jdk.jshell.spi">ExecutionControl.InternalException</a></code> - an internal problem occurred</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../spi/ExecutionControl.html#stop()">stop</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="jdk.jshell.spi 包中的接口">ExecutionControl</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="DirectExecutionControl.html#stop()">stop</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类">DirectExecutionControl</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
+<dd><code><a href="../spi/ExecutionControl.InternalException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.InternalException</a></code> - an internal problem occurred</dd>
 </dl>
 </div>
 </section>
@@ -311,32 +311,32 @@ Not supported.</div>
 <section class="detail" id="varValue(java.lang.String,java.lang.String)">
 <h3>varValue</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">varValue</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;className,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;varName)</span>
-                throws <span class="exceptions"><a href="../spi/ExecutionControl.RunException.html" title="class in jdk.jshell.spi">ExecutionControl.RunException</a>,
-<a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a>,
-<a href="../spi/ExecutionControl.InternalException.html" title="class in jdk.jshell.spi">ExecutionControl.InternalException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">varValue</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;className,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;varName)</span>
+                throws <span class="exceptions"><a href="../spi/ExecutionControl.RunException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.RunException</a>,
+<a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a>,
+<a href="../spi/ExecutionControl.InternalException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.InternalException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../spi/ExecutionControl.html#varValue(java.lang.String,java.lang.String)">ExecutionControl</a></code></span></div>
 <div class="block">Returns the value of a variable.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../spi/ExecutionControl.html#varValue(java.lang.String,java.lang.String)">varValue</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="interface in jdk.jshell.spi">ExecutionControl</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="DirectExecutionControl.html#varValue(java.lang.String,java.lang.String)">varValue</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="class in jdk.jshell.execution">DirectExecutionControl</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../spi/ExecutionControl.html#varValue(java.lang.String,java.lang.String)">varValue</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/ExecutionControl.html" title="jdk.jshell.spi 包中的接口">ExecutionControl</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="DirectExecutionControl.html#varValue(java.lang.String,java.lang.String)">varValue</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类">DirectExecutionControl</a></code></dd>
+<dt>参数:</dt>
 <dd><code>className</code> - the name of the wrapper class of the variable</dd>
 <dd><code>varName</code> - the name of the variable</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the value of the variable</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../spi/ExecutionControl.UserException.html" title="class in jdk.jshell.spi">ExecutionControl.UserException</a></code> - formatting the value raised a user exception</dd>
-<dd><code><a href="../spi/ExecutionControl.ResolutionException.html" title="class in jdk.jshell.spi">ExecutionControl.ResolutionException</a></code> - formatting the value attempted to directly or
+<dt>抛出:</dt>
+<dd><code><a href="../spi/ExecutionControl.UserException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.UserException</a></code> - formatting the value raised a user exception</dd>
+<dd><code><a href="../spi/ExecutionControl.ResolutionException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.ResolutionException</a></code> - formatting the value attempted to directly or
 indirectly invoke an unresolved snippet</dd>
-<dd><code><a href="../spi/ExecutionControl.StoppedException.html" title="class in jdk.jshell.spi">ExecutionControl.StoppedException</a></code> - if the formatting the value was canceled by
+<dd><code><a href="../spi/ExecutionControl.StoppedException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.StoppedException</a></code> - if the formatting the value was canceled by
 <a href="../spi/ExecutionControl.html#stop()"><code>ExecutionControl.stop()</code></a></dd>
-<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="class in jdk.jshell.spi">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
-<dd><code><a href="../spi/ExecutionControl.InternalException.html" title="class in jdk.jshell.spi">ExecutionControl.InternalException</a></code> - an internal problem occurred</dd>
-<dd><code><a href="../spi/ExecutionControl.RunException.html" title="class in jdk.jshell.spi">ExecutionControl.RunException</a></code></dd>
+<dd><code><a href="../spi/ExecutionControl.EngineTerminationException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.EngineTerminationException</a></code> - the execution engine has terminated</dd>
+<dd><code><a href="../spi/ExecutionControl.InternalException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.InternalException</a></code> - an internal problem occurred</dd>
+<dd><code><a href="../spi/ExecutionControl.RunException.html" title="jdk.jshell.spi 包中的类">ExecutionControl.RunException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -349,8 +349,8 @@ indirectly invoke an unresolved snippet</dd>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="DirectExecutionControl.html#clientCodeEnter()">DirectExecutionControl</a></code></span></div>
 <div class="block">Marks entry into user code.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="DirectExecutionControl.html#clientCodeEnter()">clientCodeEnter</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="class in jdk.jshell.execution">DirectExecutionControl</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="DirectExecutionControl.html#clientCodeEnter()">clientCodeEnter</a></code>&nbsp;in class&nbsp;<code><a href="DirectExecutionControl.html" title="jdk.jshell.execution 包中的类">DirectExecutionControl</a></code></dd>
 </dl>
 </div>
 </section>

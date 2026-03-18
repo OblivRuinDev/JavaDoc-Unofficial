@@ -69,7 +69,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent</a></li>
 <li><a href="CountedCompleter.html" class="current-selection">CountedCompleter</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -77,20 +77,20 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter,int)" tabindex="0">CountedCompleter(CountedCompleter, int)</a></li>
 <li><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter)" tabindex="0">CountedCompleter(CountedCompleter)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">CountedCompleter()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#compute()" tabindex="0">compute()</a></li>
 <li><a href="#onCompletion(java.util.concurrent.CountedCompleter)" tabindex="0">onCompletion(CountedCompleter)</a></li>
@@ -119,33 +119,33 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class CountedCompleter" class="title">Class CountedCompleter&lt;T&gt;</h1>
+<h1 title="类 CountedCompleter" class="title">类 CountedCompleter&lt;T&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="ForkJoinTask.html" title="class in java.util.concurrent">java.util.concurrent.ForkJoinTask</a>&lt;T&gt;
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">java.util.concurrent.ForkJoinTask</a>&lt;T&gt;
 <div class="inheritance">java.util.concurrent.CountedCompleter&lt;T&gt;</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the type of the result of the completer</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;T&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;T&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CountedCompleter&lt;T&gt;</span>
-<span class="extends-implements">extends <a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;T&gt;</span></div>
-<div class="block">A <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a> with a completion action performed when
+<span class="extends-implements">extends <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;T&gt;</span></div>
+<div class="block">A <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a> with a completion action performed when
 triggered and there are no remaining pending actions.
 CountedCompleters are in general more robust in the
 presence of subtask stalls and blockage than are other forms of
 ForkJoinTasks, but are less intuitive to program.  Uses of
 CountedCompleter are similar to those of other completion based
-components (such as <a href="../../nio/channels/CompletionHandler.html" title="interface in java.nio.channels"><code>CompletionHandler</code></a>)
+components (such as <a href="../../nio/channels/CompletionHandler.html" title="java.nio.channels 包中的接口"><code>CompletionHandler</code></a>)
 except that multiple <em>pending</em> completions may be necessary
 to trigger the completion action <a href="#onCompletion(java.util.concurrent.CountedCompleter)"><code>onCompletion(CountedCompleter)</code></a>,
 not just one.
@@ -156,7 +156,7 @@ methods <a href="#setPendingCount(int)"><code>setPendingCount(int)</code></a>, <
 decremented; otherwise, the completion action is performed, and if
 this completer itself has a completer, the process is continued
 with its completer.  As is the case with related synchronization
-components such as <a href="Phaser.html" title="class in java.util.concurrent"><code>Phaser</code></a> and <a href="Semaphore.html" title="class in java.util.concurrent"><code>Semaphore</code></a>, these methods
+components such as <a href="Phaser.html" title="java.util.concurrent 包中的类"><code>Phaser</code></a> and <a href="Semaphore.html" title="java.util.concurrent 包中的类"><code>Semaphore</code></a>, these methods
 affect only internal counts; they do not establish any further
 internal bookkeeping. In particular, the identities of pending
 tasks are not maintained. As illustrated below, you can create
@@ -206,7 +206,7 @@ not often useful.
 <p><b>Sample Usages.</b>
 
 <p><b>Parallel recursive decomposition.</b> CountedCompleters may
-be arranged in trees similar to those often used with <a href="RecursiveAction.html" title="class in java.util.concurrent"><code>RecursiveAction</code></a>s, although the constructions involved in setting
+be arranged in trees similar to those often used with <a href="RecursiveAction.html" title="java.util.concurrent 包中的类"><code>RecursiveAction</code></a>s, although the constructions involved in setting
 them up typically vary. Here, the completer of each task is its
 parent in the computation tree. Even though they entail a bit more
 bookkeeping, CountedCompleters may be better choices when applying
@@ -323,7 +323,7 @@ subdividing down to single elements.
 
 <p><b>Searching.</b> A tree of CountedCompleters can search for a
 value or property in different parts of a data structure, and
-report a result in an <a href="atomic/AtomicReference.html" title="class in java.util.concurrent.atomic"><code>AtomicReference</code></a> as
+report a result in an <a href="atomic/AtomicReference.html" title="java.util.concurrent.atomic 包中的类"><code>AtomicReference</code></a> as
 soon as one is found. The others can poll the result to avoid
 unnecessary work. (You could additionally <a href="ForkJoinTask.html#cancel(boolean)">cancel</a> other tasks, but it is usually simpler and more efficient
 to just let them notice that the result is set and if so skip
@@ -507,9 +507,9 @@ PacketSender p = new PacketSender();
 new HeaderBuilder(p, ...).fork();
 new BodyBuilder(p, ...).fork();</code></pre></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../serialized-form.html#java.util.concurrent.CountedCompleter">Serialized Form</a></li>
@@ -523,17 +523,17 @@ new BodyBuilder(p, ...).fork();</code></pre></div>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-java.util.concurrent.Future">Nested classes/interfaces declared in interface&nbsp;<a href="Future.html#nested-class-summary" title="interface in java.util.concurrent">Future</a></h3>
-<code><a href="Future.State.html" title="enum class in java.util.concurrent">Future.State</a></code></div>
+<h3 id="nested-classes-inherited-from-class-java.util.concurrent.Future">在接口 <a href="Future.html#nested-class-summary" title="java.util.concurrent 包中的接口">Future</a> 中声明的嵌套类/接口</h3>
+<code><a href="Future.State.html" title="java.util.concurrent 包中的枚举类">Future.State</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -545,13 +545,13 @@ new BodyBuilder(p, ...).fork();</code></pre></div>
 and an initial pending count of zero.</div>
 </div>
 <div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter)" class="member-name-link">CountedCompleter</a><wbr>(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;completer)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter)" class="member-name-link">CountedCompleter</a><wbr>(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;completer)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a new CountedCompleter with the given completer
 and an initial pending count of zero.</div>
 </div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter,int)" class="member-name-link">CountedCompleter</a><wbr>(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;completer,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.CountedCompleter,int)" class="member-name-link">CountedCompleter</a><wbr>(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;completer,
  int&nbsp;initialPendingCount)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new CountedCompleter with the given completer
@@ -563,14 +563,14 @@ and initial pending count.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToPendingCount(int)" class="member-name-link">addToPendingCount</a><wbr>(int&nbsp;delta)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -584,7 +584,7 @@ and initial pending count.</div>
 it currently holds the given expected value.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#complete(T)" class="member-name-link">complete</a><wbr>(<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&nbsp;rawResult)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#complete(T)" class="member-name-link">complete</a><wbr>(<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&nbsp;rawResult)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Regardless of pending count, invokes
 <a href="#onCompletion(java.util.concurrent.CountedCompleter)"><code>onCompletion(CountedCompleter)</code></a>, marks this task as
@@ -606,13 +606,13 @@ task's completer, if one exists.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Implements execution conventions for CountedCompleters.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#firstComplete()" class="member-name-link">firstComplete</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">If this task's pending count is zero, returns this task;
 otherwise decrements its pending count and returns <code>null</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCompleter()" class="member-name-link">getCompleter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the completer established in this task's constructor,
@@ -623,12 +623,12 @@ or <code>null</code> if none.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current pending count.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-T" title="type parameter in CountedCompleter">T</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRawResult()" class="member-name-link">getRawResult</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the result of the computation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoot()" class="member-name-link">getRoot</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the root of the current computation; i.e., this
@@ -641,21 +641,21 @@ task if it has no completer, else its completer's root.</div>
 given number of other unprocessed tasks for which this task is
 on the completion path, if any are known to exist.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nextComplete()" class="member-name-link">nextComplete</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">If this task does not have a completer, invokes <a href="ForkJoinTask.html#quietlyComplete()"><code>ForkJoinTask.quietlyComplete()</code></a> and returns <code>null</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onCompletion(java.util.concurrent.CountedCompleter)" class="member-name-link">onCompletion</a><wbr>(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onCompletion(java.util.concurrent.CountedCompleter)" class="member-name-link">onCompletion</a><wbr>(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs an action when method <a href="#tryComplete()"><code>tryComplete()</code></a> is invoked
 and the pending count is zero, or when the unconditional
 method <a href="#complete(T)"><code>complete(T)</code></a> is invoked.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onExceptionalCompletion(java.lang.Throwable,java.util.concurrent.CountedCompleter)" class="member-name-link">onExceptionalCompletion</a><wbr>(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;ex,
- <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#onExceptionalCompletion(java.lang.Throwable,java.util.concurrent.CountedCompleter)" class="member-name-link">onExceptionalCompletion</a><wbr>(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;ex,
+ <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs an action when method <a href="ForkJoinTask.html#completeExceptionally(java.lang.Throwable)"><code>ForkJoinTask.completeExceptionally(Throwable)</code></a> is invoked or method <a href="#compute()"><code>compute()</code></a> throws an exception, and this task has not already
 otherwise completed normally.</div>
@@ -679,7 +679,7 @@ one exists, else marks this task as complete.</div>
 <div class="block">Sets the pending count to the given value.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRawResult(T)" class="member-name-link">setRawResult</a><wbr>(<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&nbsp;t)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRawResult(T)" class="member-name-link">setRawResult</a><wbr>(<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&nbsp;t)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A method that result-bearing CountedCompleters may optionally
 use to help maintain result data.</div>
@@ -696,10 +696,10 @@ if one exists, else marks this task as complete.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.concurrent.ForkJoinTask">Methods declared in class&nbsp;<a href="ForkJoinTask.html#method-summary" title="class in java.util.concurrent">ForkJoinTask</a></h3>
+<h3 id="methods-inherited-from-class-java.util.concurrent.ForkJoinTask">在类 <a href="ForkJoinTask.html#method-summary" title="java.util.concurrent 包中的类">ForkJoinTask</a> 中声明的方法</h3>
 <code><a href="ForkJoinTask.html#adapt(java.lang.Runnable)" title="adapt(Runnable)">adapt</a>, <a href="ForkJoinTask.html#adapt(java.lang.Runnable,T)" title="adapt(Runnable, T)">adapt</a>, <a href="ForkJoinTask.html#adapt(java.util.concurrent.Callable)" title="adapt(Callable)">adapt</a>, <a href="ForkJoinTask.html#adaptInterruptible(java.lang.Runnable)" title="adaptInterruptible(Runnable)">adaptInterruptible</a>, <a href="ForkJoinTask.html#adaptInterruptible(java.lang.Runnable,T)" title="adaptInterruptible(Runnable, T)">adaptInterruptible</a>, <a href="ForkJoinTask.html#adaptInterruptible(java.util.concurrent.Callable)" title="adaptInterruptible(Callable)">adaptInterruptible</a>, <a href="ForkJoinTask.html#cancel(boolean)" title="cancel(boolean)">cancel</a>, <a href="ForkJoinTask.html#compareAndSetForkJoinTaskTag(short,short)" title="compareAndSetForkJoinTaskTag(short, short)">compareAndSetForkJoinTaskTag</a>, <a href="ForkJoinTask.html#completeExceptionally(java.lang.Throwable)" title="completeExceptionally(Throwable)">completeExceptionally</a>, <a href="ForkJoinTask.html#exceptionNow()" title="exceptionNow()">exceptionNow</a>, <a href="ForkJoinTask.html#fork()" title="fork()">fork</a>, <a href="ForkJoinTask.html#get()" title="get()">get</a>, <a href="ForkJoinTask.html#get(long,java.util.concurrent.TimeUnit)" title="get(long, TimeUnit)">get</a>, <a href="ForkJoinTask.html#getException()" title="getException()">getException</a>, <a href="ForkJoinTask.html#getForkJoinTaskTag()" title="getForkJoinTaskTag()">getForkJoinTaskTag</a>, <a href="ForkJoinTask.html#getPool()" title="getPool()">getPool</a>, <a href="ForkJoinTask.html#getQueuedTaskCount()" title="getQueuedTaskCount()">getQueuedTaskCount</a>, <a href="ForkJoinTask.html#getSurplusQueuedTaskCount()" title="getSurplusQueuedTaskCount()">getSurplusQueuedTaskCount</a>, <a href="ForkJoinTask.html#helpQuiesce()" title="helpQuiesce()">helpQuiesce</a>, <a href="ForkJoinTask.html#inForkJoinPool()" title="inForkJoinPool()">inForkJoinPool</a>, <a href="ForkJoinTask.html#invoke()" title="invoke()">invoke</a>, <a href="ForkJoinTask.html#invokeAll(java.util.Collection)" title="invokeAll(Collection)">invokeAll</a>, <a href="ForkJoinTask.html#invokeAll(java.util.concurrent.ForkJoinTask...)" title="invokeAll(ForkJoinTask...)">invokeAll</a>, <a href="ForkJoinTask.html#invokeAll(java.util.concurrent.ForkJoinTask,java.util.concurrent.ForkJoinTask)" title="invokeAll(ForkJoinTask, ForkJoinTask)">invokeAll</a>, <a href="ForkJoinTask.html#isCancelled()" title="isCancelled()">isCancelled</a>, <a href="ForkJoinTask.html#isCompletedAbnormally()" title="isCompletedAbnormally()">isCompletedAbnormally</a>, <a href="ForkJoinTask.html#isCompletedNormally()" title="isCompletedNormally()">isCompletedNormally</a>, <a href="ForkJoinTask.html#isDone()" title="isDone()">isDone</a>, <a href="ForkJoinTask.html#join()" title="join()">join</a>, <a href="ForkJoinTask.html#peekNextLocalTask()" title="peekNextLocalTask()">peekNextLocalTask</a>, <a href="ForkJoinTask.html#pollNextLocalTask()" title="pollNextLocalTask()">pollNextLocalTask</a>, <a href="ForkJoinTask.html#pollSubmission()" title="pollSubmission()">pollSubmission</a>, <a href="ForkJoinTask.html#pollTask()" title="pollTask()">pollTask</a>, <a href="ForkJoinTask.html#quietlyComplete()" title="quietlyComplete()">quietlyComplete</a>, <a href="ForkJoinTask.html#quietlyInvoke()" title="quietlyInvoke()">quietlyInvoke</a>, <a href="ForkJoinTask.html#quietlyJoin()" title="quietlyJoin()">quietlyJoin</a>, <a href="ForkJoinTask.html#quietlyJoin(long,java.util.concurrent.TimeUnit)" title="quietlyJoin(long, TimeUnit)">quietlyJoin</a>, <a href="ForkJoinTask.html#quietlyJoinUninterruptibly(long,java.util.concurrent.TimeUnit)" title="quietlyJoinUninterruptibly(long, TimeUnit)">quietlyJoinUninterruptibly</a>, <a href="ForkJoinTask.html#reinitialize()" title="reinitialize()">reinitialize</a>, <a href="ForkJoinTask.html#resultNow()" title="resultNow()">resultNow</a>, <a href="ForkJoinTask.html#setForkJoinTaskTag(short)" title="setForkJoinTaskTag(short)">setForkJoinTaskTag</a>, <a href="ForkJoinTask.html#state()" title="state()">state</a>, <a href="ForkJoinTask.html#tryUnfork()" title="tryUnfork()">tryUnfork</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -710,18 +710,18 @@ if one exists, else marks this task as complete.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.concurrent.CountedCompleter,int)">
 <h3>CountedCompleter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">CountedCompleter</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;completer,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">CountedCompleter</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;completer,
  int&nbsp;initialPendingCount)</span></div>
 <div class="block">Creates a new CountedCompleter with the given completer
 and initial pending count.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>completer</code> - this task's completer, or <code>null</code> if none</dd>
 <dd><code>initialPendingCount</code> - the initial pending count</dd>
 </dl>
@@ -732,11 +732,11 @@ and initial pending count.</div>
 <section class="detail" id="&lt;init&gt;(java.util.concurrent.CountedCompleter)">
 <h3>CountedCompleter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">CountedCompleter</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;completer)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">CountedCompleter</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;completer)</span></div>
 <div class="block">Creates a new CountedCompleter with the given completer
 and an initial pending count of zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>completer</code> - this task's completer, or <code>null</code> if none</dd>
 </dl>
 </div>
@@ -758,7 +758,7 @@ and an initial pending count of zero.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="compute()">
@@ -773,7 +773,7 @@ and an initial pending count of zero.</div>
 <section class="detail" id="onCompletion(java.util.concurrent.CountedCompleter)">
 <h3>onCompletion</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onCompletion</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">onCompletion</span><wbr><span class="parameters">(<a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</span></div>
 <div class="block">Performs an action when method <a href="#tryComplete()"><code>tryComplete()</code></a> is invoked
 and the pending count is zero, or when the unconditional
 method <a href="#complete(T)"><code>complete(T)</code></a> is invoked.  By default, this method
@@ -782,7 +782,7 @@ identity of the given caller argument. If not equal to <code>
 this</code>, then it is typically a subtask that may contain results
 (and/or links to other results) to combine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>caller</code> - the task invoking this method (which may
 be this task itself)</dd>
 </dl>
@@ -793,8 +793,8 @@ be this task itself)</dd>
 <section class="detail" id="onExceptionalCompletion(java.lang.Throwable,java.util.concurrent.CountedCompleter)">
 <h3>onExceptionalCompletion</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onExceptionalCompletion</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;ex,
- <a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">onExceptionalCompletion</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;ex,
+ <a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;&nbsp;caller)</span></div>
 <div class="block">Performs an action when method <a href="ForkJoinTask.html#completeExceptionally(java.lang.Throwable)"><code>ForkJoinTask.completeExceptionally(Throwable)</code></a> is invoked or method <a href="#compute()"><code>compute()</code></a> throws an exception, and this task has not already
 otherwise completed normally. On entry to this method, this task
 <a href="ForkJoinTask.html#isCompletedAbnormally()"><code>ForkJoinTask.isCompletedAbnormally()</code></a>.  The return value
@@ -804,11 +804,11 @@ completer is also completed exceptionally, with the same
 exception as this completer.  The default implementation of
 this method does nothing except return <code>true</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ex</code> - the exception</dd>
 <dd><code>caller</code> - the task invoking this method (which may
 be this task itself)</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this exception should be propagated to this
 task's completer, if one exists</dd>
 </dl>
@@ -819,11 +819,11 @@ task's completer, if one exists</dd>
 <section class="detail" id="getCompleter()">
 <h3>getCompleter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getCompleter</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getCompleter</span>()</div>
 <div class="block">Returns the completer established in this task's constructor,
 or <code>null</code> if none.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the completer</dd>
 </dl>
 </div>
@@ -836,7 +836,7 @@ or <code>null</code> if none.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPendingCount</span>()</div>
 <div class="block">Returns the current pending count.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current pending count</dd>
 </dl>
 </div>
@@ -849,7 +849,7 @@ or <code>null</code> if none.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPendingCount</span><wbr><span class="parameters">(int&nbsp;count)</span></div>
 <div class="block">Sets the pending count to the given value.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>count</code> - the count</dd>
 </dl>
 </div>
@@ -862,7 +862,7 @@ or <code>null</code> if none.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addToPendingCount</span><wbr><span class="parameters">(int&nbsp;delta)</span></div>
 <div class="block">Adds (atomically) the given value to the pending count.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>delta</code> - the value to add</dd>
 </dl>
 </div>
@@ -877,10 +877,10 @@ or <code>null</code> if none.</div>
 <div class="block">Sets (atomically) the pending count to the given count only if
 it currently holds the given expected value.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>expected</code> - the expected value</dd>
 <dd><code>count</code> - the new value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful</dd>
 </dl>
 </div>
@@ -893,7 +893,7 @@ it currently holds the given expected value.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">decrementPendingCountUnlessZero</span>()</div>
 <div class="block">If the pending count is nonzero, (atomically) decrements it.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the initial (undecremented) pending count holding on entry
 to this method</dd>
 </dl>
@@ -904,11 +904,11 @@ to this method</dd>
 <section class="detail" id="getRoot()">
 <h3>getRoot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getRoot</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getRoot</span>()</div>
 <div class="block">Returns the root of the current computation; i.e., this
 task if it has no completer, else its completer's root.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the root of the current computation</dd>
 </dl>
 </div>
@@ -944,7 +944,7 @@ not, be invoked for each completer in a computation.</div>
 <section class="detail" id="complete(T)">
 <h3 id="complete(java.lang.Object)">complete</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">complete</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&nbsp;rawResult)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">complete</span><wbr><span class="parameters">(<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&nbsp;rawResult)</span></div>
 <div class="block">Regardless of pending count, invokes
 <a href="#onCompletion(java.util.concurrent.CountedCompleter)"><code>onCompletion(CountedCompleter)</code></a>, marks this task as
 complete and further triggers <a href="#tryComplete()"><code>tryComplete()</code></a> on this
@@ -961,9 +961,9 @@ However, in the common (and recommended) case in which <code>
 setRawResult</code> is not overridden, this effect can be obtained
 more simply using <a href="#quietlyCompleteRoot()"><code>quietlyCompleteRoot()</code></a>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="ForkJoinTask.html#complete(V)">complete</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="ForkJoinTask.html#complete(V)">complete</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>rawResult</code> - the raw result</dd>
 </dl>
 </div>
@@ -973,13 +973,13 @@ more simply using <a href="#quietlyCompleteRoot()"><code>quietlyCompleteRoot()</
 <section class="detail" id="firstComplete()">
 <h3>firstComplete</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">firstComplete</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">firstComplete</span>()</div>
 <div class="block">If this task's pending count is zero, returns this task;
 otherwise decrements its pending count and returns <code>null</code>.
 This method is designed to be used with <a href="#nextComplete()"><code>nextComplete()</code></a> in
 completion traversal loops.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this task, if pending count was zero, else <code>null</code></dd>
 </dl>
 </div>
@@ -989,7 +989,7 @@ completion traversal loops.</div>
 <section class="detail" id="nextComplete()">
 <h3>nextComplete</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">nextComplete</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;?&gt;</span>&nbsp;<span class="element-name">nextComplete</span>()</div>
 <div class="block">If this task does not have a completer, invokes <a href="ForkJoinTask.html#quietlyComplete()"><code>ForkJoinTask.quietlyComplete()</code></a> and returns <code>null</code>.  Or, if
 the completer's pending count is non-zero, decrements that
 pending count and returns <code>null</code>.  Otherwise, returns the
@@ -1002,7 +1002,7 @@ traversal loop for homogeneous task hierarchies:
   // ... process c ...
 }</code></pre></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the completer, or <code>null</code> if none</dd>
 </dl>
 </div>
@@ -1026,7 +1026,7 @@ traversal loop for homogeneous task hierarchies:
 given number of other unprocessed tasks for which this task is
 on the completion path, if any are known to exist.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>maxTasks</code> - the maximum number of tasks to process.  If
                 less than or equal to zero, then no tasks are
                 processed.</dd>
@@ -1041,9 +1041,9 @@ on the completion path, if any are known to exist.</div>
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">exec</span>()</div>
 <div class="block">Implements execution conventions for CountedCompleters.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ForkJoinTask.html#exec()">exec</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ForkJoinTask.html#exec()">exec</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if this task is known to have completed normally</dd>
 </dl>
 </div>
@@ -1053,16 +1053,16 @@ on the completion path, if any are known to exist.</div>
 <section class="detail" id="getRawResult()">
 <h3>getRawResult</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="type parameter in CountedCompleter">T</a></span>&nbsp;<span class="element-name">getRawResult</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a></span>&nbsp;<span class="element-name">getRawResult</span>()</div>
 <div class="block">Returns the result of the computation.  By default,
 returns <code>null</code>, which is appropriate for <code>Void</code>
 actions, but in other cases should be overridden, almost
 always to return a field or function of a field that
 holds the result upon completion.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ForkJoinTask.html#getRawResult()">getRawResult</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ForkJoinTask.html#getRawResult()">getRawResult</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the result of the computation</dd>
 </dl>
 </div>
@@ -1072,16 +1072,16 @@ holds the result upon completion.</div>
 <section class="detail" id="setRawResult(T)">
 <h3 id="setRawResult(java.lang.Object)">setRawResult</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRawResult</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&nbsp;t)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRawResult</span><wbr><span class="parameters">(<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&nbsp;t)</span></div>
 <div class="block">A method that result-bearing CountedCompleters may optionally
 use to help maintain result data.  By default, does nothing.
 Overrides are not recommended. However, if this method is
 overridden to update existing objects or fields, then it must
 in general be defined to be thread-safe.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ForkJoinTask.html#setRawResult(V)">setRawResult</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;<a href="#type-param-T" title="type parameter in CountedCompleter">T</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ForkJoinTask.html#setRawResult(V)">setRawResult</a></code>&nbsp;in class&nbsp;<code><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;<a href="#type-param-T" title="CountedCompleter 中的类型参数">T</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>t</code> - the value</dd>
 </dl>
 </div>

@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.jdi.event</a></li>
 <li><a href="EventSet.html" class="current-selection">EventSet</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,11 +60,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#suspendPolicy()" tabindex="0">suspendPolicy()</a></li>
 <li><a href="#eventIterator()" tabindex="0">eventIterator()</a></li>
@@ -76,25 +76,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface EventSet" class="title">Interface EventSet</h1>
+<h1 title="接口 EventSet" class="title">接口 EventSet</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;<a href="Event.html" title="interface in com.sun.jdi.event">Event</a>&gt;, <a href="../../../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="Event.html" title="interface in com.sun.jdi.event">Event</a>&gt;, <a href="../Mirror.html" title="interface in com.sun.jdi">Mirror</a>, <a href="../../../../../java.base/java/util/Set.html" title="interface in java.util">Set</a>&lt;<a href="Event.html" title="interface in com.sun.jdi.event">Event</a>&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;<a href="Event.html" title="com.sun.jdi.event 包中的接口">Event</a>&gt;, <a href="../../../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="Event.html" title="com.sun.jdi.event 包中的接口">Event</a>&gt;, <a href="../Mirror.html" title="com.sun.jdi 包中的接口">Mirror</a>, <a href="../../../../../java.base/java/util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="Event.html" title="com.sun.jdi.event 包中的接口">Event</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">EventSet</span><span class="extends-implements">
-extends <a href="../Mirror.html" title="interface in com.sun.jdi">Mirror</a>, <a href="../../../../../java.base/java/util/Set.html" title="interface in java.util">Set</a>&lt;<a href="Event.html" title="interface in com.sun.jdi.event">Event</a>&gt;</span></div>
-<div class="block">Several <a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a> objects may be created at a given time by
-the target <a href="../VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a>. For example, there may be
-more than one <a href="../request/BreakpointRequest.html" title="interface in com.sun.jdi.request"><code>BreakpointRequest</code></a> for a given <a href="../Location.html" title="interface in com.sun.jdi"><code>Location</code></a>
+extends <a href="../Mirror.html" title="com.sun.jdi 包中的接口">Mirror</a>, <a href="../../../../../java.base/java/util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="Event.html" title="com.sun.jdi.event 包中的接口">Event</a>&gt;</span></div>
+<div class="block">Several <a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a> objects may be created at a given time by
+the target <a href="../VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a>. For example, there may be
+more than one <a href="../request/BreakpointRequest.html" title="com.sun.jdi.request 包中的接口"><code>BreakpointRequest</code></a> for a given <a href="../Location.html" title="com.sun.jdi 包中的接口"><code>Location</code></a>
 or you might single step to the same location as a
-BreakpointRequest.  These <a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a> objects are delivered
+BreakpointRequest.  These <a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a> objects are delivered
 together as an EventSet.  For uniformity, an EventSet is always used
-to deliver <a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a> objects.  EventSets are delivered by
-the <a href="EventQueue.html" title="interface in com.sun.jdi.event"><code>EventQueue</code></a>.
+to deliver <a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a> objects.  EventSets are delivered by
+the <a href="EventQueue.html" title="com.sun.jdi.event 包中的接口"><code>EventQueue</code></a>.
 EventSets are unmodifiable.
 <P>
 Associated with the issuance of an event set, suspensions may
@@ -110,45 +110,45 @@ following ways:
 <UL>
 <LI>Always singleton sets:
     <UL>
-    <LI><a href="VMStartEvent.html" title="interface in com.sun.jdi.event"><code>VMStartEvent</code></a>
-    <LI><a href="VMDisconnectEvent.html" title="interface in com.sun.jdi.event"><code>VMDisconnectEvent</code></a>
+    <LI><a href="VMStartEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMStartEvent</code></a>
+    <LI><a href="VMDisconnectEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMDisconnectEvent</code></a>
     </UL>
 <LI>Only with other VMDeathEvents:
     <UL>
-    <LI><a href="VMDeathEvent.html" title="interface in com.sun.jdi.event"><code>VMDeathEvent</code></a>
+    <LI><a href="VMDeathEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMDeathEvent</code></a>
     </UL>
 <LI>Only with other ThreadStartEvents for the same thread:
     <UL>
-    <LI><a href="ThreadStartEvent.html" title="interface in com.sun.jdi.event"><code>ThreadStartEvent</code></a>
+    <LI><a href="ThreadStartEvent.html" title="com.sun.jdi.event 包中的接口"><code>ThreadStartEvent</code></a>
     </UL>
 <LI>Only with other ThreadDeathEvents for the same thread:
     <UL>
-    <LI><a href="ThreadDeathEvent.html" title="interface in com.sun.jdi.event"><code>ThreadDeathEvent</code></a>
+    <LI><a href="ThreadDeathEvent.html" title="com.sun.jdi.event 包中的接口"><code>ThreadDeathEvent</code></a>
     </UL>
 <LI>Only with other ClassPrepareEvents for the same class:
     <UL>
-    <LI><a href="ClassPrepareEvent.html" title="interface in com.sun.jdi.event"><code>ClassPrepareEvent</code></a>
+    <LI><a href="ClassPrepareEvent.html" title="com.sun.jdi.event 包中的接口"><code>ClassPrepareEvent</code></a>
     </UL>
 <LI>Only with other ClassUnloadEvents for the same class:
     <UL>
-    <LI><a href="ClassUnloadEvent.html" title="interface in com.sun.jdi.event"><code>ClassUnloadEvent</code></a>
+    <LI><a href="ClassUnloadEvent.html" title="com.sun.jdi.event 包中的接口"><code>ClassUnloadEvent</code></a>
     </UL>
 <LI>Only with other AccessWatchpointEvents for the same field access:
     <UL>
-    <LI><a href="AccessWatchpointEvent.html" title="interface in com.sun.jdi.event"><code>AccessWatchpointEvent</code></a>
+    <LI><a href="AccessWatchpointEvent.html" title="com.sun.jdi.event 包中的接口"><code>AccessWatchpointEvent</code></a>
     </UL>
 <LI>Only with other ModificationWatchpointEvents for the same field
 modification:
     <UL>
-    <LI><a href="ModificationWatchpointEvent.html" title="interface in com.sun.jdi.event"><code>ModificationWatchpointEvent</code></a>
+    <LI><a href="ModificationWatchpointEvent.html" title="com.sun.jdi.event 包中的接口"><code>ModificationWatchpointEvent</code></a>
     </UL>
 <LI>Only with other ExceptionEvents for the same exception occurrence:
     <UL>
-    <LI><a href="ExceptionEvent.html" title="interface in com.sun.jdi.event"><code>ExceptionEvent</code></a>
+    <LI><a href="ExceptionEvent.html" title="com.sun.jdi.event 包中的接口"><code>ExceptionEvent</code></a>
     </UL>
 <LI>Only with other MethodExitEvents for the same method exit:
     <UL>
-    <LI><a href="MethodExitEvent.html" title="interface in com.sun.jdi.event"><code>MethodExitEvent</code></a>
+    <LI><a href="MethodExitEvent.html" title="com.sun.jdi.event 包中的接口"><code>MethodExitEvent</code></a>
     </UL>
 <LI>Only with other Monitor contended enter events for the same monitor object:
     <UL>
@@ -169,19 +169,19 @@ modification:
 <LI>Only with other members of this group, at the same location
 and in the same thread:
     <UL>
-    <LI><a href="BreakpointEvent.html" title="interface in com.sun.jdi.event"><code>BreakpointEvent</code></a>
-    <LI><a href="StepEvent.html" title="interface in com.sun.jdi.event"><code>StepEvent</code></a>
-    <LI><a href="MethodEntryEvent.html" title="interface in com.sun.jdi.event"><code>MethodEntryEvent</code></a>
+    <LI><a href="BreakpointEvent.html" title="com.sun.jdi.event 包中的接口"><code>BreakpointEvent</code></a>
+    <LI><a href="StepEvent.html" title="com.sun.jdi.event 包中的接口"><code>StepEvent</code></a>
+    <LI><a href="MethodEntryEvent.html" title="com.sun.jdi.event 包中的接口"><code>MethodEntryEvent</code></a>
     </UL>
 </UL></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a></li>
-<li><a href="EventQueue.html" title="interface in com.sun.jdi.event"><code>EventQueue</code></a></li>
+<li><a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a></li>
+<li><a href="EventQueue.html" title="com.sun.jdi.event 包中的接口"><code>EventQueue</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -192,18 +192,18 @@ and in the same thread:
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="EventIterator.html" title="interface in com.sun.jdi.event">EventIterator</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="EventIterator.html" title="com.sun.jdi.event 包中的接口">EventIterator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#eventIterator()" class="member-name-link">eventIterator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return an iterator specific to <a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a> objects.</div>
+<div class="block">Return an iterator specific to <a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a> objects.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resume()" class="member-name-link">resume</a>()</code></div>
@@ -220,16 +220,16 @@ for this event set.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.Collection">Methods declared in interface&nbsp;<a href="../../../../../java.base/java/util/Collection.html#method-summary" title="interface in java.util">Collection</a></h3>
+<h3 id="methods-inherited-from-class-java.util.Collection">在接口 <a href="../../../../../java.base/java/util/Collection.html#method-summary" title="java.util 包中的接口">Collection</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/util/Collection.html#parallelStream()" title="parallelStream()">parallelStream</a>, <a href="../../../../../java.base/java/util/Collection.html#removeIf(java.util.function.Predicate)" title="removeIf(Predicate)">removeIf</a>, <a href="../../../../../java.base/java/util/Collection.html#stream()" title="stream()">stream</a>, <a href="../../../../../java.base/java/util/Collection.html#toArray(java.util.function.IntFunction)" title="toArray(IntFunction)">toArray</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Iterable">Methods declared in interface&nbsp;<a href="../../../../../java.base/java/lang/Iterable.html#method-summary" title="interface in java.lang">Iterable</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Iterable">在接口 <a href="../../../../../java.base/java/lang/Iterable.html#method-summary" title="java.lang 包中的接口">Iterable</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/lang/Iterable.html#forEach(java.util.function.Consumer)" title="forEach(Consumer)">forEach</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.sun.jdi.Mirror">Methods declared in interface&nbsp;<a href="../Mirror.html#method-summary" title="interface in com.sun.jdi">Mirror</a></h3>
+<h3 id="methods-inherited-from-class-com.sun.jdi.Mirror">在接口 <a href="../Mirror.html#method-summary" title="com.sun.jdi 包中的接口">Mirror</a> 中声明的方法</h3>
 <code><a href="../Mirror.html#toString()" title="toString()">toString</a>, <a href="../Mirror.html#virtualMachine()" title="virtualMachine()">virtualMachine</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.Set">Methods declared in interface&nbsp;<a href="../../../../../java.base/java/util/Set.html#method-summary" title="interface in java.util">Set</a></h3>
+<h3 id="methods-inherited-from-class-java.util.Set">在接口 <a href="../../../../../java.base/java/util/Set.html#method-summary" title="java.util 包中的接口">Set</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/util/Set.html#add(E)" title="add(Event)">add</a>, <a href="../../../../../java.base/java/util/Set.html#addAll(java.util.Collection)" title="addAll(Collection)">addAll</a>, <a href="../../../../../java.base/java/util/Set.html#clear()" title="clear()">clear</a>, <a href="../../../../../java.base/java/util/Set.html#contains(java.lang.Object)" title="contains(Object)">contains</a>, <a href="../../../../../java.base/java/util/Set.html#containsAll(java.util.Collection)" title="containsAll(Collection)">containsAll</a>, <a href="../../../../../java.base/java/util/Set.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../../java.base/java/util/Set.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../../java.base/java/util/Set.html#isEmpty()" title="isEmpty()">isEmpty</a>, <a href="../../../../../java.base/java/util/Set.html#iterator()" title="iterator()">iterator</a>, <a href="../../../../../java.base/java/util/Set.html#remove(java.lang.Object)" title="remove(Object)">remove</a>, <a href="../../../../../java.base/java/util/Set.html#removeAll(java.util.Collection)" title="removeAll(Collection)">removeAll</a>, <a href="../../../../../java.base/java/util/Set.html#retainAll(java.util.Collection)" title="retainAll(Collection)">retainAll</a>, <a href="../../../../../java.base/java/util/Set.html#size()" title="size()">size</a>, <a href="../../../../../java.base/java/util/Set.html#spliterator()" title="spliterator()">spliterator</a>, <a href="../../../../../java.base/java/util/Set.html#toArray()" title="toArray()">toArray</a>, <a href="../../../../../java.base/java/util/Set.html#toArray(T%5B%5D)" title="toArray(T[])">toArray</a></code></div>
 </section>
 </li>
@@ -240,7 +240,7 @@ for this event set.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="suspendPolicy()">
@@ -252,14 +252,14 @@ for this event set. This policy is selected from the suspend
 policies for each event's request; the target VM chooses the
 policy which suspends the most threads.  The target VM suspends
 threads according to that policy and that policy is returned here.
-See <a href="../request/EventRequest.html" title="interface in com.sun.jdi.request"><code>EventRequest</code></a> for the possible policy values.
+See <a href="../request/EventRequest.html" title="com.sun.jdi.request 包中的接口"><code>EventRequest</code></a> for the possible policy values.
 <p>
 In rare cases, the suspend policy may differ from the requested
-value if a <a href="ClassPrepareEvent.html" title="interface in com.sun.jdi.event"><code>ClassPrepareEvent</code></a> has occurred in a
+value if a <a href="ClassPrepareEvent.html" title="com.sun.jdi.event 包中的接口"><code>ClassPrepareEvent</code></a> has occurred in a
 debugger system thread. See <a href="ClassPrepareEvent.html#thread()"><code>ClassPrepareEvent.thread()</code></a>
 for details.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the suspendPolicy which is either
 <a href="../request/EventRequest.html#SUSPEND_ALL"><code>SUSPEND_ALL</code></a>,
 <a href="../request/EventRequest.html#SUSPEND_EVENT_THREAD"><code>SUSPEND_EVENT_THREAD</code></a> or
@@ -272,8 +272,8 @@ for details.</div>
 <section class="detail" id="eventIterator()">
 <h3>eventIterator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="EventIterator.html" title="interface in com.sun.jdi.event">EventIterator</a></span>&nbsp;<span class="element-name">eventIterator</span>()</div>
-<div class="block">Return an iterator specific to <a href="Event.html" title="interface in com.sun.jdi.event"><code>Event</code></a> objects.</div>
+<div class="member-signature"><span class="return-type"><a href="EventIterator.html" title="com.sun.jdi.event 包中的接口">EventIterator</a></span>&nbsp;<span class="element-name">eventIterator</span>()</div>
+<div class="block">Return an iterator specific to <a href="Event.html" title="com.sun.jdi.event 包中的接口"><code>Event</code></a> objects.</div>
 </div>
 </section>
 </li>

@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="MemoryLayout.html">MemoryLayout</a></li>
 <li><a href="MemoryLayout.PathElement.html" class="current-selection">PathElement</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,11 +61,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#groupElement(java.lang.String)" tabindex="0">groupElement(String)</a></li>
 <li><a href="#groupElement(long)" tabindex="0">groupElement(long)</a></li>
@@ -80,12 +80,12 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface MemoryLayout.PathElement" class="title">Interface MemoryLayout.PathElement</h1>
+<h1 title="接口 MemoryLayout.PathElement" class="title">接口 MemoryLayout.PathElement</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Enclosing interface:</dt>
-<dd><code><a href="MemoryLayout.html" title="interface in java.lang.foreign">MemoryLayout</a></code></dd>
+<dd><code><a href="MemoryLayout.html" title="java.lang.foreign 包中的接口">MemoryLayout</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -94,9 +94,9 @@ loadScripts(document, 'script');</script>
 There are three kinds of path elements:
 <ul>
     <li><em>group path elements</em>, used to select a member layout within a
-    <a href="GroupLayout.html" title="interface in java.lang.foreign"><code>GroupLayout</code></a>, either by name or by index;</li>
+    <a href="GroupLayout.html" title="java.lang.foreign 包中的接口"><code>GroupLayout</code></a>, either by name or by index;</li>
     <li><em>sequence path elements</em>, used to select one or more
-    sequence element layouts within a <a href="SequenceLayout.html" title="interface in java.lang.foreign"><code>SequenceLayout</code></a>; and</li>
+    sequence element layouts within a <a href="SequenceLayout.html" title="java.lang.foreign 包中的接口"><code>SequenceLayout</code></a>; and</li>
     <li><em>dereference path elements</em>, used to
     <a href="MemoryLayout.html#deref-path-elements">dereference</a> an address
     layout as its target layout.</li>
@@ -105,10 +105,10 @@ Sequence path elements selecting more than one sequence element layout are calle
 <a href="MemoryLayout.html#open-path-elements">open path elements</a>. The <em>size</em>
 of an open path element determines the number of element layouts that can be selected by it.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>Implementations of this interface are immutable, thread-safe and
 <a href="../../../../java.base/java/lang/doc-files/ValueBased.html">value-based</a>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>22</dd>
 </dl>
 </div>
@@ -118,44 +118,44 @@ of an open path element determines the number of element layouts that can be sel
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
 <div class="caption"><span>Static Methods</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#dereferenceElement()" class="member-name-link">dereferenceElement</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a path element that selects the <a href="AddressLayout.html#targetLayout()">target layout</a> of
 an address layout (where set).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#groupElement(long)" class="member-name-link">groupElement</a><wbr>(long&nbsp;index)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a path element that selects a member layout with the given index in a
 group layout.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#groupElement(java.lang.String)" class="member-name-link">groupElement</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#groupElement(java.lang.String)" class="member-name-link">groupElement</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a path element which selects a member layout with the given name in a
          group layout.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#sequenceElement()" class="member-name-link">sequenceElement</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns an <a href="MemoryLayout.html#open-path-elements">open path element</a>
 that selects an unspecified element layout in a sequence layout.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#sequenceElement(long)" class="member-name-link">sequenceElement</a><wbr>(long&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a path element which selects the element layout at the specified
          index in a sequence layout.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#sequenceElement(long,long)" class="member-name-link">sequenceElement</a><wbr>(long&nbsp;start,
  long&nbsp;step)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
@@ -174,25 +174,25 @@ layout.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="groupElement(java.lang.String)">
 <h3>groupElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">groupElement</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">groupElement</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns a path element which selects a member layout with the given name in a
          group layout.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>in case multiple group elements with a matching name exist, the path
           element returned by this method will select the first one; that is,
           the group element with the lowest offset from the current path is
           selected. In such cases, using <a href="#groupElement(long)"><code>groupElement(long)</code></a> might be
           preferable.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the member layout to be selected</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path element which selects a member layout with the given name in a
          group layout</dd>
 </dl>
@@ -203,17 +203,17 @@ layout.</div>
 <section class="detail" id="groupElement(long)">
 <h3>groupElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">groupElement</span><wbr><span class="parameters">(long&nbsp;index)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">groupElement</span><wbr><span class="parameters">(long&nbsp;index)</span></div>
 <div class="block">Returns a path element that selects a member layout with the given index in a
 group layout.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - the index of the member layout element to be selected</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path element that selects a member layout with the given index in a
 group layout</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>index &lt; 0</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>index &lt; 0</code></dd>
 </dl>
 </div>
 </section>
@@ -222,17 +222,17 @@ group layout</dd>
 <section class="detail" id="sequenceElement(long)">
 <h3>sequenceElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span><wbr><span class="parameters">(long&nbsp;index)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span><wbr><span class="parameters">(long&nbsp;index)</span></div>
 <div class="block">Returns a path element which selects the element layout at the specified
          index in a sequence layout.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - the index of the sequence element to be selected</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path element which selects the element layout at the specified
          index in a sequence layout</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>index &lt; 0</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>index &lt; 0</code></dd>
 </dl>
 </div>
 </section>
@@ -241,7 +241,7 @@ group layout</dd>
 <section class="detail" id="sequenceElement(long,long)">
 <h3>sequenceElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span><wbr><span class="parameters">(long&nbsp;start,
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span><wbr><span class="parameters">(long&nbsp;start,
  long&nbsp;step)</span></div>
 <div class="block">Returns an <a href="MemoryLayout.html#open-path-elements">open path element</a>
 that selects the element layout in a <em>range</em> of positions in a sequence
@@ -258,15 +258,15 @@ is computed as follows:
 </ul>
 That is, the size of the returned open path element is <code>B</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>start</code> - the index of the first sequence element to be selected</dd>
 <dd><code>step</code> - the step factor at which subsequence sequence elements are to be
             selected</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path element that selects the sequence element layout with the
         given index.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>start &lt; 0</code>, or <code>step == 0</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>start &lt; 0</code>, or <code>step == 0</code></dd>
 </dl>
 </div>
 </section>
@@ -275,7 +275,7 @@ That is, the size of the returned open path element is <code>B</code>.</div>
 <section class="detail" id="sequenceElement()">
 <h3>sequenceElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">sequenceElement</span>()</div>
 <div class="block">Returns an <a href="MemoryLayout.html#open-path-elements">open path element</a>
 that selects an unspecified element layout in a sequence layout.
 <p>
@@ -283,7 +283,7 @@ The exact sequence element selected by this layout is expressed as an index
 <code>I</code>. If <code>C</code> is the sequence element count, it follows that
 <code>0 &lt;= I &lt; C</code>. That is, <code>C</code> is the size of the returned open path element.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <a href="MemoryLayout.html#open-path-elements">open path element</a>
 that selects an unspecified element layout in a sequence layout</dd>
 </dl>
@@ -294,11 +294,11 @@ that selects an unspecified element layout in a sequence layout</dd>
 <section class="detail" id="dereferenceElement()">
 <h3>dereferenceElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="interface in java.lang.foreign">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">dereferenceElement</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="MemoryLayout.PathElement.html" title="java.lang.foreign 包中的接口">MemoryLayout.PathElement</a></span>&nbsp;<span class="element-name">dereferenceElement</span>()</div>
 <div class="block">Returns a path element that selects the <a href="AddressLayout.html#targetLayout()">target layout</a> of
 an address layout (where set).</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path element that selects the <a href="AddressLayout.html#targetLayout()">target layout</a> of
 an address layout (where set)</dd>
 </dl>

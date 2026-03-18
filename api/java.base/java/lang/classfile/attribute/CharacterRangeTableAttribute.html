@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile.attribute</a></li>
 <li><a href="CharacterRangeTableAttribute.html" class="current-selection">CharacterRangeTableAttribute</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,11 +59,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#characterRangeTable()" tabindex="0">characterRangeTable()</a></li>
 <li><a href="#of(java.util.List)" tabindex="0">of(List)</a></li>
@@ -74,24 +74,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface CharacterRangeTableAttribute" class="title">Interface CharacterRangeTableAttribute</h1>
+<h1 title="接口 CharacterRangeTableAttribute" class="title">接口 CharacterRangeTableAttribute</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;<a href="CharacterRangeTableAttribute.html" title="interface in java.lang.classfile.attribute">CharacterRangeTableAttribute</a>&gt;, <a href="../ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;<a href="CharacterRangeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeTableAttribute</a>&gt;, <a href="../ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">CharacterRangeTableAttribute</span><span class="extends-implements">
-extends <a href="../Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;<a href="CharacterRangeTableAttribute.html" title="interface in java.lang.classfile.attribute">CharacterRangeTableAttribute</a>&gt;</span></div>
+extends <a href="../Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;<a href="CharacterRangeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeTableAttribute</a>&gt;</span></div>
 <div class="block">Models the <a href="../Attributes.html#characterRangeTable()"><code>CharacterRangeTable</code></a>
 attribute, which is a bidirectional mapping from ranges of positions in the
 source file to ranges of indices into the <code>code</code> array.  Its entries
-are delivered as <a href="../instruction/CharacterRange.html" title="interface in java.lang.classfile.instruction"><code>CharacterRange</code></a>s when traversing the elements of a
-<a href="../CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>, toggled by <a href="../ClassFile.DebugElementsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DebugElementsOption</code></a>.
+are delivered as <a href="../instruction/CharacterRange.html" title="java.lang.classfile.instruction 包中的接口"><code>CharacterRange</code></a>s when traversing the elements of a
+<a href="../CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>, toggled by <a href="../ClassFile.DebugElementsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DebugElementsOption</code></a>.
 <p>
-The <code>CharacterRangeTable</code> attribute consists of an array of <a href="CharacterRangeInfo.html" title="interface in java.lang.classfile.attribute">character range entries</a>.  The character range entries
+The <code>CharacterRangeTable</code> attribute consists of an array of <a href="CharacterRangeInfo.html" title="java.lang.classfile.attribute 包中的接口">character range entries</a>.  The character range entries
 form a forest data structure: any two range entries are either disjoint, or
 if they overlap, then one entry must be enclosed within the other, both in
 <code>code</code> array indices and source file character positions.  The
@@ -101,22 +101,22 @@ This attribute only appears on <code>Code</code> attributes, permits multiple
 appearances but should only <a href="../AttributeMapper.html#allowMultiple()">appear once</a> in a <code>Code</code> attribute.  It has a data dependency on
 <a href="../AttributeMapper.AttributeStability.html#LABELS">labels</a>.
 <p>
-This attribute cannot be sent to a <a href="../CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>; its entries can be
-constructed with <a href="../instruction/CharacterRange.html" title="interface in java.lang.classfile.instruction"><code>CharacterRange</code></a>, resulting in at most one
+This attribute cannot be sent to a <a href="../CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>; its entries can be
+constructed with <a href="../instruction/CharacterRange.html" title="java.lang.classfile.instruction 包中的接口"><code>CharacterRange</code></a>, resulting in at most one
 attribute instance in the built <code>Code</code> attribute.
 <p>
 This attribute is not predefined in the Java SE Platform.  This is a
 JDK-specific nonstandard attribute produced by the reference implementation
 of the system Java compiler, defined by the <code>jdk.compiler</code> module.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../Attributes.html#characterRangeTable()"><code>Attributes.characterRangeTable()</code></a></li>
-<li><a href="CompilationIDAttribute.html" title="interface in java.lang.classfile.attribute"><code>CompilationIDAttribute</code></a></li>
-<li><a href="SourceIDAttribute.html" title="interface in java.lang.classfile.attribute"><code>SourceIDAttribute</code></a></li>
+<li><a href="CompilationIDAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>CompilationIDAttribute</code></a></li>
+<li><a href="SourceIDAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>SourceIDAttribute</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -127,21 +127,21 @@ of the system Java compiler, defined by the <code>jdk.compiler</code> module.</d
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="CharacterRangeInfo.html" title="interface in java.lang.classfile.attribute">CharacterRangeInfo</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="CharacterRangeInfo.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeInfo</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#characterRangeTable()" class="member-name-link">characterRangeTable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the entries of the character range table.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="CharacterRangeTableAttribute.html" title="interface in java.lang.classfile.attribute">CharacterRangeTableAttribute</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.List)" class="member-name-link">of</a><wbr>(<a href="../../../util/List.html" title="interface in java.util">List</a>&lt;<a href="CharacterRangeInfo.html" title="interface in java.lang.classfile.attribute">CharacterRangeInfo</a>&gt;&nbsp;ranges)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="CharacterRangeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeTableAttribute</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.List)" class="member-name-link">of</a><wbr>(<a href="../../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="CharacterRangeInfo.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeInfo</a>&gt;&nbsp;ranges)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a <code>CharacterRangeTable</code> attribute.</div>
 </div>
@@ -149,7 +149,7 @@ of the system Java compiler, defined by the <code>jdk.compiler</code> module.</d
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.Attribute">Methods declared in interface&nbsp;<a href="../Attribute.html#method-summary" title="interface in java.lang.classfile">Attribute</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.Attribute">在接口 <a href="../Attribute.html#method-summary" title="java.lang.classfile 包中的接口">Attribute</a> 中声明的方法</h3>
 <code><a href="../Attribute.html#attributeMapper()" title="attributeMapper()">attributeMapper</a>, <a href="../Attribute.html#attributeName()" title="attributeName()">attributeName</a></code></div>
 </section>
 </li>
@@ -160,16 +160,16 @@ of the system Java compiler, defined by the <code>jdk.compiler</code> module.</d
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="characterRangeTable()">
 <h3>characterRangeTable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../util/List.html" title="interface in java.util">List</a>&lt;<a href="CharacterRangeInfo.html" title="interface in java.lang.classfile.attribute">CharacterRangeInfo</a>&gt;</span>&nbsp;<span class="element-name">characterRangeTable</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="CharacterRangeInfo.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeInfo</a>&gt;</span>&nbsp;<span class="element-name">characterRangeTable</span>()</div>
 <div class="block">Returns the entries of the character range table.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the entries of the character range table</dd>
 </dl>
 </div>
@@ -179,15 +179,15 @@ of the system Java compiler, defined by the <code>jdk.compiler</code> module.</d
 <section class="detail" id="of(java.util.List)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="CharacterRangeTableAttribute.html" title="interface in java.lang.classfile.attribute">CharacterRangeTableAttribute</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../../util/List.html" title="interface in java.util">List</a>&lt;<a href="CharacterRangeInfo.html" title="interface in java.lang.classfile.attribute">CharacterRangeInfo</a>&gt;&nbsp;ranges)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="CharacterRangeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeTableAttribute</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="CharacterRangeInfo.html" title="java.lang.classfile.attribute 包中的接口">CharacterRangeInfo</a>&gt;&nbsp;ranges)</span></div>
 <div class="block">Returns a <code>CharacterRangeTable</code> attribute.</div>
 <dl class="notes">
-<dt>API Note:</dt>
-<dd>The created attribute cannot be written to a <a href="../CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>.  Use
+<dt>API说明:</dt>
+<dd>The created attribute cannot be written to a <a href="../CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>.  Use
 <a href="../CodeBuilder.html#characterRange(java.lang.classfile.Label,java.lang.classfile.Label,int,int,int)"><code>CodeBuilder::characterRange</code></a> instead.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ranges</code> - the descriptions of the character ranges</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>CharacterRangeTable</code> attribute</dd>
 </dl>
 </div>

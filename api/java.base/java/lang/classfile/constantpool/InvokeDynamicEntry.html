@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile.constantpool</a></li>
 <li><a href="InvokeDynamicEntry.html" class="current-selection">InvokeDynamicEntry</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,12 +59,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#typeSymbol()" tabindex="0">typeSymbol()</a></li>
 <li><a href="#asSymbol()" tabindex="0">asSymbol()</a></li>
@@ -75,22 +75,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface InvokeDynamicEntry" class="title">Interface InvokeDynamicEntry</h1>
+<h1 title="接口 InvokeDynamicEntry" class="title">接口 InvokeDynamicEntry</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="DynamicConstantPoolEntry.html" title="interface in java.lang.classfile.constantpool">DynamicConstantPoolEntry</a>, <a href="PoolEntry.html" title="interface in java.lang.classfile.constantpool">PoolEntry</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="DynamicConstantPoolEntry.html" title="java.lang.classfile.constantpool 包中的接口">DynamicConstantPoolEntry</a>, <a href="PoolEntry.html" title="java.lang.classfile.constantpool 包中的接口">PoolEntry</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">InvokeDynamicEntry</span><span class="extends-implements">
-extends <a href="DynamicConstantPoolEntry.html" title="interface in java.lang.classfile.constantpool">DynamicConstantPoolEntry</a></span></div>
+extends <a href="DynamicConstantPoolEntry.html" title="java.lang.classfile.constantpool 包中的接口">DynamicConstantPoolEntry</a></span></div>
 <div class="block">Models a <code>CONSTANT_InvokeDynamic_info</code> structure, or the symbolic
 reference to a <dfn><span id="dynamically-computedcallsite" class="search-tag-result">dynamically-computed call site</span></dfn>, in the
 constant pool of a <code>class</code> file.
 <p>
-The use of a <code>InvokeDynamicEntry</code> is modeled by a <a href="../../constant/DynamicCallSiteDesc.html" title="class in java.lang.constant"><code>DynamicCallSiteDesc</code></a> symbolic descriptor.  It can be obtained from <a href="#asSymbol()"><code>InvokeDynamicEntry::asSymbol</code></a> and converted back to a constant
+The use of a <code>InvokeDynamicEntry</code> is modeled by a <a href="../../constant/DynamicCallSiteDesc.html" title="java.lang.constant 包中的类"><code>DynamicCallSiteDesc</code></a> symbolic descriptor.  It can be obtained from <a href="#asSymbol()"><code>InvokeDynamicEntry::asSymbol</code></a> and converted back to a constant
 pool entry through <a href="ConstantPoolBuilder.html#invokeDynamicEntry(java.lang.constant.DynamicCallSiteDesc)"><code>ConstantPoolBuilder::invokeDynamicEntry</code></a>.
 <p>
 An invoke dynamic entry is composite:
@@ -104,20 +104,20 @@ An invoke dynamic entry is composite:
 
 where the <a href="DynamicConstantPoolEntry.html#type()"><code>type</code></a> in the <code>nameAndType</code> is a <a href="#typeSymbol()">method descriptor</a> string.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>A dynamically-computed call site is frequently called a <dfn><span id="dynamiccallsite" class="search-tag-result">dynamic call site</span></dfn>, or an <dfn><span id="indy" class="search-tag-result">indy</span></dfn>, from the abbreviation of
 "invoke dynamic".</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.4.10">4.4.10 The <code>CONSTANT_Dynamic_info</code> and <code>
              CONSTANT_InvokeDynamic_info</code> Structures</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ConstantPoolBuilder.html#invokeDynamicEntry(java.lang.constant.DynamicCallSiteDesc)"><code>ConstantPoolBuilder::invokeDynamicEntry</code></a></li>
-<li><a href="../../constant/DynamicCallSiteDesc.html" title="class in java.lang.constant"><code>DynamicCallSiteDesc</code></a></li>
+<li><a href="../../constant/DynamicCallSiteDesc.html" title="java.lang.constant 包中的类"><code>DynamicCallSiteDesc</code></a></li>
 <li><a href="../../invoke/package-summary.html#indyinsn">Dynamically-computed call sites</a></li>
 </ul>
 </dd>
@@ -129,29 +129,29 @@ where the <a href="DynamicConstantPoolEntry.html#type()"><code>type</code></a> i
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
+<h2>字段概要</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-java.lang.classfile.constantpool.PoolEntry">Fields declared in interface&nbsp;<a href="PoolEntry.html#field-summary" title="interface in java.lang.classfile.constantpool">PoolEntry</a></h3>
+<h3 id="fields-inherited-from-class-java.lang.classfile.constantpool.PoolEntry">在接口 <a href="PoolEntry.html#field-summary" title="java.lang.classfile.constantpool 包中的接口">PoolEntry</a> 中声明的字段</h3>
 <code><a href="PoolEntry.html#TAG_CLASS">TAG_CLASS</a>, <a href="PoolEntry.html#TAG_DOUBLE">TAG_DOUBLE</a>, <a href="PoolEntry.html#TAG_DYNAMIC">TAG_DYNAMIC</a>, <a href="PoolEntry.html#TAG_FIELDREF">TAG_FIELDREF</a>, <a href="PoolEntry.html#TAG_FLOAT">TAG_FLOAT</a>, <a href="PoolEntry.html#TAG_INTEGER">TAG_INTEGER</a>, <a href="PoolEntry.html#TAG_INTERFACE_METHODREF">TAG_INTERFACE_METHODREF</a>, <a href="PoolEntry.html#TAG_INVOKE_DYNAMIC">TAG_INVOKE_DYNAMIC</a>, <a href="PoolEntry.html#TAG_LONG">TAG_LONG</a>, <a href="PoolEntry.html#TAG_METHOD_HANDLE">TAG_METHOD_HANDLE</a>, <a href="PoolEntry.html#TAG_METHOD_TYPE">TAG_METHOD_TYPE</a>, <a href="PoolEntry.html#TAG_METHODREF">TAG_METHODREF</a>, <a href="PoolEntry.html#TAG_MODULE">TAG_MODULE</a>, <a href="PoolEntry.html#TAG_NAME_AND_TYPE">TAG_NAME_AND_TYPE</a>, <a href="PoolEntry.html#TAG_PACKAGE">TAG_PACKAGE</a>, <a href="PoolEntry.html#TAG_STRING">TAG_STRING</a>, <a href="PoolEntry.html#TAG_UTF8">TAG_UTF8</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/DynamicCallSiteDesc.html" title="class in java.lang.constant">DynamicCallSiteDesc</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/DynamicCallSiteDesc.html" title="java.lang.constant 包中的类">DynamicCallSiteDesc</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#asSymbol()" class="member-name-link">asSymbol</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a symbolic descriptor for this dynamic call site.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#typeSymbol()" class="member-name-link">typeSymbol</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a symbolic descriptor for the <a href="DynamicConstantPoolEntry.html#type()">invocation
@@ -161,10 +161,10 @@ type</a> of this dynamic call site.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.constantpool.DynamicConstantPoolEntry">Methods declared in interface&nbsp;<a href="DynamicConstantPoolEntry.html#method-summary" title="interface in java.lang.classfile.constantpool">DynamicConstantPoolEntry</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.constantpool.DynamicConstantPoolEntry">在接口 <a href="DynamicConstantPoolEntry.html#method-summary" title="java.lang.classfile.constantpool 包中的接口">DynamicConstantPoolEntry</a> 中声明的方法</h3>
 <code><a href="DynamicConstantPoolEntry.html#bootstrap()" title="bootstrap()">bootstrap</a>, <a href="DynamicConstantPoolEntry.html#bootstrapMethodIndex()" title="bootstrapMethodIndex()">bootstrapMethodIndex</a>, <a href="DynamicConstantPoolEntry.html#name()" title="name()">name</a>, <a href="DynamicConstantPoolEntry.html#nameAndType()" title="nameAndType()">nameAndType</a>, <a href="DynamicConstantPoolEntry.html#type()" title="type()">type</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.constantpool.PoolEntry">Methods declared in interface&nbsp;<a href="PoolEntry.html#method-summary" title="interface in java.lang.classfile.constantpool">PoolEntry</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.constantpool.PoolEntry">在接口 <a href="PoolEntry.html#method-summary" title="java.lang.classfile.constantpool 包中的接口">PoolEntry</a> 中声明的方法</h3>
 <code><a href="PoolEntry.html#constantPool()" title="constantPool()">constantPool</a>, <a href="PoolEntry.html#index()" title="index()">index</a>, <a href="PoolEntry.html#tag()" title="tag()">tag</a>, <a href="PoolEntry.html#width()" title="width()">width</a></code></div>
 </section>
 </li>
@@ -175,17 +175,17 @@ type</a> of this dynamic call site.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="typeSymbol()">
 <h3>typeSymbol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a></span>&nbsp;<span class="element-name">typeSymbol</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a></span>&nbsp;<span class="element-name">typeSymbol</span>()</div>
 <div class="block">Returns a symbolic descriptor for the <a href="DynamicConstantPoolEntry.html#type()">invocation
 type</a> of this dynamic call site.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a symbolic descriptor for the <a href="DynamicConstantPoolEntry.html#type()">invocation
 type</a> of this dynamic call site</dd>
 </dl>
@@ -196,12 +196,12 @@ type</a> of this dynamic call site</dd>
 <section class="detail" id="asSymbol()">
 <h3>asSymbol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/DynamicCallSiteDesc.html" title="class in java.lang.constant">DynamicCallSiteDesc</a></span>&nbsp;<span class="element-name">asSymbol</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/DynamicCallSiteDesc.html" title="java.lang.constant 包中的类">DynamicCallSiteDesc</a></span>&nbsp;<span class="element-name">asSymbol</span>()</div>
 <div class="block">Returns a symbolic descriptor for this dynamic call site.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a symbolic descriptor for this dynamic call site</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ConstantPoolBuilder.html#invokeDynamicEntry(java.lang.constant.DynamicCallSiteDesc)"><code>ConstantPoolBuilder::invokeDynamicEntry(DynamicCallSiteDesc)</code></a></li>

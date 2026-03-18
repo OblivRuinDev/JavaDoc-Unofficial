@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util</a></li>
 <li><a href="ServiceLoader.html" class="current-selection">ServiceLoader</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -64,9 +64,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#obtaining-a-service-loader-heading" tabindex="0">Obtaining a service loader</a></li>
 <li><a href="#designing-services-heading" tabindex="0">Designing services</a></li>
@@ -82,9 +82,9 @@ loadScripts(document, 'script');</script>
 </li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#iterator()" tabindex="0">iterator()</a></li>
 <li><a href="#stream()" tabindex="0">stream()</a></li>
@@ -102,25 +102,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ServiceLoader" class="title">Class ServiceLoader&lt;S&gt;</h1>
+<h1 title="类 ServiceLoader" class="title">类 ServiceLoader&lt;S&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.ServiceLoader&lt;S&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-S"><code>S</code> - The type of the service to be loaded by this loader</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;S&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;S&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">ServiceLoader&lt;S&gt;</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;S&gt;</span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;S&gt;</span></div>
 <div class="block">A facility to load implementations of a service.
 
 <p> A <i>service</i> is a well-known interface or class for which zero, one,
@@ -244,7 +244,7 @@ can be fully encapsulated to hide all details of its implementation.
 <p> An application that obtains a service loader for a given service is
 indifferent to whether providers of the service are deployed in modules or
 packaged as JAR files. The application instantiates service providers via
-the service loader's iterator, or via <a href="ServiceLoader.Provider.html" title="interface in java.util"><code>Provider</code></a> objects in
+the service loader's iterator, or via <a href="ServiceLoader.Provider.html" title="java.util 包中的接口"><code>Provider</code></a> objects in
 the service loader's stream, without knowledge of the service providers'
 locations.
 
@@ -367,7 +367,7 @@ locates any remaining providers. Caches are cleared via the <a href="#reload()">
 <h2> <a id="errors">Errors</a> </h2>
 
 <p> When using the service loader's <code>iterator</code>, the <a href="Iterator.html#hasNext()"><code>hasNext</code></a> and <a href="Iterator.html#next()"><code>next</code></a> methods will
-fail with <a href="ServiceConfigurationError.html" title="class in java.util"><code>ServiceConfigurationError</code></a> if an error occurs locating,
+fail with <a href="ServiceConfigurationError.html" title="java.util 包中的类"><code>ServiceConfigurationError</code></a> if an error occurs locating,
 loading or instantiating a service provider. When processing the service
 loader's stream then <code>ServiceConfigurationError</code> may be thrown by any
 method that causes a service provider to be located or loaded.
@@ -406,7 +406,7 @@ ServiceConfigurationError</code> can be thrown for the following reasons:
 
   <li> The format of the provider-configuration file violates the <a href="ServiceLoader.html#format">format</a> specified above; </li>
 
-  <li> An <a href="../io/IOException.html" title="class in java.io"><code>IOException</code></a> occurs while reading the
+  <li> An <a href="../io/IOException.html" title="java.io 包中的类"><code>IOException</code></a> occurs while reading the
   provider-configuration file; </li>
 
   <li> A service provider cannot be loaded; </li>
@@ -425,9 +425,9 @@ threads.
 <h3 id="null-handling-heading"> Null handling </h3>
 
 <p> Unless otherwise specified, passing a <code>null</code> argument to any
-method in this class will cause a <a href="../lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown.</div>
+method in this class will cause a <a href="../lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -437,14 +437,14 @@ method in this class will cause a <a href="../lang/NullPointerException.html" ti
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ServiceLoader.Provider.html" class="type-name-link" title="interface in java.util">ServiceLoader.Provider</a>&lt;<a href="ServiceLoader.Provider.html#type-param-S" title="type parameter in ServiceLoader.Provider">S</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="ServiceLoader.Provider.html" title="java.util 包中的接口">ServiceLoader.Provider</a>&lt;<a href="ServiceLoader.Provider.html#type-param-S" title="ServiceLoader.Provider 中的类型参数">S</a>&gt;</code></div>
 <div class="col-last even-row-color">
 <div class="block">Represents a service provider located by <code>ServiceLoader</code>.</div>
 </div>
@@ -454,46 +454,46 @@ method in this class will cause a <a href="../lang/NullPointerException.html" ti
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findFirst()" class="member-name-link">findFirst</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load the first available service provider of this loader's service.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Iterator.html" title="interface in java.util">Iterator</a><wbr>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Iterator.html" title="java.util 包中的接口">Iterator</a><wbr>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iterator()" class="member-name-link">iterator</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an iterator to lazily load and instantiate the available
 providers of this loader's service.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class)" class="member-name-link">load</a><wbr>(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class)" class="member-name-link">load</a><wbr>(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a new service loader for the given service type, using the
 current thread's <a href="../lang/Thread.html#getContextClassLoader()">context class loader</a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class,java.lang.ClassLoader)" class="member-name-link">load</a><wbr>(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.Class,java.lang.ClassLoader)" class="member-name-link">load</a><wbr>(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a new service loader for the given service.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.ModuleLayer,java.lang.Class)" class="member-name-link">load</a><wbr>(<a href="../lang/ModuleLayer.html" title="class in java.lang">ModuleLayer</a>&nbsp;layer,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#load(java.lang.ModuleLayer,java.lang.Class)" class="member-name-link">load</a><wbr>(<a href="../lang/ModuleLayer.html" title="java.lang 包中的类">ModuleLayer</a>&nbsp;layer,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a new service loader for the given service type to load service
 providers from modules in the given module layer and its ancestors.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadInstalled(java.lang.Class)" class="member-name-link">loadInstalled</a><wbr>(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;S&gt;&nbsp;<a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a><wbr>&lt;S&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadInstalled(java.lang.Class)" class="member-name-link">loadInstalled</a><wbr>(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a new service loader for the given service type, using the
 <a href="../lang/ClassLoader.html#getPlatformClassLoader()">platform class loader</a>.</div>
@@ -504,13 +504,13 @@ providers from modules in the given module layer and its ancestors.</div>
 <div class="block">Clear this loader's provider cache so that all providers will be
 reloaded.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="ServiceLoader.Provider.html" title="interface in java.util">ServiceLoader.Provider</a>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="ServiceLoader.Provider.html" title="java.util 包中的接口">ServiceLoader.Provider</a>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#stream()" class="member-name-link">stream</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a stream to lazily load available providers of this loader's
 service.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string describing this service.</div>
@@ -519,10 +519,10 @@ service.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Iterable">Methods declared in interface&nbsp;<a href="../lang/Iterable.html#method-summary" title="interface in java.lang">Iterable</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Iterable">在接口 <a href="../lang/Iterable.html#method-summary" title="java.lang 包中的接口">Iterable</a> 中声明的方法</h3>
 <code><a href="../lang/Iterable.html#forEach(java.util.function.Consumer)" title="forEach(Consumer)">forEach</a>, <a href="../lang/Iterable.html#spliterator()" title="spliterator()">spliterator</a></code></div>
 </section>
 </li>
@@ -533,19 +533,19 @@ service.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="iterator()">
 <h3>iterator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Iterator.html" title="interface in java.util">Iterator</a>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Iterator.html" title="java.util 包中的接口">Iterator</a>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
 <div class="block">Returns an iterator to lazily load and instantiate the available
 providers of this loader's service.
 
 <p> To achieve laziness the actual work of locating and instantiating
 providers is done by the iterator itself. Its <a href="Iterator.html#hasNext()"><code>hasNext</code></a> and <a href="Iterator.html#next()"><code>next</code></a> methods can therefore throw a
-<a href="ServiceConfigurationError.html" title="class in java.util"><code>ServiceConfigurationError</code></a> for any of the reasons specified in
+<a href="ServiceConfigurationError.html" title="java.util 包中的类"><code>ServiceConfigurationError</code></a> for any of the reasons specified in
 the <a href="#errors">Errors</a> section above. To write robust code it
 is only necessary to catch <code>ServiceConfigurationError</code> when using
 the iterator. If an error is thrown then subsequent invocations of the
@@ -558,22 +558,22 @@ It then lazily loads and instantiates any remaining service providers,
 adding each one to the cache in turn. If this loader's provider caches are
 cleared by invoking the <a href="#reload()"><code>reload</code></a> method then existing
 iterators for this service loader should be discarded.
-The <code> hasNext</code> and <code>next</code> methods of the iterator throw <a href="ConcurrentModificationException.html" title="class in java.util"><code>ConcurrentModificationException</code></a>
+The <code> hasNext</code> and <code>next</code> methods of the iterator throw <a href="ConcurrentModificationException.html" title="java.util 包中的类"><code>ConcurrentModificationException</code></a>
 if used after the provider cache has been cleared.
 
 <p> The iterator returned by this method does not support removal.
 Invoking its <a href="Iterator.html#remove()"><code>remove</code></a> method will
-cause an <a href="../lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a> to be thrown.</div>
+cause an <a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a> to be thrown.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../lang/Iterable.html#iterator()">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;</code></dd>
-<dt>API Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../lang/Iterable.html#iterator()">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;</code></dd>
+<dt>API说明:</dt>
 <dd>Throwing an error in these cases may seem extreme.  The rationale
 for this behavior is that a malformed provider-configuration file, like a
 malformed class file, indicates a serious problem with the way the Java
 virtual machine is configured or is being used.  As such it is preferable
 to throw an error rather than try to recover or, even worse, fail silently.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An iterator that lazily loads providers for this loader's
          service</dd>
 </dl>
@@ -584,16 +584,16 @@ to throw an error rather than try to recover or, even worse, fail silently.</dd>
 <section class="detail" id="stream()">
 <h3>stream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="ServiceLoader.Provider.html" title="interface in java.util">ServiceLoader.Provider</a>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;&gt;</span>&nbsp;<span class="element-name">stream</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="ServiceLoader.Provider.html" title="java.util 包中的接口">ServiceLoader.Provider</a>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;&gt;</span>&nbsp;<span class="element-name">stream</span>()</div>
 <div class="block">Returns a stream to lazily load available providers of this loader's
-service. The stream elements are of type <a href="ServiceLoader.Provider.html" title="interface in java.util"><code>Provider</code></a>, the
+service. The stream elements are of type <a href="ServiceLoader.Provider.html" title="java.util 包中的接口"><code>Provider</code></a>, the
 <code>Provider</code>'s <a href="ServiceLoader.Provider.html#get()"><code>get</code></a> method must be invoked to
 get or instantiate the provider.
 
 <p> To achieve laziness the actual work of locating providers is done
 when processing the stream. If a service provider cannot be loaded for any
 of the reasons specified in the <a href="#errors">Errors</a> section
-above then <a href="ServiceConfigurationError.html" title="class in java.util"><code>ServiceConfigurationError</code></a> is thrown by whatever method
+above then <a href="ServiceConfigurationError.html" title="java.util 包中的类"><code>ServiceConfigurationError</code></a> is thrown by whatever method
 caused the service provider to be loaded. </p>
 
 <p> Caching: When processing the stream then providers that were previously
@@ -601,8 +601,8 @@ loaded by stream operations are processed first, in load order. It then
 lazily loads any remaining service providers. If this loader's provider
 caches are cleared by invoking the <a href="#reload()"><code>reload</code></a> method then
 existing streams for this service loader should be discarded. The returned
-stream's source <a href="Spliterator.html" title="interface in java.util"><code>spliterator</code></a> is <em>fail-fast</em> and
-will throw <a href="ConcurrentModificationException.html" title="class in java.util"><code>ConcurrentModificationException</code></a> if the provider cache
+stream's source <a href="Spliterator.html" title="java.util 包中的接口"><code>spliterator</code></a> is <em>fail-fast</em> and
+will throw <a href="ConcurrentModificationException.html" title="java.util 包中的类"><code>ConcurrentModificationException</code></a> if the provider cache
 has been cleared. </p>
 
 <p> The following examples demonstrate usage. The first example creates
@@ -619,9 +619,9 @@ all providers).
            .map(Provider::get);
 </code></pre></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A stream that lazily loads providers for this loader's service</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -631,8 +631,8 @@ all providers).
 <section class="detail" id="load(java.lang.Class,java.lang.ClassLoader)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span></div>
 <div class="block">Creates a new service loader for the given service. The service loader
 uses the given class loader as the starting point to locate service
 providers for the service. The service loader's <a href="#iterator()"><code>iterator</code></a> and <a href="#stream()"><code>stream</code></a> locate providers in both named
@@ -647,7 +647,7 @@ and unnamed modules, as follows:
   <p> In addition, if the class loader is not the bootstrap or <a href="../lang/ClassLoader.html#getPlatformClassLoader()">platform class loader</a>, then service
   providers may be located in the named modules of other class loaders.
   Specifically, if the class loader, or any class loader reachable via
-  parent delegation, has a module in a <a href="../lang/ModuleLayer.html" title="class in java.lang">module
+  parent delegation, has a module in a <a href="../lang/ModuleLayer.html" title="java.lang 包中的类">module
   layer</a>, then service providers in all modules in the module layer are
   located.  </p>
 
@@ -692,7 +692,7 @@ and unnamed modules, as follows:
 
 </ul></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>If the class path of the class loader includes remote network
 URLs then those URLs may be dereferenced in the process of searching for
 provider-configuration files.
@@ -705,22 +705,22 @@ spuriously.
 <p> A web server should return an HTTP 404 (Not Found) response when a
 requested resource does not exist.  Sometimes, however, web servers are
 erroneously configured to return an HTTP 200 (OK) response along with a
-helpful HTML error page in such cases.  This will cause a <a href="ServiceConfigurationError.html" title="class in java.util"><code>ServiceConfigurationError</code></a> to be thrown when this class attempts to parse
+helpful HTML error page in such cases.  This will cause a <a href="ServiceConfigurationError.html" title="java.util 包中的类"><code>ServiceConfigurationError</code></a> to be thrown when this class attempts to parse
 the HTML page as a provider-configuration file.  The best solution to this
 problem is to fix the misconfigured web server to return the correct
 response code (HTTP 404) along with the HTML error page.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="load(java.lang.Class,java.lang.ClassLoader)-type-param-S"><code>S</code> - the class of the service type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>service</code> - The interface or abstract class representing the service</dd>
 <dd><code>loader</code> - The class loader to be used to load provider-configuration files
         and provider classes, or <code>null</code> if the system class
         loader (or, failing that, the bootstrap class loader) is to be
         used</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new service loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
+<dt>抛出:</dt>
+<dd><code><a href="ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
         caller is in an explicit module and its module descriptor does
         not declare that it uses <code>service</code></dd>
 </dl>
@@ -731,7 +731,7 @@ response code (HTTP 404) along with the HTML error page.</dd>
 <section class="detail" id="load(java.lang.Class)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</span></div>
 <div class="block">Creates a new service loader for the given service type, using the
 current thread's <a href="../lang/Thread.html#getContextClassLoader()">context class loader</a>.
 
@@ -744,7 +744,7 @@ is equivalent to
 <pre><code>    ServiceLoader.load(service, Thread.currentThread().getContextClassLoader())
 </code></pre></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Service loader objects obtained with this method should not be
 cached VM-wide. For example, different applications in the same VM may
 have different thread context class loaders. A lookup by one application
@@ -752,14 +752,14 @@ may locate a service provider that is only visible via its thread
 context class loader and so is not suitable to be located by the other
 application. Memory leaks can also arise. A thread local may be suited
 to some applications.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="load(java.lang.Class)-type-param-S"><code>S</code> - the class of the service type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>service</code> - The interface or abstract class representing the service</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new service loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
+<dt>抛出:</dt>
+<dd><code><a href="ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
         caller is in an explicit module and its module descriptor does
         not declare that it uses <code>service</code></dd>
 </dl>
@@ -770,7 +770,7 @@ to some applications.</dd>
 <section class="detail" id="loadInstalled(java.lang.Class)">
 <h3>loadInstalled</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">loadInstalled</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">loadInstalled</span><wbr><span class="parameters">(<a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</span></div>
 <div class="block">Creates a new service loader for the given service type, using the
 <a href="../lang/ClassLoader.html#getPlatformClassLoader()">platform class loader</a>.
 
@@ -784,14 +784,14 @@ desired.  The resulting service will only find and load providers that
 have been installed into the current Java virtual machine; providers on
 the application's module path or class path will be ignored.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="loadInstalled(java.lang.Class)-type-param-S"><code>S</code> - the class of the service type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>service</code> - The interface or abstract class representing the service</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new service loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
+<dt>抛出:</dt>
+<dd><code><a href="ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
         caller is in an explicit module and its module descriptor does
         not declare that it uses <code>service</code></dd>
 </dl>
@@ -802,8 +802,8 @@ the application's module path or class path will be ignored.</div>
 <section class="detail" id="load(java.lang.ModuleLayer,java.lang.Class)">
 <h3>load</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="class in java.util">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/ModuleLayer.html" title="class in java.lang">ModuleLayer</a>&nbsp;layer,
- <a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;S&gt;&nbsp;service)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;S&gt;</span>&nbsp;<span class="return-type"><a href="ServiceLoader.html" title="java.util 包中的类">ServiceLoader</a>&lt;S&gt;</span>&nbsp;<span class="element-name">load</span><wbr><span class="parameters">(<a href="../lang/ModuleLayer.html" title="java.lang 包中的类">ModuleLayer</a>&nbsp;layer,
+ <a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;S&gt;&nbsp;service)</span></div>
 <div class="block">Creates a new service loader for the given service type to load service
 providers from modules in the given module layer and its ancestors. It
 does not locate providers in unnamed modules. The ordering that the service
@@ -827,22 +827,22 @@ providers and yield elements is as follows:
   <li><p> The ordering of modules in a module layer is not defined. </p></li>
 </ul></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Unlike the other load methods defined here, the service type
 is the second parameter. The reason for this is to avoid source
 compatibility issues for code that uses <code>load(S, null)</code>.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="load(java.lang.ModuleLayer,java.lang.Class)-type-param-S"><code>S</code> - the class of the service type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>layer</code> - The module layer</dd>
 <dd><code>service</code> - The interface or abstract class representing the service</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new service loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
+<dt>抛出:</dt>
+<dd><code><a href="ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - if the service type is not accessible to the caller or the
         caller is in an explicit module and its module descriptor does
         not declare that it uses <code>service</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -852,7 +852,7 @@ compatibility issues for code that uses <code>load(S, null)</code>.</dd>
 <section class="detail" id="findFirst()">
 <h3>findFirst</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-S" title="type parameter in ServiceLoader">S</a>&gt;</span>&nbsp;<span class="element-name">findFirst</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-S" title="ServiceLoader 中的类型参数">S</a>&gt;</span>&nbsp;<span class="element-name">findFirst</span>()</div>
 <div class="block">Load the first available service provider of this loader's service. This
 convenience method is equivalent to invoking the <a href="#iterator()"><code>iterator()</code></a> method and obtaining the first element. It therefore
 returns the first element from the provider cache if possible, it
@@ -865,13 +865,13 @@ no service providers are located then it uses a default implementation.
                                        .orElse(DEFAULT_CODECSET_FACTORY);
 </code></pre></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The first service provider or empty <code>Optional</code> if no
         service providers are located</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - If a provider class cannot be loaded for any of the reasons
+<dt>抛出:</dt>
+<dd><code><a href="ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - If a provider class cannot be loaded for any of the reasons
         specified in the <a href="#errors">Errors</a> section above.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -898,12 +898,12 @@ providers can be installed into a running Java virtual machine.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string describing this service.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>A descriptive string</dd>
 </dl>
 </div>

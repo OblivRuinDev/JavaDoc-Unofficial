@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile</a></li>
 <li><a href="ClassBuilder.html" class="current-selection">ClassBuilder</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -67,11 +67,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#withVersion(int,int)" tabindex="0">withVersion(int, int)</a></li>
 <li><a href="#withFlags(int)" tabindex="0">withFlags(int)</a></li>
@@ -99,35 +99,35 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface ClassBuilder" class="title">Interface ClassBuilder</h1>
+<h1 title="接口 ClassBuilder" class="title">接口 ClassBuilder</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>, <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a>&gt;, <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>, <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a>&gt;, <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">ClassBuilder</span><span class="extends-implements">
-extends <a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>, <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a>&gt;</span></div>
-<div class="block">A builder for a <code>class</code> file.  <a href="ClassFile.html" title="interface in java.lang.classfile"><code>ClassFile</code></a> provides different
+extends <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>, <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a>&gt;</span></div>
+<div class="block">A builder for a <code>class</code> file.  <a href="ClassFile.html" title="java.lang.classfile 包中的接口"><code>ClassFile</code></a> provides different
 <code>build</code> methods that accept handlers to configure such a builder;
 <a href="ClassFile.html#build(java.lang.constant.ClassDesc,java.util.function.Consumer)"><code>ClassFile.build(ClassDesc, Consumer)</code></a> suffices for basic usage, while
 <a href="ClassFile.html#build(java.lang.classfile.constantpool.ClassEntry,java.lang.classfile.constantpool.ConstantPoolBuilder,java.util.function.Consumer)"><code>ClassFile.build(ClassEntry, ConstantPoolBuilder, Consumer)</code></a> allows
 fine-grained control over <a href="ClassFileBuilder.html#constantPool()">the
 constant pool</a>.
 <p>
-Refer to <a href="ClassFileBuilder.html" title="interface in java.lang.classfile"><code>ClassFileBuilder</code></a> for general guidance and caution around
+Refer to <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassFileBuilder</code></a> for general guidance and caution around
 the use of builders for structures in the <code>class</code> file format.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ClassFile.html#build(java.lang.classfile.constantpool.ClassEntry,java.lang.classfile.constantpool.ConstantPoolBuilder,java.util.function.Consumer)"><code>ClassFile.build(ClassEntry, ConstantPoolBuilder, Consumer)</code></a></li>
-<li><a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a></li>
-<li><a href="ClassTransform.html" title="interface in java.lang.classfile"><code>ClassTransform</code></a></li>
+<li><a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a></li>
+<li><a href="ClassTransform.html" title="java.lang.classfile 包中的接口"><code>ClassTransform</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -138,127 +138,127 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformField(java.lang.classfile.FieldModel,java.lang.classfile.FieldTransform)" class="member-name-link">transformField</a><wbr>(<a href="FieldModel.html" title="interface in java.lang.classfile">FieldModel</a>&nbsp;field,
- <a href="FieldTransform.html" title="interface in java.lang.classfile">FieldTransform</a>&nbsp;transform)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformField(java.lang.classfile.FieldModel,java.lang.classfile.FieldTransform)" class="member-name-link">transformField</a><wbr>(<a href="FieldModel.html" title="java.lang.classfile 包中的接口">FieldModel</a>&nbsp;field,
+ <a href="FieldTransform.html" title="java.lang.classfile 包中的接口">FieldTransform</a>&nbsp;transform)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds a field by transforming a field from another class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformMethod(java.lang.classfile.MethodModel,java.lang.classfile.MethodTransform)" class="member-name-link">transformMethod</a><wbr>(<a href="MethodModel.html" title="interface in java.lang.classfile">MethodModel</a>&nbsp;method,
- <a href="MethodTransform.html" title="interface in java.lang.classfile">MethodTransform</a>&nbsp;transform)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#transformMethod(java.lang.classfile.MethodModel,java.lang.classfile.MethodTransform)" class="member-name-link">transformMethod</a><wbr>(<a href="MethodModel.html" title="java.lang.classfile 包中的接口">MethodModel</a>&nbsp;method,
+ <a href="MethodTransform.html" title="java.lang.classfile 包中的接口">MethodTransform</a>&nbsp;transform)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds a method by transforming a method from another class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int)" class="member-name-link">withField</a><wbr>(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int)" class="member-name-link">withField</a><wbr>(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;flags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Adds a field, with only access flags.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.util.function.Consumer)" class="member-name-link">withField</a><wbr>(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="interface in java.lang.classfile">FieldBuilder</a>&gt;&nbsp;handler)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.util.function.Consumer)" class="member-name-link">withField</a><wbr>(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="java.lang.classfile 包中的接口">FieldBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds a field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.String,java.lang.constant.ClassDesc,int)" class="member-name-link">withField</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.String,java.lang.constant.ClassDesc,int)" class="member-name-link">withField</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
  int&nbsp;flags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Adds a field, with only access flags.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.String,java.lang.constant.ClassDesc,java.util.function.Consumer)" class="member-name-link">withField</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="interface in java.lang.classfile">FieldBuilder</a>&gt;&nbsp;handler)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withField(java.lang.String,java.lang.constant.ClassDesc,java.util.function.Consumer)" class="member-name-link">withField</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="java.lang.classfile 包中的接口">FieldBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Adds a field.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(int)" class="member-name-link">withFlags</a><wbr>(int&nbsp;flags)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the access flags of this class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(java.lang.reflect.AccessFlag...)" class="member-name-link">withFlags</a><wbr>(<a href="../reflect/AccessFlag.html" title="enum class in java.lang.reflect">AccessFlag</a>...&nbsp;flags)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withFlags(java.lang.reflect.AccessFlag...)" class="member-name-link">withFlags</a><wbr>(<a href="../reflect/AccessFlag.html" title="java.lang.reflect 包中的枚举类">AccessFlag</a>...&nbsp;flags)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the access flags of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaces(java.lang.classfile.constantpool.ClassEntry...)" class="member-name-link">withInterfaces</a><wbr>(<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>...&nbsp;interfaces)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaces(java.lang.classfile.constantpool.ClassEntry...)" class="member-name-link">withInterfaces</a><wbr>(<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>...&nbsp;interfaces)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the interfaces of this class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaces(java.util.List)" class="member-name-link">withInterfaces</a><wbr>(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;&nbsp;interfaces)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaces(java.util.List)" class="member-name-link">withInterfaces</a><wbr>(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;&nbsp;interfaces)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the interfaces of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaceSymbols(java.lang.constant.ClassDesc...)" class="member-name-link">withInterfaceSymbols</a><wbr>(<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>...&nbsp;interfaces)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaceSymbols(java.lang.constant.ClassDesc...)" class="member-name-link">withInterfaceSymbols</a><wbr>(<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>...&nbsp;interfaces)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the interfaces of this class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaceSymbols(java.util.List)" class="member-name-link">withInterfaceSymbols</a><wbr>(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&gt;&nbsp;interfaces)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withInterfaceSymbols(java.util.List)" class="member-name-link">withInterfaceSymbols</a><wbr>(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&gt;&nbsp;interfaces)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the interfaces of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withMethod(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)" class="member-name-link">withMethod</a><wbr>(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withMethod(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)" class="member-name-link">withMethod</a><wbr>(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;&nbsp;handler)</code></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds a method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethod(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)" class="member-name-link">withMethod</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&nbsp;descriptor,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethod(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)" class="member-name-link">withMethod</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;&nbsp;handler)</code></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Adds a method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethodBody(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)" class="member-name-link">withMethodBody</a><wbr>(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethodBody(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)" class="member-name-link">withMethodBody</a><wbr>(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;handler)</code></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.</div>
+<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethodBody(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)" class="member-name-link">withMethodBody</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&nbsp;descriptor,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withMethodBody(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)" class="member-name-link">withMethodBody</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;handler)</code></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.</div>
+<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withSuperclass(java.lang.classfile.constantpool.ClassEntry)" class="member-name-link">withSuperclass</a><wbr>(<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&nbsp;superclassEntry)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withSuperclass(java.lang.classfile.constantpool.ClassEntry)" class="member-name-link">withSuperclass</a><wbr>(<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&nbsp;superclassEntry)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the superclass of this class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withSuperclass(java.lang.constant.ClassDesc)" class="member-name-link">withSuperclass</a><wbr>(<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;desc)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withSuperclass(java.lang.constant.ClassDesc)" class="member-name-link">withSuperclass</a><wbr>(<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;desc)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Sets the superclass of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withVersion(int,int)" class="member-name-link">withVersion</a><wbr>(int&nbsp;major,
  int&nbsp;minor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
@@ -268,10 +268,10 @@ the use of builders for structures in the <code>class</code> file format.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.ClassFileBuilder">Methods declared in interface&nbsp;<a href="ClassFileBuilder.html#method-summary" title="interface in java.lang.classfile">ClassFileBuilder</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.ClassFileBuilder">在接口 <a href="ClassFileBuilder.html#method-summary" title="java.lang.classfile 包中的接口">ClassFileBuilder</a> 中声明的方法</h3>
 <code><a href="ClassFileBuilder.html#accept(E)" title="accept(ClassElement)">accept</a>, <a href="ClassFileBuilder.html#constantPool()" title="constantPool()">constantPool</a>, <a href="ClassFileBuilder.html#transform(java.lang.classfile.CompoundElement,java.lang.classfile.ClassFileTransform)" title="transform(CompoundElement, ClassFileTransform)">transform</a>, <a href="ClassFileBuilder.html#with(E)" title="with(ClassElement)">with</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.function.Consumer">Methods declared in interface&nbsp;<a href="../../util/function/Consumer.html#method-summary" title="interface in java.util.function">Consumer</a></h3>
+<h3 id="methods-inherited-from-class-java.util.function.Consumer">在接口 <a href="../../util/function/Consumer.html#method-summary" title="java.util.function 包中的接口">Consumer</a> 中声明的方法</h3>
 <code><a href="../../util/function/Consumer.html#andThen(java.util.function.Consumer)" title="andThen(Consumer)">andThen</a></code></div>
 </section>
 </li>
@@ -282,25 +282,25 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="withVersion(int,int)">
 <h3>withVersion</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withVersion</span><wbr><span class="parameters">(int&nbsp;major,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withVersion</span><wbr><span class="parameters">(int&nbsp;major,
  int&nbsp;minor)</span></div>
 <div class="block">Sets the version of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>major</code> - the major version number</dd>
 <dd><code>minor</code> - the minor version number</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="ClassFileVersion.html" title="interface in java.lang.classfile"><code>ClassFileVersion</code></a></li>
+<li><a href="ClassFileVersion.html" title="java.lang.classfile 包中的接口"><code>ClassFileVersion</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -311,17 +311,17 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withFlags(int)">
 <h3>withFlags</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(int&nbsp;flags)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(int&nbsp;flags)</span></div>
 <div class="block">Sets the access flags of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>flags</code> - the access flags, as a bit mask</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="AccessFlags.html" title="interface in java.lang.classfile"><code>AccessFlags</code></a></li>
+<li><a href="AccessFlags.html" title="java.lang.classfile 包中的接口"><code>AccessFlags</code></a></li>
 <li><a href="../reflect/AccessFlag.Location.html#CLASS"><code>AccessFlag.Location.CLASS</code></a></li>
 </ul>
 </dd>
@@ -333,20 +333,20 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withFlags(java.lang.reflect.AccessFlag...)">
 <h3>withFlags</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(<a href="../reflect/AccessFlag.html" title="enum class in java.lang.reflect">AccessFlag</a>...&nbsp;flags)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withFlags</span><wbr><span class="parameters">(<a href="../reflect/AccessFlag.html" title="java.lang.reflect 包中的枚举类">AccessFlag</a>...&nbsp;flags)</span></div>
 <div class="block">Sets the access flags of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>flags</code> - the access flags, as flag enums</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any flag cannot be applied to the
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any flag cannot be applied to the
         <a href="../reflect/AccessFlag.Location.html#CLASS"><code>AccessFlag.Location.CLASS</code></a> location</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="AccessFlags.html" title="interface in java.lang.classfile"><code>AccessFlags</code></a></li>
+<li><a href="AccessFlags.html" title="java.lang.classfile 包中的接口"><code>AccessFlags</code></a></li>
 <li><a href="../reflect/AccessFlag.Location.html#CLASS"><code>AccessFlag.Location.CLASS</code></a></li>
 </ul>
 </dd>
@@ -358,17 +358,17 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withSuperclass(java.lang.classfile.constantpool.ClassEntry)">
 <h3>withSuperclass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withSuperclass</span><wbr><span class="parameters">(<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&nbsp;superclassEntry)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withSuperclass</span><wbr><span class="parameters">(<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&nbsp;superclassEntry)</span></div>
 <div class="block">Sets the superclass of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>superclassEntry</code> - the superclass</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Superclass.html" title="interface in java.lang.classfile"><code>Superclass</code></a></li>
+<li><a href="Superclass.html" title="java.lang.classfile 包中的接口"><code>Superclass</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -379,19 +379,19 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withSuperclass(java.lang.constant.ClassDesc)">
 <h3>withSuperclass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withSuperclass</span><wbr><span class="parameters">(<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;desc)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withSuperclass</span><wbr><span class="parameters">(<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;desc)</span></div>
 <div class="block">Sets the superclass of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>desc</code> - the superclass</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>desc</code> represents a primitive type</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>desc</code> represents a primitive type</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Superclass.html" title="interface in java.lang.classfile"><code>Superclass</code></a></li>
+<li><a href="Superclass.html" title="java.lang.classfile 包中的接口"><code>Superclass</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -402,17 +402,17 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withInterfaces(java.util.List)">
 <h3>withInterfaces</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaces</span><wbr><span class="parameters">(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;&nbsp;interfaces)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaces</span><wbr><span class="parameters">(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;&nbsp;interfaces)</span></div>
 <div class="block">Sets the interfaces of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>interfaces</code> - the interfaces</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Interfaces.html" title="interface in java.lang.classfile"><code>Interfaces</code></a></li>
+<li><a href="Interfaces.html" title="java.lang.classfile 包中的接口"><code>Interfaces</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -423,17 +423,17 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withInterfaces(java.lang.classfile.constantpool.ClassEntry...)">
 <h3>withInterfaces</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaces</span><wbr><span class="parameters">(<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>...&nbsp;interfaces)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaces</span><wbr><span class="parameters">(<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>...&nbsp;interfaces)</span></div>
 <div class="block">Sets the interfaces of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>interfaces</code> - the interfaces</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Interfaces.html" title="interface in java.lang.classfile"><code>Interfaces</code></a></li>
+<li><a href="Interfaces.html" title="java.lang.classfile 包中的接口"><code>Interfaces</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -444,19 +444,19 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withInterfaceSymbols(java.util.List)">
 <h3>withInterfaceSymbols</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaceSymbols</span><wbr><span class="parameters">(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&gt;&nbsp;interfaces)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaceSymbols</span><wbr><span class="parameters">(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&gt;&nbsp;interfaces)</span></div>
 <div class="block">Sets the interfaces of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>interfaces</code> - the interfaces</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>interfaces</code> is primitive</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>interfaces</code> is primitive</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Interfaces.html" title="interface in java.lang.classfile"><code>Interfaces</code></a></li>
+<li><a href="Interfaces.html" title="java.lang.classfile 包中的接口"><code>Interfaces</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -467,19 +467,19 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withInterfaceSymbols(java.lang.constant.ClassDesc...)">
 <h3>withInterfaceSymbols</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaceSymbols</span><wbr><span class="parameters">(<a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>...&nbsp;interfaces)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withInterfaceSymbols</span><wbr><span class="parameters">(<a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>...&nbsp;interfaces)</span></div>
 <div class="block">Sets the interfaces of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>interfaces</code> - the interfaces</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any element of <code>interfaces</code> is primitive</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any element of <code>interfaces</code> is primitive</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Interfaces.html" title="interface in java.lang.classfile"><code>Interfaces</code></a></li>
+<li><a href="Interfaces.html" title="java.lang.classfile 包中的接口"><code>Interfaces</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -490,21 +490,21 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.util.function.Consumer)">
 <h3>withField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="interface in java.lang.classfile">FieldBuilder</a>&gt;&nbsp;handler)</span></div>
+<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="java.lang.classfile 包中的接口">FieldBuilder</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Adds a field.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the field name</dd>
 <dd><code>descriptor</code> - the field descriptor string</dd>
 <dd><code>handler</code> - handler to supply the contents of the field</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a></li>
+<li><a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -515,21 +515,21 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withField(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int)">
 <h3>withField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;flags)</span></div>
 <div class="block">Adds a field, with only access flags.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the field name</dd>
 <dd><code>descriptor</code> - the field descriptor string</dd>
 <dd><code>flags</code> - the access flags for this field, as a bit mask</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a></li>
+<li><a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a></li>
 <li><a href="FieldBuilder.html#withFlags(int)"><code>FieldBuilder.withFlags(int)</code></a></li>
 </ul>
 </dd>
@@ -541,21 +541,21 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withField(java.lang.String,java.lang.constant.ClassDesc,java.util.function.Consumer)">
 <h3>withField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="interface in java.lang.classfile">FieldBuilder</a>&gt;&nbsp;handler)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="FieldBuilder.html" title="java.lang.classfile 包中的接口">FieldBuilder</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Adds a field.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the field name</dd>
 <dd><code>descriptor</code> - the symbolic field descriptor</dd>
 <dd><code>handler</code> - handler to supply the contents of the field</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a></li>
+<li><a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -566,21 +566,21 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="withField(java.lang.String,java.lang.constant.ClassDesc,int)">
 <h3>withField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withField</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
  int&nbsp;flags)</span></div>
 <div class="block">Adds a field, with only access flags.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the field name</dd>
 <dd><code>descriptor</code> - the symbolic field descriptor</dd>
 <dd><code>flags</code> - the access flags for this field, as a bit mask</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a></li>
+<li><a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a></li>
 <li><a href="FieldBuilder.html#withFlags(int)"><code>FieldBuilder.withFlags(int)</code></a></li>
 </ul>
 </dd>
@@ -592,8 +592,8 @@ the use of builders for structures in the <code>class</code> file format.</div>
 <section class="detail" id="transformField(java.lang.classfile.FieldModel,java.lang.classfile.FieldTransform)">
 <h3>transformField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">transformField</span><wbr><span class="parameters">(<a href="FieldModel.html" title="interface in java.lang.classfile">FieldModel</a>&nbsp;field,
- <a href="FieldTransform.html" title="interface in java.lang.classfile">FieldTransform</a>&nbsp;transform)</span></div>
+<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">transformField</span><wbr><span class="parameters">(<a href="FieldModel.html" title="java.lang.classfile 包中的接口">FieldModel</a>&nbsp;field,
+ <a href="FieldTransform.html" title="java.lang.classfile 包中的接口">FieldTransform</a>&nbsp;transform)</span></div>
 <div class="block">Adds a field by transforming a field from another class.
 <p>
 This method behaves as if:
@@ -604,15 +604,15 @@ This method behaves as if:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>field</code> - the field to be transformed</dd>
 <dd><code>transform</code> - the transform to apply to the field</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="FieldTransform.html" title="interface in java.lang.classfile"><code>FieldTransform</code></a></li>
+<li><a href="FieldTransform.html" title="java.lang.classfile 包中的接口"><code>FieldTransform</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -623,26 +623,26 @@ This method behaves as if:
 <section class="detail" id="withMethod(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)">
 <h3>withMethod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethod</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethod</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;&nbsp;handler)</span></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Adds a method.  The bit for <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag
 cannot be modified by the <code>handler</code> later, and must be set through
 <code>methodFlags</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the method name</dd>
 <dd><code>descriptor</code> - the method descriptor</dd>
 <dd><code>methodFlags</code> - the access flags as a bit mask, with the <code>
        ACC_STATIC</code> bit definitely set</dd>
 <dd><code>handler</code> - handler to supply the contents of the method</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a></li>
+<li><a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -653,11 +653,11 @@ cannot be modified by the <code>handler</code> later, and must be set through
 <section class="detail" id="withMethodBody(java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,int,java.util.function.Consumer)">
 <h3>withMethodBody</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethodBody</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;name,
- <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptor,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethodBody</span><wbr><span class="parameters">(<a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;name,
+ <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;handler)</span></div>
-<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.  The bit
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;handler)</span></div>
+<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.  The bit
 for <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag cannot be modified by
 the <code>handler</code> later, and must be set through <code>methodFlags</code>.
 <p>
@@ -668,18 +668,18 @@ This method behaves as if:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the method name</dd>
 <dd><code>descriptor</code> - the method descriptor</dd>
 <dd><code>methodFlags</code> - the access flags as a bit mask, with the <code>
        ACC_STATIC</code> bit definitely set</dd>
 <dd><code>handler</code> - handler to supply the contents of the method body</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a></li>
+<li><a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -690,26 +690,26 @@ This method behaves as if:
 <section class="detail" id="withMethod(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)">
 <h3>withMethod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethod</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&nbsp;descriptor,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethod</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a>&gt;&nbsp;handler)</span></div>
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Adds a method.  The bit for <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag
 cannot be modified by the <code>handler</code>, and must be set through
 <code>methodFlags</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the method name</dd>
 <dd><code>descriptor</code> - the method descriptor</dd>
 <dd><code>methodFlags</code> - the access flags as a bit mask, with the <code>
        ACC_STATIC</code> bit definitely set</dd>
 <dd><code>handler</code> - handler to supply the contents of the method</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a></li>
+<li><a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -720,11 +720,11 @@ cannot be modified by the <code>handler</code>, and must be set through
 <section class="detail" id="withMethodBody(java.lang.String,java.lang.constant.MethodTypeDesc,int,java.util.function.Consumer)">
 <h3>withMethodBody</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethodBody</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant">MethodTypeDesc</a>&nbsp;descriptor,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">withMethodBody</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口">MethodTypeDesc</a>&nbsp;descriptor,
  int&nbsp;methodFlags,
- <a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a>&gt;&nbsp;handler)</span></div>
-<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.  The bit
+ <a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a>&gt;&nbsp;handler)</span></div>
+<div class="block">Adds a method, with only access flags and a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.  The bit
 for <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag cannot be modified by
 the <code>handler</code>, and must be set through <code>methodFlags</code>.
 <p>
@@ -735,18 +735,18 @@ This method behaves as if:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the method name</dd>
 <dd><code>descriptor</code> - the method descriptor</dd>
 <dd><code>methodFlags</code> - the access flags as a bit mask, with the <code>
        ACC_STATIC</code> bit definitely set</dd>
 <dd><code>handler</code> - handler to supply the contents of the method body</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a></li>
+<li><a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -757,8 +757,8 @@ This method behaves as if:
 <section class="detail" id="transformMethod(java.lang.classfile.MethodModel,java.lang.classfile.MethodTransform)">
 <h3>transformMethod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></span>&nbsp;<span class="element-name">transformMethod</span><wbr><span class="parameters">(<a href="MethodModel.html" title="interface in java.lang.classfile">MethodModel</a>&nbsp;method,
- <a href="MethodTransform.html" title="interface in java.lang.classfile">MethodTransform</a>&nbsp;transform)</span></div>
+<div class="member-signature"><span class="return-type"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></span>&nbsp;<span class="element-name">transformMethod</span><wbr><span class="parameters">(<a href="MethodModel.html" title="java.lang.classfile 包中的接口">MethodModel</a>&nbsp;method,
+ <a href="MethodTransform.html" title="java.lang.classfile 包中的接口">MethodTransform</a>&nbsp;transform)</span></div>
 <div class="block">Adds a method by transforming a method from another class.  The transform
 cannot modify the <a href="ClassFile.html#ACC_STATIC"><code>ACC_STATIC</code></a> flag of the
 original method.
@@ -771,15 +771,15 @@ This method behaves as if:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>method</code> - the method to be transformed</dd>
 <dd><code>transform</code> - the transform to apply to the method</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this builder</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodTransform.html" title="interface in java.lang.classfile"><code>MethodTransform</code></a></li>
+<li><a href="MethodTransform.html" title="java.lang.classfile 包中的接口"><code>MethodTransform</code></a></li>
 </ul>
 </dd>
 </dl>

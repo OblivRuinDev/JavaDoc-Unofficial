@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.stream</a></li>
 <li><a href="Collector.html" class="current-selection">Collector</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -63,12 +63,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#supplier()" tabindex="0">supplier()</a></li>
 <li><a href="#accumulator()" tabindex="0">accumulator()</a></li>
@@ -84,11 +84,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Collector" class="title">Interface Collector&lt;T,<wbr>A,<wbr>R&gt;</h1>
+<h1 title="接口 Collector" class="title">接口 Collector&lt;T,<wbr>A,<wbr>R&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the type of input elements to the reduction operation</span></dd>
 <dd><span id="type-param-A"><code>A</code> - the mutable accumulation type of the reduction operation (often
            hidden as an implementation detail)</span></dd>
@@ -107,7 +107,7 @@ or in parallel.
 accumulating elements into a <code>Collection</code>; concatenating
 strings using a <code>StringBuilder</code>; computing summary information about
 elements such as sum, min, max, or average; computing "pivot table" summaries
-such as "maximum valued transaction by seller", etc.  The class <a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a>
+such as "maximum valued transaction by seller", etc.  The class <a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a>
 provides implementations of many common mutable reductions.
 
 <p>A <code>Collector</code> is specified by four functions that work together to
@@ -198,7 +198,7 @@ contained the same elements, ignoring order.)
     originating data is unordered.</li>
 </ul>
 
-<p>In addition to the predefined implementations in <a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a>, the
+<p>In addition to the predefined implementations in <a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a>, the
 static factory methods <a href="#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)"><code>of(Supplier, BiConsumer, BinaryOperator, Characteristics...)</code></a>
 can be used to construct collectors.  For example, you could create a collector
 that accumulates widgets into a <code>TreeSet</code> with:
@@ -211,7 +211,7 @@ that accumulates widgets into a <code>TreeSet</code> with:
 (This behavior is also implemented by the predefined collector
 <a href="Collectors.html#toCollection(java.util.function.Supplier)"><code>Collectors.toCollection(Supplier)</code></a>).</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Performing a reduction operation with a <code>Collector</code> should produce a
 result equivalent to:
 <pre><code>    A container = collector.supplier().get();
@@ -227,7 +227,7 @@ operation, this may perform better or worse, depending on the relative cost
 of the accumulator and combiner functions.)
 
 <p>Collectors are designed to be <em>composed</em>; many of the methods
-in <a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a> are functions that take a collector and produce
+in <a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a> are functions that take a collector and produce
 a new collector.  For example, given the following collector that computes
 the sum of the salaries of a stream of employees:
 
@@ -242,13 +242,13 @@ department, we could reuse the "sum of salaries" logic using
 <pre><code>    Collector&lt;Employee, ?, Map&lt;Department, Integer&gt;&gt; summingSalariesByDept
         = Collectors.groupingBy(Employee::getDepartment, summingSalaries);
 </code></pre></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Stream.html#collect(java.util.stream.Collector)"><code>Stream.collect(Collector)</code></a></li>
-<li><a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a></li>
+<li><a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -259,14 +259,14 @@ department, we could reuse the "sum of salaries" logic using
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Collector.Characteristics.html" class="type-name-link" title="enum class in java.util.stream">Collector.Characteristics</a></code></div>
+<div class="col-second even-row-color"><code><a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Characteristics indicating properties of a <code>Collector</code>, which can
 be used to optimize reduction implementations.</div>
@@ -277,56 +277,56 @@ be used to optimize reduction implementations.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a><wbr>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>,<wbr><a href="#type-param-T" title="type parameter in Collector">T</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a><wbr>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>,<wbr><a href="#type-param-T" title="Collector 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#accumulator()" class="member-name-link">accumulator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">A function that folds a value into a mutable result container.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#characteristics()" class="member-name-link">characteristics</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <code>Set</code> of <code>Collector.Characteristics</code> indicating
 the characteristics of this Collector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a><wbr>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a><wbr>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#combiner()" class="member-name-link">combiner</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">A function that accepts two partial results and merges them.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/Function.html" title="interface in java.util.function">Function</a><wbr>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>,<wbr><a href="#type-param-R" title="type parameter in Collector">R</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/Function.html" title="java.util.function 包中的接口">Function</a><wbr>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>,<wbr><a href="#type-param-R" title="Collector 中的类型参数">R</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#finisher()" class="member-name-link">finisher</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Perform the final transformation from the intermediate accumulation type
 <code>A</code> to the final result type <code>R</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>A,<wbr>R&gt;&nbsp;<a href="Collector.html" title="interface in java.util.stream">Collector</a><wbr>&lt;T,<wbr>A,<wbr>R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)" class="member-name-link">of</a><wbr>(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;A&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;A,<wbr>T&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;A&gt;&nbsp;combiner,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;A,<wbr>R&gt;&nbsp;finisher,
- <a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>...&nbsp;characteristics)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>A,<wbr>R&gt;&nbsp;<a href="Collector.html" title="java.util.stream 包中的接口">Collector</a><wbr>&lt;T,<wbr>A,<wbr>R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)" class="member-name-link">of</a><wbr>(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;A&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;A,<wbr>T&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;A&gt;&nbsp;combiner,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;A,<wbr>R&gt;&nbsp;finisher,
+ <a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>...&nbsp;characteristics)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new <code>Collector</code> described by the given <code>supplier</code>,
 <code>accumulator</code>, <code>combiner</code>, and <code>finisher</code> functions.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="Collector.html" title="interface in java.util.stream">Collector</a><wbr>&lt;T,<wbr>R,<wbr>R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)" class="member-name-link">of</a><wbr>(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R,<wbr>T&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;R&gt;&nbsp;combiner,
- <a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>...&nbsp;characteristics)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="Collector.html" title="java.util.stream 包中的接口">Collector</a><wbr>&lt;T,<wbr>R,<wbr>R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)" class="member-name-link">of</a><wbr>(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;R&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R,<wbr>T&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;R&gt;&nbsp;combiner,
+ <a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>...&nbsp;characteristics)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new <code>Collector</code> described by the given <code>supplier</code>,
 <code>accumulator</code>, and <code>combiner</code> functions.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a><wbr>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a><wbr>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#supplier()" class="member-name-link">supplier</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">A function that creates and returns a new mutable result container.</div>
@@ -343,16 +343,16 @@ the characteristics of this Collector.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="supplier()">
 <h3>supplier</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>&gt;</span>&nbsp;<span class="element-name">supplier</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>&gt;</span>&nbsp;<span class="element-name">supplier</span>()</div>
 <div class="block">A function that creates and returns a new mutable result container.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a function which returns a new, mutable result container</dd>
 </dl>
 </div>
@@ -362,10 +362,10 @@ the characteristics of this Collector.</div>
 <section class="detail" id="accumulator()">
 <h3>accumulator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>,<wbr><a href="#type-param-T" title="type parameter in Collector">T</a>&gt;</span>&nbsp;<span class="element-name">accumulator</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>,<wbr><a href="#type-param-T" title="Collector 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">accumulator</span>()</div>
 <div class="block">A function that folds a value into a mutable result container.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a function which folds a value into a mutable result container</dd>
 </dl>
 </div>
@@ -375,12 +375,12 @@ the characteristics of this Collector.</div>
 <section class="detail" id="combiner()">
 <h3>combiner</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>&gt;</span>&nbsp;<span class="element-name">combiner</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>&gt;</span>&nbsp;<span class="element-name">combiner</span>()</div>
 <div class="block">A function that accepts two partial results and merges them.  The
 combiner function may fold state from one argument into the other and
 return that, or may return a new result container.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a function which combines two partial results into a combined
 result</dd>
 </dl>
@@ -391,7 +391,7 @@ result</dd>
 <section class="detail" id="finisher()">
 <h3>finisher</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;<a href="#type-param-A" title="type parameter in Collector">A</a>,<wbr><a href="#type-param-R" title="type parameter in Collector">R</a>&gt;</span>&nbsp;<span class="element-name">finisher</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;<a href="#type-param-A" title="Collector 中的类型参数">A</a>,<wbr><a href="#type-param-R" title="Collector 中的类型参数">R</a>&gt;</span>&nbsp;<span class="element-name">finisher</span>()</div>
 <div class="block">Perform the final transformation from the intermediate accumulation type
 <code>A</code> to the final result type <code>R</code>.
 
@@ -399,7 +399,7 @@ result</dd>
 set, this function may be presumed to be an identity transform with an
 unchecked cast from <code>A</code> to <code>R</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a function which transforms the intermediate result to the final
 result</dd>
 </dl>
@@ -410,11 +410,11 @@ result</dd>
 <section class="detail" id="characteristics()">
 <h3>characteristics</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Set.html" title="interface in java.util">Set</a>&lt;<a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>&gt;</span>&nbsp;<span class="element-name">characteristics</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>&gt;</span>&nbsp;<span class="element-name">characteristics</span>()</div>
 <div class="block">Returns a <code>Set</code> of <code>Collector.Characteristics</code> indicating
 the characteristics of this Collector.  This set should be immutable.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an immutable set of collector characteristics</dd>
 </dl>
 </div>
@@ -424,29 +424,29 @@ the characteristics of this Collector.  This set should be immutable.</div>
 <section class="detail" id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="Collector.html" title="interface in java.util.stream">Collector</a>&lt;T,<wbr>R,<wbr>R&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R,<wbr>T&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;R&gt;&nbsp;combiner,
- <a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>...&nbsp;characteristics)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="Collector.html" title="java.util.stream 包中的接口">Collector</a>&lt;T,<wbr>R,<wbr>R&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;R&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R,<wbr>T&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;R&gt;&nbsp;combiner,
+ <a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>...&nbsp;characteristics)</span></div>
 <div class="block">Returns a new <code>Collector</code> described by the given <code>supplier</code>,
 <code>accumulator</code>, and <code>combiner</code> functions.  The resulting
 <code>Collector</code> has the <code>Collector.Characteristics.IDENTITY_FINISH</code>
 characteristic.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)-type-param-T"><code>T</code> - The type of input elements for the new collector</span></dd>
 <dd><span id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)-type-param-R"><code>R</code> - The type of intermediate accumulation result, and final result,
           for the new collector</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>supplier</code> - The supplier function for the new collector</dd>
 <dd><code>accumulator</code> - The accumulator function for the new collector</dd>
 <dd><code>combiner</code> - The combiner function for the new collector</dd>
 <dd><code>characteristics</code> - The collector characteristics for the new
                        collector</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new <code>Collector</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if any argument is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if any argument is null</dd>
 </dl>
 </div>
 </section>
@@ -455,29 +455,29 @@ characteristic.</div>
 <section class="detail" id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>A,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="Collector.html" title="interface in java.util.stream">Collector</a>&lt;T,<wbr>A,<wbr>R&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;A&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;A,<wbr>T&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;A&gt;&nbsp;combiner,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;A,<wbr>R&gt;&nbsp;finisher,
- <a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a>...&nbsp;characteristics)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>A,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="Collector.html" title="java.util.stream 包中的接口">Collector</a>&lt;T,<wbr>A,<wbr>R&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;A&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;A,<wbr>T&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;A&gt;&nbsp;combiner,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;A,<wbr>R&gt;&nbsp;finisher,
+ <a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a>...&nbsp;characteristics)</span></div>
 <div class="block">Returns a new <code>Collector</code> described by the given <code>supplier</code>,
 <code>accumulator</code>, <code>combiner</code>, and <code>finisher</code> functions.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)-type-param-T"><code>T</code> - The type of input elements for the new collector</span></dd>
 <dd><span id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)-type-param-A"><code>A</code> - The intermediate accumulation type of the new collector</span></dd>
 <dd><span id="of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.function.Function,java.util.stream.Collector.Characteristics...)-type-param-R"><code>R</code> - The final result type of the new collector</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>supplier</code> - The supplier function for the new collector</dd>
 <dd><code>accumulator</code> - The accumulator function for the new collector</dd>
 <dd><code>combiner</code> - The combiner function for the new collector</dd>
 <dd><code>finisher</code> - The finisher function for the new collector</dd>
 <dd><code>characteristics</code> - The collector characteristics for the new
                        collector</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new <code>Collector</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if any argument is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if any argument is null</dd>
 </dl>
 </div>
 </section>

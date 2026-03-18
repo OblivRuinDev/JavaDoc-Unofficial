@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.dynalink</a></li>
 <li><a href="NamedOperation.html" class="current-selection">NamedOperation</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -63,17 +63,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(jdk.dynalink.Operation,java.lang.Object)" tabindex="0">NamedOperation(Operation, Object)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getBaseOperation()" tabindex="0">getBaseOperation()</a></li>
 <li><a href="#getName()" tabindex="0">getName()</a></li>
@@ -90,21 +90,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class NamedOperation" class="title">Class NamedOperation</h1>
+<h1 title="类 NamedOperation" class="title">类 NamedOperation</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">jdk.dynalink.NamedOperation</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Operation.html" title="interface in jdk.dynalink">Operation</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">NamedOperation</span>
-<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="Operation.html" title="interface in jdk.dynalink">Operation</a></span></div>
+<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></span></div>
 <div class="block">Operation that associates a name with another operation. Typically used with
 operations that normally take a name or an index to bind them to a fixed
 name. E.g.
@@ -129,7 +129,7 @@ it is applied to ("name" in this context is akin to "address" and encompasses bo
 textual names, numeric indices, or any other kinds of addressing that linkers can
 understand). In these cases, the expected signature of the call site for the
 operation will change to no longer include the name parameter. Specifically,
-the documentation for all <a href="StandardOperation.html" title="enum class in jdk.dynalink"><code>StandardOperation</code></a> members describes how
+the documentation for all <a href="StandardOperation.html" title="jdk.dynalink 包中的枚举类"><code>StandardOperation</code></a> members describes how
 they are affected by being incorporated into a named operation.
 <p>While <code>NamedOperation</code> can be constructed directly, it is often convenient
 to use the <a href="Operation.html#named(java.lang.Object)"><code>Operation.named(Object)</code></a> factory method instead, e.g.:
@@ -140,7 +140,7 @@ to use the <a href="Operation.html#named(java.lang.Object)"><code>Operation.name
     )
 </pre>
 <p>
-Even though <code>NamedOperation</code> is most often used with <a href="NamespaceOperation.html" title="class in jdk.dynalink"><code>NamespaceOperation</code></a> as
+Even though <code>NamedOperation</code> is most often used with <a href="NamespaceOperation.html" title="jdk.dynalink 包中的类"><code>NamespaceOperation</code></a> as
 its base, it can have other operations as its base too (except another named operation).
 Specifically, <a href="StandardOperation.html#CALL"><code>StandardOperation.CALL</code></a> as well as <a href="StandardOperation.html#NEW"><code>StandardOperation.NEW</code></a> can
 both be used with <code>NamedOperation</code> directly. The contract for these operations is such
@@ -149,7 +149,7 @@ usually containing the textual representation of the source expression that retr
 callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 </p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -159,13 +159,13 @@ callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(jdk.dynalink.Operation,java.lang.Object)" class="member-name-link">NamedOperation</a><wbr>(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;baseOperation,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;name)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(jdk.dynalink.Operation,java.lang.Object)" class="member-name-link">NamedOperation</a><wbr>(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;baseOperation,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new named operation.</div>
 </div>
@@ -175,42 +175,42 @@ callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="NamedOperation.html" title="class in jdk.dynalink">NamedOperation</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeName(java.lang.String)" class="member-name-link">changeName</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;newName)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="NamedOperation.html" title="jdk.dynalink 包中的类">NamedOperation</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeName(java.lang.String)" class="member-name-link">changeName</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;newName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a named operation that differs from this one only in the name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Compares this named operation to another object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Operation.html" title="interface in jdk.dynalink">Operation</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBaseOperation()" class="member-name-link">getBaseOperation</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the base operation of this named operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Operation.html" title="interface in jdk.dynalink">Operation</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseOperation(jdk.dynalink.Operation)" class="member-name-link">getBaseOperation</a><wbr>(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;op)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBaseOperation(jdk.dynalink.Operation)" class="member-name-link">getBaseOperation</a><wbr>(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;op)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">If the passed operation is a named operation, returns its
 <a href="#getBaseOperation()"><code>getBaseOperation()</code></a>, otherwise returns the operation as is.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the name of this named operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getName(jdk.dynalink.Operation)" class="member-name-link">getName</a><wbr>(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;op)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getName(jdk.dynalink.Operation)" class="member-name-link">getName</a><wbr>(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;op)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">If the passed operation is a named operation, returns its
 <a href="#getName()"><code>getName()</code></a>, otherwise returns null.</div>
@@ -220,7 +220,7 @@ callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the hash code of this named operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the string representation of this named operation.</div>
@@ -229,10 +229,10 @@ callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-jdk.dynalink.Operation">Methods declared in interface&nbsp;<a href="Operation.html#method-summary" title="interface in jdk.dynalink">Operation</a></h3>
+<h3 id="methods-inherited-from-class-jdk.dynalink.Operation">在接口 <a href="Operation.html#method-summary" title="jdk.dynalink 包中的接口">Operation</a> 中声明的方法</h3>
 <code><a href="Operation.html#named(java.lang.Object)" title="named(Object)">named</a>, <a href="Operation.html#withNamespace(jdk.dynalink.Namespace)" title="withNamespace(Namespace)">withNamespace</a>, <a href="Operation.html#withNamespaces(jdk.dynalink.Namespace...)" title="withNamespaces(Namespace...)">withNamespaces</a></code></div>
 </section>
 </li>
@@ -243,26 +243,26 @@ callee, e.g. <code>StandardOperation.CALL.named("window.open")</code>.
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(jdk.dynalink.Operation,java.lang.Object)">
 <h3>NamedOperation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">NamedOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;baseOperation,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">NamedOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;baseOperation,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;name)</span></div>
 <div class="block">Creates a new named operation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseOperation</code> - the base operation that is associated with a name.</dd>
 <dd><code>name</code> - the name associated with the base operation. Note that the
 name is not necessarily a string, but can be an arbitrary object. As the
-name is used for addressing, it can be an <a href="../../../java.base/java/lang/Integer.html" title="class in java.lang"><code>Integer</code></a> when meant
+name is used for addressing, it can be an <a href="../../../java.base/java/lang/Integer.html" title="java.lang 包中的类"><code>Integer</code></a> when meant
 to be used as an index into an array or list etc.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if either <code>baseOperation</code> or
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if either <code>baseOperation</code> or
 <code>name</code> is null.</dd>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>baseOperation</code> is itself a
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>baseOperation</code> is itself a
 <code>NamedOperation</code>.</dd>
 </dl>
 </div>
@@ -274,16 +274,16 @@ to be used as an index into an array or list etc.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getBaseOperation()">
 <h3>getBaseOperation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Operation.html" title="interface in jdk.dynalink">Operation</a></span>&nbsp;<span class="element-name">getBaseOperation</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></span>&nbsp;<span class="element-name">getBaseOperation</span>()</div>
 <div class="block">Returns the base operation of this named operation.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the base operation of this named operation.</dd>
 </dl>
 </div>
@@ -293,10 +293,10 @@ to be used as an index into an array or list etc.</dd>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getName</span>()</div>
 <div class="block">Returns the name of this named operation.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the name of this named operation.</dd>
 </dl>
 </div>
@@ -306,15 +306,15 @@ to be used as an index into an array or list etc.</dd>
 <section class="detail" id="changeName(java.lang.String)">
 <h3>changeName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="NamedOperation.html" title="class in jdk.dynalink">NamedOperation</a></span>&nbsp;<span class="element-name">changeName</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;newName)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="NamedOperation.html" title="jdk.dynalink 包中的类">NamedOperation</a></span>&nbsp;<span class="element-name">changeName</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;newName)</span></div>
 <div class="block">Finds or creates a named operation that differs from this one only in the name.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newName</code> - the new name to replace the old name with.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a named operation with the changed name.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the name is null.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the name is null.</dd>
 </dl>
 </div>
 </section>
@@ -323,23 +323,23 @@ to be used as an index into an array or list etc.</dd>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Compares this named operation to another object. Returns true if the
 other object is also a named operation, and both their base operations
 and name are equal.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the reference object with which to compare.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this object is the same as the obj
          argument; <code>false</code> otherwise.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -354,11 +354,11 @@ and name are equal.</div>
 <div class="block">Returns the hash code of this named operation. It is defined to be equal
 to <code>baseOperation.hashCode() + 31 * name.hashCode()</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a hash code value for this object</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -373,13 +373,13 @@ to <code>baseOperation.hashCode() + 31 * name.hashCode()</code>.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns the string representation of this named operation. It is defined
 to be equal to <code>baseOperation.toString() + ":" + name.toString()</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>
@@ -389,13 +389,13 @@ to be equal to <code>baseOperation.toString() + ":" + name.toString()</code>.</d
 <section class="detail" id="getBaseOperation(jdk.dynalink.Operation)">
 <h3>getBaseOperation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Operation.html" title="interface in jdk.dynalink">Operation</a></span>&nbsp;<span class="element-name">getBaseOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;op)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></span>&nbsp;<span class="element-name">getBaseOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;op)</span></div>
 <div class="block">If the passed operation is a named operation, returns its
 <a href="#getBaseOperation()"><code>getBaseOperation()</code></a>, otherwise returns the operation as is.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>op</code> - the operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the base operation of the passed operation.</dd>
 </dl>
 </div>
@@ -405,15 +405,15 @@ to be equal to <code>baseOperation.toString() + ":" + name.toString()</code>.</d
 <section class="detail" id="getName(jdk.dynalink.Operation)">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getName</span><wbr><span class="parameters">(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;op)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getName</span><wbr><span class="parameters">(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;op)</span></div>
 <div class="block">If the passed operation is a named operation, returns its
 <a href="#getName()"><code>getName()</code></a>, otherwise returns null. Note that a named operation
 object can never have a null name, therefore returning null is indicative
 that the passed operation is not, in fact, a named operation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>op</code> - the operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the name in the passed operation, or null if it is not a named
 operation.</dd>
 </dl>

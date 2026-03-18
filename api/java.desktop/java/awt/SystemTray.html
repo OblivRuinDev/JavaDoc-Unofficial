@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.awt</a></li>
 <li><a href="SystemTray.html" class="current-selection">SystemTray</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,11 +66,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getSystemTray()" tabindex="0">getSystemTray()</a></li>
 <li><a href="#isSupported()" tabindex="0">isSupported()</a></li>
@@ -88,16 +88,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class SystemTray" class="title">Class SystemTray</h1>
+<h1 title="类 SystemTray" class="title">类 SystemTray</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.awt.SystemTray</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SystemTray</span>
-<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">The <code>SystemTray</code> class represents the system tray for a
 desktop.  On Microsoft Windows it is referred to as the "Taskbar
 Status Area", on Gnome it is referred to as the "Notification
@@ -106,13 +106,13 @@ tray is shared by all applications running on the desktop.
 
 <p> On some platforms the system tray may not be present or may not
 be supported, in this case <a href="#getSystemTray()"><code>getSystemTray()</code></a>
-throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.  To detect whether the
+throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.  To detect whether the
 system tray is supported, use <a href="#isSupported()"><code>isSupported()</code></a>.
 
-<p>The <code>SystemTray</code> may contain one or more <a href="TrayIcon.html" title="class in java.awt"><code>TrayIcons</code></a>, which are added to the tray using the <a href="#add(java.awt.TrayIcon)"><code>add(TrayIcon)</code></a> method, and removed when no longer needed, using the
+<p>The <code>SystemTray</code> may contain one or more <a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcons</code></a>, which are added to the tray using the <a href="#add(java.awt.TrayIcon)"><code>add(TrayIcon)</code></a> method, and removed when no longer needed, using the
 <a href="#remove(java.awt.TrayIcon)"><code>remove(TrayIcon)</code></a>.  <code>TrayIcon</code> consists of an
 image, a popup menu and a set of associated listeners.  Please see
-the <a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a> class for details.
+the <a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a> class for details.
 
 <p>Every Java application has a single <code>SystemTray</code>
 instance that allows the app to interface with the system tray of
@@ -125,21 +125,21 @@ An application may not create its own instance of
 and customize the system tray:
 <pre>
 <code>
-    <a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a> trayIcon = null;
+    <a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a> trayIcon = null;
     if (SystemTray.isSupported()) {
         // get the SystemTray instance
         SystemTray tray = SystemTray.<a href="#getSystemTray()"><code>getSystemTray()</code></a>;
         // load an image
-        <a href="Image.html" title="class in java.awt"><code>Image</code></a> image = <a href="Toolkit.html#getImage(java.lang.String)"><code>Toolkit.getDefaultToolkit().getImage</code></a>(...);
+        <a href="Image.html" title="java.awt 包中的类"><code>Image</code></a> image = <a href="Toolkit.html#getImage(java.lang.String)"><code>Toolkit.getDefaultToolkit().getImage</code></a>(...);
         // create a action listener to listen for default action executed on the tray icon
-        <a href="event/ActionListener.html" title="interface in java.awt.event"><code>ActionListener</code></a> listener = new <a href="event/ActionListener.html" title="interface in java.awt.event"><code>ActionListener</code></a>() {
-            public void <a href="event/ActionListener.html#actionPerformed(java.awt.event.ActionEvent)"><code>actionPerformed</code></a>(<a href="event/ActionEvent.html" title="class in java.awt.event"><code>ActionEvent</code></a> e) {
+        <a href="event/ActionListener.html" title="java.awt.event 包中的接口"><code>ActionListener</code></a> listener = new <a href="event/ActionListener.html" title="java.awt.event 包中的接口"><code>ActionListener</code></a>() {
+            public void <a href="event/ActionListener.html#actionPerformed(java.awt.event.ActionEvent)"><code>actionPerformed</code></a>(<a href="event/ActionEvent.html" title="java.awt.event 包中的类"><code>ActionEvent</code></a> e) {
                 // execute default action of the application
                 // ...
             }
         };
         // create a popup menu
-        <a href="PopupMenu.html" title="class in java.awt"><code>PopupMenu</code></a> popup = new <a href="PopupMenu.html#%3Cinit%3E(java.lang.String)"><code>PopupMenu</code></a>();
+        <a href="PopupMenu.html" title="java.awt 包中的类"><code>PopupMenu</code></a> popup = new <a href="PopupMenu.html#%3Cinit%3E(java.lang.String)"><code>PopupMenu</code></a>();
         // create menu item for the default action
         MenuItem defaultItem = new MenuItem(...);
         defaultItem.addActionListener(listener);
@@ -172,12 +172,12 @@ and customize the system tray:
 </code>
 </pre></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a></li>
+<li><a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -188,45 +188,45 @@ and customize the system tray:
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(java.awt.TrayIcon)" class="member-name-link">add</a><wbr>(<a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>&nbsp;trayIcon)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#add(java.awt.TrayIcon)" class="member-name-link">add</a><wbr>(<a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>&nbsp;trayIcon)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds a <code>TrayIcon</code> to the <code>SystemTray</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)" class="member-name-link">addPropertyChangeListener</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName,
- <a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)" class="member-name-link">addPropertyChangeListener</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName,
+ <a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds a <code>PropertyChangeListener</code> to the list of listeners for the
 specific property.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPropertyChangeListeners(java.lang.String)" class="member-name-link">getPropertyChangeListeners</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPropertyChangeListeners(java.lang.String)" class="member-name-link">getPropertyChangeListeners</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array of all the listeners that have been associated
 with the named property.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SystemTray.html" title="class in java.awt">SystemTray</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="SystemTray.html" title="java.awt 包中的类">SystemTray</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemTray()" class="member-name-link">getSystemTray</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the <code>SystemTray</code> instance that represents the
 desktop's tray area.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTrayIcons()" class="member-name-link">getTrayIcons</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array of all icons added to the tray by this
 application.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Dimension.html" title="class in java.awt">Dimension</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Dimension.html" title="java.awt 包中的类">Dimension</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTrayIconSize()" class="member-name-link">getTrayIconSize</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the size, in pixels, of the space that a tray icon will
@@ -239,14 +239,14 @@ occupy in the system tray.</div>
 platform.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(java.awt.TrayIcon)" class="member-name-link">remove</a><wbr>(<a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>&nbsp;trayIcon)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#remove(java.awt.TrayIcon)" class="member-name-link">remove</a><wbr>(<a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>&nbsp;trayIcon)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes the specified <code>TrayIcon</code> from the
 <code>SystemTray</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)" class="member-name-link">removePropertyChangeListener</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName,
- <a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)" class="member-name-link">removePropertyChangeListener</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName,
+ <a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes a <code>PropertyChangeListener</code> from the listener list
 for a specific property.</div>
@@ -255,7 +255,7 @@ for a specific property.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -266,32 +266,32 @@ for a specific property.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getSystemTray()">
 <h3>getSystemTray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SystemTray.html" title="class in java.awt">SystemTray</a></span>&nbsp;<span class="element-name">getSystemTray</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="SystemTray.html" title="java.awt 包中的类">SystemTray</a></span>&nbsp;<span class="element-name">getSystemTray</span>()</div>
 <div class="block">Gets the <code>SystemTray</code> instance that represents the
 desktop's tray area.  This always returns the same instance per
 application.  On some platforms the system tray may not be
 supported.  You may use the <a href="#isSupported()"><code>isSupported()</code></a> method to
 check if the system tray is supported.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>SystemTray</code> instance that represents
 the desktop's tray area</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the system tray isn't
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the system tray isn't
 supported by the current platform</dd>
-<dd><code><a href="HeadlessException.html" title="class in java.awt">HeadlessException</a></code> - if
+<dd><code><a href="HeadlessException.html" title="java.awt 包中的类">HeadlessException</a></code> - if
 <code>GraphicsEnvironment.isHeadless()</code> returns <code>true</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#add(java.awt.TrayIcon)"><code>add(TrayIcon)</code></a></li>
-<li><a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a></li>
+<li><a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a></li>
 <li><a href="#isSupported()"><code>isSupported()</code></a></li>
 </ul>
 </dd>
@@ -312,7 +312,7 @@ system tray support includes either a popup menu (see <a href="TrayIcon.html#set
 <p>Developers should not assume that all of the system tray
 functionality is supported.  To guarantee that the tray icon's
 default action is always accessible, add the default action to
-both the action listener and the popup menu.  See the <a href="SystemTray.html" title="class in java.awt"><code>example</code></a> for an example of how to do this.
+both the action listener and the popup menu.  See the <a href="SystemTray.html" title="java.awt 包中的类"><code>example</code></a> for an example of how to do this.
 
 <p><b>Note</b>: When implementing <code>SystemTray</code> and
 <code>TrayIcon</code> it is <em>strongly recommended</em> that
@@ -320,12 +320,12 @@ you assign different gestures to the popup menu and an action
 event.  Overloading a gesture for both purposes is confusing
 and may prevent the user from accessing one or the other.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>false</code> if no system tray access is supported; this
 method returns <code>true</code> if the minimal system tray access is
 supported but does not guarantee that all system tray
 functionality is supported for the current platform</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getSystemTray()"><code>getSystemTray()</code></a></li>
@@ -339,8 +339,8 @@ functionality is supported for the current platform</dd>
 <section class="detail" id="add(java.awt.TrayIcon)">
 <h3>add</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>&nbsp;trayIcon)</span>
-         throws <span class="exceptions"><a href="AWTException.html" title="class in java.awt">AWTException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">add</span><wbr><span class="parameters">(<a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>&nbsp;trayIcon)</span>
+         throws <span class="exceptions"><a href="AWTException.html" title="java.awt 包中的类">AWTException</a></span></div>
 <div class="block">Adds a <code>TrayIcon</code> to the <code>SystemTray</code>.
 The tray icon becomes visible in the system tray once it is
 added.  The order in which icons are displayed in a tray is not
@@ -350,21 +350,21 @@ specified - it is platform and implementation-dependent.
 removed from the <code>SystemTray</code> upon application exit
 and also when the desktop system tray becomes unavailable.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>trayIcon</code> - the <code>TrayIcon</code> to be added</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>trayIcon</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>trayIcon</code> is
 <code>null</code></dd>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the same instance of
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the same instance of
 a <code>TrayIcon</code> is added more than once</dd>
-<dd><code><a href="AWTException.html" title="class in java.awt">AWTException</a></code> - if the desktop system tray is missing</dd>
-<dt>See Also:</dt>
+<dd><code><a href="AWTException.html" title="java.awt 包中的类">AWTException</a></code> - if the desktop system tray is missing</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#remove(java.awt.TrayIcon)"><code>remove(TrayIcon)</code></a></li>
 <li><a href="#getSystemTray()"><code>getSystemTray()</code></a></li>
-<li><a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a></li>
-<li><a href="Image.html" title="class in java.awt"><code>Image</code></a></li>
+<li><a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a></li>
+<li><a href="Image.html" title="java.awt 包中的类"><code>Image</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -375,7 +375,7 @@ a <code>TrayIcon</code> is added more than once</dd>
 <section class="detail" id="remove(java.awt.TrayIcon)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>&nbsp;trayIcon)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>&nbsp;trayIcon)</span></div>
 <div class="block">Removes the specified <code>TrayIcon</code> from the
 <code>SystemTray</code>.
 
@@ -387,13 +387,13 @@ and also when the desktop system tray becomes unavailable.
 added to the system tray, no exception is thrown and no action
 is performed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>trayIcon</code> - the <code>TrayIcon</code> to be removed</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#add(java.awt.TrayIcon)"><code>add(TrayIcon)</code></a></li>
-<li><a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a></li>
+<li><a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -404,7 +404,7 @@ is performed.</div>
 <section class="detail" id="getTrayIcons()">
 <h3>getTrayIcons</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TrayIcon.html" title="class in java.awt">TrayIcon</a>[]</span>&nbsp;<span class="element-name">getTrayIcons</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="TrayIcon.html" title="java.awt 包中的类">TrayIcon</a>[]</span>&nbsp;<span class="element-name">getTrayIcons</span>()</div>
 <div class="block">Returns an array of all icons added to the tray by this
 application.  You can't access the icons added by another
 application.  Some browsers partition applets in different
@@ -417,14 +417,14 @@ modified in any way without affecting the system tray.  To
 remove a <code>TrayIcon</code> from the
 <code>SystemTray</code>, use the <a href="#remove(java.awt.TrayIcon)"><code>remove(TrayIcon)</code></a> method.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of all tray icons added to this tray, or an
 empty array if none has been added</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#add(java.awt.TrayIcon)"><code>add(TrayIcon)</code></a></li>
-<li><a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a></li>
+<li><a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -435,20 +435,20 @@ empty array if none has been added</dd>
 <section class="detail" id="getTrayIconSize()">
 <h3>getTrayIconSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dimension.html" title="class in java.awt">Dimension</a></span>&nbsp;<span class="element-name">getTrayIconSize</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dimension.html" title="java.awt 包中的类">Dimension</a></span>&nbsp;<span class="element-name">getTrayIconSize</span>()</div>
 <div class="block">Returns the size, in pixels, of the space that a tray icon will
 occupy in the system tray. Developers may use this method to
 acquire the preferred size for the tray icon before it is created.
 For convenience, there is a similar method <a href="TrayIcon.html#getSize()"><code>TrayIcon.getSize()</code></a>
 in the <code>TrayIcon</code> class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the default size of a tray icon, in pixels</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="TrayIcon.html#setImageAutoSize(boolean)"><code>TrayIcon.setImageAutoSize(boolean)</code></a></li>
-<li><a href="Image.html" title="class in java.awt"><code>Image</code></a></li>
+<li><a href="Image.html" title="java.awt 包中的类"><code>Image</code></a></li>
 <li><a href="TrayIcon.html#getSize()"><code>TrayIcon.getSize()</code></a></li>
 </ul>
 </dd>
@@ -460,8 +460,8 @@ in the <code>TrayIcon</code> class.</div>
 <section class="detail" id="addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)">
 <h3>addPropertyChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPropertyChangeListener</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName,
- <a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPropertyChangeListener</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName,
+ <a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds a <code>PropertyChangeListener</code> to the list of listeners for the
 specific property. The following properties are currently supported:
 
@@ -496,10 +496,10 @@ The <code>listener</code> listens to property changes only in this context.
 If <code>listener</code> is <code>null</code>, no exception is thrown
 and no action is performed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>propertyName</code> - the specified property</dd>
 <dd><code>listener</code> - the property change listener to be added</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)"><code>removePropertyChangeListener(String, PropertyChangeListener)</code></a></li>
@@ -514,8 +514,8 @@ and no action is performed.</div>
 <section class="detail" id="removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)">
 <h3>removePropertyChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removePropertyChangeListener</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName,
- <a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removePropertyChangeListener</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName,
+ <a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes a <code>PropertyChangeListener</code> from the listener list
 for a specific property.
 <p>
@@ -524,10 +524,10 @@ The <code>PropertyChangeListener</code> must be from this context.
 If <code>propertyName</code> or <code>listener</code> is <code>null</code> or invalid,
 no exception is thrown and no action is taken.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>propertyName</code> - the specified property</dd>
 <dd><code>listener</code> - the PropertyChangeListener to be removed</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)"><code>addPropertyChangeListener(String, PropertyChangeListener)</code></a></li>
@@ -542,20 +542,20 @@ no exception is thrown and no action is taken.</div>
 <section class="detail" id="getPropertyChangeListeners(java.lang.String)">
 <h3>getPropertyChangeListeners</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../beans/PropertyChangeListener.html" title="interface in java.beans">PropertyChangeListener</a>[]</span>&nbsp;<span class="element-name">getPropertyChangeListeners</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;propertyName)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../beans/PropertyChangeListener.html" title="java.beans 包中的接口">PropertyChangeListener</a>[]</span>&nbsp;<span class="element-name">getPropertyChangeListeners</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;propertyName)</span></div>
 <div class="block">Returns an array of all the listeners that have been associated
 with the named property.
 <p>
 Only the listeners in this context are returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>propertyName</code> - the specified property</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>all of the <code>PropertyChangeListener</code>s associated with
         the named property; if no such listeners have been added or
         if <code>propertyName</code> is <code>null</code> or invalid, an empty
         array is returned</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)"><code>addPropertyChangeListener(String, PropertyChangeListener)</code></a></li>

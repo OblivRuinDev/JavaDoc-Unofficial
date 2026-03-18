@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile.instruction</a></li>
 <li><a href="LocalVariable.html" class="current-selection">LocalVariable</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -64,11 +64,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#slot()" tabindex="0">slot()</a></li>
 <li><a href="#name()" tabindex="0">name()</a></li>
@@ -85,20 +85,20 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface LocalVariable" class="title">Interface LocalVariable</h1>
+<h1 title="接口 LocalVariable" class="title">接口 LocalVariable</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>, <a href="../CodeElement.html" title="interface in java.lang.classfile">CodeElement</a>, <a href="../PseudoInstruction.html" title="interface in java.lang.classfile">PseudoInstruction</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>, <a href="../CodeElement.html" title="java.lang.classfile 包中的接口">CodeElement</a>, <a href="../PseudoInstruction.html" title="java.lang.classfile 包中的接口">PseudoInstruction</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">LocalVariable</span><span class="extends-implements">
-extends <a href="../PseudoInstruction.html" title="interface in java.lang.classfile">PseudoInstruction</a></span></div>
-<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTableAttribute.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableTable</code></a> attribute.  Delivered as a
-<a href="../CodeElement.html" title="interface in java.lang.classfile"><code>CodeElement</code></a> during traversal of the elements of a <a href="../CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>,
-according to the setting of the <a href="../ClassFile.DebugElementsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DebugElementsOption</code></a> option.
+extends <a href="../PseudoInstruction.html" title="java.lang.classfile 包中的接口">PseudoInstruction</a></span></div>
+<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTableAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableTable</code></a> attribute.  Delivered as a
+<a href="../CodeElement.html" title="java.lang.classfile 包中的接口"><code>CodeElement</code></a> during traversal of the elements of a <a href="../CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>,
+according to the setting of the <a href="../ClassFile.DebugElementsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DebugElementsOption</code></a> option.
 <p>
 A local variable entry is composite:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -114,24 +114,24 @@ A local variable entry is composite:
 
 Where <code>slot</code> is within <code>[0, 65535]</code>.
 <p>
-Another model, <a href="../attribute/LocalVariableInfo.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableInfo</code></a>, also models a local variable
+Another model, <a href="../attribute/LocalVariableInfo.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableInfo</code></a>, also models a local variable
 entry; it has no dependency on a <code>CodeModel</code> and represents of bci
 values as <code>int</code>s instead of <code>Label</code>s, and is used as components
-of a <a href="../attribute/LocalVariableTableAttribute.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableTableAttribute</code></a>.</div>
+of a <a href="../attribute/LocalVariableTableAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableTableAttribute</code></a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd><code>LocalVariable</code> is used for all local variables in Java source code.
 If a local variable has a parameterized type, a type argument, or an array
-type of one of the previous types, a <a href="LocalVariableType.html" title="interface in java.lang.classfile.instruction"><code>LocalVariableType</code></a> should be
+type of one of the previous types, a <a href="LocalVariableType.html" title="java.lang.classfile.instruction 包中的接口"><code>LocalVariableType</code></a> should be
 created for that local variable as well.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../attribute/LocalVariableInfo.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableInfo</code></a></li>
+<li><a href="../attribute/LocalVariableInfo.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableInfo</code></a></li>
 <li><a href="../CodeBuilder.html#localVariable(int,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.Label,java.lang.classfile.Label)"><code>CodeBuilder::localVariable</code></a></li>
-<li><a href="../ClassFile.DebugElementsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DebugElementsOption</code></a></li>
+<li><a href="../ClassFile.DebugElementsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DebugElementsOption</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -142,39 +142,39 @@ created for that local variable as well.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Label.html" title="interface in java.lang.classfile">Label</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#endScope()" class="member-name-link">endScope</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the end range of the local variable scope.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the local variable name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="LocalVariable.html" title="interface in java.lang.classfile.instruction">LocalVariable</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="LocalVariable.html" title="java.lang.classfile.instruction 包中的接口">LocalVariable</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(int,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.Label,java.lang.classfile.Label)" class="member-name-link">of</a><wbr>(int&nbsp;slot,
- <a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;nameEntry,
- <a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptorEntry,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;startScope,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;endScope)</code></div>
+ <a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;nameEntry,
+ <a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptorEntry,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;startScope,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;endScope)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a local variable pseudo-instruction.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="LocalVariable.html" title="interface in java.lang.classfile.instruction">LocalVariable</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="LocalVariable.html" title="java.lang.classfile.instruction 包中的接口">LocalVariable</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(int,java.lang.String,java.lang.constant.ClassDesc,java.lang.classfile.Label,java.lang.classfile.Label)" class="member-name-link">of</a><wbr>(int&nbsp;slot,
- <a href="../../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;startScope,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;endScope)</code></div>
+ <a href="../../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;startScope,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;endScope)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a local variable pseudo-instruction.</div>
 </div>
@@ -183,17 +183,17 @@ created for that local variable as well.</dd>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the local variable slot.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Label.html" title="interface in java.lang.classfile">Label</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startScope()" class="member-name-link">startScope</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the start range of the local variable scope.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the local variable field descriptor string.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#typeSymbol()" class="member-name-link">typeSymbol</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the local variable type, as a symbolic descriptor.</div>
@@ -210,7 +210,7 @@ created for that local variable as well.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="slot()">
@@ -220,7 +220,7 @@ created for that local variable as well.</dd>
 <div class="block">Returns the local variable slot.
 The value is within <code>[0, 65535]</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the local variable slot</dd>
 </dl>
 </div>
@@ -230,10 +230,10 @@ The value is within <code>[0, 65535]</code>.</div>
 <section class="detail" id="name()">
 <h3>name</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a></span>&nbsp;<span class="element-name">name</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a></span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block">Returns the local variable name.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the local variable name</dd>
 </dl>
 </div>
@@ -243,13 +243,13 @@ The value is within <code>[0, 65535]</code>.</div>
 <section class="detail" id="type()">
 <h3>type</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a></span>&nbsp;<span class="element-name">type</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a></span>&nbsp;<span class="element-name">type</span>()</div>
 <div class="block">Returns the local variable field descriptor string.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>A symbolic descriptor for the type of the local variable is available
 through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the local variable field descriptor string</dd>
 </dl>
 </div>
@@ -259,10 +259,10 @@ through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
 <section class="detail" id="typeSymbol()">
 <h3>typeSymbol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a></span>&nbsp;<span class="element-name">typeSymbol</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a></span>&nbsp;<span class="element-name">typeSymbol</span>()</div>
 <div class="block">Returns the local variable type, as a symbolic descriptor.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the local variable type, as a symbolic descriptor</dd>
 </dl>
 </div>
@@ -272,10 +272,10 @@ through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
 <section class="detail" id="startScope()">
 <h3>startScope</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Label.html" title="interface in java.lang.classfile">Label</a></span>&nbsp;<span class="element-name">startScope</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a></span>&nbsp;<span class="element-name">startScope</span>()</div>
 <div class="block">Returns the start range of the local variable scope.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the start range of the local variable scope</dd>
 </dl>
 </div>
@@ -285,10 +285,10 @@ through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
 <section class="detail" id="endScope()">
 <h3>endScope</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Label.html" title="interface in java.lang.classfile">Label</a></span>&nbsp;<span class="element-name">endScope</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a></span>&nbsp;<span class="element-name">endScope</span>()</div>
 <div class="block">Returns the end range of the local variable scope.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the end range of the local variable scope</dd>
 </dl>
 </div>
@@ -298,24 +298,24 @@ through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
 <section class="detail" id="of(int,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.constantpool.Utf8Entry,java.lang.classfile.Label,java.lang.classfile.Label)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LocalVariable.html" title="interface in java.lang.classfile.instruction">LocalVariable</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;slot,
- <a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;nameEntry,
- <a href="../constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a>&nbsp;descriptorEntry,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;startScope,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;endScope)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LocalVariable.html" title="java.lang.classfile.instruction 包中的接口">LocalVariable</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;slot,
+ <a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;nameEntry,
+ <a href="../constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a>&nbsp;descriptorEntry,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;startScope,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;endScope)</span></div>
 <div class="block">Returns a local variable pseudo-instruction.
 <code>slot</code> must be within <code>[0, 65535]</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>slot</code> - the local variable slot</dd>
 <dd><code>nameEntry</code> - the local variable name</dd>
 <dd><code>descriptorEntry</code> - the local variable descriptor</dd>
 <dd><code>startScope</code> - the start range of the local variable scope</dd>
 <dd><code>endScope</code> - the end range of the local variable scope</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a local variable pseudo-instruction</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>slot</code> is out of range</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>slot</code> is out of range</dd>
 </dl>
 </div>
 </section>
@@ -324,24 +324,24 @@ through <a href="#typeSymbol()"><code>typeSymbol()</code></a>.</dd>
 <section class="detail" id="of(int,java.lang.String,java.lang.constant.ClassDesc,java.lang.classfile.Label,java.lang.classfile.Label)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LocalVariable.html" title="interface in java.lang.classfile.instruction">LocalVariable</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;slot,
- <a href="../../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../constant/ClassDesc.html" title="interface in java.lang.constant">ClassDesc</a>&nbsp;descriptor,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;startScope,
- <a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;endScope)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="LocalVariable.html" title="java.lang.classfile.instruction 包中的接口">LocalVariable</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;slot,
+ <a href="../../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../constant/ClassDesc.html" title="java.lang.constant 包中的接口">ClassDesc</a>&nbsp;descriptor,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;startScope,
+ <a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;endScope)</span></div>
 <div class="block">Returns a local variable pseudo-instruction.
 <code>slot</code> must be within <code>[0, 65535]</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>slot</code> - the local variable slot</dd>
 <dd><code>name</code> - the local variable name</dd>
 <dd><code>descriptor</code> - the local variable descriptor</dd>
 <dd><code>startScope</code> - the start range of the local variable scope</dd>
 <dd><code>endScope</code> - the end range of the local variable scope</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a local variable pseudo-instruction</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>slot</code> is out of range</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>slot</code> is out of range</dd>
 </dl>
 </div>
 </section>

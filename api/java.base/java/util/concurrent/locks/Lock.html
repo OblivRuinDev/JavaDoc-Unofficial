@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent.locks</a></li>
 <li><a href="Lock.html" class="current-selection">Lock</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,16 +62,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#memory-synchronization-heading" tabindex="0">Memory Synchronization</a></li>
 <li><a href="#implementation-considerations-heading" tabindex="0">Implementation Considerations</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#lock()" tabindex="0">lock()</a></li>
 <li><a href="#lockInterruptibly()" tabindex="0">lockInterruptibly()</a></li>
@@ -86,12 +86,12 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Lock" class="title">Interface Lock</h1>
+<h1 title="接口 Lock" class="title">接口 Lock</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ReentrantLock.html" title="class in java.util.concurrent.locks">ReentrantLock</a>, <a href="ReentrantReadWriteLock.ReadLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.ReadLock</a>, <a href="ReentrantReadWriteLock.WriteLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.WriteLock</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="ReentrantLock.html" title="java.util.concurrent.locks 包中的类">ReentrantLock</a>, <a href="ReentrantReadWriteLock.ReadLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.ReadLock</a>, <a href="ReentrantReadWriteLock.WriteLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.WriteLock</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -100,14 +100,14 @@ loadScripts(document, 'script');</script>
 operations than can be obtained using <code>synchronized</code> methods
 and statements.  They allow more flexible structuring, may have
 quite different properties, and may support multiple associated
-<a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> objects.
+<a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> objects.
 
 <p>A lock is a tool for controlling access to a shared resource by
 multiple threads. Commonly, a lock provides exclusive access to a
 shared resource: only one thread at a time can acquire the lock and
 all access to the shared resource requires that the lock be
 acquired first. However, some locks may allow concurrent access to
-a shared resource, such as the read lock of a <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a>.
+a shared resource, such as the read lock of a <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a>.
 
 <p>The use of <code>synchronized</code> methods or statements provides
 access to the implicit monitor lock associated with every object, but
@@ -170,7 +170,7 @@ It is recommended that to avoid confusion you never use <code>Lock</code>
 instances in this way, except within their own implementation.
 
 <p>Except where noted, passing a <code>null</code> value for any
-parameter will result in a <a href="../../../lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> being
+parameter will result in a <a href="../../../lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> being
 thrown.
 
 <h2 id="memory-synchronization-heading">Memory Synchronization</h2>
@@ -216,14 +216,14 @@ the thread. An implementation should document this behavior.</div>
 <dl class="notes"><dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4">17.4 Memory Model</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="ReentrantLock.html" title="class in java.util.concurrent.locks"><code>ReentrantLock</code></a></li>
-<li><a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a></li>
-<li><a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a></li>
+<li><a href="ReentrantLock.html" title="java.util.concurrent.locks 包中的类"><code>ReentrantLock</code></a></li>
+<li><a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a></li>
+<li><a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -234,14 +234,14 @@ the thread. An implementation should document this behavior.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#lock()" class="member-name-link">lock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -253,10 +253,10 @@ the thread. An implementation should document this behavior.</div>
 <div class="block">Acquires the lock unless the current thread is
 <a href="../../../lang/Thread.html#interrupt()">interrupted</a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newCondition()" class="member-name-link">newCondition</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns a new <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> instance that is bound to this
+<div class="block">Returns a new <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> instance that is bound to this
 <code>Lock</code> instance.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
@@ -266,7 +266,7 @@ the thread. An implementation should document this behavior.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#tryLock(long,java.util.concurrent.TimeUnit)" class="member-name-link">tryLock</a><wbr>(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Acquires the lock if it is free within the given waiting time and the
 current thread has not been <a href="../../../lang/Thread.html#interrupt()">interrupted</a>.</div>
@@ -288,7 +288,7 @@ current thread has not been <a href="../../../lang/Thread.html#interrupt()">inte
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="lock()">
@@ -316,7 +316,7 @@ circumstances and the exception type must be documented by that
 <h3>lockInterruptibly</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">lockInterruptibly</span>()
-                throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+                throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Acquires the lock unless the current thread is
 <a href="../../../lang/Thread.html#interrupt()">interrupted</a>.
 
@@ -338,7 +338,7 @@ current thread, and interruption of lock acquisition is supported.
 <li>is <a href="../../../lang/Thread.html#interrupt()">interrupted</a> while acquiring the
 lock, and interruption of lock acquisition is supported,
 </ul>
-then <a href="../../../lang/InterruptedException.html" title="class in java.lang"><code>InterruptedException</code></a> is thrown and the current thread's
+then <a href="../../../lang/InterruptedException.html" title="java.lang 包中的类"><code>InterruptedException</code></a> is thrown and the current thread's
 interrupted status is cleared.
 
 <p><b>Implementation Considerations</b>
@@ -358,8 +358,8 @@ cause deadlock, and may throw an (unchecked) exception in such
 circumstances.  The circumstances and the exception type must
 be documented by that <code>Lock</code> implementation.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is
         interrupted while acquiring the lock (and interruption
         of lock acquisition is supported)</dd>
 </dl>
@@ -393,7 +393,7 @@ if (lock.tryLock()) {
 This usage ensures that the lock is unlocked if it was acquired, and
 doesn't try to unlock if the lock was not acquired.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock was acquired and
         <code>false</code> otherwise</dd>
 </dl>
@@ -405,8 +405,8 @@ doesn't try to unlock if the lock was not acquired.</div>
 <h3>tryLock</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">tryLock</span><wbr><span class="parameters">(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-         throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+         throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Acquires the lock if it is free within the given waiting time and the
 current thread has not been <a href="../../../lang/Thread.html#interrupt()">interrupted</a>.
 
@@ -430,7 +430,7 @@ current thread, and interruption of lock acquisition is supported; or
 <li>is <a href="../../../lang/Thread.html#interrupt()">interrupted</a> while acquiring
 the lock, and interruption of lock acquisition is supported,
 </ul>
-then <a href="../../../lang/InterruptedException.html" title="class in java.lang"><code>InterruptedException</code></a> is thrown and the current thread's
+then <a href="../../../lang/InterruptedException.html" title="java.lang 包中的类"><code>InterruptedException</code></a> is thrown and the current thread's
 interrupted status is cleared.
 
 <p>If the specified waiting time elapses then the value <code>false</code>
@@ -455,14 +455,14 @@ deadlock, and may throw an (unchecked) exception in such circumstances.
 The circumstances and the exception type must be documented by that
 <code>Lock</code> implementation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>time</code> - the maximum time to wait for the lock</dd>
 <dd><code>unit</code> - the time unit of the <code>time</code> argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock was acquired and <code>false</code>
         if the waiting time elapsed before the lock was acquired</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
         while acquiring the lock (and interruption of lock
         acquisition is supported)</dd>
 </dl>
@@ -491,8 +491,8 @@ type must be documented by that <code>Lock</code> implementation.</div>
 <section class="detail" id="newCondition()">
 <h3>newCondition</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a></span>&nbsp;<span class="element-name">newCondition</span>()</div>
-<div class="block">Returns a new <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> instance that is bound to this
+<div class="member-signature"><span class="return-type"><a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a></span>&nbsp;<span class="element-name">newCondition</span>()</div>
+<div class="block">Returns a new <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> instance that is bound to this
 <code>Lock</code> instance.
 
 <p>Before waiting on the condition the lock must be held by the
@@ -502,14 +502,14 @@ before waiting and re-acquire the lock before the wait returns.
 
 <p><b>Implementation Considerations</b>
 
-<p>The exact operation of the <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> instance depends on
+<p>The exact operation of the <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> instance depends on
 the <code>Lock</code> implementation and must be documented by that
 implementation.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>A new <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> instance for this <code>Lock</code> instance</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this <code>Lock</code>
+<dt>返回:</dt>
+<dd>A new <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> instance for this <code>Lock</code> instance</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this <code>Lock</code>
         implementation does not support conditions</dd>
 </dl>
 </div>

@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="System.html">System</a></li>
 <li><a href="System.LoggerFinder.html" class="current-selection">LoggerFinder</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,17 +61,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">LoggerFinder()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getLogger(java.lang.String,java.lang.Module)" tabindex="0">getLogger(String, Module)</a></li>
 <li><a href="#getLocalizedLogger(java.lang.String,java.util.ResourceBundle,java.lang.Module)" tabindex="0">getLocalizedLogger(String, ResourceBundle, Module)</a></li>
@@ -83,20 +83,20 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class System.LoggerFinder" class="title">Class System.LoggerFinder</h1>
+<h1 title="类 System.LoggerFinder" class="title">类 System.LoggerFinder</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.System.LoggerFinder</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Enclosing class:</dt>
-<dd><code><a href="System.html" title="class in java.lang">System</a></code></dd>
+<dd><code><a href="System.html" title="java.lang 包中的类">System</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract static class </span><span class="element-name type-name-label">System.LoggerFinder</span>
-<span class="extends-implements">extends <a href="Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">The <code>LoggerFinder</code> service is responsible for creating, managing,
 and configuring loggers to the underlying framework it uses.
 
@@ -109,7 +109,7 @@ A given invocation of the Java Runtime maintains a single
 system-wide LoggerFinder instance that is loaded as follows:
 <ul>
    <li>First it finds any custom <code>LoggerFinder</code> provider
-       using the <a href="../util/ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a> facility with the
+       using the <a href="../util/ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a> facility with the
        <a href="ClassLoader.html#getSystemClassLoader()">system class
        loader</a>.</li>
    <li>If no <code>LoggerFinder</code> provider is found, the system default
@@ -118,22 +118,22 @@ system-wide LoggerFinder instance that is loaded as follows:
 <p>
 An application can replace the logging backend
 <i>even when the java.logging module is present</i>, by simply providing
-and declaring an implementation of the <a href="System.LoggerFinder.html" title="class in java.lang"><code>System.LoggerFinder</code></a> service.
+and declaring an implementation of the <a href="System.LoggerFinder.html" title="java.lang 包中的类"><code>System.LoggerFinder</code></a> service.
 <p>
 <b>Default Implementation</b>
 <p>
 The system default <code>LoggerFinder</code> implementation uses
 <code>java.util.logging</code> as the backend framework when the
 <code>java.logging</code> module is present.
-It returns a <a href="System.Logger.html" title="interface in java.lang">logger</a> instance
-that will route log messages to a <a href="../../../java.logging/java/util/logging/Logger.html" title="class in java.util.logging"><code>java.util.logging.Logger</code></a>. Otherwise, if <code>java.logging</code> is not
+It returns a <a href="System.Logger.html" title="java.lang 包中的接口">logger</a> instance
+that will route log messages to a <a href="../../../java.logging/java/util/logging/Logger.html" title="java.util.logging 包中的类"><code>java.util.logging.Logger</code></a>. Otherwise, if <code>java.logging</code> is not
 present, the default implementation will return a simple logger
 instance that will route log messages of <code>INFO</code> level and above to
 the console (<code>System.err</code>).
 <p>
 <b>Logging Configuration</b>
 <p>
-<a href="System.Logger.html" title="interface in java.lang">Logger</a> instances obtained from the
+<a href="System.Logger.html" title="java.lang 包中的接口">Logger</a> instances obtained from the
 <code>LoggerFinder</code> factory methods are not directly configurable by
 the application. Configuration is the responsibility of the underlying
 logging backend, and usually requires using APIs specific to that backend.
@@ -150,7 +150,7 @@ Applications that wish to use an external framework should log
 through the facade associated with that framework.
 <p>
 A system class that needs to log messages will typically obtain
-a <a href="System.Logger.html" title="interface in java.lang"><code>System.Logger</code></a> instance to route messages to the logging
+a <a href="System.Logger.html" title="java.lang 包中的接口"><code>System.Logger</code></a> instance to route messages to the logging
 framework selected by the application.
 <p>
 Libraries and classes that only need loggers to produce log messages
@@ -164,16 +164,16 @@ A logger finder is responsible for mapping from a <code>
 System.Logger.Level</code> to a level supported by the logging backend it uses.
 <br>The default LoggerFinder using <code>java.util.logging</code> as the backend
 maps <code>System.Logger</code> levels to
-<a href="../../../java.logging/java/util/logging/Level.html" title="class in java.util.logging">java.util.logging</a> levels
-of corresponding severity - as described in <a href="System.Logger.Level.html" title="enum class in java.lang"><code>Logger.Level</code></a>.</div>
+<a href="../../../java.logging/java/util/logging/Level.html" title="java.util.logging 包中的类">java.util.logging</a> levels
+of corresponding severity - as described in <a href="System.Logger.Level.html" title="java.lang 包中的枚举类"><code>Logger.Level</code></a>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="System.html" title="class in java.lang"><code>System</code></a></li>
-<li><a href="System.Logger.html" title="interface in java.lang"><code>System.Logger</code></a></li>
+<li><a href="System.html" title="java.lang 包中的类"><code>System</code></a></li>
+<li><a href="System.Logger.html" title="java.lang 包中的接口"><code>System.Logger</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -184,12 +184,12 @@ of corresponding severity - as described in <a href="System.Logger.Level.html" t
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数概要</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符</div>
+<div class="table-header col-second">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">LoggerFinder</a>()</code></div>
 <div class="col-last even-row-color">
@@ -201,30 +201,30 @@ of corresponding severity - as described in <a href="System.Logger.Level.html" t
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="System.Logger.html" title="interface in java.lang">System.Logger</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLocalizedLogger(java.lang.String,java.util.ResourceBundle,java.lang.Module)" class="member-name-link">getLocalizedLogger</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../util/ResourceBundle.html" title="class in java.util">ResourceBundle</a>&nbsp;bundle,
- <a href="Module.html" title="class in java.lang">Module</a>&nbsp;module)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="System.Logger.html" title="java.lang 包中的接口">System.Logger</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLocalizedLogger(java.lang.String,java.util.ResourceBundle,java.lang.Module)" class="member-name-link">getLocalizedLogger</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../util/ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a>&nbsp;bundle,
+ <a href="Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a localizable instance of <a href="System.Logger.html" title="interface in java.lang"><code>Logger</code></a>
+<div class="block">Returns a localizable instance of <a href="System.Logger.html" title="java.lang 包中的接口"><code>Logger</code></a>
 for the given <code>module</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="System.Logger.html" title="interface in java.lang">System.Logger</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLogger(java.lang.String,java.lang.Module)" class="member-name-link">getLogger</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="Module.html" title="class in java.lang">Module</a>&nbsp;module)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="System.Logger.html" title="java.lang 包中的接口">System.Logger</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLogger(java.lang.String,java.lang.Module)" class="member-name-link">getLogger</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns an instance of <a href="System.Logger.html" title="interface in java.lang"><code>Logger</code></a>
+<div class="block">Returns an instance of <a href="System.Logger.html" title="java.lang 包中的接口"><code>Logger</code></a>
 for the given <code>module</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="System.LoggerFinder.html" title="class in java.lang">System.LoggerFinder</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="System.LoggerFinder.html" title="java.lang 包中的类">System.LoggerFinder</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getLoggerFinder()" class="member-name-link">getLoggerFinder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the <code>LoggerFinder</code> instance.</div>
@@ -233,7 +233,7 @@ for the given <code>module</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="Object.html#clone()" title="clone()">clone</a>, <a href="Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="Object.html#finalize()" title="finalize()">finalize</a>, <a href="Object.html#getClass()" title="getClass()">getClass</a>, <a href="Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="Object.html#notify()" title="notify()">notify</a>, <a href="Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="Object.html#toString()" title="toString()">toString</a>, <a href="Object.html#wait()" title="wait()">wait</a>, <a href="Object.html#wait(long)" title="wait(long)">wait</a>, <a href="Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -244,7 +244,7 @@ for the given <code>module</code>.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -253,7 +253,7 @@ for the given <code>module</code>.</div>
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">LoggerFinder</span>()</div>
 <div class="block">Creates a new instance of <code>LoggerFinder</code>.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>It is recommended that a <code>LoggerFinder</code> service
   implementation does not perform any heavy initialization in its
   constructor, in order to avoid possible risks of deadlock or class
@@ -268,25 +268,25 @@ for the given <code>module</code>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getLogger(java.lang.String,java.lang.Module)">
 <h3>getLogger</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="System.Logger.html" title="interface in java.lang">System.Logger</a></span>&nbsp;<span class="element-name">getLogger</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="Module.html" title="class in java.lang">Module</a>&nbsp;module)</span></div>
-<div class="block">Returns an instance of <a href="System.Logger.html" title="interface in java.lang"><code>Logger</code></a>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="System.Logger.html" title="java.lang 包中的接口">System.Logger</a></span>&nbsp;<span class="element-name">getLogger</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</span></div>
+<div class="block">Returns an instance of <a href="System.Logger.html" title="java.lang 包中的接口"><code>Logger</code></a>
 for the given <code>module</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the logger.</dd>
 <dd><code>module</code> - the module for which the logger is being requested.</dd>
-<dt>Returns:</dt>
-<dd>a <a href="System.Logger.html" title="interface in java.lang"><code>logger</code></a> suitable for use within the given
+<dt>返回:</dt>
+<dd>a <a href="System.Logger.html" title="java.lang 包中的接口"><code>logger</code></a> suitable for use within the given
         module.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is <code>null</code> or
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is <code>null</code> or
        <code>module</code> is <code>null</code>.</dd>
 </dl>
 </div>
@@ -296,23 +296,23 @@ for the given <code>module</code>.</div>
 <section class="detail" id="getLocalizedLogger(java.lang.String,java.util.ResourceBundle,java.lang.Module)">
 <h3>getLocalizedLogger</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="System.Logger.html" title="interface in java.lang">System.Logger</a></span>&nbsp;<span class="element-name">getLocalizedLogger</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../util/ResourceBundle.html" title="class in java.util">ResourceBundle</a>&nbsp;bundle,
- <a href="Module.html" title="class in java.lang">Module</a>&nbsp;module)</span></div>
-<div class="block">Returns a localizable instance of <a href="System.Logger.html" title="interface in java.lang"><code>Logger</code></a>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="System.Logger.html" title="java.lang 包中的接口">System.Logger</a></span>&nbsp;<span class="element-name">getLocalizedLogger</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../util/ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a>&nbsp;bundle,
+ <a href="Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</span></div>
+<div class="block">Returns a localizable instance of <a href="System.Logger.html" title="java.lang 包中的接口"><code>Logger</code></a>
 for the given <code>module</code>.
 The returned logger will use the provided resource bundle for
 message localization.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>By default, this method calls <a href="#getLogger(java.lang.String,java.lang.Module)"><code>this.getLogger(name, module)</code></a> to obtain a logger, then wraps that
-logger in a <a href="System.Logger.html" title="interface in java.lang"><code>System.Logger</code></a> instance where all methods that do not
-take a <a href="../util/ResourceBundle.html" title="class in java.util"><code>ResourceBundle</code></a> as parameter are redirected to one
+logger in a <a href="System.Logger.html" title="java.lang 包中的接口"><code>System.Logger</code></a> instance where all methods that do not
+take a <a href="../util/ResourceBundle.html" title="java.util 包中的类"><code>ResourceBundle</code></a> as parameter are redirected to one
 which does - passing the given <code>bundle</code> for
 localization. So for instance, a call to <a href="System.Logger.html#log(java.lang.System.Logger.Level,java.lang.String)"><code>Logger.log(Level.INFO, msg)</code></a>
 will end up as a call to <a href="System.Logger.html#log(java.lang.System.Logger.Level,java.util.ResourceBundle,java.lang.String,java.lang.Object...)"><code>Logger.log(Level.INFO, bundle, msg, (Object[])null)</code></a> on the wrapped
 logger instance.
-Note however that by default, string messages returned by <a href="../util/function/Supplier.html" title="interface in java.util.function"><code>Supplier&lt;String&gt;</code></a> will not be
+Note however that by default, string messages returned by <a href="../util/function/Supplier.html" title="java.util.function 包中的接口"><code>Supplier&lt;String&gt;</code></a> will not be
 localized, as it is assumed that such strings are messages which are
 already constructed, rather than keys in a resource bundle.
 <p>
@@ -321,15 +321,15 @@ for example, when the underlying logging backend provides its own
 mechanism for localizing log messages, then such a
 <code>LoggerFinder</code> would be free to return a logger
 that makes direct use of the mechanism provided by the backend.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the logger.</dd>
 <dd><code>bundle</code> - a resource bundle; can be <code>null</code>.</dd>
 <dd><code>module</code> - the module for which the logger is being requested.</dd>
-<dt>Returns:</dt>
-<dd>an instance of <a href="System.Logger.html" title="interface in java.lang"><code>Logger</code></a>  which will use the
+<dt>返回:</dt>
+<dd>an instance of <a href="System.Logger.html" title="java.lang 包中的接口"><code>Logger</code></a>  which will use the
 provided resource bundle for message localization.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is <code>null</code> or
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is <code>null</code> or
         <code>module</code> is <code>null</code>.</dd>
 </dl>
 </div>
@@ -339,15 +339,15 @@ provided resource bundle for message localization.</dd>
 <section class="detail" id="getLoggerFinder()">
 <h3>getLoggerFinder</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="System.LoggerFinder.html" title="class in java.lang">System.LoggerFinder</a></span>&nbsp;<span class="element-name">getLoggerFinder</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="System.LoggerFinder.html" title="java.lang 包中的类">System.LoggerFinder</a></span>&nbsp;<span class="element-name">getLoggerFinder</span>()</div>
 <div class="block">Returns the <code>LoggerFinder</code> instance. There is one
 single system-wide <code>LoggerFinder</code> instance in
 the Java Runtime.  See the class specification of how the
-<a href="System.LoggerFinder.html" title="class in java.lang"><code>LoggerFinder</code></a> implementation is located and
+<a href="System.LoggerFinder.html" title="java.lang 包中的类"><code>LoggerFinder</code></a> implementation is located and
 loaded.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="System.LoggerFinder.html" title="class in java.lang"><code>LoggerFinder</code></a> instance.</dd>
+<dt>返回:</dt>
+<dd>the <a href="System.LoggerFinder.html" title="java.lang 包中的类"><code>LoggerFinder</code></a> instance.</dd>
 </dl>
 </div>
 </section>

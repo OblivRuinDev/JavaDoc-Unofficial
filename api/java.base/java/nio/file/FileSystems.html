@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.file</a></li>
 <li><a href="FileSystems.html" class="current-selection">FileSystems</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,11 +60,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getDefault()" tabindex="0">getDefault()</a></li>
 <li><a href="#getFileSystem(java.net.URI)" tabindex="0">getFileSystem(URI)</a></li>
@@ -81,22 +81,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class FileSystems" class="title">Class FileSystems</h1>
+<h1 title="类 FileSystems" class="title">类 FileSystems</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.file.FileSystems</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">FileSystems</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">Factory methods for file systems. This class defines the <a href="#getDefault()"><code>getDefault</code></a> method to get the default file system and factory methods to
 construct other types of file systems.
 
 <p> The first invocation of any of the methods defined by this class causes
-the default <a href="spi/FileSystemProvider.html" title="class in java.nio.file.spi"><code>provider</code></a> to be loaded. The default
-provider, identified by the URI scheme "file", creates the <a href="FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a>
+the default <a href="spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类"><code>provider</code></a> to be loaded. The default
+provider, identified by the URI scheme "file", creates the <a href="FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a>
 that provides access to the file systems accessible to the Java virtual
 machine. If the process of loading or initializing the default provider fails
 then an unspecified error is thrown.
@@ -104,14 +104,14 @@ then an unspecified error is thrown.
 <p> The first invocation of the <a href="spi/FileSystemProvider.html#installedProviders()"><code>installedProviders</code></a> method, by way of invoking any of the <code>
 newFileSystem</code> methods defined by this class, locates and loads all
 installed file system providers. Installed providers are loaded using the
-service-provider loading facility defined by the <a href="../../util/ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a> class.
+service-provider loading facility defined by the <a href="../../util/ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a> class.
 Installed providers are loaded using the system class loader. If the
 system class loader cannot be found then the platform class loader is used.
 Providers are typically installed by placing them in a JAR file on the
 application class path, the JAR file contains a
 provider-configuration file named <code>java.nio.file.spi.FileSystemProvider</code>
 in the resource directory <code>META-INF/services</code>, and the file lists one or
-more fully-qualified names of concrete subclass of <a href="spi/FileSystemProvider.html" title="class in java.nio.file.spi"><code>FileSystemProvider</code></a>
+more fully-qualified names of concrete subclass of <a href="spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类"><code>FileSystemProvider</code></a>
 that have a zero argument constructor.
 The ordering that installed providers are located is implementation specific.
 If a provider is instantiated and its <a href="spi/FileSystemProvider.html#getScheme()"><code>getScheme</code></a> returns the same URI scheme of a provider that was previously
@@ -122,7 +122,7 @@ to be taken to avoid circular loading of other installed providers. If
 circular loading of installed providers is detected then an unspecified error
 is thrown.
 
-<p> This class also defines factory methods that allow a <a href="../../lang/ClassLoader.html" title="class in java.lang"><code>ClassLoader</code></a>
+<p> This class also defines factory methods that allow a <a href="../../lang/ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>
 to be specified when locating a provider. As with installed providers, the
 provider classes are identified by placing the provider configuration file
 in the resource directory <code>META-INF/services</code>.
@@ -131,7 +131,7 @@ in the resource directory <code>META-INF/services</code>.
 and another thread invokes a method that also attempts to load the providers
 then the method will block until the loading completes.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -141,61 +141,61 @@ then the method will block until the loading completes.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDefault()" class="member-name-link">getDefault</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the default <code>FileSystem</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFileSystem(java.net.URI)" class="member-name-link">getFileSystem</a><wbr>(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getFileSystem(java.net.URI)" class="member-name-link">getFileSystem</a><wbr>(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a reference to an existing <code>FileSystem</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.net.URI,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.net.URI,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="class in java.net"><code>URI</code></a></div>
+<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="java.net 包中的类"><code>URI</code></a></div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.net.URI,java.util.Map,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.net.URI,java.util.Map,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="class in java.net"><code>URI</code></a></div>
+<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="java.net 包中的类"><code>URI</code></a></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map,java.lang.ClassLoader)" class="member-name-link">newFileSystem</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.</div>
@@ -204,7 +204,7 @@ file system.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -215,22 +215,22 @@ file system.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getDefault()">
 <h3>getDefault</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">getDefault</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">getDefault</span>()</div>
 <div class="block">Returns the default <code>FileSystem</code>. The default file system creates
 objects that provide access to the file systems accessible to the Java
 virtual machine. The <em>working directory</em> of the file system is
 the current user directory, named by the system property <code>user.dir</code>.
-This allows for interoperability with the <a href="../../io/File.html" title="class in java.io"><code>java.io.File</code></a>
+This allows for interoperability with the <a href="../../io/File.html" title="java.io 包中的类"><code>java.io.File</code></a>
 class.
 
 <p> The first invocation of any of the methods defined by this class
-locates the default <a href="spi/FileSystemProvider.html" title="class in java.nio.file.spi"><code>provider</code></a> object. Where the
+locates the default <a href="spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类"><code>provider</code></a> object. Where the
 system property <code>java.nio.file.spi.DefaultFileSystemProvider</code> is
 not defined then the default provider is a system-default provider that
 is invoked to create the default file system.
@@ -262,7 +262,7 @@ get a reference to the default file system.
 <p> Subsequent invocations of this method return the file system that was
 returned by the first invocation.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the default file system</dd>
 </dl>
 </div>
@@ -272,7 +272,7 @@ returned by the first invocation.</div>
 <section class="detail" id="getFileSystem(java.net.URI)">
 <h3>getFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</span></div>
 <div class="block">Returns a reference to an existing <code>FileSystem</code>.
 
 <p> This method iterates over the <a href="spi/FileSystemProvider.html#installedProviders()"><code>installed</code></a> providers to locate the provider that is identified by the URI
@@ -282,20 +282,20 @@ dependent. If found, the provider's <a href="spi/FileSystemProvider.html#getFile
 FileSystem</code>.
 
 <p> Once a file system created by this provider is <a href="FileSystem.html#close()"><code>closed</code></a> it is provider-dependent if this method returns a reference to
-the closed file system or throws <a href="FileSystemNotFoundException.html" title="class in java.nio.file"><code>FileSystemNotFoundException</code></a>.
+the closed file system or throws <a href="FileSystemNotFoundException.html" title="java.nio.file 包中的类"><code>FileSystemNotFoundException</code></a>.
 If the provider allows a new file system to be created with the same URI
 as a file system it previously created then this method throws the
 exception if invoked after the file system is closed (and before a new
 instance is created by the <a href="#newFileSystem(java.net.URI,java.util.Map)"><code>newFileSystem</code></a> method).</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - the URI to locate the file system</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the reference to the file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met</dd>
-<dd><code><a href="FileSystemNotFoundException.html" title="class in java.nio.file">FileSystemNotFoundException</a></code> - if the file system, identified by the URI, does not exist</dd>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not installed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met</dd>
+<dd><code><a href="FileSystemNotFoundException.html" title="java.nio.file 包中的类">FileSystemNotFoundException</a></code> - if the file system, identified by the URI, does not exist</dd>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not installed</dd>
 </dl>
 </div>
 </section>
@@ -304,10 +304,10 @@ instance is created by the <a href="#newFileSystem(java.net.URI,java.util.Map)">
 <section class="detail" id="newFileSystem(java.net.URI,java.util.Map)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
-<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="class in java.net"><code>URI</code></a>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
+<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="java.net 包中的类"><code>URI</code></a>
 
 <p> This method iterates over the <a href="spi/FileSystemProvider.html#installedProviders()"><code>installed</code></a> providers to locate the provider that is identified by the URI
 <a href="../../net/URI.html#getScheme()"><code>scheme</code></a> of the given URI. URI schemes are compared
@@ -328,20 +328,20 @@ installed:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - the URI identifying the file system</dd>
 <dd><code>env</code> - a map of provider specific properties to configure the file system;
          may be empty</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met,
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met,
          or if the <code>env</code> parameter does not contain properties
          required by the provider, contains an invalid combination of
          properties and values, or contains an invalid property value</dd>
-<dd><code><a href="FileSystemAlreadyExistsException.html" title="class in java.nio.file">FileSystemAlreadyExistsException</a></code> - if the file system has already been created</dd>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not installed</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs creating the file system</dd>
+<dd><code><a href="FileSystemAlreadyExistsException.html" title="java.nio.file 包中的类">FileSystemAlreadyExistsException</a></code> - if the file system has already been created</dd>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not installed</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs creating the file system</dd>
 </dl>
 </div>
 </section>
@@ -350,11 +350,11 @@ installed:
 <section class="detail" id="newFileSystem(java.net.URI,java.util.Map,java.lang.ClassLoader)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
-<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="class in java.net"><code>URI</code></a>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
+<div class="block">Constructs a new file system that is identified by a <a href="../../net/URI.html" title="java.net 包中的类"><code>URI</code></a>
 
 <p> This method first attempts to locate an installed provider in exactly
 the same manner as the <a href="#newFileSystem(java.net.URI,java.util.Map)"><code>newFileSystem(URI,Map)</code></a>
@@ -363,24 +363,24 @@ attempt is made to locate the provider using the given class loader. If a
 provider supporting the URI scheme is located then its <a href="spi/FileSystemProvider.html#newFileSystem(java.net.URI,java.util.Map)"><code>newFileSystem(URI,Map)</code></a> is
 invoked to construct the new file system.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - the URI identifying the file system</dd>
 <dd><code>env</code> - a map of provider specific properties to configure the file system;
          may be empty</dd>
 <dd><code>loader</code> - the class loader to locate the provider or <code>null</code> to only
          attempt to locate an installed provider</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met,
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the pre-conditions for the <code>uri</code> parameter are not met,
          or if the <code>env</code> parameter does not contain properties
          required by the provider, contains an invalid combination of
          properties and values, or contains an invalid property value</dd>
-<dd><code><a href="FileSystemAlreadyExistsException.html" title="class in java.nio.file">FileSystemAlreadyExistsException</a></code> - if the URI scheme identifies an installed provider and the file
+<dd><code><a href="FileSystemAlreadyExistsException.html" title="java.nio.file 包中的类">FileSystemAlreadyExistsException</a></code> - if the URI scheme identifies an installed provider and the file
          system has already been created</dd>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not found</dd>
-<dd><code><a href="../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - an I/O error occurs creating the file system</dd>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting the URI scheme is not found</dd>
+<dd><code><a href="../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - an I/O error occurs creating the file system</dd>
 </dl>
 </div>
 </section>
@@ -389,9 +389,9 @@ invoked to construct the new file system.</div>
 <section class="detail" id="newFileSystem(java.nio.file.Path,java.lang.ClassLoader)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.
 
@@ -406,16 +406,16 @@ made to locate the provider using the given class loader. If a provider
 returns a file system then the lookup terminates and the file system is
 returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>loader</code> - the class loader to locate the provider or <code>null</code> to only
          attempt to locate an installed provider</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
-<dd><code><a href="../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
+<dd><code><a href="../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -424,9 +424,9 @@ returned.</div>
 <section class="detail" id="newFileSystem(java.nio.file.Path,java.util.Map)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.
 
@@ -439,20 +439,20 @@ the same manner as the <a href="#newFileSystem(java.nio.file.Path,java.util.Map,
 <a href="spi/FileSystemProvider.html#newFileSystem(java.nio.file.Path,java.util.Map)"><code>newFileSystem(Path, Map)</code></a>
 method is invoked to construct the new file system.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>env</code> - a map of provider specific properties to configure the file system;
          may be empty</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <code>env</code> parameter does not contain properties
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <code>env</code> parameter does not contain properties
          required by the provider, contains an invalid combination of
          properties and values, or contains an invalid property value</dd>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
-<dd><code><a href="../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>Since:</dt>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
+<dd><code><a href="../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -462,8 +462,8 @@ method is invoked to construct the new file system.</div>
 <section class="detail" id="newFileSystem(java.nio.file.Path)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.
 
@@ -476,15 +476,15 @@ the same manner as the <a href="#newFileSystem(java.nio.file.Path,java.util.Map,
 <a href="spi/FileSystemProvider.html#newFileSystem(java.nio.file.Path,java.util.Map)"><code>newFileSystem(Path, Map)</code></a>
 method is invoked with an empty map to construct the new file system.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
-<dd><code><a href="../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
+<dd><code><a href="../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -494,10 +494,10 @@ method is invoked with an empty map to construct the new file system.</div>
 <section class="detail" id="newFileSystem(java.nio.file.Path,java.util.Map,java.lang.ClassLoader)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env,
- <a href="../../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span>
-                                throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env,
+ <a href="../../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span>
+                                throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.
 
@@ -513,22 +513,22 @@ an attempt is made to locate the provider using the given class loader.
 If a provider returns a file
 system, then the lookup terminates and the file system is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>env</code> - a map of provider specific properties to configure the file system;
          may be empty</dd>
 <dd><code>loader</code> - the class loader to locate the provider or <code>null</code> to only
          attempt to locate an installed provider</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <code>env</code> parameter does not contain properties
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <code>env</code> parameter does not contain properties
          required by the provider, contains an invalid combination of
          properties and values, or contains an invalid property value</dd>
-<dd><code><a href="ProviderNotFoundException.html" title="class in java.nio.file">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
-<dd><code><a href="../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>Since:</dt>
+<dd><code><a href="ProviderNotFoundException.html" title="java.nio.file 包中的类">ProviderNotFoundException</a></code> - if a provider supporting this file type cannot be located</dd>
+<dd><code><a href="../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - when an error occurs while loading a service provider</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>

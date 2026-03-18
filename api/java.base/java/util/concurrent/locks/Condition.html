@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent.locks</a></li>
 <li><a href="Condition.html" class="current-selection">Condition</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -63,15 +63,15 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#implementation-considerations-heading" tabindex="0">Implementation Considerations</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#await()" tabindex="0">await()</a></li>
 <li><a href="#awaitUninterruptibly()" tabindex="0">awaitUninterruptibly()</a></li>
@@ -87,12 +87,12 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Condition" class="title">Interface Condition</h1>
+<h1 title="接口 Condition" class="title">接口 Condition</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="AbstractQueuedLongSynchronizer.ConditionObject.html" title="class in java.util.concurrent.locks">AbstractQueuedLongSynchronizer.ConditionObject</a>, <a href="AbstractQueuedSynchronizer.ConditionObject.html" title="class in java.util.concurrent.locks">AbstractQueuedSynchronizer.ConditionObject</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="AbstractQueuedLongSynchronizer.ConditionObject.html" title="java.util.concurrent.locks 包中的类">AbstractQueuedLongSynchronizer.ConditionObject</a>, <a href="AbstractQueuedSynchronizer.ConditionObject.html" title="java.util.concurrent.locks 包中的类">AbstractQueuedSynchronizer.ConditionObject</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -101,7 +101,7 @@ loadScripts(document, 'script');</script>
 methods (<a href="../../../lang/Object.html#wait()"><code>wait</code></a>, <a href="../../../lang/Object.html#notify()"><code>notify</code></a>
 and <a href="../../../lang/Object.html#notifyAll()"><code>notifyAll</code></a>) into distinct objects to
 give the effect of having multiple wait-sets per object, by
-combining them with the use of arbitrary <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> implementations.
+combining them with the use of arbitrary <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> implementations.
 Where a <code>Lock</code> replaces the use of <code>synchronized</code> methods
 and statements, a <code>Condition</code> replaces the use of the Object
 monitor methods.
@@ -117,7 +117,7 @@ is that it <em>atomically</em> releases the associated lock and
 suspends the current thread, just like <code>Object.wait</code>.
 
 <p>A <code>Condition</code> instance is intrinsically bound to a lock.
-To obtain a <code>Condition</code> instance for a particular <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a>
+To obtain a <code>Condition</code> instance for a particular <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a>
 instance use its <a href="Lock.html#newCondition()"><code>newCondition()</code></a> method.
 
 <p>As an example, suppose we have a bounded buffer which supports
@@ -129,7 +129,7 @@ We would like to keep waiting <code>put</code> threads and <code>take</code>
 threads in separate wait-sets so that we can use the optimization of
 only notifying a single thread at a time when items or spaces become
 available in the buffer. This can be achieved using two
-<a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> instances.
+<a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> instances.
 <pre>
 class BoundedBuffer&lt;E&gt; {
   <b>final Lock lock = new ReentrantLock();</b>
@@ -170,7 +170,7 @@ class BoundedBuffer&lt;E&gt; {
 }
 </pre>
 
-(The <a href="../ArrayBlockingQueue.html" title="class in java.util.concurrent"><code>ArrayBlockingQueue</code></a> class provides
+(The <a href="../ArrayBlockingQueue.html" title="java.util.concurrent 包中的类"><code>ArrayBlockingQueue</code></a> class provides
 this functionality, so there is no reason to implement this
 sample usage class.)
 
@@ -188,13 +188,13 @@ and can have their own monitor <a href="../../../lang/Object.html#wait()"><code>
 <a href="../../../lang/Object.html#notify()"><code>notify</code></a> methods invoked.
 Acquiring the monitor lock of a <code>Condition</code> instance, or using its
 monitor methods, has no specified relationship with acquiring the
-<a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> associated with that <code>Condition</code> or the use of its
+<a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> associated with that <code>Condition</code> or the use of its
 <a href="#await()">waiting</a> and <a href="#signal()">signalling</a> methods.
 It is recommended that to avoid confusion you never use <code>Condition</code>
 instances in this way, except perhaps within their own implementation.
 
 <p>Except where noted, passing a <code>null</code> value for any parameter
-will result in a <a href="../../../lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> being thrown.
+will result in a <a href="../../../lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> being thrown.
 
 <h2 id="implementation-considerations-heading">Implementation Considerations</h2>
 
@@ -232,7 +232,7 @@ to an interrupt over normal method return. This is true even if it can be
 shown that the interrupt occurred after another action that may have
 unblocked the thread. An implementation should document this behavior.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -242,14 +242,14 @@ unblocked the thread. An implementation should document this behavior.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#await()" class="member-name-link">await</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -258,7 +258,7 @@ unblocked the thread. An implementation should document this behavior.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#await(long,java.util.concurrent.TimeUnit)" class="member-name-link">await</a><wbr>(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Causes the current thread to wait until it is signalled or interrupted,
 or the specified waiting time elapses.</div>
@@ -275,7 +275,7 @@ or the specified waiting time elapses.</div>
 <div class="block">Causes the current thread to wait until it is signalled.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#awaitUntil(java.util.Date)" class="member-name-link">awaitUntil</a><wbr>(<a href="../../Date.html" title="class in java.util">Date</a>&nbsp;deadline)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#awaitUntil(java.util.Date)" class="member-name-link">awaitUntil</a><wbr>(<a href="../../Date.html" title="java.util 包中的类">Date</a>&nbsp;deadline)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Causes the current thread to wait until it is signalled or interrupted,
 or the specified deadline elapses.</div>
@@ -302,14 +302,14 @@ or the specified deadline elapses.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="await()">
 <h3>await</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">await</span>()
-    throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+    throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Causes the current thread to wait until it is signalled or
 <a href="../../../lang/Thread.html#interrupt()">interrupted</a>.
 
@@ -337,7 +337,7 @@ thread returns it is <em>guaranteed</em> to hold this lock.
 <li>is <a href="../../../lang/Thread.html#interrupt()">interrupted</a> while waiting
 and interruption of thread suspension is supported,
 </ul>
-then <a href="../../../lang/InterruptedException.html" title="class in java.lang"><code>InterruptedException</code></a> is thrown and the current thread's
+then <a href="../../../lang/InterruptedException.html" title="java.lang 包中的类"><code>InterruptedException</code></a> is thrown and the current thread's
 interrupted status is cleared. It is not specified, in the first
 case, whether or not the test for interruption occurs before the lock
 is released.
@@ -348,7 +348,7 @@ is released.
 <code>Condition</code> when this method is called.
 It is up to the implementation to determine if this is
 the case and if not, how to respond. Typically, an exception will be
-thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a>) and the
+thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a>) and the
 implementation must document that fact.
 
 <p>An implementation can favor responding to an interrupt over normal
@@ -356,8 +356,8 @@ method return in response to a signal. In that case the implementation
 must ensure that the signal is redirected to another waiting thread, if
 there is one.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
         (and interruption of thread suspension is supported)</dd>
 </dl>
 </div>
@@ -398,7 +398,7 @@ be set.
 <code>Condition</code> when this method is called.
 It is up to the implementation to determine if this is
 the case and if not, how to respond. Typically, an exception will be
-thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a>) and the
+thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a>) and the
 implementation must document that fact.</div>
 </div>
 </section>
@@ -408,7 +408,7 @@ implementation must document that fact.</div>
 <h3>awaitNanos</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">awaitNanos</span><wbr><span class="parameters">(long&nbsp;nanosTimeout)</span>
-         throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+         throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Causes the current thread to wait until it is signalled or interrupted,
 or the specified waiting time elapses.
 
@@ -437,7 +437,7 @@ thread returns it is <em>guaranteed</em> to hold this lock.
 <li>is <a href="../../../lang/Thread.html#interrupt()">interrupted</a> while waiting
 and interruption of thread suspension is supported,
 </ul>
-then <a href="../../../lang/InterruptedException.html" title="class in java.lang"><code>InterruptedException</code></a> is thrown and the current thread's
+then <a href="../../../lang/InterruptedException.html" title="java.lang 包中的类"><code>InterruptedException</code></a> is thrown and the current thread's
 interrupted status is cleared. It is not specified, in the first
 case, whether or not the test for interruption occurs before the lock
 is released.
@@ -479,7 +479,7 @@ than specified when re-waits occur.
 <code>Condition</code> when this method is called.
 It is up to the implementation to determine if this is
 the case and if not, how to respond. Typically, an exception will be
-thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a>) and the
+thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a>) and the
 implementation must document that fact.
 
 <p>An implementation can favor responding to an interrupt over normal
@@ -488,17 +488,17 @@ of the specified waiting time. In either case the implementation
 must ensure that the signal is redirected to another waiting thread, if
 there is one.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>nanosTimeout</code> - the maximum time to wait, in nanoseconds</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an estimate of the <code>nanosTimeout</code> value minus
         the time spent waiting upon return from this method.
         A positive value may be used as the argument to a
         subsequent call to this method to finish waiting out
         the desired time.  A value less than or equal to zero
         indicates that no time remains.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
         (and interruption of thread suspension is supported)</dd>
 </dl>
 </div>
@@ -509,21 +509,21 @@ there is one.</div>
 <h3>await</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">await</span><wbr><span class="parameters">(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-       throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+       throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Causes the current thread to wait until it is signalled or interrupted,
 or the specified waiting time elapses. This method is behaviorally
 equivalent to:
 <pre> <code>awaitNanos(unit.toNanos(time)) &gt; 0</code></pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>time</code> - the maximum time to wait</dd>
 <dd><code>unit</code> - the time unit of the <code>time</code> argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>false</code> if the waiting time detectably elapsed
         before return from the method, else <code>true</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
         (and interruption of thread suspension is supported)</dd>
 </dl>
 </div>
@@ -533,8 +533,8 @@ equivalent to:
 <section class="detail" id="awaitUntil(java.util.Date)">
 <h3>awaitUntil</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">awaitUntil</span><wbr><span class="parameters">(<a href="../../Date.html" title="class in java.util">Date</a>&nbsp;deadline)</span>
-            throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">awaitUntil</span><wbr><span class="parameters">(<a href="../../Date.html" title="java.util 包中的类">Date</a>&nbsp;deadline)</span>
+            throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Causes the current thread to wait until it is signalled or interrupted,
 or the specified deadline elapses.
 
@@ -563,7 +563,7 @@ thread returns it is <em>guaranteed</em> to hold this lock.
 <li>is <a href="../../../lang/Thread.html#interrupt()">interrupted</a> while waiting
 and interruption of thread suspension is supported,
 </ul>
-then <a href="../../../lang/InterruptedException.html" title="class in java.lang"><code>InterruptedException</code></a> is thrown and the current thread's
+then <a href="../../../lang/InterruptedException.html" title="java.lang 包中的类"><code>InterruptedException</code></a> is thrown and the current thread's
 interrupted status is cleared. It is not specified, in the first
 case, whether or not the test for interruption occurs before the lock
 is released.
@@ -593,7 +593,7 @@ which can be used as follows:
 <code>Condition</code> when this method is called.
 It is up to the implementation to determine if this is
 the case and if not, how to respond. Typically, an exception will be
-thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a>) and the
+thrown (such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a>) and the
 implementation must document that fact.
 
 <p>An implementation can favor responding to an interrupt over normal
@@ -602,13 +602,13 @@ of the specified deadline. In either case the implementation
 must ensure that the signal is redirected to another waiting thread, if
 there is one.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>deadline</code> - the absolute time to wait until</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>false</code> if the deadline has elapsed upon return, else
         <code>true</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
         (and interruption of thread suspension is supported)</dd>
 </dl>
 </div>
@@ -631,7 +631,7 @@ lock before returning from <code>await</code>.
 current thread hold the lock associated with this <code>
 Condition</code> when this method is called. Implementations must
 document this precondition and any actions taken if the lock is
-not held. Typically, an exception such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a> will be thrown.</div>
+not held. Typically, an exception such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a> will be thrown.</div>
 </div>
 </section>
 </li>
@@ -652,7 +652,7 @@ return from <code>await</code>.
 current thread hold the lock associated with this <code>
 Condition</code> when this method is called. Implementations must
 document this precondition and any actions taken if the lock is
-not held. Typically, an exception such as <a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang"><code>IllegalMonitorStateException</code></a> will be thrown.</div>
+not held. Typically, an exception such as <a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类"><code>IllegalMonitorStateException</code></a> will be thrown.</div>
 </div>
 </section>
 </li>

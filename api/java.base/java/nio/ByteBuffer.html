@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio</a></li>
 <li><a href="ByteBuffer.html" class="current-selection">ByteBuffer</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -103,9 +103,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#direct-vs-non-direct-buffers-heading" tabindex="0">Direct vs. non-direct buffers</a></li>
 <li><a href="#access-to-binary-data-heading" tabindex="0">Access to binary data</a></li>
@@ -113,8 +113,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#optional-operations-heading" tabindex="0">Optional operations</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#allocateDirect(int)" tabindex="0">allocateDirect(int)</a></li>
 <li><a href="#allocate(int)" tabindex="0">allocate(int)</a></li>
@@ -196,28 +196,28 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ByteBuffer" class="title">Class ByteBuffer</h1>
+<h1 title="类 ByteBuffer" class="title">类 ByteBuffer</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="Buffer.html" title="class in java.nio">java.nio.Buffer</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="Buffer.html" title="java.nio 包中的类">java.nio.Buffer</a>
 <div class="inheritance">java.nio.ByteBuffer</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&gt;</code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="MappedByteBuffer.html" title="class in java.nio">MappedByteBuffer</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="MappedByteBuffer.html" title="java.nio 包中的类">MappedByteBuffer</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract sealed class </span><span class="element-name type-name-label">ByteBuffer</span>
-<span class="extends-implements">extends <a href="Buffer.html" title="class in java.nio">Buffer</a>
-implements <a href="../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&gt;</span>
-<span class="permits">permits <a href="MappedByteBuffer.html" title="class in java.nio">MappedByteBuffer</a> <span class="permits-note">(not exhaustive)</span></span></div>
+<span class="extends-implements">extends <a href="Buffer.html" title="java.nio 包中的类">Buffer</a>
+implements <a href="../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&gt;</span>
+<span class="permits">permits <a href="MappedByteBuffer.html" title="java.nio 包中的类">MappedByteBuffer</a> <span class="permits-note">(not exhaustive)</span></span></div>
 <div class="block">A byte buffer.
 
 <p> This class defines six categories of operations upon
@@ -313,7 +313,7 @@ that explicit buffer management can be done in performance-critical code.
 primitive types, except <code>boolean</code>.  Primitive values are translated
 to (or from) sequences of bytes according to the buffer's current byte
 order, which may be retrieved and modified via the <a href="#order()"><code>order</code></a>
-methods.  Specific byte orders are represented by instances of the <a href="ByteOrder.html" title="class in java.nio"><code>ByteOrder</code></a> class.  The initial order of a byte buffer is always <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.
+methods.  Specific byte orders are represented by instances of the <a href="ByteOrder.html" title="java.nio 包中的类"><code>ByteOrder</code></a> class.  The initial order of a byte buffer is always <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.
 
 <p> For access to heterogeneous binary data, that is, sequences of values of
 different types, this class defines a family of absolute and relative
@@ -342,7 +342,7 @@ given byte buffer.  A <i>view buffer</i> is simply another buffer whose
 content is backed by the byte buffer.  Changes to the byte buffer's content
 will be visible in the view buffer, and vice versa; the two buffers'
 position, limit, and mark values are independent.  The <a href="#asFloatBuffer()"><code>asFloatBuffer</code></a> method, for example, creates an instance of
-the <a href="FloatBuffer.html" title="class in java.nio"><code>FloatBuffer</code></a> class that is backed by the byte buffer upon which
+the <a href="FloatBuffer.html" title="java.nio 包中的类"><code>FloatBuffer</code></a> class that is backed by the byte buffer upon which
 the method is invoked.  Corresponding view-creation methods are defined for
 the types <code>char, short, int, long</code>, and <code>double</code>.
 
@@ -441,14 +441,14 @@ can, for example, be replaced by the single statement
 <h2 id="optional-operations-heading"> Optional operations </h2>
 Methods specified as
 <i><a href="Buffer.html#read-only-buffers-heading">optional
-operations</a></i> throw a <a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a> when invoked
+operations</a></i> throw a <a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a> when invoked
 on a <a href="Buffer.html#isReadOnly()">read-only</a> ByteBuffer. The
 methods <a href="#array()">array</a> and <a href="#arrayOffset()">arrayOffset</a>
-throw an <a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a> if the ByteBuffer is
+throw an <a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a> if the ByteBuffer is
 not backed by an <a href="Buffer.html#hasArray()">accessible byte array</a>
 (irrespective of whether the ByteBuffer is read-only).</div>
 <dl class="notes"><dt>Sealed Class Hierarchy Graph:</dt><dd><a class="sealed-graph" href="ByteBuffer-sealed-graph.svg"><img style="vertical-align:top" alt="Sealed class hierarchy graph for ByteBuffer" src="ByteBuffer-sealed-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Sealed class hierarchy graph for ByteBuffer" src="ByteBuffer-sealed-graph.svg"></span></a></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -458,15 +458,15 @@ not backed by an <a href="Buffer.html#hasArray()">accessible byte array</a>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#alignedSlice(int)" class="member-name-link">alignedSlice</a><wbr>(int&nbsp;unitSize)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a new byte buffer whose content is a shared and aligned
@@ -479,12 +479,12 @@ subsequence of this buffer's content.</div>
 <div class="block">Returns the memory address, pointing to the byte at the given index,
 modulo the given unit size.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allocate(int)" class="member-name-link">allocate</a><wbr>(int&nbsp;capacity)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Allocates a new byte buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#allocateDirect(int)" class="member-name-link">allocateDirect</a><wbr>(int&nbsp;capacity)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Allocates a new direct byte buffer.</div>
@@ -501,68 +501,68 @@ buffer&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 <div class="block">Returns the offset within this buffer's backing array of the first
 element of the buffer&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="CharBuffer.html" title="class in java.nio">CharBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="CharBuffer.html" title="java.nio 包中的类">CharBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asCharBuffer()" class="member-name-link">asCharBuffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as a char buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="DoubleBuffer.html" title="class in java.nio">DoubleBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="DoubleBuffer.html" title="java.nio 包中的类">DoubleBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asDoubleBuffer()" class="member-name-link">asDoubleBuffer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as a double buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="FloatBuffer.html" title="class in java.nio">FloatBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="FloatBuffer.html" title="java.nio 包中的类">FloatBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asFloatBuffer()" class="member-name-link">asFloatBuffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as a float buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="IntBuffer.html" title="class in java.nio">IntBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="IntBuffer.html" title="java.nio 包中的类">IntBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asIntBuffer()" class="member-name-link">asIntBuffer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as an int buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="LongBuffer.html" title="class in java.nio">LongBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="LongBuffer.html" title="java.nio 包中的类">LongBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asLongBuffer()" class="member-name-link">asLongBuffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as a long buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asReadOnlyBuffer()" class="member-name-link">asReadOnlyBuffer</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new, read-only byte buffer that shares this buffer's
 content.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ShortBuffer.html" title="class in java.nio">ShortBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ShortBuffer.html" title="java.nio 包中的类">ShortBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asShortBuffer()" class="member-name-link">asShortBuffer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a view of this byte buffer as a short buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Clears this buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#compact()" class="member-name-link">compact</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compacts this buffer&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareTo(java.nio.ByteBuffer)" class="member-name-link">compareTo</a><wbr>(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;that)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareTo(java.nio.ByteBuffer)" class="member-name-link">compareTo</a><wbr>(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;that)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Compares this buffer to another.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#duplicate()" class="member-name-link">duplicate</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new byte buffer that shares this buffer's content.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;ob)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;ob)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tells whether or not this buffer is equal to another object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#flip()" class="member-name-link">flip</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Flips this buffer.</div>
@@ -572,12 +572,12 @@ content.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>get</i> method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(byte%5B%5D)" class="member-name-link">get</a><wbr>(byte[]&nbsp;dst)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Relative bulk <i>get</i> method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(byte%5B%5D,int,int)" class="member-name-link">get</a><wbr>(byte[]&nbsp;dst,
  int&nbsp;offset,
  int&nbsp;length)</code></div>
@@ -589,13 +589,13 @@ content.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>get</i> method.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(int,byte%5B%5D)" class="member-name-link">get</a><wbr>(int&nbsp;index,
  byte[]&nbsp;dst)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Absolute bulk <i>get</i> method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(int,byte%5B%5D,int,int)" class="member-name-link">get</a><wbr>(int&nbsp;index,
  byte[]&nbsp;dst,
  int&nbsp;offset,
@@ -679,67 +679,67 @@ array.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tells whether or not this byte buffer is direct.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#limit(int)" class="member-name-link">limit</a><wbr>(int&nbsp;newLimit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets this buffer's limit.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mark()" class="member-name-link">mark</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets this buffer's mark at its position.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mismatch(java.nio.ByteBuffer)" class="member-name-link">mismatch</a><wbr>(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;that)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mismatch(java.nio.ByteBuffer)" class="member-name-link">mismatch</a><wbr>(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;that)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds and returns the relative index of the first mismatch between this
 buffer and a given buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteOrder.html" title="class in java.nio">ByteOrder</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteOrder.html" title="java.nio 包中的类">ByteOrder</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#order()" class="member-name-link">order</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieves this buffer's byte order.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#order(java.nio.ByteOrder)" class="member-name-link">order</a><wbr>(<a href="ByteOrder.html" title="class in java.nio">ByteOrder</a>&nbsp;bo)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#order(java.nio.ByteOrder)" class="member-name-link">order</a><wbr>(<a href="ByteOrder.html" title="java.nio 包中的类">ByteOrder</a>&nbsp;bo)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Modifies this buffer's byte order.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#position(int)" class="member-name-link">position</a><wbr>(int&nbsp;newPosition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets this buffer's position.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#put(byte)" class="member-name-link">put</a><wbr>(byte&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(byte%5B%5D)" class="member-name-link">put</a><wbr>(byte[]&nbsp;src)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(byte%5B%5D,int,int)" class="member-name-link">put</a><wbr>(byte[]&nbsp;src,
  int&nbsp;offset,
  int&nbsp;length)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#put(int,byte)" class="member-name-link">put</a><wbr>(int&nbsp;index,
  byte&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(int,byte%5B%5D)" class="member-name-link">put</a><wbr>(int&nbsp;index,
  byte[]&nbsp;src)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Absolute bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(int,byte%5B%5D,int,int)" class="member-name-link">put</a><wbr>(int&nbsp;index,
  byte[]&nbsp;src,
  int&nbsp;offset,
@@ -747,131 +747,131 @@ buffer and a given buffer.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Absolute bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(int,java.nio.ByteBuffer,int,int)" class="member-name-link">put</a><wbr>(int&nbsp;index,
- <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
+ <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
  int&nbsp;offset,
  int&nbsp;length)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Absolute bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(java.nio.ByteBuffer)" class="member-name-link">put</a><wbr>(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(java.nio.ByteBuffer)" class="member-name-link">put</a><wbr>(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putChar(char)" class="member-name-link">putChar</a><wbr>(char&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing a char
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putChar(int,char)" class="member-name-link">putChar</a><wbr>(int&nbsp;index,
  char&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing a char
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putDouble(double)" class="member-name-link">putDouble</a><wbr>(double&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing a double
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putDouble(int,double)" class="member-name-link">putDouble</a><wbr>(int&nbsp;index,
  double&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing a double
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putFloat(float)" class="member-name-link">putFloat</a><wbr>(float&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing a float
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putFloat(int,float)" class="member-name-link">putFloat</a><wbr>(int&nbsp;index,
  float&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing a float
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putInt(int)" class="member-name-link">putInt</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing an int
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putInt(int,int)" class="member-name-link">putInt</a><wbr>(int&nbsp;index,
  int&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing an int
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putLong(int,long)" class="member-name-link">putLong</a><wbr>(int&nbsp;index,
  long&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing a long
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putLong(long)" class="member-name-link">putLong</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing a long
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putShort(int,short)" class="member-name-link">putShort</a><wbr>(int&nbsp;index,
  short&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Absolute <i>put</i> method for writing a short
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putShort(short)" class="member-name-link">putShort</a><wbr>(short&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Relative <i>put</i> method for writing a short
 value&nbsp;&nbsp;<i>(optional operation)</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#reset()" class="member-name-link">reset</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Resets this buffer's position to the previously-marked position.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#rewind()" class="member-name-link">rewind</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Rewinds this buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#slice()" class="member-name-link">slice</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new byte buffer whose content is a shared subsequence of
 this buffer's content.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#slice(int,int)" class="member-name-link">slice</a><wbr>(int&nbsp;index,
  int&nbsp;length)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new byte buffer whose content is a shared subsequence of
 this buffer's content.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string summarizing the state of this buffer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(byte%5B%5D)" class="member-name-link">wrap</a><wbr>(byte[]&nbsp;array)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Wraps a byte array into a buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#wrap(byte%5B%5D,int,int)" class="member-name-link">wrap</a><wbr>(byte[]&nbsp;array,
  int&nbsp;offset,
  int&nbsp;length)</code></div>
@@ -882,10 +882,10 @@ this buffer's content.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.Buffer">Methods declared in class&nbsp;<a href="Buffer.html#method-summary" title="class in java.nio">Buffer</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.Buffer">在类 <a href="Buffer.html#method-summary" title="java.nio 包中的类">Buffer</a> 中声明的方法</h3>
 <code><a href="Buffer.html#capacity()" title="capacity()">capacity</a>, <a href="Buffer.html#hasRemaining()" title="hasRemaining()">hasRemaining</a>, <a href="Buffer.html#isReadOnly()" title="isReadOnly()">isReadOnly</a>, <a href="Buffer.html#limit()" title="limit()">limit</a>, <a href="Buffer.html#position()" title="position()">position</a>, <a href="Buffer.html#remaining()" title="remaining()">remaining</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -896,13 +896,13 @@ this buffer's content.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="allocateDirect(int)">
 <h3>allocateDirect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">allocateDirect</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">allocateDirect</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
 <div class="block">Allocates a new direct byte buffer.
 
 <p> The new buffer's position will be zero, its limit will be its
@@ -911,12 +911,12 @@ initialized to zero, and its byte order will be
 <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.  Whether or not it has a
 <a href="#hasArray()"><code>backing array</code></a> is unspecified.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>capacity</code> - The new buffer's capacity, in bytes</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the <code>capacity</code> is a negative integer</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the <code>capacity</code> is a negative integer</dd>
 </dl>
 </div>
 </section>
@@ -925,7 +925,7 @@ initialized to zero, and its byte order will be
 <section class="detail" id="allocate(int)">
 <h3>allocate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">allocate</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">allocate</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
 <div class="block">Allocates a new byte buffer.
 
 <p> The new buffer's position will be zero, its limit will be its
@@ -940,12 +940,12 @@ initialized to zero, and its byte order will be
 It will have a <a href="#array()"><code>backing array</code></a>, and its
 <a href="#arrayOffset()"><code>array offset</code></a> will be zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>capacity</code> - The new buffer's capacity, in bytes</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the <code>capacity</code> is a negative integer</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the <code>capacity</code> is a negative integer</dd>
 </dl>
 </div>
 </section>
@@ -954,7 +954,7 @@ It will have a <a href="#array()"><code>backing array</code></a>, and its
 <section class="detail" id="wrap(byte[],int,int)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(byte[]&nbsp;array,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(byte[]&nbsp;array,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
 <div class="block">Wraps a byte array into a buffer.
@@ -974,7 +974,7 @@ byte order will be
 Its <a href="#array()"><code>backing array</code></a> will be the given array, and
 its <a href="#arrayOffset()"><code>array offset</code></a> will be zero.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>array</code> - The array that will back the new buffer</dd>
 <dd><code>offset</code> - The offset of the subarray to be used; must be non-negative and
         no larger than <code>array.length</code>.  The new buffer's position
@@ -983,10 +983,10 @@ its <a href="#arrayOffset()"><code>array offset</code></a> will be zero.  </p></
         must be non-negative and no larger than
         <code>array.length - offset</code>.
         The new buffer's limit will be set to <code>offset + length</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
          parameters do not hold</dd>
 </dl>
 </div>
@@ -996,7 +996,7 @@ its <a href="#arrayOffset()"><code>array offset</code></a> will be zero.  </p></
 <section class="detail" id="wrap(byte[])">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(byte[]&nbsp;array)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(byte[]&nbsp;array)</span></div>
 <div class="block">Wraps a byte array into a buffer.
 
 <p> The new buffer will be backed by the given byte array;
@@ -1013,9 +1013,9 @@ undefined, and its byte order will be
 Its <a href="#array()"><code>backing array</code></a> will be the given array, and its
 <a href="#arrayOffset()"><code>array offset</code></a> will be zero.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>array</code> - The array that will back this buffer</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
 </dl>
 </div>
@@ -1025,7 +1025,7 @@ Its <a href="#array()"><code>backing array</code></a> will be the given array, a
 <section class="detail" id="slice()">
 <h3>slice</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">slice</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">slice</span>()</div>
 <div class="block">Creates a new byte buffer whose content is a shared subsequence of
 this buffer's content.
 
@@ -1045,11 +1045,11 @@ undefined, and its byte order will be
 The new buffer will be direct if, and only if, this buffer is direct, and
 it will be read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#slice()">slice</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#slice()">slice</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#alignedSlice(int)"><code>alignedSlice(int)</code></a></li>
@@ -1063,7 +1063,7 @@ it will be read-only if, and only if, this buffer is read-only.  </p></div>
 <section class="detail" id="slice(int,int)">
 <h3>slice</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">slice</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">slice</span><wbr><span class="parameters">(int&nbsp;index,
  int&nbsp;length)</span></div>
 <div class="block">Creates a new byte buffer whose content is a shared subsequence of
 this buffer's content.
@@ -1084,20 +1084,20 @@ will be
 The new buffer will be direct if, and only if, this buffer is direct,
 and it will be read-only if, and only if, this buffer is read-only. </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#slice(int,int)">slice</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#slice(int,int)">slice</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>参数:</dt>
 <dd><code>index</code> - The position in this buffer at which the content of the new
          buffer will start; must be non-negative and no larger than
          <a href="Buffer.html#limit()"><code>limit()</code></a></dd>
 <dd><code>length</code> - The number of elements the new buffer will contain; must be
          non-negative and no larger than <code>limit() - index</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative or greater than <code>limit()</code>,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative or greater than <code>limit()</code>,
          <code>length</code> is negative, or <code>length &gt; limit() - index</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -1107,7 +1107,7 @@ and it will be read-only if, and only if, this buffer is read-only. </p></div>
 <section class="detail" id="duplicate()">
 <h3>duplicate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">duplicate</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">duplicate</span>()</div>
 <div class="block">Creates a new byte buffer that shares this buffer's content.
 
 <p> The content of the new buffer will be that of this buffer.  Changes
@@ -1125,9 +1125,9 @@ order will be <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.
 The new buffer will be direct if, and only if, this buffer is direct, and
 it will be read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#duplicate()">duplicate</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#duplicate()">duplicate</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
 </dl>
 </div>
@@ -1137,7 +1137,7 @@ it will be read-only if, and only if, this buffer is read-only.  </p></div>
 <section class="detail" id="asReadOnlyBuffer()">
 <h3>asReadOnlyBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">asReadOnlyBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">asReadOnlyBuffer</span>()</div>
 <div class="block">Creates a new, read-only byte buffer that shares this buffer's
 content.
 
@@ -1158,7 +1158,7 @@ order will be <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.
 <p> If this buffer is itself read-only then this method behaves in
 exactly the same way as the <a href="#duplicate()"><code>duplicate</code></a> method.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new, read-only byte buffer</dd>
 </dl>
 </div>
@@ -1172,10 +1172,10 @@ exactly the same way as the <a href="#duplicate()"><code>duplicate</code></a> me
 <div class="block">Relative <i>get</i> method.  Reads the byte at this buffer's
 current position, and then increments the position.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The byte at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If the buffer's current position is not smaller than its limit</dd>
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If the buffer's current position is not smaller than its limit</dd>
 </dl>
 </div>
 </section>
@@ -1184,19 +1184,19 @@ current position, and then increments the position.</div>
 <section class="detail" id="put(byte)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte&nbsp;b)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte&nbsp;b)</span></div>
 <div class="block">Relative <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
 
 <p> Writes the given byte into this buffer at the current
 position, and then increments the position. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>b</code> - The byte to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If this buffer's current position is not smaller than its limit</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If this buffer's current position is not smaller than its limit</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1209,12 +1209,12 @@ position, and then increments the position. </p></div>
 <div class="block">Absolute <i>get</i> method.  Reads the byte at the given
 index.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the byte will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The byte at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit</dd>
 </dl>
 </div>
@@ -1224,22 +1224,22 @@ index.</div>
 <section class="detail" id="put(int,byte)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
  byte&nbsp;b)</span></div>
 <div class="block">Absolute <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
 
 <p> Writes the given byte into this buffer at the given
 index. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the byte will be written</dd>
 <dd><code>b</code> - The byte value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1248,7 +1248,7 @@ index. </p></div>
 <section class="detail" id="get(byte[],int,int)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(byte[]&nbsp;dst,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(byte[]&nbsp;dst,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
 <div class="block">Relative bulk <i>get</i> method.
@@ -1257,7 +1257,7 @@ index. </p></div>
 destination array.  If there are fewer bytes remaining in the
 buffer than are required to satisfy the request, that is, if
 <code>length</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>, then no
-bytes are transferred and a <a href="BufferUnderflowException.html" title="class in java.nio"><code>BufferUnderflowException</code></a> is
+bytes are transferred and a <a href="BufferUnderflowException.html" title="java.nio 包中的类"><code>BufferUnderflowException</code></a> is
 thrown.
 
 <p> Otherwise, this method copies <code>length</code> bytes from this
@@ -1279,7 +1279,7 @@ the loop
 except that it first checks that there are sufficient bytes in
 this buffer and it is potentially much more efficient.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>dst</code> - The array into which bytes are to be written</dd>
 <dd><code>offset</code> - The offset within the array of the first byte to be
         written; must be non-negative and no larger than
@@ -1287,12 +1287,12 @@ this buffer and it is potentially much more efficient.</div>
 <dd><code>length</code> - The maximum number of bytes to be written to the given
         array; must be non-negative and no larger than
         <code>dst.length - offset</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than <code>length</code> bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than <code>length</code> bytes
          remaining in this buffer</dd>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
          parameters do not hold</dd>
 </dl>
 </div>
@@ -1302,7 +1302,7 @@ this buffer and it is potentially much more efficient.</div>
 <section class="detail" id="get(byte[])">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(byte[]&nbsp;dst)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(byte[]&nbsp;dst)</span></div>
 <div class="block">Relative bulk <i>get</i> method.
 
 <p> This method transfers bytes from this buffer into the given
@@ -1315,12 +1315,12 @@ destination array.  An invocation of this method of the form
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>dst</code> - The destination array</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than <code>length</code> bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than <code>length</code> bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -1330,7 +1330,7 @@ destination array.  An invocation of this method of the form
 <section class="detail" id="get(int,byte[],int,int)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(int&nbsp;index,
  byte[]&nbsp;dst,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
@@ -1354,7 +1354,7 @@ much more efficient:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index in this buffer from which the first byte will be
         read; must be non-negative and less than <code>limit()</code></dd>
 <dd><code>dst</code> - The destination array</dd>
@@ -1364,12 +1364,12 @@ much more efficient:
 <dd><code>length</code> - The number of bytes to be written to the given array;
         must be non-negative and no larger than the smaller of
         <code>limit() - index</code> and <code>dst.length - offset</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
          <code>length</code> parameters do not hold</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -1379,7 +1379,7 @@ much more efficient:
 <section class="detail" id="get(int,byte[])">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(int&nbsp;index,
  byte[]&nbsp;dst)</span></div>
 <div class="block">Absolute bulk <i>get</i> method.
 
@@ -1395,16 +1395,16 @@ way as the invocation:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index in this buffer from which the first byte will be
         read; must be non-negative and less than <code>limit()</code></dd>
 <dd><code>dst</code> - The destination array</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative, not smaller than <code>limit()</code>,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative, not smaller than <code>limit()</code>,
          or <code>limit() - index &lt; dst.length</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -1414,14 +1414,14 @@ way as the invocation:
 <section class="detail" id="put(java.nio.ByteBuffer)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src)</span></div>
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
 
 <p> This method transfers the bytes remaining in the given source
 buffer into this buffer.  If there are more bytes remaining in the
 source buffer than in this buffer, that is, if
 <code>src.remaining()</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>,
-then no bytes are transferred and a <a href="BufferOverflowException.html" title="class in java.nio"><code>BufferOverflowException</code></a> is thrown.
+then no bytes are transferred and a <a href="BufferOverflowException.html" title="java.nio 包中的类"><code>BufferOverflowException</code></a> is thrown.
 
 <p> Otherwise, this method copies
 <i>n</i>&nbsp;=&nbsp;<code>src.remaining()</code> bytes from the given
@@ -1444,16 +1444,16 @@ the source buffer share the same backing array or memory, then the
 result will be as if the source elements were first copied to an
 intermediate location before being written into this buffer.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - The source buffer from which bytes are to be read;
         must not be this buffer</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there is insufficient space in this buffer
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there is insufficient space in this buffer
          for the remaining bytes in the source buffer</dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the source buffer is this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the source buffer is this buffer</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1462,8 +1462,8 @@ intermediate location before being written into this buffer.</div>
 <section class="detail" id="put(int,java.nio.ByteBuffer,int,int)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
- <a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
+ <a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
 <div class="block">Absolute bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -1490,7 +1490,7 @@ the source buffer share the same backing array or memory, then the
 result will be as if the source elements were first copied to an
 intermediate location before being written into this buffer.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index in this buffer at which the first byte will be
        written; must be non-negative and less than <code>limit()</code></dd>
 <dd><code>src</code> - The buffer from which bytes are to be read</dd>
@@ -1499,13 +1499,13 @@ intermediate location before being written into this buffer.</div>
 <dd><code>length</code> - The number of bytes to be read from the given buffer;
        must be non-negative and no larger than the smaller of
        <code>limit() - index</code> and <code>src.limit() - offset</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
         <code>length</code> parameters do not hold</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
-<dt>Since:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>自:</dt>
 <dd>16</dd>
 </dl>
 </div>
@@ -1515,7 +1515,7 @@ intermediate location before being written into this buffer.</div>
 <section class="detail" id="put(byte[],int,int)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -1524,7 +1524,7 @@ intermediate location before being written into this buffer.</div>
 source array.  If there are more bytes to be copied from the array
 than remain in this buffer, that is, if
 <code>length</code>&nbsp;<code>&gt;</code>&nbsp;<code>remaining()</code>, then no
-bytes are transferred and a <a href="BufferOverflowException.html" title="class in java.nio"><code>BufferOverflowException</code></a> is
+bytes are transferred and a <a href="BufferOverflowException.html" title="java.nio 包中的类"><code>BufferOverflowException</code></a> is
 thrown.
 
 <p> Otherwise, this method copies <code>length</code> bytes from the
@@ -1546,20 +1546,20 @@ the loop
 except that it first checks that there is sufficient space in this
 buffer and it is potentially much more efficient.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - The array from which bytes are to be read</dd>
 <dd><code>offset</code> - The offset within the array of the first byte to be read;
         must be non-negative and no larger than <code>src.length</code></dd>
 <dd><code>length</code> - The number of bytes to be read from the given array;
         must be non-negative and no larger than
         <code>src.length - offset</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there is insufficient space in this buffer</dd>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there is insufficient space in this buffer</dd>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and <code>length</code>
          parameters do not hold</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1568,7 +1568,7 @@ buffer and it is potentially much more efficient.</div>
 <section class="detail" id="put(byte[])">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(byte[]&nbsp;src)</span></div>
 <div class="block">Relative bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
 
 <p> This method transfers the entire content of the given source
@@ -1582,13 +1582,13 @@ invocation
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - The source array</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there is insufficient space in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there is insufficient space in this buffer</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1597,7 +1597,7 @@ invocation
 <section class="detail" id="put(int,byte[],int,int)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
  byte[]&nbsp;src,
  int&nbsp;offset,
  int&nbsp;length)</span></div>
@@ -1620,7 +1620,7 @@ much more efficient:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index in this buffer at which the first byte will be
         written; must be non-negative and less than <code>limit()</code></dd>
 <dd><code>src</code> - The array from which bytes are to be read</dd>
@@ -1629,13 +1629,13 @@ much more efficient:
 <dd><code>length</code> - The number of bytes to be read from the given array;
         must be non-negative and no larger than the smaller of
         <code>limit() - index</code> and <code>src.length - offset</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>index</code>, <code>offset</code>, and
          <code>length</code> parameters do not hold</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
-<dt>Since:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -1645,7 +1645,7 @@ much more efficient:
 <section class="detail" id="put(int,byte[])">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(int&nbsp;index,
  byte[]&nbsp;src)</span></div>
 <div class="block">Absolute bulk <i>put</i> method&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -1660,17 +1660,17 @@ behaves in exactly the same way as the invocation:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index in this buffer at which the first byte will be
         written; must be non-negative and less than <code>limit()</code></dd>
 <dd><code>src</code> - The array from which bytes are to be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative, not smaller than <code>limit()</code>,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative, not smaller than <code>limit()</code>,
          or <code>limit() - index &lt; src.length</code></dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
-<dt>Since:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -1688,9 +1688,9 @@ array.
 and <a href="#arrayOffset()"><code>arrayOffset</code></a> methods may safely be invoked.
 </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#hasArray()">hasArray</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#hasArray()">hasArray</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this buffer
          is backed by an array and is not read-only</dd>
 </dl>
@@ -1712,13 +1712,13 @@ array's content to be modified, and vice versa.
 method in order to ensure that this buffer has an accessible backing
 array.  </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#array()">array</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#array()">array</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>The array that backs this buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is backed by an array but is read-only</dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If this buffer is not backed by an accessible array</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is backed by an array but is read-only</dd>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If this buffer is not backed by an accessible array</dd>
 </dl>
 </div>
 </section>
@@ -1738,14 +1738,14 @@ corresponds to array index <i>p</i>&nbsp;+&nbsp;<code>arrayOffset()</code>.
 method in order to ensure that this buffer has an accessible backing
 array.  </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#arrayOffset()">arrayOffset</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#arrayOffset()">arrayOffset</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>The offset within this buffer's array
          of the first element of the buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is backed by an array but is read-only</dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If this buffer is not backed by an accessible array</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is backed by an array but is read-only</dd>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If this buffer is not backed by an accessible array</dd>
 </dl>
 </div>
 </section>
@@ -1754,18 +1754,18 @@ array.  </p></div>
 <section class="detail" id="position(int)">
 <h3>position</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">position</span><wbr><span class="parameters">(int&nbsp;newPosition)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">position</span><wbr><span class="parameters">(int&nbsp;newPosition)</span></div>
 <div class="block">Sets this buffer's position.  If the mark is defined and larger than the
 new position then it is discarded.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#position(int)">position</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#position(int)">position</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>参数:</dt>
 <dd><code>newPosition</code> - The new position value; must be non-negative
         and no larger than the current limit</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1775,19 +1775,19 @@ new position then it is discarded.</div>
 <section class="detail" id="limit(int)">
 <h3>limit</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">limit</span><wbr><span class="parameters">(int&nbsp;newLimit)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">limit</span><wbr><span class="parameters">(int&nbsp;newLimit)</span></div>
 <div class="block">Sets this buffer's limit.  If the position is larger than the new limit
 then it is set to the new limit.  If the mark is defined and larger than
 the new limit then it is discarded.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#limit(int)">limit</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#limit(int)">limit</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>参数:</dt>
 <dd><code>newLimit</code> - The new limit value; must be non-negative
         and no larger than this buffer's capacity</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1797,14 +1797,14 @@ the new limit then it is discarded.</div>
 <section class="detail" id="mark()">
 <h3>mark</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">mark</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">mark</span>()</div>
 <div class="block">Sets this buffer's mark at its position.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#mark()">mark</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#mark()">mark</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1814,17 +1814,17 @@ the new limit then it is discarded.</div>
 <section class="detail" id="reset()">
 <h3>reset</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">reset</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">reset</span>()</div>
 <div class="block">Resets this buffer's position to the previously-marked position.
 
 <p> Invoking this method neither changes nor discards the mark's
 value. </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#reset()">reset</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#reset()">reset</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1834,7 +1834,7 @@ value. </p></div>
 <section class="detail" id="clear()">
 <h3>clear</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">clear</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">clear</span>()</div>
 <div class="block">Clears this buffer.  The position is set to zero, the limit is set to
 the capacity, and the mark is discarded.
 
@@ -1852,11 +1852,11 @@ the capacity, and the mark is discarded.
 is named as if it did because it will most often be used in situations
 in which that might as well be the case. </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#clear()">clear</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#clear()">clear</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1866,7 +1866,7 @@ in which that might as well be the case. </p></div>
 <section class="detail" id="flip()">
 <h3>flip</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">flip</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">flip</span>()</div>
 <div class="block">Flips this buffer.  The limit is set to the current position and then
 the position is set to zero.  If the mark is defined then it is
 discarded.
@@ -1887,11 +1887,11 @@ this method to prepare for a sequence of channel-write or relative
 <p> This method is often used in conjunction with the <a href="#compact()"><code>compact</code></a> method when transferring data from
 one place to another.  </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#flip()">flip</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#flip()">flip</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1901,7 +1901,7 @@ one place to another.  </p></div>
 <section class="detail" id="rewind()">
 <h3>rewind</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">rewind</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">rewind</span>()</div>
 <div class="block">Rewinds this buffer.  The position is set to zero and the mark is
 discarded.
 
@@ -1917,11 +1917,11 @@ appropriately.  For example:
 </div>
 </div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Buffer.html#rewind()">rewind</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Buffer.html#rewind()">rewind</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1931,7 +1931,7 @@ appropriately.  For example:
 <section class="detail" id="compact()">
 <h3>compact</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">compact</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">compact</span>()</div>
 <div class="block">Compacts this buffer&nbsp;&nbsp;<i>(optional operation)</i>.
 
 <p> The bytes between the buffer's current position and its limit,
@@ -1966,10 +1966,10 @@ from one channel to another via the buffer <code>buf</code>:
 </div>
 </div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -1981,9 +1981,9 @@ from one channel to another via the buffer <code>buf</code>:
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDirect</span>()</div>
 <div class="block">Tells whether or not this byte buffer is direct.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Buffer.html#isDirect()">isDirect</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="class in java.nio">Buffer</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Buffer.html#isDirect()">isDirect</a></code>&nbsp;in class&nbsp;<code><a href="Buffer.html" title="java.nio 包中的类">Buffer</a></code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this buffer is direct</dd>
 </dl>
 </div>
@@ -1993,12 +1993,12 @@ from one channel to another via the buffer <code>buf</code>:
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string summarizing the state of this buffer.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>A summary string</dd>
 </dl>
 </div>
@@ -2019,11 +2019,11 @@ including, the element at <code>limit()</code>&nbsp;-&nbsp;<code>1</code>.
 to use buffers as keys in hash maps or similar data structures unless it
 is known that their contents will not change.  </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>The current hash code of this buffer</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -2038,7 +2038,7 @@ is known that their contents will not change.  </p></div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;ob)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;ob)</span></div>
 <div class="block">Tells whether or not this buffer is equal to another object.
 
 <p> Two byte buffers are equal if, and only if,
@@ -2065,18 +2065,18 @@ is known that their contents will not change.  </p></div>
 
 <p> A byte buffer is not equal to any other type of object.  </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>ob</code> - The object to which this buffer is to be compared</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this buffer is equal to the
           given object</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -2087,7 +2087,7 @@ is known that their contents will not change.  </p></div>
 <section class="detail" id="compareTo(java.nio.ByteBuffer)">
 <h3>compareTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;that)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;that)</span></div>
 <div class="block">Compares this buffer to another.
 
 <p> Two byte buffers are compared by comparing their sequences of
@@ -2107,11 +2107,11 @@ Pairs of <code>byte</code> elements are compared as if by invoking
 
 <p> A byte buffer is not comparable to any other type of object.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../lang/Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../lang/Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>that</code> - the object to be compared.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A negative integer, zero, or a positive integer as this buffer
          is less than, equal to, or greater than the given buffer</dd>
 </dl>
@@ -2122,7 +2122,7 @@ Pairs of <code>byte</code> elements are compared as if by invoking
 <section class="detail" id="mismatch(java.nio.ByteBuffer)">
 <h3>mismatch</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">mismatch</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;that)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">mismatch</span><wbr><span class="parameters">(<a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;that)</span></div>
 <div class="block">Finds and returns the relative index of the first mismatch between this
 buffer and a given buffer.  The index is relative to the
 <a href="Buffer.html#position()"><code>position</code></a> of each buffer and will be in the range of
@@ -2138,12 +2138,12 @@ the index is only valid for the buffer with the larger number of
 remaining elements.
 Otherwise, there is no mismatch.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>that</code> - The byte buffer to be tested for a mismatch with this buffer</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The relative index of the first mismatch between this and the
          given buffer, otherwise -1 if no mismatch.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>11</dd>
 </dl>
 </div>
@@ -2153,14 +2153,14 @@ Otherwise, there is no mismatch.</div>
 <section class="detail" id="order()">
 <h3>order</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteOrder.html" title="class in java.nio">ByteOrder</a></span>&nbsp;<span class="element-name">order</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteOrder.html" title="java.nio 包中的类">ByteOrder</a></span>&nbsp;<span class="element-name">order</span>()</div>
 <div class="block">Retrieves this buffer's byte order.
 
 <p> The byte order is used when reading or writing multibyte values, and
 when creating buffers that are views of this byte buffer.  The order of
 a newly-created byte buffer is always <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer's byte order</dd>
 </dl>
 </div>
@@ -2170,14 +2170,14 @@ a newly-created byte buffer is always <a href="ByteOrder.html#BIG_ENDIAN"><code>
 <section class="detail" id="order(java.nio.ByteOrder)">
 <h3>order</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">order</span><wbr><span class="parameters">(<a href="ByteOrder.html" title="class in java.nio">ByteOrder</a>&nbsp;bo)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">order</span><wbr><span class="parameters">(<a href="ByteOrder.html" title="java.nio 包中的类">ByteOrder</a>&nbsp;bo)</span></div>
 <div class="block">Modifies this buffer's byte order.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>bo</code> - The new byte order,
         either <a href="ByteOrder.html#BIG_ENDIAN"><code>BIG_ENDIAN</code></a>
         or <a href="ByteOrder.html#LITTLE_ENDIAN"><code>LITTLE_ENDIAN</code></a></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
 </dl>
 </div>
@@ -2220,22 +2220,22 @@ and
 
 must hold.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method may be utilized to determine if unit size bytes from an
 index can be accessed atomically, if supported by the native platform.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index to query for alignment offset, must be non-negative, no
         upper bounds check is performed</dd>
 <dd><code>unitSize</code> - The unit size in bytes, must be a power of <code>2</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The indexed byte's memory address modulo the unit size</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the index is negative or the unit size is not a power of
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the index is negative or the unit size is not a power of
         <code>2</code></dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If the buffer is non-direct, and <code>unitSize &gt; 1</code></dd>
-<dt>Since:</dt>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If the buffer is non-direct, and <code>unitSize &gt; 1</code></dd>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#alignedSlice(int)"><code>alignedSlice(int)</code></a></li>
@@ -2249,7 +2249,7 @@ index can be accessed atomically, if supported by the native platform.</dd>
 <section class="detail" id="alignedSlice(int)">
 <h3>alignedSlice</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">alignedSlice</span><wbr><span class="parameters">(int&nbsp;unitSize)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">alignedSlice</span><wbr><span class="parameters">(int&nbsp;unitSize)</span></div>
 <div class="block">Creates a new byte buffer whose content is a shared and aligned
 subsequence of this buffer's content.
 
@@ -2280,20 +2280,20 @@ alignment, its mark will be undefined, and its byte order will be
 The new buffer will be direct if, and only if, this buffer is direct, and
 it will be read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method may be utilized to create a new buffer where unit size bytes
 from index, that is a multiple of the unit size, may be accessed
 atomically, if supported by the native platform.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>unitSize</code> - The unit size in bytes, must be a power of <code>2</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The new byte buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the unit size not a power of <code>2</code></dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If the buffer is non-direct, and <code>unitSize &gt; 1</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the unit size not a power of <code>2</code></dd>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If the buffer is non-direct, and <code>unitSize &gt; 1</code></dd>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#alignmentOffset(int,int)"><code>alignmentOffset(int, int)</code></a></li>
@@ -2315,10 +2315,10 @@ atomically, if supported by the native platform.</dd>
 composing them into a char value according to the current byte order,
 and then increments the position by two.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The char value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than two bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than two bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2328,7 +2328,7 @@ and then increments the position by two.  </p></div>
 <section class="detail" id="putChar(char)">
 <h3>putChar</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putChar</span><wbr><span class="parameters">(char&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putChar</span><wbr><span class="parameters">(char&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing a char
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2336,14 +2336,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by two.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The char value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than two bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than two bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2358,12 +2358,12 @@ increments the position by two.  </p></div>
 <p> Reads two bytes at the given index, composing them into a
 char value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The char value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus one</dd>
 </dl>
@@ -2374,7 +2374,7 @@ char value according to the current byte order.  </p></div>
 <section class="detail" id="putChar(int,char)">
 <h3>putChar</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putChar</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putChar</span><wbr><span class="parameters">(int&nbsp;index,
  char&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing a char
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2382,16 +2382,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes two bytes containing the given char value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The char value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus one</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2400,7 +2400,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asCharBuffer()">
 <h3>asCharBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="CharBuffer.html" title="class in java.nio">CharBuffer</a></span>&nbsp;<span class="element-name">asCharBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="CharBuffer.html" title="java.nio 包中的类">CharBuffer</a></span>&nbsp;<span class="element-name">asCharBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as a char buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -2415,7 +2415,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new char buffer</dd>
 </dl>
 </div>
@@ -2432,10 +2432,10 @@ read-only if, and only if, this buffer is read-only.  </p></div>
 composing them into a short value according to the current byte order,
 and then increments the position by two.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The short value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than two bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than two bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2445,7 +2445,7 @@ and then increments the position by two.  </p></div>
 <section class="detail" id="putShort(short)">
 <h3>putShort</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putShort</span><wbr><span class="parameters">(short&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putShort</span><wbr><span class="parameters">(short&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing a short
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2453,14 +2453,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by two.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The short value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than two bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than two bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2475,12 +2475,12 @@ increments the position by two.  </p></div>
 <p> Reads two bytes at the given index, composing them into a
 short value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The short value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus one</dd>
 </dl>
@@ -2491,7 +2491,7 @@ short value according to the current byte order.  </p></div>
 <section class="detail" id="putShort(int,short)">
 <h3>putShort</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putShort</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putShort</span><wbr><span class="parameters">(int&nbsp;index,
  short&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing a short
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2499,16 +2499,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes two bytes containing the given short value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The short value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus one</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2517,7 +2517,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asShortBuffer()">
 <h3>asShortBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ShortBuffer.html" title="class in java.nio">ShortBuffer</a></span>&nbsp;<span class="element-name">asShortBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ShortBuffer.html" title="java.nio 包中的类">ShortBuffer</a></span>&nbsp;<span class="element-name">asShortBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as a short buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -2532,7 +2532,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new short buffer</dd>
 </dl>
 </div>
@@ -2549,10 +2549,10 @@ read-only if, and only if, this buffer is read-only.  </p></div>
 composing them into an int value according to the current byte order,
 and then increments the position by four.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The int value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than four bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than four bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2562,7 +2562,7 @@ and then increments the position by four.  </p></div>
 <section class="detail" id="putInt(int)">
 <h3>putInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing an int
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2570,14 +2570,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by four.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The int value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than four bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than four bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2592,12 +2592,12 @@ increments the position by four.  </p></div>
 <p> Reads four bytes at the given index, composing them into a
 int value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The int value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus three</dd>
 </dl>
@@ -2608,7 +2608,7 @@ int value according to the current byte order.  </p></div>
 <section class="detail" id="putInt(int,int)">
 <h3>putInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(int&nbsp;index,
  int&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing an int
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2616,16 +2616,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes four bytes containing the given int value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The int value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus three</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2634,7 +2634,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asIntBuffer()">
 <h3>asIntBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="IntBuffer.html" title="class in java.nio">IntBuffer</a></span>&nbsp;<span class="element-name">asIntBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="IntBuffer.html" title="java.nio 包中的类">IntBuffer</a></span>&nbsp;<span class="element-name">asIntBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as an int buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -2649,7 +2649,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new int buffer</dd>
 </dl>
 </div>
@@ -2666,10 +2666,10 @@ read-only if, and only if, this buffer is read-only.  </p></div>
 composing them into a long value according to the current byte order,
 and then increments the position by eight.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The long value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than eight bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than eight bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2679,7 +2679,7 @@ and then increments the position by eight.  </p></div>
 <section class="detail" id="putLong(long)">
 <h3>putLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing a long
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2687,14 +2687,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by eight.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The long value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than eight bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than eight bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2709,12 +2709,12 @@ increments the position by eight.  </p></div>
 <p> Reads eight bytes at the given index, composing them into a
 long value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The long value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus seven</dd>
 </dl>
@@ -2725,7 +2725,7 @@ long value according to the current byte order.  </p></div>
 <section class="detail" id="putLong(int,long)">
 <h3>putLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(int&nbsp;index,
  long&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing a long
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2733,16 +2733,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes eight bytes containing the given long value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The long value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus seven</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2751,7 +2751,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asLongBuffer()">
 <h3>asLongBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="LongBuffer.html" title="class in java.nio">LongBuffer</a></span>&nbsp;<span class="element-name">asLongBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="LongBuffer.html" title="java.nio 包中的类">LongBuffer</a></span>&nbsp;<span class="element-name">asLongBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as a long buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -2766,7 +2766,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new long buffer</dd>
 </dl>
 </div>
@@ -2783,10 +2783,10 @@ read-only if, and only if, this buffer is read-only.  </p></div>
 composing them into a float value according to the current byte order,
 and then increments the position by four.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The float value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than four bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than four bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2796,7 +2796,7 @@ and then increments the position by four.  </p></div>
 <section class="detail" id="putFloat(float)">
 <h3>putFloat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing a float
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2804,14 +2804,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by four.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The float value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than four bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than four bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2826,12 +2826,12 @@ increments the position by four.  </p></div>
 <p> Reads four bytes at the given index, composing them into a
 float value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The float value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus three</dd>
 </dl>
@@ -2842,7 +2842,7 @@ float value according to the current byte order.  </p></div>
 <section class="detail" id="putFloat(int,float)">
 <h3>putFloat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(int&nbsp;index,
  float&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing a float
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2850,16 +2850,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes four bytes containing the given float value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The float value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus three</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2868,7 +2868,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asFloatBuffer()">
 <h3>asFloatBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="FloatBuffer.html" title="class in java.nio">FloatBuffer</a></span>&nbsp;<span class="element-name">asFloatBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="FloatBuffer.html" title="java.nio 包中的类">FloatBuffer</a></span>&nbsp;<span class="element-name">asFloatBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as a float buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -2883,7 +2883,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new float buffer</dd>
 </dl>
 </div>
@@ -2900,10 +2900,10 @@ read-only if, and only if, this buffer is read-only.  </p></div>
 composing them into a double value according to the current byte order,
 and then increments the position by eight.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The double value at the buffer's current position</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferUnderflowException.html" title="class in java.nio">BufferUnderflowException</a></code> - If there are fewer than eight bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferUnderflowException.html" title="java.nio 包中的类">BufferUnderflowException</a></code> - If there are fewer than eight bytes
          remaining in this buffer</dd>
 </dl>
 </div>
@@ -2913,7 +2913,7 @@ and then increments the position by eight.  </p></div>
 <section class="detail" id="putDouble(double)">
 <h3>putDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
 <div class="block">Relative <i>put</i> method for writing a double
 value&nbsp;&nbsp;<i>(optional operation)</i>.
 
@@ -2921,14 +2921,14 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 current byte order, into this buffer at the current position, and then
 increments the position by eight.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - The double value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BufferOverflowException.html" title="class in java.nio">BufferOverflowException</a></code> - If there are fewer than eight bytes
+<dt>抛出:</dt>
+<dd><code><a href="BufferOverflowException.html" title="java.nio 包中的类">BufferOverflowException</a></code> - If there are fewer than eight bytes
          remaining in this buffer</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2943,12 +2943,12 @@ increments the position by eight.  </p></div>
 <p> Reads eight bytes at the given index, composing them into a
 double value according to the current byte order.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index from which the bytes will be read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The double value at the given index</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus seven</dd>
 </dl>
@@ -2959,7 +2959,7 @@ double value according to the current byte order.  </p></div>
 <section class="detail" id="putDouble(int,double)">
 <h3>putDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="class in java.nio">ByteBuffer</a></span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(int&nbsp;index,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a></span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(int&nbsp;index,
  double&nbsp;value)</span></div>
 <div class="block">Absolute <i>put</i> method for writing a double
 value&nbsp;&nbsp;<i>(optional operation)</i>.
@@ -2967,16 +2967,16 @@ value&nbsp;&nbsp;<i>(optional operation)</i>.
 <p> Writes eight bytes containing the given double value, in the
 current byte order, into this buffer at the given index.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - The index at which the bytes will be written</dd>
 <dd><code>value</code> - The double value to be written</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This buffer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>index</code> is negative
          or not smaller than the buffer's limit,
          minus seven</dd>
-<dd><code><a href="ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
+<dd><code><a href="ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - If this buffer is read-only</dd>
 </dl>
 </div>
 </section>
@@ -2985,7 +2985,7 @@ current byte order, into this buffer at the given index.  </p></div>
 <section class="detail" id="asDoubleBuffer()">
 <h3>asDoubleBuffer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="DoubleBuffer.html" title="class in java.nio">DoubleBuffer</a></span>&nbsp;<span class="element-name">asDoubleBuffer</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="DoubleBuffer.html" title="java.nio 包中的类">DoubleBuffer</a></span>&nbsp;<span class="element-name">asDoubleBuffer</span>()</div>
 <div class="block">Creates a view of this byte buffer as a double buffer.
 
 <p> The content of the new buffer will start at this buffer's current
@@ -3000,7 +3000,7 @@ of the byte buffer at the moment the view is created.  The new buffer
 will be direct if, and only if, this buffer is direct, and it will be
 read-only if, and only if, this buffer is read-only.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new double buffer</dd>
 </dl>
 </div>

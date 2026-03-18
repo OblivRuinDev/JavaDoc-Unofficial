@@ -49,7 +49,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.management</a></li>
 <li><a href="DiagnosticCommandMBean.html" class="current-selection">DiagnosticCommandMBean</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -57,39 +57,39 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface DiagnosticCommandMBean" class="title">Interface DiagnosticCommandMBean</h1>
+<h1 title="接口 DiagnosticCommandMBean" class="title">接口 DiagnosticCommandMBean</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../../java.management/javax/management/DynamicMBean.html" title="interface in javax.management">DynamicMBean</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../../../java.management/javax/management/DynamicMBean.html" title="javax.management 包中的接口">DynamicMBean</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">DiagnosticCommandMBean</span><span class="extends-implements">
-extends <a href="../../../../java.management/javax/management/DynamicMBean.html" title="interface in javax.management">DynamicMBean</a></span></div>
+extends <a href="../../../../java.management/javax/management/DynamicMBean.html" title="javax.management 包中的接口">DynamicMBean</a></span></div>
 <div class="block">Management interface for the diagnostic commands for the HotSpot Virtual Machine.
 
 <p>The <code>DiagnosticCommandMBean</code> is registered to the
 <a href="../../../../java.management/java/lang/management/ManagementFactory.html#getPlatformMBeanServer()">platform MBeanServer</a> as are other platform MBeans.
 
-<p>The <a href="../../../../java.management/javax/management/ObjectName.html" title="class in javax.management"><code>ObjectName</code></a> for uniquely identifying
+<p>The <a href="../../../../java.management/javax/management/ObjectName.html" title="javax.management 包中的类"><code>ObjectName</code></a> for uniquely identifying
 the diagnostic MBean within an MBeanServer is:
 <blockquote>
    <code>com.sun.management:type=DiagnosticCommand</code>
 </blockquote>
 
-<p>This MBean is a <a href="../../../../java.management/javax/management/DynamicMBean.html" title="interface in javax.management"><code>DynamicMBean</code></a>
-and also a <a href="../../../../java.management/javax/management/NotificationEmitter.html" title="interface in javax.management"><code>NotificationEmitter</code></a>.
+<p>This MBean is a <a href="../../../../java.management/javax/management/DynamicMBean.html" title="javax.management 包中的接口"><code>DynamicMBean</code></a>
+and also a <a href="../../../../java.management/javax/management/NotificationEmitter.html" title="javax.management 包中的接口"><code>NotificationEmitter</code></a>.
 The <code>DiagnosticCommandMBean</code> is generated at runtime and is subject to
 modifications during the lifetime of the Java virtual machine.
 
@@ -131,7 +131,7 @@ command line. Options and arguments are processed in the order of the array
 passed to the invocation method.
 
 <p>Like any operation of a dynamic MBean, each of these operations is
-described by <a href="../../../../java.management/javax/management/MBeanOperationInfo.html" title="class in javax.management"><code>MBeanOperationInfo</code></a>
+described by <a href="../../../../java.management/javax/management/MBeanOperationInfo.html" title="javax.management 包中的类"><code>MBeanOperationInfo</code></a>
 instance. Here's the values returned by this object:
 <ul>
  <li><a href="../../../../java.management/javax/management/MBeanFeatureInfo.html#getName()"><code>getName()</code></a>
@@ -147,7 +147,7 @@ instance. Here's the values returned by this object:
      returns a Descriptor instance (see below)</li>
 </ul>
 
-<p>The <a href="../../../../java.management/javax/management/Descriptor.html" title="interface in javax.management"><code>Descriptor</code></a>
+<p>The <a href="../../../../java.management/javax/management/Descriptor.html" title="javax.management 包中的接口"><code>Descriptor</code></a>
 is a collection of fields containing additional
 meta-data for a JMX element. A field is a name and an associated value.
 The additional meta-data provided for an operation associated with a
@@ -238,14 +238,14 @@ instance are described in the table below:
 
 <p>When the set of diagnostic commands currently supported by the Java
 Virtual Machine is modified, the <code>DiagnosticCommandMBean</code> emits
-a <a href="../../../../java.management/javax/management/Notification.html" title="class in javax.management"><code>Notification</code></a> with a
+a <a href="../../../../java.management/javax/management/Notification.html" title="javax.management 包中的类"><code>Notification</code></a> with a
 <a href="../../../../java.management/javax/management/Notification.html#getType()">type</a> of
 <a href="../../../../java.management/javax/management/MBeanInfo.html#info-changed">
 <code>"jmx.mbean.info.changed"</code></a> and a
 <a href="../../../../java.management/javax/management/Notification.html#getUserData()">userData</a> that
 is the new <code>MBeanInfo</code>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -255,9 +255,9 @@ is the new <code>MBeanInfo</code>.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.management.DynamicMBean">Methods declared in interface&nbsp;<a href="../../../../java.management/javax/management/DynamicMBean.html#method-summary" title="interface in javax.management">DynamicMBean</a></h3>
+<h3 id="methods-inherited-from-class-javax.management.DynamicMBean">在接口 <a href="../../../../java.management/javax/management/DynamicMBean.html#method-summary" title="javax.management 包中的接口">DynamicMBean</a> 中声明的方法</h3>
 <code><a href="../../../../java.management/javax/management/DynamicMBean.html#getAttribute(java.lang.String)" title="getAttribute(String)">getAttribute</a>, <a href="../../../../java.management/javax/management/DynamicMBean.html#getAttributes(java.lang.String%5B%5D)" title="getAttributes(String[])">getAttributes</a>, <a href="../../../../java.management/javax/management/DynamicMBean.html#getMBeanInfo()" title="getMBeanInfo()">getMBeanInfo</a>, <a href="../../../../java.management/javax/management/DynamicMBean.html#invoke(java.lang.String,java.lang.Object%5B%5D,java.lang.String%5B%5D)" title="invoke(String, Object[], String[])">invoke</a>, <a href="../../../../java.management/javax/management/DynamicMBean.html#setAttribute(javax.management.Attribute)" title="setAttribute(Attribute)">setAttribute</a>, <a href="../../../../java.management/javax/management/DynamicMBean.html#setAttributes(javax.management.AttributeList)" title="setAttributes(AttributeList)">setAttributes</a></code></div>
 </section>
 </li>

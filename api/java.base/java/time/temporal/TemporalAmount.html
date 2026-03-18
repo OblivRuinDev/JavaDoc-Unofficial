@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time.temporal</a></li>
 <li><a href="TemporalAmount.html" class="current-selection">TemporalAmount</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,11 +61,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#get(java.time.temporal.TemporalUnit)" tabindex="0">get(TemporalUnit)</a></li>
 <li><a href="#getUnits()" tabindex="0">getUnits()</a></li>
@@ -78,16 +78,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface TemporalAmount" class="title">Interface TemporalAmount</h1>
+<h1 title="接口 TemporalAmount" class="title">接口 TemporalAmount</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="../chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="../chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../Duration.html" title="class in java.time">Duration</a>, <a href="../Period.html" title="class in java.time">Period</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="../Duration.html" title="java.time 包中的类">Duration</a>, <a href="../Period.html" title="java.time 包中的类">Period</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -99,15 +99,15 @@ This is the base interface type for amounts of time.
 An amount is distinct from a date or time-of-day in that it is not tied
 to any specific point on the time-line.
 <p>
-The amount can be thought of as a <code>Map</code> of <a href="TemporalUnit.html" title="interface in java.time.temporal"><code>TemporalUnit</code></a> to
+The amount can be thought of as a <code>Map</code> of <a href="TemporalUnit.html" title="java.time.temporal 包中的接口"><code>TemporalUnit</code></a> to
 <code>long</code>, exposed via <a href="#getUnits()"><code>getUnits()</code></a> and <a href="#get(java.time.temporal.TemporalUnit)"><code>get(TemporalUnit)</code></a>.
 A simple case might have a single unit-value pair, such as "6 hours".
 A more complex case may have multiple unit-value pairs, such as
 "7 years, 3 months and 5 days".
 <p>
 There are two common implementations.
-<a href="../Period.html" title="class in java.time"><code>Period</code></a> is a date-based implementation, storing years, months and days.
-<a href="../Duration.html" title="class in java.time"><code>Duration</code></a> is a time-based implementation, storing seconds and nanoseconds,
+<a href="../Period.html" title="java.time 包中的类"><code>Period</code></a> is a date-based implementation, storing years, months and days.
+<a href="../Duration.html" title="java.time 包中的类"><code>Duration</code></a> is a time-based implementation, storing seconds and nanoseconds,
 but providing some access using other duration based units such as minutes,
 hours and fixed 24-hour days.
 <p>
@@ -115,10 +115,10 @@ This interface is a framework-level interface that should not be widely
 used in application code. Instead, applications should create and pass
 around instances of concrete types, such as <code>Period</code> and <code>Duration</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This interface places no restrictions on the mutability of implementations,
 however immutability is strongly recommended.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -128,31 +128,31 @@ however immutability is strongly recommended.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Temporal.html" title="interface in java.time.temporal">Temporal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addTo(java.time.temporal.Temporal)" class="member-name-link">addTo</a><wbr>(<a href="Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addTo(java.time.temporal.Temporal)" class="member-name-link">addTo</a><wbr>(<a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adds to the specified temporal object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.time.temporal.TemporalUnit)" class="member-name-link">get</a><wbr>(<a href="TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&nbsp;unit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.time.temporal.TemporalUnit)" class="member-name-link">get</a><wbr>(<a href="TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&nbsp;unit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the value of the requested unit.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getUnits()" class="member-name-link">getUnits</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the list of units uniquely defining the value of this TemporalAmount.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Temporal.html" title="interface in java.time.temporal">Temporal</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subtractFrom(java.time.temporal.Temporal)" class="member-name-link">subtractFrom</a><wbr>(<a href="Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subtractFrom(java.time.temporal.Temporal)" class="member-name-link">subtractFrom</a><wbr>(<a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Subtracts this object from the specified temporal object.</div>
 </div>
@@ -168,29 +168,29 @@ however immutability is strongly recommended.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="get(java.time.temporal.TemporalUnit)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&nbsp;unit)</span></div>
+<div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&nbsp;unit)</span></div>
 <div class="block">Returns the value of the requested unit.
 The units returned from <a href="#getUnits()"><code>getUnits()</code></a> uniquely define the
 value of the <code>TemporalAmount</code>.  A value must be returned
 for each unit listed in <code>getUnits</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>Implementations may declare support for units not listed by <a href="#getUnits()"><code>getUnits()</code></a>.
 Typically, the implementation would define additional units
 as conversions for the convenience of developers.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>unit</code> - the <code>TemporalUnit</code> for which to return the value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the long value of the unit</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if a value for the unit cannot be obtained</dd>
-<dd><code><a href="UnsupportedTemporalTypeException.html" title="class in java.time.temporal">UnsupportedTemporalTypeException</a></code> - if the <code>unit</code> is not supported</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if a value for the unit cannot be obtained</dd>
+<dd><code><a href="UnsupportedTemporalTypeException.html" title="java.time.temporal 包中的类">UnsupportedTemporalTypeException</a></code> - if the <code>unit</code> is not supported</dd>
 </dl>
 </div>
 </section>
@@ -199,7 +199,7 @@ as conversions for the convenience of developers.</dd>
 <section class="detail" id="getUnits()">
 <h3>getUnits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&gt;</span>&nbsp;<span class="element-name">getUnits</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&gt;</span>&nbsp;<span class="element-name">getUnits</span>()</div>
 <div class="block">Returns the list of units uniquely defining the value of this TemporalAmount.
 The list of <code>TemporalUnits</code> is defined by the implementation class.
 The list is a snapshot of the units at the time <code>getUnits</code>
@@ -207,11 +207,11 @@ is called and is not mutable.
 The units are ordered from longest duration to the shortest duration
 of the unit.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The list of units completely and uniquely represents the
 state of the object without omissions, overlaps or duplication.
 The units are in order from longest duration to shortest.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the List of <code>TemporalUnits</code>; not null</dd>
 </dl>
 </div>
@@ -221,7 +221,7 @@ The units are in order from longest duration to shortest.</dd>
 <section class="detail" id="addTo(java.time.temporal.Temporal)">
 <h3>addTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Temporal.html" title="interface in java.time.temporal">Temporal</a></span>&nbsp;<span class="element-name">addTo</span><wbr><span class="parameters">(<a href="Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></span>&nbsp;<span class="element-name">addTo</span><wbr><span class="parameters">(<a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</span></div>
 <div class="block">Adds to the specified temporal object.
 <p>
 Adds the amount to the specified temporal object using the logic
@@ -238,7 +238,7 @@ The second is to use <a href="Temporal.html#plus(java.time.temporal.TemporalAmou
 It is recommended to use the second approach, <code>plus(TemporalAmount)</code>,
 as it is a lot clearer to read in code.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation must take the input object and add to it.
 The implementation defines the logic of the addition and is responsible for
 documenting that logic. It may use any method on <code>Temporal</code> to
@@ -255,13 +255,13 @@ or reject non-ISO temporal objects by <a href="TemporalQueries.html#chronology()
 <p>
 This method may be called from multiple threads in parallel.
 It must be thread-safe when invoked.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>temporal</code> - the temporal object to add the amount to, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an object of the same observable type with the addition made, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to add</dd>
-<dd><code><a href="../../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to add</dd>
+<dd><code><a href="../../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -270,7 +270,7 @@ It must be thread-safe when invoked.</dd>
 <section class="detail" id="subtractFrom(java.time.temporal.Temporal)">
 <h3>subtractFrom</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Temporal.html" title="interface in java.time.temporal">Temporal</a></span>&nbsp;<span class="element-name">subtractFrom</span><wbr><span class="parameters">(<a href="Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></span>&nbsp;<span class="element-name">subtractFrom</span><wbr><span class="parameters">(<a href="Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</span></div>
 <div class="block">Subtracts this object from the specified temporal object.
 <p>
 Subtracts the amount from the specified temporal object using the logic
@@ -287,7 +287,7 @@ The second is to use <a href="Temporal.html#minus(java.time.temporal.TemporalAmo
 It is recommended to use the second approach, <code>minus(TemporalAmount)</code>,
 as it is a lot clearer to read in code.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation must take the input object and subtract from it.
 The implementation defines the logic of the subtraction and is responsible for
 documenting that logic. It may use any method on <code>Temporal</code> to
@@ -304,13 +304,13 @@ or reject non-ISO temporal objects by <a href="TemporalQueries.html#chronology()
 <p>
 This method may be called from multiple threads in parallel.
 It must be thread-safe when invoked.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>temporal</code> - the temporal object to subtract the amount from, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an object of the same observable type with the subtraction made, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to subtract</dd>
-<dd><code><a href="../../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to subtract</dd>
+<dd><code><a href="../../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>

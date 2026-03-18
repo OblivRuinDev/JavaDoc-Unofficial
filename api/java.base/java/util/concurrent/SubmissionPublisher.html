@@ -65,7 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent</a></li>
 <li><a href="SubmissionPublisher.html" class="current-selection">SubmissionPublisher</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -73,19 +73,19 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.util.concurrent.Executor,int,java.util.function.BiConsumer)" tabindex="0">SubmissionPublisher(Executor, int, BiConsumer)</a></li>
 <li><a href="#%3Cinit%3E(java.util.concurrent.Executor,int)" tabindex="0">SubmissionPublisher(Executor, int)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">SubmissionPublisher()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#subscribe(java.util.concurrent.Flow.Subscriber)" tabindex="0">subscribe(Flow.Subscriber)</a></li>
 <li><a href="#submit(T)" tabindex="0">submit(T)</a></li>
@@ -111,26 +111,26 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class SubmissionPublisher" class="title">Class SubmissionPublisher&lt;T&gt;</h1>
+<h1 title="类 SubmissionPublisher" class="title">类 SubmissionPublisher&lt;T&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.concurrent.SubmissionPublisher&lt;T&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the published item type</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="Flow.Publisher.html" title="interface in java.util.concurrent">Flow.Publisher</a>&lt;T&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口">Flow.Publisher</a>&lt;T&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SubmissionPublisher&lt;T&gt;</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="Flow.Publisher.html" title="interface in java.util.concurrent">Flow.Publisher</a>&lt;T&gt;, <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
-<div class="block">A <a href="Flow.Publisher.html" title="interface in java.util.concurrent"><code>Flow.Publisher</code></a> that asynchronously issues submitted
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口">Flow.Publisher</a>&lt;T&gt;, <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
+<div class="block">A <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口"><code>Flow.Publisher</code></a> that asynchronously issues submitted
 (non-null) items to current subscribers until it is closed.  Each
 current subscriber receives newly submitted items in the same order
 unless drops or exceptions are encountered.  Using a
@@ -138,7 +138,7 @@ SubmissionPublisher allows item generators to act as compliant <a href="http://w
 Publishers relying on drop handling and/or blocking for flow
 control.
 
-<p>A SubmissionPublisher uses the <a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a> supplied in its
+<p>A SubmissionPublisher uses the <a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a> supplied in its
 constructor for delivery to subscribers. The best choice of
 Executor depends on expected usage. If the generator(s) of
 submitted items run in separate threads, and the number of
@@ -178,7 +178,7 @@ it is invoked before cancellation upon an exception in method
 <a href="Flow.Subscriber.html#onError(java.lang.Throwable)"><code>onError</code></a> and
 <a href="Flow.Subscriber.html#onComplete()"><code>onComplete</code></a> are not recorded or
 handled before cancellation.  If the supplied Executor throws
-<a href="RejectedExecutionException.html" title="class in java.util.concurrent"><code>RejectedExecutionException</code></a> (or any other RuntimeException
+<a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类"><code>RejectedExecutionException</code></a> (or any other RuntimeException
 or Error) when attempting to execute a task, or a drop handler
 throws an exception when processing a dropped item, then the
 exception is rethrown. In these cases, not all subscribers will
@@ -215,7 +215,7 @@ component rather than a superclass.)
   }
 }</code></pre>
 
-<p>Here is an example of a <a href="Flow.Processor.html" title="interface in java.util.concurrent"><code>Flow.Processor</code></a> implementation.
+<p>Here is an example of a <a href="Flow.Processor.html" title="java.util.concurrent 包中的接口"><code>Flow.Processor</code></a> implementation.
 It uses single-step requests to its publisher for simplicity of
 illustration. A more adaptive version could monitor flow using the
 lag estimate returned from <code>submit</code>, along with other utility
@@ -241,7 +241,7 @@ methods.
   public void onComplete() { close(); }
 }</code></pre></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -251,18 +251,18 @@ methods.
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">SubmissionPublisher</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new SubmissionPublisher using the <a href="ForkJoinPool.html#commonPool()"><code>ForkJoinPool.commonPool()</code></a> for async delivery to subscribers, with
 maximum buffer capacity of <a href="Flow.html#defaultBufferSize()"><code>Flow.defaultBufferSize()</code></a>, and no
 handler for Subscriber exceptions in method <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a>.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Executor,int)" class="member-name-link">SubmissionPublisher</a><wbr>(<a href="Executor.html" title="interface in java.util.concurrent">Executor</a>&nbsp;executor,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Executor,int)" class="member-name-link">SubmissionPublisher</a><wbr>(<a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a>&nbsp;executor,
  int&nbsp;maxBufferCapacity)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a new SubmissionPublisher using the given Executor for
@@ -270,9 +270,9 @@ async delivery to subscribers, with the given maximum buffer size
 for each subscriber, and no handler for Subscriber exceptions in
 method <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a>.</div>
 </div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Executor,int,java.util.function.BiConsumer)" class="member-name-link">SubmissionPublisher</a><wbr>(<a href="Executor.html" title="interface in java.util.concurrent">Executor</a>&nbsp;executor,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Executor,int,java.util.function.BiConsumer)" class="member-name-link">SubmissionPublisher</a><wbr>(<a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a>&nbsp;executor,
  int&nbsp;maxBufferCapacity,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&gt;&nbsp;handler)</code></div>
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&gt;&nbsp;handler)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new SubmissionPublisher using the given Executor for
 async delivery to subscribers, with the given maximum buffer size
@@ -285,14 +285,14 @@ when any Subscriber throws an exception in method <a href="Flow.Subscriber.html#
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -300,14 +300,14 @@ when any Subscriber throws an exception in method <a href="Flow.Subscriber.html#
 subscribers, and disallows subsequent attempts to publish.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#closeExceptionally(java.lang.Throwable)" class="member-name-link">closeExceptionally</a><wbr>(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;error)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#closeExceptionally(java.lang.Throwable)" class="member-name-link">closeExceptionally</a><wbr>(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;error)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Unless already closed, issues <a href="Flow.Subscriber.html#onError(java.lang.Throwable)"><code>onError</code></a> signals to current
 subscribers with the given error, and disallows subsequent
 attempts to publish.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a><wbr>&lt;<a href="../../lang/Void.html" title="class in java.lang">Void</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#consume(java.util.function.Consumer)" class="member-name-link">consume</a><wbr>(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;consumer)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a><wbr>&lt;<a href="../../lang/Void.html" title="java.lang 包中的类">Void</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#consume(java.util.function.Consumer)" class="member-name-link">consume</a><wbr>(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;consumer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Processes all published items using the given Consumer function.</div>
 </div>
@@ -324,13 +324,13 @@ not yet consumed among all current subscribers.</div>
 (via <a href="Flow.Subscription.html#request(long)"><code>request</code></a>) but not
 yet produced, among all current subscribers.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClosedException()" class="member-name-link">getClosedException</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the exception associated with <a href="#closeExceptionally(java.lang.Throwable)"><code>closeExceptionally</code></a>, or null if
 not closed or if closed normally.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Executor.html" title="interface in java.util.concurrent">Executor</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExecutor()" class="member-name-link">getExecutor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the Executor used for asynchronous delivery.</div>
@@ -345,11 +345,11 @@ not closed or if closed normally.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the number of current subscribers.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../List.html" title="interface in java.util">List</a><wbr>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSubscribers()" class="member-name-link">getSubscribers</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a list of current subscribers for monitoring and
-tracking purposes, not for invoking <a href="Flow.Subscriber.html" title="interface in java.util.concurrent"><code>Flow.Subscriber</code></a>
+tracking purposes, not for invoking <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口"><code>Flow.Subscriber</code></a>
 methods on the subscribers.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
@@ -363,15 +363,15 @@ methods on the subscribers.</div>
 <div class="block">Returns true if this publisher is not accepting submissions.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubscribed(java.util.concurrent.Flow.Subscriber)" class="member-name-link">isSubscribed</a><wbr>(<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;subscriber)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubscribed(java.util.concurrent.Flow.Subscriber)" class="member-name-link">isSubscribed</a><wbr>(<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;subscriber)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if the given Subscriber is currently subscribed.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offer(T,long,java.util.concurrent.TimeUnit,java.util.function.BiPredicate)" class="member-name-link">offer</a><wbr>(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offer(T,long,java.util.concurrent.TimeUnit,java.util.function.BiPredicate)" class="member-name-link">offer</a><wbr>(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item,
  long&nbsp;timeout,
- <a href="TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit,
- <a href="../function/BiPredicate.html" title="interface in java.util.function">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;onDrop)</code></div>
+ <a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit,
+ <a href="../function/BiPredicate.html" title="java.util.function 包中的接口">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;onDrop)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Publishes the given item, if possible, to each current subscriber
 by asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method, blocking while
@@ -381,21 +381,21 @@ which point the given handler (if non-null) is invoked, and if it
 returns true, retried once.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offer(T,java.util.function.BiPredicate)" class="member-name-link">offer</a><wbr>(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item,
- <a href="../function/BiPredicate.html" title="interface in java.util.function">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;onDrop)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#offer(T,java.util.function.BiPredicate)" class="member-name-link">offer</a><wbr>(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item,
+ <a href="../function/BiPredicate.html" title="java.util.function 包中的接口">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;onDrop)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Publishes the given item, if possible, to each current subscriber
 by asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submit(T)" class="member-name-link">submit</a><wbr>(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#submit(T)" class="member-name-link">submit</a><wbr>(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Publishes the given item to each current subscriber by
 asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method, blocking uninterruptibly while resources for any
 subscriber are unavailable.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(java.util.concurrent.Flow.Subscriber)" class="member-name-link">subscribe</a><wbr>(<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;subscriber)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subscribe(java.util.concurrent.Flow.Subscriber)" class="member-name-link">subscribe</a><wbr>(<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;subscriber)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds the given Subscriber unless already subscribed.</div>
 </div>
@@ -403,7 +403,7 @@ subscriber are unavailable.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -414,21 +414,21 @@ subscriber are unavailable.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.concurrent.Executor,int,java.util.function.BiConsumer)">
 <h3>SubmissionPublisher</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SubmissionPublisher</span><wbr><span class="parameters">(<a href="Executor.html" title="interface in java.util.concurrent">Executor</a>&nbsp;executor,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SubmissionPublisher</span><wbr><span class="parameters">(<a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a>&nbsp;executor,
  int&nbsp;maxBufferCapacity,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&gt;&nbsp;handler)</span></div>
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&gt;&nbsp;handler)</span></div>
 <div class="block">Creates a new SubmissionPublisher using the given Executor for
 async delivery to subscribers, with the given maximum buffer size
 for each subscriber, and, if non-null, the given handler invoked
 when any Subscriber throws an exception in method <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>executor</code> - the executor to use for async delivery,
 supporting creation of at least one independent thread</dd>
 <dd><code>maxBufferCapacity</code> - the maximum capacity for each
@@ -438,9 +438,9 @@ supported by this implementation; method <a href="#getMaxBufferCapacity()"><code
 returns the actual value)</dd>
 <dd><code>handler</code> - if non-null, procedure to invoke upon exception
 thrown in method <code>onNext</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if executor is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if maxBufferCapacity not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if executor is null</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if maxBufferCapacity not
 positive</dd>
 </dl>
 </div>
@@ -450,14 +450,14 @@ positive</dd>
 <section class="detail" id="&lt;init&gt;(java.util.concurrent.Executor,int)">
 <h3>SubmissionPublisher</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SubmissionPublisher</span><wbr><span class="parameters">(<a href="Executor.html" title="interface in java.util.concurrent">Executor</a>&nbsp;executor,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">SubmissionPublisher</span><wbr><span class="parameters">(<a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a>&nbsp;executor,
  int&nbsp;maxBufferCapacity)</span></div>
 <div class="block">Creates a new SubmissionPublisher using the given Executor for
 async delivery to subscribers, with the given maximum buffer size
 for each subscriber, and no handler for Subscriber exceptions in
 method <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>executor</code> - the executor to use for async delivery,
 supporting creation of at least one independent thread</dd>
 <dd><code>maxBufferCapacity</code> - the maximum capacity for each
@@ -465,9 +465,9 @@ subscriber's buffer (the enforced capacity may be rounded up to
 the nearest power of two and/or bounded by the largest value
 supported by this implementation; method <a href="#getMaxBufferCapacity()"><code>getMaxBufferCapacity()</code></a>
 returns the actual value)</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if executor is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if maxBufferCapacity not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if executor is null</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if maxBufferCapacity not
 positive</dd>
 </dl>
 </div>
@@ -490,18 +490,18 @@ handler for Subscriber exceptions in method <a href="Flow.Subscriber.html#onNext
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="subscribe(java.util.concurrent.Flow.Subscriber)">
 <h3>subscribe</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribe</span><wbr><span class="parameters">(<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;subscriber)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">subscribe</span><wbr><span class="parameters">(<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;subscriber)</span></div>
 <div class="block">Adds the given Subscriber unless already subscribed.  If already
 subscribed, the Subscriber's <a href="Flow.Subscriber.html#onError(java.lang.Throwable)"><code>onError</code></a> method is invoked on
-the existing subscription with an <a href="../../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>.
+the existing subscription with an <a href="../../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>.
 Otherwise, upon success, the Subscriber's <a href="Flow.Subscriber.html#onSubscribe(java.util.concurrent.Flow.Subscription)"><code>onSubscribe</code></a> method is invoked
-asynchronously with a new <a href="Flow.Subscription.html" title="interface in java.util.concurrent"><code>Flow.Subscription</code></a>.  If <a href="Flow.Subscriber.html#onSubscribe(java.util.concurrent.Flow.Subscription)"><code>onSubscribe</code></a> throws an exception, the
+asynchronously with a new <a href="Flow.Subscription.html" title="java.util.concurrent 包中的接口"><code>Flow.Subscription</code></a>.  If <a href="Flow.Subscriber.html#onSubscribe(java.util.concurrent.Flow.Subscription)"><code>onSubscribe</code></a> throws an exception, the
 subscription is cancelled. Otherwise, if this SubmissionPublisher
 was closed exceptionally, then the subscriber's <a href="Flow.Subscriber.html#onError(java.lang.Throwable)"><code>onError</code></a> method is invoked with the
 corresponding exception, or if closed without exception, the
@@ -511,12 +511,12 @@ invoking the <a href="Flow.Subscription.html#request(long)"><code>request</code>
 method of the new Subscription, and may unsubscribe by invoking
 its <a href="Flow.Subscription.html#cancel()"><code>cancel</code></a> method.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Flow.Publisher.html#subscribe(java.util.concurrent.Flow.Subscriber)">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="Flow.Publisher.html" title="interface in java.util.concurrent">Flow.Publisher</a>&lt;<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Flow.Publisher.html#subscribe(java.util.concurrent.Flow.Subscriber)">subscribe</a></code>&nbsp;in interface&nbsp;<code><a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口">Flow.Publisher</a>&lt;<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>subscriber</code> - the subscriber</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if subscriber is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if subscriber is null</dd>
 </dl>
 </div>
 </section>
@@ -525,7 +525,7 @@ its <a href="Flow.Subscription.html#cancel()"><code>cancel</code></a> method.</d
 <section class="detail" id="submit(T)">
 <h3 id="submit(java.lang.Object)">submit</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">submit</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">submit</span><wbr><span class="parameters">(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item)</span></div>
 <div class="block">Publishes the given item to each current subscriber by
 asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method, blocking uninterruptibly while resources for any
 subscriber are unavailable. This method returns an estimate of
@@ -540,14 +540,14 @@ Error) when attempting to asynchronously notify subscribers,
 then this exception is rethrown, in which case not all
 subscribers will have been issued this item.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>item</code> - the (non-null) item to publish</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the estimated maximum lag among subscribers</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if closed</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if item is null</dd>
-<dd><code><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></code> - if thrown by Executor</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if closed</dd>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if item is null</dd>
+<dd><code><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></code> - if thrown by Executor</dd>
 </dl>
 </div>
 </section>
@@ -556,8 +556,8 @@ subscribers will have been issued this item.</div>
 <section class="detail" id="offer(T,java.util.function.BiPredicate)">
 <h3 id="offer(java.lang.Object,java.util.function.BiPredicate)">offer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item,
- <a href="../function/BiPredicate.html" title="interface in java.util.function">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;onDrop)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item,
+ <a href="../function/BiPredicate.html" title="java.util.function 包中的接口">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;onDrop)</span></div>
 <div class="block">Publishes the given item, if possible, to each current subscriber
 by asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method. The item may be
 dropped by one or more subscribers if resource limits are
@@ -582,18 +582,18 @@ Error) when attempting to asynchronously notify subscribers, or
 the drop handler throws an exception when processing a dropped
 item, then this exception is rethrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>item</code> - the (non-null) item to publish</dd>
 <dd><code>onDrop</code> - if non-null, the handler invoked upon a drop to a
 subscriber, with arguments of the subscriber and item; if it
 returns true, an offer is re-attempted (once)</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>if negative, the (negative) number of drops; otherwise
 an estimate of maximum lag</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if closed</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if item is null</dd>
-<dd><code><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></code> - if thrown by Executor</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if closed</dd>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if item is null</dd>
+<dd><code><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></code> - if thrown by Executor</dd>
 </dl>
 </div>
 </section>
@@ -602,10 +602,10 @@ an estimate of maximum lag</dd>
 <section class="detail" id="offer(T,long,java.util.concurrent.TimeUnit,java.util.function.BiPredicate)">
 <h3 id="offer(java.lang.Object,long,java.util.concurrent.TimeUnit,java.util.function.BiPredicate)">offer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&nbsp;item,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">offer</span><wbr><span class="parameters">(<a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&nbsp;item,
  long&nbsp;timeout,
- <a href="TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit,
- <a href="../function/BiPredicate.html" title="interface in java.util.function">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;, ? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;onDrop)</span></div>
+ <a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit,
+ <a href="../function/BiPredicate.html" title="java.util.function 包中的接口">BiPredicate</a>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;, ? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;onDrop)</span></div>
 <div class="block">Publishes the given item, if possible, to each current subscriber
 by asynchronously invoking its <a href="Flow.Subscriber.html#onNext(T)"><code>onNext</code></a> method, blocking while
 resources for any subscription are unavailable, up to the
@@ -632,7 +632,7 @@ Error) when attempting to asynchronously notify subscribers, or
 the drop handler throws an exception when processing a dropped
 item, then this exception is rethrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>item</code> - the (non-null) item to publish</dd>
 <dd><code>timeout</code> - how long to wait for resources for any subscriber
 before giving up, in units of <code>unit</code></dd>
@@ -641,13 +641,13 @@ before giving up, in units of <code>unit</code></dd>
 <dd><code>onDrop</code> - if non-null, the handler invoked upon a drop to a
 subscriber, with arguments of the subscriber and item; if it
 returns true, an offer is re-attempted (once)</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>if negative, the (negative) number of drops; otherwise
 an estimate of maximum lag</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if closed</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if item is null</dd>
-<dd><code><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></code> - if thrown by Executor</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if closed</dd>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if item is null</dd>
+<dd><code><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></code> - if thrown by Executor</dd>
 </dl>
 </div>
 </section>
@@ -662,8 +662,8 @@ subscribers, and disallows subsequent attempts to publish.
 Upon return, this method does <em>NOT</em> guarantee that all
 subscribers have yet completed.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>
@@ -672,17 +672,17 @@ subscribers have yet completed.</div>
 <section class="detail" id="closeExceptionally(java.lang.Throwable)">
 <h3>closeExceptionally</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">closeExceptionally</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;error)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">closeExceptionally</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;error)</span></div>
 <div class="block">Unless already closed, issues <a href="Flow.Subscriber.html#onError(java.lang.Throwable)"><code>onError</code></a> signals to current
 subscribers with the given error, and disallows subsequent
 attempts to publish.  Future subscribers also receive the given
 error. Upon return, this method does <em>NOT</em> guarantee
 that all subscribers have yet completed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>error</code> - the <code>onError</code> argument sent to subscribers</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if error is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if error is null</dd>
 </dl>
 </div>
 </section>
@@ -694,7 +694,7 @@ that all subscribers have yet completed.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isClosed</span>()</div>
 <div class="block">Returns true if this publisher is not accepting submissions.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if closed</dd>
 </dl>
 </div>
@@ -704,11 +704,11 @@ that all subscribers have yet completed.</div>
 <section class="detail" id="getClosedException()">
 <h3>getClosedException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a></span>&nbsp;<span class="element-name">getClosedException</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a></span>&nbsp;<span class="element-name">getClosedException</span>()</div>
 <div class="block">Returns the exception associated with <a href="#closeExceptionally(java.lang.Throwable)"><code>closeExceptionally</code></a>, or null if
 not closed or if closed normally.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the exception, or null if none</dd>
 </dl>
 </div>
@@ -721,7 +721,7 @@ not closed or if closed normally.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasSubscribers</span>()</div>
 <div class="block">Returns true if this publisher has any subscribers.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if this publisher has any subscribers</dd>
 </dl>
 </div>
@@ -734,7 +734,7 @@ not closed or if closed normally.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getNumberOfSubscribers</span>()</div>
 <div class="block">Returns the number of current subscribers.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of current subscribers</dd>
 </dl>
 </div>
@@ -744,10 +744,10 @@ not closed or if closed normally.</div>
 <section class="detail" id="getExecutor()">
 <h3>getExecutor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Executor.html" title="interface in java.util.concurrent">Executor</a></span>&nbsp;<span class="element-name">getExecutor</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a></span>&nbsp;<span class="element-name">getExecutor</span>()</div>
 <div class="block">Returns the Executor used for asynchronous delivery.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the Executor used for asynchronous delivery</dd>
 </dl>
 </div>
@@ -760,7 +760,7 @@ not closed or if closed normally.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getMaxBufferCapacity</span>()</div>
 <div class="block">Returns the maximum per-subscriber buffer capacity.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum per-subscriber buffer capacity</dd>
 </dl>
 </div>
@@ -770,12 +770,12 @@ not closed or if closed normally.</div>
 <section class="detail" id="getSubscribers()">
 <h3>getSubscribers</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../List.html" title="interface in java.util">List</a>&lt;<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">getSubscribers</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../List.html" title="java.util 包中的接口">List</a>&lt;<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&gt;</span>&nbsp;<span class="element-name">getSubscribers</span>()</div>
 <div class="block">Returns a list of current subscribers for monitoring and
-tracking purposes, not for invoking <a href="Flow.Subscriber.html" title="interface in java.util.concurrent"><code>Flow.Subscriber</code></a>
+tracking purposes, not for invoking <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口"><code>Flow.Subscriber</code></a>
 methods on the subscribers.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>list of current subscribers</dd>
 </dl>
 </div>
@@ -785,15 +785,15 @@ methods on the subscribers.</div>
 <section class="detail" id="isSubscribed(java.util.concurrent.Flow.Subscriber)">
 <h3>isSubscribed</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSubscribed</span><wbr><span class="parameters">(<a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;subscriber)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSubscribed</span><wbr><span class="parameters">(<a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;subscriber)</span></div>
 <div class="block">Returns true if the given Subscriber is currently subscribed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>subscriber</code> - the subscriber</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if currently subscribed</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if subscriber is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if subscriber is null</dd>
 </dl>
 </div>
 </section>
@@ -807,7 +807,7 @@ methods on the subscribers.</div>
 (via <a href="Flow.Subscription.html#request(long)"><code>request</code></a>) but not
 yet produced, among all current subscribers.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the estimate, or zero if no subscribers</dd>
 </dl>
 </div>
@@ -821,7 +821,7 @@ yet produced, among all current subscribers.</div>
 <div class="block">Returns an estimate of the maximum number of items produced but
 not yet consumed among all current subscribers.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the estimate</dd>
 </dl>
 </div>
@@ -831,7 +831,7 @@ not yet consumed among all current subscribers.</div>
 <section class="detail" id="consume(java.util.function.Consumer)">
 <h3>consume</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a>&lt;<a href="../../lang/Void.html" title="class in java.lang">Void</a>&gt;</span>&nbsp;<span class="element-name">consume</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in SubmissionPublisher">T</a>&gt;&nbsp;consumer)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a>&lt;<a href="../../lang/Void.html" title="java.lang 包中的类">Void</a>&gt;</span>&nbsp;<span class="element-name">consume</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="SubmissionPublisher 中的类型参数">T</a>&gt;&nbsp;consumer)</span></div>
 <div class="block">Processes all published items using the given Consumer function.
 Returns a CompletableFuture that is completed normally when this
 publisher signals <a href="Flow.Subscriber.html#onComplete()"><code>onComplete</code></a>, or completed exceptionally upon any error, or an
@@ -839,14 +839,14 @@ exception is thrown by the Consumer, or the returned
 CompletableFuture is cancelled, in which case no further items
 are processed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>consumer</code> - the function applied to each onNext item</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a CompletableFuture that is completed normally
 when the publisher signals onComplete, and exceptionally
 upon any error or cancellation</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if consumer is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if consumer is null</dd>
 </dl>
 </div>
 </section>

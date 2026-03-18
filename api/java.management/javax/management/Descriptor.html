@@ -60,7 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.management</a></li>
 <li><a href="Descriptor.html" class="current-selection">Descriptor</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -68,11 +68,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getFieldValue(java.lang.String)" tabindex="0">getFieldValue(String)</a></li>
 <li><a href="#setField(java.lang.String,java.lang.Object)" tabindex="0">setField(String, Object)</a></li>
@@ -92,23 +92,23 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Descriptor" class="title">Interface Descriptor</h1>
+<h1 title="接口 Descriptor" class="title">接口 Descriptor</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../java.base/java/lang/Cloneable.html" title="interface in java.lang">Cloneable</a>, <a href="../../../java.base/java/io/Serializable.html" title="interface in java.io">Serializable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../../java.base/java/lang/Cloneable.html" title="java.lang 包中的接口">Cloneable</a>, <a href="../../../java.base/java/io/Serializable.html" title="java.io 包中的接口">Serializable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="modelmbean/DescriptorSupport.html" title="class in javax.management.modelmbean">DescriptorSupport</a>, <a href="ImmutableDescriptor.html" title="class in javax.management">ImmutableDescriptor</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="modelmbean/DescriptorSupport.html" title="javax.management.modelmbean 包中的类">DescriptorSupport</a>, <a href="ImmutableDescriptor.html" title="javax.management 包中的类">ImmutableDescriptor</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Descriptor</span><span class="extends-implements">
-extends <a href="../../../java.base/java/io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="../../../java.base/java/lang/Cloneable.html" title="interface in java.lang">Cloneable</a></span></div>
+extends <a href="../../../java.base/java/io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="../../../java.base/java/lang/Cloneable.html" title="java.lang 包中的接口">Cloneable</a></span></div>
 <div class="block"><p>Additional metadata for a JMX element.  A <code>Descriptor</code>
-is associated with a <a href="MBeanInfo.html" title="class in javax.management"><code>MBeanInfo</code></a>, <a href="MBeanAttributeInfo.html" title="class in javax.management"><code>MBeanAttributeInfo</code></a>, etc.
+is associated with a <a href="MBeanInfo.html" title="javax.management 包中的类"><code>MBeanInfo</code></a>, <a href="MBeanAttributeInfo.html" title="javax.management 包中的类"><code>MBeanAttributeInfo</code></a>, etc.
 It consists of a collection of fields.  A field is a name and an
 associated value.</p>
 
@@ -126,15 +126,15 @@ An immutable descriptor, once created, never changes.
 The <code>Descriptor</code> methods that could modify the contents
 of the descriptor will throw an exception
 for an immutable descriptor.  Immutable descriptors are usually
-instances of <a href="ImmutableDescriptor.html" title="class in javax.management"><code>ImmutableDescriptor</code></a> or a subclass.  Mutable
+instances of <a href="ImmutableDescriptor.html" title="javax.management 包中的类"><code>ImmutableDescriptor</code></a> or a subclass.  Mutable
 descriptors are usually instances of
-<a href="modelmbean/DescriptorSupport.html" title="class in javax.management.modelmbean"><code>DescriptorSupport</code></a> or a subclass.
+<a href="modelmbean/DescriptorSupport.html" title="javax.management.modelmbean 包中的类"><code>DescriptorSupport</code></a> or a subclass.
 
 <p>Certain fields are used by the JMX implementation.  This means
 either that the presence of the field may change the behavior of
 the JMX API or that the field may be set in descriptors returned by
 the JMX API.  These fields appear in <i>italics</i> in the table
-below, and each one has a corresponding constant in the <a href="JMX.html" title="class in javax.management"><code>JMX</code></a>
+below, and each one has a corresponding constant in the <a href="JMX.html" title="javax.management 包中的类"><code>JMX</code></a>
 class.  For example, the field <code>defaultValue</code> is represented
 by the constant <a href="JMX.html#DEFAULT_VALUE_FIELD"><code>JMX.DEFAULT_VALUE_FIELD</code></a>.</p>
 
@@ -188,7 +188,7 @@ attribute"</code>.</td>
 <tr><th scope="row" id="descriptionResourceBundleBaseName">descriptionResource<br>
 BundleBaseName</th><td>String</td><td>Any</td>
 
-<td>The base name for the <a href="../../../java.base/java/util/ResourceBundle.html" title="class in java.util"><code>ResourceBundle</code></a> in which the key given in
+<td>The base name for the <a href="../../../java.base/java/util/ResourceBundle.html" title="java.util 包中的类"><code>ResourceBundle</code></a> in which the key given in
 the <code>descriptionResourceKey</code> field can be found, for example
 <code>"com.example.myapp.MBeanResources"</code>.  The meaning of this
 field is defined by this specification but the field is not set or
@@ -247,14 +247,14 @@ that the MBeanInfo is not likely to change within this period and
 therefore can be cached.  When this field is missing or has the
 value zero, it is not recommended to cache the MBeanInfo unless it
 has the <code>immutableInfo</code> set to <code>true</code> or it has <a href="MBeanInfo.html#info-changed"><code>"jmx.mbean.info.changed"</code></a> in
-its <a href="MBeanNotificationInfo.html" title="class in javax.management"><code>MBeanNotificationInfo</code></a> array.</td></tr>
+its <a href="MBeanNotificationInfo.html" title="javax.management 包中的类"><code>MBeanNotificationInfo</code></a> array.</td></tr>
 
 <tr id="interfaceClassName"><th scope="row"><i>interfaceClassName</i></th>
 <td>String</td><td>MBeanInfo</td>
 
 <td>The Java interface name for a Standard MBean or MXBean, as
 returned by <a href="../../../java.base/java/lang/Class.html#getName()"><code>Class.getName()</code></a>.  A Standard MBean or MXBean
-registered directly in the MBean Server or created using the <a href="StandardMBean.html" title="class in javax.management"><code>StandardMBean</code></a> class will have this field in its MBeanInfo
+registered directly in the MBean Server or created using the <a href="StandardMBean.html" title="javax.management 包中的类"><code>StandardMBean</code></a> class will have this field in its MBeanInfo
 Descriptor.</td>
 
 <tr id="legalValues"><th scope="row"><i>legalValues</i></th>
@@ -266,7 +266,7 @@ Descriptor.</td>
 <tr id="locale"><th scope="row">locale</th>
 <td>String</td><td>Any</td>
 
-<td>The <a href="../../../java.base/java/util/Locale.html" title="class in java.util">locale</a> of the description in this
+<td>The <a href="../../../java.base/java/util/Locale.html" title="java.util 包中的类">locale</a> of the description in this
 <code>MBeanInfo</code>, <code>MBeanAttributeInfo</code>, etc, as returned
 by <a href="../../../java.base/java/util/Locale.html#toString()"><code>Locale.toString()</code></a>.</td>
 
@@ -299,18 +299,18 @@ open connections or a cache hit rate or a temperature reading.
 <td>MBeanInfo</td>
 
 <td>The string <code>"true"</code> or <code>"false"</code> according as this
-MBean is an <a href="MXBean.html" title="annotation interface in javax.management"><code>MXBean</code></a>.  A Standard MBean or MXBean registered
-directly with the MBean Server or created using the <a href="StandardMBean.html" title="class in javax.management"><code>StandardMBean</code></a> class will have this field in its MBeanInfo
+MBean is an <a href="MXBean.html" title="javax.management 包中的注解接口"><code>MXBean</code></a>.  A Standard MBean or MXBean registered
+directly with the MBean Server or created using the <a href="StandardMBean.html" title="javax.management 包中的类"><code>StandardMBean</code></a> class will have this field in its MBeanInfo
 Descriptor.</td>
 
-<tr id="openType"><th scope="row"><i>openType</i><td><a href="openmbean/OpenType.html" title="class in javax.management.openmbean"><code>OpenType</code></a></td>
+<tr id="openType"><th scope="row"><i>openType</i><td><a href="openmbean/OpenType.html" title="javax.management.openmbean 包中的类"><code>OpenType</code></a></td>
 <td>MBeanAttributeInfo<br>MBeanOperationInfo<br>MBeanParameterInfo</td>
 
 <td><p>The Open Type of this element.  In the case of <code>
 MBeanAttributeInfo</code> and <code>MBeanParameterInfo</code>, this is the
 Open Type of the attribute or parameter.  In the case of <code>
 MBeanOperationInfo</code>, it is the Open Type of the return value.  This
-field is set in the Descriptor for all instances of <a href="openmbean/OpenMBeanAttributeInfoSupport.html" title="class in javax.management.openmbean"><code>OpenMBeanAttributeInfoSupport</code></a>, <a href="openmbean/OpenMBeanOperationInfoSupport.html" title="class in javax.management.openmbean"><code>OpenMBeanOperationInfoSupport</code></a>, and <a href="openmbean/OpenMBeanParameterInfoSupport.html" title="class in javax.management.openmbean"><code>OpenMBeanParameterInfoSupport</code></a>.  It is also set for attributes,
+field is set in the Descriptor for all instances of <a href="openmbean/OpenMBeanAttributeInfoSupport.html" title="javax.management.openmbean 包中的类"><code>OpenMBeanAttributeInfoSupport</code></a>, <a href="openmbean/OpenMBeanOperationInfoSupport.html" title="javax.management.openmbean 包中的类"><code>OpenMBeanOperationInfoSupport</code></a>, and <a href="openmbean/OpenMBeanParameterInfoSupport.html" title="javax.management.openmbean 包中的类"><code>OpenMBeanParameterInfoSupport</code></a>.  It is also set for attributes,
 operations, and parameters of MXBeans.</p>
 
 <p>This field can be set for an <code>MBeanNotificationInfo</code>, in
@@ -320,11 +320,11 @@ which case it indicates the Open Type that the <a href="Notification.html#getUse
 <td>MBeanAttributeInfo<br>MBeanOperationInfo<br>MBeanParameterInfo</td>
 
 <td><p>The original Java type of this element as it appeared in the
-<a href="MXBean.html" title="annotation interface in javax.management"><code>MXBean</code></a> interface method that produced this <code>
+<a href="MXBean.html" title="javax.management 包中的注解接口"><code>MXBean</code></a> interface method that produced this <code>
 MBeanAttributeInfo</code> (etc).  For example, a method<br> <code>public
-</code> <a href="../../java/lang/management/MemoryUsage.html" title="class in java.lang.management"><code>MemoryUsage</code></a><code> getHeapMemoryUsage();</code><br>
+</code> <a href="../../java/lang/management/MemoryUsage.html" title="java.lang.management 包中的类"><code>MemoryUsage</code></a><code> getHeapMemoryUsage();</code><br>
 in an MXBean interface defines an attribute called <code>
-HeapMemoryUsage</code> of type <a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a>.  The <code>
+HeapMemoryUsage</code> of type <a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a>.  The <code>
 originalType</code> field in the Descriptor for this attribute will have
 the value <code>"java.lang.management.MemoryUsage"</code>.
 
@@ -501,7 +501,7 @@ a predefined behavior for these fields.</p>
 </tbody>
 </table></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -511,42 +511,42 @@ a predefined behavior for these fields.</p>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#clone()" class="member-name-link">clone</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a descriptor which is equal to this descriptor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compares this descriptor to the given object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFieldNames()" class="member-name-link">getFieldNames</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all the field names in the descriptor.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFields()" class="member-name-link">getFields</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all of the fields contained in this descriptor as a string array.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFieldValue(java.lang.String)" class="member-name-link">getFieldValue</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFieldValue(java.lang.String)" class="member-name-link">getFieldValue</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the value for a specific field name, or null if no value
 is present for that name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFieldValues(java.lang.String...)" class="member-name-link">getFieldValues</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>...&nbsp;fieldNames)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFieldValues(java.lang.String...)" class="member-name-link">getFieldValues</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;fieldNames)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all the field values in the descriptor as an array of Objects.</div>
 </div>
@@ -562,19 +562,19 @@ is present for that name.</div>
 names.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeField(java.lang.String)" class="member-name-link">removeField</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeField(java.lang.String)" class="member-name-link">removeField</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes a field from the descriptor.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setField(java.lang.String,java.lang.Object)" class="member-name-link">setField</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;fieldValue)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setField(java.lang.String,java.lang.Object)" class="member-name-link">setField</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;fieldValue)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the value for a specific field name.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setFields(java.lang.String%5B%5D,java.lang.Object%5B%5D)" class="member-name-link">setFields</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;fieldNames,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>[]&nbsp;fieldValues)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setFields(java.lang.String%5B%5D,java.lang.Object%5B%5D)" class="member-name-link">setFields</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;fieldNames,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>[]&nbsp;fieldValues)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets all fields in the field names array to the new value with
 the same index in the field values array.</div>
@@ -591,23 +591,23 @@ the same index in the field values array.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getFieldValue(java.lang.String)">
 <h3>getFieldValue</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getFieldValue</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName)</span>
-              throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getFieldValue</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName)</span>
+              throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></span></div>
 <div class="block">Returns the value for a specific field name, or null if no value
 is present for that name.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fieldName</code> - the field name.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the corresponding value, or null if the field is not present.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - if the field name is illegal.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - if the field name is illegal.</dd>
 </dl>
 </div>
 </section>
@@ -616,9 +616,9 @@ is present for that name.</div>
 <section class="detail" id="setField(java.lang.String,java.lang.Object)">
 <h3>setField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setField</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;fieldValue)</span>
-       throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setField</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;fieldValue)</span>
+       throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></span></div>
 <div class="block"><p>Sets the value for a specific field name. This will
 modify an existing field or add a new field.</p>
 
@@ -627,15 +627,15 @@ If it is not valid, then an exception will be thrown.
 The meaning of validity is dependent on the descriptor
 implementation.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fieldName</code> - The field name to be set. Cannot be null or empty.</dd>
 <dd><code>fieldValue</code> - The field value to be set for the field
 name. Can be null if that is a valid value for the field.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - if the field name or field value
-is illegal (wrapped exception is <a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a>); or
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - if the field name or field value
+is illegal (wrapped exception is <a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a>); or
 if the descriptor is immutable (wrapped exception is
-<a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>).</dd>
+<a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>).</dd>
 </dl>
 </div>
 </section>
@@ -644,10 +644,10 @@ if the descriptor is immutable (wrapped exception is
 <section class="detail" id="getFields()">
 <h3>getFields</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getFields</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getFields</span>()</div>
 <div class="block">Returns all of the fields contained in this descriptor as a string array.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>String array of fields in the format <i>fieldName=fieldValue</i>
 <br>If the value of a field is not a String, then the toString() method
 will be called on it and the returned value, enclosed in parentheses,
@@ -655,7 +655,7 @@ used as the value for the field in the returned array. If the value
 of a field is null, then the value of the field in the returned array
 will be empty.  If the descriptor is empty, you will get
 an empty array.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#setFields(java.lang.String%5B%5D,java.lang.Object%5B%5D)"><code>setFields(String[], Object[])</code></a></li>
@@ -669,10 +669,10 @@ an empty array.</dd>
 <section class="detail" id="getFieldNames()">
 <h3>getFieldNames</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getFieldNames</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getFieldNames</span>()</div>
 <div class="block">Returns all the field names in the descriptor.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>String array of field names. If the descriptor is empty,
 you will get an empty array.</dd>
 </dl>
@@ -683,11 +683,11 @@ you will get an empty array.</dd>
 <section class="detail" id="getFieldValues(java.lang.String...)">
 <h3>getFieldValues</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>[]</span>&nbsp;<span class="element-name">getFieldValues</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>...&nbsp;fieldNames)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>[]</span>&nbsp;<span class="element-name">getFieldValues</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;fieldNames)</span></div>
 <div class="block">Returns all the field values in the descriptor as an array of Objects. The
 returned values are in the same order as the <code>fieldNames</code> String array parameter.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fieldNames</code> - String array of the names of the fields that
 the values should be returned for.  If the array is empty then
 an empty array will be returned.  If the array is null then all
@@ -696,7 +696,7 @@ returned by <a href="#getFieldNames()"><code>getFieldNames()</code></a>.  If a f
 array does not exist, including the case where it is null or
 the empty string, then null is returned for the matching array
 element being returned.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>Object array of field values. If the list of <code>fieldNames</code>
 is empty, you will get an empty array.</dd>
 </dl>
@@ -707,17 +707,17 @@ is empty, you will get an empty array.</dd>
 <section class="detail" id="removeField(java.lang.String)">
 <h3>removeField</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeField</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;fieldName)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeField</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;fieldName)</span></div>
 <div class="block">Removes a field from the descriptor.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fieldName</code> - String name of the field to be removed.
 If the field name is illegal or the field is not found,
 no exception is thrown.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - if a field of the given name
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - if a field of the given name
 exists and the descriptor is immutable.  The wrapped exception will
-be an <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.</dd>
+be an <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -726,9 +726,9 @@ be an <a href="../../../java.base/java/lang/UnsupportedOperationException.html" 
 <section class="detail" id="setFields(java.lang.String[],java.lang.Object[])">
 <h3>setFields</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setFields</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;fieldNames,
- <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>[]&nbsp;fieldValues)</span>
-        throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setFields</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;fieldNames,
+ <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>[]&nbsp;fieldValues)</span>
+        throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></span></div>
 <div class="block"><p>Sets all fields in the field names array to the new value with
 the same index in the field values array. Array sizes must match.</p>
 
@@ -736,21 +736,21 @@ the same index in the field values array. Array sizes must match.</p>
 If it is not valid, then an exception will be thrown.
 If the arrays are empty, then no change will take effect.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fieldNames</code> - String array of field names. The array and array
 elements cannot be null.</dd>
 <dd><code>fieldValues</code> - Object array of the corresponding field values.
 The array cannot be null. Elements of the array can be null.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - if the change fails for any reason.
-Wrapped exception is <a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> if
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - if the change fails for any reason.
+Wrapped exception is <a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> if
 <code>fieldNames</code> or <code>fieldValues</code> is null, or if
 the arrays are of different lengths, or if there is an
 illegal value in one of them.
-Wrapped exception is <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>
+Wrapped exception is <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>
 if the descriptor is immutable, and the call would change
 its contents.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getFields()"><code>getFields()</code></a></li>
@@ -764,17 +764,17 @@ its contents.</dd>
 <section class="detail" id="clone()">
 <h3>clone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">clone</span>()
-      throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">clone</span>()
+      throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></span></div>
 <div class="block"><p>Returns a descriptor which is equal to this descriptor.
 Changes to the returned descriptor will have no effect on this
 descriptor, and vice versa.  If this descriptor is immutable,
 it may fulfill this condition by returning itself.</p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A descriptor which is equal to this descriptor.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - for illegal value for field names
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - for illegal value for field names
 or field values.
 If the descriptor construction fails for any reason, this exception will
 be thrown.</dd>
@@ -787,14 +787,14 @@ be thrown.</dd>
 <h3>isValid</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isValid</span>()
-         throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></span></div>
+         throws <span class="exceptions"><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></span></div>
 <div class="block">Returns true if all of the fields have legal values given their
 names.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the values are legal.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="RuntimeOperationsException.html" title="class in javax.management">RuntimeOperationsException</a></code> - If the validity checking fails for
+<dt>抛出:</dt>
+<dd><code><a href="RuntimeOperationsException.html" title="javax.management 包中的类">RuntimeOperationsException</a></code> - If the validity checking fails for
 any reason, this exception will be thrown.
 The method returns false if the descriptor is not valid, but throws
 this exception if the attempt to determine validity fails.</dd>
@@ -806,7 +806,7 @@ this exception if the attempt to determine validity fails.</dd>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block"><p>Compares this descriptor to the given object.  The objects are equal if
 the given object is also a Descriptor, and if the two Descriptors have
 the same field names (possibly differing in case) and the same
@@ -822,20 +822,20 @@ array of the same type with the same elements.</li>
 <li>Otherwise <a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a> must return true.</li>
 </ul></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to compare with.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the objects are the same; <code>false</code>
 otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -863,13 +863,13 @@ the appropriate overloading of <code>java.util.Arrays.hashCode</code>.</li>
 <li>Otherwise <code>h</code> is <code>v.hashCode()</code>.</li>
 </ul></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>A hash code value for this object.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>

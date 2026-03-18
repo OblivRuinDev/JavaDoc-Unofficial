@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.file.spi</a></li>
 <li><a href="FileSystemProvider.html" class="current-selection">FileSystemProvider</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -85,17 +85,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">FileSystemProvider()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#installedProviders()" tabindex="0">installedProviders()</a></li>
 <li><a href="#getScheme()" tabindex="0">getScheme()</a></li>
@@ -134,32 +134,32 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class FileSystemProvider" class="title">Class FileSystemProvider</h1>
+<h1 title="类 FileSystemProvider" class="title">类 FileSystemProvider</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.file.spi.FileSystemProvider</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">FileSystemProvider</span>
-<span class="extends-implements">extends <a href="../../../lang/Object.html" title="class in java.lang">Object</a></span></div>
-<div class="block">Service-provider class for file systems. The methods defined by the <a href="../Files.html" title="class in java.nio.file"><code>Files</code></a> class will typically delegate to an instance of this
+<span class="extends-implements">extends <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
+<div class="block">Service-provider class for file systems. The methods defined by the <a href="../Files.html" title="java.nio.file 包中的类"><code>Files</code></a> class will typically delegate to an instance of this
 class.
 
 <p> A file system provider is a concrete implementation of this class that
 implements the abstract methods defined by this class. A provider is
 identified by a <code>URI</code> <a href="#getScheme()"><code>scheme</code></a>. The default provider
-is identified by the URI scheme "file". It creates the <a href="../FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a> that
+is identified by the URI scheme "file". It creates the <a href="../FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a> that
 provides access to the file systems accessible to the Java virtual machine.
-The <a href="../FileSystems.html" title="class in java.nio.file"><code>FileSystems</code></a> class defines how file system providers are located
+The <a href="../FileSystems.html" title="java.nio.file 包中的类"><code>FileSystems</code></a> class defines how file system providers are located
 and loaded. The default provider is typically a system-default provider but
 may be overridden if the system property <code><span id="java.nio.file.spi.DefaultFileSystemProvider" class="search-tag-result">java.nio.file.spi.DefaultFileSystemProvider</span></code> is set. In that case, the
 provider has a one argument constructor whose formal parameter type is <code>
 FileSystemProvider</code>. All other providers have a zero argument constructor
 that initializes the provider.
 
-<p> A provider is a factory for one or more <a href="../FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a> instances. Each
+<p> A provider is a factory for one or more <a href="../FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a> instances. Each
 file system is identified by a <code>URI</code> where the URI's scheme matches
 the provider's <a href="#getScheme()"><code>scheme</code></a>. The default file system, for example,
 is identified by the URI <code>"file:///"</code>. A memory-based file system,
@@ -175,7 +175,7 @@ provider, the <code>FileSystem</code> is created when the provider is initialize
 <p> All of the methods in this class are safe for use by multiple concurrent
 threads.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -185,8 +185,8 @@ threads.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -202,202 +202,202 @@ threads.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#checkAccess(java.nio.file.Path,java.nio.file.AccessMode...)" class="member-name-link">checkAccess</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../AccessMode.html" title="enum class in java.nio.file">AccessMode</a>...&nbsp;modes)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#checkAccess(java.nio.file.Path,java.nio.file.AccessMode...)" class="member-name-link">checkAccess</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../AccessMode.html" title="java.nio.file 包中的枚举类">AccessMode</a>...&nbsp;modes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Checks the existence, and optionally the accessibility, of a file.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)" class="member-name-link">copy</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;source,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../CopyOption.html" title="interface in java.nio.file">CopyOption</a>...&nbsp;options)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)" class="member-name-link">copy</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;source,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../CopyOption.html" title="java.nio.file 包中的接口">CopyOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Copy a file to a target file.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)" class="member-name-link">createDirectory</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;dir,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)" class="member-name-link">createDirectory</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;dir,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new directory.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createLink(java.nio.file.Path,java.nio.file.Path)" class="member-name-link">createLink</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;existing)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createLink(java.nio.file.Path,java.nio.file.Path)" class="member-name-link">createLink</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;existing)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a new link (directory entry) for an existing file.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)" class="member-name-link">createSymbolicLink</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)" class="member-name-link">createSymbolicLink</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Creates a symbolic link to a target.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#delete(java.nio.file.Path)" class="member-name-link">delete</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#delete(java.nio.file.Path)" class="member-name-link">delete</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Deletes a file.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteIfExists(java.nio.file.Path)" class="member-name-link">deleteIfExists</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteIfExists(java.nio.file.Path)" class="member-name-link">deleteIfExists</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Deletes a file if it exists.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exists(java.nio.file.Path,java.nio.file.LinkOption...)" class="member-name-link">exists</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exists(java.nio.file.Path,java.nio.file.LinkOption...)" class="member-name-link">exists</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tests whether a file exists.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;V extends <a href="../attribute/FileAttributeView.html" title="interface in java.nio.file.attribute">FileAttributeView</a>&gt;<br>V</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">getFileAttributeView</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;V&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;V extends <a href="../attribute/FileAttributeView.html" title="java.nio.file.attribute 包中的接口">FileAttributeView</a>&gt;<br>V</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">getFileAttributeView</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;V&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a file attribute view of a given type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileStore.html" title="class in java.nio.file">FileStore</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileStore(java.nio.file.Path)" class="member-name-link">getFileStore</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileStore.html" title="java.nio.file 包中的类">FileStore</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileStore(java.nio.file.Path)" class="member-name-link">getFileStore</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the <a href="../FileStore.html" title="class in java.nio.file"><code>FileStore</code></a> representing the file store where a file
+<div class="block">Returns the <a href="../FileStore.html" title="java.nio.file 包中的类"><code>FileStore</code></a> representing the file store where a file
 is located.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileSystem(java.net.URI)" class="member-name-link">getFileSystem</a><wbr>(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileSystem(java.net.URI)" class="member-name-link">getFileSystem</a><wbr>(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an existing <code>FileSystem</code> created by this provider.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPath(java.net.URI)" class="member-name-link">getPath</a><wbr>(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPath(java.net.URI)" class="member-name-link">getPath</a><wbr>(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Return a <code>Path</code> object by converting the given <a href="../../../net/URI.html" title="class in java.net"><code>URI</code></a>.</div>
+<div class="block">Return a <code>Path</code> object by converting the given <a href="../../../net/URI.html" title="java.net 包中的类"><code>URI</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getScheme()" class="member-name-link">getScheme</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the URI scheme that identifies this provider.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="FileSystemProvider.html" title="class in java.nio.file.spi">FileSystemProvider</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="FileSystemProvider.html" title="java.nio.file.spi 包中的类">FileSystemProvider</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#installedProviders()" class="member-name-link">installedProviders</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a list of the installed file system providers.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isHidden(java.nio.file.Path)" class="member-name-link">isHidden</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isHidden(java.nio.file.Path)" class="member-name-link">isHidden</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tells whether or not a file is considered <em>hidden</em>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSameFile(java.nio.file.Path,java.nio.file.Path)" class="member-name-link">isSameFile</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path2)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSameFile(java.nio.file.Path,java.nio.file.Path)" class="member-name-link">isSameFile</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path2)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tests if two paths locate the same file.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)" class="member-name-link">move</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;source,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../CopyOption.html" title="interface in java.nio.file">CopyOption</a>...&nbsp;options)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)" class="member-name-link">move</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;source,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../CopyOption.html" title="java.nio.file 包中的接口">CopyOption</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Move or rename a file to a target file.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../channels/AsynchronousFileChannel.html" title="class in java.nio.channels">AsynchronousFileChannel</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newAsynchronousFileChannel</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../channels/AsynchronousFileChannel.html" title="java.nio.channels 包中的类">AsynchronousFileChannel</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newAsynchronousFileChannel</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Opens or creates a file for reading and/or writing, returning an
 asynchronous file channel to access the file.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../channels/SeekableByteChannel.html" title="interface in java.nio.channels">SeekableByteChannel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newByteChannel</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../channels/SeekableByteChannel.html" title="java.nio.channels 包中的接口">SeekableByteChannel</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newByteChannel</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Opens or creates a file, returning a seekable byte channel to access the
 file.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../DirectoryStream.html" title="interface in java.nio.file">DirectoryStream</a><wbr>&lt;<a href="../Path.html" title="interface in java.nio.file">Path</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)" class="member-name-link">newDirectoryStream</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;dir,
- <a href="../DirectoryStream.Filter.html" title="interface in java.nio.file">DirectoryStream.Filter</a>&lt;? super <a href="../Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;filter)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../DirectoryStream.html" title="java.nio.file 包中的接口">DirectoryStream</a><wbr>&lt;<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)" class="member-name-link">newDirectoryStream</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;dir,
+ <a href="../DirectoryStream.Filter.html" title="java.nio.file 包中的接口">DirectoryStream.Filter</a>&lt;? super <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Opens a directory, returning a <code>DirectoryStream</code> to iterate over
 the entries in the directory.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../channels/FileChannel.html" title="class in java.nio.channels">FileChannel</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newFileChannel</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../channels/FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)" class="member-name-link">newFileChannel</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Opens or creates a file for reading and/or writing, returning a file
 channel to access the file.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newFileSystem(java.net.URI,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#newFileSystem(java.net.URI,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Constructs a new <code>FileSystem</code> object identified by a URI.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newFileSystem(java.nio.file.Path,java.util.Map)" class="member-name-link">newFileSystem</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../io/InputStream.html" title="class in java.io">InputStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)" class="member-name-link">newInputStream</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../io/InputStream.html" title="java.io 包中的类">InputStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)" class="member-name-link">newInputStream</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Opens a file, returning an input stream to read from the file.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../io/OutputStream.html" title="class in java.io">OutputStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)" class="member-name-link">newOutputStream</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>...&nbsp;options)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../io/OutputStream.html" title="java.io 包中的类">OutputStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)" class="member-name-link">newOutputStream</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Opens or creates a file, returning an output stream that may be used to
 write bytes to the file.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;A extends <a href="../attribute/BasicFileAttributes.html" title="interface in java.nio.file.attribute">BasicFileAttributes</a>&gt;<br>A</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">readAttributes</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract &lt;A extends <a href="../attribute/BasicFileAttributes.html" title="java.nio.file.attribute 包中的接口">BasicFileAttributes</a>&gt;<br>A</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">readAttributes</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Reads a file's attributes as a bulk operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../util/Map.html" title="interface in java.util">Map</a><wbr>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../../../lang/Object.html" title="class in java.lang">Object</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)" class="member-name-link">readAttributes</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/String.html" title="class in java.lang">String</a>&nbsp;attributes,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../util/Map.html" title="java.util 包中的接口">Map</a><wbr>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)" class="member-name-link">readAttributes</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;attributes,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Reads a set of file attributes as a bulk operation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="interface in java.nio.file.attribute">BasicFileAttributes</a>&gt;<br>A</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readAttributesIfExists(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">readAttributesIfExists</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="java.nio.file.attribute 包中的接口">BasicFileAttributes</a>&gt;<br>A</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readAttributesIfExists(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)" class="member-name-link">readAttributesIfExists</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a file's attributes as a bulk operation if it exists.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readSymbolicLink(java.nio.file.Path)" class="member-name-link">readSymbolicLink</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readSymbolicLink(java.nio.file.Path)" class="member-name-link">readSymbolicLink</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads the target of a symbolic link.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)" class="member-name-link">setAttribute</a><wbr>(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/String.html" title="class in java.lang">String</a>&nbsp;attribute,
- <a href="../../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;value,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)" class="member-name-link">setAttribute</a><wbr>(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;attribute,
+ <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the value of a file attribute.</div>
 </div>
@@ -405,7 +405,7 @@ write bytes to the file.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -416,7 +416,7 @@ write bytes to the file.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -438,25 +438,25 @@ providers is detected then an unspecified error is thrown.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="installedProviders()">
 <h3>installedProviders</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../util/List.html" title="interface in java.util">List</a>&lt;<a href="FileSystemProvider.html" title="class in java.nio.file.spi">FileSystemProvider</a>&gt;</span>&nbsp;<span class="element-name">installedProviders</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="FileSystemProvider.html" title="java.nio.file.spi 包中的类">FileSystemProvider</a>&gt;</span>&nbsp;<span class="element-name">installedProviders</span>()</div>
 <div class="block">Returns a list of the installed file system providers.
 
 <p> The first invocation of this method causes the default provider to be
 initialized (if not already initialized) and loads any other installed
-providers as described by the <a href="../FileSystems.html" title="class in java.nio.file"><code>FileSystems</code></a> class.</div>
+providers as described by the <a href="../FileSystems.html" title="java.nio.file 包中的类"><code>FileSystems</code></a> class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An unmodifiable list of the installed file system providers. The
          list contains at least one element, that is the default file
          system provider</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../util/ServiceConfigurationError.html" title="class in java.util">ServiceConfigurationError</a></code> - When an error occurs while loading a service provider</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../util/ServiceConfigurationError.html" title="java.util 包中的类">ServiceConfigurationError</a></code> - When an error occurs while loading a service provider</dd>
 </dl>
 </div>
 </section>
@@ -465,10 +465,10 @@ providers as described by the <a href="../FileSystems.html" title="class in java
 <section class="detail" id="getScheme()">
 <h3>getScheme</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getScheme</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getScheme</span>()</div>
 <div class="block">Returns the URI scheme that identifies this provider.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The URI scheme</dd>
 </dl>
 </div>
@@ -478,9 +478,9 @@ providers as described by the <a href="../FileSystems.html" title="class in java
 <section class="detail" id="newFileSystem(java.net.URI,java.util.Map)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</span>
-                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</span>
+                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> object identified by a URI. This
 method is invoked by the <a href="../FileSystems.html#newFileSystem(java.net.URI,java.util.Map)"><code>FileSystems.newFileSystem(URI,Map)</code></a>
 method to open a new file system identified by a URI.
@@ -491,24 +491,24 @@ provider. The exact form of the URI is highly provider dependent. The
 <code>env</code> parameter is a map of provider specific properties to configure
 the file system.
 
-<p> This method throws <a href="../FileSystemAlreadyExistsException.html" title="class in java.nio.file"><code>FileSystemAlreadyExistsException</code></a> if the
+<p> This method throws <a href="../FileSystemAlreadyExistsException.html" title="java.nio.file 包中的类"><code>FileSystemAlreadyExistsException</code></a> if the
 file system already exists because it was previously created by an
 invocation of this method. Once a file system is <a href="../FileSystem.html#close()"><code>closed</code></a> it is provider-dependent if the
 provider allows a new file system to be created with the same URI as a
 file system it previously created.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - URI reference</dd>
 <dd><code>env</code> - A map of provider specific properties to configure the file system;
          may be empty</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the pre-conditions for the <code>uri</code> parameter aren't met,
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the pre-conditions for the <code>uri</code> parameter aren't met,
          or the <code>env</code> parameter does not contain properties required
          by the provider, or a property value is invalid</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - An I/O error occurs creating the file system</dd>
-<dd><code><a href="../FileSystemAlreadyExistsException.html" title="class in java.nio.file">FileSystemAlreadyExistsException</a></code> - If the file system has already been created</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - An I/O error occurs creating the file system</dd>
+<dd><code><a href="../FileSystemAlreadyExistsException.html" title="java.nio.file 包中的类">FileSystemAlreadyExistsException</a></code> - If the file system has already been created</dd>
 </dl>
 </div>
 </section>
@@ -517,7 +517,7 @@ file system it previously created.</div>
 <section class="detail" id="getFileSystem(java.net.URI)">
 <h3>getFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</span></div>
 <div class="block">Returns an existing <code>FileSystem</code> created by this provider.
 
 <p> This method returns a reference to a <code>FileSystem</code> that was
@@ -529,18 +529,18 @@ path component is <code>"/"</code> and the authority, query and fragment compone
 are undefined (Undefined components are represented by <code>null</code>).
 
 <p> Once a file system created by this provider is <a href="../FileSystem.html#close()"><code>closed</code></a> it is provider-dependent if this
-method returns a reference to the closed file system or throws <a href="../FileSystemNotFoundException.html" title="class in java.nio.file"><code>FileSystemNotFoundException</code></a>. If the provider allows a new file system to
+method returns a reference to the closed file system or throws <a href="../FileSystemNotFoundException.html" title="java.nio.file 包中的类"><code>FileSystemNotFoundException</code></a>. If the provider allows a new file system to
 be created with the same URI as a file system it previously created then
 this method throws the exception if invoked after the file system is
 closed (and before a new instance is created by the <a href="#newFileSystem(java.net.URI,java.util.Map)"><code>newFileSystem</code></a> method).</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - URI reference</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the pre-conditions for the <code>uri</code> parameter aren't met</dd>
-<dd><code><a href="../FileSystemNotFoundException.html" title="class in java.nio.file">FileSystemNotFoundException</a></code> - If the file system does not exist</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the pre-conditions for the <code>uri</code> parameter aren't met</dd>
+<dd><code><a href="../FileSystemNotFoundException.html" title="java.nio.file 包中的类">FileSystemNotFoundException</a></code> - If the file system does not exist</dd>
 </dl>
 </div>
 </section>
@@ -549,9 +549,9 @@ closed (and before a new instance is created by the <a href="#newFileSystem(java
 <section class="detail" id="getPath(java.net.URI)">
 <h3>getPath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">getPath</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</span></div>
-<div class="block">Return a <code>Path</code> object by converting the given <a href="../../../net/URI.html" title="class in java.net"><code>URI</code></a>. The
-resulting <code>Path</code> is associated with a <a href="../FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a> that
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">getPath</span><wbr><span class="parameters">(<a href="../../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</span></div>
+<div class="block">Return a <code>Path</code> object by converting the given <a href="../../../net/URI.html" title="java.net 包中的类"><code>URI</code></a>. The
+resulting <code>Path</code> is associated with a <a href="../FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a> that
 already exists or is constructed automatically.
 
 <p> The exact form of the URI is file system provider dependent. In the
@@ -560,14 +560,14 @@ given URI has a non-empty path component, and undefined query, and
 fragment components. The resulting <code>Path</code> is associated with the
 default <a href="../FileSystems.html#getDefault()"><code>default</code></a> <code>FileSystem</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - The URI to convert</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The resulting <code>Path</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the URI scheme does not identify this provider or other
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the URI scheme does not identify this provider or other
          preconditions on the uri parameter do not hold</dd>
-<dd><code><a href="../FileSystemNotFoundException.html" title="class in java.nio.file">FileSystemNotFoundException</a></code> - The file system, identified by the URI, does not exist and
+<dd><code><a href="../FileSystemNotFoundException.html" title="java.nio.file 包中的类">FileSystemNotFoundException</a></code> - The file system, identified by the URI, does not exist and
          cannot be created automatically</dd>
 </dl>
 </div>
@@ -577,9 +577,9 @@ default <a href="../FileSystems.html#getDefault()"><code>default</code></a> <cod
 <section class="detail" id="newFileSystem(java.nio.file.Path,java.util.Map)">
 <h3>newFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;env)</span>
-                         throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">newFileSystem</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;env)</span>
+                         throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Constructs a new <code>FileSystem</code> to access the contents of a file as a
 file system.
 
@@ -593,19 +593,19 @@ or if the provider does not recognize the file type of the given file then
 it throws <code>UnsupportedOperationException</code>. The default implementation
 of this method throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - The path to the file</dd>
 <dd><code>env</code> - A map of provider specific properties to configure the file system;
          may be empty</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new file system</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If this provider does not support access to the contents as a
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If this provider does not support access to the contents as a
          file system or it does not recognize the file type of the
          given file</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the <code>env</code> parameter does not contain properties required
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the <code>env</code> parameter does not contain properties required
          by the provider, or a property value is invalid</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -614,9 +614,9 @@ of this method throws <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)">
 <h3>newInputStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../io/InputStream.html" title="class in java.io">InputStream</a></span>&nbsp;<span class="element-name">newInputStream</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>...&nbsp;options)</span>
-                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../io/InputStream.html" title="java.io 包中的类">InputStream</a></span>&nbsp;<span class="element-name">newInputStream</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>...&nbsp;options)</span>
+                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens a file, returning an input stream to read from the file. This
 method works in exactly the manner specified by the <a href="../Files.html#newInputStream(java.nio.file.Path,java.nio.file.OpenOption...)"><code>Files.newInputStream(Path, OpenOption...)</code></a> method.
 
@@ -625,15 +625,15 @@ as if by invoking the <a href="#newByteChannel(java.nio.file.Path,java.util.Set,
 stream that reads bytes from the channel. This method should be overridden
 where appropriate.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to open</dd>
 <dd><code>options</code> - options specifying how the file is opened</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new input stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if an invalid combination of options is specified</dd>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if an unsupported option is specified</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if an invalid combination of options is specified</dd>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if an unsupported option is specified</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -642,9 +642,9 @@ where appropriate.</div>
 <section class="detail" id="newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)">
 <h3>newOutputStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../io/OutputStream.html" title="class in java.io">OutputStream</a></span>&nbsp;<span class="element-name">newOutputStream</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>...&nbsp;options)</span>
-                             throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../io/OutputStream.html" title="java.io 包中的类">OutputStream</a></span>&nbsp;<span class="element-name">newOutputStream</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>...&nbsp;options)</span>
+                             throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens or creates a file, returning an output stream that may be used to
 write bytes to the file. This method works in exactly the manner
 specified by the <a href="../Files.html#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)"><code>Files.newOutputStream(Path, OpenOption...)</code></a> method.
@@ -654,16 +654,16 @@ as if by invoking the <a href="#newByteChannel(java.nio.file.Path,java.util.Set,
 stream that writes bytes to the channel. This method should be overridden
 where appropriate.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to open or create</dd>
 <dd><code>options</code> - options specifying how the file is opened</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new output stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>options</code> contains an invalid combination of options</dd>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if an unsupported option is specified</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>options</code> contains an invalid combination of options</dd>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if an unsupported option is specified</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
          <i>(optional specific exception)</i></dd>
 </dl>
 </div>
@@ -673,10 +673,10 @@ where appropriate.</div>
 <section class="detail" id="newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)">
 <h3>newFileChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../channels/FileChannel.html" title="class in java.nio.channels">FileChannel</a></span>&nbsp;<span class="element-name">newFileChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
-                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../channels/FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a></span>&nbsp;<span class="element-name">newFileChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
+                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens or creates a file for reading and/or writing, returning a file
 channel to access the file. This method works in exactly the manner
 specified by the <a href="../../channels/FileChannel.html#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)"><code>FileChannel.open</code></a> method. A provider that does not support all the
@@ -685,21 +685,21 @@ UnsupportedOperationException</code>. The default provider is required to
 support the creation of file channels. When not overridden, the default
 implementation throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path of the file to open or create</dd>
 <dd><code>options</code> - options specifying how the file is opened</dd>
 <dd><code>attrs</code> - an optional list of file attributes to set atomically when
          creating the file</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new file channel</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the set contains an invalid combination of options</dd>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If this provider that does not support creating file channels,
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the set contains an invalid combination of options</dd>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If this provider that does not support creating file channels,
          or an unsupported open option or file attribute is specified</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
          and the file is being opened for writing
          <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -708,11 +708,11 @@ implementation throws <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)">
 <h3>newAsynchronousFileChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../channels/AsynchronousFileChannel.html" title="class in java.nio.channels">AsynchronousFileChannel</a></span>&nbsp;<span class="element-name">newAsynchronousFileChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
-                                                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../channels/AsynchronousFileChannel.html" title="java.nio.channels 包中的类">AsynchronousFileChannel</a></span>&nbsp;<span class="element-name">newAsynchronousFileChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
+                                                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens or creates a file for reading and/or writing, returning an
 asynchronous file channel to access the file. This method works in
 exactly the manner specified by the <a href="../../channels/AsynchronousFileChannel.html#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)"><code>AsynchronousFileChannel.open</code></a> method.
@@ -722,24 +722,24 @@ The default provider is required to support the creation of asynchronous
 file channels. When not overridden, the default implementation of this
 method throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path of the file to open or create</dd>
 <dd><code>options</code> - options specifying how the file is opened</dd>
 <dd><code>executor</code> - the thread pool or <code>null</code> to associate the channel with
          the default thread pool</dd>
 <dd><code>attrs</code> - an optional list of file attributes to set atomically when
          creating the file</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new asynchronous file channel</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the set contains an invalid combination of options</dd>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If this provider that does not support creating asynchronous file
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the set contains an invalid combination of options</dd>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If this provider that does not support creating asynchronous file
          channels, or an unsupported open option or file attribute is
          specified</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
          and the file is being opened for writing
          <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -748,28 +748,28 @@ method throws <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)">
 <h3>newByteChannel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../channels/SeekableByteChannel.html" title="interface in java.nio.channels">SeekableByteChannel</a></span>&nbsp;<span class="element-name">newByteChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../util/Set.html" title="interface in java.util">Set</a>&lt;? extends <a href="../OpenOption.html" title="interface in java.nio.file">OpenOption</a>&gt;&nbsp;options,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
-                                            throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../channels/SeekableByteChannel.html" title="java.nio.channels 包中的接口">SeekableByteChannel</a></span>&nbsp;<span class="element-name">newByteChannel</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends <a href="../OpenOption.html" title="java.nio.file 包中的接口">OpenOption</a>&gt;&nbsp;options,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
+                                            throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens or creates a file, returning a seekable byte channel to access the
 file. This method works in exactly the manner specified by the <a href="../Files.html#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)"><code>Files.newByteChannel(Path,Set,FileAttribute[])</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to open or create</dd>
 <dd><code>options</code> - options specifying how the file is opened</dd>
 <dd><code>attrs</code> - an optional list of file attributes to set atomically when
          creating the file</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new seekable byte channel</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the set contains an invalid combination of options</dd>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if an unsupported open option is specified or the array contains
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the set contains an invalid combination of options</dd>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if an unsupported open option is specified or the array contains
          attributes that cannot be set atomically when creating the file</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - If a file of that name already exists and the <a href="../StandardOpenOption.html#CREATE_NEW"><code>CREATE_NEW</code></a> option is specified
          and the file is being opened for writing
          <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -778,23 +778,23 @@ file. This method works in exactly the manner specified by the <a href="../Files
 <section class="detail" id="newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)">
 <h3>newDirectoryStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../DirectoryStream.html" title="interface in java.nio.file">DirectoryStream</a>&lt;<a href="../Path.html" title="interface in java.nio.file">Path</a>&gt;</span>&nbsp;<span class="element-name">newDirectoryStream</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;dir,
- <a href="../DirectoryStream.Filter.html" title="interface in java.nio.file">DirectoryStream.Filter</a>&lt;? super <a href="../Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;filter)</span>
-                                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../DirectoryStream.html" title="java.nio.file 包中的接口">DirectoryStream</a>&lt;<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</span>&nbsp;<span class="element-name">newDirectoryStream</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;dir,
+ <a href="../DirectoryStream.Filter.html" title="java.nio.file 包中的接口">DirectoryStream.Filter</a>&lt;? super <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;filter)</span>
+                                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens a directory, returning a <code>DirectoryStream</code> to iterate over
 the entries in the directory. This method works in exactly the manner
 specified by the <a href="../Files.html#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)"><code>Files.newDirectoryStream(java.nio.file.Path, java.nio.file.DirectoryStream.Filter)</code></a>
 method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>dir</code> - the path to the directory</dd>
 <dd><code>filter</code> - the directory stream filter</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new and open <code>DirectoryStream</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NotDirectoryException.html" title="class in java.nio.file">NotDirectoryException</a></code> - if the file could not otherwise be opened because it is not
+<dt>抛出:</dt>
+<dd><code><a href="../NotDirectoryException.html" title="java.nio.file 包中的类">NotDirectoryException</a></code> - if the file could not otherwise be opened because it is not
          a directory <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -803,22 +803,22 @@ method.</div>
 <section class="detail" id="createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)">
 <h3>createDirectory</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createDirectory</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;dir,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
-                              throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createDirectory</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;dir,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
+                              throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates a new directory. This method works in exactly the manner
 specified by the <a href="../Files.html#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)"><code>Files.createDirectory(Path, FileAttribute...)</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>dir</code> - the directory to create</dd>
 <dd><code>attrs</code> - an optional list of file attributes to set atomically when
          creating the directory</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the array contains an attribute that cannot be set atomically
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the array contains an attribute that cannot be set atomically
          when creating the directory</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - if a directory could not otherwise be created because a file of
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - if a directory could not otherwise be created because a file of
          that name already exists <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs or the parent directory does not exist</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs or the parent directory does not exist</dd>
 </dl>
 </div>
 </section>
@@ -827,28 +827,28 @@ specified by the <a href="../Files.html#createDirectory(java.nio.file.Path,java.
 <section class="detail" id="createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)">
 <h3>createSymbolicLink</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createSymbolicLink</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../attribute/FileAttribute.html" title="interface in java.nio.file.attribute">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
-                        throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createSymbolicLink</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../attribute/FileAttribute.html" title="java.nio.file.attribute 包中的接口">FileAttribute</a>&lt;?&gt;...&nbsp;attrs)</span>
+                        throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates a symbolic link to a target. This method works in exactly the
 manner specified by the <a href="../Files.html#createSymbolicLink(java.nio.file.Path,java.nio.file.Path,java.nio.file.attribute.FileAttribute...)"><code>Files.createSymbolicLink(Path, Path, FileAttribute...)</code></a> method.
 
 <p> The default implementation of this method throws <code>
 UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>link</code> - the path of the symbolic link to create</dd>
 <dd><code>target</code> - the target of the symbolic link</dd>
 <dd><code>attrs</code> - the array of attributes to set atomically when creating the
          symbolic link</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation does not support symbolic links or the
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation does not support symbolic links or the
          array contains an attribute that cannot be set atomically when
          creating the symbolic link</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - if a file with the name already exists <i>(optional specific
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - if a file with the name already exists <i>(optional specific
          exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -857,9 +857,9 @@ UnsupportedOperationException</code>.</div>
 <section class="detail" id="createLink(java.nio.file.Path,java.nio.file.Path)">
 <h3>createLink</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createLink</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;existing)</span>
-                throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">createLink</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;existing)</span>
+                throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates a new link (directory entry) for an existing file. This method
 works in exactly the manner specified by the <a href="../Files.html#createLink(java.nio.file.Path,java.nio.file.Path)"><code>Files.createLink(Path, Path)</code></a>
 method.
@@ -867,15 +867,15 @@ method.
 <p> The default implementation of this method throws <code>
 UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>link</code> - the link (directory entry) to create</dd>
 <dd><code>existing</code> - a path to an existing file</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation does not support adding an existing file
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation does not support adding an existing file
          to a directory</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - if the entry could not otherwise be created because a file of
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - if the entry could not otherwise be created because a file of
          that name already exists <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -884,19 +884,19 @@ UnsupportedOperationException</code>.</div>
 <section class="detail" id="delete(java.nio.file.Path)">
 <h3>delete</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">delete</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</span>
-                     throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">delete</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</span>
+                     throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Deletes a file. This method works in exactly the  manner specified by the
 <a href="../Files.html#delete(java.nio.file.Path)"><code>Files.delete(Path)</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to delete</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NoSuchFileException.html" title="class in java.nio.file">NoSuchFileException</a></code> - if the file does not exist <i>(optional specific exception)</i></dd>
-<dd><code><a href="../DirectoryNotEmptyException.html" title="class in java.nio.file">DirectoryNotEmptyException</a></code> - if the file is a directory and could not otherwise be deleted
+<dt>抛出:</dt>
+<dd><code><a href="../NoSuchFileException.html" title="java.nio.file 包中的类">NoSuchFileException</a></code> - if the file does not exist <i>(optional specific exception)</i></dd>
+<dd><code><a href="../DirectoryNotEmptyException.html" title="java.nio.file 包中的类">DirectoryNotEmptyException</a></code> - if the file is a directory and could not otherwise be deleted
          because the directory is not empty <i>(optional specific
          exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -905,25 +905,25 @@ UnsupportedOperationException</code>.</div>
 <section class="detail" id="deleteIfExists(java.nio.file.Path)">
 <h3>deleteIfExists</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">deleteIfExists</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</span>
-                       throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">deleteIfExists</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</span>
+                       throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Deletes a file if it exists. This method works in exactly the manner
 specified by the <a href="../Files.html#deleteIfExists(java.nio.file.Path)"><code>Files.deleteIfExists(Path)</code></a> method.
 
 <p> The default implementation of this method simply invokes <a href="#delete(java.nio.file.Path)"><code>delete(Path)</code></a> ignoring the <code>NoSuchFileException</code> when the file does not
 exist. It may be overridden where appropriate.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to delete</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the file was deleted by this method; <code>
          false</code> if the file could not be deleted because it did not
          exist</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../DirectoryNotEmptyException.html" title="class in java.nio.file">DirectoryNotEmptyException</a></code> - if the file is a directory and could not otherwise be deleted
+<dt>抛出:</dt>
+<dd><code><a href="../DirectoryNotEmptyException.html" title="java.nio.file 包中的类">DirectoryNotEmptyException</a></code> - if the file is a directory and could not otherwise be deleted
          because the directory is not empty <i>(optional specific
          exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -932,23 +932,23 @@ exist. It may be overridden where appropriate.</div>
 <section class="detail" id="readSymbolicLink(java.nio.file.Path)">
 <h3>readSymbolicLink</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">readSymbolicLink</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;link)</span>
-                      throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">readSymbolicLink</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;link)</span>
+                      throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads the target of a symbolic link. This method works in exactly the
 manner specified by the <a href="../Files.html#readSymbolicLink(java.nio.file.Path)"><code>Files.readSymbolicLink(Path)</code></a> method.
 
 <p> The default implementation of this method throws <code>
 UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>link</code> - the path to the symbolic link</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The target of the symbolic link</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation does not support symbolic links</dd>
-<dd><code><a href="../NotLinkException.html" title="class in java.nio.file">NotLinkException</a></code> - if the target could otherwise not be read because the file
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation does not support symbolic links</dd>
+<dd><code><a href="../NotLinkException.html" title="java.nio.file 包中的类">NotLinkException</a></code> - if the target could otherwise not be read because the file
          is not a symbolic link <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -957,28 +957,28 @@ UnsupportedOperationException</code>.</div>
 <section class="detail" id="copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)">
 <h3>copy</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copy</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;source,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../CopyOption.html" title="interface in java.nio.file">CopyOption</a>...&nbsp;options)</span>
-                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">copy</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;source,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../CopyOption.html" title="java.nio.file 包中的接口">CopyOption</a>...&nbsp;options)</span>
+                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Copy a file to a target file. This method works in exactly the manner
 specified by the <a href="../Files.html#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)"><code>Files.copy(Path,Path,CopyOption[])</code></a> method
 except that both the source and target paths must be associated with
 this provider.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - the path to the file to copy</dd>
 <dd><code>target</code> - the path to the target file</dd>
 <dd><code>options</code> - options specifying how the copy should be done</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the array contains a copy option that is not supported</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - if the target file exists but cannot be replaced because the
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the array contains a copy option that is not supported</dd>
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - if the target file exists but cannot be replaced because the
          <code>REPLACE_EXISTING</code> option is not specified <i>(optional
          specific exception)</i></dd>
-<dd><code><a href="../DirectoryNotEmptyException.html" title="class in java.nio.file">DirectoryNotEmptyException</a></code> - the <code>REPLACE_EXISTING</code> option is specified but the file
+<dd><code><a href="../DirectoryNotEmptyException.html" title="java.nio.file 包中的类">DirectoryNotEmptyException</a></code> - the <code>REPLACE_EXISTING</code> option is specified but the file
          cannot be replaced because it is a non-empty directory
          <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -987,29 +987,29 @@ this provider.</div>
 <section class="detail" id="move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)">
 <h3>move</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">move</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;source,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;target,
- <a href="../CopyOption.html" title="interface in java.nio.file">CopyOption</a>...&nbsp;options)</span>
-                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">move</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;source,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;target,
+ <a href="../CopyOption.html" title="java.nio.file 包中的接口">CopyOption</a>...&nbsp;options)</span>
+                   throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Move or rename a file to a target file. This method works in exactly the
 manner specified by the <a href="../Files.html#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)"><code>Files.move(Path, Path, CopyOption...)</code></a> method except that both the
 source and target paths must be associated with this provider.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - the path to the file to move</dd>
 <dd><code>target</code> - the path to the target file</dd>
 <dd><code>options</code> - options specifying how the move should be done</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the array contains a copy option that is not supported</dd>
-<dd><code><a href="../FileAlreadyExistsException.html" title="class in java.nio.file">FileAlreadyExistsException</a></code> - if the target file exists but cannot be replaced because the
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the array contains a copy option that is not supported</dd>
+<dd><code><a href="../FileAlreadyExistsException.html" title="java.nio.file 包中的类">FileAlreadyExistsException</a></code> - if the target file exists but cannot be replaced because the
          <code>REPLACE_EXISTING</code> option is not specified <i>(optional
          specific exception)</i></dd>
-<dd><code><a href="../DirectoryNotEmptyException.html" title="class in java.nio.file">DirectoryNotEmptyException</a></code> - the <code>REPLACE_EXISTING</code> option is specified but the file
+<dd><code><a href="../DirectoryNotEmptyException.html" title="java.nio.file 包中的类">DirectoryNotEmptyException</a></code> - the <code>REPLACE_EXISTING</code> option is specified but the file
          cannot be replaced because it is a non-empty directory
          <i>(optional specific exception)</i></dd>
-<dd><code><a href="../AtomicMoveNotSupportedException.html" title="class in java.nio.file">AtomicMoveNotSupportedException</a></code> - if the options array contains the <code>ATOMIC_MOVE</code> option but
+<dd><code><a href="../AtomicMoveNotSupportedException.html" title="java.nio.file 包中的类">AtomicMoveNotSupportedException</a></code> - if the options array contains the <code>ATOMIC_MOVE</code> option but
          the file cannot be moved as an atomic file system operation.</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1018,19 +1018,19 @@ source and target paths must be associated with this provider.</div>
 <section class="detail" id="isSameFile(java.nio.file.Path,java.nio.file.Path)">
 <h3>isSameFile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSameFile</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path2)</span>
-                            throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSameFile</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path2)</span>
+                            throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Tests if two paths locate the same file. This method works in exactly the
 manner specified by the <a href="../Files.html#isSameFile(java.nio.file.Path,java.nio.file.Path)"><code>Files.isSameFile(Path, Path)</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - one path to the file</dd>
 <dd><code>path2</code> - the other path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, the two paths locate the same file</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1039,20 +1039,20 @@ manner specified by the <a href="../Files.html#isSameFile(java.nio.file.Path,jav
 <section class="detail" id="isHidden(java.nio.file.Path)">
 <h3>isHidden</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHidden</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</span>
-                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isHidden</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</span>
+                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Tells whether or not a file is considered <em>hidden</em>. This method
 works in exactly the manner specified by the <a href="../Files.html#isHidden(java.nio.file.Path)"><code>Files.isHidden(Path)</code></a>
 method.
 
 <p> This method is invoked by the <a href="../Files.html#isHidden(java.nio.file.Path)"><code>isHidden</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to test</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the file is considered hidden</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1061,18 +1061,18 @@ method.
 <section class="detail" id="getFileStore(java.nio.file.Path)">
 <h3>getFileStore</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileStore.html" title="class in java.nio.file">FileStore</a></span>&nbsp;<span class="element-name">getFileStore</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path)</span>
-                                throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
-<div class="block">Returns the <a href="../FileStore.html" title="class in java.nio.file"><code>FileStore</code></a> representing the file store where a file
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../FileStore.html" title="java.nio.file 包中的类">FileStore</a></span>&nbsp;<span class="element-name">getFileStore</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path)</span>
+                                throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
+<div class="block">Returns the <a href="../FileStore.html" title="java.nio.file 包中的类"><code>FileStore</code></a> representing the file store where a file
 is located. This method works in exactly the manner specified by the
 <a href="../Files.html#getFileStore(java.nio.file.Path)"><code>Files.getFileStore(Path)</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the file store where the file is stored</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1081,9 +1081,9 @@ is located. This method works in exactly the manner specified by the
 <section class="detail" id="checkAccess(java.nio.file.Path,java.nio.file.AccessMode...)">
 <h3>checkAccess</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkAccess</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../AccessMode.html" title="enum class in java.nio.file">AccessMode</a>...&nbsp;modes)</span>
-                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkAccess</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../AccessMode.html" title="java.nio.file 包中的枚举类">AccessMode</a>...&nbsp;modes)</span>
+                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Checks the existence, and optionally the accessibility, of a file.
 
 <p> This method may be used by the <a href="../Files.html#isReadable(java.nio.file.Path)"><code>isReadable</code></a>,
@@ -1133,19 +1133,19 @@ determine the effective access to a file may require access to several
 attributes and so in some implementations this method may not be atomic
 with respect to other file system operations.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to check</dd>
 <dd><code>modes</code> - The access modes to check; may have zero elements</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - an implementation is required to support checking for
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - an implementation is required to support checking for
          <code>READ</code>, <code>WRITE</code>, and <code>EXECUTE</code> access. This
          exception is specified to allow for the <code>Access</code> enum to
          be extended in future releases.</dd>
-<dd><code><a href="../NoSuchFileException.html" title="class in java.nio.file">NoSuchFileException</a></code> - if a file does not exist <i>(optional specific exception)</i></dd>
-<dd><code><a href="../AccessDeniedException.html" title="class in java.nio.file">AccessDeniedException</a></code> - the requested access would be denied or the access cannot be
+<dd><code><a href="../NoSuchFileException.html" title="java.nio.file 包中的类">NoSuchFileException</a></code> - if a file does not exist <i>(optional specific exception)</i></dd>
+<dd><code><a href="../AccessDeniedException.html" title="java.nio.file 包中的类">AccessDeniedException</a></code> - the requested access would be denied or the access cannot be
          determined because the Java virtual machine has insufficient
          privileges or other reasons. <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1154,20 +1154,20 @@ with respect to other file system operations.</div>
 <section class="detail" id="getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)">
 <h3>getFileAttributeView</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;V extends <a href="../attribute/FileAttributeView.html" title="interface in java.nio.file.attribute">FileAttributeView</a>&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-name">getFileAttributeView</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;V&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;V extends <a href="../attribute/FileAttributeView.html" title="java.nio.file.attribute 包中的接口">FileAttributeView</a>&gt;</span>&nbsp;<span class="return-type">V</span>&nbsp;<span class="element-name">getFileAttributeView</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;V&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span></div>
 <div class="block">Returns a file attribute view of a given type. This method works in
 exactly the manner specified by the <a href="../Files.html#getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)"><code>Files.getFileAttributeView(Path, Class, LinkOption...)</code></a>
 method.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="getFileAttributeView(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)-type-param-V"><code>V</code> - The <code>FileAttributeView</code> type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>type</code> - the <code>Class</code> object corresponding to the file attribute view</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a file attribute view of the specified type, or <code>null</code> if
          the attribute view type is not available</dd>
 </dl>
@@ -1178,25 +1178,25 @@ method.</div>
 <section class="detail" id="readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)">
 <h3>readAttributes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="interface in java.nio.file.attribute">BasicFileAttributes</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">readAttributes</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span>
-                                                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="type-parameters">&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="java.nio.file.attribute 包中的接口">BasicFileAttributes</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">readAttributes</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span>
+                                                          throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a file's attributes as a bulk operation. This method works in
 exactly the manner specified by the <a href="../Files.html#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)"><code>Files.readAttributes(Path,Class,LinkOption[])</code></a> method.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)-type-param-A"><code>A</code> - The <code>BasicFileAttributes</code> type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>type</code> - the <code>Class</code> of the file attributes required
          to read</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the file attributes</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if an attributes of the given type are not supported</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if an attributes of the given type are not supported</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1205,25 +1205,25 @@ exactly the manner specified by the <a href="../Files.html#readAttributes(java.n
 <section class="detail" id="readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)">
 <h3>readAttributes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../lang/String.html" title="class in java.lang">String</a>,<wbr><a href="../../../lang/Object.html" title="class in java.lang">Object</a>&gt;</span>&nbsp;<span class="element-name">readAttributes</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/String.html" title="class in java.lang">String</a>&nbsp;attributes,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span>
-                                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../lang/String.html" title="java.lang 包中的类">String</a>,<wbr><a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>&gt;</span>&nbsp;<span class="element-name">readAttributes</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;attributes,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span>
+                                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a set of file attributes as a bulk operation. This method works in
 exactly the manner specified by the <a href="../Files.html#readAttributes(java.nio.file.Path,java.lang.String,java.nio.file.LinkOption...)"><code>Files.readAttributes(Path,String,LinkOption[])</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>attributes</code> - the attributes to read</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a map of the attributes returned; may be empty. The map's keys
          are the attribute names, its values are the attribute values</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the attribute view is not available</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if no attributes are specified or an unrecognized attributes is
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the attribute view is not available</dd>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if no attributes are specified or an unrecognized attributes is
          specified</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1232,28 +1232,28 @@ exactly the manner specified by the <a href="../Files.html#readAttributes(java.n
 <section class="detail" id="setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)">
 <h3>setAttribute</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAttribute</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/String.html" title="class in java.lang">String</a>&nbsp;attribute,
- <a href="../../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;value,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span>
-                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAttribute</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;attribute,
+ <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span>
+                           throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Sets the value of a file attribute. This method works in exactly the
 manner specified by the <a href="../Files.html#setAttribute(java.nio.file.Path,java.lang.String,java.lang.Object,java.nio.file.LinkOption...)"><code>Files.setAttribute(Path, String, Object, LinkOption...)</code></a> method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>attribute</code> - the attribute to set</dd>
 <dd><code>value</code> - the attribute value</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the attribute view is not available</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the attribute name is not specified, or is not recognized, or
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the attribute view is not available</dd>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the attribute name is not specified, or is not recognized, or
          the attribute value is of the correct type but has an
          inappropriate value</dd>
-<dd><code><a href="../../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - If the attribute value is not of the expected type or is a
+<dd><code><a href="../../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - If the attribute value is not of the expected type or is a
          collection containing elements that are not of the expected
          type</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1262,25 +1262,25 @@ manner specified by the <a href="../Files.html#setAttribute(java.nio.file.Path,j
 <section class="detail" id="exists(java.nio.file.Path,java.nio.file.LinkOption...)">
 <h3>exists</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">exists</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">exists</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span></div>
 <div class="block">Tests whether a file exists. This method works in exactly the
 manner specified by the <a href="../Files.html#exists(java.nio.file.Path,java.nio.file.LinkOption...)"><code>Files.exists(Path, LinkOption...)</code></a> method.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation of this method invokes the
 <a href="#checkAccess(java.nio.file.Path,java.nio.file.AccessMode...)"><code>checkAccess(Path, AccessMode...)</code></a> method when symbolic links
 are followed. If the option <a href="../LinkOption.html#NOFOLLOW_LINKS"><code>NOFOLLOW_LINKS</code></a>
 is present then symbolic links are not followed and the method
 <a href="#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)"><code>readAttributes(Path, Class, LinkOption...)</code></a> is called
 to determine whether a file exists.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file to test</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the file exists; <code>false</code> if the file does
          not exist or its existence cannot be determined.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>20</dd>
 </dl>
 </div>
@@ -1290,10 +1290,10 @@ to determine whether a file exists.</dd>
 <section class="detail" id="readAttributesIfExists(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)">
 <h3>readAttributesIfExists</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="interface in java.nio.file.attribute">BasicFileAttributes</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">readAttributesIfExists</span><wbr><span class="parameters">(<a href="../Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="../../../lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;type,
- <a href="../LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span>
-                                                         throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;A extends <a href="../attribute/BasicFileAttributes.html" title="java.nio.file.attribute 包中的接口">BasicFileAttributes</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">readAttributesIfExists</span><wbr><span class="parameters">(<a href="../Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="../../../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;type,
+ <a href="../LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span>
+                                                         throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a file's attributes as a bulk operation if it exists.
 
 <p> The <code>type</code> parameter is the type of the attributes required
@@ -1311,23 +1311,23 @@ of the link is read. If the option <a href="../LinkOption.html#NOFOLLOW_LINKS"><
 <p> It is implementation specific if all file attributes are read as an
 atomic operation with respect to other file system operations.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation of this method invokes the
 <a href="#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)"><code>readAttributes(Path, Class, LinkOption...)</code></a> method
 to read the file's attributes.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="readAttributesIfExists(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)-type-param-A"><code>A</code> - The <code>BasicFileAttributes</code> type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path to the file</dd>
 <dd><code>type</code> - the <code>Class</code> of the file attributes required
          to read</dd>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the file attributes or null if the file does not exist</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if an attributes of the given type are not supported</dd>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if an attributes of the given type are not supported</dd>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>自:</dt>
 <dd>20</dd>
 </dl>
 </div>

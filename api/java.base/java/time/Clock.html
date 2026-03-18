@@ -64,7 +64,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time</a></li>
 <li><a href="Clock.html" class="current-selection">Clock</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -72,17 +72,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Clock()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#systemUTC()" tabindex="0">systemUTC()</a></li>
 <li><a href="#systemDefaultZone()" tabindex="0">systemDefaultZone()</a></li>
@@ -106,21 +106,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Clock" class="title">Class Clock</h1>
+<h1 title="类 Clock" class="title">类 Clock</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.time.Clock</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Clock</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="InstantSource.html" title="interface in java.time">InstantSource</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></span></div>
 <div class="block">A clock providing access to the current instant, date and time using a time-zone.
 <p>
 Instances of this abstract class are used to access a pluggable representation of the
@@ -160,7 +160,7 @@ The <code>system</code> factory methods provide clocks based on the best availab
 system clock. This may use <a href="../lang/System.html#currentTimeMillis()"><code>System.currentTimeMillis()</code></a>, or a higher
 resolution clock if one is available.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This abstract class must be implemented with care to ensure other classes operate correctly.
 All implementations must be thread-safe - a single instance must be capable of be invoked
 from multiple threads without negative consequences such as race conditions.
@@ -171,7 +171,7 @@ obtain the time from a central time server across the network. Obviously, in thi
 lookup could fail, and so the method is permitted to throw an exception.
 <p>
 The returned instants from <code>Clock</code> work on a time-scale that ignores leap seconds,
-as described in <a href="Instant.html" title="class in java.time"><code>Instant</code></a>. If the implementation wraps a source that provides leap
+as described in <a href="Instant.html" title="java.time 包中的类"><code>Instant</code></a>. If the implementation wraps a source that provides leap
 second information, then a mechanism should be used to "smooth" the leap second.
 The Java Time-Scale mandates the use of UTC-SLS, however clock implementations may choose
 how accurate they are with the time-scale so long as they document how they work.
@@ -180,12 +180,12 @@ otherwise be aware of leap seconds.
 <p>
 Implementations should implement <code>Serializable</code> wherever possible and must
 document whether or not they do support serialization.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="InstantSource.html" title="interface in java.time"><code>InstantSource</code></a></li>
+<li><a href="InstantSource.html" title="java.time 包中的接口"><code>InstantSource</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -196,8 +196,8 @@ document whether or not they do support serialization.</dd>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -213,26 +213,26 @@ document whether or not they do support serialization.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if this clock is equal to another clock.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fixed(java.time.Instant,java.time.ZoneId)" class="member-name-link">fixed</a><wbr>(<a href="Instant.html" title="class in java.time">Instant</a>&nbsp;fixedInstant,
- <a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fixed(java.time.Instant,java.time.ZoneId)" class="member-name-link">fixed</a><wbr>(<a href="Instant.html" title="java.time 包中的类">Instant</a>&nbsp;fixedInstant,
+ <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that always returns the same instant.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ZoneId.html" title="class in java.time">ZoneId</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getZone()" class="member-name-link">getZone</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the time-zone being used to create dates and times.</div>
@@ -242,7 +242,7 @@ document whether or not they do support serialization.</dd>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">A hash code for this clock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Instant.html" title="class in java.time">Instant</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Instant.html" title="java.time 包中的类">Instant</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#instant()" class="member-name-link">instant</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the current instant of the clock.</div>
@@ -252,58 +252,58 @@ document whether or not they do support serialization.</dd>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the current millisecond instant of the clock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#offset(java.time.Clock,java.time.Duration)" class="member-name-link">offset</a><wbr>(<a href="Clock.html" title="class in java.time">Clock</a>&nbsp;baseClock,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;offsetDuration)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#offset(java.time.Clock,java.time.Duration)" class="member-name-link">offset</a><wbr>(<a href="Clock.html" title="java.time 包中的类">Clock</a>&nbsp;baseClock,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;offsetDuration)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns instants from the specified clock with the
 specified duration added.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#system(java.time.ZoneId)" class="member-name-link">system</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#system(java.time.ZoneId)" class="member-name-link">system</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemDefaultZone()" class="member-name-link">systemDefaultZone</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock, converting to date and time using the default time-zone.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemUTC()" class="member-name-link">systemUTC</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock, converting to date and time using the UTC time-zone.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tick(java.time.Clock,java.time.Duration)" class="member-name-link">tick</a><wbr>(<a href="Clock.html" title="class in java.time">Clock</a>&nbsp;baseClock,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;tickDuration)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tick(java.time.Clock,java.time.Duration)" class="member-name-link">tick</a><wbr>(<a href="Clock.html" title="java.time 包中的类">Clock</a>&nbsp;baseClock,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;tickDuration)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns instants from the specified clock truncated
 to the nearest occurrence of the specified duration.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickMillis(java.time.ZoneId)" class="member-name-link">tickMillis</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickMillis(java.time.ZoneId)" class="member-name-link">tickMillis</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant ticking in whole milliseconds
 using the best available system clock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickMinutes(java.time.ZoneId)" class="member-name-link">tickMinutes</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickMinutes(java.time.ZoneId)" class="member-name-link">tickMinutes</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant ticking in whole minutes
 using the best available system clock.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickSeconds(java.time.ZoneId)" class="member-name-link">tickSeconds</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#tickSeconds(java.time.ZoneId)" class="member-name-link">tickSeconds</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a clock that returns the current instant ticking in whole seconds
 using the best available system clock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withZone(java.time.ZoneId)" class="member-name-link">withZone</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withZone(java.time.ZoneId)" class="member-name-link">withZone</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a copy of this clock with a different time-zone.</div>
 </div>
@@ -311,7 +311,7 @@ using the best available system clock.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -322,7 +322,7 @@ using the best available system clock.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -339,13 +339,13 @@ using the best available system clock.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="systemUTC()">
 <h3>systemUTC</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">systemUTC</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">systemUTC</span>()</div>
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock, converting to date and time using the UTC time-zone.
 <p>
@@ -361,7 +361,7 @@ Conversion from instant to date or time uses the <a href="ZoneOffset.html#UTC">U
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.
 It is equivalent to <code>system(ZoneOffset.UTC)</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that uses the best available system clock in the UTC zone, not null</dd>
 </dl>
 </div>
@@ -371,7 +371,7 @@ It is equivalent to <code>system(ZoneOffset.UTC)</code>.</div>
 <section class="detail" id="systemDefaultZone()">
 <h3>systemDefaultZone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">systemDefaultZone</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">systemDefaultZone</span>()</div>
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock, converting to date and time using the default time-zone.
 <p>
@@ -387,9 +387,9 @@ without the date or time.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.
 It is equivalent to <code>system(ZoneId.systemDefault())</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that uses the best available system clock in the default zone, not null</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="ZoneId.html#systemDefault()"><code>ZoneId.systemDefault()</code></a></li>
@@ -403,7 +403,7 @@ It is equivalent to <code>system(ZoneId.systemDefault())</code>.</div>
 <section class="detail" id="system(java.time.ZoneId)">
 <h3>system</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">system</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">system</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Obtains a clock that returns the current instant using the best available
 system clock.
 <p>
@@ -415,9 +415,9 @@ Conversion from instant to date or time uses the specified time-zone.
 <p>
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to use to convert the instant to date-time, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that uses the best available system clock in the specified zone, not null</dd>
 </dl>
 </div>
@@ -427,7 +427,7 @@ The returned implementation is immutable, thread-safe and <code>Serializable</co
 <section class="detail" id="tickMillis(java.time.ZoneId)">
 <h3>tickMillis</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">tickMillis</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">tickMillis</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Obtains a clock that returns the current instant ticking in whole milliseconds
 using the best available system clock.
 <p>
@@ -443,11 +443,11 @@ clock will be later than that observed directly via the underlying clock.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.
 It is equivalent to <code>tick(system(zone), Duration.ofMillis(1))</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to use to convert the instant to date-time, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that ticks in whole milliseconds using the specified zone, not null</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -457,7 +457,7 @@ It is equivalent to <code>tick(system(zone), Duration.ofMillis(1))</code>.</div>
 <section class="detail" id="tickSeconds(java.time.ZoneId)">
 <h3>tickSeconds</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">tickSeconds</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">tickSeconds</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Obtains a clock that returns the current instant ticking in whole seconds
 using the best available system clock.
 <p>
@@ -473,9 +473,9 @@ clock will be later than that observed directly via the underlying clock.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.
 It is equivalent to <code>tick(system(zone), Duration.ofSeconds(1))</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to use to convert the instant to date-time, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that ticks in whole seconds using the specified zone, not null</dd>
 </dl>
 </div>
@@ -485,7 +485,7 @@ It is equivalent to <code>tick(system(zone), Duration.ofSeconds(1))</code>.</div
 <section class="detail" id="tickMinutes(java.time.ZoneId)">
 <h3>tickMinutes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">tickMinutes</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">tickMinutes</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Obtains a clock that returns the current instant ticking in whole minutes
 using the best available system clock.
 <p>
@@ -501,9 +501,9 @@ clock will be later than that observed directly via the underlying clock.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.
 It is equivalent to <code>tick(system(zone), Duration.ofMinutes(1))</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to use to convert the instant to date-time, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that ticks in whole minutes using the specified zone, not null</dd>
 </dl>
 </div>
@@ -513,8 +513,8 @@ It is equivalent to <code>tick(system(zone), Duration.ofMinutes(1))</code>.</div
 <section class="detail" id="tick(java.time.Clock,java.time.Duration)">
 <h3>tick</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="Clock.html" title="class in java.time">Clock</a>&nbsp;baseClock,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;tickDuration)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="Clock.html" title="java.time 包中的类">Clock</a>&nbsp;baseClock,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;tickDuration)</span></div>
 <div class="block">Obtains a clock that returns instants from the specified clock truncated
 to the nearest occurrence of the specified duration.
 <p>
@@ -537,16 +537,16 @@ via this clock will be later than that observed directly via the underlying cloc
 The returned implementation is immutable, thread-safe and <code>Serializable</code>
 providing that the base clock is.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseClock</code> - the base clock to base the ticking clock on, not null</dd>
 <dd><code>tickDuration</code> - the duration of each visible tick, not negative, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that ticks in whole units of the duration, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the duration is negative, or has a
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the duration is negative, or has a
  part smaller than a whole millisecond such that the whole duration is not
  divisible into one second</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if the duration is too large to be represented as nanos</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if the duration is too large to be represented as nanos</dd>
 </dl>
 </div>
 </section>
@@ -555,8 +555,8 @@ providing that the base clock is.</div>
 <section class="detail" id="fixed(java.time.Instant,java.time.ZoneId)">
 <h3>fixed</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">fixed</span><wbr><span class="parameters">(<a href="Instant.html" title="class in java.time">Instant</a>&nbsp;fixedInstant,
- <a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">fixed</span><wbr><span class="parameters">(<a href="Instant.html" title="java.time 包中的类">Instant</a>&nbsp;fixedInstant,
+ <a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Obtains a clock that always returns the same instant.
 <p>
 This clock simply returns the specified instant.
@@ -566,10 +566,10 @@ tests are not dependent on the current clock.
 <p>
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fixedInstant</code> - the instant to use as the clock, not null</dd>
 <dd><code>zone</code> - the time-zone to use to convert the instant to date-time, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock that always returns the same instant, not null</dd>
 </dl>
 </div>
@@ -579,8 +579,8 @@ The returned implementation is immutable, thread-safe and <code>Serializable</co
 <section class="detail" id="offset(java.time.Clock,java.time.Duration)">
 <h3>offset</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">offset</span><wbr><span class="parameters">(<a href="Clock.html" title="class in java.time">Clock</a>&nbsp;baseClock,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;offsetDuration)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">offset</span><wbr><span class="parameters">(<a href="Clock.html" title="java.time 包中的类">Clock</a>&nbsp;baseClock,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;offsetDuration)</span></div>
 <div class="block">Obtains a clock that returns instants from the specified clock with the
 specified duration added.
 <p>
@@ -595,10 +595,10 @@ Passing zero will return the underlying clock.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>
 providing that the base clock is.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseClock</code> - the base clock to add the duration to, not null</dd>
 <dd><code>offsetDuration</code> - the duration to add, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock based on the base clock with the duration added, not null</dd>
 </dl>
 </div>
@@ -608,13 +608,13 @@ providing that the base clock is.</div>
 <section class="detail" id="getZone()">
 <h3>getZone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="class in java.time">ZoneId</a></span>&nbsp;<span class="element-name">getZone</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ZoneId.html" title="java.time 包中的类">ZoneId</a></span>&nbsp;<span class="element-name">getZone</span>()</div>
 <div class="block">Gets the time-zone being used to create dates and times.
 <p>
 A clock will typically obtain the current instant and then convert that
 to a date or time using a time-zone. This method returns the time-zone used.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the time-zone being used to interpret instants, not null</dd>
 </dl>
 </div>
@@ -624,18 +624,18 @@ to a date or time using a time-zone. This method returns the time-zone used.</di
 <section class="detail" id="withZone(java.time.ZoneId)">
 <h3>withZone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">withZone</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">withZone</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Returns a copy of this clock with a different time-zone.
 <p>
 A clock will typically obtain the current instant and then convert that
 to a date or time using a time-zone. This method returns a clock with
 similar properties but using a different time-zone.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="InstantSource.html#withZone(java.time.ZoneId)">withZone</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="InstantSource.html#withZone(java.time.ZoneId)">withZone</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></dd>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to change to, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock based on this clock with the specified time-zone, not null</dd>
 </dl>
 </div>
@@ -651,20 +651,20 @@ similar properties but using a different time-zone.</div>
 This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
 This is equivalent to the definition of <a href="../lang/System.html#currentTimeMillis()"><code>System.currentTimeMillis()</code></a>.
 <p>
-Most applications should avoid this method and use <a href="Instant.html" title="class in java.time"><code>Instant</code></a> to represent
+Most applications should avoid this method and use <a href="Instant.html" title="java.time 包中的类"><code>Instant</code></a> to represent
 an instant on the time-line rather than a raw millisecond value.
 This method is provided to allow the use of the clock in high performance use cases
 where the creation of an object would be unacceptable.
 <p>
 The default implementation currently calls <a href="#instant()"><code>instant()</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="InstantSource.html#millis()">millis</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="InstantSource.html#millis()">millis</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></dd>
+<dt>返回:</dt>
 <dd>the current millisecond instant from this clock, measured from
  the Java epoch of 1970-01-01T00:00Z (UTC), not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
 </dl>
 </div>
 </section>
@@ -673,17 +673,17 @@ The default implementation currently calls <a href="#instant()"><code>instant()<
 <section class="detail" id="instant()">
 <h3>instant</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Instant.html" title="class in java.time">Instant</a></span>&nbsp;<span class="element-name">instant</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Instant.html" title="java.time 包中的类">Instant</a></span>&nbsp;<span class="element-name">instant</span>()</div>
 <div class="block">Gets the current instant of the clock.
 <p>
 This returns an instant representing the current instant as defined by the clock.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="InstantSource.html#instant()">instant</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="InstantSource.html#instant()">instant</a></code>&nbsp;in interface&nbsp;<code><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></dd>
+<dt>返回:</dt>
 <dd>the current instant from this clock, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
 </dl>
 </div>
 </section>
@@ -692,24 +692,24 @@ This returns an instant representing the current instant as defined by the clock
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Checks if this clock is equal to another clock.
 <p>
 Clocks should override this method to compare equals based on
 their state and to meet the contract of <a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a>.
 If not overridden, the behavior is defined by <a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to check, null returns false</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if this is equal to the other clock</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -727,11 +727,11 @@ Clocks should override this method based on
 their state and to meet the contract of <a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a>.
 If not overridden, the behavior is defined by <a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a suitable hash code</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>

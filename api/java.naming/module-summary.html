@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <ol class="sub-nav-list">
 <li><a href="module-summary.html" class="current-selection">java.naming</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -54,16 +54,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#packages-summary" tabindex="0">Packages</a></li>
-<li><a href="#services-summary" tabindex="0">Services</a></li>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#packages-summary" tabindex="0">包</a></li>
+<li><a href="#services-summary" tabindex="0">服务</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Module java.naming" class="title">Module java.naming</h1>
+<h1 title="模块 java.naming" class="title">模块 java.naming</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -74,18 +74,18 @@ loadScripts(document, 'script');</script>
 <p>
 Common standard JNDI environment properties that may be supported
 by JNDI providers are defined and documented in
-<a href="javax/naming/Context.html" title="interface in javax.naming"><code>Context</code></a>. Specific JNDI provider implementations
+<a href="javax/naming/Context.html" title="javax.naming 包中的接口"><code>Context</code></a>. Specific JNDI provider implementations
 may also support other environment or system properties, which are specific
 to their implementation.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The following implementation specific environment properties are supported by the
 default LDAP Naming Service Provider implementation in the JDK:
 <ul>
     <li><code>java.naming.ldap.factory.socket</code>:
         <br>The value of this environment property specifies the fully
         qualified class name of the socket factory used by the LDAP provider.
-        This class must implement the <a href="../java.base/javax/net/SocketFactory.html" title="class in javax.net"><code>SocketFactory</code></a> abstract class
+        This class must implement the <a href="../java.base/javax/net/SocketFactory.html" title="javax.net 包中的类"><code>SocketFactory</code></a> abstract class
         and provide an implementation of the static "getDefault()" method that
         returns an instance of the socket factory. By default the environment
         property is not set.
@@ -139,7 +139,7 @@ default LDAP Naming Service Provider implementation in the JDK:
          <br>The value of this system property is the string representation of a boolean value
          that controls the deserialization of java objects from the <code>javaSerializedData</code> LDAP
          attribute, reconstruction of RMI references from the <code>javaRemoteLocation</code> LDAP attribute, and
-         reconstruction of <a href="javax/naming/BinaryRefAddr.html" title="class in javax.naming">binary reference addresses</a> from
+         reconstruction of <a href="javax/naming/BinaryRefAddr.html" title="javax.naming 包中的类">binary reference addresses</a> from
          the <code>javaReferenceAddress</code> LDAP attribute.
          To allow the deserialization or reconstruction of java objects from <code>javaSerializedData</code>,
          <code>javaRemoteLocation</code> or <code>javaReferenceAddress</code> attributes, the system property value
@@ -156,7 +156,7 @@ default LDAP Naming Service Provider implementation in the JDK:
          The filter property supports pattern-based filter syntax with the same format as
          <a href="../java.base/java/io/ObjectInputFilter.Config.html#createFilter(java.lang.String)"><code>jdk.serialFilter</code></a>. Limit patterns
          specified in the filter property are unused.
-         This property can also be specified as a <a href="../java.base/java/security/Security.html" title="class in java.security">security property</a>.
+         This property can also be specified as a <a href="../java.base/java/security/Security.html" title="java.security 包中的类">security property</a>.
          This property is also supported by the <a href="../jdk.naming.rmi/module-summary.html">default JNDI
          RMI Provider</a>.
          <br>The default value allows any object factory class specified by the reference
@@ -166,7 +166,7 @@ default LDAP Naming Service Provider implementation in the JDK:
          <br>The value of this system property defines a filter used by
          the JDK LDAP provider implementation to further restrict the set of object factory classes which will
          be allowed to instantiate objects from object references returned by LDAP systems.
-         The factory class named by the <a href="javax/naming/Reference.html" title="class in javax.naming">reference instance</a> first will be
+         The factory class named by the <a href="javax/naming/Reference.html" title="javax.naming 包中的类">reference instance</a> first will be
          matched against this specific filter and then against the global filter. The factory class is rejected
          if any of these two filters reject it, or if none of them allow it.
          The filter property supports pattern-based filter syntax with the same format as
@@ -175,7 +175,7 @@ default LDAP Naming Service Provider implementation in the JDK:
          <br>The default value allows any object factory class provided by the JDK LDAP provider
          implementation.
         <br>This system property will be used to filter LDAP specific object factories only if
-        global <a href="javax/naming/spi/ObjectFactoryBuilder.html" title="interface in javax.naming.spi"><code>ObjectFactoryBuilder</code></a> is <a href="javax/naming/spi/NamingManager.html#setObjectFactoryBuilder(javax.naming.spi.ObjectFactoryBuilder)">not set</a>.
+        global <a href="javax/naming/spi/ObjectFactoryBuilder.html" title="javax.naming.spi 包中的接口"><code>ObjectFactoryBuilder</code></a> is <a href="javax/naming/spi/NamingManager.html#setObjectFactoryBuilder(javax.naming.spi.ObjectFactoryBuilder)">not set</a>.
     </li>
 </ul>
 <p>Other providers may define additional properties in their module description:
@@ -183,8 +183,8 @@ default LDAP Naming Service Provider implementation in the JDK:
  <li><a href="../jdk.naming.dns/module-summary.html">DNS Naming Provider</a></li>
  <li><a href="../jdk.naming.rmi/module-summary.html">RMI Naming Provider</a></li>
 </ul></dd>
-<dt>Module Graph:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for java.naming" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for java.naming" src="module-graph.svg"></span></a></dd>
-<dt>Since:</dt>
+<dt>模块图:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for java.naming" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for java.naming" src="module-graph.svg"></span></a></dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </section>
@@ -194,12 +194,12 @@ default LDAP Naming Service Provider implementation in the JDK:
 <li>
 <section class="packages-summary" id="packages-summary">
 <!-- ============ PACKAGES SUMMARY =========== -->
-<h2>Packages</h2>
+<h2>包</h2>
 <div id="package-summary-table">
-<div class="caption"><span>Exports</span></div>
+<div class="caption"><span>导出</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color package-summary-table package-summary-table-tab1"><a href="javax/naming/package-summary.html">javax.naming</a></div>
 <div class="col-last even-row-color package-summary-table package-summary-table-tab1">
 <div class="block">Provides the classes and interfaces for accessing naming services.</div>
@@ -236,31 +236,31 @@ and related packages.</div>
 <li>
 <section class="services-summary" id="services-summary">
 <!-- ============ SERVICES SUMMARY =========== -->
-<h2>Services</h2>
-<div class="caption"><span>Provides</span></div>
+<h2>服务</h2>
+<div class="caption"><span>提供</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="../java.base/java/security/Provider.html" title="class in java.security">Provider</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="../java.base/java/security/Provider.html" title="java.security 包中的类">Provider</a></div>
 <div class="col-last even-row-color">
 <div class="block">This class represents a "provider" for the
 Java Security API, where a provider implements some or all parts of
 Java Security.</div>
 </div>
 </div>
-<div class="caption"><span>Uses</span></div>
+<div class="caption"><span>使用</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="javax/naming/spi/InitialContextFactory.html" title="interface in javax.naming.spi">InitialContextFactory</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="javax/naming/spi/InitialContextFactory.html" title="javax.naming.spi 包中的接口">InitialContextFactory</a></div>
 <div class="col-last even-row-color">
 <div class="block">This interface represents a factory that creates an initial context.</div>
 </div>
-<div class="col-first odd-row-color"><a href="javax/naming/ldap/spi/LdapDnsProvider.html" title="class in javax.naming.ldap.spi">LdapDnsProvider</a></div>
+<div class="col-first odd-row-color"><a href="javax/naming/ldap/spi/LdapDnsProvider.html" title="javax.naming.ldap.spi 包中的类">LdapDnsProvider</a></div>
 <div class="col-last odd-row-color">
 <div class="block">Service-provider class for DNS lookups when performing LDAP operations.</div>
 </div>
-<div class="col-first even-row-color"><a href="javax/naming/ldap/StartTlsResponse.html" title="class in javax.naming.ldap">StartTlsResponse</a></div>
+<div class="col-first even-row-color"><a href="javax/naming/ldap/StartTlsResponse.html" title="javax.naming.ldap 包中的类">StartTlsResponse</a></div>
 <div class="col-last even-row-color">
 <div class="block">This class implements the LDAPv3 Extended Response for StartTLS as
  defined in

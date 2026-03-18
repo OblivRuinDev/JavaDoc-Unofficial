@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.classfile</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#provides-classfile-parsing-generation-and-transformation-library--heading" tabindex="0">Provides classfile parsing, generation, and transformation library.</a></li>
 <li><a href="#reading-classfiles-heading" tabindex="0">Reading classfiles</a>
@@ -88,13 +88,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#data_model" tabindex="0">Data model</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.classfile" class="title">Package java.lang.classfile</h1>
+<h1 title="包 java.lang.classfile" class="title">包 java.lang.classfile</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -107,8 +107,8 @@ the <cite>Java Virtual Machine Specification</cite>.  This package, <a href="att
 and <a href="instruction/package-summary.html"><code>java.lang.classfile.instruction</code></a> form the Class-File API.
 
 <h2 id="reading-classfiles-heading">Reading classfiles</h2>
-The main class for reading classfiles is <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a>; we
-convert bytes into a <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> with <a href="ClassFile.html#parse(byte%5B%5D)"><code>ClassFile.parse(byte[])</code></a>:
+The main class for reading classfiles is <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a>; we
+convert bytes into a <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> with <a href="ClassFile.html#parse(byte%5B%5D)"><code>ClassFile.parse(byte[])</code></a>:
 
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.lang.classfile1"><code class="language-java">ClassModel cm = ClassFile.of().parse(bytes);
@@ -119,13 +119,13 @@ convert bytes into a <a href="ClassModel.html" title="interface in java.lang.cla
 There are several additional overloads of <code>parse</code> that let you specify
 various processing options.
 <p>
-A <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> is an immutable description of a class
+A <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> is an immutable description of a class
 file.  It provides accessor methods to get at class metadata (e.g., <a href="ClassModel.html#thisClass()"><code>ClassModel.thisClass()</code></a>, <a href="ClassModel.html#flags()"><code>ClassModel.flags()</code></a>),
 as well as subordinate classfile entities (<a href="ClassModel.html#fields()"><code>ClassModel.fields()</code></a>,
-<a href="AttributedElement.html#attributes()"><code>AttributedElement.attributes()</code></a>). A <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> is inflated lazily; most parts of the classfile are
+<a href="AttributedElement.html#attributes()"><code>AttributedElement.attributes()</code></a>). A <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> is inflated lazily; most parts of the classfile are
 not parsed until they are actually needed.  Due to the laziness, these models
 may not be thread safe.  Additionally, invocations to accessor methods on
-models may lead to <a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> due to malformed <code>
+models may lead to <a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> due to malformed <code>
 class</code> file format, as parsing happens lazily.
 <p>
 We can enumerate the names of the fields and methods in a class by:
@@ -139,7 +139,7 @@ for (MethodModel mm : cm.methods())
 </div>
 
 <p>
-When we enumerate the methods, we get a <a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a> for each method; like a
+When we enumerate the methods, we get a <a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a> for each method; like a
 <code>ClassModel</code>, it gives us access to method metadata and
 the ability to descend into subordinate entities such as the bytecodes of the
 method body. In this way, a <code>ClassModel</code> is the root of a
@@ -149,7 +149,7 @@ turn has its own children (attributes, <code>CodeModel</code>, etc.)
 Methods like <a href="ClassModel.html#methods()"><code>ClassModel.methods()</code></a> allows us to traverse the class structure
 explicitly, going straight to the parts we are interested in.  This is useful
 for certain kinds of analysis, but if we wanted to process the whole
-classfile, we may want something more organized.  A <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> also provides us with a view of the classfile as a
+classfile, we may want something more organized.  A <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> also provides us with a view of the classfile as a
 series of class <em>elements</em>, which may include methods, fields, attributes,
 and more, and which can be distinguished with pattern matching.  We could
 rewrite the above example as:
@@ -222,28 +222,28 @@ The view of classfiles presented by this API is framed in terms of
 such as classes, methods, fields, record elements, or the code body of a
 method.  Models can be explored either via random-access navigation (such as
 the <a href="ClassModel.html#methods()"><code>ClassModel.methods()</code></a> accessor) or as a linear
-sequence of <em>elements</em>. (Elements can in turn also be models; a <a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a> is also an element of a class.) For each model type
-(e.g., <a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a>), there is a corresponding element
-type (<a href="MethodElement.html" title="interface in java.lang.classfile"><code>MethodElement</code></a>).  Models and elements are immutable
+sequence of <em>elements</em>. (Elements can in turn also be models; a <a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a> is also an element of a class.) For each model type
+(e.g., <a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a>), there is a corresponding element
+type (<a href="MethodElement.html" title="java.lang.classfile 包中的接口"><code>MethodElement</code></a>).  Models and elements are immutable
 and are inflated lazily so creating a model does not necessarily require
 processing its entire content.
 
 <h3 id="the-constant-pool-heading">The constant pool</h3>
 Much of the interesting content in a classfile lives in the <em>constant
-pool</em>. <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> provides a lazily-inflated,
+pool</em>. <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> provides a lazily-inflated,
 read-only view of the constant pool via <a href="ClassModel.html#constantPool()"><code>ClassModel.constantPool()</code></a>.
 Descriptions of classfile content is often exposed in the form of various
-subtypes of <a href="constantpool/PoolEntry.html" title="interface in java.lang.classfile.constantpool"><code>PoolEntry</code></a>, such as <a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool"><code>ClassEntry</code></a> or <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool"><code>Utf8Entry</code></a>.
+subtypes of <a href="constantpool/PoolEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>PoolEntry</code></a>, such as <a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>ClassEntry</code></a> or <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口"><code>Utf8Entry</code></a>.
 <p>
 Constant pool entries are also exposed through models and elements; in the
-above traversal example, the <a href="instruction/InvokeInstruction.html" title="interface in java.lang.classfile.instruction"><code>InvokeInstruction</code></a>
+above traversal example, the <a href="instruction/InvokeInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>InvokeInstruction</code></a>
 element exposed a method for <code>owner</code> that corresponds to a <code>
 Constant_Class_info</code> entry in the constant pool.
 
 <h3 id="attributes-heading">Attributes</h3>
 Much of the contents of a classfile is stored in attributes; attributes are
 found on classes, methods, fields, record components, and on the <code>Code</code>
-attribute.  Most attributes are surfaced as elements; for example, <a href="attribute/SignatureAttribute.html" title="interface in java.lang.classfile.attribute"><code>SignatureAttribute</code></a> is a <a href="ClassElement.html" title="interface in java.lang.classfile"><code>ClassElement</code></a>, <a href="MethodElement.html" title="interface in java.lang.classfile"><code>MethodElement</code></a>, and <a href="FieldElement.html" title="interface in java.lang.classfile"><code>FieldElement</code></a> since it can appear in all of those places, and is
+attribute.  Most attributes are surfaced as elements; for example, <a href="attribute/SignatureAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>SignatureAttribute</code></a> is a <a href="ClassElement.html" title="java.lang.classfile 包中的接口"><code>ClassElement</code></a>, <a href="MethodElement.html" title="java.lang.classfile 包中的接口"><code>MethodElement</code></a>, and <a href="FieldElement.html" title="java.lang.classfile 包中的接口"><code>FieldElement</code></a> since it can appear in all of those places, and is
 included when iterating the elements of the corresponding model.
 <p>
 Some attributes are not surfaced as elements; these are attributes that are
@@ -253,21 +253,21 @@ StackMapTable</code>, <code>LocalVariableTable</code>, and <code>
 LocalVariableTypeTable</code> attributes.  These are processed by the library and
 treated as part of the structure they are coupled to (the entries of the
 <code>BootstrapMethods</code> attribute are treated as part of the constant pool;
-line numbers and local variable metadata are modeled as elements of <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.)
+line numbers and local variable metadata are modeled as elements of <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.)
 <p>
-The <code>Code</code> attribute, in addition to being modeled as a <a href="MethodElement.html" title="interface in java.lang.classfile"><code>MethodElement</code></a>, is also a model in its own right (<a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>) due to its complex structure.
+The <code>Code</code> attribute, in addition to being modeled as a <a href="MethodElement.html" title="java.lang.classfile 包中的接口"><code>MethodElement</code></a>, is also a model in its own right (<a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>) due to its complex structure.
 <p>
 Each standard attribute has an interface (in <code>java.lang.classfile.attribute</code>)
 which exposes the contents of the attribute and provides factories to
 construct the attribute.  For example, the <code>Signature</code> attribute is
-defined by the <a href="attribute/SignatureAttribute.html" title="interface in java.lang.classfile.attribute"><code>SignatureAttribute</code></a> class, and
+defined by the <a href="attribute/SignatureAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>SignatureAttribute</code></a> class, and
 provides accessors for <a href="attribute/SignatureAttribute.html#signature()"><code>SignatureAttribute.signature()</code></a>
-as well as factories taking <a href="constantpool/Utf8Entry.html" title="interface in java.lang.classfile.constantpool"><code>Utf8Entry</code></a> or
-<a href="../String.html" title="class in java.lang"><code>String</code></a>.
+as well as factories taking <a href="constantpool/Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口"><code>Utf8Entry</code></a> or
+<a href="../String.html" title="java.lang 包中的类"><code>String</code></a>.
 
 <h3 id="custom-attributes-heading">Custom attributes</h3>
 Attributes are converted between their classfile form and their corresponding
-object form via an <a href="AttributeMapper.html" title="interface in java.lang.classfile"><code>AttributeMapper</code></a>.  An <code>
+object form via an <a href="AttributeMapper.html" title="java.lang.classfile 包中的接口"><code>AttributeMapper</code></a>.  An <code>
 AttributeMapper</code> provides the
 <a href="AttributeMapper.html#readAttribute(java.lang.classfile.AttributedElement,java.lang.classfile.ClassReader,int)"><code>AttributeMapper.readAttribute(AttributedElement, ClassReader, int)</code></a> method for mapping from the classfile format
 to an attribute instance, and the
@@ -276,48 +276,48 @@ contains metadata including the attribute name, the set of classfile entities
 where the attribute is applicable, and whether multiple attributes of the
 same kind are allowed on a single entity.
 <p>
-There are built-in attribute mappers (in <a href="Attributes.html" title="class in java.lang.classfile"><code>Attributes</code></a>) for
+There are built-in attribute mappers (in <a href="Attributes.html" title="java.lang.classfile 包中的类"><code>Attributes</code></a>) for
 each of the attribute types defined in section <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7">4.7</a> of <cite>The Java Virtual
 Machine Specification</cite>, as well as several common nonstandard attributes used by the
 JDK such as <code>CharacterRangeTable</code>.
 <p>
-Unrecognized attributes are delivered as elements of type <a href="attribute/UnknownAttribute.html" title="interface in java.lang.classfile.attribute"><code>UnknownAttribute</code></a>, which provide access only to the
+Unrecognized attributes are delivered as elements of type <a href="attribute/UnknownAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>UnknownAttribute</code></a>, which provide access only to the
 <code>byte[]</code> contents of the attribute.
 <p>
 For nonstandard attributes, user-provided attribute mappers can be specified
 through the use of the <a href="ClassFile.AttributeMapperOption.html#of(java.util.function.Function)"><code>ClassFile.AttributeMapperOption.of(Function)</code></a>
-classfile option.  Implementations of custom attributes should extend <a href="CustomAttribute.html" title="class in java.lang.classfile"><code>CustomAttribute</code></a>.
+classfile option.  Implementations of custom attributes should extend <a href="CustomAttribute.html" title="java.lang.classfile 包中的类"><code>CustomAttribute</code></a>.
 
 <h3 id="options">Options</h3>
 <p>
 <a href="ClassFile.html#of(java.lang.classfile.ClassFile.Option...)"><code>ClassFile.of(ClassFile.Option[])</code></a>
-accepts a list of options.  <a href="ClassFile.Option.html" title="interface in java.lang.classfile"><code>ClassFile.Option</code></a> is a base interface
+accepts a list of options.  <a href="ClassFile.Option.html" title="java.lang.classfile 包中的接口"><code>ClassFile.Option</code></a> is a base interface
 for some statically enumerated options, as well as factories for more complex options,
 including:
 <ul>
   <li><a href="ClassFile.AttributeMapperOption.html#of(java.util.function.Function)"><code>ClassFile.AttributeMapperOption.of(Function)</code></a>
 -- specify format of custom attributes</li>
-  <li><a href="ClassFile.AttributesProcessingOption.html" title="enum class in java.lang.classfile"><code>ClassFile.AttributesProcessingOption</code></a>
+  <li><a href="ClassFile.AttributesProcessingOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.AttributesProcessingOption</code></a>
 -- unrecognized or problematic original attributes (default is <code>PASS_ALL_ATTRIBUTES</code>)</li>
   <li><a href="ClassFile.ClassHierarchyResolverOption.html#of(java.lang.classfile.ClassHierarchyResolver)"><code>ClassFile.ClassHierarchyResolverOption.of(ClassHierarchyResolver)</code></a>
 -- specify a custom class hierarchy resolver used by stack map generation</li>
-  <li><a href="ClassFile.ConstantPoolSharingOption.html" title="enum class in java.lang.classfile"><code>ClassFile.ConstantPoolSharingOption</code></a>
+  <li><a href="ClassFile.ConstantPoolSharingOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.ConstantPoolSharingOption</code></a>
 -- share constant pool when transforming (default is <code>SHARED_POOL</code>)</li>
-  <li><a href="ClassFile.DeadCodeOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DeadCodeOption</code></a>
+  <li><a href="ClassFile.DeadCodeOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DeadCodeOption</code></a>
 -- patch out unreachable code (default is <code>PATCH_DEAD_CODE</code>)</li>
-  <li><a href="ClassFile.DeadLabelsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DeadLabelsOption</code></a>
+  <li><a href="ClassFile.DeadLabelsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DeadLabelsOption</code></a>
 -- filter unresolved labels (default is <code>FAIL_ON_DEAD_LABELS</code>)</li>
-  <li><a href="ClassFile.DebugElementsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.DebugElementsOption</code></a>
+  <li><a href="ClassFile.DebugElementsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.DebugElementsOption</code></a>
 -- processing of debug information, such as local variable metadata (default is <code>PASS_DEBUG</code>) </li>
-  <li><a href="ClassFile.LineNumbersOption.html" title="enum class in java.lang.classfile"><code>ClassFile.LineNumbersOption</code></a>
+  <li><a href="ClassFile.LineNumbersOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.LineNumbersOption</code></a>
 -- processing of line numbers (default is <code>PASS_LINE_NUMBERS</code>) </li>
-  <li><a href="ClassFile.ShortJumpsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.ShortJumpsOption</code></a>
+  <li><a href="ClassFile.ShortJumpsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.ShortJumpsOption</code></a>
 -- automatically rewrite short jumps to long when necessary (default is <code>FIX_SHORT_JUMPS</code>)</li>
-  <li><a href="ClassFile.StackMapsOption.html" title="enum class in java.lang.classfile"><code>ClassFile.StackMapsOption</code></a>
+  <li><a href="ClassFile.StackMapsOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.StackMapsOption</code></a>
 -- generate stackmaps (default is <code>STACK_MAPS_WHEN_REQUIRED</code>)</li>
 </ul>
 <p>
-<a href="ClassFile.AttributeMapperOption.html" title="interface in java.lang.classfile"><code>ClassFile.AttributeMapperOption</code></a> and <a href="ClassFile.ClassHierarchyResolverOption.html" title="interface in java.lang.classfile"><code>ClassFile.ClassHierarchyResolverOption</code></a>
+<a href="ClassFile.AttributeMapperOption.html" title="java.lang.classfile 包中的接口"><code>ClassFile.AttributeMapperOption</code></a> and <a href="ClassFile.ClassHierarchyResolverOption.html" title="java.lang.classfile 包中的接口"><code>ClassFile.ClassHierarchyResolverOption</code></a>
 are critical to the correctness of <code>class</code> file parsing and generation.
 The attribute mapper is required to parse custom attributes.  A correct
 resolver is required to generate <code>class</code> files that refer to classes
@@ -335,8 +335,8 @@ can suppress it with options to gain some performance.
 <h2 id="writing-classfiles-heading">Writing classfiles</h2>
 ClassFile generation is accomplished through <em>builders</em>.  For each
 entity type that has a model, there is also a corresponding builder type;
-classes are built through <a href="ClassBuilder.html" title="interface in java.lang.classfile"><code>ClassBuilder</code></a>, methods through
-<a href="MethodBuilder.html" title="interface in java.lang.classfile"><code>MethodBuilder</code></a>, etc.
+classes are built through <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassBuilder</code></a>, methods through
+<a href="MethodBuilder.html" title="java.lang.classfile 包中的接口"><code>MethodBuilder</code></a>, etc.
 <p>
 Rather than creating builders directly, builders are provided as an argument
 to a user-provided lambda.  To generate the familiar "hello world" program,
@@ -365,7 +365,7 @@ to generate the instructions:
 
 <p>
 The convenience methods <code>ClassBuilder.buildMethodBody</code> allows us to ask
-<a href="ClassBuilder.html" title="interface in java.lang.classfile"><code>ClassBuilder</code></a> to create code builders to build method bodies directly,
+<a href="ClassBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassBuilder</code></a> to create code builders to build method bodies directly,
 skipping the method builder custom lambda:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.lang.classfile7"><code class="language-java">byte[] bytes = ClassFile.of().build(CD_Hello,
@@ -395,13 +395,13 @@ as if it calls method <code>CodeBuilder.with</code>. This composing of method ca
 builder enables the composing of transforms (as described later).
 <p>
 Unless otherwise noted, passing a <code>null</code> argument to a constructor
-or method of any Class-File API class or interface will cause a <a href="../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown. Additionally,
+or method of any Class-File API class or interface will cause a <a href="../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown. Additionally,
 invoking a method with an array or collection containing a <code>null</code> element
 will cause a <code>NullPointerException</code>, unless otherwise specified. </p>
 
 <h3 id="symbolic-information-heading">Symbolic information</h3>
 To describe symbolic information for classes and types, the API uses the
-nominal descriptor abstractions from <a href="../constant/package-summary.html"><code>java.lang.constant</code></a> such as <a href="../constant/ClassDesc.html" title="interface in java.lang.constant"><code>ClassDesc</code></a> and <a href="../constant/MethodTypeDesc.html" title="interface in java.lang.constant"><code>MethodTypeDesc</code></a>,
+nominal descriptor abstractions from <a href="../constant/package-summary.html"><code>java.lang.constant</code></a> such as <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口"><code>ClassDesc</code></a> and <a href="../constant/MethodTypeDesc.html" title="java.lang.constant 包中的接口"><code>MethodTypeDesc</code></a>,
 which is less error-prone than using raw strings.
 <p>
 If a constant pool entry has a nominal representation then it provides a
@@ -420,7 +420,7 @@ methods accepts the provided information without implicit validation.
 However, fatal inconsistencies (like for example invalid code sequence or
 unresolved labels) affects internal tools and may cause exceptions later in
 the classfile building process.  These fatal exceptions are thrown as
-<a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a>.
+<a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a>.
 <p>
 Using nominal descriptors assures the right serial form is applied by the
 ClassFile API library based on the actual context. Also these nominal
@@ -459,9 +459,9 @@ elements that we wish to pass through unchanged can be handed directly back
 to the builder.
 <p>
 If we wanted to strip out methods whose names starts with "debug", we could
-get an existing <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a>, build a new classfile that
-provides a <a href="ClassBuilder.html" title="interface in java.lang.classfile"><code>ClassBuilder</code></a>, iterate the elements of the
-original <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a>, and pass through all of them to
+get an existing <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a>, build a new classfile that
+provides a <a href="ClassBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassBuilder</code></a>, iterate the elements of the
+original <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a>, and pass through all of them to
 the builder except the methods we want to drop:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.lang.classfile10"><code class="language-java">ClassModel classModel = ClassFile.of().parse(bytes);
@@ -520,7 +520,7 @@ While the example using transformations are only slightly shorter, the
 advantage of expressing transformation in this way is that the transform
 operations can be more easily combined.  Suppose we want to redirect
 invocations of static methods on <code>Foo</code> to the corresponding method on
-<code>Bar</code> instead.  We could express this as a transformation on <a href="CodeElement.html" title="interface in java.lang.classfile"><code>CodeElement</code></a>:
+<code>Bar</code> instead.  We could express this as a transformation on <a href="CodeElement.html" title="java.lang.classfile 包中的接口"><code>CodeElement</code></a>:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.lang.classfile13"><code class="language-java">CodeTransform fooToBar = (b, e) -&gt; {
     if (e instanceof InvokeInstruction i
@@ -648,7 +648,7 @@ the original classfile; this enables significant optimizations (methods and
 attributes that are not transformed can be processed by bulk-copying their
 bytes, rather than parsing them and regenerating their contents.)  If
 constant pool sharing is not desired it can be suppressed
-with the <a href="ClassFile.ConstantPoolSharingOption.html" title="enum class in java.lang.classfile"><code>ClassFile.ConstantPoolSharingOption</code></a> option.
+with the <a href="ClassFile.ConstantPoolSharingOption.html" title="java.lang.classfile 包中的枚举类"><code>ClassFile.ConstantPoolSharingOption</code></a> option.
 Such suppression may be beneficial when transformation removes many elements,
 resulting in many unreferenced constant pool entries.
 
@@ -748,8 +748,8 @@ create that element.  Some element kinds also have convenience methods on the
 corresponding builder (e.g., <a href="CodeBuilder.html#invokevirtual(java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.MethodTypeDesc)"><code>CodeBuilder.invokevirtual(ClassDesc, String, MethodTypeDesc)</code></a>).
 <p>
 Most symbolic information in elements is represented by constant pool entries
-(for example, the owner of a field is represented by a <a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool"><code>ClassEntry</code></a>.) Factories and builders also
-accept nominal descriptors from <a href="../constant/package-summary.html"><code>java.lang.constant</code></a> (e.g., <a href="../constant/ClassDesc.html" title="interface in java.lang.constant"><code>ClassDesc</code></a>.)
+(for example, the owner of a field is represented by a <a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>ClassEntry</code></a>.) Factories and builders also
+accept nominal descriptors from <a href="../constant/package-summary.html"><code>java.lang.constant</code></a> (e.g., <a href="../constant/ClassDesc.html" title="java.lang.constant 包中的接口"><code>ClassDesc</code></a>.)
 
 <h2><a id="data_model"></a>Data model</h2>
 We define each kind of element by its name, an optional arity indicator (zero
@@ -802,7 +802,7 @@ where <code>DeclarationElement</code> are the elements that are common to all de
 
 Fields and methods are models with their own elements.  The elements of fields
 and methods are fairly simple; most of the complexity of methods lives in the
-<a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a> (which models the <code>Code</code> attribute
+<a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a> (which models the <code>Code</code> attribute
 along with the code-related attributes: stack map table, local variable table,
 line number table, etc.)
 
@@ -821,7 +821,7 @@ MethodElement =
 </div>
 
 
-<a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a> is unique in that its elements are <em>ordered</em>.
+<a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a> is unique in that its elements are <em>ordered</em>.
 Elements of <code>Code</code> include ordinary bytecodes, as well as a number of pseudo-instructions
 representing branch targets, line number metadata, local variable metadata, and
 catch blocks.
@@ -867,7 +867,7 @@ PseudoInstruction =
 </div>
 </div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
 </dl>
 </section>
@@ -876,10 +876,10 @@ PseudoInstruction =
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.lang</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classes that are fundamental to the design of the Java
@@ -902,464 +902,464 @@ programming language.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AccessFlags.html" title="interface in java.lang.classfile">AccessFlags</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AccessFlags.html" title="java.lang.classfile 包中的接口">AccessFlags</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the access flags for a class, method, or field.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Annotation.html" title="interface in java.lang.classfile">Annotation</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Annotation.html" title="java.lang.classfile 包中的接口">Annotation</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an <code>annotation</code> structure (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.16">4.7.16</a>) or part of a <code>
 type_annotation</code> structure (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20">4.7.20</a>).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationElement.html" title="interface in java.lang.classfile">AnnotationElement</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationElement.html" title="java.lang.classfile 包中的接口">AnnotationElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an element-value pair in the <code>element_value_pairs</code>
 table in the <code>annotation</code> structure defined in JVMS
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.16">4.7.16</a> or the <code>type_annotation</code> structure defined
 in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20">4.7.20</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.html" title="interface in java.lang.classfile">AnnotationValue</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.html" title="java.lang.classfile 包中的接口">AnnotationValue</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an <code>element_value</code> structure, or a value of an element-value
 pair of an annotation, as defined in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.16.1">4.7.16.1</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfAnnotation.html" title="interface in java.lang.classfile">AnnotationValue.OfAnnotation</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfAnnotation.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfAnnotation</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an annotation value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfArray.html" title="interface in java.lang.classfile">AnnotationValue.OfArray</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfArray.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfArray</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an array value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfBoolean.html" title="interface in java.lang.classfile">AnnotationValue.OfBoolean</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfBoolean.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfBoolean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a boolean value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfByte.html" title="interface in java.lang.classfile">AnnotationValue.OfByte</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfByte.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfByte</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a byte value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfChar.html" title="interface in java.lang.classfile">AnnotationValue.OfChar</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfChar.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfChar</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a char value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfClass.html" title="interface in java.lang.classfile">AnnotationValue.OfClass</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfClass.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfClass</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a class value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfConstant.html" title="interface in java.lang.classfile">AnnotationValue.OfConstant</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfConstant.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfConstant</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a constant value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfDouble.html" title="interface in java.lang.classfile">AnnotationValue.OfDouble</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfDouble.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfDouble</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a double value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfEnum.html" title="interface in java.lang.classfile">AnnotationValue.OfEnum</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfEnum.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfEnum</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an enum value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfFloat.html" title="interface in java.lang.classfile">AnnotationValue.OfFloat</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfFloat.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfFloat</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a float value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfInt.html" title="interface in java.lang.classfile">AnnotationValue.OfInt</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfInt.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfInt</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an int value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfLong.html" title="interface in java.lang.classfile">AnnotationValue.OfLong</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfLong.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfLong</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a long value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfShort.html" title="interface in java.lang.classfile">AnnotationValue.OfShort</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfShort.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfShort</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a short value of an element-value pair.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfString.html" title="interface in java.lang.classfile">AnnotationValue.OfString</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AnnotationValue.OfString.html" title="java.lang.classfile 包中的接口">AnnotationValue.OfString</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a string value of an element-value pair.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;A extends <a href="Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;A&gt;&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;A extends <a href="Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;A&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an attribute (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7">4.7</a>) in the <code>class</code> file format.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AttributedElement.html" title="interface in java.lang.classfile">AttributedElement</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="AttributedElement.html" title="java.lang.classfile 包中的接口">AttributedElement</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="ClassFileElement.html" title="interface in java.lang.classfile"><code>ClassFileElement</code></a> describing a <code>class</code> file structure that has
-attributes, such as a <code>class</code> file, a field, a method, a <a href="attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute, or a record component.</div>
+<div class="block">A <a href="ClassFileElement.html" title="java.lang.classfile 包中的接口"><code>ClassFileElement</code></a> describing a <code>class</code> file structure that has
+attributes, such as a <code>class</code> file, a field, a method, a <a href="attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute, or a record component.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AttributeMapper.html" title="interface in java.lang.classfile">AttributeMapper</a>&lt;A extends <a href="Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;A&gt;&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AttributeMapper.html" title="java.lang.classfile 包中的接口">AttributeMapper</a>&lt;A extends <a href="Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;A&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Bidirectional mapper between the <code>class</code> file representation of an
 attribute and its API model.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="AttributeMapper.AttributeStability.html" title="enum class in java.lang.classfile">AttributeMapper.AttributeStability</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="AttributeMapper.AttributeStability.html" title="java.lang.classfile 包中的枚举类">AttributeMapper.AttributeStability</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Indicates the data dependency of the <code>class</code> file representation
 of an attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Attributes.html" title="class in java.lang.classfile">Attributes</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Attributes.html" title="java.lang.classfile 包中的类">Attributes</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Attribute mappers for predefined (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7">4.7</a>) and JDK-specific
 nonstandard attributes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BootstrapMethodEntry.html" title="interface in java.lang.classfile">BootstrapMethodEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BootstrapMethodEntry.html" title="java.lang.classfile 包中的接口">BootstrapMethodEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an entry in the bootstrap method table.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BufWriter.html" title="interface in java.lang.classfile">BufWriter</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BufWriter.html" title="java.lang.classfile 包中的接口">BufWriter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Advanced <code>class</code> file writing support for <a href="AttributeMapper.html" title="interface in java.lang.classfile"><code>AttributeMapper</code></a>s.</div>
+<div class="block">Advanced <code>class</code> file writing support for <a href="AttributeMapper.html" title="java.lang.classfile 包中的接口"><code>AttributeMapper</code></a>s.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassBuilder.html" title="interface in java.lang.classfile">ClassBuilder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassBuilder.html" title="java.lang.classfile 包中的接口">ClassBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A builder for a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Marker interface for a member element of a <a href="ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a>.</div>
+<div class="block">Marker interface for a member element of a <a href="ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFile.html" title="interface in java.lang.classfile">ClassFile</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFile.html" title="java.lang.classfile 包中的接口">ClassFile</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Provides ability to parse, transform, and generate <code>class</code> files.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.AttributeMapperOption.html" title="interface in java.lang.classfile">ClassFile.AttributeMapperOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.AttributeMapperOption.html" title="java.lang.classfile 包中的接口">ClassFile.AttributeMapperOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The option describing user-defined attributes for parsing <code>class</code>
 files.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.AttributesProcessingOption.html" title="enum class in java.lang.classfile">ClassFile.AttributesProcessingOption</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.AttributesProcessingOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.AttributesProcessingOption</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">The option describing whether to retain or discard attributes that cannot
 verify their correctness after a transformation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.ClassHierarchyResolverOption.html" title="interface in java.lang.classfile">ClassFile.ClassHierarchyResolverOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.ClassHierarchyResolverOption.html" title="java.lang.classfile 包中的接口">ClassFile.ClassHierarchyResolverOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The option describing the class hierarchy resolver to use when generating
 stack maps or verifying classes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.ConstantPoolSharingOption.html" title="enum class in java.lang.classfile">ClassFile.ConstantPoolSharingOption</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.ConstantPoolSharingOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.ConstantPoolSharingOption</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Option describing whether to extend from the original constant pool when
 transforming a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.DeadCodeOption.html" title="enum class in java.lang.classfile">ClassFile.DeadCodeOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.DeadCodeOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.DeadCodeOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The option describing whether to patch out unreachable code for stack map
 generation.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.DeadLabelsOption.html" title="enum class in java.lang.classfile">ClassFile.DeadLabelsOption</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.DeadLabelsOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.DeadLabelsOption</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">The option describing whether to filter <a href="CodeBuilder.html#labelBinding(java.lang.classfile.Label)">unbound labels</a> and drop their
 enclosing structures if possible.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.DebugElementsOption.html" title="enum class in java.lang.classfile">ClassFile.DebugElementsOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.DebugElementsOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.DebugElementsOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">The option describing whether to process or discard debug <a href="PseudoInstruction.html" title="interface in java.lang.classfile"><code>PseudoInstruction</code></a>s in the traversal of a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a> or a <a href="CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>.</div>
+<div class="block">The option describing whether to process or discard debug <a href="PseudoInstruction.html" title="java.lang.classfile 包中的接口"><code>PseudoInstruction</code></a>s in the traversal of a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a> or a <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.LineNumbersOption.html" title="enum class in java.lang.classfile">ClassFile.LineNumbersOption</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.LineNumbersOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.LineNumbersOption</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
-<div class="block">The option describing whether to process or discard <a href="instruction/LineNumber.html" title="interface in java.lang.classfile.instruction"><code>LineNumber</code></a>s
-in the traversal of a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a> or a <a href="CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>.</div>
+<div class="block">The option describing whether to process or discard <a href="instruction/LineNumber.html" title="java.lang.classfile.instruction 包中的接口"><code>LineNumber</code></a>s
+in the traversal of a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a> or a <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.Option.html" title="interface in java.lang.classfile">ClassFile.Option</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFile.Option.html" title="java.lang.classfile 包中的接口">ClassFile.Option</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">An option that affects the parsing or writing of <code>class</code> files.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.ShortJumpsOption.html" title="enum class in java.lang.classfile">ClassFile.ShortJumpsOption</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ClassFile.ShortJumpsOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.ShortJumpsOption</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">The option describing whether to automatically rewrite short jumps to
 equivalent instructions when necessary.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.StackMapsOption.html" title="enum class in java.lang.classfile">ClassFile.StackMapsOption</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="ClassFile.StackMapsOption.html" title="java.lang.classfile 包中的枚举类">ClassFile.StackMapsOption</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The option describing whether to generate stack maps.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;E extends <a href="ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>, B extends <a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;E,<wbr>B&gt;&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;E extends <a href="ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>, B extends <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;E,<wbr>B&gt;&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A builder for a <a href="CompoundElement.html" title="interface in java.lang.classfile"><code>CompoundElement</code></a>, which accepts the member elements
+<div class="block">A builder for a <a href="CompoundElement.html" title="java.lang.classfile 包中的接口"><code>CompoundElement</code></a>, which accepts the member elements
 to be integrated into the built structure.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for structures with special capabilities in the <code>
 class</code> file format.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFileTransform.html" title="interface in java.lang.classfile">ClassFileTransform</a>&lt;C extends <a href="ClassFileTransform.html" title="interface in java.lang.classfile">ClassFileTransform</a>&lt;C,<wbr>E,<wbr>B&gt;, E extends <a href="ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>, B extends <a href="ClassFileBuilder.html" title="interface in java.lang.classfile">ClassFileBuilder</a>&lt;E,<wbr>B&gt;&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassFileTransform.html" title="java.lang.classfile 包中的接口">ClassFileTransform</a>&lt;C extends <a href="ClassFileTransform.html" title="java.lang.classfile 包中的接口">ClassFileTransform</a>&lt;C,<wbr>E,<wbr>B&gt;, E extends <a href="ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>, B extends <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口">ClassFileBuilder</a>&lt;E,<wbr>B&gt;&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A transformation on a <a href="CompoundElement.html" title="interface in java.lang.classfile"><code>CompoundElement</code></a> by processing its individual
-member elements and sending the results to a <a href="ClassFileBuilder.html" title="interface in java.lang.classfile"><code>ClassFileBuilder</code></a>,
+<div class="block">A transformation on a <a href="CompoundElement.html" title="java.lang.classfile 包中的接口"><code>CompoundElement</code></a> by processing its individual
+member elements and sending the results to a <a href="ClassFileBuilder.html" title="java.lang.classfile 包中的接口"><code>ClassFileBuilder</code></a>,
 through <a href="ClassFileBuilder.html#transform(java.lang.classfile.CompoundElement,java.lang.classfile.ClassFileTransform)"><code>ClassFileBuilder.transform(CompoundElement, ClassFileTransform)</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFileVersion.html" title="interface in java.lang.classfile">ClassFileVersion</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassFileVersion.html" title="java.lang.classfile 包中的接口">ClassFileVersion</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the minor and major version numbers of a <code>class</code> file (JVMS
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1">4.1</a>).</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassHierarchyResolver.html" title="interface in java.lang.classfile">ClassHierarchyResolver</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassHierarchyResolver.html" title="java.lang.classfile 包中的接口">ClassHierarchyResolver</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Provides class hierarchy information for <a href="ClassFile.StackMapsOption.html" title="enum class in java.lang.classfile">stack
+<div class="block">Provides class hierarchy information for <a href="ClassFile.StackMapsOption.html" title="java.lang.classfile 包中的枚举类">stack
 maps generation</a> and <a href="ClassFile.html#verify(byte%5B%5D)">verification</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassHierarchyResolver.ClassHierarchyInfo.html" title="interface in java.lang.classfile">ClassHierarchyResolver.ClassHierarchyInfo</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassHierarchyResolver.ClassHierarchyInfo.html" title="java.lang.classfile 包中的接口">ClassHierarchyResolver.ClassHierarchyInfo</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Information about a resolved class.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassModel.html" title="interface in java.lang.classfile">ClassModel</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassModel.html" title="java.lang.classfile 包中的接口">ClassModel</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassReader.html" title="interface in java.lang.classfile">ClassReader</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassReader.html" title="java.lang.classfile 包中的接口">ClassReader</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Advanced <code>class</code> file reading support for <a href="AttributeMapper.html" title="interface in java.lang.classfile"><code>AttributeMapper</code></a>s.</div>
+<div class="block">Advanced <code>class</code> file reading support for <a href="AttributeMapper.html" title="java.lang.classfile 包中的接口"><code>AttributeMapper</code></a>s.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassSignature.html" title="interface in java.lang.classfile">ClassSignature</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassSignature.html" title="java.lang.classfile 包中的接口">ClassSignature</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the generic signature of a class or interface, as defined by JVMS
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.9.1">4.7.9.1</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassTransform.html" title="interface in java.lang.classfile">ClassTransform</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ClassTransform.html" title="java.lang.classfile 包中的接口">ClassTransform</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A transformation on streams of <a href="ClassElement.html" title="interface in java.lang.classfile"><code>ClassElement</code></a>.</div>
+<div class="block">A transformation on streams of <a href="ClassElement.html" title="java.lang.classfile 包中的接口"><code>ClassElement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A builder for <a href="CodeModel.html" title="interface in java.lang.classfile"><code>Code</code></a> attributes (method bodies).</div>
+<div class="block">A builder for <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>Code</code></a> attributes (method bodies).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeBuilder.BlockCodeBuilder.html" title="interface in java.lang.classfile">CodeBuilder.BlockCodeBuilder</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeBuilder.BlockCodeBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder.BlockCodeBuilder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A builder for blocks of code.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeBuilder.CatchBuilder.html" title="interface in java.lang.classfile">CodeBuilder.CatchBuilder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeBuilder.CatchBuilder.html" title="java.lang.classfile 包中的接口">CodeBuilder.CatchBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A builder to add catch blocks.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeElement.html" title="interface in java.lang.classfile">CodeElement</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeElement.html" title="java.lang.classfile 包中的接口">CodeElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Marker interface for a member element of a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>.</div>
+<div class="block">Marker interface for a member element of a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeModel.html" title="interface in java.lang.classfile">CodeModel</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CodeModel.html" title="java.lang.classfile 包中的接口">CodeModel</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the body of a method (the <code>Code</code> attribute).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeTransform.html" title="interface in java.lang.classfile">CodeTransform</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CodeTransform.html" title="java.lang.classfile 包中的接口">CodeTransform</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A transformation on streams of <a href="CodeElement.html" title="interface in java.lang.classfile"><code>CodeElement</code></a>.</div>
+<div class="block">A transformation on streams of <a href="CodeElement.html" title="java.lang.classfile 包中的接口"><code>CodeElement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CompoundElement.html" title="interface in java.lang.classfile">CompoundElement</a>&lt;E extends <a href="ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CompoundElement.html" title="java.lang.classfile 包中的接口">CompoundElement</a>&lt;E extends <a href="ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A <code>class</code> file structure that can be viewed as a composition of its
 member structures.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CustomAttribute.html" title="class in java.lang.classfile">CustomAttribute</a>&lt;T extends <a href="CustomAttribute.html" title="class in java.lang.classfile">CustomAttribute</a>&lt;T&gt;&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CustomAttribute.html" title="java.lang.classfile 包中的类">CustomAttribute</a>&lt;T extends <a href="CustomAttribute.html" title="java.lang.classfile 包中的类">CustomAttribute</a>&lt;T&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Models a user-defined attribute in a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldBuilder.html" title="interface in java.lang.classfile">FieldBuilder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldBuilder.html" title="java.lang.classfile 包中的接口">FieldBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A builder for fields.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FieldElement.html" title="interface in java.lang.classfile">FieldElement</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FieldElement.html" title="java.lang.classfile 包中的接口">FieldElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Marker interface for a member element of a <a href="FieldModel.html" title="interface in java.lang.classfile"><code>FieldModel</code></a>.</div>
+<div class="block">Marker interface for a member element of a <a href="FieldModel.html" title="java.lang.classfile 包中的接口"><code>FieldModel</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldModel.html" title="interface in java.lang.classfile">FieldModel</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldModel.html" title="java.lang.classfile 包中的接口">FieldModel</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a field.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FieldTransform.html" title="interface in java.lang.classfile">FieldTransform</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FieldTransform.html" title="java.lang.classfile 包中的接口">FieldTransform</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A transformation on streams of <a href="FieldElement.html" title="interface in java.lang.classfile"><code>FieldElement</code></a>.</div>
+<div class="block">A transformation on streams of <a href="FieldElement.html" title="java.lang.classfile 包中的接口"><code>FieldElement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Instruction.html" title="interface in java.lang.classfile">Instruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Instruction.html" title="java.lang.classfile 包中的接口">Instruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Models an executable instruction in the <code>code</code> array of the <a href="attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute of a method.</div>
+<div class="block">Models an executable instruction in the <code>code</code> array of the <a href="attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute of a method.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Interfaces.html" title="interface in java.lang.classfile">Interfaces</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Interfaces.html" title="java.lang.classfile 包中的接口">Interfaces</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the interfaces (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1">4.1</a>) of a class.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Label.html" title="interface in java.lang.classfile">Label</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Label.html" title="java.lang.classfile 包中的接口">Label</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A marker for a position within the instructions of a method body.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodBuilder.html" title="interface in java.lang.classfile">MethodBuilder</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodBuilder.html" title="java.lang.classfile 包中的接口">MethodBuilder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A builder for methods.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodElement.html" title="interface in java.lang.classfile">MethodElement</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodElement.html" title="java.lang.classfile 包中的接口">MethodElement</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Marker interface for a member element of a <a href="MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a>.</div>
+<div class="block">Marker interface for a member element of a <a href="MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodModel.html" title="interface in java.lang.classfile">MethodModel</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodModel.html" title="java.lang.classfile 包中的接口">MethodModel</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a method.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodSignature.html" title="interface in java.lang.classfile">MethodSignature</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodSignature.html" title="java.lang.classfile 包中的接口">MethodSignature</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the generic signature of a method or constructor, as defined by JVMS
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.9.1">4.7.9.1</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodTransform.html" title="interface in java.lang.classfile">MethodTransform</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodTransform.html" title="java.lang.classfile 包中的接口">MethodTransform</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A transformation on streams of <a href="MethodElement.html" title="interface in java.lang.classfile"><code>MethodElement</code></a>.</div>
+<div class="block">A transformation on streams of <a href="MethodElement.html" title="java.lang.classfile 包中的接口"><code>MethodElement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="Opcode.html" title="enum class in java.lang.classfile">Opcode</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="Opcode.html" title="java.lang.classfile 包中的枚举类">Opcode</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Describes the opcodes of the JVM instruction set, as described in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5">6.5</a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Opcode.Kind.html" title="enum class in java.lang.classfile">Opcode.Kind</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Opcode.Kind.html" title="java.lang.classfile 包中的枚举类">Opcode.Kind</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Kinds of opcodes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PseudoInstruction.html" title="interface in java.lang.classfile">PseudoInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PseudoInstruction.html" title="java.lang.classfile 包中的接口">PseudoInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Models metadata about a <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>, derived from the <a href="attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute itself or its attributes.</div>
+<div class="block">Models metadata about a <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>, derived from the <a href="attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute itself or its attributes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.html" title="interface in java.lang.classfile">Signature</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.html" title="java.lang.classfile 包中的接口">Signature</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models generic Java type signatures, as defined in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.9.1">4.7.9.1</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ArrayTypeSig.html" title="interface in java.lang.classfile">Signature.ArrayTypeSig</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ArrayTypeSig.html" title="java.lang.classfile 包中的接口">Signature.ArrayTypeSig</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the signature of an array type.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.BaseTypeSig.html" title="interface in java.lang.classfile">Signature.BaseTypeSig</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.BaseTypeSig.html" title="java.lang.classfile 包中的接口">Signature.BaseTypeSig</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the signature of a primitive type (JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-4.html#jls-4.2">4.2</a>) or void.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ClassTypeSig.html" title="interface in java.lang.classfile">Signature.ClassTypeSig</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ClassTypeSig.html" title="java.lang.classfile 包中的接口">Signature.ClassTypeSig</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the signature of a possibly-parameterized class or interface type.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.RefTypeSig.html" title="interface in java.lang.classfile">Signature.RefTypeSig</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.RefTypeSig.html" title="java.lang.classfile 包中的接口">Signature.RefTypeSig</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the signature of a reference type, which may be a class, interface,
 type variable, or array type.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ThrowableSig.html" title="interface in java.lang.classfile">Signature.ThrowableSig</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.ThrowableSig.html" title="java.lang.classfile 包中的接口">Signature.ThrowableSig</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for a signature for a throwable type.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.html" title="interface in java.lang.classfile">Signature.TypeArg</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.html" title="java.lang.classfile 包中的接口">Signature.TypeArg</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a type argument, an argument to a type parameter.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.Bounded.html" title="interface in java.lang.classfile">Signature.TypeArg.Bounded</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.Bounded.html" title="java.lang.classfile 包中的接口">Signature.TypeArg.Bounded</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a type argument with an explicit bound type.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Signature.TypeArg.Bounded.WildcardIndicator.html" title="enum class in java.lang.classfile">Signature.TypeArg.Bounded.WildcardIndicator</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Signature.TypeArg.Bounded.WildcardIndicator.html" title="java.lang.classfile 包中的枚举类">Signature.TypeArg.Bounded.WildcardIndicator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Models a type argument's wildcard indicator.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.Unbounded.html" title="interface in java.lang.classfile">Signature.TypeArg.Unbounded</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeArg.Unbounded.html" title="java.lang.classfile 包中的接口">Signature.TypeArg.Unbounded</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an unbounded wildcard type argument <code>*</code>, or <code>
 ?</code> in Java programs.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.TypeParam.html" title="interface in java.lang.classfile">Signature.TypeParam</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Signature.TypeParam.html" title="java.lang.classfile 包中的接口">Signature.TypeParam</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a signature for a type parameter of a generic class, interface,
-method, or constructor, which introduces a <a href="Signature.TypeVarSig.html" title="interface in java.lang.classfile">type
+method, or constructor, which introduces a <a href="Signature.TypeVarSig.html" title="java.lang.classfile 包中的接口">type
 variable</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeVarSig.html" title="interface in java.lang.classfile">Signature.TypeVarSig</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Signature.TypeVarSig.html" title="java.lang.classfile 包中的接口">Signature.TypeVarSig</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models the signature of a type variable.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Superclass.html" title="interface in java.lang.classfile">Superclass</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Superclass.html" title="java.lang.classfile 包中的接口">Superclass</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models the superclass (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1">4.1</a>) of a class.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.html" title="interface in java.lang.classfile">TypeAnnotation</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.html" title="java.lang.classfile 包中的接口">TypeAnnotation</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>type_annotation</code> structure (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20">4.7.20</a>).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.CatchTarget.html" title="interface in java.lang.classfile">TypeAnnotation.CatchTarget</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.CatchTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.CatchTarget</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the i'th type in an exception parameter
 declaration.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.EmptyTarget.html" title="interface in java.lang.classfile">TypeAnnotation.EmptyTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.EmptyTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.EmptyTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on either the type in a field
 declaration, the return type of a method, the type of a newly constructed
 object, or the receiver type of a method or constructor.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.FormalParameterTarget.html" title="interface in java.lang.classfile">TypeAnnotation.FormalParameterTarget</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.FormalParameterTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.FormalParameterTarget</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the type in a formal parameter
 declaration of a method, constructor, or lambda expression.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.LocalVarTarget.html" title="interface in java.lang.classfile">TypeAnnotation.LocalVarTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.LocalVarTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.LocalVarTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the type in a local variable declaration,
 including a variable declared as a resource in a try-with-resources statement.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.LocalVarTargetInfo.html" title="interface in java.lang.classfile">TypeAnnotation.LocalVarTargetInfo</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.LocalVarTargetInfo.html" title="java.lang.classfile 包中的接口">TypeAnnotation.LocalVarTargetInfo</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates a range of code array offsets within which a local variable
 has a value, and the index into the local variable array of the current
 frame at which that local variable can be found.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.OffsetTarget.html" title="interface in java.lang.classfile">TypeAnnotation.OffsetTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.OffsetTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.OffsetTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on either the type in an instanceof expression
 or a new expression, or the type before the :: in a method reference expression.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.SupertypeTarget.html" title="interface in java.lang.classfile">TypeAnnotation.SupertypeTarget</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.SupertypeTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.SupertypeTarget</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on a type in the extends or implements
 clause of a class or interface declaration.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TargetInfo.html" title="interface in java.lang.classfile">TypeAnnotation.TargetInfo</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TargetInfo.html" title="java.lang.classfile 包中的接口">TypeAnnotation.TargetInfo</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Specifies which type in a declaration or expression is being annotated.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TypeAnnotation.TargetType.html" title="enum class in java.lang.classfile">TypeAnnotation.TargetType</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TypeAnnotation.TargetType.html" title="java.lang.classfile 包中的枚举类">TypeAnnotation.TargetType</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The kind of target on which the annotation appears, as defined in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20.1">4.7.20.1</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.ThrowsTarget.html" title="interface in java.lang.classfile">TypeAnnotation.ThrowsTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.ThrowsTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.ThrowsTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the i'th type in the throws
 clause of a method or constructor declaration.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeArgumentTarget.html" title="interface in java.lang.classfile">TypeAnnotation.TypeArgumentTarget</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeArgumentTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.TypeArgumentTarget</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears either on the i'th type in a cast
 expression, or on the i'th type argument in the explicit type argument list for any of the following: a new
 expression, an explicit constructor invocation statement, a method invocation expression, or a method reference
 expression.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeParameterBoundTarget.html" title="interface in java.lang.classfile">TypeAnnotation.TypeParameterBoundTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeParameterBoundTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.TypeParameterBoundTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the i'th bound of the j'th
 type parameter declaration of a generic class, interface, method, or
 constructor.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeParameterTarget.html" title="interface in java.lang.classfile">TypeAnnotation.TypeParameterTarget</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypeParameterTarget.html" title="java.lang.classfile 包中的接口">TypeAnnotation.TypeParameterTarget</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Indicates that an annotation appears on the declaration of the i'th type
 parameter of a generic class, generic interface, generic method, or
 generic constructor.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypePathComponent.html" title="interface in java.lang.classfile">TypeAnnotation.TypePathComponent</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeAnnotation.TypePathComponent.html" title="java.lang.classfile 包中的接口">TypeAnnotation.TypePathComponent</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">JVMS: Type_path structure identifies which part of the type is annotated,
 as defined in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20.2">4.7.20.2</a></div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TypeAnnotation.TypePathComponent.Kind.html" title="enum class in java.lang.classfile">TypeAnnotation.TypePathComponent.Kind</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="TypeAnnotation.TypePathComponent.Kind.html" title="java.lang.classfile 包中的枚举类">TypeAnnotation.TypePathComponent.Kind</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Type path kind, as defined in JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.20.2">4.7.20.2</a></div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TypeKind.html" title="enum class in java.lang.classfile">TypeKind</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TypeKind.html" title="java.lang.classfile 包中的枚举类">TypeKind</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Describes the data types Java Virtual Machine operates on.</div>
 </div>

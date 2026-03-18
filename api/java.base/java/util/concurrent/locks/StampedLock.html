@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent.locks</a></li>
 <li><a href="StampedLock.html" class="current-selection">StampedLock</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -84,17 +84,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">StampedLock()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#writeLock()" tabindex="0">writeLock()</a></li>
 <li><a href="#tryWriteLock()" tabindex="0">tryWriteLock()</a></li>
@@ -132,21 +132,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class StampedLock" class="title">Class StampedLock</h1>
+<h1 title="类 StampedLock" class="title">类 StampedLock</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.concurrent.locks.StampedLock</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../io/Serializable.html" title="interface in java.io">Serializable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../../io/Serializable.html" title="java.io 包中的接口">Serializable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">StampedLock</span>
-<span class="extends-implements">extends <a href="../../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../../../io/Serializable.html" title="interface in java.io">Serializable</a></span></div>
+<span class="extends-implements">extends <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../../../io/Serializable.html" title="java.io 包中的接口">Serializable</a></span></div>
 <div class="block">A capability-based lock with three modes for controlling read/write
 access.  The state of a StampedLock consists of a version and mode.
 Lock acquisition methods return a stamp that represents and
@@ -217,8 +217,8 @@ correctly.  StampedLocks are serializable, but always deserialize
 into initial unlocked state, so they are not useful for remote
 locking.
 
-<p>Like <a href="../Semaphore.html" title="class in java.util.concurrent"><code>Semaphore</code></a>, but unlike most
-<a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> implementations, StampedLocks have no notion of ownership.
+<p>Like <a href="../Semaphore.html" title="java.util.concurrent 包中的类"><code>Semaphore</code></a>, but unlike most
+<a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> implementations, StampedLocks have no notion of ownership.
 Locks acquired in one thread can be released or converted in another.
 
 <p>The scheduling policy of StampedLock does not consistently
@@ -229,8 +229,8 @@ or converting locks does not carry any information about the state
 of the lock; a subsequent invocation may succeed.
 
 <p>Because it supports coordinated usage across multiple lock
-modes, this class does not directly implement the <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> or
-<a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a> interfaces. However, a StampedLock may be
+modes, this class does not directly implement the <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> or
+<a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a> interfaces. However, a StampedLock may be
 viewed <a href="#asReadLock()"><code>asReadLock()</code></a>, <a href="#asWriteLock()"><code>asWriteLock()</code></a>, or <a href="#asReadWriteLock()"><code>asReadWriteLock()</code></a> in applications requiring only the associated
 set of functionality.
 
@@ -341,9 +341,9 @@ bodies.
 <dl class="notes"><dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4">17.4 Memory Model</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../serialized-form.html#java.util.concurrent.locks.StampedLock">Serialized Form</a></li>
@@ -357,11 +357,11 @@ bodies.
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">StampedLock</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new lock, initially in unlocked state.</div>
@@ -372,33 +372,33 @@ bodies.
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Lock.html" title="interface in java.util.concurrent.locks">Lock</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Lock.html" title="java.util.concurrent.locks 包中的接口">Lock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asReadLock()" class="member-name-link">asReadLock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a plain <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> view of this StampedLock in which
+<div class="block">Returns a plain <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> view of this StampedLock in which
 the <a href="Lock.html#lock()"><code>Lock.lock()</code></a> method is mapped to <a href="#readLock()"><code>readLock()</code></a>,
 and similarly for other methods.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asReadWriteLock()" class="member-name-link">asReadWriteLock</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a> view of this StampedLock in
+<div class="block">Returns a <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a> view of this StampedLock in
 which the <a href="ReadWriteLock.html#readLock()"><code>ReadWriteLock.readLock()</code></a> method is mapped to
 <a href="#asReadLock()"><code>asReadLock()</code></a>, and <a href="ReadWriteLock.html#writeLock()"><code>ReadWriteLock.writeLock()</code></a> to
 <a href="#asWriteLock()"><code>asWriteLock()</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Lock.html" title="interface in java.util.concurrent.locks">Lock</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Lock.html" title="java.util.concurrent.locks 包中的接口">Lock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asWriteLock()" class="member-name-link">asWriteLock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a plain <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> view of this StampedLock in which
+<div class="block">Returns a plain <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> view of this StampedLock in which
 the <a href="Lock.html#lock()"><code>Lock.lock()</code></a> method is mapped to <a href="#writeLock()"><code>writeLock()</code></a>,
 and similarly for other methods.</div>
 </div>
@@ -449,7 +449,7 @@ until available.</div>
 <div class="block">Non-exclusively acquires the lock, blocking if necessary
 until available or the current thread is interrupted.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string identifying this lock, as well as its lock
@@ -487,7 +487,7 @@ if exclusively locked.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryReadLock(long,java.util.concurrent.TimeUnit)" class="member-name-link">tryReadLock</a><wbr>(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Non-exclusively acquires the lock if it is available within the
 given time and the current thread has not been interrupted.</div>
@@ -511,7 +511,7 @@ stamp value.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#tryWriteLock(long,java.util.concurrent.TimeUnit)" class="member-name-link">tryWriteLock</a><wbr>(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Exclusively acquires the lock if it is available within the
 given time and the current thread has not been interrupted.</div>
@@ -556,7 +556,7 @@ until available or the current thread is interrupted.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -567,7 +567,7 @@ until available or the current thread is interrupted.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -584,7 +584,7 @@ until available or the current thread is interrupted.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="writeLock()">
@@ -594,7 +594,7 @@ until available or the current thread is interrupted.</div>
 <div class="block">Exclusively acquires the lock, blocking if necessary
 until available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a write stamp that can be used to unlock or convert mode</dd>
 </dl>
 </div>
@@ -607,7 +607,7 @@ until available.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">tryWriteLock</span>()</div>
 <div class="block">Exclusively acquires the lock if it is immediately available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a write stamp that can be used to unlock or convert mode,
 or zero if the lock is not available</dd>
 </dl>
@@ -619,21 +619,21 @@ or zero if the lock is not available</dd>
 <h3>tryWriteLock</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">tryWriteLock</span><wbr><span class="parameters">(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-                  throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+                  throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Exclusively acquires the lock if it is available within the
 given time and the current thread has not been interrupted.
 Behavior under timeout and interruption matches that specified
 for method <a href="Lock.html#tryLock(long,java.util.concurrent.TimeUnit)"><code>Lock.tryLock(long,TimeUnit)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>time</code> - the maximum time to wait for the lock</dd>
 <dd><code>unit</code> - the time unit of the <code>time</code> argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a write stamp that can be used to unlock or convert mode,
 or zero if the lock is not available</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
 before acquiring the lock</dd>
 </dl>
 </div>
@@ -644,16 +644,16 @@ before acquiring the lock</dd>
 <h3>writeLockInterruptibly</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">writeLockInterruptibly</span>()
-                            throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+                            throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Exclusively acquires the lock, blocking if necessary
 until available or the current thread is interrupted.
 Behavior under interruption matches that specified
 for method <a href="Lock.html#lockInterruptibly()"><code>Lock.lockInterruptibly()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a write stamp that can be used to unlock or convert mode</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
 before acquiring the lock</dd>
 </dl>
 </div>
@@ -667,7 +667,7 @@ before acquiring the lock</dd>
 <div class="block">Non-exclusively acquires the lock, blocking if necessary
 until available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a read stamp that can be used to unlock or convert mode</dd>
 </dl>
 </div>
@@ -680,7 +680,7 @@ until available.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">tryReadLock</span>()</div>
 <div class="block">Non-exclusively acquires the lock if it is immediately available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a read stamp that can be used to unlock or convert mode,
 or zero if the lock is not available</dd>
 </dl>
@@ -692,21 +692,21 @@ or zero if the lock is not available</dd>
 <h3>tryReadLock</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">tryReadLock</span><wbr><span class="parameters">(long&nbsp;time,
- <a href="../TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-                 throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+ <a href="../TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+                 throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Non-exclusively acquires the lock if it is available within the
 given time and the current thread has not been interrupted.
 Behavior under timeout and interruption matches that specified
 for method <a href="Lock.html#tryLock(long,java.util.concurrent.TimeUnit)"><code>Lock.tryLock(long,TimeUnit)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>time</code> - the maximum time to wait for the lock</dd>
 <dd><code>unit</code> - the time unit of the <code>time</code> argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a read stamp that can be used to unlock or convert mode,
 or zero if the lock is not available</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
 before acquiring the lock</dd>
 </dl>
 </div>
@@ -717,16 +717,16 @@ before acquiring the lock</dd>
 <h3>readLockInterruptibly</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">readLockInterruptibly</span>()
-                           throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+                           throws <span class="exceptions"><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Non-exclusively acquires the lock, blocking if necessary
 until available or the current thread is interrupted.
 Behavior under interruption matches that specified
 for method <a href="Lock.html#lockInterruptibly()"><code>Lock.lockInterruptibly()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a read stamp that can be used to unlock or convert mode</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread is interrupted
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread is interrupted
 before acquiring the lock</dd>
 </dl>
 </div>
@@ -740,7 +740,7 @@ before acquiring the lock</dd>
 <div class="block">Returns a stamp that can later be validated, or zero
 if exclusively locked.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a valid optimistic read stamp, or zero if exclusively locked</dd>
 </dl>
 </div>
@@ -758,9 +758,9 @@ currently held lock. Invoking this method with a value not
 obtained from <a href="#tryOptimisticRead()"><code>tryOptimisticRead()</code></a> or a locking method
 for this lock has no defined effect or result.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock has not been exclusively acquired
 since issuance of the given stamp; else false</dd>
 </dl>
@@ -775,10 +775,10 @@ since issuance of the given stamp; else false</dd>
 <div class="block">If the lock state matches the given stamp, releases the
 exclusive lock.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a write-lock operation</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if the stamp does
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if the stamp does
 not match the current state of this lock</dd>
 </dl>
 </div>
@@ -792,10 +792,10 @@ not match the current state of this lock</dd>
 <div class="block">If the lock state matches the given stamp, releases the
 non-exclusive lock.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a read-lock operation</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if the stamp does
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if the stamp does
 not match the current state of this lock</dd>
 </dl>
 </div>
@@ -809,10 +809,10 @@ not match the current state of this lock</dd>
 <div class="block">If the lock state matches the given stamp, releases the
 corresponding mode of the lock.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a lock operation</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if the stamp does
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if the stamp does
 not match the current state of this lock</dd>
 </dl>
 </div>
@@ -831,9 +831,9 @@ Or, if an optimistic read, returns a write stamp only if
 immediately available. This method returns zero in all other
 cases.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a valid write stamp, or zero on failure</dd>
 </dl>
 </div>
@@ -851,9 +851,9 @@ returns it. Or, if an optimistic read, acquires a read lock and
 returns a read stamp only if immediately available. This method
 returns zero in all other cases.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a valid read stamp, or zero on failure</dd>
 </dl>
 </div>
@@ -870,9 +870,9 @@ observation stamp.  Or, if an optimistic read, returns it if
 validated. This method returns zero in all other cases, and so
 may be useful as a form of "tryUnlock".</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a valid optimistic read stamp, or zero on failure</dd>
 </dl>
 </div>
@@ -887,7 +887,7 @@ may be useful as a form of "tryUnlock".</div>
 stamp value. This method may be useful for recovery after
 errors.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock was held, else false</dd>
 </dl>
 </div>
@@ -902,7 +902,7 @@ errors.</div>
 requiring a stamp value. This method may be useful for recovery
 after errors.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the read lock was held, else false</dd>
 </dl>
 </div>
@@ -915,7 +915,7 @@ after errors.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isWriteLocked</span>()</div>
 <div class="block">Returns <code>true</code> if the lock is currently held exclusively.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock is currently held exclusively</dd>
 </dl>
 </div>
@@ -928,7 +928,7 @@ after errors.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isReadLocked</span>()</div>
 <div class="block">Returns <code>true</code> if the lock is currently held non-exclusively.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the lock is currently held non-exclusively</dd>
 </dl>
 </div>
@@ -951,12 +951,12 @@ try {
     sl.unlockWrite(stamp);
 }</code></pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a previous StampedLock operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the stamp was returned by a successful
   write-lock operation</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -979,12 +979,12 @@ try {
     sl.unlockRead(stamp);
 }</code></pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a previous StampedLock operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the stamp was returned by a successful
   read-lock operation</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -1010,12 +1010,12 @@ try {
     sl.unlock(stamp);
 }</code></pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a previous StampedLock operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the stamp was returned by a successful
   read-lock or write-lock operation</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -1028,14 +1028,14 @@ try {
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isOptimisticReadStamp</span><wbr><span class="parameters">(long&nbsp;stamp)</span></div>
 <div class="block">Tells whether a stamp represents a successful optimistic read.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stamp</code> - a stamp returned by a previous StampedLock operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the stamp was returned by a successful
   optimistic read operation, that is, a non-zero return from
   <a href="#tryOptimisticRead()"><code>tryOptimisticRead()</code></a> or
   <a href="#tryConvertToOptimisticRead(long)"><code>tryConvertToOptimisticRead(long)</code></a></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -1050,7 +1050,7 @@ try {
 method is designed for use in monitoring system state, not for
 synchronization control.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of read locks held</dd>
 </dl>
 </div>
@@ -1060,16 +1060,16 @@ synchronization control.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string identifying this lock, as well as its lock
 state.  The state, in brackets, includes the String <code>
 "Unlocked"</code> or the String <code>"Write-locked"</code> or the String
 <code>"Read-locks:"</code> followed by the current number of
 read-locks held.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string identifying this lock, as well as its lock state</dd>
 </dl>
 </div>
@@ -1079,14 +1079,14 @@ read-locks held.</div>
 <section class="detail" id="asReadLock()">
 <h3>asReadLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Lock.html" title="interface in java.util.concurrent.locks">Lock</a></span>&nbsp;<span class="element-name">asReadLock</span>()</div>
-<div class="block">Returns a plain <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> view of this StampedLock in which
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Lock.html" title="java.util.concurrent.locks 包中的接口">Lock</a></span>&nbsp;<span class="element-name">asReadLock</span>()</div>
+<div class="block">Returns a plain <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> view of this StampedLock in which
 the <a href="Lock.html#lock()"><code>Lock.lock()</code></a> method is mapped to <a href="#readLock()"><code>readLock()</code></a>,
 and similarly for other methods. The returned Lock does not
-support a <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a>; method <a href="Lock.html#newCondition()"><code>Lock.newCondition()</code></a>
+support a <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a>; method <a href="Lock.html#newCondition()"><code>Lock.newCondition()</code></a>
 throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the lock</dd>
 </dl>
 </div>
@@ -1096,14 +1096,14 @@ throws <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="asWriteLock()">
 <h3>asWriteLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Lock.html" title="interface in java.util.concurrent.locks">Lock</a></span>&nbsp;<span class="element-name">asWriteLock</span>()</div>
-<div class="block">Returns a plain <a href="Lock.html" title="interface in java.util.concurrent.locks"><code>Lock</code></a> view of this StampedLock in which
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Lock.html" title="java.util.concurrent.locks 包中的接口">Lock</a></span>&nbsp;<span class="element-name">asWriteLock</span>()</div>
+<div class="block">Returns a plain <a href="Lock.html" title="java.util.concurrent.locks 包中的接口"><code>Lock</code></a> view of this StampedLock in which
 the <a href="Lock.html#lock()"><code>Lock.lock()</code></a> method is mapped to <a href="#writeLock()"><code>writeLock()</code></a>,
 and similarly for other methods. The returned Lock does not
-support a <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a>; method <a href="Lock.html#newCondition()"><code>Lock.newCondition()</code></a>
+support a <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a>; method <a href="Lock.html#newCondition()"><code>Lock.newCondition()</code></a>
 throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the lock</dd>
 </dl>
 </div>
@@ -1113,13 +1113,13 @@ throws <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="asReadWriteLock()">
 <h3>asReadWriteLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a></span>&nbsp;<span class="element-name">asReadWriteLock</span>()</div>
-<div class="block">Returns a <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a> view of this StampedLock in
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a></span>&nbsp;<span class="element-name">asReadWriteLock</span>()</div>
+<div class="block">Returns a <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a> view of this StampedLock in
 which the <a href="ReadWriteLock.html#readLock()"><code>ReadWriteLock.readLock()</code></a> method is mapped to
 <a href="#asReadLock()"><code>asReadLock()</code></a>, and <a href="ReadWriteLock.html#writeLock()"><code>ReadWriteLock.writeLock()</code></a> to
 <a href="#asWriteLock()"><code>asWriteLock()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the lock</dd>
 </dl>
 </div>

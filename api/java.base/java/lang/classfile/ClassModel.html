@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile</a></li>
 <li><a href="ClassModel.html" class="current-selection">ClassModel</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -67,11 +67,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#constantPool()" tabindex="0">constantPool()</a></li>
 <li><a href="#flags()" tabindex="0">flags()</a></li>
@@ -90,19 +90,19 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface ClassModel" class="title">Interface ClassModel</h1>
+<h1 title="接口 ClassModel" class="title">接口 ClassModel</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="AttributedElement.html" title="interface in java.lang.classfile">AttributedElement</a>, <a href="ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>, <a href="CompoundElement.html" title="interface in java.lang.classfile">CompoundElement</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>&gt;, <a href="../Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="AttributedElement.html" title="java.lang.classfile 包中的接口">AttributedElement</a>, <a href="ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>, <a href="CompoundElement.html" title="java.lang.classfile 包中的接口">CompoundElement</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>&gt;, <a href="../Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">ClassModel</span><span class="extends-implements">
-extends <a href="CompoundElement.html" title="interface in java.lang.classfile">CompoundElement</a>&lt;<a href="ClassElement.html" title="interface in java.lang.classfile">ClassElement</a>&gt;, <a href="AttributedElement.html" title="interface in java.lang.classfile">AttributedElement</a></span></div>
+extends <a href="CompoundElement.html" title="java.lang.classfile 包中的接口">CompoundElement</a>&lt;<a href="ClassElement.html" title="java.lang.classfile 包中的接口">ClassElement</a>&gt;, <a href="AttributedElement.html" title="java.lang.classfile 包中的接口">AttributedElement</a></span></div>
 <div class="block">Models a <code>class</code> file.  A <code>class</code> file can be viewed as a
-<a href="CompoundElement.html" title="interface in java.lang.classfile">composition</a> of <a href="ClassElement.html" title="interface in java.lang.classfile"><code>ClassElement</code></a>s, or by
+<a href="CompoundElement.html" title="java.lang.classfile 包中的接口">composition</a> of <a href="ClassElement.html" title="java.lang.classfile 包中的接口"><code>ClassElement</code></a>s, or by
 random access via accessor methods if only specific parts of the <code>
 class</code> file is needed.
 <p>
@@ -114,18 +114,18 @@ allows creating a new class by selectively processing the original class
 elements and directing the results to a class builder.
 <p>
 A class holds attributes, most of which are accessible as member elements.
-<a href="attribute/BootstrapMethodsAttribute.html" title="interface in java.lang.classfile.attribute"><code>BootstrapMethodsAttribute</code></a> can only be accessed via <a href="AttributedElement.html" title="interface in java.lang.classfile">explicit attribute reading</a>, as it is modeled as part of
+<a href="attribute/BootstrapMethodsAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>BootstrapMethodsAttribute</code></a> can only be accessed via <a href="AttributedElement.html" title="java.lang.classfile 包中的接口">explicit attribute reading</a>, as it is modeled as part of
 the <a href="#constantPool()">constant pool</a>.</div>
 <dl class="notes"><dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.1">4.1 The <code>ClassFile</code> Structure</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="ClassFile.html#parse(byte%5B%5D)"><code>ClassFile.parse(byte[])</code></a></li>
-<li><a href="ClassTransform.html" title="interface in java.lang.classfile"><code>ClassTransform</code></a></li>
+<li><a href="ClassTransform.html" title="java.lang.classfile 包中的接口"><code>ClassTransform</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -136,30 +136,30 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="constantpool/ConstantPool.html" title="interface in java.lang.classfile.constantpool">ConstantPool</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="constantpool/ConstantPool.html" title="java.lang.classfile.constantpool 包中的接口">ConstantPool</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#constantPool()" class="member-name-link">constantPool</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the constant pool for this class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="FieldModel.html" title="interface in java.lang.classfile">FieldModel</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="FieldModel.html" title="java.lang.classfile 包中的接口">FieldModel</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fields()" class="member-name-link">fields</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the fields of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="AccessFlags.html" title="interface in java.lang.classfile">AccessFlags</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="AccessFlags.html" title="java.lang.classfile 包中的接口">AccessFlags</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flags()" class="member-name-link">flags</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the access flags.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#interfaces()" class="member-name-link">interfaces</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the interfaces implemented by this class.</div>
@@ -174,7 +174,7 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the major version of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="MethodModel.html" title="interface in java.lang.classfile">MethodModel</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="MethodModel.html" title="java.lang.classfile 包中的接口">MethodModel</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#methods()" class="member-name-link">methods</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the methods of this class.</div>
@@ -184,12 +184,12 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the minor version of this class.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#superclass()" class="member-name-link">superclass</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the superclass of this class, if there is one.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#thisClass()" class="member-name-link">thisClass</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the constant pool entry describing the name of this class.</div>
@@ -198,13 +198,13 @@ the <a href="#constantPool()">constant pool</a>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.AttributedElement">Methods declared in interface&nbsp;<a href="AttributedElement.html#method-summary" title="interface in java.lang.classfile">AttributedElement</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.AttributedElement">在接口 <a href="AttributedElement.html#method-summary" title="java.lang.classfile 包中的接口">AttributedElement</a> 中声明的方法</h3>
 <code><a href="AttributedElement.html#attributes()" title="attributes()">attributes</a>, <a href="AttributedElement.html#findAttribute(java.lang.classfile.AttributeMapper)" title="findAttribute(AttributeMapper)">findAttribute</a>, <a href="AttributedElement.html#findAttributes(java.lang.classfile.AttributeMapper)" title="findAttributes(AttributeMapper)">findAttributes</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.CompoundElement">Methods declared in interface&nbsp;<a href="CompoundElement.html#method-summary" title="interface in java.lang.classfile">CompoundElement</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.CompoundElement">在接口 <a href="CompoundElement.html#method-summary" title="java.lang.classfile 包中的接口">CompoundElement</a> 中声明的方法</h3>
 <code><a href="CompoundElement.html#elementList()" title="elementList()">elementList</a>, <a href="CompoundElement.html#elementStream()" title="elementStream()">elementStream</a>, <a href="CompoundElement.html#forEach(java.util.function.Consumer)" title="forEach(Consumer)">forEach</a>, <a href="CompoundElement.html#iterator()" title="iterator()">iterator</a>, <a href="CompoundElement.html#toDebugString()" title="toDebugString()">toDebugString</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Iterable">Methods declared in interface&nbsp;<a href="../Iterable.html#method-summary" title="interface in java.lang">Iterable</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Iterable">在接口 <a href="../Iterable.html#method-summary" title="java.lang 包中的接口">Iterable</a> 中声明的方法</h3>
 <code><a href="../Iterable.html#spliterator()" title="spliterator()">spliterator</a></code></div>
 </section>
 </li>
@@ -215,18 +215,18 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="constantPool()">
 <h3>constantPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="constantpool/ConstantPool.html" title="interface in java.lang.classfile.constantpool">ConstantPool</a></span>&nbsp;<span class="element-name">constantPool</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="constantpool/ConstantPool.html" title="java.lang.classfile.constantpool 包中的接口">ConstantPool</a></span>&nbsp;<span class="element-name">constantPool</span>()</div>
 <div class="block">Returns the constant pool for this class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the constant pool for this class</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="constantpool/ConstantPoolBuilder.html#of(java.lang.classfile.ClassModel)"><code>ConstantPoolBuilder.of(ClassModel)</code></a></li>
@@ -240,12 +240,12 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <section class="detail" id="flags()">
 <h3>flags</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="AccessFlags.html" title="interface in java.lang.classfile">AccessFlags</a></span>&nbsp;<span class="element-name">flags</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="AccessFlags.html" title="java.lang.classfile 包中的接口">AccessFlags</a></span>&nbsp;<span class="element-name">flags</span>()</div>
 <div class="block">Returns the access flags.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the access flags</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../reflect/AccessFlag.Location.html#CLASS"><code>AccessFlag.Location.CLASS</code></a></li>
@@ -259,10 +259,10 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <section class="detail" id="thisClass()">
 <h3>thisClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a></span>&nbsp;<span class="element-name">thisClass</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a></span>&nbsp;<span class="element-name">thisClass</span>()</div>
 <div class="block">Returns the constant pool entry describing the name of this class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the constant pool entry describing the name of this class</dd>
 </dl>
 </div>
@@ -276,12 +276,12 @@ the <a href="#constantPool()">constant pool</a>.</div>
 <div class="block">Returns the major version of this class.  It is in the range of unsigned
 short, <code>[0, 65535]</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the major version of this class</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="ClassFileVersion.html" title="interface in java.lang.classfile"><code>ClassFileVersion</code></a></li>
+<li><a href="ClassFileVersion.html" title="java.lang.classfile 包中的接口"><code>ClassFileVersion</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -296,12 +296,12 @@ short, <code>[0, 65535]</code>.</div>
 <div class="block">Returns the minor version of this class.  It is in the range of unsigned
 short, <code>[0, 65535]</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the minor version of this class</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="ClassFileVersion.html" title="interface in java.lang.classfile"><code>ClassFileVersion</code></a></li>
+<li><a href="ClassFileVersion.html" title="java.lang.classfile 包中的接口"><code>ClassFileVersion</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -312,10 +312,10 @@ short, <code>[0, 65535]</code>.</div>
 <section class="detail" id="fields()">
 <h3>fields</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="FieldModel.html" title="interface in java.lang.classfile">FieldModel</a>&gt;</span>&nbsp;<span class="element-name">fields</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="FieldModel.html" title="java.lang.classfile 包中的接口">FieldModel</a>&gt;</span>&nbsp;<span class="element-name">fields</span>()</div>
 <div class="block">Returns the fields of this class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the fields of this class</dd>
 </dl>
 </div>
@@ -325,10 +325,10 @@ short, <code>[0, 65535]</code>.</div>
 <section class="detail" id="methods()">
 <h3>methods</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="MethodModel.html" title="interface in java.lang.classfile">MethodModel</a>&gt;</span>&nbsp;<span class="element-name">methods</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="MethodModel.html" title="java.lang.classfile 包中的接口">MethodModel</a>&gt;</span>&nbsp;<span class="element-name">methods</span>()</div>
 <div class="block">Returns the methods of this class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the methods of this class</dd>
 </dl>
 </div>
@@ -338,19 +338,19 @@ short, <code>[0, 65535]</code>.</div>
 <section class="detail" id="superclass()">
 <h3>superclass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;</span>&nbsp;<span class="element-name">superclass</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;</span>&nbsp;<span class="element-name">superclass</span>()</div>
 <div class="block">Returns the superclass of this class, if there is one.
 This <code>class</code> file may have no superclass if this represents a
-<a href="#isModuleInfo()">module descriptor</a> or the <a href="../Object.html" title="class in java.lang"><code>Object</code></a>
+<a href="#isModuleInfo()">module descriptor</a> or the <a href="../Object.html" title="java.lang 包中的类"><code>Object</code></a>
 class; otherwise, it must have a superclass.  If this is an interface,
-the superclass must be <a href="../Object.html" title="class in java.lang"><code>Object</code></a>.</div>
+the superclass must be <a href="../Object.html" title="java.lang 包中的类"><code>Object</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the superclass of this class, if there is one</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Superclass.html" title="interface in java.lang.classfile"><code>Superclass</code></a></li>
+<li><a href="Superclass.html" title="java.lang.classfile 包中的接口"><code>Superclass</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -361,15 +361,15 @@ the superclass must be <a href="../Object.html" title="class in java.lang"><code
 <section class="detail" id="interfaces()">
 <h3>interfaces</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="constantpool/ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a>&gt;</span>&nbsp;<span class="element-name">interfaces</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="constantpool/ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a>&gt;</span>&nbsp;<span class="element-name">interfaces</span>()</div>
 <div class="block">Returns the interfaces implemented by this class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the interfaces implemented by this class</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Interfaces.html" title="interface in java.lang.classfile"><code>Interfaces</code></a></li>
+<li><a href="Interfaces.html" title="java.lang.classfile 包中的接口"><code>Interfaces</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -383,9 +383,9 @@ the superclass must be <a href="../Object.html" title="class in java.lang"><code
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isModuleInfo</span>()</div>
 <div class="block">Returns whether this <code>class</code> file is a module descriptor.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>whether this <code>class</code> file is a module descriptor</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ClassFile.html#buildModule(java.lang.classfile.attribute.ModuleAttribute,java.util.function.Consumer)"><code>ClassFile.buildModule(ModuleAttribute, Consumer)</code></a></li>

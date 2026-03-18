@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../module-summary.html">java.desktop</a></li>
 <li><a href="package-summary.html" class="current-selection">javax.print</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#print-service-discovery-heading" tabindex="0">Print Service Discovery</a></li>
 <li><a href="#attribute-definitions-heading" tabindex="0">Attribute Definitions</a></li>
@@ -66,13 +66,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#using-the-api-heading" tabindex="0">Using the API</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package javax.print" class="title">Package javax.print</h1>
+<h1 title="包 javax.print" class="title">包 javax.print</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -90,7 +90,7 @@ applications to:
 
 <h2 id="print-service-discovery-heading">Print Service Discovery</h2>
 An application invokes the static methods of the abstract class
-<a href="PrintServiceLookup.html" title="class in javax.print"><code>PrintServiceLookup</code></a> to locate print
+<a href="PrintServiceLookup.html" title="javax.print 包中的类"><code>PrintServiceLookup</code></a> to locate print
 services that have the capabilities to satisfy the application's print
 request. For example, to print a double-sided document, the application first
 needs to find printers that have the double-sided printing capability.
@@ -100,7 +100,7 @@ the standard platform printers. To locate other types of printers, such as
 IPP printers or JINI printers, a print-service provider can write
 implementations of <code>PrintServiceLookup</code>. The print-service provider can
 dynamically install these <code>PrintServiceLookup</code> implementations using
-the <a href="../../../java.base/java/util/ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a> facility.
+the <a href="../../../java.base/java/util/ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a> facility.
 
 <h2 id="attribute-definitions-heading">Attribute Definitions</h2>
 The <a href="attribute/package-summary.html"><code>javax.print.attribute</code></a> and <a href="attribute/standard/package-summary.html"><code>javax.print.attribute.standard</code></a>
@@ -120,7 +120,7 @@ capabilities, such as: resolution, copies, media sizes, job priority, and
 page ranges.
 
 <h2 id="document-type-specification-heading">Document Type Specification</h2>
-The <a href="DocFlavor.html" title="class in javax.print"><code>DocFlavor</code></a> class represents the print data
+The <a href="DocFlavor.html" title="javax.print 包中的类"><code>DocFlavor</code></a> class represents the print data
 format, such as JPEG or PostScript. A <code>DocFlavor</code> object consists of a
 MIME type, which describes the format, and a document representation class
 name that indicates how the document is delivered to the printer or output
@@ -136,11 +136,11 @@ to process a print request:
   <li>Creates a set of attributes.
   <li>Locates a print service that can handle the print request as specified
   by the <code>DocFlavor</code> and the attribute set.
-  <li>Creates a <a href="Doc.html" title="interface in javax.print"><code>Doc</code></a> object encapsulating the
+  <li>Creates a <a href="Doc.html" title="javax.print 包中的接口"><code>Doc</code></a> object encapsulating the
   <code>DocFlavor</code> and the actual print data, which can take many forms
   including: a Postscript file, a JPEG image, a <code>URL</code>, or plain text.
   <li>Gets a print job, represented by
-  <a href="DocPrintJob.html" title="interface in javax.print"><code>DocPrintJob</code></a>, from the print service.
+  <a href="DocPrintJob.html" title="javax.print 包中的接口"><code>DocPrintJob</code></a>, from the print service.
   <li>Calls the print method of the print job.
 </ol>
 The following code sample demonstrates a typical use of the Java Print
@@ -180,9 +180,9 @@ coding and may result in a run time exception either immediately or at some
 later time. <code>IllegalArgumentException</code> and <code>NullPointerException</code>
 are examples of typical and acceptable run time exceptions for such cases.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc2911"><span id="RFC2911:InternetPrintingProtocol/1.1:ModelandSemantics" class="search-tag-result">RFC 2911: Internet Printing Protocol/1.1: Model and Semantics</span></a></li>
@@ -195,10 +195,10 @@ are examples of typical and acceptable run time exceptions for such cases.</div>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="attribute/package-summary.html">javax.print.attribute</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classes and interfaces that describe the types of Java Print
@@ -214,147 +214,147 @@ interfaces.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">异常类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AttributeException.html" title="interface in javax.print">AttributeException</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AttributeException.html" title="javax.print 包中的接口">AttributeException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>AttributeException</code> is a mixin interface which a subclass of
-<a href="PrintException.html" title="class in javax.print"><code>PrintException</code></a> can implement to report an error
+<a href="PrintException.html" title="javax.print 包中的类"><code>PrintException</code></a> can implement to report an error
 condition involving one or more printing attributes that a particular Print
 Service instance does not support.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CancelablePrintJob.html" title="interface in javax.print">CancelablePrintJob</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CancelablePrintJob.html" title="javax.print 包中的接口">CancelablePrintJob</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">This interface is used by a printing application to cancel a print job.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Doc.html" title="interface in javax.print">Doc</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Doc.html" title="javax.print 包中的接口">Doc</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>Doc</code> specifies the interface for an object that supplies one
 piece of print data for a Print Job.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.html" title="class in javax.print">DocFlavor</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.html" title="javax.print 包中的类">DocFlavor</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor</code> encapsulates an object that specifies the format in
-which print data is supplied to a <a href="DocPrintJob.html" title="interface in javax.print"><code>DocPrintJob</code></a>.</div>
+which print data is supplied to a <a href="DocPrintJob.html" title="javax.print 包中的接口"><code>DocPrintJob</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.BYTE_ARRAY.html" title="class in javax.print">DocFlavor.BYTE_ARRAY</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.BYTE_ARRAY.html" title="javax.print 包中的类">DocFlavor.BYTE_ARRAY</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.BYTE_ARRAY</code> provides predefined static constant
 <code>DocFlavor</code> objects for example doc flavors using a byte array
 (<code>byte[]</code>) as the print data representation class.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.CHAR_ARRAY.html" title="class in javax.print">DocFlavor.CHAR_ARRAY</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.CHAR_ARRAY.html" title="javax.print 包中的类">DocFlavor.CHAR_ARRAY</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.CHAR_ARRAY</code> provides predefined static constant
 <code>DocFlavor</code> objects for example doc flavors using a character array
 (<code>char[]</code>) as the print data representation class.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.INPUT_STREAM.html" title="class in javax.print">DocFlavor.INPUT_STREAM</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.INPUT_STREAM.html" title="javax.print 包中的类">DocFlavor.INPUT_STREAM</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.INPUT_STREAM</code> provides predefined static constant
 <code>DocFlavor</code> objects for example doc flavors using a byte stream
-(<a href="../../../java.base/java/io/InputStream.html" title="class in java.io"><code>java.io.InputStream</code></a>) as the print data
+(<a href="../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>java.io.InputStream</code></a>) as the print data
 representation class.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.READER.html" title="class in javax.print">DocFlavor.READER</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.READER.html" title="javax.print 包中的类">DocFlavor.READER</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.READER</code> provides predefined static constant
 <code>DocFlavor</code> objects for example doc flavors using a character
-stream (<a href="../../../java.base/java/io/Reader.html" title="class in java.io"><code>java.io.Reader</code></a>) as the print data
+stream (<a href="../../../java.base/java/io/Reader.html" title="java.io 包中的类"><code>java.io.Reader</code></a>) as the print data
 representation class.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.SERVICE_FORMATTED.html" title="class in javax.print">DocFlavor.SERVICE_FORMATTED</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.SERVICE_FORMATTED.html" title="javax.print 包中的类">DocFlavor.SERVICE_FORMATTED</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.SERVICE_FORMATTED</code> provides predefined static
 constant <code>DocFlavor</code> objects for example doc flavors for service
 formatted print data.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.STRING.html" title="class in javax.print">DocFlavor.STRING</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DocFlavor.STRING.html" title="javax.print 包中的类">DocFlavor.STRING</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.STRING</code> provides predefined static constant
 <code>DocFlavor</code> objects for example doc flavors using a string
-(<a href="../../../java.base/java/lang/String.html" title="class in java.lang"><code>java.lang.String</code></a>) as the print data representation class.</div>
+(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类"><code>java.lang.String</code></a>) as the print data representation class.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.URL.html" title="class in javax.print">DocFlavor.URL</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DocFlavor.URL.html" title="javax.print 包中的类">DocFlavor.URL</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class <code>DocFlavor.URL</code> provides predefined static constant
 <code>DocFlavor</code> objects.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DocPrintJob.html" title="interface in javax.print">DocPrintJob</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DocPrintJob.html" title="javax.print 包中的接口">DocPrintJob</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">This interface represents a print job that can print a specified document
 with a set of job attributes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FlavorException.html" title="interface in javax.print">FlavorException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FlavorException.html" title="javax.print 包中的接口">FlavorException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>FlavorException</code> is a mixin interface which a subclass of
-<a href="PrintException.html" title="class in javax.print"><code>PrintException</code></a> can implement to report an error
-condition involving a doc flavor or flavors (class <a href="DocFlavor.html" title="class in javax.print"><code>DocFlavor</code></a>).</div>
+<a href="PrintException.html" title="javax.print 包中的类"><code>PrintException</code></a> can implement to report an error
+condition involving a doc flavor or flavors (class <a href="DocFlavor.html" title="javax.print 包中的类"><code>DocFlavor</code></a>).</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MultiDoc.html" title="interface in javax.print">MultiDoc</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MultiDoc.html" title="javax.print 包中的接口">MultiDoc</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>MultiDoc</code> specifies the interface for an object that
 supplies more than one piece of print data for a Print Job.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MultiDocPrintJob.html" title="interface in javax.print">MultiDocPrintJob</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MultiDocPrintJob.html" title="javax.print 包中的接口">MultiDocPrintJob</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Obtained from a <code>MultiDocPrintService</code>, a <code>MultiDocPrintJob</code> can
 print a specified collection of documents as a single print job with a set of
 job attributes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MultiDocPrintService.html" title="interface in javax.print">MultiDocPrintService</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MultiDocPrintService.html" title="javax.print 包中的接口">MultiDocPrintService</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>MultiPrintService</code> is the factory for a
 <code>MultiDocPrintJob</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="PrintException.html" title="class in javax.print">PrintException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="PrintException.html" title="javax.print 包中的类">PrintException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Class <code>PrintException</code> encapsulates a printing-related error condition
 that occurred while using a Print Service instance.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PrintService.html" title="interface in javax.print">PrintService</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PrintService.html" title="javax.print 包中的接口">PrintService</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>PrintService</code> is the factory for a <code>DocPrintJob</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PrintServiceLookup.html" title="class in javax.print">PrintServiceLookup</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PrintServiceLookup.html" title="javax.print 包中的类">PrintServiceLookup</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Implementations of this class provide lookup services for print services
 (typically equivalent to printers) of a particular type.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ServiceUI.html" title="class in javax.print">ServiceUI</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ServiceUI.html" title="javax.print 包中的类">ServiceUI</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">This class is a collection of UI convenience methods which provide a
 graphical user dialog for browsing print services looked up through the Java
 Print Service API.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ServiceUIFactory.html" title="class in javax.print">ServiceUIFactory</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ServiceUIFactory.html" title="javax.print 包中的类">ServiceUIFactory</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Services may optionally provide UIs which allow different styles of
 interaction in different roles.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SimpleDoc.html" title="class in javax.print">SimpleDoc</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SimpleDoc.html" title="javax.print 包中的类">SimpleDoc</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">This class is an implementation of interface <code>Doc</code> that can be used in
 many common printing requests.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StreamPrintService.html" title="class in javax.print">StreamPrintService</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StreamPrintService.html" title="javax.print 包中的类">StreamPrintService</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">This class extends <a href="PrintService.html" title="interface in javax.print"><code>PrintService</code></a> and represents a print service that
+<div class="block">This class extends <a href="PrintService.html" title="javax.print 包中的接口"><code>PrintService</code></a> and represents a print service that
 prints data in different formats to a client-provided output stream.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StreamPrintServiceFactory.html" title="class in javax.print">StreamPrintServiceFactory</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StreamPrintServiceFactory.html" title="javax.print 包中的类">StreamPrintServiceFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A <code>StreamPrintServiceFactory</code> is the factory for
-<a href="StreamPrintService.html" title="class in javax.print"><code>StreamPrintService</code></a> instances, which can print to an output stream in
+<a href="StreamPrintService.html" title="javax.print 包中的类"><code>StreamPrintService</code></a> instances, which can print to an output stream in
 a particular document format described as a mime type.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="URIException.html" title="interface in javax.print">URIException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="URIException.html" title="javax.print 包中的接口">URIException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface <code>URIException</code> is a mixin interface which a subclass of
-<a href="PrintException.html" title="class in javax.print"><code>PrintException</code></a> can implement to report an error
+<a href="PrintException.html" title="javax.print 包中的类"><code>PrintException</code></a> can implement to report an error
 condition involving a <code>URI</code> address.</div>
 </div>
 </div>

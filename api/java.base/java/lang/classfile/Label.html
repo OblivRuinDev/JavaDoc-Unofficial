@@ -49,7 +49,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile</a></li>
 <li><a href="Label.html" class="current-selection">Label</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -57,9 +57,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#reading" tabindex="0">Reading Labels</a></li>
 <li><a href="#writing" tabindex="0">Writing Labels</a></li>
@@ -70,7 +70,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Label" class="title">Interface Label</h1>
+<h1 title="接口 Label" class="title">接口 Label</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -78,11 +78,11 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">Label</span></div>
 <div class="block">A marker for a position within the instructions of a method body.  The
 position is a cursor position in the list of instructions, similar to that
-of a <a href="../../util/ListIterator.html" title="interface in java.util"><code>ListIterator</code></a>.
+of a <a href="../../util/ListIterator.html" title="java.util 包中的接口"><code>ListIterator</code></a>.
 
 <h2 id="reading">Reading Labels</h2>
 Labels read from <code>class</code> files represent positions in the <code>code</code>
-array of a <a href="attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute.  It is associated with a
+array of a <a href="attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute.  It is associated with a
 <dfn><span id="bci" class="search-tag-result">bci</span></dfn> (bytecode index), also known as <dfn><span id="pc" class="search-tag-result">pc</span></dfn>
 (program counter), the index into the <code>code</code> array; the actual cursor
 position is immediately before the given index, so a label at the beginning
@@ -90,18 +90,18 @@ of the instructions has bci <code>0</code>, and a label at the end of the
 instructions has bci <a href="attribute/CodeAttribute.html#codeLength()"><code>codeLength() + 1</code></a>.  The
 bci can be inspected through <a href="attribute/CodeAttribute.html#labelToBci(java.lang.classfile.Label)"><code>CodeAttribute::labelToBci</code></a>.
 <p>
-In generic <a href="CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>s, a label may not have a bci value; the position
-of a label can be found by searching for the corresponding <a href="instruction/LabelTarget.html" title="interface in java.lang.classfile.instruction"><code>LabelTarget</code></a>
+In generic <a href="CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>s, a label may not have a bci value; the position
+of a label can be found by searching for the corresponding <a href="instruction/LabelTarget.html" title="java.lang.classfile.instruction 包中的接口"><code>LabelTarget</code></a>
 within that model.
 
 <h2 id="writing">Writing Labels</h2>
 Many models in <a href="package-summary.html"><code>java.lang.classfile</code></a> refer to labels.  To write a
-label, a label must be obtained, it must be bound to a <a href="CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>.
+label, a label must be obtained, it must be bound to a <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>.
 <p>
 To obtain a label:
 <ul>
 <li>Use a label read from other models.
-<li>Use pre-defined labels from a <a href="CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>, such as <a href="CodeBuilder.html#startLabel()"><code>CodeBuilder::startLabel</code></a>, <a href="CodeBuilder.html#endLabel()"><code>CodeBuilder::endLabel</code></a>, or <a href="CodeBuilder.BlockCodeBuilder.html#breakLabel()"><code>BlockCodeBuilder::breakLabel</code></a>.  They are already bound.
+<li>Use pre-defined labels from a <a href="CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>, such as <a href="CodeBuilder.html#startLabel()"><code>CodeBuilder::startLabel</code></a>, <a href="CodeBuilder.html#endLabel()"><code>CodeBuilder::endLabel</code></a>, or <a href="CodeBuilder.BlockCodeBuilder.html#breakLabel()"><code>BlockCodeBuilder::breakLabel</code></a>.  They are already bound.
 <li>Create labels with <a href="CodeBuilder.html#newLabel()"><code>CodeBuilder::newLabel</code></a> or
     <a href="CodeBuilder.html#newBoundLabel()"><code>CodeBuilder::newBoundLabel</code></a>.
 </ul>
@@ -109,16 +109,16 @@ To obtain a label:
 A label must be bound exactly once in the <code>CodeBuilder</code> where it is
 used; otherwise, writing fails.  To bind an unbound label:
 <ul>
-<li>Send a read <a href="instruction/LabelTarget.html" title="interface in java.lang.classfile.instruction"><code>LabelTarget</code></a> to a <code>CodeBuilder</code>.
+<li>Send a read <a href="instruction/LabelTarget.html" title="java.lang.classfile.instruction 包中的接口"><code>LabelTarget</code></a> to a <code>CodeBuilder</code>.
 <li>Use <a href="CodeBuilder.html#labelBinding(java.lang.classfile.Label)"><code>CodeBuilder::labelBinding</code></a>.
 </ul>
 Note that a label read from another model is not automatically bound in a
 <code>CodeBuilder</code>; they are separate entities and the label is bound to
 different positions in them.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="attribute/CodeAttribute.html#labelToBci(java.lang.classfile.Label)"><code>CodeAttribute::labelToBci</code></a></li>

@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="FileLock.html" class="current-selection">FileLock</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -67,22 +67,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#platform-dependencies-heading" tabindex="0">Platform dependencies</a></li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.nio.channels.FileChannel,long,long,boolean)" tabindex="0">FileLock(FileChannel, long, long, boolean)</a></li>
 <li><a href="#%3Cinit%3E(java.nio.channels.AsynchronousFileChannel,long,long,boolean)" tabindex="0">FileLock(AsynchronousFileChannel, long, long, boolean)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#channel()" tabindex="0">channel()</a></li>
 <li><a href="#acquiredBy()" tabindex="0">acquiredBy()</a></li>
@@ -101,28 +101,28 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class FileLock" class="title">Class FileLock</h1>
+<h1 title="类 FileLock" class="title">类 FileLock</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.channels.FileLock</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">FileLock</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
 <div class="block">A token representing a lock on a region of a file.
 
 <p> A file-lock object is created each time a lock is acquired on a file via
 one of the <a href="FileChannel.html#lock(long,long,boolean)"><code>lock</code></a> or <a href="FileChannel.html#tryLock(long,long,boolean)"><code>tryLock</code></a> methods of the
-<a href="FileChannel.html" title="class in java.nio.channels"><code>FileChannel</code></a> class, or the <a href="AsynchronousFileChannel.html#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)"><code>lock</code></a>
+<a href="FileChannel.html" title="java.nio.channels 包中的类"><code>FileChannel</code></a> class, or the <a href="AsynchronousFileChannel.html#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)"><code>lock</code></a>
 or <a href="AsynchronousFileChannel.html#tryLock(long,long,boolean)"><code>tryLock</code></a>
-methods of the <a href="AsynchronousFileChannel.html" title="class in java.nio.channels"><code>AsynchronousFileChannel</code></a> class.
+methods of the <a href="AsynchronousFileChannel.html" title="java.nio.channels 包中的类"><code>AsynchronousFileChannel</code></a> class.
 
 <p> A file-lock object is initially valid.  It remains valid until the lock
 is released by invoking the <a href="#release()"><code>release</code></a> method, by closing the
@@ -195,7 +195,7 @@ filesystems do not implement file locks on regions that extend past a
 certain position, often 2<sup>30</sup> or 2<sup>31</sup>.  In general, great
 care should be taken when locking files that reside on network filesystems.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -205,14 +205,14 @@ care should be taken when locking files that reside on network filesystems.</div
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.AsynchronousFileChannel,long,long,boolean)" class="member-name-link">FileLock</a><wbr>(<a href="AsynchronousFileChannel.html" title="class in java.nio.channels">AsynchronousFileChannel</a>&nbsp;channel,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.AsynchronousFileChannel,long,long,boolean)" class="member-name-link">FileLock</a><wbr>(<a href="AsynchronousFileChannel.html" title="java.nio.channels 包中的类">AsynchronousFileChannel</a>&nbsp;channel,
  long&nbsp;position,
  long&nbsp;size,
  boolean&nbsp;shared)</code></div>
@@ -220,7 +220,7 @@ care should be taken when locking files that reside on network filesystems.</div
 <div class="block">Initializes a new instance of this class.</div>
 </div>
 <div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.FileChannel,long,long,boolean)" class="member-name-link">FileLock</a><wbr>(<a href="FileChannel.html" title="class in java.nio.channels">FileChannel</a>&nbsp;channel,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.FileChannel,long,long,boolean)" class="member-name-link">FileLock</a><wbr>(<a href="FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a>&nbsp;channel,
  long&nbsp;position,
  long&nbsp;size,
  boolean&nbsp;shared)</code></div>
@@ -233,20 +233,20 @@ care should be taken when locking files that reside on network filesystems.</div
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Channel.html" title="interface in java.nio.channels">Channel</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#acquiredBy()" class="member-name-link">acquiredBy</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the channel upon whose file this lock was acquired.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="FileChannel.html" title="class in java.nio.channels">FileChannel</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#channel()" class="member-name-link">channel</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the file channel upon whose file this lock was acquired.</div>
@@ -288,7 +288,7 @@ region.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the size of the locked region in bytes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string describing the range, type, and validity of this lock.</div>
@@ -297,7 +297,7 @@ region.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -308,19 +308,19 @@ region.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.nio.channels.FileChannel,long,long,boolean)">
 <h3>FileLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">FileLock</span><wbr><span class="parameters">(<a href="FileChannel.html" title="class in java.nio.channels">FileChannel</a>&nbsp;channel,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">FileLock</span><wbr><span class="parameters">(<a href="FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a>&nbsp;channel,
  long&nbsp;position,
  long&nbsp;size,
  boolean&nbsp;shared)</span></div>
 <div class="block">Initializes a new instance of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>channel</code> - The file channel upon whose file this lock is held</dd>
 <dd><code>position</code> - The position within the file at which the locked region starts;
         must be non-negative</dd>
@@ -328,8 +328,8 @@ region.</div>
         <code>position</code>&nbsp;+&nbsp;<code>size</code> must be non-negative</dd>
 <dd><code>shared</code> - <code>true</code> if this lock is shared,
         <code>false</code> if it is exclusive</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the preconditions on the parameters do not hold</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the preconditions on the parameters do not hold</dd>
 </dl>
 </div>
 </section>
@@ -338,13 +338,13 @@ region.</div>
 <section class="detail" id="&lt;init&gt;(java.nio.channels.AsynchronousFileChannel,long,long,boolean)">
 <h3>FileLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">FileLock</span><wbr><span class="parameters">(<a href="AsynchronousFileChannel.html" title="class in java.nio.channels">AsynchronousFileChannel</a>&nbsp;channel,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">FileLock</span><wbr><span class="parameters">(<a href="AsynchronousFileChannel.html" title="java.nio.channels 包中的类">AsynchronousFileChannel</a>&nbsp;channel,
  long&nbsp;position,
  long&nbsp;size,
  boolean&nbsp;shared)</span></div>
 <div class="block">Initializes a new instance of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>channel</code> - The channel upon whose file this lock is held</dd>
 <dd><code>position</code> - The position within the file at which the locked region starts;
         must be non-negative</dd>
@@ -352,9 +352,9 @@ region.</div>
         <code>position</code>&nbsp;+&nbsp;<code>size</code> must be non-negative</dd>
 <dd><code>shared</code> - <code>true</code> if this lock is shared,
         <code>false</code> if it is exclusive</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the preconditions on the parameters do not hold</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the preconditions on the parameters do not hold</dd>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -366,19 +366,19 @@ region.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="channel()">
 <h3>channel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="FileChannel.html" title="class in java.nio.channels">FileChannel</a></span>&nbsp;<span class="element-name">channel</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a></span>&nbsp;<span class="element-name">channel</span>()</div>
 <div class="block">Returns the file channel upon whose file this lock was acquired.
 
 <p> This method has been superseded by the <a href="#acquiredBy()"><code>acquiredBy</code></a>
 method.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The file channel, or <code>null</code> if the file lock was not
          acquired by a file channel.</dd>
 </dl>
@@ -389,12 +389,12 @@ method.</div>
 <section class="detail" id="acquiredBy()">
 <h3>acquiredBy</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Channel.html" title="interface in java.nio.channels">Channel</a></span>&nbsp;<span class="element-name">acquiredBy</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></span>&nbsp;<span class="element-name">acquiredBy</span>()</div>
 <div class="block">Returns the channel upon whose file this lock was acquired.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The channel upon whose file this lock was acquired.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -412,7 +412,7 @@ region.
 actual underlying file, so the value returned by this method may exceed
 the file's current size.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The position</dd>
 </dl>
 </div>
@@ -429,7 +429,7 @@ the file's current size.  </p></div>
 actual underlying file, so the value returned by this method may exceed
 the file's current size.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The size of the locked region</dd>
 </dl>
 </div>
@@ -442,7 +442,7 @@ the file's current size.  </p></div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isShared</span>()</div>
 <div class="block">Tells whether this lock is shared.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if lock is shared,
         <code>false</code> if it is exclusive</dd>
 </dl>
@@ -457,10 +457,10 @@ the file's current size.  </p></div>
  long&nbsp;size)</span></div>
 <div class="block">Tells whether or not this lock overlaps the given lock range.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>position</code> - The starting position of the lock range</dd>
 <dd><code>size</code> - The size of the lock range</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this lock and the given lock range overlap
          by at least one byte; <code>false</code> if <code>size</code> is
          negative or the lock range does not overlap this lock</dd>
@@ -478,7 +478,7 @@ the file's current size.  </p></div>
 <p> A lock object remains valid until it is released or the associated
 file channel is closed, whichever comes first.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this lock is valid</dd>
 </dl>
 </div>
@@ -489,17 +489,17 @@ file channel is closed, whichever comes first.  </p></div>
 <h3>release</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">release</span>()
-                      throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                      throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Releases this lock.
 
 <p> If this lock object is valid then invoking this method releases the
 lock and renders the object invalid.  If this lock object is invalid
 then invoking this method has no effect.  </p></div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If the channel that was used to acquire this lock
+<dt>抛出:</dt>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If the channel that was used to acquire this lock
          is no longer open</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -509,16 +509,16 @@ then invoking this method has no effect.  </p></div>
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-                 throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                 throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">This method invokes the <a href="#release()"><code>release()</code></a> method. It was added
 to the class so that it could be used in conjunction with the
 automatic resource management block construct.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code></dd>
-<dt>Since:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code></dd>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -528,12 +528,12 @@ automatic resource management block construct.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string describing the range, type, and validity of this lock.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>A descriptive string</dd>
 </dl>
 </div>

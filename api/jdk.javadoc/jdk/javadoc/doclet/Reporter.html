@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.javadoc.doclet</a></li>
 <li><a href="Reporter.html" class="current-selection">Reporter</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,11 +60,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#print(javax.tools.Diagnostic.Kind,java.lang.String)" tabindex="0">print(Diagnostic.Kind, String)</a></li>
 <li><a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,java.lang.String)" tabindex="0">print(Diagnostic.Kind, DocTreePath, String)</a></li>
@@ -80,7 +80,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Reporter" class="title">Interface Reporter</h1>
+<h1 title="接口 Reporter" class="title">接口 Reporter</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -88,10 +88,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Reporter</span></div>
 <div class="block">Interface for reporting diagnostics and other messages.
 
-<p>Diagnostics consist of a <a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools"><code>diagnostic kind</code></a> and a message,
-and may additionally be associated with an <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element"><code>element</code></a>,
-a <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="class in com.sun.source.util"><code>tree node</code></a> in a documentation comment,
-or an arbitrary position in a given <a href="../../../../java.compiler/javax/tools/FileObject.html" title="interface in javax.tools"><code>file</code></a>.
+<p>Diagnostics consist of a <a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类"><code>diagnostic kind</code></a> and a message,
+and may additionally be associated with an <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口"><code>element</code></a>,
+a <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="com.sun.source.util 包中的类"><code>tree node</code></a> in a documentation comment,
+or an arbitrary position in a given <a href="../../../../java.compiler/javax/tools/FileObject.html" title="javax.tools 包中的接口"><code>file</code></a>.
 Other messages may be written directly to one of two streams that are informally
 for use by "standard output" and "diagnostic output", where "standard output"
 means the output that is the expected result of executing some operation,
@@ -102,16 +102,16 @@ a side effect of executing the operation.
 <p>The exact manner in which diagnostics are output is unspecified and depends
 on the enclosing context. For example:
 <ul>
-<li>The <a href="../../../../java.compiler/javax/tools/DocumentationTool.html" title="interface in javax.tools"><code>DocumentationTool</code></a> API allows a client to specify a
-<a href="../../../../java.compiler/javax/tools/DiagnosticListener.html" title="interface in javax.tools"><code>DiagnosticListener</code></a> to which diagnostics will be
+<li>The <a href="../../../../java.compiler/javax/tools/DocumentationTool.html" title="javax.tools 包中的接口"><code>DocumentationTool</code></a> API allows a client to specify a
+<a href="../../../../java.compiler/javax/tools/DiagnosticListener.html" title="javax.tools 包中的接口"><code>DiagnosticListener</code></a> to which diagnostics will be
 <a href="../../../../java.compiler/javax/tools/DiagnosticListener.html#report(javax.tools.Diagnostic)"><code>reported</code></a>. If no listener is specified,
 diagnostics will be written to a given stream, or to <code>System.err</code> if no such
 stream is provided.
-<li>The <a href="../../../../java.base/java/util/spi/ToolProvider.html" title="interface in java.util.spi"><code>ToolProvider</code></a> API allows a client to specify
+<li>The <a href="../../../../java.base/java/util/spi/ToolProvider.html" title="java.util.spi 包中的接口"><code>ToolProvider</code></a> API allows a client to specify
 the streams to be used for reporting standard and diagnostic output.
 </ul></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -121,63 +121,63 @@ the streams to be used for reporting standard and diagnostic output.
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/io/PrintWriter.html" title="class in java.io">PrintWriter</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/io/PrintWriter.html" title="java.io 包中的类">PrintWriter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getDiagnosticWriter()" class="member-name-link">getDiagnosticWriter</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a writer that can be used to write diagnostic output,
 or <code>null</code> if no such writer is available.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/io/PrintWriter.html" title="class in java.io">PrintWriter</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/io/PrintWriter.html" title="java.io 包中的类">PrintWriter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getStandardWriter()" class="member-name-link">getStandardWriter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a writer that can be used to write non-diagnostic output,
 or <code>null</code> if no such writer is available.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,int,int,int,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="class in com.sun.source.util">DocTreePath</a>&nbsp;path,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,int,int,int,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="com.sun.source.util 包中的类">DocTreePath</a>&nbsp;path,
  int&nbsp;start,
  int&nbsp;pos,
  int&nbsp;end,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</code></div>
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Prints a diagnostic message related to a position within a range of characters in a tree node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="class in com.sun.source.util">DocTreePath</a>&nbsp;path,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="com.sun.source.util 包中的类">DocTreePath</a>&nbsp;path,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Prints a diagnostic message related to a tree node in a documentation comment.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Prints a diagnostic message.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,javax.lang.model.element.Element,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element">Element</a>&nbsp;element,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#print(javax.tools.Diagnostic.Kind,javax.lang.model.element.Element,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口">Element</a>&nbsp;element,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Prints a diagnostic message related to an element.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#print(javax.tools.Diagnostic.Kind,javax.tools.FileObject,int,int,int,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.compiler/javax/tools/FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;file,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#print(javax.tools.Diagnostic.Kind,javax.tools.FileObject,int,int,int,java.lang.String)" class="member-name-link">print</a><wbr>(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.compiler/javax/tools/FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;file,
  int&nbsp;start,
  int&nbsp;pos,
  int&nbsp;end,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</code></div>
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Prints a diagnostic message related to a position within a range of characters in a file.</div>
 </div>
@@ -193,17 +193,17 @@ or <code>null</code> if no such writer is available.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="print(javax.tools.Diagnostic.Kind,java.lang.String)">
 <h3>print</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</span></div>
 <div class="block">Prints a diagnostic message.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>kind</code> - the kind of diagnostic</dd>
 <dd><code>message</code> - the message to be printed</dd>
 </dl>
@@ -214,12 +214,12 @@ or <code>null</code> if no such writer is available.</div>
 <section class="detail" id="print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,java.lang.String)">
 <h3>print</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="class in com.sun.source.util">DocTreePath</a>&nbsp;path,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="com.sun.source.util 包中的类">DocTreePath</a>&nbsp;path,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</span></div>
 <div class="block">Prints a diagnostic message related to a tree node in a documentation comment.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>kind</code> - the kind of diagnostic</dd>
 <dd><code>path</code> - the path for the tree node</dd>
 <dd><code>message</code> - the message to be printed</dd>
@@ -231,35 +231,35 @@ or <code>null</code> if no such writer is available.</div>
 <section class="detail" id="print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,int,int,int,java.lang.String)">
 <h3>print</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="class in com.sun.source.util">DocTreePath</a>&nbsp;path,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../jdk.compiler/com/sun/source/util/DocTreePath.html" title="com.sun.source.util 包中的类">DocTreePath</a>&nbsp;path,
  int&nbsp;start,
  int&nbsp;pos,
  int&nbsp;end,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</span></div>
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</span></div>
 <div class="block">Prints a diagnostic message related to a position within a range of characters in a tree node.
 
 Only kinds of <code>DocTree</code> that wrap a simple string value are supported as leaf nodes
 of the given path. This currently includes
-<a href="../../../../jdk.compiler/com/sun/source/doctree/CommentTree.html" title="interface in com.sun.source.doctree"><code>CommentTree</code></a>, <a href="../../../../jdk.compiler/com/sun/source/doctree/DocTypeTree.html" title="interface in com.sun.source.doctree"><code>DocTypeTree</code></a>, <a href="../../../../jdk.compiler/com/sun/source/doctree/ReferenceTree.html" title="interface in com.sun.source.doctree"><code>ReferenceTree</code></a>, and <a href="../../../../jdk.compiler/com/sun/source/doctree/TextTree.html" title="interface in com.sun.source.doctree"><code>TextTree</code></a>.
+<a href="../../../../jdk.compiler/com/sun/source/doctree/CommentTree.html" title="com.sun.source.doctree 包中的接口"><code>CommentTree</code></a>, <a href="../../../../jdk.compiler/com/sun/source/doctree/DocTypeTree.html" title="com.sun.source.doctree 包中的接口"><code>DocTypeTree</code></a>, <a href="../../../../jdk.compiler/com/sun/source/doctree/ReferenceTree.html" title="com.sun.source.doctree 包中的接口"><code>ReferenceTree</code></a>, and <a href="../../../../jdk.compiler/com/sun/source/doctree/TextTree.html" title="com.sun.source.doctree 包中的接口"><code>TextTree</code></a>.
 
 The positions are all 0-based character offsets from the beginning of string.
 The positions should satisfy the relation <code>start &lt;= pos &lt;= end</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This implementation ignores the <code>(start, pos, end)</code> values and simply calls
 <a href="#print(javax.tools.Diagnostic.Kind,com.sun.source.util.DocTreePath,java.lang.String)"><code>print(kind, path, message)</code></a>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>kind</code> - the kind of diagnostic</dd>
 <dd><code>path</code> - the path for the tree node</dd>
 <dd><code>start</code> - the beginning of the enclosing range</dd>
 <dd><code>pos</code> - the position</dd>
 <dd><code>end</code> - the end of the enclosing range</dd>
 <dd><code>message</code> - the message to be printed</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>start</code>, <code>pos</code> and <code>end</code> do
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>start</code>, <code>pos</code> and <code>end</code> do
          not form a valid range.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>18</dd>
 </dl>
 </div>
@@ -269,12 +269,12 @@ The positions should satisfy the relation <code>start &lt;= pos &lt;= end</code>
 <section class="detail" id="print(javax.tools.Diagnostic.Kind,javax.lang.model.element.Element,java.lang.String)">
 <h3>print</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element">Element</a>&nbsp;element,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口">Element</a>&nbsp;element,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</span></div>
 <div class="block">Prints a diagnostic message related to an element.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>kind</code> - the kind of diagnostic</dd>
 <dd><code>element</code> - the element</dd>
 <dd><code>message</code> - the message to be printed</dd>
@@ -286,29 +286,29 @@ The positions should satisfy the relation <code>start &lt;= pos &lt;= end</code>
 <section class="detail" id="print(javax.tools.Diagnostic.Kind,javax.tools.FileObject,int,int,int,java.lang.String)">
 <h3>print</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="enum class in javax.tools">Diagnostic.Kind</a>&nbsp;kind,
- <a href="../../../../java.compiler/javax/tools/FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;file,
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span><wbr><span class="parameters">(<a href="../../../../java.compiler/javax/tools/Diagnostic.Kind.html" title="javax.tools 包中的枚举类">Diagnostic.Kind</a>&nbsp;kind,
+ <a href="../../../../java.compiler/javax/tools/FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;file,
  int&nbsp;start,
  int&nbsp;pos,
  int&nbsp;end,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;message)</span></div>
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;message)</span></div>
 <div class="block">Prints a diagnostic message related to a position within a range of characters in a file.
 The positions are all 0-based character offsets from the beginning of content of the file.
 The positions should satisfy the relation <code>start &lt;= pos &lt;= end</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This implementation always throws <code>UnsupportedOperationException</code>.
 The implementation provided by the <code>javadoc</code> tool to
 <a href="Doclet.html#init(java.util.Locale,jdk.javadoc.doclet.Reporter)"><code>initialize</code></a> a doclet
 overrides this implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>kind</code> - the kind of diagnostic</dd>
 <dd><code>file</code> - the file</dd>
 <dd><code>start</code> - the beginning of the enclosing range</dd>
 <dd><code>pos</code> - the position</dd>
 <dd><code>end</code> - the end of the enclosing range</dd>
 <dd><code>message</code> - the message to be printed</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -318,20 +318,20 @@ overrides this implementation.</dd>
 <section class="detail" id="getStandardWriter()">
 <h3>getStandardWriter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/io/PrintWriter.html" title="class in java.io">PrintWriter</a></span>&nbsp;<span class="element-name">getStandardWriter</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/io/PrintWriter.html" title="java.io 包中的类">PrintWriter</a></span>&nbsp;<span class="element-name">getStandardWriter</span>()</div>
 <div class="block">Returns a writer that can be used to write non-diagnostic output,
 or <code>null</code> if no such writer is available.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The value may or may not be the same as that returned by <a href="#getDiagnosticWriter()"><code>getDiagnosticWriter()</code></a>.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This implementation returns <code>null</code>.
 The implementation provided by the <code>javadoc</code> tool to
 <a href="Doclet.html#init(java.util.Locale,jdk.javadoc.doclet.Reporter)"><code>initialize</code></a> a doclet
 always returns a non-<code>null</code> value.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the writer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -341,20 +341,20 @@ always returns a non-<code>null</code> value.</dd>
 <section class="detail" id="getDiagnosticWriter()">
 <h3>getDiagnosticWriter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/io/PrintWriter.html" title="class in java.io">PrintWriter</a></span>&nbsp;<span class="element-name">getDiagnosticWriter</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/io/PrintWriter.html" title="java.io 包中的类">PrintWriter</a></span>&nbsp;<span class="element-name">getDiagnosticWriter</span>()</div>
 <div class="block">Returns a writer that can be used to write diagnostic output,
 or <code>null</code> if no such writer is available.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The value may or may not be the same as that returned by <a href="#getStandardWriter()"><code>getStandardWriter()</code></a>.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This implementation returns <code>null</code>.
 The implementation provided by the <code>javadoc</code> tool to
 <a href="Doclet.html#init(java.util.Locale,jdk.javadoc.doclet.Reporter)"><code>initialize</code></a> a doclet
 always returns a non-<code>null</code> value.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the writer</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>

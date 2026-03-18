@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time.zone</a></li>
 <li><a href="ZoneRulesProvider.html" class="current-selection">ZoneRulesProvider</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,17 +66,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ZoneRulesProvider()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getAvailableZoneIds()" tabindex="0">getAvailableZoneIds()</a></li>
 <li><a href="#getRules(java.lang.String,boolean)" tabindex="0">getRules(String, boolean)</a></li>
@@ -94,16 +94,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ZoneRulesProvider" class="title">Class ZoneRulesProvider</h1>
+<h1 title="类 ZoneRulesProvider" class="title">类 ZoneRulesProvider</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.time.zone.ZoneRulesProvider</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ZoneRulesProvider</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">Provider of time-zone rules to the system.
 <p>
 This class manages the configuration of time-zone rules.
@@ -113,7 +113,7 @@ The abstract methods provide the SPI that allows rules to be provided.
 ZoneRulesProvider may be installed in an instance of the Java Platform as
 extension classes, that is, jar files placed into any of the usual extension
 directories. Installed providers are loaded using the service-provider loading
-facility defined by the <a href="../../util/ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a> class. A ZoneRulesProvider
+facility defined by the <a href="../../util/ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a> class. A ZoneRulesProvider
 identifies itself with a provider configuration file named
 <code>java.time.zone.ZoneRulesProvider</code> in the resource directory
 <code>META-INF/services</code>. The file should contain a line that specifies the
@@ -129,14 +129,14 @@ class to be loaded as the default provider, using the system class loader.
 If this system property is not defined, a system-default provider will be
 loaded to serve as the default provider.
 <p>
-Rules are looked up primarily by zone ID, as used by <a href="../ZoneId.html" title="class in java.time"><code>ZoneId</code></a>.
+Rules are looked up primarily by zone ID, as used by <a href="../ZoneId.html" title="java.time 包中的类"><code>ZoneId</code></a>.
 Only zone region IDs may be used, zone offset IDs are not used here.
 <p>
 Time-zone rules are political, thus the data can change at any time.
 Each provider will provide the latest rules for each zone ID, but they
 may also provide the history of how the rules changed.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This interface is a service provider that can be called by multiple threads.
 Implementations must be immutable and thread-safe.
 <p>
@@ -148,7 +148,7 @@ Providers are encouraged to implement a meaningful <code>toString</code> method.
 Many systems would like to update time-zone rules dynamically without stopping the JVM.
 When examined in detail, this is a complex problem.
 Providers may choose to handle dynamic updates, however the default provider does not.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -158,8 +158,8 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -175,27 +175,27 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getAvailableZoneIds()" class="member-name-link">getAvailableZoneIds</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the set of available zone IDs.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRules(java.lang.String,boolean)" class="member-name-link">getRules</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRules(java.lang.String,boolean)" class="member-name-link">getRules</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
  boolean&nbsp;forCaching)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the rules for the zone ID.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../util/NavigableMap.html" title="interface in java.util">NavigableMap</a><wbr>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>, <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVersions(java.lang.String)" class="member-name-link">getVersions</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../util/NavigableMap.html" title="java.util 包中的接口">NavigableMap</a><wbr>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>, <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getVersions(java.lang.String)" class="member-name-link">getVersions</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets the history of rules for the zone ID.</div>
 </div>
@@ -204,18 +204,18 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">SPI method to refresh the rules from the underlying data provider.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideRules(java.lang.String,boolean)" class="member-name-link">provideRules</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideRules(java.lang.String,boolean)" class="member-name-link">provideRules</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
  boolean&nbsp;forCaching)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">SPI method to get the rules for the zone ID.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../util/NavigableMap.html" title="interface in java.util">NavigableMap</a><wbr>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>, <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideVersions(java.lang.String)" class="member-name-link">provideVersions</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../util/NavigableMap.html" title="java.util 包中的接口">NavigableMap</a><wbr>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>, <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideVersions(java.lang.String)" class="member-name-link">provideVersions</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">SPI method to get the history of rules for the zone ID.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../../util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provideZoneIds()" class="member-name-link">provideZoneIds</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">SPI method to get the available zone IDs.</div>
@@ -226,7 +226,7 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <div class="block">Refreshes the rules from the underlying data provider.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerProvider(java.time.zone.ZoneRulesProvider)" class="member-name-link">registerProvider</a><wbr>(<a href="ZoneRulesProvider.html" title="class in java.time.zone">ZoneRulesProvider</a>&nbsp;provider)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#registerProvider(java.time.zone.ZoneRulesProvider)" class="member-name-link">registerProvider</a><wbr>(<a href="ZoneRulesProvider.html" title="java.time.zone 包中的类">ZoneRulesProvider</a>&nbsp;provider)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Registers a zone rules provider.</div>
 </div>
@@ -234,7 +234,7 @@ Providers may choose to handle dynamic updates, however the default provider doe
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -245,7 +245,7 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -262,18 +262,18 @@ Providers may choose to handle dynamic updates, however the default provider doe
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getAvailableZoneIds()">
 <h3>getAvailableZoneIds</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="interface in java.util">Set</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">getAvailableZoneIds</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">getAvailableZoneIds</span>()</div>
 <div class="block">Gets the set of available zone IDs.
 <p>
-These IDs are the string form of a <a href="../ZoneId.html" title="class in java.time"><code>ZoneId</code></a>.</div>
+These IDs are the string form of a <a href="../ZoneId.html" title="java.time 包中的类"><code>ZoneId</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the unmodifiable set of zone IDs, not null</dd>
 </dl>
 </div>
@@ -283,7 +283,7 @@ These IDs are the string form of a <a href="../ZoneId.html" title="class in java
 <section class="detail" id="getRules(java.lang.String,boolean)">
 <h3>getRules</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a></span>&nbsp;<span class="element-name">getRules</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></span>&nbsp;<span class="element-name">getRules</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
  boolean&nbsp;forCaching)</span></div>
 <div class="block">Gets the rules for the zone ID.
 <p>
@@ -298,17 +298,17 @@ Under normal circumstances, the caching of zone rules is highly desirable
 as it will provide greater performance. However, there is a use case where
 the caching would not be desirable, see <a href="#provideRules(java.lang.String,boolean)"><code>provideRules(String, boolean)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the zone ID as defined by <code>ZoneId</code>, not null</dd>
 <dd><code>forCaching</code> - whether the rules are being queried for caching,
 true if the returned rules will be cached by <code>ZoneId</code>,
 false if they will be returned to the user without being cached in <code>ZoneId</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the rules, null if <code>forCaching</code> is true and this
 is a dynamic provider that wants to prevent caching in <code>ZoneId</code>,
 otherwise not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if rules cannot be obtained for the zone ID</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if rules cannot be obtained for the zone ID</dd>
 </dl>
 </div>
 </section>
@@ -317,7 +317,7 @@ otherwise not null</dd>
 <section class="detail" id="getVersions(java.lang.String)">
 <h3>getVersions</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../util/NavigableMap.html" title="interface in java.util">NavigableMap</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>, <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a>&gt;</span>&nbsp;<span class="element-name">getVersions</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../util/NavigableMap.html" title="java.util 包中的接口">NavigableMap</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>, <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a>&gt;</span>&nbsp;<span class="element-name">getVersions</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</span></div>
 <div class="block">Gets the history of rules for the zone ID.
 <p>
 Time-zones are defined by governments and change frequently.
@@ -336,13 +336,13 @@ they do not have to provide a history of rules.
 Thus the map will always contain one element, and will only contain more
 than one element if historical rule information is available.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the zone ID as defined by <code>ZoneId</code>, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a modifiable copy of the history of the rules for the ID, sorted
  from oldest to newest, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if history cannot be obtained for the zone ID</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if history cannot be obtained for the zone ID</dd>
 </dl>
 </div>
 </section>
@@ -351,22 +351,22 @@ than one element if historical rule information is available.</div>
 <section class="detail" id="registerProvider(java.time.zone.ZoneRulesProvider)">
 <h3>registerProvider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProvider</span><wbr><span class="parameters">(<a href="ZoneRulesProvider.html" title="class in java.time.zone">ZoneRulesProvider</a>&nbsp;provider)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerProvider</span><wbr><span class="parameters">(<a href="ZoneRulesProvider.html" title="java.time.zone 包中的类">ZoneRulesProvider</a>&nbsp;provider)</span></div>
 <div class="block">Registers a zone rules provider.
 <p>
 This adds a new provider to those currently available.
 A provider supplies rules for one or more zone IDs.
 A provider cannot be registered if it supplies a zone ID that has already been
-registered. See the notes on time-zone IDs in <a href="../ZoneId.html" title="class in java.time"><code>ZoneId</code></a>, especially
+registered. See the notes on time-zone IDs in <a href="../ZoneId.html" title="java.time 包中的类"><code>ZoneId</code></a>, especially
 the section on using the concept of a "group" to make IDs unique.
 <p>
 To ensure the integrity of time-zones already created, there is no way
 to deregister providers.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>provider</code> - the provider to register, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if a zone ID is already registered</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if a zone ID is already registered</dd>
 </dl>
 </div>
 </section>
@@ -380,7 +380,7 @@ to deregister providers.</div>
 <p>
 This method allows an application to request that the providers check
 for any updates to the provided rules.
-After calling this method, the offset stored in any <a href="../ZonedDateTime.html" title="class in java.time"><code>ZonedDateTime</code></a>
+After calling this method, the offset stored in any <a href="../ZonedDateTime.html" title="java.time 包中的类"><code>ZonedDateTime</code></a>
 may be invalid for the zone ID.
 <p>
 Dynamic update of rules is a complex problem and most applications
@@ -395,10 +395,10 @@ all objects in the system see the new rules.
 Note that there is likely to be a cost in performance of a dynamic rules
 provider. Note also that no dynamic rules provider is in this specification.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the rules were updated</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if an error occurs during the refresh</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if an error occurs during the refresh</dd>
 </dl>
 </div>
 </section>
@@ -407,7 +407,7 @@ provider. Note also that no dynamic rules provider is in this specification.</di
 <section class="detail" id="provideZoneIds()">
 <h3>provideZoneIds</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="interface in java.util">Set</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">provideZoneIds</span>()</div>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">provideZoneIds</span>()</div>
 <div class="block">SPI method to get the available zone IDs.
 <p>
 This obtains the IDs that this <code>ZoneRulesProvider</code> provides.
@@ -416,10 +416,10 @@ A provider should provide data for at least one zone ID.
 The returned zone IDs remain available and valid for the lifetime of the application.
 A dynamic provider may increase the set of IDs as more data becomes available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the set of zone IDs being provided, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if a problem occurs while providing the IDs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if a problem occurs while providing the IDs</dd>
 </dl>
 </div>
 </section>
@@ -428,7 +428,7 @@ A dynamic provider may increase the set of IDs as more data becomes available.</
 <section class="detail" id="provideRules(java.lang.String,boolean)">
 <h3>provideRules</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a></span>&nbsp;<span class="element-name">provideRules</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId,
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a></span>&nbsp;<span class="element-name">provideRules</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId,
  boolean&nbsp;forCaching)</span></div>
 <div class="block">SPI method to get the rules for the zone ID.
 <p>
@@ -441,22 +441,22 @@ If the provider implementation is not dynamic, then the result of the
 method must be the non-null set of rules selected by the ID.
 <p>
 If the provider implementation is dynamic, then the flag gives the option
-of preventing the returned rules from being cached in <a href="../ZoneId.html" title="class in java.time"><code>ZoneId</code></a>.
+of preventing the returned rules from being cached in <a href="../ZoneId.html" title="java.time 包中的类"><code>ZoneId</code></a>.
 When the flag is true, the provider is permitted to return null, where
 null will prevent the rules from being cached in <code>ZoneId</code>.
 When the flag is false, the provider must return non-null rules.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the zone ID as defined by <code>ZoneId</code>, not null</dd>
 <dd><code>forCaching</code> - whether the rules are being queried for caching,
 true if the returned rules will be cached by <code>ZoneId</code>,
 false if they will be returned to the user without being cached in <code>ZoneId</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the rules, null if <code>forCaching</code> is true and this
 is a dynamic provider that wants to prevent caching in <code>ZoneId</code>,
 otherwise not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if rules cannot be obtained for the zone ID</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if rules cannot be obtained for the zone ID</dd>
 </dl>
 </div>
 </section>
@@ -465,7 +465,7 @@ otherwise not null</dd>
 <section class="detail" id="provideVersions(java.lang.String)">
 <h3>provideVersions</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../util/NavigableMap.html" title="interface in java.util">NavigableMap</a>&lt;<a href="../../lang/String.html" title="class in java.lang">String</a>, <a href="ZoneRules.html" title="class in java.time.zone">ZoneRules</a>&gt;</span>&nbsp;<span class="element-name">provideVersions</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;zoneId)</span></div>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../../util/NavigableMap.html" title="java.util 包中的接口">NavigableMap</a>&lt;<a href="../../lang/String.html" title="java.lang 包中的类">String</a>, <a href="ZoneRules.html" title="java.time.zone 包中的类">ZoneRules</a>&gt;</span>&nbsp;<span class="element-name">provideVersions</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;zoneId)</span></div>
 <div class="block">SPI method to get the history of rules for the zone ID.
 <p>
 This returns a map of historical rules keyed by a version string.
@@ -483,13 +483,13 @@ more than one element if historical rule information is available.
 The returned versions remain available and valid for the lifetime of the application.
 A dynamic provider may increase the set of versions as more data becomes available.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zoneId</code> - the zone ID as defined by <code>ZoneId</code>, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a modifiable copy of the history of the rules for the ID, sorted
  from oldest to newest, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if history cannot be obtained for the zone ID</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if history cannot be obtained for the zone ID</dd>
 </dl>
 </div>
 </section>
@@ -508,10 +508,10 @@ Dynamic behavior is entirely optional and most providers do not support it.
 <p>
 This implementation returns false.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the rules were updated</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ZoneRulesException.html" title="class in java.time.zone">ZoneRulesException</a></code> - if an error occurs during the refresh</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ZoneRulesException.html" title="java.time.zone 包中的类">ZoneRulesException</a></code> - if an error occurs during the refresh</dd>
 </dl>
 </div>
 </section>

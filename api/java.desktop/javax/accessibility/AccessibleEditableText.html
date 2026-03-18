@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.accessibility</a></li>
 <li><a href="AccessibleEditableText.html" class="current-selection">AccessibleEditableText</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,12 +66,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#setTextContents(java.lang.String)" tabindex="0">setTextContents(String)</a></li>
 <li><a href="#insertTextAtIndex(int,java.lang.String)" tabindex="0">insertTextAtIndex(int, String)</a></li>
@@ -89,40 +89,40 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface AccessibleEditableText" class="title">Interface AccessibleEditableText</h1>
+<h1 title="接口 AccessibleEditableText" class="title">接口 AccessibleEditableText</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="AccessibleText.html" title="interface in javax.accessibility">AccessibleText</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="AccessibleText.html" title="javax.accessibility 包中的接口">AccessibleText</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../swing/JEditorPane.AccessibleJEditorPane.html" title="class in javax.swing">JEditorPane.AccessibleJEditorPane</a>, <a href="../swing/JEditorPane.AccessibleJEditorPaneHTML.html" title="class in javax.swing">JEditorPane.AccessibleJEditorPaneHTML</a>, <a href="../swing/JEditorPane.JEditorPaneAccessibleHypertextSupport.html" title="class in javax.swing">JEditorPane.JEditorPaneAccessibleHypertextSupport</a>, <a href="../swing/JPasswordField.AccessibleJPasswordField.html" title="class in javax.swing">JPasswordField.AccessibleJPasswordField</a>, <a href="../swing/JSpinner.AccessibleJSpinner.html" title="class in javax.swing">JSpinner.AccessibleJSpinner</a>, <a href="../swing/JTextArea.AccessibleJTextArea.html" title="class in javax.swing">JTextArea.AccessibleJTextArea</a>, <a href="../swing/text/JTextComponent.AccessibleJTextComponent.html" title="class in javax.swing.text">JTextComponent.AccessibleJTextComponent</a>, <a href="../swing/JTextField.AccessibleJTextField.html" title="class in javax.swing">JTextField.AccessibleJTextField</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="../swing/JEditorPane.AccessibleJEditorPane.html" title="javax.swing 包中的类">JEditorPane.AccessibleJEditorPane</a>, <a href="../swing/JEditorPane.AccessibleJEditorPaneHTML.html" title="javax.swing 包中的类">JEditorPane.AccessibleJEditorPaneHTML</a>, <a href="../swing/JEditorPane.JEditorPaneAccessibleHypertextSupport.html" title="javax.swing 包中的类">JEditorPane.JEditorPaneAccessibleHypertextSupport</a>, <a href="../swing/JPasswordField.AccessibleJPasswordField.html" title="javax.swing 包中的类">JPasswordField.AccessibleJPasswordField</a>, <a href="../swing/JSpinner.AccessibleJSpinner.html" title="javax.swing 包中的类">JSpinner.AccessibleJSpinner</a>, <a href="../swing/JTextArea.AccessibleJTextArea.html" title="javax.swing 包中的类">JTextArea.AccessibleJTextArea</a>, <a href="../swing/text/JTextComponent.AccessibleJTextComponent.html" title="javax.swing.text 包中的类">JTextComponent.AccessibleJTextComponent</a>, <a href="../swing/JTextField.AccessibleJTextField.html" title="javax.swing 包中的类">JTextField.AccessibleJTextField</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">AccessibleEditableText</span><span class="extends-implements">
-extends <a href="AccessibleText.html" title="interface in javax.accessibility">AccessibleText</a></span></div>
+extends <a href="AccessibleText.html" title="javax.accessibility 包中的接口">AccessibleText</a></span></div>
 <div class="block">The <code>AccessibleEditableText</code> interface should be implemented by all
 classes that present editable textual information on the display. Along with
 the <code>AccessibleText</code> interface, this interface provides the standard
 mechanism for an assistive technology to access that text via its content,
 attributes, and spatial location. Applications can determine if an object
 supports the <code>AccessibleEditableText</code> interface by first obtaining its
-<code>AccessibleContext</code> (see <a href="Accessible.html" title="interface in javax.accessibility"><code>Accessible</code></a>) and then calling the
+<code>AccessibleContext</code> (see <a href="Accessible.html" title="javax.accessibility 包中的接口"><code>Accessible</code></a>) and then calling the
 <a href="AccessibleContext.html#getAccessibleEditableText()"><code>AccessibleContext.getAccessibleEditableText()</code></a> method of
 <code>AccessibleContext</code>. If the return value is not <code>null</code>, the
 object supports this interface.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="Accessible.html" title="interface in javax.accessibility"><code>Accessible</code></a></li>
+<li><a href="Accessible.html" title="javax.accessibility 包中的接口"><code>Accessible</code></a></li>
 <li><a href="Accessible.html#getAccessibleContext()"><code>Accessible.getAccessibleContext()</code></a></li>
-<li><a href="AccessibleContext.html" title="class in javax.accessibility"><code>AccessibleContext</code></a></li>
+<li><a href="AccessibleContext.html" title="javax.accessibility 包中的类"><code>AccessibleContext</code></a></li>
 <li><a href="AccessibleContext.html#getAccessibleText()"><code>AccessibleContext.getAccessibleText()</code></a></li>
 <li><a href="AccessibleContext.html#getAccessibleEditableText()"><code>AccessibleContext.getAccessibleEditableText()</code></a></li>
 </ul>
@@ -135,23 +135,23 @@ object supports this interface.</div>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
+<h2>字段概要</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-javax.accessibility.AccessibleText">Fields declared in interface&nbsp;<a href="AccessibleText.html#field-summary" title="interface in javax.accessibility">AccessibleText</a></h3>
+<h3 id="fields-inherited-from-class-javax.accessibility.AccessibleText">在接口 <a href="AccessibleText.html#field-summary" title="javax.accessibility 包中的接口">AccessibleText</a> 中声明的字段</h3>
 <code><a href="AccessibleText.html#CHARACTER">CHARACTER</a>, <a href="AccessibleText.html#SENTENCE">SENTENCE</a>, <a href="AccessibleText.html#WORD">WORD</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#cut(int,int)" class="member-name-link">cut</a><wbr>(int&nbsp;startIndex,
  int&nbsp;endIndex)</code></div>
@@ -164,7 +164,7 @@ object supports this interface.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Deletes the text between two indices.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTextRange(int,int)" class="member-name-link">getTextRange</a><wbr>(int&nbsp;startIndex,
  int&nbsp;endIndex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -172,7 +172,7 @@ object supports this interface.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#insertTextAtIndex(int,java.lang.String)" class="member-name-link">insertTextAtIndex</a><wbr>(int&nbsp;index,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</code></div>
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Inserts the specified string at the given index.</div>
 </div>
@@ -185,7 +185,7 @@ specified index.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#replaceText(int,int,java.lang.String)" class="member-name-link">replaceText</a><wbr>(int&nbsp;startIndex,
  int&nbsp;endIndex,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</code></div>
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Replaces the text between two indices with the specified string.</div>
 </div>
@@ -198,12 +198,12 @@ specified index.</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAttributes(int,int,javax.swing.text.AttributeSet)" class="member-name-link">setAttributes</a><wbr>(int&nbsp;startIndex,
  int&nbsp;endIndex,
- <a href="../swing/text/AttributeSet.html" title="interface in javax.swing.text">AttributeSet</a>&nbsp;as)</code></div>
+ <a href="../swing/text/AttributeSet.html" title="javax.swing.text 包中的接口">AttributeSet</a>&nbsp;as)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets attributes for the text between two indices.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setTextContents(java.lang.String)" class="member-name-link">setTextContents</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setTextContents(java.lang.String)" class="member-name-link">setTextContents</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the text contents to the specified string.</div>
 </div>
@@ -211,7 +211,7 @@ specified index.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.accessibility.AccessibleText">Methods declared in interface&nbsp;<a href="AccessibleText.html#method-summary" title="interface in javax.accessibility">AccessibleText</a></h3>
+<h3 id="methods-inherited-from-class-javax.accessibility.AccessibleText">在接口 <a href="AccessibleText.html#method-summary" title="javax.accessibility 包中的接口">AccessibleText</a> 中声明的方法</h3>
 <code><a href="AccessibleText.html#getAfterIndex(int,int)" title="getAfterIndex(int, int)">getAfterIndex</a>, <a href="AccessibleText.html#getAtIndex(int,int)" title="getAtIndex(int, int)">getAtIndex</a>, <a href="AccessibleText.html#getBeforeIndex(int,int)" title="getBeforeIndex(int, int)">getBeforeIndex</a>, <a href="AccessibleText.html#getCaretPosition()" title="getCaretPosition()">getCaretPosition</a>, <a href="AccessibleText.html#getCharacterAttribute(int)" title="getCharacterAttribute(int)">getCharacterAttribute</a>, <a href="AccessibleText.html#getCharacterBounds(int)" title="getCharacterBounds(int)">getCharacterBounds</a>, <a href="AccessibleText.html#getCharCount()" title="getCharCount()">getCharCount</a>, <a href="AccessibleText.html#getIndexAtPoint(java.awt.Point)" title="getIndexAtPoint(Point)">getIndexAtPoint</a>, <a href="AccessibleText.html#getSelectedText()" title="getSelectedText()">getSelectedText</a>, <a href="AccessibleText.html#getSelectionEnd()" title="getSelectionEnd()">getSelectionEnd</a>, <a href="AccessibleText.html#getSelectionStart()" title="getSelectionStart()">getSelectionStart</a></code></div>
 </section>
 </li>
@@ -222,16 +222,16 @@ specified index.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="setTextContents(java.lang.String)">
 <h3>setTextContents</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setTextContents</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setTextContents</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</span></div>
 <div class="block">Sets the text contents to the specified string.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>s</code> - the string to set the text contents</dd>
 </dl>
 </div>
@@ -242,10 +242,10 @@ specified index.</div>
 <h3>insertTextAtIndex</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">insertTextAtIndex</span><wbr><span class="parameters">(int&nbsp;index,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</span></div>
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</span></div>
 <div class="block">Inserts the specified string at the given index.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - the index in the text where the string will be inserted</dd>
 <dd><code>s</code> - the string to insert in the text</dd>
 </dl>
@@ -256,14 +256,14 @@ specified index.</div>
 <section class="detail" id="getTextRange(int,int)">
 <h3>getTextRange</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getTextRange</span><wbr><span class="parameters">(int&nbsp;startIndex,
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getTextRange</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;endIndex)</span></div>
 <div class="block">Returns the text string between two indices.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the text string between the indices</dd>
 </dl>
 </div>
@@ -277,7 +277,7 @@ specified index.</div>
  int&nbsp;endIndex)</span></div>
 <div class="block">Deletes the text between two indices.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
 </dl>
@@ -292,7 +292,7 @@ specified index.</div>
  int&nbsp;endIndex)</span></div>
 <div class="block">Cuts the text between two indices into the system clipboard.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
 </dl>
@@ -307,7 +307,7 @@ specified index.</div>
 <div class="block">Pastes the text from the system clipboard into the text starting at the
 specified index.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 </dl>
 </div>
@@ -319,10 +319,10 @@ specified index.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">replaceText</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;endIndex,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;s)</span></div>
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;s)</span></div>
 <div class="block">Replaces the text between two indices with the specified string.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
 <dd><code>s</code> - the string to replace the text between two indices</dd>
@@ -338,7 +338,7 @@ specified index.</div>
  int&nbsp;endIndex)</span></div>
 <div class="block">Selects the text between two indices.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
 </dl>
@@ -351,17 +351,17 @@ specified index.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setAttributes</span><wbr><span class="parameters">(int&nbsp;startIndex,
  int&nbsp;endIndex,
- <a href="../swing/text/AttributeSet.html" title="interface in javax.swing.text">AttributeSet</a>&nbsp;as)</span></div>
+ <a href="../swing/text/AttributeSet.html" title="javax.swing.text 包中的接口">AttributeSet</a>&nbsp;as)</span></div>
 <div class="block">Sets attributes for the text between two indices.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startIndex</code> - the starting index in the text</dd>
 <dd><code>endIndex</code> - the ending index in the text</dd>
 <dd><code>as</code> - the attribute set</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../swing/text/AttributeSet.html" title="interface in javax.swing.text"><code>AttributeSet</code></a></li>
+<li><a href="../swing/text/AttributeSet.html" title="javax.swing.text 包中的接口"><code>AttributeSet</code></a></li>
 </ul>
 </dd>
 </dl>

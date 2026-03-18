@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">jdk.incubator.vector</a></li>
 <li><a href="package-summary.html" class="current-selection">jdk.incubator.vector</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,19 +56,19 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#performance-notes-heading" tabindex="0">Performance notes</a></li>
 </ol>
 </li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package jdk.incubator.vector" class="title">Package jdk.incubator.vector</h1>
+<h1 title="包 jdk.incubator.vector" class="title">包 jdk.incubator.vector</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -80,7 +80,7 @@ This package provides
 classes to express vector computations that, given suitable hardware
 and runtime ability, are accelerated using vector hardware instructions.
 
-<p> A <a href="Vector.html" title="class in jdk.incubator.vector"><em>vector</em></a> is a
+<p> A <a href="Vector.html" title="jdk.incubator.vector 包中的类"><em>vector</em></a> is a
 
 <!-- The following paragraphs are shared verbatim
   -- between Vector.java and package-info.java -->
@@ -105,17 +105,17 @@ a vector lane are unconditional, but the effect of conditional
 execution may be achieved using
 <a href="Vector.html#masking"><em>masked operations</em></a>
 such as <a href="Vector.html#blend(jdk.incubator.vector.Vector,jdk.incubator.vector.VectorMask)"><code>blend()</code></a>,
-under the control of an associated <a href="VectorMask.html" title="class in jdk.incubator.vector"><code>VectorMask</code></a>.
+under the control of an associated <a href="VectorMask.html" title="jdk.incubator.vector 包中的类"><code>VectorMask</code></a>.
 Data motion other than strictly lane-wise flow is achieved using
 <a href="Vector.html#cross-lane"><em>cross-lane</em></a>
 operations, often under the control of an associated
-<a href="VectorShuffle.html" title="class in jdk.incubator.vector"><code>VectorShuffle</code></a>.
+<a href="VectorShuffle.html" title="jdk.incubator.vector 包中的类"><code>VectorShuffle</code></a>.
 Lane data and/or whole vectors can be reformatted using various
 kinds of lane-wise
 <a href="Vector.html#convert(jdk.incubator.vector.VectorOperators.Conversion,int)">conversions</a>,
 and byte-wise reformatting
 <a href="Vector.html#reinterpretShape(jdk.incubator.vector.VectorSpecies,int)">reinterpretations</a>,
-often under the control of a reflective <a href="VectorSpecies.html" title="interface in jdk.incubator.vector"><code>VectorSpecies</code></a>
+often under the control of a reflective <a href="VectorSpecies.html" title="jdk.incubator.vector 包中的接口"><code>VectorSpecies</code></a>
 object which selects an alternative vector format different
 from that of the input vector.
 
@@ -147,8 +147,8 @@ overloadings).
 
 Finally, all lane-wise operations (those named as previously described,
 or otherwise unnamed method-wise) have a corresponding
-<a href="VectorOperators.Operator.html" title="interface in jdk.incubator.vector"><code>operator token</code></a>
-declared as a static constant on <a href="VectorOperators.html" title="class in jdk.incubator.vector"><code>VectorOperators</code></a>.
+<a href="VectorOperators.Operator.html" title="jdk.incubator.vector 包中的接口"><code>operator token</code></a>
+declared as a static constant on <a href="VectorOperators.html" title="jdk.incubator.vector 包中的类"><code>VectorOperators</code></a>.
 Each operator token defines a symbolic Java expression for the operation,
 such as <code>a + b</code> for the
 <a href="VectorOperators.html#ADD"><code>ADD</code></a> operator token.
@@ -157,11 +157,11 @@ General lane-wise operation-token accepting methods, such as for a
 operation, are provided on <code>Vector</code> and come in the same variants as
 a full-service named operation.
 
-<p>This package contains a public subtype of <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a>
+<p>This package contains a public subtype of <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a>
 corresponding to each supported element type:
-<a href="ByteVector.html" title="class in jdk.incubator.vector"><code>ByteVector</code></a>, <a href="ShortVector.html" title="class in jdk.incubator.vector"><code>ShortVector</code></a>,
-<a href="IntVector.html" title="class in jdk.incubator.vector"><code>IntVector</code></a>, <a href="LongVector.html" title="class in jdk.incubator.vector"><code>LongVector</code></a>,
-<a href="FloatVector.html" title="class in jdk.incubator.vector"><code>FloatVector</code></a>, and <a href="DoubleVector.html" title="class in jdk.incubator.vector"><code>DoubleVector</code></a>.
+<a href="ByteVector.html" title="jdk.incubator.vector 包中的类"><code>ByteVector</code></a>, <a href="ShortVector.html" title="jdk.incubator.vector 包中的类"><code>ShortVector</code></a>,
+<a href="IntVector.html" title="jdk.incubator.vector 包中的类"><code>IntVector</code></a>, <a href="LongVector.html" title="jdk.incubator.vector 包中的类"><code>LongVector</code></a>,
+<a href="FloatVector.html" title="jdk.incubator.vector 包中的类"><code>FloatVector</code></a>, and <a href="DoubleVector.html" title="jdk.incubator.vector 包中的类"><code>DoubleVector</code></a>.
 
 <!-- The preceding paragraphs are shared verbatim
   -- between Vector.java and package-info.java -->
@@ -251,8 +251,8 @@ generating optimal vector machine code:
 <ul>
 
 <li> The shape of vectors used should be supported by the underlying
-platform. For example, code written using <a href="IntVector.html" title="class in jdk.incubator.vector"><code>IntVector</code></a> of
-<a href="VectorShape.html" title="enum class in jdk.incubator.vector"><code>VectorShape</code></a> <a href="VectorShape.html#S_512_BIT"><code>S_512_BIT</code></a> will not be
+platform. For example, code written using <a href="IntVector.html" title="jdk.incubator.vector 包中的类"><code>IntVector</code></a> of
+<a href="VectorShape.html" title="jdk.incubator.vector 包中的枚举类"><code>VectorShape</code></a> <a href="VectorShape.html#S_512_BIT"><code>S_512_BIT</code></a> will not be
 compiled to vector instructions on a platform which supports only
 256 bit vectors. Instead, the default scalar implementation will be
 used.  For this reason, it is recommended to use the preferred
@@ -261,8 +261,8 @@ computations.
 
 <li> Most classes defined in this package should be treated as
 <a href="../../../../java.base/java/lang/doc-files/ValueBased.html">value-based</a> classes.
-This classification applies to <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> and its subtypes,
-<a href="VectorMask.html" title="class in jdk.incubator.vector"><code>VectorMask</code></a>, <a href="VectorShuffle.html" title="class in jdk.incubator.vector"><code>VectorShuffle</code></a>, and <a href="VectorSpecies.html" title="interface in jdk.incubator.vector"><code>VectorSpecies</code></a>.
+This classification applies to <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> and its subtypes,
+<a href="VectorMask.html" title="jdk.incubator.vector 包中的类"><code>VectorMask</code></a>, <a href="VectorShuffle.html" title="jdk.incubator.vector 包中的类"><code>VectorShuffle</code></a>, and <a href="VectorSpecies.html" title="jdk.incubator.vector 包中的接口"><code>VectorSpecies</code></a>.
 
 With these types,
 
@@ -295,47 +295,47 @@ documented for methods of this API.</div>
 <ul class="summary-list">
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ByteVector.html" title="class in jdk.incubator.vector">ByteVector</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ByteVector.html" title="jdk.incubator.vector 包中的类">ByteVector</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>byte</code> values.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DoubleVector.html" title="class in jdk.incubator.vector">DoubleVector</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DoubleVector.html" title="jdk.incubator.vector 包中的类">DoubleVector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>double</code> values.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Float16.html" title="class in jdk.incubator.vector">Float16</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Float16.html" title="jdk.incubator.vector 包中的类">Float16</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">The <code>Float16</code> is a class holding 16-bit data
 in IEEE 754 binary16 format.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FloatVector.html" title="class in jdk.incubator.vector">FloatVector</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FloatVector.html" title="jdk.incubator.vector 包中的类">FloatVector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>float</code> values.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IntVector.html" title="class in jdk.incubator.vector">IntVector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="IntVector.html" title="jdk.incubator.vector 包中的类">IntVector</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>int</code> values.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="LongVector.html" title="class in jdk.incubator.vector">LongVector</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="LongVector.html" title="jdk.incubator.vector 包中的类">LongVector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>long</code> values.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ShortVector.html" title="class in jdk.incubator.vector">ShortVector</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ShortVector.html" title="jdk.incubator.vector 包中的类">ShortVector</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A specialized <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a> representing an ordered immutable sequence of
+<div class="block">A specialized <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a> representing an ordered immutable sequence of
 <code>short</code> values.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Vector.html" title="class in jdk.incubator.vector">Vector</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Vector.html" title="jdk.incubator.vector 包中的类">Vector</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A
 
@@ -346,93 +346,93 @@ all of some fixed
 <a href="Vector.html#elementType()"><em>element type</em></a>
 such as <code>byte</code>, <code>long</code>, or <code>float</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorMask.html" title="class in jdk.incubator.vector">VectorMask</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorMask.html" title="jdk.incubator.vector 包中的类">VectorMask</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <code>VectorMask</code> represents an ordered immutable sequence of <code>boolean</code>
 values.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="VectorMath.html" title="class in jdk.incubator.vector">VectorMath</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="VectorMath.html" title="jdk.incubator.vector 包中的类">VectorMath</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">The class <code>VectorMath</code> contains methods for performing
 scalar numeric operations in support of vector numeric operations.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorOperators.html" title="class in jdk.incubator.vector">VectorOperators</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorOperators.html" title="jdk.incubator.vector 包中的类">VectorOperators</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">This class consists solely of static constants
 that describe lane-wise vector operations, plus nested interfaces
 which classify them.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Associative.html" title="interface in jdk.incubator.vector">VectorOperators.Associative</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Associative.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Associative</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Type for all reassociating
 <a href="Vector.html#lane-wise">lane-wise</a>
 binary operators,
 usable in expressions like <code>e = v0.</code><a href="IntVector.html#reduceLanes(jdk.incubator.vector.VectorOperators.Associative)"><code>reduceLanes</code></a><code>(ADD)</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Binary.html" title="interface in jdk.incubator.vector">VectorOperators.Binary</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Binary.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Binary</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Type for all
 <a href="Vector.html#lane-wise">lane-wise</a>
 binary (two-argument) operators,
 usable in expressions like <code>w = v0.</code><a href="Vector.html#lanewise(jdk.incubator.vector.VectorOperators.Binary,jdk.incubator.vector.Vector)"><code>lanewise</code></a><code>(ADD, v1)</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Comparison.html" title="interface in jdk.incubator.vector">VectorOperators.Comparison</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Comparison.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Comparison</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Type for all binary
 <a href="Vector.html#lane-wise">lane-wise</a>
 boolean comparisons on lane values,
 usable in expressions like <code>m = v0.</code><a href="Vector.html#compare(jdk.incubator.vector.VectorOperators.Comparison,jdk.incubator.vector.Vector)"><code>compare</code></a><code>(LT, v1)</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Conversion.html" title="interface in jdk.incubator.vector">VectorOperators.Conversion</a>&lt;E,<wbr>F&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Conversion.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Conversion</a>&lt;E,<wbr>F&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Type for all
 <a href="Vector.html#lane-wise">lane-wise</a>
 conversions on lane values,
 usable in expressions like <code>w1 = v0.</code><a href="Vector.html#convert(jdk.incubator.vector.VectorOperators.Conversion,int)"><code>convert</code></a><code>(I2D, 1)</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Operator.html" title="interface in jdk.incubator.vector">VectorOperators.Operator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Operator.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Operator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Root type for all operator tokens, providing queries for common
 properties such as arity, argument and return types, symbolic
 name, and operator name.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Ternary.html" title="interface in jdk.incubator.vector">VectorOperators.Ternary</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Ternary.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Ternary</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Type for all
 <a href="Vector.html#lane-wise">lane-wise</a>
 ternary (three-argument) operators,
 usable in expressions like <code>w = v0.</code><a href="Vector.html#lanewise(jdk.incubator.vector.VectorOperators.Ternary,jdk.incubator.vector.Vector,jdk.incubator.vector.Vector)"><code>lanewise</code></a><code>(FMA, v1, v2)</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Test.html" title="interface in jdk.incubator.vector">VectorOperators.Test</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorOperators.Test.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Test</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Type for all unary
 <a href="Vector.html#lane-wise">lane-wise</a>
 boolean tests on lane values,
 usable in expressions like <code>m = v0.</code><a href="FloatVector.html#test(jdk.incubator.vector.VectorOperators.Test)"><code>test</code></a><code>(IS_FINITE)</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Unary.html" title="interface in jdk.incubator.vector">VectorOperators.Unary</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="VectorOperators.Unary.html" title="jdk.incubator.vector 包中的接口">VectorOperators.Unary</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Type for all
 <a href="Vector.html#lane-wise">lane-wise</a>
 unary (one-argument) operators,
 usable in expressions like <code>w = v0.</code><a href="Vector.html#lanewise(jdk.incubator.vector.VectorOperators.Unary)"><code>lanewise</code></a><code>(NEG)</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="VectorShape.html" title="enum class in jdk.incubator.vector">VectorShape</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="VectorShape.html" title="jdk.incubator.vector 包中的枚举类">VectorShape</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">A <code>VectorShape</code> selects a particular implementation of
-<a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a>s.</div>
+<a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a>s.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorShuffle.html" title="class in jdk.incubator.vector">VectorShuffle</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="VectorShuffle.html" title="jdk.incubator.vector 包中的类">VectorShuffle</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <code>VectorShuffle</code> represents an ordered immutable sequence of
 <code>int</code> values called <em>source indexes</em>, where each source
-index numerically selects a source lane from a compatible <a href="Vector.html" title="class in jdk.incubator.vector"><code>Vector</code></a>.</div>
+index numerically selects a source lane from a compatible <a href="Vector.html" title="jdk.incubator.vector 包中的类"><code>Vector</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorSpecies.html" title="interface in jdk.incubator.vector">VectorSpecies</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="VectorSpecies.html" title="jdk.incubator.vector 包中的接口">VectorSpecies</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface for managing all vectors of the same combination
 of <a href="Vector.html#ETYPE">element type</a> (<code>ETYPE</code>)
-and <a href="VectorShape.html" title="enum class in jdk.incubator.vector"><code>shape</code></a>.</div>
+and <a href="VectorShape.html" title="jdk.incubator.vector 包中的枚举类"><code>shape</code></a>.</div>
 </div>
 </div>
 </div>

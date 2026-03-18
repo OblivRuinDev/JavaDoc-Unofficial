@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="Selector.html" class="current-selection">Selector</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,9 +66,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#selection-heading" tabindex="0">Selection</a>
 <ol class="toc-list">
@@ -79,14 +79,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#concurrency-heading" tabindex="0">Concurrency</a></li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Selector()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#open()" tabindex="0">open()</a></li>
 <li><a href="#isOpen()" tabindex="0">isOpen()</a></li>
@@ -108,29 +108,29 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Selector" class="title">Class Selector</h1>
+<h1 title="类 Selector" class="title">类 Selector</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.channels.Selector</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a>, <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="spi/AbstractSelector.html" title="class in java.nio.channels.spi">AbstractSelector</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="spi/AbstractSelector.html" title="java.nio.channels.spi 包中的类">AbstractSelector</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Selector</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></span></div>
-<div class="block">A multiplexor of <a href="SelectableChannel.html" title="class in java.nio.channels"><code>SelectableChannel</code></a> objects.
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></span></div>
+<div class="block">A multiplexor of <a href="SelectableChannel.html" title="java.nio.channels 包中的类"><code>SelectableChannel</code></a> objects.
 
 <p> A selector may be created by invoking the <a href="#open()"><code>open</code></a> method of
-this class, which will use the system's default <a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi"><code>selector provider</code></a> to
+this class, which will use the system's default <a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类"><code>selector provider</code></a> to
 create a new selector.  A selector may also be created by invoking the
 <a href="spi/SelectorProvider.html#openSelector()"><code>openSelector</code></a>
 method of a custom selector provider.  A selector remains open until it is
@@ -139,7 +139,7 @@ closed via its <a href="#close()"><code>close</code></a> method.
 <a id="ks"></a>
 
 <p> A selectable channel's registration with a selector is represented by a
-<a href="SelectionKey.html" title="class in java.nio.channels"><code>SelectionKey</code></a> object.  A selector maintains three sets of selection
+<a href="SelectionKey.html" title="java.nio.channels 包中的类"><code>SelectionKey</code></a> object.  A selector maintains three sets of selection
 keys:
 
 <ul>
@@ -177,7 +177,7 @@ from all of the selector's key sets.
 operations.  A key may be removed directly from the selected-key set by
 invoking the set's <a href="../../util/Set.html#remove(java.lang.Object)"><code>remove</code></a>
 method or by invoking the <a href="../../util/Iterator.html#remove()"><code>remove</code></a> method
-of an <a href="../../util/Iterator.html" title="interface in java.util"><code>iterator</code></a> obtained from the set.
+of an <a href="../../util/Iterator.html" title="java.util 包中的接口"><code>iterator</code></a> obtained from the set.
 All keys may be removed from the selected-key set by invoking the set's
 <a href="../../util/Set.html#clear()"><code>clear</code></a> method.  Keys may not be added directly
 to the selected-key set. </p>
@@ -338,7 +338,7 @@ overlap with new registrations that add to the set, or with the cancellation
 steps of selection operations that remove keys from the set.  Iterators and
 spliterators return elements reflecting the state of the set at some point at
 or since the creation of the iterator/spliterator.  They do not throw
-<a href="../../util/ConcurrentModificationException.html" title="class in java.util"><code>ConcurrentModificationException</code></a>.
+<a href="../../util/ConcurrentModificationException.html" title="java.util 包中的类"><code>ConcurrentModificationException</code></a>.
 
 <a id="sksc"></a>
 <p> A selector's selected-key set is not, in general, safe for use by
@@ -346,15 +346,15 @@ multiple concurrent threads.  If such a thread might modify the set directly
 then access should be controlled by synchronizing on the set itself.  The
 iterators returned by the set's <a href="../../util/Set.html#iterator()"><code>iterator</code></a>
 methods are <i>fail-fast:</i> If the set is modified after the iterator is
-created, in any way except by invoking the iterator's own <a href="../../util/Iterator.html#remove()"><code>remove</code></a> method, then a <a href="../../util/ConcurrentModificationException.html" title="class in java.util"><code>ConcurrentModificationException</code></a> will be thrown. </p></div>
+created, in any way except by invoking the iterator's own <a href="../../util/Iterator.html#remove()"><code>remove</code></a> method, then a <a href="../../util/ConcurrentModificationException.html" title="java.util 包中的类"><code>ConcurrentModificationException</code></a> will be thrown. </p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SelectableChannel.html" title="class in java.nio.channels"><code>SelectableChannel</code></a></li>
-<li><a href="SelectionKey.html" title="class in java.nio.channels"><code>SelectionKey</code></a></li>
+<li><a href="SelectableChannel.html" title="java.nio.channels 包中的类"><code>SelectableChannel</code></a></li>
+<li><a href="SelectionKey.html" title="java.nio.channels 包中的类"><code>SelectionKey</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -365,8 +365,8 @@ created, in any way except by invoking the iterator's own <a href="../../util/It
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -382,14 +382,14 @@ created, in any way except by invoking the iterator's own <a href="../../util/It
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -400,17 +400,17 @@ created, in any way except by invoking the iterator's own <a href="../../util/It
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tells whether or not this selector is open.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#keys()" class="member-name-link">keys</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns this selector's key set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Selector.html" title="class in java.nio.channels">Selector</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Selector.html" title="java.nio.channels 包中的类">Selector</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#open()" class="member-name-link">open</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Opens a selector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi">SelectorProvider</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类">SelectorProvider</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the provider that created this channel.</div>
@@ -428,19 +428,19 @@ operations.</div>
 operations.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.util.function.Consumer)" class="member-name-link">select</a><wbr>(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.util.function.Consumer)" class="member-name-link">select</a><wbr>(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.util.function.Consumer,long)" class="member-name-link">select</a><wbr>(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#select(java.util.function.Consumer,long)" class="member-name-link">select</a><wbr>(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action,
  long&nbsp;timeout)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectedKeys()" class="member-name-link">selectedKeys</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns this selector's selected-key set.</div>
@@ -452,12 +452,12 @@ are ready for I/O operations.</div>
 operations.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNow(java.util.function.Consumer)" class="member-name-link">selectNow</a><wbr>(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectNow(java.util.function.Consumer)" class="member-name-link">selectNow</a><wbr>(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Selector.html" title="class in java.nio.channels">Selector</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Selector.html" title="java.nio.channels 包中的类">Selector</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#wakeup()" class="member-name-link">wakeup</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Causes the first selection operation that has not yet returned to return
@@ -467,7 +467,7 @@ immediately.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -478,7 +478,7 @@ immediately.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -495,23 +495,23 @@ immediately.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="open()">
 <h3>open</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Selector.html" title="class in java.nio.channels">Selector</a></span>&nbsp;<span class="element-name">open</span>()
-                     throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Selector.html" title="java.nio.channels 包中的类">Selector</a></span>&nbsp;<span class="element-name">open</span>()
+                     throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Opens a selector.
 
 <p> The new selector is created by invoking the <a href="spi/SelectorProvider.html#openSelector()"><code>openSelector</code></a> method
-of the system-wide default <a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi"><code>SelectorProvider</code></a> object.  </p></div>
+of the system-wide default <a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类"><code>SelectorProvider</code></a> object.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new selector</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -523,7 +523,7 @@ of the system-wide default <a href="spi/SelectorProvider.html" title="class in j
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isOpen</span>()</div>
 <div class="block">Tells whether or not this selector is open.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this selector is open</dd>
 </dl>
 </div>
@@ -533,10 +533,10 @@ of the system-wide default <a href="spi/SelectorProvider.html" title="class in j
 <section class="detail" id="provider()">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi">SelectorProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类">SelectorProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
 <div class="block">Returns the provider that created this channel.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The provider that created this channel</dd>
 </dl>
 </div>
@@ -546,20 +546,20 @@ of the system-wide default <a href="spi/SelectorProvider.html" title="class in j
 <section class="detail" id="keys()">
 <h3>keys</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="interface in java.util">Set</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;</span>&nbsp;<span class="element-name">keys</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;</span>&nbsp;<span class="element-name">keys</span>()</div>
 <div class="block">Returns this selector's key set.
 
 <p> The key set is not directly modifiable.  A key is removed only after
 it has been cancelled and its channel has been deregistered.  Any
-attempt to modify the key set will cause an <a href="../../lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a> to be thrown.
+attempt to modify the key set will cause an <a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a> to be thrown.
 
 <p> The set is <a href="#ksc">safe</a> for use by multiple concurrent
 threads.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This selector's key set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed</dd>
 </dl>
 </div>
 </section>
@@ -568,19 +568,19 @@ threads.  </p></div>
 <section class="detail" id="selectedKeys()">
 <h3>selectedKeys</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="interface in java.util">Set</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;</span>&nbsp;<span class="element-name">selectedKeys</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;</span>&nbsp;<span class="element-name">selectedKeys</span>()</div>
 <div class="block">Returns this selector's selected-key set.
 
 <p> Keys may be removed from, but not directly added to, the
 selected-key set.  Any attempt to add an object to the key set will
-cause an <a href="../../lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a> to be thrown.
+cause an <a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a> to be thrown.
 
 <p> The selected-key set is <a href="#sksc">not thread-safe</a>.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This selector's selected-key set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed</dd>
 </dl>
 </div>
 </section>
@@ -590,7 +590,7 @@ cause an <a href="../../lang/UnsupportedOperationException.html" title="class in
 <h3>selectNow</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">selectNow</span>()
-                       throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                       throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects a set of keys whose corresponding channels are ready for I/O
 operations.
 
@@ -601,13 +601,13 @@ selection operation then this method immediately returns zero.
 <p> Invoking this method clears the effect of any previous invocations
 of the <a href="#wakeup()"><code>wakeup</code></a> method.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of keys, possibly zero, whose ready-operation sets
          now indicate readiness for at least one category of operations
          for which the channel was not previously detected to be ready</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed</dd>
 </dl>
 </div>
 </section>
@@ -617,7 +617,7 @@ of the <a href="#wakeup()"><code>wakeup</code></a> method.  </p></div>
 <h3>select</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(long&nbsp;timeout)</span>
-                    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects a set of keys whose corresponding channels are ready for I/O
 operations.
 
@@ -630,19 +630,19 @@ comes first.
 <p> This method does not offer real-time guarantees: It schedules the
 timeout as if by invoking the <a href="../../lang/Object.html#wait(long)"><code>Object.wait(long)</code></a> method. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>timeout</code> - If positive, block for up to <code>timeout</code>
                  milliseconds, more or less, while waiting for a
                  channel to become ready; if zero, block indefinitely;
                  must not be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of keys, possibly zero, whose ready-operation sets
          now indicate readiness for at least one category of operations
          for which the channel was not previously detected to be ready</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the value of the timeout argument is negative</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the value of the timeout argument is negative</dd>
 </dl>
 </div>
 </section>
@@ -652,7 +652,7 @@ timeout as if by invoking the <a href="../../lang/Object.html#wait(long)"><code>
 <h3>select</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span>()
-                    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects a set of keys whose corresponding channels are ready for I/O
 operations.
 
@@ -661,13 +661,13 @@ operation</a>.  It returns only after at least one channel is selected,
 this selector's <a href="#wakeup()"><code>wakeup</code></a> method is invoked, or the current
 thread is interrupted, whichever comes first.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of keys, possibly zero, whose ready-operation sets
          now indicate readiness for at least one category of operations
          for which the channel was not previously detected to be ready</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed</dd>
 </dl>
 </div>
 </section>
@@ -676,9 +676,9 @@ thread is interrupted, whichever comes first.  </p></div>
 <section class="detail" id="select(java.util.function.Consumer,long)">
 <h3>select</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action,
  long&nbsp;timeout)</span>
-           throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+           throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.
 
@@ -713,26 +713,26 @@ key).  Exceptions thrown by the action are relayed to the caller.
 <p> This method does not offer real-time guarantees: It schedules the
 timeout as if by invoking the <a href="../../lang/Object.html#wait(long)"><code>Object.wait(long)</code></a> method.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation removes all keys from the
 selected-key set, invokes <a href="#select(long)"><code>select(long)</code></a> with the
 given timeout and then performs the action for each key added to the
 selected-key set.  The default implementation does not detect the action
 performing a reentrant selection operation.  The selected-key set may
 or may not be empty on completion of the default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - The action to perform</dd>
 <dd><code>timeout</code> - If positive, block for up to <code>timeout</code>
                  milliseconds, more or less, while waiting for a
                  channel to become ready; if zero, block indefinitely;
                  must not be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of unique keys consumed, possibly zero</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the value of the timeout argument is negative</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the value of the timeout argument is negative</dd>
+<dt>自:</dt>
 <dd>11</dd>
 </dl>
 </div>
@@ -742,8 +742,8 @@ or may not be empty on completion of the default implementation.</dd>
 <section class="detail" id="select(java.util.function.Consumer)">
 <h3>select</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action)</span>
-           throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">select</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action)</span>
+           throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.
 
@@ -757,17 +757,17 @@ first.
 <a href="#select(java.util.function.Consumer,long)"><code>select</code></a> method with a timeout of <code>0</code>
 to block indefinitely.  </p></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes the 2-arg <code>select</code>
 method with a timeout of <code>0</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - The action to perform</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of unique keys consumed, possibly zero</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
+<dt>自:</dt>
 <dd>11</dd>
 </dl>
 </div>
@@ -777,8 +777,8 @@ method with a timeout of <code>0</code>.</dd>
 <section class="detail" id="selectNow(java.util.function.Consumer)">
 <h3>selectNow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">selectNow</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;<a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a>&gt;&nbsp;action)</span>
-              throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">selectNow</span><wbr><span class="parameters">(<a href="../../util/function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;<a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a>&gt;&nbsp;action)</span>
+              throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Selects and performs an action on the keys whose corresponding channels
 are ready for I/O operations.
 
@@ -788,21 +788,21 @@ operation</a>.
 <p> Invoking this method clears the effect of any previous invocations
 of the <a href="#wakeup()"><code>wakeup</code></a> method.  </p></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation removes all keys from the
 selected-key set, invokes <a href="#selectNow()"><code>selectNow()</code></a> and then
 performs the action for each key added to the selected-key set.  The
 default implementation does not detect the action performing a reentrant
 selection operation.  The selected-key set may or may not be empty on
 completion of the default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - The action to perform</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The number of unique keys consumed, possibly zero</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If this selector is closed or is closed by the action</dd>
+<dt>自:</dt>
 <dd>11</dd>
 </dl>
 </div>
@@ -812,7 +812,7 @@ completion of the default implementation.</dd>
 <section class="detail" id="wakeup()">
 <h3>wakeup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Selector.html" title="class in java.nio.channels">Selector</a></span>&nbsp;<span class="element-name">wakeup</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Selector.html" title="java.nio.channels 包中的类">Selector</a></span>&nbsp;<span class="element-name">wakeup</span>()</div>
 <div class="block">Causes the first selection operation that has not yet returned to return
 immediately.
 
@@ -827,7 +827,7 @@ meantime.
 <p> Invoking this method more than once between two successive selection
 operations has the same effect as invoking it just once.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This selector</dd>
 </dl>
 </div>
@@ -838,7 +838,7 @@ operations has the same effect as invoking it just once.  </p></div>
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-                    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this selector.
 
 <p> If a thread is currently blocked in one of this selector's selection
@@ -853,14 +853,14 @@ effect.
 
 <p> After a selector is closed, any further attempt to use it, except by
 invoking this method or the <a href="#wakeup()"><code>wakeup</code></a> method, will cause a
-<a href="ClosedSelectorException.html" title="class in java.nio.channels"><code>ClosedSelectorException</code></a> to be thrown. </p></div>
+<a href="ClosedSelectorException.html" title="java.nio.channels 包中的类"><code>ClosedSelectorException</code></a> to be thrown. </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>

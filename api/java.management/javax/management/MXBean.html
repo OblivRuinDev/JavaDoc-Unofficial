@@ -50,7 +50,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.management</a></li>
 <li><a href="MXBean.html" class="current-selection">MXBean</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -58,9 +58,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#MXBean-spec" tabindex="0">MXBean specification</a>
 <ol class="toc-list">
@@ -96,7 +96,7 @@ loadScripts(document, 'script');</script>
 </li>
 </ol>
 </li>
-<li><a href="#annotation-interface-optional-element-summary" tabindex="0">Optional Element Summary</a></li>
+<li><a href="#annotation-interface-optional-element-summary" tabindex="0">可选元素概要</a></li>
 <li><a href="#annotation-interface-element-detail" tabindex="0">Element Details</a>
 <ol class="toc-list">
 <li><a href="#value()" tabindex="0">value</a></li>
@@ -107,14 +107,14 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Annotation Interface MXBean" class="title">Annotation Interface MXBean</h1>
+<h1 title="注解接口 MXBean" class="title">注解接口 MXBean</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="annotations"><a href="../../../java.base/java/lang/annotation/Documented.html" title="annotation interface in java.lang.annotation">@Documented</a>
-<a href="../../../java.base/java/lang/annotation/Retention.html" title="annotation interface in java.lang.annotation">@Retention</a>(<a href="../../../java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME">RUNTIME</a>)
-<a href="../../../java.base/java/lang/annotation/Target.html" title="annotation interface in java.lang.annotation">@Target</a>(<a href="../../../java.base/java/lang/annotation/ElementType.html#TYPE">TYPE</a>)
+<div class="type-signature"><span class="annotations"><a href="../../../java.base/java/lang/annotation/Documented.html" title="java.lang.annotation 包中的注解接口">@Documented</a>
+<a href="../../../java.base/java/lang/annotation/Retention.html" title="java.lang.annotation 包中的注解接口">@Retention</a>(<a href="../../../java.base/java/lang/annotation/RetentionPolicy.html#RUNTIME">RUNTIME</a>)
+<a href="../../../java.base/java/lang/annotation/Target.html" title="java.lang.annotation 包中的注解接口">@Target</a>(<a href="../../../java.base/java/lang/annotation/ElementType.html#TYPE">TYPE</a>)
 </span><span class="modifiers">public @interface </span><span class="element-name type-name-label">MXBean</span></div>
 <div class="block"><p>Annotation to mark an interface explicitly as being an MXBean
     interface, or as not being an MXBean interface.  By default, an
@@ -184,7 +184,7 @@ public interface MemoryPool<b>MXBean</b> {
       <code><em>Something</em>MBean</code> for Standard MBeans.</p>
 
     <p>In this managed object, there is an attribute called
-      <code>Usage</code> of type <a href="../../java/lang/management/MemoryUsage.html" title="class in java.lang.management"><code>MemoryUsage</code></a>.  The point of an
+      <code>Usage</code> of type <a href="../../java/lang/management/MemoryUsage.html" title="java.lang.management 包中的类"><code>MemoryUsage</code></a>.  The point of an
       attribute like this is that it gives a coherent snapshot of a set
       of data items.  For example, it might include the current amount
       of used memory in the memory pool, and the current maximum of the
@@ -230,7 +230,7 @@ public class MemoryUsage {
     <p>The definitions are the same in the two cases, except
       that with the MXBean, <code>MemoryUsage</code> no longer needs to
       be marked <code>Serializable</code> (though it can be).  On
-      the other hand, we have added a <a href="ConstructorParameters.html" title="annotation interface in javax.management"><code>&#64;ConstructorParameters</code></a>
+      the other hand, we have added a <a href="ConstructorParameters.html" title="javax.management 包中的注解接口"><code>&#64;ConstructorParameters</code></a>
       annotation to link the constructor parameters to the corresponding getters.
       We will see more about this below.</p>
 
@@ -248,8 +248,8 @@ public class MemoryUsage {
       define the management interface in almost exactly the same way,
       the MXBean framework <em>converts</em> model-specific classes into
       standard classes from the Java platform.  Using arrays and the
-      <a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a> and
-      <a href="openmbean/TabularData.html" title="interface in javax.management.openmbean"><code>TabularData</code></a> classes
+      <a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a> and
+      <a href="openmbean/TabularData.html" title="javax.management.openmbean 包中的接口"><code>TabularData</code></a> classes
       from the standard <a href="openmbean/package-summary.html"><code>javax.management.openmbean</code></a> package, it
       is possible to build data structures of arbitrary complexity
       using only standard classes.</p>
@@ -272,7 +272,7 @@ String name = (String)
         <pre>
 String name = (String)
     mbeanServer.<a href="MBeanServer.html#getAttribute(javax.management.ObjectName,java.lang.String)"><code>getAttribute</code></a>(objectName, "Name");
-<b><a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a></b> usage = (<b>CompositeData</b>)
+<b><a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a></b> usage = (<b>CompositeData</b>)
     mbeanServer.getAttribute(objectName, "Usage");
 <b>long used = (Long) usage.<a href="openmbean/CompositeData.html#get(java.lang.String)"><code>get</code></a>("used");</b>
         </pre>
@@ -372,16 +372,16 @@ public class MemoryPool
 
     <p>An MXBean is a kind of MBean.  An MXBean object can be
       registered directly in the MBean Server, or it can be used as an
-      argument to <a href="StandardMBean.html" title="class in javax.management"><code>StandardMBean</code></a> and the resultant MBean
+      argument to <a href="StandardMBean.html" title="javax.management 包中的类"><code>StandardMBean</code></a> and the resultant MBean
       registered in the MBean Server.</p>
 
     <p>When an object is registered in the MBean Server using the
       <code>registerMBean</code> or <code>createMBean</code> methods of the
-      <a href="MBeanServer.html" title="interface in javax.management"><code>MBeanServer</code></a> interface, the object's class is examined
+      <a href="MBeanServer.html" title="javax.management 包中的接口"><code>MBeanServer</code></a> interface, the object's class is examined
       to determine what type of MBean it is:</p>
 
     <ul>
-      <li>If the class implements the interface <a href="DynamicMBean.html" title="interface in javax.management"><code>DynamicMBean</code></a>
+      <li>If the class implements the interface <a href="DynamicMBean.html" title="javax.management 包中的接口"><code>DynamicMBean</code></a>
         then the MBean is a Dynamic MBean.  Note that the class
         <code>StandardMBean</code> implements this interface, so this
         case applies to a Standard MBean or MXBean created using
@@ -408,7 +408,7 @@ public class MemoryPool
         interface is <code>MemoryPoolMXBean</code>.
 
       <li>If none of these conditions is met, the MBean is invalid and
-        the attempt to register it will generate <a href="NotCompliantMBeanException.html" title="class in javax.management"><code>NotCompliantMBeanException</code></a>.
+        the attempt to register it will generate <a href="NotCompliantMBeanException.html" title="javax.management 包中的类"><code>NotCompliantMBeanException</code></a>.
     </ul>
 
     <p>Every Java type that appears as the parameter or return type of a
@@ -471,7 +471,7 @@ public class MemoryPool
     <p>An MXBean is a kind of Open MBean, as defined by the <a href="openmbean/package-summary.html"><code>javax.management.openmbean</code></a> package.  This means that the types of
       attributes, operation parameters, and operation return values must
       all be describable using <em>Open Types</em>, that is the four
-      standard subclasses of <a href="openmbean/OpenType.html" title="class in javax.management.openmbean"><code>OpenType</code></a>.
+      standard subclasses of <a href="openmbean/OpenType.html" title="javax.management.openmbean 包中的类"><code>OpenType</code></a>.
       MXBeans achieve this by mapping Java types into Open Types.</p>
 
     <p>For every Java type <em>J</em>, the MXBean mapping is described
@@ -479,7 +479,7 @@ public class MemoryPool
 
     <ul>
       <li>The corresponding Open Type, <em>opentype(J)</em>.  This is
-        an instance of a subclass of <a href="openmbean/OpenType.html" title="class in javax.management.openmbean"><code>OpenType</code></a>.</li>
+        an instance of a subclass of <a href="openmbean/OpenType.html" title="javax.management.openmbean 包中的类"><code>OpenType</code></a>.</li>
       <li>The <em>mapped</em> Java type, <em>opendata(J)</em>, which is
         always the same for any given <em>opentype(J)</em>.  This is a Java
         class.</li>
@@ -493,7 +493,7 @@ public class MemoryPool
 
     <ul>
       <li>The Open Type, <em>opentype(</em><code>
-        List&lt;String&gt;</code><em>)</em>, is <a href="openmbean/ArrayType.html" title="class in javax.management.openmbean"><code>ArrayType</code></a><code>(1, </code><a href="openmbean/SimpleType.html#STRING"><code>SimpleType.STRING</code></a><code>)</code>, representing a 1-dimensional
+        List&lt;String&gt;</code><em>)</em>, is <a href="openmbean/ArrayType.html" title="javax.management.openmbean 包中的类"><code>ArrayType</code></a><code>(1, </code><a href="openmbean/SimpleType.html#STRING"><code>SimpleType.STRING</code></a><code>)</code>, representing a 1-dimensional
           array of <code>String</code>s.</li>
       <li>The mapped Java type, <em>opendata(</em><code>
         List&lt;String&gt;</code><em>)</em>, is <code>String[]</code>.</li>
@@ -546,7 +546,7 @@ public class MemoryPool
         </tr>
         <tr>
           <th scope="row"><code>Integer</code>, <code>ObjectName</code>, etc<br>
-            (the types covered by <a href="openmbean/SimpleType.html" title="class in javax.management.openmbean"><code>SimpleType</code></a>)</th>
+            (the types covered by <a href="openmbean/SimpleType.html" title="javax.management.openmbean 包中的类"><code>SimpleType</code></a>)</th>
           <td>the corresponding <code>SimpleType</code></td>
           <td><em>J</em>, the same type</td>
         </tr>
@@ -579,31 +579,31 @@ public class MemoryPool
         <tr>
           <th scope="row"><code>Map&lt;</code><em>K</em>,<em>V</em><code>&gt;</code><br>
             <code>SortedMap&lt;</code><em>K</em>,<em>V</em><code>&gt;</code></th>
-          <td><a href="openmbean/TabularType.html" title="class in javax.management.openmbean"><code>TabularType</code></a><br>
+          <td><a href="openmbean/TabularType.html" title="javax.management.openmbean 包中的类"><code>TabularType</code></a><br>
             (see below)</td>
-          <td><a href="openmbean/TabularData.html" title="interface in javax.management.openmbean"><code>TabularData</code></a><br>
+          <td><a href="openmbean/TabularData.html" title="javax.management.openmbean 包中的接口"><code>TabularData</code></a><br>
             (see below)</td>
         </tr>
         <tr>
-          <th scope="row"><a href="../../../java.base/java/lang/Record.html" title="class in java.lang">Record classes</a></th>
-          <td><a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a>, if possible<br>
+          <th scope="row"><a href="../../../java.base/java/lang/Record.html" title="java.lang 包中的类">Record classes</a></th>
+          <td><a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a>, if possible<br>
             (see below)</td>
-          <td><a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a><br>
+          <td><a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a><br>
             (see below)</td>
         </tr>
         <tr>
           <th scope="row">An MXBean interface</th>
           <td><code>SimpleType.OBJECTNAME</code><br>
             (see below)</td>
-          <td><a href="ObjectName.html" title="class in javax.management"><code>ObjectName</code></a><br>
+          <td><a href="ObjectName.html" title="javax.management 包中的类"><code>ObjectName</code></a><br>
             (see below)</td>
         </tr>
         <tr>
           <th scope="row">Any other type</th>
-          <td><a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a>,
+          <td><a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a>,
             if possible<br>
             (see below)</td>
-          <td><a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a><br>
+          <td><a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a><br>
             (see below)</td>
       </tbody>
     </table>
@@ -646,7 +646,7 @@ public class MemoryPool
 
     <p>A <code>SortedSet&lt;</code><em>E</em><code>&gt;</code> is also mapped in the
       same way as an <em>E</em><code>[]</code>, but it is only convertible if
-      <em>E</em> is a class or interface that implements <a href="../../../java.base/java/lang/Comparable.html" title="interface in java.lang"><code>Comparable</code></a>.  Thus, a <code>SortedSet&lt;String&gt;</code> or
+      <em>E</em> is a class or interface that implements <a href="../../../java.base/java/lang/Comparable.html" title="java.lang 包中的接口"><code>Comparable</code></a>.  Thus, a <code>SortedSet&lt;String&gt;</code> or
         <code>SortedSet&lt;Integer&gt;</code> is convertible, but a <code>
           SortedSet&lt;int[]&gt;</code> or <code>SortedSet&lt;List&lt;String&gt;&gt;</code> is not.  The
                 conversion of a <code>SortedSet</code> instance will fail with an
@@ -665,8 +665,8 @@ public class MemoryPool
 
     <p>A <code>Map&lt;</code><em>K</em>,<em>V</em><code>&gt;</code> or <code>
       SortedMap&lt;</code><em>K</em>,<em>V</em><code>&gt;</code>, for example <code>
-      Map&lt;String,ObjectName&gt;</code>, has Open Type <a href="openmbean/TabularType.html" title="class in javax.management.openmbean"><code>TabularType</code></a> and is mapped
-        to a <a href="openmbean/TabularData.html" title="interface in javax.management.openmbean"><code>TabularData</code></a>.
+      Map&lt;String,ObjectName&gt;</code>, has Open Type <a href="openmbean/TabularType.html" title="javax.management.openmbean 包中的类"><code>TabularType</code></a> and is mapped
+        to a <a href="openmbean/TabularData.html" title="javax.management.openmbean 包中的接口"><code>TabularData</code></a>.
         The <code>TabularType</code> has two items called <code>key</code> and
         <code>value</code>.  The Open Type of <code>key</code> is
         <em>opentype(K)</em>, and the Open Type of <code>value</code> is
@@ -695,7 +695,7 @@ TabularType tabularType =
 
     <p>A <code>SortedMap&lt;</code><em>K</em>,<em>V</em><code>&gt;</code> is mapped in the
       same way, but it is only convertible if
-      <em>K</em> is a class or interface that implements <a href="../../../java.base/java/lang/Comparable.html" title="interface in java.lang"><code>Comparable</code></a>.  Thus, a <code>SortedMap&lt;String,int[]&gt;</code>
+      <em>K</em> is a class or interface that implements <a href="../../../java.base/java/lang/Comparable.html" title="java.lang 包中的接口"><code>Comparable</code></a>.  Thus, a <code>SortedMap&lt;String,int[]&gt;</code>
         is convertible, but a
         <code>SortedMap&lt;int[],String&gt;</code> is not.  The conversion of a
           <code>SortedMap</code> instance will fail with an <code>
@@ -708,15 +708,15 @@ TabularType tabularType =
 
     <p><code>TabularData</code> is an interface.  The concrete class that is
       used to represent a <code>Map&lt;</code><em>K</em>,<em>V</em><code>&gt;</code> as
-      Open Data is <a href="openmbean/TabularDataSupport.html" title="class in javax.management.openmbean"><code>TabularDataSupport</code></a>,
+      Open Data is <a href="openmbean/TabularDataSupport.html" title="javax.management.openmbean 包中的类"><code>TabularDataSupport</code></a>,
       or another class implementing <code>
       TabularData</code> that serializes as <code>TabularDataSupport</code>.</p>
 
 
     <h3 id="records">Mappings for Records</h3>
 
-    <p>A <a href="../../../java.base/java/lang/Record.html" title="class in java.lang">record</a> class <em>J</em> can be converted
-      to a <a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a> if and only if all its
+    <p>A <a href="../../../java.base/java/lang/Record.html" title="java.lang 包中的类">record</a> class <em>J</em> can be converted
+      to a <a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a> if and only if all its
       <a href="../../../java.base/java/lang/Class.html#getRecordComponents()">components</a> are
       convertible to open types. Otherwise, it is not convertible.
       A record that has no components is not convertible.</p>
@@ -725,7 +725,7 @@ TabularType tabularType =
       <code>CompositeType</code></h4>
 
     <p>A record whose components are all convertible to open
-      types, is itself convertible to a <a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a>.
+      types, is itself convertible to a <a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a>.
       The record class is converted to a <code>CompositeType</code>
       as follows.</p>
 
@@ -734,7 +734,7 @@ TabularType tabularType =
         of the record class.</li>
 
       <li>The record getters are the accessors for the
-        <a href="../../../java.base/java/lang/reflect/RecordComponent.html" title="class in java.lang.reflect">record components</a>.</li>
+        <a href="../../../java.base/java/lang/reflect/RecordComponent.html" title="java.lang.reflect 包中的类">record components</a>.</li>
 
       <li>For each record component of type <em>T</em>, the item in
         the <code>CompositeType</code> has the same name as the record
@@ -747,7 +747,7 @@ TabularType tabularType =
       <code>CompositeData</code></h4>
 
     <p>The mapping from an instance of a record class to a
-      <a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a> corresponding to the <code>CompositeType</code>
+      <a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a> corresponding to the <code>CompositeType</code>
       is the same as specified for
       <a href="#composite-data-map">other types</a>.</p>
 
@@ -756,13 +756,13 @@ TabularType tabularType =
 
     <p>A record is reconstructed using its canonical constructor.
       The canonical constructor doesn't require the presence of
-      <a href="ConstructorParameters.html" title="annotation interface in javax.management"><code>&#64;javax.management.ConstructorParameters</code></a>
+      <a href="ConstructorParameters.html" title="javax.management 包中的注解接口"><code>&#64;javax.management.ConstructorParameters</code></a>
       or <code>@java.beans.ConstructorProperties</code> annotations. If these
       annotations are present on the canonical constructor they
       will be ignored.</p>
 
     <p>How an instance of a record class <em>J</em> is reconstructed
-      from a <a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a> is detailed in
+      from a <a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a> is detailed in
       <a href="#reconstructing">Reconstructing an instance
       of Java type or record class <em>J</em> from a <code>CompositeData</code></a>
       below.</p>
@@ -838,29 +838,29 @@ public interface ModuleMXBean {
       MBeanServerConnection</code>.  The proxy can have been returned from
       another proxy (like <code>ModuleMXBean.getProduct()</code> which
       returns a proxy for a <code>ProductMXBean</code>); or it can have
-      been created by <a href="JMX.html#newMXBeanProxy(javax.management.MBeanServerConnection,javax.management.ObjectName,java.lang.Class)"><code>JMX.newMXBeanProxy</code></a>; or it can have been created using <a href="../../../java.base/java/lang/reflect/Proxy.html" title="class in java.lang.reflect"><code>Proxy</code></a> with an invocation handler that
-      is <a href="MBeanServerInvocationHandler.html" title="class in javax.management"><code>MBeanServerInvocationHandler</code></a> or a subclass.</p>
+      been created by <a href="JMX.html#newMXBeanProxy(javax.management.MBeanServerConnection,javax.management.ObjectName,java.lang.Class)"><code>JMX.newMXBeanProxy</code></a>; or it can have been created using <a href="../../../java.base/java/lang/reflect/Proxy.html" title="java.lang.reflect 包中的类"><code>Proxy</code></a> with an invocation handler that
+      is <a href="MBeanServerInvocationHandler.html" title="javax.management 包中的类"><code>MBeanServerInvocationHandler</code></a> or a subclass.</p>
 
     <p>If the same MXBean were registered under two different
       <code>ObjectName</code>s, a reference to that MXBean from another
       MXBean would be ambiguous.  Therefore, if an MXBean object is
       already registered in an MBean Server and an attempt is made to
       register it in the same MBean Server under another name, the
-      result is an <a href="InstanceAlreadyExistsException.html" title="class in javax.management"><code>InstanceAlreadyExistsException</code></a>.  Registering
+      result is an <a href="InstanceAlreadyExistsException.html" title="javax.management 包中的类"><code>InstanceAlreadyExistsException</code></a>.  Registering
       the same MBean object under more than one name is discouraged in
       general, notably because it does not work well for MBeans that are
-      <a href="NotificationBroadcaster.html" title="interface in javax.management"><code>NotificationBroadcaster</code></a>s.</p>
+      <a href="NotificationBroadcaster.html" title="javax.management 包中的接口"><code>NotificationBroadcaster</code></a>s.</p>
 
     <h3 id="composite-map">Mappings for other types</h3>
 
     <p>Given a Java class or interface <em>J</em> that does not match the other
       rules in the table above, the MXBean framework will attempt to map
-      it to a <a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a> as follows.  The type name of this
+      it to a <a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a> as follows.  The type name of this
       <code>CompositeType</code> is determined by the <a href="#type-names">
       type name rules</a> below.</p>
 
     <h4 id="composite-type-map">Mapping a Java type <em>J</em>
-      to <a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a></h4>
+      to <a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a></h4>
 
     <p>The class is examined for getters using the conventions
       <a href="#naming-conv">above</a>.  (Getters must be public
@@ -909,10 +909,10 @@ public interface ModuleMXBean {
       type or record class <em>J</em> to <code>CompositeData</code></h4>
 
     <p>When the Open Type is <code>CompositeType</code>, the corresponding
-      mapped Java type (<em>opendata(J)</em>) is <a href="openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a>.  The mapping from an instance of <em>J</em> to a
+      mapped Java type (<em>opendata(J)</em>) is <a href="openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a>.  The mapping from an instance of <em>J</em> to a
       <code>CompositeData</code> corresponding to the <code>CompositeType</code>
       just described is done as follows.  First, if <em>J</em>
-      implements the interface <a href="openmbean/CompositeDataView.html" title="interface in javax.management.openmbean"><code>CompositeDataView</code></a>, then that
+      implements the interface <a href="openmbean/CompositeDataView.html" title="javax.management.openmbean 包中的接口"><code>CompositeDataView</code></a>, then that
       interface's <a href="openmbean/CompositeDataView.html#toCompositeData(javax.management.openmbean.CompositeType)"><code>toCompositeData</code></a> method is called to do the conversion.
       Otherwise, the <code>CompositeData</code> is constructed by calling
       the getter for each item and converting it to the corresponding
@@ -929,7 +929,7 @@ public interface ModuleMXBean {
         item "<code>names</code>".</p>
 
     <p><code>CompositeData</code> is an interface.  The concrete class that is
-      used to represent a type as Open Data is <a href="openmbean/CompositeDataSupport.html" title="class in javax.management.openmbean"><code>CompositeDataSupport</code></a>, or another class implementing <code>
+      used to represent a type as Open Data is <a href="openmbean/CompositeDataSupport.html" title="javax.management.openmbean 包中的类"><code>CompositeDataSupport</code></a>, or another class implementing <code>
       CompositeData</code> that serializes as <code>
       CompositeDataSupport</code>.</p>
 
@@ -955,7 +955,7 @@ public interface ModuleMXBean {
         then that method is called to reconstruct an instance of
         <em>J</em>.</p></li>
 
-      <li><p>Otherwise, if <em>J</em> is a <a href="../../../java.base/java/lang/Record.html" title="class in java.lang"><code>Record</code></a> class,
+      <li><p>Otherwise, if <em>J</em> is a <a href="../../../java.base/java/lang/Record.html" title="java.lang 包中的类"><code>Record</code></a> class,
         and the record canonical constructor is applicable,
         an instance of <em>J</em> is reconstructed by calling
         the record canonical constructor.
@@ -967,7 +967,7 @@ public interface ModuleMXBean {
         <code>CompositeData</code>.</p></li>
 
       <li><p>Otherwise, if <em>J</em> has at least one public
-        constructor with either <a href="ConstructorParameters.html" title="annotation interface in javax.management"><code>&#64;javax.management.ConstructorParameters</code></a> or
+        constructor with either <a href="ConstructorParameters.html" title="javax.management 包中的注解接口"><code>&#64;javax.management.ConstructorParameters</code></a> or
         <code>@java.beans.ConstructorProperties</code> annotation, then one of those
         constructors (not necessarily always the same one) will be called to
         reconstruct an instance of <em>J</em>.
@@ -1025,7 +1025,7 @@ public interface ModuleMXBean {
 
       <li><p>Otherwise, if <em>J</em> is an interface that has no methods
         other than getters, an instance of <em>J</em> is constructed
-        using a <a href="../../../java.base/java/lang/reflect/Proxy.html" title="class in java.lang.reflect"><code>Proxy</code></a> with a <a href="openmbean/CompositeDataInvocationHandler.html" title="class in javax.management.openmbean"><code>CompositeDataInvocationHandler</code></a> backed by the <code>
+        using a <a href="../../../java.base/java/lang/reflect/Proxy.html" title="java.lang.reflect 包中的类"><code>Proxy</code></a> with a <a href="openmbean/CompositeDataInvocationHandler.html" title="javax.management.openmbean 包中的类"><code>CompositeDataInvocationHandler</code></a> backed by the <code>
         CompositeData</code> being converted.</p></li>
 
       <li><p>Otherwise, <em>J</em> is not reconstructible.</p></li>
@@ -1046,7 +1046,7 @@ public interface ModuleMXBean {
 
     <blockquote>
       <pre>
-<a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a>(
+<a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a>(
     "NamedNumber",                      // typeName
     "NamedNumber",                      // description
     new String[] {"number", "name"},    // itemNames
@@ -1150,7 +1150,7 @@ public interface NamedNumber {
     <h3 id="recursive-types-heading">Recursive types</h3>
 
     <p>Recursive (self-referential) types cannot be used in MXBean
-      interfaces.  This is a consequence of the immutability of <a href="openmbean/CompositeType.html" title="class in javax.management.openmbean"><code>CompositeType</code></a>.  For example, the following type could not be the
+      interfaces.  This is a consequence of the immutability of <a href="openmbean/CompositeType.html" title="javax.management.openmbean 包中的类"><code>CompositeType</code></a>.  For example, the following type could not be the
       type of an attribute, because it refers to itself:</p>
 
     <pre>
@@ -1179,13 +1179,13 @@ public interface Node {
     <h3 id="mbeaninfo-contents-for-an-mxbean-heading">MBeanInfo contents for an MXBean</h3>
 
     <p>An MXBean is a type of Open MBean.  However, for compatibility
-      reasons, its <a href="MBeanInfo.html" title="class in javax.management"><code>MBeanInfo</code></a> is not an <a href="openmbean/OpenMBeanInfo.html" title="interface in javax.management.openmbean"><code>OpenMBeanInfo</code></a>.
+      reasons, its <a href="MBeanInfo.html" title="javax.management 包中的类"><code>MBeanInfo</code></a> is not an <a href="openmbean/OpenMBeanInfo.html" title="javax.management.openmbean 包中的接口"><code>OpenMBeanInfo</code></a>.
       In particular, when the type of an attribute, parameter, or
       operation return value is a primitive type such as <code>int</code>,
       or is <code>void</code> (for a return type), then the attribute,
       parameter, or operation will be represented respectively by an
-      <a href="MBeanAttributeInfo.html" title="class in javax.management"><code>MBeanAttributeInfo</code></a>, <a href="MBeanParameterInfo.html" title="class in javax.management"><code>MBeanParameterInfo</code></a>, or
-      <a href="MBeanOperationInfo.html" title="class in javax.management"><code>MBeanOperationInfo</code></a> whose <code>getType()</code> or <code>
+      <a href="MBeanAttributeInfo.html" title="javax.management 包中的类"><code>MBeanAttributeInfo</code></a>, <a href="MBeanParameterInfo.html" title="javax.management 包中的类"><code>MBeanParameterInfo</code></a>, or
+      <a href="MBeanOperationInfo.html" title="javax.management 包中的类"><code>MBeanOperationInfo</code></a> whose <code>getType()</code> or <code>
       getReturnType()</code> returns the primitive name ("<code>int</code>" etc).
       This is so even though the mapping rules above specify that the
       <em>opendata</em> mapping is the wrapped type (<code>Integer</code>
@@ -1196,25 +1196,25 @@ public interface Node {
       constructors of that MXBean.  If the class of the MXBean is not
       public then its constructors are not considered public either.
       The list returned for an MXBean that is constructed using the
-      <a href="StandardMBean.html" title="class in javax.management"><code>StandardMBean</code></a> class is derived in the same way as for
+      <a href="StandardMBean.html" title="javax.management 包中的类"><code>StandardMBean</code></a> class is derived in the same way as for
       Standard MBeans.  Regardless of how the MXBean was constructed,
       its constructor parameters are not subject to MXBean mapping
       rules and do not have a corresponding <code>OpenType</code>.</p>
 
     <p>The array of notification types returned by <a href="MBeanInfo.html#getNotifications()"><code>MBeanInfo.getNotifications()</code></a> for an MXBean that is directly
       registered in the MBean Server will be empty if the MXBean does
-      not implement the <a href="NotificationBroadcaster.html" title="interface in javax.management"><code>NotificationBroadcaster</code></a> interface.
+      not implement the <a href="NotificationBroadcaster.html" title="javax.management 包中的接口"><code>NotificationBroadcaster</code></a> interface.
       Otherwise, it will be the result of calling <a href="NotificationBroadcaster.html#getNotificationInfo()"><code>NotificationBroadcaster.getNotificationInfo()</code></a> at the time the MXBean
       was registered.  Even if the result of this method changes
       subsequently, the result of <code>MBeanInfo.getNotifications()</code>
       will not.  The list returned for an MXBean that is constructed
-      using the <a href="StandardMBean.html" title="class in javax.management"><code>StandardMBean</code></a> or <a href="StandardEmitterMBean.html" title="class in javax.management"><code>StandardEmitterMBean</code></a>
+      using the <a href="StandardMBean.html" title="javax.management 包中的类"><code>StandardMBean</code></a> or <a href="StandardEmitterMBean.html" title="javax.management 包中的类"><code>StandardEmitterMBean</code></a>
       class is derived in the same way as for Standard MBeans.</p>
 
-    <p>The <a href="Descriptor.html" title="interface in javax.management"><code>Descriptor</code></a> for all of the
+    <p>The <a href="Descriptor.html" title="javax.management 包中的接口"><code>Descriptor</code></a> for all of the
       <code>MBeanAttributeInfo</code>, <code>MBeanParameterInfo</code>, and
       <code>MBeanOperationInfo</code> objects contained in the <code>MBeanInfo</code>
-      will have a field <code>openType</code> whose value is the <a href="openmbean/OpenType.html" title="class in javax.management.openmbean"><code>OpenType</code></a>
+      will have a field <code>openType</code> whose value is the <a href="openmbean/OpenType.html" title="javax.management.openmbean 包中的类"><code>OpenType</code></a>
       specified by the mapping rules above.  So even when <code>getType()</code>
       is "<code>int</code>", <code>getDescriptor().getField("openType")</code> will
       be <a href="openmbean/SimpleType.html#INTEGER"><code>SimpleType.INTEGER</code></a>.</p>
@@ -1270,9 +1270,9 @@ public interface Node {
     <h3 id="exceptions-heading">Exceptions</h3>
 
     <p>A problem with mapping <em>from</em> Java types <em>to</em>
-      Open types is signaled with an <a href="openmbean/OpenDataException.html" title="class in javax.management.openmbean"><code>OpenDataException</code></a>.  This
+      Open types is signaled with an <a href="openmbean/OpenDataException.html" title="javax.management.openmbean 包中的类"><code>OpenDataException</code></a>.  This
       can happen when an MXBean interface is being analyzed, for
-      example if it references a type like <a href="../../../java.base/java/util/Random.html" title="class in java.util"><code>java.util.Random</code></a> that has no getters.  Or it can happen when an
+      example if it references a type like <a href="../../../java.base/java/util/Random.html" title="java.util 包中的类"><code>java.util.Random</code></a> that has no getters.  Or it can happen when an
       instance is being converted (a return value from a method in an
       MXBean or a parameter to a method in an MXBean proxy), for
       example when converting from <code>SortedSet&lt;String&gt;</code> to <code>
@@ -1280,7 +1280,7 @@ public interface Node {
       Comparator</code>.</p>
 
     <p>A problem with mapping <em>to</em> Java types <em>from</em>
-      Open types is signaled with an <a href="../../../java.base/java/io/InvalidObjectException.html" title="class in java.io"><code>InvalidObjectException</code></a>.
+      Open types is signaled with an <a href="../../../java.base/java/io/InvalidObjectException.html" title="java.io 包中的类"><code>InvalidObjectException</code></a>.
       This can happen when an MXBean interface is being analyzed, for
       example if it references a type that is not
       <em>reconstructible</em> according to the rules above, in a
@@ -1292,12 +1292,12 @@ public interface Node {
 
     <p>Depending on the context, the <code>OpenDataException</code> or
       <code>InvalidObjectException</code> may be wrapped in another
-      exception such as <a href="RuntimeMBeanException.html" title="class in javax.management"><code>RuntimeMBeanException</code></a> or <a href="../../../java.base/java/lang/reflect/UndeclaredThrowableException.html" title="class in java.lang.reflect"><code>UndeclaredThrowableException</code></a>.  For every thrown exception,
+      exception such as <a href="RuntimeMBeanException.html" title="javax.management 包中的类"><code>RuntimeMBeanException</code></a> or <a href="../../../java.base/java/lang/reflect/UndeclaredThrowableException.html" title="java.lang.reflect 包中的类"><code>UndeclaredThrowableException</code></a>.  For every thrown exception,
       the condition <em>C</em> will be true: "<em>e</em> is <code>
       OpenDataException</code> or <code>InvalidObjectException</code> (as
       appropriate), or <em>C</em> is true of <em>e</em>.<a href="../../../java.base/java/lang/Throwable.html#getCause()"><code>getCause()</code></a>".</p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1307,7 +1307,7 @@ public interface Node {
 <!-- =========== ANNOTATION INTERFACE OPTIONAL MEMBER SUMMARY =========== -->
 <li>
 <section class="member-summary" id="annotation-interface-optional-element-summary">
-<h2>Optional Element Summary</h2>
+<h2>可选元素概要</h2>
 <div class="caption"><span>Optional Elements</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -1337,7 +1337,7 @@ public interface Node {
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">value</span></div>
 <div class="block">True if the annotated interface is an MXBean interface.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the annotated interface is an MXBean interface.</dd>
 </dl>
 <dl class="notes">

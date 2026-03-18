@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.file</a></li>
 <li><a href="WatchService.html" class="current-selection">WatchService</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,15 +60,15 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#platform-dependencies-heading" tabindex="0">Platform dependencies</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#close()" tabindex="0">close()</a></li>
 <li><a href="#poll()" tabindex="0">poll()</a></li>
@@ -81,24 +81,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface WatchService" class="title">Interface WatchService</h1>
+<h1 title="接口 WatchService" class="title">接口 WatchService</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">WatchService</span><span class="extends-implements">
-extends <a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></span></div>
+extends <a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></span></div>
 <div class="block">A watch service that <em>watches</em> registered objects for changes and
 events. For example a file manager may use a watch service to monitor a
 directory for changes so that it can update its display of the list of files
 when files are created or deleted.
 
-<p> A <a href="Watchable.html" title="interface in java.nio.file"><code>Watchable</code></a> object is registered with a watch service by invoking
-its <a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)"><code>register</code></a> method, returning a <a href="WatchKey.html" title="interface in java.nio.file"><code>WatchKey</code></a>
+<p> A <a href="Watchable.html" title="java.nio.file 包中的接口"><code>Watchable</code></a> object is registered with a watch service by invoking
+its <a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)"><code>register</code></a> method, returning a <a href="WatchKey.html" title="java.nio.file 包中的接口"><code>WatchKey</code></a>
 to represent the registration. When an event for an object is detected the
 key is <em>signalled</em>, and if not currently signalled, it is queued to
 the watch service so that it can be retrieved by consumers that invoke the
@@ -134,7 +134,7 @@ consumer as a trigger to re-examine the state of the object.
 has been modified then there is no guarantee that the program (or programs)
 that have modified the file have completed. Care should be taken to coordinate
 access with other programs that may be updating the file.
-The <a href="../channels/FileChannel.html" title="class in java.nio.channels"><code>FileChannel</code></a> class defines methods
+The <a href="../channels/FileChannel.html" title="java.nio.channels 包中的类"><code>FileChannel</code></a> class defines methods
 to lock regions of a file against access by other programs.
 
 <h2 id="platform-dependencies-heading">Platform dependencies</h2>
@@ -156,7 +156,7 @@ implementation specific if changes to the file can be detected. In particular,
 it is not required that changes to files carried out on remote systems be
 detected.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The JDK's <code>WatchService</code> implementations buffer up to 512 pending
 events for each registered watchable object. If this limit is exceeded,
 pending events are discarded and the special
@@ -169,9 +169,9 @@ with the system property
 set to a value that parses as a positive integer. This may be useful in
 environments where there is a high volume of changes and where the impact
 of discarded events is high.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="FileSystem.html#newWatchService()"><code>FileSystem.newWatchService()</code></a></li>
@@ -185,33 +185,33 @@ of discarded events is high.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes this watch service.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#poll()" class="member-name-link">poll</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieves and removes the next watch key, or <code>null</code> if none are
 present.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#poll(long,java.util.concurrent.TimeUnit)" class="member-name-link">poll</a><wbr>(long&nbsp;timeout,
- <a href="../../util/concurrent/TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../../util/concurrent/TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieves and removes the next watch key, waiting if necessary up to the
 specified wait time if none are yet present.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#take()" class="member-name-link">take</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieves and removes next watch key, waiting if none are yet present.</div>
@@ -228,31 +228,31 @@ specified wait time if none are yet present.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this watch service.
 
 <p> If a thread is currently blocked in the <a href="#take()"><code>take</code></a> or <a href="#poll(long,java.util.concurrent.TimeUnit)"><code>poll</code></a> methods waiting for a key to be queued then
-it immediately receives a <a href="ClosedWatchServiceException.html" title="class in java.nio.file"><code>ClosedWatchServiceException</code></a>. Any
+it immediately receives a <a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类"><code>ClosedWatchServiceException</code></a>. Any
 valid keys associated with this watch service are <a href="WatchKey.html#isValid()"><code>invalidated</code></a>.
 
 <p> After a watch service is closed, any further attempt to invoke
-operations upon it will throw <a href="ClosedWatchServiceException.html" title="class in java.nio.file"><code>ClosedWatchServiceException</code></a>.
+operations upon it will throw <a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类"><code>ClosedWatchServiceException</code></a>.
 If this watch service is already closed then invoking this method
 has no effect.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -261,14 +261,14 @@ has no effect.</div>
 <section class="detail" id="poll()">
 <h3>poll</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></span>&nbsp;<span class="element-name">poll</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></span>&nbsp;<span class="element-name">poll</span>()</div>
 <div class="block">Retrieves and removes the next watch key, or <code>null</code> if none are
 present.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the next watch key, or <code>null</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedWatchServiceException.html" title="class in java.nio.file">ClosedWatchServiceException</a></code> - if this watch service is closed</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类">ClosedWatchServiceException</a></code> - if this watch service is closed</dd>
 </dl>
 </div>
 </section>
@@ -277,22 +277,22 @@ present.</div>
 <section class="detail" id="poll(long,java.util.concurrent.TimeUnit)">
 <h3>poll</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></span>&nbsp;<span class="element-name">poll</span><wbr><span class="parameters">(long&nbsp;timeout,
- <a href="../../util/concurrent/TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-       throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></span>&nbsp;<span class="element-name">poll</span><wbr><span class="parameters">(long&nbsp;timeout,
+ <a href="../../util/concurrent/TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+       throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Retrieves and removes the next watch key, waiting if necessary up to the
 specified wait time if none are yet present.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>timeout</code> - how long to wait before giving up, in units of unit</dd>
 <dd><code>unit</code> - a <code>TimeUnit</code> determining how to interpret the timeout
          parameter</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the next watch key, or <code>null</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedWatchServiceException.html" title="class in java.nio.file">ClosedWatchServiceException</a></code> - if this watch service is closed, or it is closed while waiting
+<dt>抛出:</dt>
+<dd><code><a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类">ClosedWatchServiceException</a></code> - if this watch service is closed, or it is closed while waiting
          for the next key</dd>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if interrupted while waiting</dd>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if interrupted while waiting</dd>
 </dl>
 </div>
 </section>
@@ -301,16 +301,16 @@ specified wait time if none are yet present.</div>
 <section class="detail" id="take()">
 <h3>take</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></span>&nbsp;<span class="element-name">take</span>()
-       throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></span>&nbsp;<span class="element-name">take</span>()
+       throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Retrieves and removes next watch key, waiting if none are yet present.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the next watch key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedWatchServiceException.html" title="class in java.nio.file">ClosedWatchServiceException</a></code> - if this watch service is closed, or it is closed while waiting
+<dt>抛出:</dt>
+<dd><code><a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类">ClosedWatchServiceException</a></code> - if this watch service is closed, or it is closed while waiting
          for the next key</dd>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if interrupted while waiting</dd>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if interrupted while waiting</dd>
 </dl>
 </div>
 </section>

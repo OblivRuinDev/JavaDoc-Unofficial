@@ -61,7 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.lang.model.element</a></li>
 <li><a href="Element.html" class="current-selection">Element</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -69,11 +69,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#asType()" tabindex="0">asType()</a></li>
 <li><a href="#getKind()" tabindex="0">getKind()</a></li>
@@ -94,21 +94,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Element" class="title">Interface Element</h1>
+<h1 title="接口 Element" class="title">接口 Element</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../AnnotatedConstruct.html" title="interface in javax.lang.model">AnnotatedConstruct</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../AnnotatedConstruct.html" title="javax.lang.model 包中的接口">AnnotatedConstruct</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="ExecutableElement.html" title="interface in javax.lang.model.element">ExecutableElement</a>, <a href="ModuleElement.html" title="interface in javax.lang.model.element">ModuleElement</a>, <a href="PackageElement.html" title="interface in javax.lang.model.element">PackageElement</a>, <a href="Parameterizable.html" title="interface in javax.lang.model.element">Parameterizable</a>, <a href="QualifiedNameable.html" title="interface in javax.lang.model.element">QualifiedNameable</a>, <a href="RecordComponentElement.html" title="interface in javax.lang.model.element">RecordComponentElement</a>, <a href="TypeElement.html" title="interface in javax.lang.model.element">TypeElement</a>, <a href="TypeParameterElement.html" title="interface in javax.lang.model.element">TypeParameterElement</a>, <a href="VariableElement.html" title="interface in javax.lang.model.element">VariableElement</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="ExecutableElement.html" title="javax.lang.model.element 包中的接口">ExecutableElement</a>, <a href="ModuleElement.html" title="javax.lang.model.element 包中的接口">ModuleElement</a>, <a href="PackageElement.html" title="javax.lang.model.element 包中的接口">PackageElement</a>, <a href="Parameterizable.html" title="javax.lang.model.element 包中的接口">Parameterizable</a>, <a href="QualifiedNameable.html" title="javax.lang.model.element 包中的接口">QualifiedNameable</a>, <a href="RecordComponentElement.html" title="javax.lang.model.element 包中的接口">RecordComponentElement</a>, <a href="TypeElement.html" title="javax.lang.model.element 包中的接口">TypeElement</a>, <a href="TypeParameterElement.html" title="javax.lang.model.element 包中的接口">TypeParameterElement</a>, <a href="VariableElement.html" title="javax.lang.model.element 包中的接口">VariableElement</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Element</span><span class="extends-implements">
-extends <a href="../AnnotatedConstruct.html" title="interface in javax.lang.model">AnnotatedConstruct</a></span></div>
+extends <a href="../AnnotatedConstruct.html" title="javax.lang.model 包中的接口">AnnotatedConstruct</a></span></div>
 <div class="block">Represents a program element such as a module, package, class, or method.
 Each element represents a compile-time language-level construct
 (and not, for example, a runtime construct of the virtual machine).
@@ -118,20 +118,20 @@ method.  There is no guarantee that any particular element will
 always be represented by the same object.
 
 <p> To implement operations based on the class of an <code>
-Element</code> object, either use a <a href="ElementVisitor.html" title="interface in javax.lang.model.element">visitor</a> or
+Element</code> object, either use a <a href="ElementVisitor.html" title="javax.lang.model.element 包中的接口">visitor</a> or
 use the result of the <a href="#getKind()"><code>getKind()</code></a> method.  Using <code>
 instanceof</code> is <em>not</em> necessarily a reliable idiom for
 determining the effective class of an object in this modeling
 hierarchy since an implementation may choose to have a single object
 implement multiple <code>Element</code> subinterfaces.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="../util/Elements.html" title="interface in javax.lang.model.util"><code>Elements</code></a></li>
-<li><a href="../type/TypeMirror.html" title="interface in javax.lang.model.type"><code>TypeMirror</code></a></li>
+<li><a href="../util/Elements.html" title="javax.lang.model.util 包中的接口"><code>Elements</code></a></li>
+<li><a href="../type/TypeMirror.html" title="javax.lang.model.type 包中的接口"><code>TypeMirror</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -142,72 +142,72 @@ implement multiple <code>Element</code> subinterfaces.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R,<wbr>P&gt;&nbsp;R</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#accept(javax.lang.model.element.ElementVisitor,P)" class="member-name-link">accept</a><wbr>(<a href="ElementVisitor.html" title="interface in javax.lang.model.element">ElementVisitor</a>&lt;R,<wbr>P&gt;&nbsp;v,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#accept(javax.lang.model.element.ElementVisitor,P)" class="member-name-link">accept</a><wbr>(<a href="ElementVisitor.html" title="javax.lang.model.element 包中的接口">ElementVisitor</a>&lt;R,<wbr>P&gt;&nbsp;v,
  P&nbsp;p)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Applies a visitor to this element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../type/TypeMirror.html" title="interface in javax.lang.model.type">TypeMirror</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../type/TypeMirror.html" title="javax.lang.model.type 包中的接口">TypeMirror</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#asType()" class="member-name-link">asType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the type defined by this element.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if the argument represents the same
 element as <code>this</code>, or <code>false</code> otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="interface in java.lang.annotation">Annotation</a>&gt;<br>A</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAnnotation(java.lang.Class)" class="member-name-link">getAnnotation</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;annotationType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="java.lang.annotation 包中的接口">Annotation</a>&gt;<br>A</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAnnotation(java.lang.Class)" class="member-name-link">getAnnotation</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;annotationType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns this construct's annotation of the specified type if
 such an annotation is <em>present</em>, else <code>null</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;? extends <a href="AnnotationMirror.html" title="interface in javax.lang.model.element">AnnotationMirror</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;? extends <a href="AnnotationMirror.html" title="javax.lang.model.element 包中的接口">AnnotationMirror</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAnnotationMirrors()" class="member-name-link">getAnnotationMirrors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the annotations that are <em>directly present</em> on
 this construct.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="interface in java.lang.annotation">Annotation</a>&gt;<br>A[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAnnotationsByType(java.lang.Class)" class="member-name-link">getAnnotationsByType</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;annotationType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="java.lang.annotation 包中的接口">Annotation</a>&gt;<br>A[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAnnotationsByType(java.lang.Class)" class="member-name-link">getAnnotationsByType</a><wbr>(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;annotationType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns annotations of the specified type that are <em>associated</em>
 with this construct.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;? extends <a href="Element.html" title="interface in javax.lang.model.element">Element</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;? extends <a href="Element.html" title="javax.lang.model.element 包中的接口">Element</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEnclosedElements()" class="member-name-link">getEnclosedElements</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the elements that are, loosely speaking, directly
 enclosed by this element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Element.html" title="interface in javax.lang.model.element">Element</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Element.html" title="javax.lang.model.element 包中的接口">Element</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEnclosingElement()" class="member-name-link">getEnclosingElement</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the innermost element
 within which this element is, loosely speaking, enclosed.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ElementKind.html" title="enum class in javax.lang.model.element">ElementKind</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ElementKind.html" title="javax.lang.model.element 包中的枚举类">ElementKind</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getKind()" class="member-name-link">getKind</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the <code>kind</code> of this element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="Modifier.html" title="enum class in javax.lang.model.element">Modifier</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../../java.base/java/util/Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="Modifier.html" title="javax.lang.model.element 包中的枚举类">Modifier</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getModifiers()" class="member-name-link">getModifiers</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the modifiers of this element, excluding annotations.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Name.html" title="interface in javax.lang.model.element">Name</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Name.html" title="javax.lang.model.element 包中的接口">Name</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSimpleName()" class="member-name-link">getSimpleName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the simple (unqualified) name of this element.</div>
@@ -229,21 +229,21 @@ within which this element is, loosely speaking, enclosed.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="asType()">
 <h3>asType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../type/TypeMirror.html" title="interface in javax.lang.model.type">TypeMirror</a></span>&nbsp;<span class="element-name">asType</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../type/TypeMirror.html" title="javax.lang.model.type 包中的接口">TypeMirror</a></span>&nbsp;<span class="element-name">asType</span>()</div>
 <div class="block">Returns the type defined by this element.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the type defined by this element</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="../util/Types.html" title="interface in javax.lang.model.util"><code>Types</code></a></li>
+<li><a href="../util/Types.html" title="javax.lang.model.util 包中的接口"><code>Types</code></a></li>
 <li><a href="ExecutableElement.html#asType()"><code>ExecutableElement.asType()</code></a></li>
 <li><a href="ModuleElement.html#asType()"><code>ModuleElement.asType()</code></a></li>
 <li><a href="PackageElement.html#asType()"><code>PackageElement.asType()</code></a></li>
@@ -261,36 +261,36 @@ within which this element is, loosely speaking, enclosed.</div>
 <section class="detail" id="getKind()">
 <h3>getKind</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ElementKind.html" title="enum class in javax.lang.model.element">ElementKind</a></span>&nbsp;<span class="element-name">getKind</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="ElementKind.html" title="javax.lang.model.element 包中的枚举类">ElementKind</a></span>&nbsp;<span class="element-name">getKind</span>()</div>
 <div class="block">Returns the <code>kind</code> of this element.
 
 <ul>
 
-<li> The kind of a <a href="PackageElement.html" title="interface in javax.lang.model.element">package</a> is
+<li> The kind of a <a href="PackageElement.html" title="javax.lang.model.element 包中的接口">package</a> is
 <a href="ElementKind.html#PACKAGE"><code>PACKAGE</code></a>.
 
-<li> The kind of a <a href="ModuleElement.html" title="interface in javax.lang.model.element">module</a> is <a href="ElementKind.html#MODULE"><code>MODULE</code></a>.
+<li> The kind of a <a href="ModuleElement.html" title="javax.lang.model.element 包中的接口">module</a> is <a href="ElementKind.html#MODULE"><code>MODULE</code></a>.
 
-<li> The kind of a <a href="TypeElement.html" title="interface in javax.lang.model.element">type element</a> is one
+<li> The kind of a <a href="TypeElement.html" title="javax.lang.model.element 包中的接口">type element</a> is one
 of <a href="ElementKind.html#ANNOTATION_TYPE"><code>ANNOTATION_TYPE</code></a>, <a href="ElementKind.html#CLASS"><code>CLASS</code></a>, <a href="ElementKind.html#ENUM"><code>ENUM</code></a>, <a href="ElementKind.html#INTERFACE"><code>INTERFACE</code></a>, or <a href="ElementKind.html#RECORD"><code>RECORD</code></a>.
 
-<li> The kind of a <a href="VariableElement.html" title="interface in javax.lang.model.element">variable</a> is one
+<li> The kind of a <a href="VariableElement.html" title="javax.lang.model.element 包中的接口">variable</a> is one
 of <a href="ElementKind.html#ENUM_CONSTANT"><code>ENUM_CONSTANT</code></a>, <a href="ElementKind.html#EXCEPTION_PARAMETER"><code>EXCEPTION_PARAMETER</code></a>, <a href="ElementKind.html#FIELD"><code>FIELD</code></a>, <a href="ElementKind.html#LOCAL_VARIABLE"><code>LOCAL_VARIABLE</code></a>, <a href="ElementKind.html#PARAMETER"><code>PARAMETER</code></a>,
 <a href="ElementKind.html#RESOURCE_VARIABLE"><code>RESOURCE_VARIABLE</code></a>, or
 <a href="ElementKind.html#BINDING_VARIABLE"><code>BINDING_VARIABLE</code></a>.
 
-<li> The kind of an <a href="ExecutableElement.html" title="interface in javax.lang.model.element">executable</a>
+<li> The kind of an <a href="ExecutableElement.html" title="javax.lang.model.element 包中的接口">executable</a>
 is one of <a href="ElementKind.html#CONSTRUCTOR"><code>CONSTRUCTOR</code></a>, <a href="ElementKind.html#INSTANCE_INIT"><code>INSTANCE_INIT</code></a>, <a href="ElementKind.html#METHOD"><code>METHOD</code></a>, or <a href="ElementKind.html#STATIC_INIT"><code>STATIC_INIT</code></a>.
 
-<li> The kind of a <a href="TypeParameterElement.html" title="interface in javax.lang.model.element">type parameter</a> is
+<li> The kind of a <a href="TypeParameterElement.html" title="javax.lang.model.element 包中的接口">type parameter</a> is
 <a href="ElementKind.html#TYPE_PARAMETER"><code>TYPE_PARAMETER</code></a>.
 
-<li> The kind of a <a href="RecordComponentElement.html" title="interface in javax.lang.model.element">record
+<li> The kind of a <a href="RecordComponentElement.html" title="javax.lang.model.element 包中的接口">record
 component</a> is <a href="ElementKind.html#RECORD_COMPONENT"><code>RECORD_COMPONENT</code></a>.
 
 </ul></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>kind</code> of this element</dd>
 </dl>
 </div>
@@ -300,12 +300,12 @@ component</a> is <a href="ElementKind.html#RECORD_COMPONENT"><code>RECORD_COMPON
 <section class="detail" id="getModifiers()">
 <h3>getModifiers</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/Set.html" title="interface in java.util">Set</a>&lt;<a href="Modifier.html" title="enum class in javax.lang.model.element">Modifier</a>&gt;</span>&nbsp;<span class="element-name">getModifiers</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="Modifier.html" title="javax.lang.model.element 包中的枚举类">Modifier</a>&gt;</span>&nbsp;<span class="element-name">getModifiers</span>()</div>
 <div class="block">Returns the modifiers of this element, excluding annotations.
 Implicit modifiers, such as the <code>public</code> and <code>
 static</code> modifiers of interface members (JLS section <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-9.html#jls-9.3">9.3</a>), are included.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the modifiers of this element, or an empty set if there are none</dd>
 </dl>
 </div>
@@ -315,7 +315,7 @@ static</code> modifiers of interface members (JLS section <a href="https://docs.
 <section class="detail" id="getSimpleName()">
 <h3>getSimpleName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Name.html" title="interface in javax.lang.model.element">Name</a></span>&nbsp;<span class="element-name">getSimpleName</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Name.html" title="javax.lang.model.element 包中的接口">Name</a></span>&nbsp;<span class="element-name">getSimpleName</span>()</div>
 <div class="block">Returns the simple (unqualified) name of this element. The
 name of a generic class or interface does not include any
 reference to its formal type parameters.
@@ -333,9 +333,9 @@ initializer</a>, the name "<code>&lt;clinit&gt;</code>" is returned.
 If it represents an <a href="TypeElement.html#getSimpleName()">anonymous class</a> or <a href="ExecutableElement.html#getSimpleName()">instance initializer</a>, an <a href="Name.html#empty_name">empty
 name</a> is returned.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the simple (unqualified) name of this element</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="PackageElement.html#getSimpleName()"><code>PackageElement.getSimpleName()</code></a></li>
@@ -354,7 +354,7 @@ name</a> is returned.</div>
 <section class="detail" id="getEnclosingElement()">
 <h3>getEnclosingElement</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Element.html" title="interface in javax.lang.model.element">Element</a></span>&nbsp;<span class="element-name">getEnclosingElement</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Element.html" title="javax.lang.model.element 包中的接口">Element</a></span>&nbsp;<span class="element-name">getEnclosingElement</span>()</div>
 <div class="block">Returns the innermost element
 within which this element is, loosely speaking, enclosed.
 <ul>
@@ -372,20 +372,20 @@ returned if such a module exists. Otherwise, <code>null</code> is returned.
 generic element</a> of the type parameter is returned.
 
 <li> If this is a <a href="VariableElement.html#getEnclosingElement()">method or constructor
-parameter</a>, <a href="ExecutableElement.html" title="interface in javax.lang.model.element">the executable
+parameter</a>, <a href="ExecutableElement.html" title="javax.lang.model.element 包中的接口">the executable
 element</a> which declares the parameter is returned.
 
 <li> If this is a <a href="RecordComponentElement.html#getEnclosingElement()">record component</a>,
-<a href="TypeElement.html" title="interface in javax.lang.model.element">the record class</a> which declares the
+<a href="TypeElement.html" title="javax.lang.model.element 包中的接口">the record class</a> which declares the
 record component is returned.
 
 <li> If this is a <a href="ModuleElement.html#getEnclosingElement()">module</a>, <code>null</code> is returned.
 
 </ul></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the enclosing element, or <code>null</code> if there is none</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../util/Elements.html#getPackageOf(javax.lang.model.element.Element)"><code>Elements.getPackageOf(Element)</code></a></li>
@@ -399,7 +399,7 @@ record component is returned.
 <section class="detail" id="getEnclosedElements()">
 <h3>getEnclosedElements</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;? extends <a href="Element.html" title="interface in javax.lang.model.element">Element</a>&gt;</span>&nbsp;<span class="element-name">getEnclosedElements</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;? extends <a href="Element.html" title="javax.lang.model.element 包中的接口">Element</a>&gt;</span>&nbsp;<span class="element-name">getEnclosedElements</span>()</div>
 <div class="block">Returns the elements that are, loosely speaking, directly
 enclosed by this element.
 
@@ -420,15 +420,15 @@ Other kinds of elements are not currently considered to enclose
 any elements; however, that may change as this API or the
 programming language evolves.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Elements of certain kinds can be isolated using
-methods in <a href="../util/ElementFilter.html" title="class in javax.lang.model.util"><code>ElementFilter</code></a>.</dd>
-<dt>Returns:</dt>
+methods in <a href="../util/ElementFilter.html" title="javax.lang.model.util 包中的类"><code>ElementFilter</code></a>.</dd>
+<dt>返回:</dt>
 <dd>the enclosed elements, or an empty list if none</dd>
 <dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.8.9">8.8.9 Default Constructor</a><br><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.9">8.9 Enum Classes</a><br><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-8.html#jls-8.10">8.10 Record Classes</a><br></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="TypeElement.html#getEnclosedElements()"><code>TypeElement.getEnclosedElements()</code></a></li>
@@ -445,13 +445,13 @@ methods in <a href="../util/ElementFilter.html" title="class in javax.lang.model
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Returns <code>true</code> if the argument represents the same
 element as <code>this</code>, or <code>false</code> otherwise.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>API Note:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>API说明:</dt>
 <dd>The identity of an element involves implicit state
 not directly accessible from the element's methods, including
 state about the presence of unrelated types.  Element objects
@@ -460,16 +460,16 @@ created by different implementations of these interfaces should
 element is being modeled; this is analogous to the inequality
 of <code>Class</code> objects for the same class file loaded through
 different class loaders.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to be compared with this element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the argument represents the same
 element as <code>this</code>, or <code>false</code> otherwise</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -483,11 +483,11 @@ element as <code>this</code>, or <code>false</code> otherwise</dd>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
 <div class="block">Obeys the general contract of <a href="../../../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode</code></a>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a hash code value for this object</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#equals(java.lang.Object)"><code>equals(Object)</code></a></li>
@@ -501,7 +501,7 @@ element as <code>this</code>, or <code>false</code> otherwise</dd>
 <section class="detail" id="getAnnotationMirrors()">
 <h3>getAnnotationMirrors</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;? extends <a href="AnnotationMirror.html" title="interface in javax.lang.model.element">AnnotationMirror</a>&gt;</span>&nbsp;<span class="element-name">getAnnotationMirrors</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;? extends <a href="AnnotationMirror.html" title="javax.lang.model.element 包中的接口">AnnotationMirror</a>&gt;</span>&nbsp;<span class="element-name">getAnnotationMirrors</span>()</div>
 <div class="block">Returns the annotations that are <em>directly present</em> on
 this construct.
 
@@ -510,12 +510,12 @@ this construct.
 <p>Note that any annotations returned by this method are
 declaration annotations.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../AnnotatedConstruct.html#getAnnotationMirrors()">getAnnotationMirrors</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="interface in javax.lang.model">AnnotatedConstruct</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../AnnotatedConstruct.html#getAnnotationMirrors()">getAnnotationMirrors</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="javax.lang.model 包中的接口">AnnotatedConstruct</a></code></dd>
+<dt>返回:</dt>
 <dd>the annotations <em>directly present</em> on this
 construct; an empty list if there are none</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -525,7 +525,7 @@ construct; an empty list if there are none</dd>
 <section class="detail" id="getAnnotation(java.lang.Class)">
 <h3>getAnnotation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="interface in java.lang.annotation">Annotation</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">getAnnotation</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;annotationType)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="java.lang.annotation 包中的接口">Annotation</a>&gt;</span>&nbsp;<span class="return-type">A</span>&nbsp;<span class="element-name">getAnnotation</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;annotationType)</span></div>
 <div class="block">Returns this construct's annotation of the specified type if
 such an annotation is <em>present</em>, else <code>null</code>.
 
@@ -536,10 +536,10 @@ locate and load a class (such as the class loader to use) is
 not available, and the class might not be loadable at all.
 Attempting to read a <code>Class</code> object by invoking the relevant
 method on the returned annotation
-will result in a <a href="../type/MirroredTypeException.html" title="class in javax.lang.model.type"><code>MirroredTypeException</code></a>,
-from which the corresponding <a href="../type/TypeMirror.html" title="interface in javax.lang.model.type"><code>TypeMirror</code></a> may be extracted.
+will result in a <a href="../type/MirroredTypeException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypeException</code></a>,
+from which the corresponding <a href="../type/TypeMirror.html" title="javax.lang.model.type 包中的接口"><code>TypeMirror</code></a> may be extracted.
 Similarly, attempting to read a <code>Class[]</code>-valued element
-will result in a <a href="../type/MirroredTypesException.html" title="class in javax.lang.model.type"><code>MirroredTypesException</code></a>.
+will result in a <a href="../type/MirroredTypesException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypesException</code></a>.
 
 <blockquote>
 <i>Note:</i> This method is unlike others in this and related
@@ -557,28 +557,28 @@ annotation interfaces.
 <p>Note that any annotation returned by this method is a
 declaration annotation.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../AnnotatedConstruct.html#getAnnotation(java.lang.Class)">getAnnotation</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="interface in javax.lang.model">AnnotatedConstruct</a></code></dd>
-<dt>Type Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../AnnotatedConstruct.html#getAnnotation(java.lang.Class)">getAnnotation</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="javax.lang.model 包中的接口">AnnotatedConstruct</a></code></dd>
+<dt>类型参数:</dt>
 <dd><span id="getAnnotation(java.lang.Class)-type-param-A"><code>A</code> - the annotation interface</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>annotationType</code> - the <code>Class</code> object corresponding to
          the annotation interface</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this construct's annotation of the specified type if
 such an annotation is <em>present</em>, else <code>null</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../AnnotatedConstruct.html#getAnnotationMirrors()"><code>AnnotatedConstruct.getAnnotationMirrors()</code></a></li>
 <li><a href="../../../../../java.base/java/lang/reflect/AnnotatedElement.html#getAnnotation(java.lang.Class)"><code>AnnotatedElement.getAnnotation(Class)</code></a></li>
-<li><a href="../../../../../java.base/java/lang/EnumConstantNotPresentException.html" title="class in java.lang"><code>EnumConstantNotPresentException</code></a></li>
-<li><a href="../../../../../java.base/java/lang/annotation/AnnotationTypeMismatchException.html" title="class in java.lang.annotation"><code>AnnotationTypeMismatchException</code></a></li>
-<li><a href="../../../../../java.base/java/lang/annotation/IncompleteAnnotationException.html" title="class in java.lang.annotation"><code>IncompleteAnnotationException</code></a></li>
-<li><a href="../type/MirroredTypeException.html" title="class in javax.lang.model.type"><code>MirroredTypeException</code></a></li>
-<li><a href="../type/MirroredTypesException.html" title="class in javax.lang.model.type"><code>MirroredTypesException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/EnumConstantNotPresentException.html" title="java.lang 包中的类"><code>EnumConstantNotPresentException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/annotation/AnnotationTypeMismatchException.html" title="java.lang.annotation 包中的类"><code>AnnotationTypeMismatchException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/annotation/IncompleteAnnotationException.html" title="java.lang.annotation 包中的类"><code>IncompleteAnnotationException</code></a></li>
+<li><a href="../type/MirroredTypeException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypeException</code></a></li>
+<li><a href="../type/MirroredTypesException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypesException</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -589,7 +589,7 @@ such an annotation is <em>present</em>, else <code>null</code></dd>
 <section class="detail" id="getAnnotationsByType(java.lang.Class)">
 <h3>getAnnotationsByType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="interface in java.lang.annotation">Annotation</a>&gt;</span>&nbsp;<span class="return-type">A[]</span>&nbsp;<span class="element-name">getAnnotationsByType</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;A&gt;&nbsp;annotationType)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;A extends <a href="../../../../../java.base/java/lang/annotation/Annotation.html" title="java.lang.annotation 包中的接口">Annotation</a>&gt;</span>&nbsp;<span class="return-type">A[]</span>&nbsp;<span class="element-name">getAnnotationsByType</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;A&gt;&nbsp;annotationType)</span></div>
 <div class="block">Returns annotations of the specified type that are <em>associated</em>
 with this construct.
 
@@ -614,10 +614,10 @@ locate and load a class (such as the class loader to use) is
 not available, and the class might not be loadable at all.
 Attempting to read a <code>Class</code> object by invoking the relevant
 method on the returned annotation
-will result in a <a href="../type/MirroredTypeException.html" title="class in javax.lang.model.type"><code>MirroredTypeException</code></a>,
-from which the corresponding <a href="../type/TypeMirror.html" title="interface in javax.lang.model.type"><code>TypeMirror</code></a> may be extracted.
+will result in a <a href="../type/MirroredTypeException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypeException</code></a>,
+from which the corresponding <a href="../type/TypeMirror.html" title="javax.lang.model.type 包中的接口"><code>TypeMirror</code></a> may be extracted.
 Similarly, attempting to read a <code>Class[]</code>-valued element
-will result in a <a href="../type/MirroredTypesException.html" title="class in javax.lang.model.type"><code>MirroredTypesException</code></a>.
+will result in a <a href="../type/MirroredTypesException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypesException</code></a>.
 
 <blockquote>
 <i>Note:</i> This method is unlike others in this and related
@@ -635,29 +635,29 @@ annotation interfaces.
 <p>Note that any annotations returned by this method are
 declaration annotations.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../AnnotatedConstruct.html#getAnnotationsByType(java.lang.Class)">getAnnotationsByType</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="interface in javax.lang.model">AnnotatedConstruct</a></code></dd>
-<dt>Type Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../AnnotatedConstruct.html#getAnnotationsByType(java.lang.Class)">getAnnotationsByType</a></code>&nbsp;in interface&nbsp;<code><a href="../AnnotatedConstruct.html" title="javax.lang.model 包中的接口">AnnotatedConstruct</a></code></dd>
+<dt>类型参数:</dt>
 <dd><span id="getAnnotationsByType(java.lang.Class)-type-param-A"><code>A</code> - the annotation interface</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>annotationType</code> - the <code>Class</code> object corresponding to
          the annotation interface</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this construct's annotations for the specified annotation
         type if present on this construct, else an empty array</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../AnnotatedConstruct.html#getAnnotationMirrors()"><code>AnnotatedConstruct.getAnnotationMirrors()</code></a></li>
 <li><a href="../AnnotatedConstruct.html#getAnnotation(java.lang.Class)"><code>AnnotatedConstruct.getAnnotation(Class)</code></a></li>
 <li><a href="../../../../../java.base/java/lang/reflect/AnnotatedElement.html#getAnnotationsByType(java.lang.Class)"><code>AnnotatedElement.getAnnotationsByType(Class)</code></a></li>
-<li><a href="../../../../../java.base/java/lang/EnumConstantNotPresentException.html" title="class in java.lang"><code>EnumConstantNotPresentException</code></a></li>
-<li><a href="../../../../../java.base/java/lang/annotation/AnnotationTypeMismatchException.html" title="class in java.lang.annotation"><code>AnnotationTypeMismatchException</code></a></li>
-<li><a href="../../../../../java.base/java/lang/annotation/IncompleteAnnotationException.html" title="class in java.lang.annotation"><code>IncompleteAnnotationException</code></a></li>
-<li><a href="../type/MirroredTypeException.html" title="class in javax.lang.model.type"><code>MirroredTypeException</code></a></li>
-<li><a href="../type/MirroredTypesException.html" title="class in javax.lang.model.type"><code>MirroredTypesException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/EnumConstantNotPresentException.html" title="java.lang 包中的类"><code>EnumConstantNotPresentException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/annotation/AnnotationTypeMismatchException.html" title="java.lang.annotation 包中的类"><code>AnnotationTypeMismatchException</code></a></li>
+<li><a href="../../../../../java.base/java/lang/annotation/IncompleteAnnotationException.html" title="java.lang.annotation 包中的类"><code>IncompleteAnnotationException</code></a></li>
+<li><a href="../type/MirroredTypeException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypeException</code></a></li>
+<li><a href="../type/MirroredTypesException.html" title="javax.lang.model.type 包中的类"><code>MirroredTypesException</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -668,17 +668,17 @@ declaration annotations.</div>
 <section class="detail" id="accept(javax.lang.model.element.ElementVisitor,P)">
 <h3 id="accept(javax.lang.model.element.ElementVisitor,java.lang.Object)">accept</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;R,<wbr>P&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">accept</span><wbr><span class="parameters">(<a href="ElementVisitor.html" title="interface in javax.lang.model.element">ElementVisitor</a>&lt;R,<wbr>P&gt;&nbsp;v,
+<div class="member-signature"><span class="type-parameters">&lt;R,<wbr>P&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">accept</span><wbr><span class="parameters">(<a href="ElementVisitor.html" title="javax.lang.model.element 包中的接口">ElementVisitor</a>&lt;R,<wbr>P&gt;&nbsp;v,
  P&nbsp;p)</span></div>
 <div class="block">Applies a visitor to this element.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="accept(javax.lang.model.element.ElementVisitor,P)-type-param-R"><code>R</code> - the return type of the visitor's methods</span></dd>
 <dd><span id="accept(javax.lang.model.element.ElementVisitor,P)-type-param-P"><code>P</code> - the type of the additional parameter to the visitor's methods</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>v</code> - the visitor operating on this element</dd>
 <dd><code>p</code> - additional parameter to the visitor</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a visitor-specified result</dd>
 </dl>
 </div>

@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.util.stream</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#StreamOps" tabindex="0">Stream operations and pipelines</a>
 <ol class="toc-list">
@@ -80,13 +80,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#StreamSources" tabindex="0">Low-level stream construction</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.util.stream" class="title">Package java.util.stream</h1>
+<h1 title="包 java.util.stream" class="title">包 java.util.stream</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -108,8 +108,8 @@ example of a <a href="package-summary.html#Reduction">reduction</a>
 operation.)
 
 <p>The key abstraction introduced in this package is <em>stream</em>.  The
-classes <a href="Stream.html" title="interface in java.util.stream"><code>Stream</code></a>, <a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a>,
-<a href="LongStream.html" title="interface in java.util.stream"><code>LongStream</code></a>, and <a href="DoubleStream.html" title="interface in java.util.stream"><code>DoubleStream</code></a>
+classes <a href="Stream.html" title="java.util.stream 包中的接口"><code>Stream</code></a>, <a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a>,
+<a href="LongStream.html" title="java.util.stream 包中的接口"><code>LongStream</code></a>, and <a href="DoubleStream.html" title="java.util.stream 包中的接口"><code>DoubleStream</code></a>
 are streams over objects and the primitive <code>int</code>, <code>long</code>, and
 <code>double</code> types.  Streams differ from collections in several ways:
 
@@ -135,14 +135,14 @@ are streams over objects and the primitive <code>int</code>, <code>long</code>, 
     <code>findFirst()</code> can allow computations on infinite streams to
     complete in finite time.</li>
     <li>Consumable. The elements of a stream are only visited once during
-    the life of a stream. Like an <a href="../Iterator.html" title="interface in java.util"><code>Iterator</code></a>, a new stream
+    the life of a stream. Like an <a href="../Iterator.html" title="java.util 包中的接口"><code>Iterator</code></a>, a new stream
     must be generated to revisit the same elements of the source.
     </li>
 </ul>
 
 Streams can be obtained in a number of ways. Some examples include:
 <ul>
-    <li>From a <a href="../Collection.html" title="interface in java.util"><code>Collection</code></a> via the <code>stream()</code> and
+    <li>From a <a href="../Collection.html" title="java.util 包中的接口"><code>Collection</code></a> via the <code>stream()</code> and
     <code>parallelStream()</code> methods;</li>
     <li>From an array via <a href="../Arrays.html#stream(T%5B%5D)"><code>Arrays.stream(Object[])</code></a>;</li>
     <li>From static factory methods on the stream classes, such as
@@ -150,7 +150,7 @@ Streams can be obtained in a number of ways. Some examples include:
     <a href="IntStream.html#range(int,int)"><code>IntStream.range(int, int)</code></a>
     or <a href="Stream.html#iterate(T,java.util.function.UnaryOperator)"><code>Stream.iterate(Object, UnaryOperator)</code></a>;</li>
     <li>The lines of a file can be obtained from <a href="../../io/BufferedReader.html#lines()"><code>BufferedReader.lines()</code></a>;</li>
-    <li>Streams of file paths can be obtained from methods in <a href="../../nio/file/Files.html" title="class in java.nio.file"><code>Files</code></a>;</li>
+    <li>Streams of file paths can be obtained from methods in <a href="../../nio/file/Files.html" title="java.nio.file 包中的类"><code>Files</code></a>;</li>
     <li>Streams of random numbers can be obtained from <a href="../Random.html#ints()"><code>Random.ints()</code></a>;</li>
     <li>Numerous other stream-bearing methods in the JDK, including
     <a href="../BitSet.html#stream()"><code>BitSet.stream()</code></a>,
@@ -269,7 +269,7 @@ behavior, which are often lambda expressions.  To preserve correct behavior,
 these <em>behavioral parameters</em> must be <em>non-interfering</em>, and in
 most cases must be <em>stateless</em>.  Such parameters are always instances
 of a <a href="../function/package-summary.html">functional interface</a> such
-as <a href="../function/Function.html" title="interface in java.util.function"><code>Function</code></a>, and are often lambda expressions or
+as <a href="../function/Function.html" title="java.util.function 包中的接口"><code>Function</code></a>, and are often lambda expressions or
 method references.
 
 <h3><a id="NonInterference">Non-interference</a></h3>
@@ -563,7 +563,7 @@ single long string, we <em>could</em> achieve this with ordinary reduction:
 we might not be happy about the performance!  Such an implementation would do
 a great deal of string copying, and the run time would be <em>O(n^2)</em> in
 the number of characters.  A more performant approach would be to accumulate
-the results into a <a href="../../lang/StringBuilder.html" title="class in java.lang"><code>StringBuilder</code></a>, which is a mutable
+the results into a <a href="../../lang/StringBuilder.html" title="java.lang 包中的类"><code>StringBuilder</code></a>, which is a mutable
 container for accumulating strings.  We can use the same technique to
 parallelize mutable reduction as we do with ordinary reduction.
 
@@ -609,7 +609,7 @@ to copy the strings from one container into the other.
 
 <p>The three aspects of <code>collect</code> -- supplier, accumulator, and
 combiner -- are tightly coupled.  We can use the abstraction of a
-<a href="Collector.html" title="interface in java.util.stream"><code>Collector</code></a> to capture all three aspects.  The
+<a href="Collector.html" title="java.util.stream 包中的接口"><code>Collector</code></a> to capture all three aspects.  The
 above example for collecting strings into a <code>List</code> can be rewritten
 using a standard <code>Collector</code> as:
 <pre><code>    List&lt;String&gt; strings = stream.map(Object::toString)
@@ -617,7 +617,7 @@ using a standard <code>Collector</code> as:
 </code></pre>
 
 <p>Packaging mutable reductions into a Collector has another advantage:
-composability.  The class <a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a> contains a
+composability.  The class <a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a> contains a
 number of predefined factories for collectors, including combinators
 that transform one collector into another.  For example, suppose we have a
 collector that computes the sum of the salaries of a stream of
@@ -667,15 +667,15 @@ order.
 
 <h3><a id="Extensibility">Extensibility</a></h3>
 
-<p>Implementing <a href="Collector.html" title="interface in java.util.stream"><code>Collector</code></a>;
+<p>Implementing <a href="Collector.html" title="java.util.stream 包中的接口"><code>Collector</code></a>;
 using the factory method <code>java.util.stream.Collector.of(...)</code>; or
-using the predefined collectors in <a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a> allows
+using the predefined collectors in <a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a> allows
 for user-defined, reusable, <em>terminal</em> operations.
 
-<p>Implementing <a href="Gatherer.html" title="interface in java.util.stream"><code>Gatherer</code></a>; using the factory
+<p>Implementing <a href="Gatherer.html" title="java.util.stream 包中的接口"><code>Gatherer</code></a>; using the factory
 methods <code>java.util.stream.Gatherer.of(...)</code> and
 <code>java.util.stream.Gatherer.ofSequential(...)</code>;
-or using the predefined gatherers in <a href="Gatherers.html" title="class in java.util.stream"><code>Gatherers</code></a>
+or using the predefined gatherers in <a href="Gatherers.html" title="java.util.stream 包中的类"><code>Gatherers</code></a>
 allows for user-defined, reusable, <em>intermediate</em> operations.
 
 <h3><a id="ConcurrentReduction">Reduction, concurrency, and ordering</a></h3>
@@ -692,14 +692,14 @@ key) can be expensive for some <code>Map</code> implementations.
 
 <p>Suppose, however, that the result container used in this reduction
 was a concurrently modifiable collection -- such as a
-<a href="../concurrent/ConcurrentHashMap.html" title="class in java.util.concurrent"><code>ConcurrentHashMap</code></a>. In that case, the parallel
+<a href="../concurrent/ConcurrentHashMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentHashMap</code></a>. In that case, the parallel
 invocations of the accumulator could actually deposit their results
 concurrently into the same shared result container, eliminating the need for
 the combiner to merge distinct result containers. This potentially provides
 a boost to the parallel execution performance. We call this a
 <em>concurrent</em> reduction.
 
-<p>A <a href="Collector.html" title="interface in java.util.stream"><code>Collector</code></a> that supports concurrent reduction is
+<p>A <a href="Collector.html" title="java.util.stream 包中的接口"><code>Collector</code></a> that supports concurrent reduction is
 marked with the <a href="Collector.Characteristics.html#CONCURRENT"><code>Collector.Characteristics.CONCURRENT</code></a>
 characteristic.  However, a concurrent collection also has a downside.  If
 multiple threads are depositing results concurrently into a shared container,
@@ -753,10 +753,10 @@ So far, all the stream examples have used methods like
 <a href="../Collection.html#stream()"><code>Collection.stream()</code></a> or <a href="../Arrays.html#stream(T%5B%5D)"><code>Arrays.stream(Object[])</code></a>
 to obtain a stream.  How are those stream-bearing methods implemented?
 
-<p>The class <a href="StreamSupport.html" title="class in java.util.stream"><code>StreamSupport</code></a> has a number of
+<p>The class <a href="StreamSupport.html" title="java.util.stream 包中的类"><code>StreamSupport</code></a> has a number of
 low-level methods for creating a stream, all using some form of a
-<a href="../Spliterator.html" title="interface in java.util"><code>Spliterator</code></a>. A spliterator is the parallel analogue of an
-<a href="../Iterator.html" title="interface in java.util"><code>Iterator</code></a>; it describes a (possibly infinite) collection of
+<a href="../Spliterator.html" title="java.util 包中的接口"><code>Spliterator</code></a>. A spliterator is the parallel analogue of an
+<a href="../Iterator.html" title="java.util 包中的接口"><code>Iterator</code></a>; it describes a (possibly infinite) collection of
 elements, with support for sequentially advancing, bulk traversal, and
 splitting off some portion of the input into another spliterator which can
 be processed in parallel.  At the lowest level, all streams are driven by a
@@ -802,7 +802,7 @@ the required criteria for non-interference and statelessness).  See
 <a href="package-summary.html#NonInterference">Non-Interference</a>
 for more details.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </section>
@@ -811,10 +811,10 @@ for more details.</div>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.util</a></div>
 <div class="col-last even-row-color">
 <div class="block">Contains the collections framework, some internationalization support classes,
@@ -827,114 +827,114 @@ several miscellaneous utility classes.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BaseStream.html" title="interface in java.util.stream">BaseStream</a>&lt;T, S extends <a href="BaseStream.html" title="interface in java.util.stream">BaseStream</a>&lt;T,<wbr>S&gt;&gt;</div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BaseStream.html" title="java.util.stream 包中的接口">BaseStream</a>&lt;T, S extends <a href="BaseStream.html" title="java.util.stream 包中的接口">BaseStream</a>&lt;T,<wbr>S&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Base interface for streams, which are sequences of elements supporting
 sequential and parallel aggregate operations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Collector.html" title="interface in java.util.stream">Collector</a>&lt;T,<wbr>A,<wbr>R&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Collector.html" title="java.util.stream 包中的接口">Collector</a>&lt;T,<wbr>A,<wbr>R&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A <a href="package-summary.html#Reduction">mutable reduction operation</a> that
 accumulates input elements into a mutable result container, optionally transforming
 the accumulated result into a final representation after all input elements
 have been processed.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Collector.Characteristics.html" title="enum class in java.util.stream">Collector.Characteristics</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Collector.Characteristics.html" title="java.util.stream 包中的枚举类">Collector.Characteristics</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Characteristics indicating properties of a <code>Collector</code>, which can
 be used to optimize reduction implementations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Collectors.html" title="class in java.util.stream">Collectors</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Collectors.html" title="java.util.stream 包中的类">Collectors</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Implementations of <a href="Collector.html" title="interface in java.util.stream"><code>Collector</code></a> that implement various useful reduction
+<div class="block">Implementations of <a href="Collector.html" title="java.util.stream 包中的接口"><code>Collector</code></a> that implement various useful reduction
 operations, such as accumulating elements into collections, summarizing
 elements according to various criteria, etc.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A sequence of primitive double-valued elements supporting sequential and parallel
 aggregate operations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DoubleStream.Builder.html" title="interface in java.util.stream">DoubleStream.Builder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DoubleStream.Builder.html" title="java.util.stream 包中的接口">DoubleStream.Builder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A mutable builder for a <code>DoubleStream</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DoubleStream.DoubleMapMultiConsumer.html" title="interface in java.util.stream">DoubleStream.DoubleMapMultiConsumer</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DoubleStream.DoubleMapMultiConsumer.html" title="java.util.stream 包中的接口">DoubleStream.DoubleMapMultiConsumer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Represents an operation that accepts a <code>double</code>-valued argument
 and a DoubleConsumer, and returns no result.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Gatherer.html" title="interface in java.util.stream">Gatherer</a>&lt;T,<wbr>A,<wbr>R&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Gatherer.html" title="java.util.stream 包中的接口">Gatherer</a>&lt;T,<wbr>A,<wbr>R&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An intermediate operation that transforms a stream of input elements into a
 stream of output elements, optionally applying a final action when the end of
 the upstream is reached.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Gatherer.Downstream.html" title="interface in java.util.stream">Gatherer.Downstream</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Gatherer.Downstream.html" title="java.util.stream 包中的接口">Gatherer.Downstream</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A Downstream object is the next stage in a pipeline of operations,
 to which elements can be sent.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Gatherer.Integrator.html" title="interface in java.util.stream">Gatherer.Integrator</a>&lt;A,<wbr>T,<wbr>R&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Gatherer.Integrator.html" title="java.util.stream 包中的接口">Gatherer.Integrator</a>&lt;A,<wbr>T,<wbr>R&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An Integrator receives elements and processes them,
 optionally using the supplied state, and optionally sends incremental
 results downstream.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Gatherer.Integrator.Greedy.html" title="interface in java.util.stream">Gatherer.Integrator.Greedy</a>&lt;A,<wbr>T,<wbr>R&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Gatherer.Integrator.Greedy.html" title="java.util.stream 包中的接口">Gatherer.Integrator.Greedy</a>&lt;A,<wbr>T,<wbr>R&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Greedy Integrators consume all their input, and may only relay that
 the downstream does not want more elements.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Gatherers.html" title="class in java.util.stream">Gatherers</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Gatherers.html" title="java.util.stream 包中的类">Gatherers</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Implementations of <a href="Gatherer.html" title="interface in java.util.stream"><code>Gatherer</code></a> that provide useful intermediate
+<div class="block">Implementations of <a href="Gatherer.html" title="java.util.stream 包中的接口"><code>Gatherer</code></a> that provide useful intermediate
 operations, such as windowing functions, folding functions,
 transforming elements concurrently, etc.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A sequence of primitive int-valued elements supporting sequential and parallel
 aggregate operations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="IntStream.Builder.html" title="interface in java.util.stream">IntStream.Builder</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="IntStream.Builder.html" title="java.util.stream 包中的接口">IntStream.Builder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A mutable builder for an <code>IntStream</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IntStream.IntMapMultiConsumer.html" title="interface in java.util.stream">IntStream.IntMapMultiConsumer</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IntStream.IntMapMultiConsumer.html" title="java.util.stream 包中的接口">IntStream.IntMapMultiConsumer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Represents an operation that accepts an <code>int</code>-valued argument
 and an IntConsumer, and returns no result.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A sequence of primitive long-valued elements supporting sequential and parallel
 aggregate operations.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LongStream.Builder.html" title="interface in java.util.stream">LongStream.Builder</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LongStream.Builder.html" title="java.util.stream 包中的接口">LongStream.Builder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A mutable builder for a <code>LongStream</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongStream.LongMapMultiConsumer.html" title="interface in java.util.stream">LongStream.LongMapMultiConsumer</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongStream.LongMapMultiConsumer.html" title="java.util.stream 包中的接口">LongStream.LongMapMultiConsumer</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Represents an operation that accepts a <code>long</code>-valued argument
 and a LongConsumer, and returns no result.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A sequence of elements supporting sequential and parallel aggregate
 operations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Stream.Builder.html" title="interface in java.util.stream">Stream.Builder</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Stream.Builder.html" title="java.util.stream 包中的接口">Stream.Builder</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A mutable builder for a <code>Stream</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StreamSupport.html" title="class in java.util.stream">StreamSupport</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StreamSupport.html" title="java.util.stream 包中的类">StreamSupport</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Low-level utility methods for creating and manipulating streams.</div>
 </div>

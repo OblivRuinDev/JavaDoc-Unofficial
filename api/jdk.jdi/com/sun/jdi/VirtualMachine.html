@@ -102,7 +102,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.jdi</a></li>
 <li><a href="VirtualMachine.html" class="current-selection">VirtualMachine</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -110,12 +110,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#TRACE_NONE" tabindex="0">TRACE_NONE</a></li>
 <li><a href="#TRACE_SENDS" tabindex="0">TRACE_SENDS</a></li>
@@ -126,7 +126,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#TRACE_ALL" tabindex="0">TRACE_ALL</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#allModules()" tabindex="0">allModules()</a></li>
 <li><a href="#classesByName(java.lang.String)" tabindex="0">classesByName(String)</a></li>
@@ -189,23 +189,23 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface VirtualMachine" class="title">Interface VirtualMachine</h1>
+<h1 title="接口 VirtualMachine" class="title">接口 VirtualMachine</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="Mirror.html" title="interface in com.sun.jdi">Mirror</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="Mirror.html" title="com.sun.jdi 包中的接口">Mirror</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="PathSearchingVirtualMachine.html" title="interface in com.sun.jdi">PathSearchingVirtualMachine</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="PathSearchingVirtualMachine.html" title="com.sun.jdi 包中的接口">PathSearchingVirtualMachine</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">VirtualMachine</span><span class="extends-implements">
-extends <a href="Mirror.html" title="interface in com.sun.jdi">Mirror</a></span></div>
+extends <a href="Mirror.html" title="com.sun.jdi 包中的接口">Mirror</a></span></div>
 <div class="block">A virtual machine targeted for debugging.
-More precisely, a <a href="Mirror.html" title="interface in com.sun.jdi"><code>mirror</code></a> representing the
+More precisely, a <a href="Mirror.html" title="com.sun.jdi 包中的接口"><code>mirror</code></a> representing the
 composite state of the target VM.
 All other mirrors are associated with an instance of this
 interface.  Access to all other mirrors is achieved
@@ -215,28 +215,28 @@ Access to global VM properties and control of VM execution
 are supported directly by this interface.
 <P>
 Instances of this interface are created by instances of
-<a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a>. For example,
-an <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a>
+<a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a>. For example,
+an <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a>
 attaches to a target VM and returns its virtual machine mirror.
 A Connector will typically create a VirtualMachine by invoking
 the VirtualMachineManager's <a href="VirtualMachineManager.html#createVirtualMachine(com.sun.jdi.connect.spi.Connection)"><code>VirtualMachineManager.createVirtualMachine(Connection)</code></a>
 createVirtualMachine(Connection) method.
 <p>
 Note that a target VM launched by a launching connector is not
-guaranteed to be stable until after the <a href="event/VMStartEvent.html" title="interface in com.sun.jdi.event"><code>VMStartEvent</code></a> has been
+guaranteed to be stable until after the <a href="event/VMStartEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMStartEvent</code></a> has been
 received.
 <p>
 Any method on <code>VirtualMachine</code> which
 takes <code>VirtualMachine</code> as an parameter may throw
-<a href="VMDisconnectedException.html" title="class in com.sun.jdi"><code>VMDisconnectedException</code></a> if the target VM is
-disconnected and the <a href="event/VMDisconnectEvent.html" title="interface in com.sun.jdi.event"><code>VMDisconnectEvent</code></a> has been or is
-available to be read from the <a href="event/EventQueue.html" title="interface in com.sun.jdi.event"><code>EventQueue</code></a>.
+<a href="VMDisconnectedException.html" title="com.sun.jdi 包中的类"><code>VMDisconnectedException</code></a> if the target VM is
+disconnected and the <a href="event/VMDisconnectEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMDisconnectEvent</code></a> has been or is
+available to be read from the <a href="event/EventQueue.html" title="com.sun.jdi.event 包中的接口"><code>EventQueue</code></a>.
 <p>
 Any method on <code>VirtualMachine</code> which
 takes <code>VirtualMachine</code> as an parameter may throw
-<a href="VMOutOfMemoryException.html" title="class in com.sun.jdi"><code>VMOutOfMemoryException</code></a> if the target VM has run out of memory.</div>
+<a href="VMOutOfMemoryException.html" title="com.sun.jdi 包中的类"><code>VMOutOfMemoryException</code></a> if the target VM has run out of memory.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
 </dl>
 </div>
@@ -246,12 +246,12 @@ takes <code>VirtualMachine</code> as an parameter may throw
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#TRACE_ALL" class="member-name-link">TRACE_ALL</a></code></div>
 <div class="col-last even-row-color">
@@ -293,25 +293,25 @@ takes <code>VirtualMachine</code> as an parameter may throw
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allClasses()" class="member-name-link">allClasses</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns all <a href="ReferenceType.html" title="interface in com.sun.jdi">loaded types</a> in the target VM.</div>
+<div class="block">Returns all <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">loaded types</a> in the target VM.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="ModuleReference.html" title="interface in com.sun.jdi">ModuleReference</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="ModuleReference.html" title="com.sun.jdi 包中的接口">ModuleReference</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#allModules()" class="member-name-link">allModules</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns all modules.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="ThreadReference.html" title="interface in com.sun.jdi">ThreadReference</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="ThreadReference.html" title="com.sun.jdi 包中的接口">ThreadReference</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allThreads()" class="member-name-link">allThreads</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a list of the live threads in the target VM.</div>
@@ -369,7 +369,7 @@ instance counts, and referring objects.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Determines if the target VM supports the inclusion of return values
 in
-<a href="event/MethodExitEvent.html" title="interface in com.sun.jdi.event"><code>MethodExitEvent</code></a>s.</div>
+<a href="event/MethodExitEvent.html" title="com.sun.jdi.event 包中的接口"><code>MethodExitEvent</code></a>s.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#canGetModuleInfo()" class="member-name-link">canGetModuleInfo</a>()</code></div>
@@ -422,13 +422,13 @@ of class redefinition.</div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canRequestMonitorEvents()" class="member-name-link">canRequestMonitorEvents</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Determines if the target VM supports the creation of
-<a href="request/MonitorContendedEnterRequest.html" title="interface in com.sun.jdi.request"><code>MonitorContendedEnterRequest</code></a>s.</div>
+<a href="request/MonitorContendedEnterRequest.html" title="com.sun.jdi.request 包中的接口"><code>MonitorContendedEnterRequest</code></a>s.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#canRequestVMDeathEvent()" class="member-name-link">canRequestVMDeathEvent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Determines if the target VM supports the creation of
-<a href="request/VMDeathRequest.html" title="interface in com.sun.jdi.request"><code>VMDeathRequest</code></a>s.</div>
+<a href="request/VMDeathRequest.html" title="com.sun.jdi.request 包中的接口"><code>VMDeathRequest</code></a>s.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3 method-summary-table-tab6"><code><a href="#canUnrestrictedlyRedefineClasses()" class="member-name-link">canUnrestrictedlyRedefineClasses</a>()</code></div>
@@ -461,13 +461,13 @@ for field access.</div>
 <div class="block">Determines if the target VM supports watchpoints
 for field modification.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#classesByName(java.lang.String)" class="member-name-link">classesByName</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;className)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#classesByName(java.lang.String)" class="member-name-link">classesByName</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;className)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the loaded reference types that
 match a given name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#description()" class="member-name-link">description</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns text information on the target VM and the
@@ -478,12 +478,12 @@ debugger support that mirrors it.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Invalidates this virtual machine mirror.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="event/EventQueue.html" title="interface in com.sun.jdi.event">EventQueue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="event/EventQueue.html" title="com.sun.jdi.event 包中的接口">EventQueue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#eventQueue()" class="member-name-link">eventQueue</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the event queue for this virtual machine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="request/EventRequestManager.html" title="interface in com.sun.jdi.request">EventRequestManager</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="request/EventRequestManager.html" title="com.sun.jdi.request 包中的接口">EventRequestManager</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#eventRequestManager()" class="member-name-link">eventRequestManager</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the event request manager for this virtual machine.</div>
@@ -493,81 +493,81 @@ debugger support that mirrors it.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Causes the mirrored VM to terminate with the given error code.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDefaultStratum()" class="member-name-link">getDefaultStratum</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Return this VM's default stratum.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#instanceCounts(java.util.List)" class="member-name-link">instanceCounts</a><wbr>(<a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;? extends <a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;&nbsp;refTypes)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#instanceCounts(java.util.List)" class="member-name-link">instanceCounts</a><wbr>(<a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;? extends <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;&nbsp;refTypes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the number of instances of each ReferenceType in the 'refTypes'
 list.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="BooleanValue.html" title="interface in com.sun.jdi">BooleanValue</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="BooleanValue.html" title="com.sun.jdi 包中的接口">BooleanValue</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(boolean)" class="member-name-link">mirrorOf</a><wbr>(boolean&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="BooleanValue.html" title="interface in com.sun.jdi"><code>BooleanValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="BooleanValue.html" title="com.sun.jdi 包中的接口"><code>BooleanValue</code></a> for the given value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ByteValue.html" title="interface in com.sun.jdi">ByteValue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ByteValue.html" title="com.sun.jdi 包中的接口">ByteValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(byte)" class="member-name-link">mirrorOf</a><wbr>(byte&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="ByteValue.html" title="interface in com.sun.jdi"><code>ByteValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="ByteValue.html" title="com.sun.jdi 包中的接口"><code>ByteValue</code></a> for the given value.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="CharValue.html" title="interface in com.sun.jdi">CharValue</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="CharValue.html" title="com.sun.jdi 包中的接口">CharValue</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(char)" class="member-name-link">mirrorOf</a><wbr>(char&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="CharValue.html" title="interface in com.sun.jdi"><code>CharValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="CharValue.html" title="com.sun.jdi 包中的接口"><code>CharValue</code></a> for the given value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleValue.html" title="interface in com.sun.jdi">DoubleValue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleValue.html" title="com.sun.jdi 包中的接口">DoubleValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(double)" class="member-name-link">mirrorOf</a><wbr>(double&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="DoubleValue.html" title="interface in com.sun.jdi"><code>DoubleValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="DoubleValue.html" title="com.sun.jdi 包中的接口"><code>DoubleValue</code></a> for the given value.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="FloatValue.html" title="interface in com.sun.jdi">FloatValue</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="FloatValue.html" title="com.sun.jdi 包中的接口">FloatValue</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(float)" class="member-name-link">mirrorOf</a><wbr>(float&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="FloatValue.html" title="interface in com.sun.jdi"><code>FloatValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="FloatValue.html" title="com.sun.jdi 包中的接口"><code>FloatValue</code></a> for the given value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntegerValue.html" title="interface in com.sun.jdi">IntegerValue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntegerValue.html" title="com.sun.jdi 包中的接口">IntegerValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(int)" class="member-name-link">mirrorOf</a><wbr>(int&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates an <a href="IntegerValue.html" title="interface in com.sun.jdi"><code>IntegerValue</code></a> for the given value.</div>
+<div class="block">Creates an <a href="IntegerValue.html" title="com.sun.jdi 包中的接口"><code>IntegerValue</code></a> for the given value.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongValue.html" title="interface in com.sun.jdi">LongValue</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongValue.html" title="com.sun.jdi 包中的接口">LongValue</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(long)" class="member-name-link">mirrorOf</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="LongValue.html" title="interface in com.sun.jdi"><code>LongValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="LongValue.html" title="com.sun.jdi 包中的接口"><code>LongValue</code></a> for the given value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ShortValue.html" title="interface in com.sun.jdi">ShortValue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ShortValue.html" title="com.sun.jdi 包中的接口">ShortValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(short)" class="member-name-link">mirrorOf</a><wbr>(short&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="ShortValue.html" title="interface in com.sun.jdi"><code>ShortValue</code></a> for the given value.</div>
+<div class="block">Creates a <a href="ShortValue.html" title="com.sun.jdi 包中的接口"><code>ShortValue</code></a> for the given value.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="StringReference.html" title="interface in com.sun.jdi">StringReference</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(java.lang.String)" class="member-name-link">mirrorOf</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;value)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="StringReference.html" title="com.sun.jdi 包中的接口">StringReference</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOf(java.lang.String)" class="member-name-link">mirrorOf</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a string in this virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VoidValue.html" title="interface in com.sun.jdi">VoidValue</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VoidValue.html" title="com.sun.jdi 包中的接口">VoidValue</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mirrorOfVoid()" class="member-name-link">mirrorOfVoid</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Creates a <a href="VoidValue.html" title="interface in com.sun.jdi"><code>VoidValue</code></a>.</div>
+<div class="block">Creates a <a href="VoidValue.html" title="com.sun.jdi 包中的接口"><code>VoidValue</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the name of the target VM as reported by the
 property <code>java.vm.name</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Process.html" title="class in java.lang">Process</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类">Process</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#process()" class="member-name-link">process</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang"><code>Process</code></a> object for this
-virtual machine if launched by a <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a></div>
+<div class="block">Returns the <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类"><code>Process</code></a> object for this
+virtual machine if launched by a <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a></div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#redefineClasses(java.util.Map)" class="member-name-link">redefineClasses</a><wbr>(<a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;? extends <a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>, byte[]&gt;&nbsp;classToBytes)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#redefineClasses(java.util.Map)" class="member-name-link">redefineClasses</a><wbr>(<a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;? extends <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>, byte[]&gt;&nbsp;classToBytes)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">All classes given are redefined according to the
 definitions supplied.</div>
@@ -584,9 +584,9 @@ virtual machine.</div>
 <div class="block">Traces the activities performed by the com.sun.jdi implementation.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setDefaultStratum(java.lang.String)" class="member-name-link">setDefaultStratum</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;stratum)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setDefaultStratum(java.lang.String)" class="member-name-link">setDefaultStratum</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;stratum)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Set this VM's default stratum (see <a href="Location.html" title="interface in com.sun.jdi"><code>Location</code></a> for a
+<div class="block">Set this VM's default stratum (see <a href="Location.html" title="com.sun.jdi 包中的接口"><code>Location</code></a> for a
 discussion of strata).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
@@ -595,12 +595,12 @@ discussion of strata).</div>
 <div class="block">Suspends the execution of the application running in this
 virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="ThreadGroupReference.html" title="interface in com.sun.jdi">ThreadGroupReference</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="ThreadGroupReference.html" title="com.sun.jdi 包中的接口">ThreadGroupReference</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#topLevelThreadGroups()" class="member-name-link">topLevelThreadGroups</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns each thread group which does not have a parent.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#version()" class="member-name-link">version</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the version of the Java Runtime Environment in the target
@@ -610,7 +610,7 @@ VM as reported by the property <code>java.version</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.sun.jdi.Mirror">Methods declared in interface&nbsp;<a href="Mirror.html#method-summary" title="interface in com.sun.jdi">Mirror</a></h3>
+<h3 id="methods-inherited-from-class-com.sun.jdi.Mirror">在接口 <a href="Mirror.html#method-summary" title="com.sun.jdi 包中的接口">Mirror</a> 中声明的方法</h3>
 <code><a href="Mirror.html#toString()" title="toString()">toString</a>, <a href="Mirror.html#virtualMachine()" title="virtualMachine()">virtualMachine</a></code></div>
 </section>
 </li>
@@ -621,7 +621,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="TRACE_NONE">
@@ -630,7 +630,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_NONE</span></div>
 <div class="block">All tracing is disabled.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_NONE">Constant Field Values</a></li>
@@ -647,7 +647,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_SENDS</span></div>
 <div class="block">Tracing enabled for JDWP packets sent to target VM.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_SENDS">Constant Field Values</a></li>
@@ -664,7 +664,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_RECEIVES</span></div>
 <div class="block">Tracing enabled for JDWP packets received from target VM.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_RECEIVES">Constant Field Values</a></li>
@@ -681,7 +681,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_EVENTS</span></div>
 <div class="block">Tracing enabled for internal event handling.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_EVENTS">Constant Field Values</a></li>
@@ -698,7 +698,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_REFTYPES</span></div>
 <div class="block">Tracing enabled for internal management of reference types.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_REFTYPES">Constant Field Values</a></li>
@@ -715,7 +715,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_OBJREFS</span></div>
 <div class="block">Tracing enabled for internal management of object references.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_OBJREFS">Constant Field Values</a></li>
@@ -732,7 +732,7 @@ VM as reported by the property <code>java.version</code>.</div>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">TRACE_ALL</span></div>
 <div class="block">All tracing is enabled.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#com.sun.jdi.VirtualMachine.TRACE_ALL">Constant Field Values</a></li>
@@ -748,31 +748,31 @@ VM as reported by the property <code>java.version</code>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="allModules()">
 <h3>allModules</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="ModuleReference.html" title="interface in com.sun.jdi">ModuleReference</a>&gt;</span>&nbsp;<span class="element-name">allModules</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="ModuleReference.html" title="com.sun.jdi 包中的接口">ModuleReference</a>&gt;</span>&nbsp;<span class="element-name">allModules</span>()</div>
 <div class="block">Returns all modules. For each module in the target
-VM a <a href="ModuleReference.html" title="interface in com.sun.jdi"><code>ModuleReference</code></a> will be placed in the returned list.
+VM a <a href="ModuleReference.html" title="com.sun.jdi 包中的接口"><code>ModuleReference</code></a> will be placed in the returned list.
 <P>
 
 Not all target virtual machines support this operation.
 Use <a href="#canGetModuleInfo()"><code>canGetModuleInfo()</code></a>
 to determine if the operation is supported.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation throws <code>UnsupportedOperationException</code>.</dd>
-<dt>Returns:</dt>
-<dd>a list of <a href="ModuleReference.html" title="interface in com.sun.jdi"><code>ModuleReference</code></a> objects, each mirroring
+<dt>返回:</dt>
+<dd>a list of <a href="ModuleReference.html" title="com.sun.jdi 包中的接口"><code>ModuleReference</code></a> objects, each mirroring
 a module in the target VM.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if
 the target virtual machine does not support this
 operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -782,11 +782,11 @@ operation.</dd>
 <section class="detail" id="classesByName(java.lang.String)">
 <h3>classesByName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;</span>&nbsp;<span class="element-name">classesByName</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;className)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;</span>&nbsp;<span class="element-name">classesByName</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;className)</span></div>
 <div class="block">Returns the loaded reference types that
 match a given name. The name must be fully qualified
 (for example, java.lang.String). The returned list
-will contain a <a href="ReferenceType.html" title="interface in com.sun.jdi"><code>ReferenceType</code></a> for each class
+will contain a <a href="ReferenceType.html" title="com.sun.jdi 包中的接口"><code>ReferenceType</code></a> for each class
 or interface found with the given name. The search
 is confined to loaded classes only; no attempt is made
 to load a class of the given name.
@@ -796,10 +796,10 @@ loaded at least to the point of preparation and
 types (like array) for which preparation is
 not defined.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>className</code> - the class/interface name to search for</dd>
-<dt>Returns:</dt>
-<dd>a list of <a href="ReferenceType.html" title="interface in com.sun.jdi"><code>ReferenceType</code></a> objects, each
+<dt>返回:</dt>
+<dd>a list of <a href="ReferenceType.html" title="com.sun.jdi 包中的接口"><code>ReferenceType</code></a> objects, each
 mirroring a type in the target VM with the given name.</dd>
 </dl>
 </div>
@@ -809,18 +809,18 @@ mirroring a type in the target VM with the given name.</dd>
 <section class="detail" id="allClasses()">
 <h3>allClasses</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;</span>&nbsp;<span class="element-name">allClasses</span>()</div>
-<div class="block">Returns all <a href="ReferenceType.html" title="interface in com.sun.jdi">loaded types</a> in the target VM.
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;</span>&nbsp;<span class="element-name">allClasses</span>()</div>
+<div class="block">Returns all <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">loaded types</a> in the target VM.
 <p>
 The returned list includes all reference types, including
 <a href="../../../../java.base/java/lang/Class.html#isHidden()"><code>hidden classes or interfaces</code></a>, loaded
 at least to the point of preparation and types (like array)
 for which preparation is not defined.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="ReferenceType.html" title="interface in com.sun.jdi"><code>ReferenceType</code></a> objects, each mirroring
+<dt>返回:</dt>
+<dd>a list of <a href="ReferenceType.html" title="com.sun.jdi 包中的接口"><code>ReferenceType</code></a> objects, each mirroring
 a loaded type in the target VM.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../specs/jvmti.html#GetLoadedClasses">
@@ -835,7 +835,7 @@ JVM TI GetLoadedClasses</a> regarding how class and interface creation can be tr
 <section class="detail" id="redefineClasses(java.util.Map)">
 <h3>redefineClasses</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">redefineClasses</span><wbr><span class="parameters">(<a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;? extends <a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>, byte[]&gt;&nbsp;classToBytes)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">redefineClasses</span><wbr><span class="parameters">(<a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;? extends <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>, byte[]&gt;&nbsp;classToBytes)</span></div>
 <div class="block">All classes given are redefined according to the
 definitions supplied.  A method in a redefined class
 is called 'equivalent' (to the old version of the
@@ -887,13 +887,13 @@ Use <a href="#canUnrestrictedlyRedefineClasses()"><code>canUnrestrictedlyRedefin
 to determine if the redefinition can change the schema,
 delete methods, change the class hierarchy, etc.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>classToBytes</code> - A map from <a href="ReferenceType.html" title="interface in com.sun.jdi"><code>ReferenceType</code></a>
+<dt>参数:</dt>
+<dd><code>classToBytes</code> - A map from <a href="ReferenceType.html" title="com.sun.jdi 包中的接口"><code>ReferenceType</code></a>
 to array of byte.
 The bytes represent the new class definition and
 are in Java Virtual Machine class file format.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if
 the target virtual machine does not support this
 operation.
 <UL>
@@ -906,23 +906,23 @@ is false attempting any of the unsupported class file changes described
 in <a href="../../../../../specs/jvmti.html#RedefineClasses">
 JVM TI RedefineClasses</a> will throw this exception.
 </UL></dd>
-<dd><code><a href="../../../../java.base/java/lang/NoClassDefFoundError.html" title="class in java.lang">NoClassDefFoundError</a></code> - if the bytes
+<dd><code><a href="../../../../java.base/java/lang/NoClassDefFoundError.html" title="java.lang 包中的类">NoClassDefFoundError</a></code> - if the bytes
 don't correspond to the reference type (the names
 don't match).</dd>
-<dd><code><a href="../../../../java.base/java/lang/VerifyError.html" title="class in java.lang">VerifyError</a></code> - if a "verifier" detects
+<dd><code><a href="../../../../java.base/java/lang/VerifyError.html" title="java.lang 包中的类">VerifyError</a></code> - if a "verifier" detects
 that a class, though well formed, contains an internal
 inconsistency or security problem.</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassFormatError.html" title="class in java.lang">ClassFormatError</a></code> - if the bytes
+<dd><code><a href="../../../../java.base/java/lang/ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></code> - if the bytes
 do not represent a valid class.</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassCircularityError.html" title="class in java.lang">ClassCircularityError</a></code> - if a
+<dd><code><a href="../../../../java.base/java/lang/ClassCircularityError.html" title="java.lang 包中的类">ClassCircularityError</a></code> - if a
 circularity has been detected while initializing a class.</dd>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedClassVersionError.html" title="class in java.lang">UnsupportedClassVersionError</a></code> - if the
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedClassVersionError.html" title="java.lang 包中的类">UnsupportedClassVersionError</a></code> - if the
 major and minor version numbers in bytes
 are not supported by the VM.</dd>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
-<dt>Since:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="Method.html#isObsolete()"><code>Method.isObsolete()</code></a></li>
@@ -940,7 +940,7 @@ are not supported by the VM.</dd>
 <section class="detail" id="allThreads()">
 <h3>allThreads</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="ThreadReference.html" title="interface in com.sun.jdi">ThreadReference</a>&gt;</span>&nbsp;<span class="element-name">allThreads</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="ThreadReference.html" title="com.sun.jdi 包中的接口">ThreadReference</a>&gt;</span>&nbsp;<span class="element-name">allThreads</span>()</div>
 <div class="block">Returns a list of the live threads in the target VM. Threads that have not yet
 started or threads that have terminated are not included in the list.
 
@@ -954,12 +954,12 @@ with <a href="../../../../../specs/jni/index.html">JNI code</a>.
 <a href=../../../../java.base/java/lang/Thread.html#virtual-threads>virtual threads</a>
 in the target VM. The target VM may not return any references to virtual threads,
 or it may be configured to return a reference to some or all virtual threads.
-Tools that want to track all virtual threads may enable <a href="request/ThreadStartRequest.html" title="interface in com.sun.jdi.request"><code>ThreadStartRequest</code></a>
-and <a href="request/ThreadDeathRequest.html" title="interface in com.sun.jdi.request"><code>ThreadDeathRequest</code></a> to get notifications when virtual threads start
+Tools that want to track all virtual threads may enable <a href="request/ThreadStartRequest.html" title="com.sun.jdi.request 包中的接口"><code>ThreadStartRequest</code></a>
+and <a href="request/ThreadDeathRequest.html" title="com.sun.jdi.request 包中的接口"><code>ThreadDeathRequest</code></a> to get notifications when virtual threads start
 and terminate.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="ThreadReference.html" title="interface in com.sun.jdi"><code>ThreadReference</code></a> objects for the threads in the target VM</dd>
+<dt>返回:</dt>
+<dd>a list of <a href="ThreadReference.html" title="com.sun.jdi 包中的接口"><code>ThreadReference</code></a> objects for the threads in the target VM</dd>
 </dl>
 </div>
 </section>
@@ -977,9 +977,9 @@ counted. Before a thread will run again, it must be resumed
 (through <a href="#resume()"><code>resume()</code></a> or <a href="ThreadReference.html#resume()"><code>ThreadReference.resume()</code></a>)
 the same number of times it has been suspended.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#canBeModified()"><code>canBeModified()</code></a></li>
@@ -998,9 +998,9 @@ the same number of times it has been suspended.</div>
 virtual machine. All threads are resumed as documented in
 <a href="ThreadReference.html#resume()"><code>ThreadReference.resume()</code></a>.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#suspend()"><code>suspend()</code></a></li>
@@ -1015,16 +1015,16 @@ virtual machine. All threads are resumed as documented in
 <section class="detail" id="topLevelThreadGroups()">
 <h3>topLevelThreadGroups</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="ThreadGroupReference.html" title="interface in com.sun.jdi">ThreadGroupReference</a>&gt;</span>&nbsp;<span class="element-name">topLevelThreadGroups</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="ThreadGroupReference.html" title="com.sun.jdi 包中的接口">ThreadGroupReference</a>&gt;</span>&nbsp;<span class="element-name">topLevelThreadGroups</span>()</div>
 <div class="block">Returns each thread group which does not have a parent. For each
-top level thread group a <a href="ThreadGroupReference.html" title="interface in com.sun.jdi"><code>ThreadGroupReference</code></a> is placed in the
+top level thread group a <a href="ThreadGroupReference.html" title="com.sun.jdi 包中的接口"><code>ThreadGroupReference</code></a> is placed in the
 returned list.
 <p>
 This command may be used as the first step in building a tree
 (or trees) of the existing thread groups.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="ThreadGroupReference.html" title="interface in com.sun.jdi"><code>ThreadGroupReference</code></a> objects, one for each
+<dt>返回:</dt>
+<dd>a list of <a href="ThreadGroupReference.html" title="com.sun.jdi 包中的接口"><code>ThreadGroupReference</code></a> objects, one for each
 top level thread group.</dd>
 </dl>
 </div>
@@ -1034,16 +1034,16 @@ top level thread group.</dd>
 <section class="detail" id="eventQueue()">
 <h3>eventQueue</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="event/EventQueue.html" title="interface in com.sun.jdi.event">EventQueue</a></span>&nbsp;<span class="element-name">eventQueue</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="event/EventQueue.html" title="com.sun.jdi.event 包中的接口">EventQueue</a></span>&nbsp;<span class="element-name">eventQueue</span>()</div>
 <div class="block">Returns the event queue for this virtual machine.
-A virtual machine has only one <a href="event/EventQueue.html" title="interface in com.sun.jdi.event"><code>EventQueue</code></a> object, this
+A virtual machine has only one <a href="event/EventQueue.html" title="com.sun.jdi.event 包中的接口"><code>EventQueue</code></a> object, this
 method will return the same instance each time it
 is invoked.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="event/EventQueue.html" title="interface in com.sun.jdi.event"><code>EventQueue</code></a> for this virtual machine.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
+<dt>返回:</dt>
+<dd>the <a href="event/EventQueue.html" title="com.sun.jdi.event 包中的接口"><code>EventQueue</code></a> for this virtual machine.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -1052,18 +1052,18 @@ is invoked.</div>
 <section class="detail" id="eventRequestManager()">
 <h3>eventRequestManager</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="request/EventRequestManager.html" title="interface in com.sun.jdi.request">EventRequestManager</a></span>&nbsp;<span class="element-name">eventRequestManager</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="request/EventRequestManager.html" title="com.sun.jdi.request 包中的接口">EventRequestManager</a></span>&nbsp;<span class="element-name">eventRequestManager</span>()</div>
 <div class="block">Returns the event request manager for this virtual machine.
-The <a href="request/EventRequestManager.html" title="interface in com.sun.jdi.request"><code>EventRequestManager</code></a> controls user settable events
+The <a href="request/EventRequestManager.html" title="com.sun.jdi.request 包中的接口"><code>EventRequestManager</code></a> controls user settable events
 such as breakpoints.
-A virtual machine has only one <a href="request/EventRequestManager.html" title="interface in com.sun.jdi.request"><code>EventRequestManager</code></a> object,
+A virtual machine has only one <a href="request/EventRequestManager.html" title="com.sun.jdi.request 包中的接口"><code>EventRequestManager</code></a> object,
 this method will return the same instance each time it
 is invoked.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="request/EventRequestManager.html" title="interface in com.sun.jdi.request"><code>EventRequestManager</code></a> for this virtual machine.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
+<dt>返回:</dt>
+<dd>the <a href="request/EventRequestManager.html" title="com.sun.jdi.request 包中的接口"><code>EventRequestManager</code></a> for this virtual machine.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -1072,15 +1072,15 @@ is invoked.</div>
 <section class="detail" id="mirrorOf(boolean)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="BooleanValue.html" title="interface in com.sun.jdi">BooleanValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
-<div class="block">Creates a <a href="BooleanValue.html" title="interface in com.sun.jdi"><code>BooleanValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="BooleanValue.html" title="com.sun.jdi 包中的接口">BooleanValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(boolean&nbsp;value)</span></div>
+<div class="block">Creates a <a href="BooleanValue.html" title="com.sun.jdi 包中的接口"><code>BooleanValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a boolean for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="BooleanValue.html" title="interface in com.sun.jdi"><code>BooleanValue</code></a> for the given boolean.</dd>
+<dt>返回:</dt>
+<dd>the <a href="BooleanValue.html" title="com.sun.jdi 包中的接口"><code>BooleanValue</code></a> for the given boolean.</dd>
 </dl>
 </div>
 </section>
@@ -1089,15 +1089,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(byte)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ByteValue.html" title="interface in com.sun.jdi">ByteValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(byte&nbsp;value)</span></div>
-<div class="block">Creates a <a href="ByteValue.html" title="interface in com.sun.jdi"><code>ByteValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="ByteValue.html" title="com.sun.jdi 包中的接口">ByteValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(byte&nbsp;value)</span></div>
+<div class="block">Creates a <a href="ByteValue.html" title="com.sun.jdi 包中的接口"><code>ByteValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a byte for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="ByteValue.html" title="interface in com.sun.jdi"><code>ByteValue</code></a> for the given byte.</dd>
+<dt>返回:</dt>
+<dd>the <a href="ByteValue.html" title="com.sun.jdi 包中的接口"><code>ByteValue</code></a> for the given byte.</dd>
 </dl>
 </div>
 </section>
@@ -1106,15 +1106,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(char)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="CharValue.html" title="interface in com.sun.jdi">CharValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(char&nbsp;value)</span></div>
-<div class="block">Creates a <a href="CharValue.html" title="interface in com.sun.jdi"><code>CharValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="CharValue.html" title="com.sun.jdi 包中的接口">CharValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(char&nbsp;value)</span></div>
+<div class="block">Creates a <a href="CharValue.html" title="com.sun.jdi 包中的接口"><code>CharValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a char for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="CharValue.html" title="interface in com.sun.jdi"><code>CharValue</code></a> for the given char.</dd>
+<dt>返回:</dt>
+<dd>the <a href="CharValue.html" title="com.sun.jdi 包中的接口"><code>CharValue</code></a> for the given char.</dd>
 </dl>
 </div>
 </section>
@@ -1123,15 +1123,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(short)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ShortValue.html" title="interface in com.sun.jdi">ShortValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(short&nbsp;value)</span></div>
-<div class="block">Creates a <a href="ShortValue.html" title="interface in com.sun.jdi"><code>ShortValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="ShortValue.html" title="com.sun.jdi 包中的接口">ShortValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(short&nbsp;value)</span></div>
+<div class="block">Creates a <a href="ShortValue.html" title="com.sun.jdi 包中的接口"><code>ShortValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a short for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="ShortValue.html" title="interface in com.sun.jdi"><code>ShortValue</code></a> for the given short.</dd>
+<dt>返回:</dt>
+<dd>the <a href="ShortValue.html" title="com.sun.jdi 包中的接口"><code>ShortValue</code></a> for the given short.</dd>
 </dl>
 </div>
 </section>
@@ -1140,15 +1140,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(int)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="IntegerValue.html" title="interface in com.sun.jdi">IntegerValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
-<div class="block">Creates an <a href="IntegerValue.html" title="interface in com.sun.jdi"><code>IntegerValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="IntegerValue.html" title="com.sun.jdi 包中的接口">IntegerValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(int&nbsp;value)</span></div>
+<div class="block">Creates an <a href="IntegerValue.html" title="com.sun.jdi 包中的接口"><code>IntegerValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - an int for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="IntegerValue.html" title="interface in com.sun.jdi"><code>IntegerValue</code></a> for the given int.</dd>
+<dt>返回:</dt>
+<dd>the <a href="IntegerValue.html" title="com.sun.jdi 包中的接口"><code>IntegerValue</code></a> for the given int.</dd>
 </dl>
 </div>
 </section>
@@ -1157,15 +1157,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(long)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="LongValue.html" title="interface in com.sun.jdi">LongValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
-<div class="block">Creates a <a href="LongValue.html" title="interface in com.sun.jdi"><code>LongValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="LongValue.html" title="com.sun.jdi 包中的接口">LongValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
+<div class="block">Creates a <a href="LongValue.html" title="com.sun.jdi 包中的接口"><code>LongValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a long for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="LongValue.html" title="interface in com.sun.jdi"><code>LongValue</code></a> for the given long.</dd>
+<dt>返回:</dt>
+<dd>the <a href="LongValue.html" title="com.sun.jdi 包中的接口"><code>LongValue</code></a> for the given long.</dd>
 </dl>
 </div>
 </section>
@@ -1174,15 +1174,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(float)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="FloatValue.html" title="interface in com.sun.jdi">FloatValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
-<div class="block">Creates a <a href="FloatValue.html" title="interface in com.sun.jdi"><code>FloatValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="FloatValue.html" title="com.sun.jdi 包中的接口">FloatValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(float&nbsp;value)</span></div>
+<div class="block">Creates a <a href="FloatValue.html" title="com.sun.jdi 包中的接口"><code>FloatValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a float for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="FloatValue.html" title="interface in com.sun.jdi"><code>FloatValue</code></a> for the given float.</dd>
+<dt>返回:</dt>
+<dd>the <a href="FloatValue.html" title="com.sun.jdi 包中的接口"><code>FloatValue</code></a> for the given float.</dd>
 </dl>
 </div>
 </section>
@@ -1191,15 +1191,15 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(double)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="DoubleValue.html" title="interface in com.sun.jdi">DoubleValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
-<div class="block">Creates a <a href="DoubleValue.html" title="interface in com.sun.jdi"><code>DoubleValue</code></a> for the given value. This value
+<div class="member-signature"><span class="return-type"><a href="DoubleValue.html" title="com.sun.jdi 包中的接口">DoubleValue</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
+<div class="block">Creates a <a href="DoubleValue.html" title="com.sun.jdi 包中的接口"><code>DoubleValue</code></a> for the given value. This value
 can be used for setting and comparing against a value retrieved
 from a variable or field in this virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - a double for which to create the value</dd>
-<dt>Returns:</dt>
-<dd>the <a href="DoubleValue.html" title="interface in com.sun.jdi"><code>DoubleValue</code></a> for the given double.</dd>
+<dt>返回:</dt>
+<dd>the <a href="DoubleValue.html" title="com.sun.jdi 包中的接口"><code>DoubleValue</code></a> for the given double.</dd>
 </dl>
 </div>
 </section>
@@ -1208,19 +1208,19 @@ from a variable or field in this virtual machine.</div>
 <section class="detail" id="mirrorOf(java.lang.String)">
 <h3>mirrorOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="StringReference.html" title="interface in com.sun.jdi">StringReference</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="return-type"><a href="StringReference.html" title="com.sun.jdi 包中的接口">StringReference</a></span>&nbsp;<span class="element-name">mirrorOf</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;value)</span></div>
 <div class="block">Creates a string in this virtual machine.
 The created string can be used for setting and comparing against
 a string value retrieved from a variable or field in this
 virtual machine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>value</code> - the string to be created</dd>
-<dt>Returns:</dt>
-<dd>a <a href="StringReference.html" title="interface in com.sun.jdi"><code>StringReference</code></a> that mirrors the newly created
+<dt>返回:</dt>
+<dd>a <a href="StringReference.html" title="com.sun.jdi 包中的接口"><code>StringReference</code></a> that mirrors the newly created
 string in the target VM.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only
 - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
 </dl>
 </div>
@@ -1230,13 +1230,13 @@ string in the target VM.</dd>
 <section class="detail" id="mirrorOfVoid()">
 <h3>mirrorOfVoid</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="VoidValue.html" title="interface in com.sun.jdi">VoidValue</a></span>&nbsp;<span class="element-name">mirrorOfVoid</span>()</div>
-<div class="block">Creates a <a href="VoidValue.html" title="interface in com.sun.jdi"><code>VoidValue</code></a>.  This value
+<div class="member-signature"><span class="return-type"><a href="VoidValue.html" title="com.sun.jdi 包中的接口">VoidValue</a></span>&nbsp;<span class="element-name">mirrorOfVoid</span>()</div>
+<div class="block">Creates a <a href="VoidValue.html" title="com.sun.jdi 包中的接口"><code>VoidValue</code></a>.  This value
 can be passed to <a href="ThreadReference.html#forceEarlyReturn(com.sun.jdi.Value)"><code>ThreadReference.forceEarlyReturn(Value)</code></a>
 when a void method is to be exited.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="VoidValue.html" title="interface in com.sun.jdi"><code>VoidValue</code></a>.</dd>
+<dt>返回:</dt>
+<dd>the <a href="VoidValue.html" title="com.sun.jdi 包中的接口"><code>VoidValue</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -1245,15 +1245,15 @@ when a void method is to be exited.</div>
 <section class="detail" id="process()">
 <h3>process</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Process.html" title="class in java.lang">Process</a></span>&nbsp;<span class="element-name">process</span>()</div>
-<div class="block">Returns the <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang"><code>Process</code></a> object for this
-virtual machine if launched by a <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类">Process</a></span>&nbsp;<span class="element-name">process</span>()</div>
+<div class="block">Returns the <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类"><code>Process</code></a> object for this
+virtual machine if launched by a <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a></div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang"><code>Process</code></a> object for this virtual
-machine, or null if it was not launched by a <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only
+<dt>返回:</dt>
+<dd>the <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类"><code>Process</code></a> object for this virtual
+machine, or null if it was not launched by a <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only
 - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
 </dl>
 </div>
@@ -1304,11 +1304,11 @@ Threads running in the mirrored VM are abruptly terminated.
 A thread death exception is not thrown and
 finally blocks are not run.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>exitCode</code> - the exit code for the target VM.  On some platforms,
 the exit code might be truncated, for example, to the lower order 8 bits.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类">VMCannotBeModifiedException</a></code> - if the VirtualMachine is read-only - see <a href="#canBeModified()"><code>canBeModified()</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -1321,7 +1321,7 @@ the exit code might be truncated, for example, to the lower order 8 bits.</dd>
 <div class="block">Determines if the target VM supports watchpoints
 for field modification.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1336,7 +1336,7 @@ for field modification.</div>
 <div class="block">Determines if the target VM supports watchpoints
 for field access.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1351,7 +1351,7 @@ for field access.</div>
 <div class="block">Determines if the target VM supports the retrieval
 of a method's bytecodes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1366,7 +1366,7 @@ of a method's bytecodes.</div>
 <div class="block">Determines if the target VM supports the query
 of the synthetic attribute of a method or field.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1381,7 +1381,7 @@ of the synthetic attribute of a method or field.</div>
 <div class="block">Determines if the target VM supports the retrieval
 of the monitors owned by a thread.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1396,7 +1396,7 @@ of the monitors owned by a thread.</div>
 <div class="block">Determines if the target VM supports the retrieval
 of the monitor for which a thread is currently waiting.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1411,7 +1411,7 @@ of the monitor for which a thread is currently waiting.</div>
 <div class="block">Determines if the target VM supports the retrieval
 of the monitor information for an object.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1427,7 +1427,7 @@ of the monitor information for an object.</div>
 events by specific instance object.  For example,
 see <a href="request/BreakpointRequest.html#addInstanceFilter(com.sun.jdi.ObjectReference)"><code>BreakpointRequest.addInstanceFilter(ObjectReference)</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
 </dl>
@@ -1442,12 +1442,12 @@ see <a href="request/BreakpointRequest.html#addInstanceFilter(com.sun.jdi.Object
 <div class="block">Determines if the target VM supports any level
 of class redefinition.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#redefineClasses(java.util.Map)"><code>redefineClasses(Map)</code></a></li>
@@ -1461,7 +1461,7 @@ of class redefinition.</div>
 <section class="detail" id="canAddMethod()">
 <h3>canAddMethod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="../../../../java.base/java/lang/Deprecated.html#since()">since</a>="15")
+<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="../../../../java.base/java/lang/Deprecated.html#since()">since</a>="15")
 </span><span class="return-type">boolean</span>&nbsp;<span class="element-name">canAddMethod</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">A JVM TI based JDWP back-end will never set this capability to true.</div>
@@ -1469,12 +1469,12 @@ of class redefinition.</div>
 <div class="block">Determines if the target VM supports the addition
 of methods when performing class redefinition.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#redefineClasses(java.util.Map)"><code>redefineClasses(Map)</code></a></li>
@@ -1488,7 +1488,7 @@ of methods when performing class redefinition.</div>
 <section class="detail" id="canUnrestrictedlyRedefineClasses()">
 <h3>canUnrestrictedlyRedefineClasses</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="../../../../java.base/java/lang/Deprecated.html#since()">since</a>="15")
+<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="../../../../java.base/java/lang/Deprecated.html#since()">since</a>="15")
 </span><span class="return-type">boolean</span>&nbsp;<span class="element-name">canUnrestrictedlyRedefineClasses</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">A JVM TI based JDWP back-end will never set this capability to true.</div>
@@ -1497,12 +1497,12 @@ of methods when performing class redefinition.</div>
 changes when performing class redefinition that are
 otherwise restricted by <a href="#redefineClasses(java.util.Map)"><code>redefineClasses(Map)</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#redefineClasses(java.util.Map)"><code>redefineClasses(Map)</code></a></li>
@@ -1520,12 +1520,12 @@ otherwise restricted by <a href="#redefineClasses(java.util.Map)"><code>redefine
 <div class="block">Determines if the target VM supports popping
 frames of a threads stack.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ThreadReference.html#popFrames(com.sun.jdi.StackFrame)"><code>ThreadReference.popFrames(StackFrame)</code></a></li>
@@ -1543,12 +1543,12 @@ frames of a threads stack.</div>
 <div class="block">Determines if the target VM supports getting
 the source debug extension.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ReferenceType.html#sourceDebugExtension()"><code>ReferenceType.sourceDebugExtension()</code></a></li>
@@ -1564,14 +1564,14 @@ the source debug extension.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">canRequestVMDeathEvent</span>()</div>
 <div class="block">Determines if the target VM supports the creation of
-<a href="request/VMDeathRequest.html" title="interface in com.sun.jdi.request"><code>VMDeathRequest</code></a>s.</div>
+<a href="request/VMDeathRequest.html" title="com.sun.jdi.request 包中的接口"><code>VMDeathRequest</code></a>s.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="request/EventRequestManager.html#createVMDeathRequest()"><code>EventRequestManager.createVMDeathRequest()</code></a></li>
@@ -1588,14 +1588,14 @@ the source debug extension.</div>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">canGetMethodReturnValues</span>()</div>
 <div class="block">Determines if the target VM supports the inclusion of return values
 in
-<a href="event/MethodExitEvent.html" title="interface in com.sun.jdi.event"><code>MethodExitEvent</code></a>s.</div>
+<a href="event/MethodExitEvent.html" title="com.sun.jdi.event 包中的接口"><code>MethodExitEvent</code></a>s.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="request/EventRequestManager.html#createMethodExitRequest()"><code>EventRequestManager.createMethodExitRequest()</code></a></li>
@@ -1613,12 +1613,12 @@ in
 <div class="block">Determines if the target VM supports the accessing of class instances,
 instance counts, and referring objects.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#instanceCounts(java.util.List)"><code>instanceCounts(List)</code></a></li>
@@ -1638,12 +1638,12 @@ instance counts, and referring objects.</div>
 <div class="block">Determines if the target VM supports the filtering of
 class prepare events by source name.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="request/ClassPrepareRequest.html#addSourceNameFilter(java.lang.String)"><code>ClassPrepareRequest.addSourceNameFilter(String)</code></a></li>
@@ -1661,12 +1661,12 @@ class prepare events by source name.</div>
 <div class="block">Determines if the target VM supports the forcing of a method to
 return early.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ThreadReference.html#forceEarlyReturn(com.sun.jdi.Value)"><code>ThreadReference.forceEarlyReturn(Value)</code></a></li>
@@ -1683,12 +1683,12 @@ return early.</div>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">canBeModified</span>()</div>
 <div class="block">Determines if the target VM is a read-only VM.  If a method which
 would modify the state of the VM is called on a read-only VM,
-then <a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi"><code>VMCannotBeModifiedException</code></a> is thrown.</div>
+then <a href="VMCannotBeModifiedException.html" title="com.sun.jdi 包中的类"><code>VMCannotBeModifiedException</code></a> is thrown.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -1700,17 +1700,17 @@ then <a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi"><co
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">canRequestMonitorEvents</span>()</div>
 <div class="block">Determines if the target VM supports the creation of
-<a href="request/MonitorContendedEnterRequest.html" title="interface in com.sun.jdi.request"><code>MonitorContendedEnterRequest</code></a>s.
-<a href="request/MonitorContendedEnteredRequest.html" title="interface in com.sun.jdi.request"><code>MonitorContendedEnteredRequest</code></a>s.
-<a href="request/MonitorWaitRequest.html" title="interface in com.sun.jdi.request"><code>MonitorWaitRequest</code></a>s.
-<a href="request/MonitorWaitedRequest.html" title="interface in com.sun.jdi.request"><code>MonitorWaitedRequest</code></a>s.</div>
+<a href="request/MonitorContendedEnterRequest.html" title="com.sun.jdi.request 包中的接口"><code>MonitorContendedEnterRequest</code></a>s.
+<a href="request/MonitorContendedEnteredRequest.html" title="com.sun.jdi.request 包中的接口"><code>MonitorContendedEnteredRequest</code></a>s.
+<a href="request/MonitorWaitRequest.html" title="com.sun.jdi.request 包中的接口"><code>MonitorWaitRequest</code></a>s.
+<a href="request/MonitorWaitedRequest.html" title="com.sun.jdi.request 包中的接口"><code>MonitorWaitedRequest</code></a>s.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="request/EventRequestManager.html#createMonitorContendedEnterRequest()"><code>EventRequestManager.createMonitorContendedEnterRequest()</code></a></li>
@@ -1731,12 +1731,12 @@ then <a href="VMCannotBeModifiedException.html" title="class in com.sun.jdi"><co
 <div class="block">Determines if the target VM supports getting which
 frame has acquired a monitor.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ThreadReference.html#ownedMonitorsAndFrames()"><code>ThreadReference.ownedMonitorsAndFrames()</code></a></li>
@@ -1754,12 +1754,12 @@ frame has acquired a monitor.</div>
 <div class="block">Determines if the target VM supports reading class file
 major and minor versions.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="ReferenceType.html#majorVersion()"><code>ReferenceType.majorVersion()</code></a></li>
@@ -1778,12 +1778,12 @@ major and minor versions.</div>
 <div class="block">Determines if the target VM supports getting constant pool
 information of a class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported,
 <code>false</code> otherwise.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ReferenceType.html#constantPoolCount()"><code>ReferenceType.constantPoolCount()</code></a></li>
@@ -1801,18 +1801,18 @@ information of a class.</div>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">canGetModuleInfo</span>()</div>
 <div class="block">Determines if the target VM supports getting information about modules.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation returns <code>false</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the feature is supported, <code>false</code> otherwise</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#allModules()"><code>allModules()</code></a></li>
 <li><a href="ReferenceType.html#module()"><code>ReferenceType.module()</code></a></li>
-<li><a href="ModuleReference.html" title="interface in com.sun.jdi"><code>ModuleReference</code></a></li>
+<li><a href="ModuleReference.html" title="com.sun.jdi 包中的接口"><code>ModuleReference</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1823,8 +1823,8 @@ information of a class.</div>
 <section class="detail" id="setDefaultStratum(java.lang.String)">
 <h3>setDefaultStratum</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setDefaultStratum</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;stratum)</span></div>
-<div class="block">Set this VM's default stratum (see <a href="Location.html" title="interface in com.sun.jdi"><code>Location</code></a> for a
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setDefaultStratum</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;stratum)</span></div>
+<div class="block">Set this VM's default stratum (see <a href="Location.html" title="com.sun.jdi 包中的接口"><code>Location</code></a> for a
 discussion of strata).  Overrides the per-class default set
 in the class file.
 <P>
@@ -1833,13 +1833,13 @@ Affects location queries (such as,
 and the line boundaries used in
 single stepping.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>stratum</code> - the stratum to set as VM default,
 or null to use per-class defaults.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the
 target virtual machine does not support this operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -1849,18 +1849,18 @@ target virtual machine does not support this operation.</dd>
 <section class="detail" id="getDefaultStratum()">
 <h3>getDefaultStratum</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getDefaultStratum</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getDefaultStratum</span>()</div>
 <div class="block">Return this VM's default stratum.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>null</code> (meaning that the per-class
 default - <a href="ReferenceType.html#defaultStratum()"><code>ReferenceType.defaultStratum()</code></a> -
 should be used) unless the default stratum has been
 set with
 <a href="#setDefaultStratum(java.lang.String)"><code>setDefaultStratum(String)</code></a>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setDefaultStratum(java.lang.String)"><code>setDefaultStratum(String)</code></a></li>
@@ -1875,7 +1875,7 @@ set with
 <section class="detail" id="instanceCounts(java.util.List)">
 <h3>instanceCounts</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">long[]</span>&nbsp;<span class="element-name">instanceCounts</span><wbr><span class="parameters">(<a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;? extends <a href="ReferenceType.html" title="interface in com.sun.jdi">ReferenceType</a>&gt;&nbsp;refTypes)</span></div>
+<div class="member-signature"><span class="return-type">long[]</span>&nbsp;<span class="element-name">instanceCounts</span><wbr><span class="parameters">(<a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;? extends <a href="ReferenceType.html" title="com.sun.jdi 包中的接口">ReferenceType</a>&gt;&nbsp;refTypes)</span></div>
 <div class="block">Returns the number of instances of each ReferenceType in the 'refTypes'
 list.
 Only instances that are reachable for the purposes of garbage collection
@@ -1885,10 +1885,10 @@ Not all target virtual machines support this operation.
 Use <a href="#canGetInstanceInfo()"><code>canGetInstanceInfo()</code></a>
 to determine if the operation is supported.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>refTypes</code> - the list of <a href="ReferenceType.html" title="interface in com.sun.jdi"><code>ReferenceType</code></a> objects for which counts
+<dt>参数:</dt>
+<dd><code>refTypes</code> - the list of <a href="ReferenceType.html" title="com.sun.jdi 包中的接口"><code>ReferenceType</code></a> objects for which counts
        are to be obtained.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of <code>long</code> containing one element for each
         element in the 'refTypes' list.  Element i of the array contains
         the number of instances in the target VM of the ReferenceType at
@@ -1896,15 +1896,15 @@ to determine if the operation is supported.</div>
         If the 'refTypes' list is empty, a zero-length array is returned.
         If a ReferenceType in refTypes has been garbage collected, zero
         is returned for its instance count.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if
 the target virtual machine does not support this
 operation - see
 <a href="#canGetInstanceInfo()"><code>canGetInstanceInfo()</code></a></dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the 'refTypes' list is null.</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the 'refTypes' list is null.</dd>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ReferenceType.html#instances(long)"><code>ReferenceType.instances(long)</code></a></li>
@@ -1919,7 +1919,7 @@ operation - see
 <section class="detail" id="description()">
 <h3>description</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">description</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">description</span>()</div>
 <div class="block">Returns text information on the target VM and the
 debugger support that mirrors it. No specific format
 for this information is guaranteed.
@@ -1930,7 +1930,7 @@ on VM and JDI versions is available through
 <a href="#version()"><code>version()</code></a>, <a href="VirtualMachineManager.html#majorInterfaceVersion()"><code>VirtualMachineManager.majorInterfaceVersion()</code></a>,
 and <a href="VirtualMachineManager.html#minorInterfaceVersion()"><code>VirtualMachineManager.minorInterfaceVersion()</code></a></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the description.</dd>
 </dl>
 </div>
@@ -1940,14 +1940,14 @@ and <a href="VirtualMachineManager.html#minorInterfaceVersion()"><code>VirtualMa
 <section class="detail" id="version()">
 <h3>version</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">version</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">version</span>()</div>
 <div class="block">Returns the version of the Java Runtime Environment in the target
 VM as reported by the property <code>java.version</code>.
 For obtaining the JDI interface version, use
 <a href="VirtualMachineManager.html#majorInterfaceVersion()"><code>VirtualMachineManager.majorInterfaceVersion()</code></a>
 and <a href="VirtualMachineManager.html#minorInterfaceVersion()"><code>VirtualMachineManager.minorInterfaceVersion()</code></a></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the target VM version.</dd>
 </dl>
 </div>
@@ -1957,11 +1957,11 @@ and <a href="VirtualMachineManager.html#minorInterfaceVersion()"><code>VirtualMa
 <section class="detail" id="name()">
 <h3>name</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block">Returns the name of the target VM as reported by the
 property <code>java.vm.name</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the target VM name.</dd>
 </dl>
 </div>
@@ -1981,7 +1981,7 @@ this method.
 <p>
 Output is implementation dependent and trace mode may be ignored.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>traceFlags</code> - identifies which kinds of tracing to enable.</dd>
 </dl>
 </div>

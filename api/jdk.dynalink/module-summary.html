@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <ol class="sub-nav-list">
 <li><a href="module-summary.html" class="current-selection">jdk.dynalink</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -54,9 +54,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#example-heading" tabindex="0">Example</a></li>
 <li><a href="#dynalink-and-bytecode-creation-heading" tabindex="0">Dynalink and bytecode creation</a></li>
@@ -67,13 +67,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#cross-language-interoperability-heading" tabindex="0">Cross-language interoperability</a></li>
 </ol>
 </li>
-<li><a href="#packages-summary" tabindex="0">Packages</a></li>
-<li><a href="#services-summary" tabindex="0">Services</a></li>
+<li><a href="#packages-summary" tabindex="0">包</a></li>
+<li><a href="#services-summary" tabindex="0">服务</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Module jdk.dynalink" class="title">Module jdk.dynalink</h1>
+<h1 title="模块 jdk.dynalink" class="title">模块 jdk.dynalink</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -88,8 +88,8 @@ These operations include "read a property",
 useful for implementing programming languages where at least some expressions
 have dynamic types (that is, types that can not be decided statically), and
 the operations on dynamic types are expressed as
-<a href="../java.base/java/lang/invoke/CallSite.html" title="class in java.lang.invoke">call sites</a>. These call sites will be
-linked to appropriate target <a href="../java.base/java/lang/invoke/MethodHandle.html" title="class in java.lang.invoke">method handles</a>
+<a href="../java.base/java/lang/invoke/CallSite.html" title="java.lang.invoke 包中的类">call sites</a>. These call sites will be
+linked to appropriate target <a href="../java.base/java/lang/invoke/MethodHandle.html" title="java.lang.invoke 包中的类">method handles</a>
 at run time based on actual types of the values the expressions evaluated to.
 These can change between invocations, necessitating relinking the call site
 multiple times to accommodate new types; Dynalink handles all that and more.
@@ -154,23 +154,23 @@ class MyLanguageRuntime {
 </pre>
 There are several objects of significance in the above code snippet:
 <ul>
-<li><a href="jdk/dynalink/DynamicLinker.html" title="class in jdk.dynalink"><code>DynamicLinker</code></a> is the main object in Dynalink, it
+<li><a href="jdk/dynalink/DynamicLinker.html" title="jdk.dynalink 包中的类"><code>DynamicLinker</code></a> is the main object in Dynalink, it
 coordinates the linking of call sites to method handles that implement the
 operations named in them. It is configured and created using a
-<a href="jdk/dynalink/DynamicLinkerFactory.html" title="class in jdk.dynalink"><code>DynamicLinkerFactory</code></a>.</li>
+<a href="jdk/dynalink/DynamicLinkerFactory.html" title="jdk.dynalink 包中的类"><code>DynamicLinkerFactory</code></a>.</li>
 <li>When the bootstrap method is invoked, it needs to create a
-<a href="../java.base/java/lang/invoke/CallSite.html" title="class in java.lang.invoke"><code>CallSite</code></a> object. In Dynalink, these call sites need
-to additionally implement the <a href="jdk/dynalink/RelinkableCallSite.html" title="interface in jdk.dynalink"><code>RelinkableCallSite</code></a>
+<a href="../java.base/java/lang/invoke/CallSite.html" title="java.lang.invoke 包中的类"><code>CallSite</code></a> object. In Dynalink, these call sites need
+to additionally implement the <a href="jdk/dynalink/RelinkableCallSite.html" title="jdk.dynalink 包中的接口"><code>RelinkableCallSite</code></a>
 interface. "Relinkable" here alludes to the fact that if the call site
 encounters objects of different types at run time, its target will be changed
 to a method handle that can perform the operation on the newly encountered
-type. <a href="jdk/dynalink/support/SimpleRelinkableCallSite.html" title="class in jdk.dynalink.support"><code>SimpleRelinkableCallSite</code></a> and
-<a href="jdk/dynalink/support/ChainedCallSite.html" title="class in jdk.dynalink.support"><code>ChainedCallSite</code></a> (not used in the above example)
+type. <a href="jdk/dynalink/support/SimpleRelinkableCallSite.html" title="jdk.dynalink.support 包中的类"><code>SimpleRelinkableCallSite</code></a> and
+<a href="jdk/dynalink/support/ChainedCallSite.html" title="jdk.dynalink.support 包中的类"><code>ChainedCallSite</code></a> (not used in the above example)
 are two implementations already provided by the library.</li>
-<li>Dynalink uses <a href="jdk/dynalink/CallSiteDescriptor.html" title="class in jdk.dynalink"><code>CallSiteDescriptor</code></a> objects to
+<li>Dynalink uses <a href="jdk/dynalink/CallSiteDescriptor.html" title="jdk.dynalink 包中的类"><code>CallSiteDescriptor</code></a> objects to
 preserve the parameters to the bootstrap method: the lookup and the method type,
 as it will need them whenever it needs to relink a call site.</li>
-<li>Dynalink uses <a href="jdk/dynalink/Operation.html" title="interface in jdk.dynalink"><code>Operation</code></a> objects to express
+<li>Dynalink uses <a href="jdk/dynalink/Operation.html" title="jdk.dynalink 包中的接口"><code>Operation</code></a> objects to express
 dynamic operations. It does not prescribe how would you encode the operations
 in your call site, though. That is why in the above example the
 <code>parseOperation</code> function is left empty, and you would be expected to
@@ -213,7 +213,7 @@ third invocation it will relink it to <code>C.getColor()</code> returning an <co
 The <code>SimpleRelinkableCallSite</code> we used above only remembers the linkage
 for the last encountered type (it implements what is known as a <i>monomorphic
 inline cache</i>). Another already provided implementation,
-<a href="jdk/dynalink/support/ChainedCallSite.html" title="class in jdk.dynalink.support"><code>ChainedCallSite</code></a> will remember linkages for
+<a href="jdk/dynalink/support/ChainedCallSite.html" title="jdk.dynalink.support 包中的类"><code>ChainedCallSite</code></a> will remember linkages for
 several different types (it is a <i>polymorphic inline cache</i>) and is
 probably a better choice in serious applications.
 <h2 id="dynalink-and-bytecode-creation-heading">Dynalink and bytecode creation</h2>
@@ -228,27 +228,27 @@ them with representations of dynamic operations in the interpreted program
 (e.g. a typical representation would be some node objects in a syntax tree).
 <h2 id="available-operations-heading">Available operations</h2>
 Dynalink defines several standard operations in its
-<a href="jdk/dynalink/StandardOperation.html" title="enum class in jdk.dynalink"><code>StandardOperation</code></a> class. The linker for Java
+<a href="jdk/dynalink/StandardOperation.html" title="jdk.dynalink 包中的枚举类"><code>StandardOperation</code></a> class. The linker for Java
 objects can link all of these operations, and you are encouraged to at
 minimum support and use these operations in your language too. The
 standard operations <code>GET</code> and <code>SET</code> need to be combined with
-at least one <a href="jdk/dynalink/Namespace.html" title="interface in jdk.dynalink"><code>Namespace</code></a> to be useful, e.g. to express a
+at least one <a href="jdk/dynalink/Namespace.html" title="jdk.dynalink 包中的接口"><code>Namespace</code></a> to be useful, e.g. to express a
 property getter, you'd use <code>StandardOperation.GET.withNamespace(StandardNamespace.PROPERTY)</code>.
-Dynalink defines three standard namespaces in the <a href="jdk/dynalink/StandardNamespace.html" title="enum class in jdk.dynalink"><code>StandardNamespace</code></a> class.
+Dynalink defines three standard namespaces in the <a href="jdk/dynalink/StandardNamespace.html" title="jdk.dynalink 包中的枚举类"><code>StandardNamespace</code></a> class.
 To associate a fixed name with an operation, you can use
-<a href="jdk/dynalink/NamedOperation.html" title="class in jdk.dynalink"><code>NamedOperation</code></a> as in the previous example:
+<a href="jdk/dynalink/NamedOperation.html" title="jdk.dynalink 包中的类"><code>NamedOperation</code></a> as in the previous example:
 <code>StandardOperation.GET.withNamespace(StandardNamespace.PROPERTY).named("color")</code>
 expresses a getter for the property named "color".
 <h2 id="operations-on-multiple-namespaces-heading">Operations on multiple namespaces</h2>
 Some languages might not have separate namespaces on objects for
 properties, elements, and methods, and a source language construct might
 address several of them at once. Dynalink supports specifying multiple
-<a href="jdk/dynalink/Namespace.html" title="interface in jdk.dynalink"><code>Namespace</code></a> objects with <a href="jdk/dynalink/NamespaceOperation.html" title="class in jdk.dynalink"><code>NamespaceOperation</code></a>.
+<a href="jdk/dynalink/Namespace.html" title="jdk.dynalink 包中的接口"><code>Namespace</code></a> objects with <a href="jdk/dynalink/NamespaceOperation.html" title="jdk.dynalink 包中的类"><code>NamespaceOperation</code></a>.
 <h2 id="language-specific-linkers-heading">Language-specific linkers</h2>
 Languages that define their own object model different than the JVM
 class-based model and/or use their own type conversions will need to create
 their own language-specific linkers. See the <a href="jdk/dynalink/linker/package-summary.html"><code>jdk.dynalink.linker</code></a>
-package and specifically the <a href="jdk/dynalink/linker/GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>GuardingDynamicLinker</code></a>
+package and specifically the <a href="jdk/dynalink/linker/GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingDynamicLinker</code></a>
 interface to get started.
 <h2 id="dynalink-and-java-objects-heading">Dynalink and Java objects</h2>
 The <code>DynamicLinker</code> objects created by <code>DynamicLinkerFactory</code> by
@@ -257,13 +257,13 @@ default contain an internal instance of
 that implements the usual Java semantics for all of the above operations and
 can link any Java object that no other language-specific linker has managed
 to link. This way, all language runtimes have built-in interoperability with
-ordinary Java objects. See <a href="jdk/dynalink/beans/BeansLinker.html" title="class in jdk.dynalink.beans"><code>BeansLinker</code></a> for details
+ordinary Java objects. See <a href="jdk/dynalink/beans/BeansLinker.html" title="jdk.dynalink.beans 包中的类"><code>BeansLinker</code></a> for details
 on how it links the various operations.
 <h2 id="cross-language-interoperability-heading">Cross-language interoperability</h2>
 A <code>DynamicLinkerFactory</code> can be configured with a
 <a href="jdk/dynalink/DynamicLinkerFactory.html#setClassLoader(java.lang.ClassLoader)">class
 loader</a>. It will try to instantiate all
-<a href="jdk/dynalink/linker/GuardingDynamicLinkerExporter.html" title="class in jdk.dynalink.linker"><code>GuardingDynamicLinkerExporter</code></a> classes visible to
+<a href="jdk/dynalink/linker/GuardingDynamicLinkerExporter.html" title="jdk.dynalink.linker 包中的类"><code>GuardingDynamicLinkerExporter</code></a> classes visible to
 that class loader and compose the linkers they provide into the
 <code>DynamicLinker</code> it creates. This allows for interoperability between
 languages: if you have two language runtimes A and B deployed in your JVM and
@@ -273,8 +273,8 @@ their <code>DynamicLinker</code> objects. This means that if an object from
 language runtime B gets passed to code from language runtime A, the linker
 from B will get a chance to link the call site in A when it encounters the
 object from B.</div>
-<dl class="notes"><dt>Module Graph:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.dynalink" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.dynalink" src="module-graph.svg"></span></a></dd>
-<dt>Since:</dt>
+<dl class="notes"><dt>模块图:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.dynalink" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.dynalink" src="module-graph.svg"></span></a></dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </section>
@@ -284,12 +284,12 @@ object from B.</div>
 <li>
 <section class="packages-summary" id="packages-summary">
 <!-- ============ PACKAGES SUMMARY =========== -->
-<h2>Packages</h2>
+<h2>包</h2>
 <div id="package-summary-table">
-<div class="caption"><span>Exports</span></div>
+<div class="caption"><span>导出</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color package-summary-table package-summary-table-tab1"><a href="jdk/dynalink/package-summary.html">jdk.dynalink</a></div>
 <div class="col-last even-row-color package-summary-table package-summary-table-tab1">
 <div class="block">Contains interfaces and classes that are used to link an <code>invokedynamic</code> call site.</div>
@@ -323,12 +323,12 @@ basic implementations of some classes as well as various utilities.</div>
 <li>
 <section class="services-summary" id="services-summary">
 <!-- ============ SERVICES SUMMARY =========== -->
-<h2>Services</h2>
-<div class="caption"><span>Uses</span></div>
+<h2>服务</h2>
+<div class="caption"><span>使用</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="jdk/dynalink/linker/GuardingDynamicLinkerExporter.html" title="class in jdk.dynalink.linker">GuardingDynamicLinkerExporter</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="jdk/dynalink/linker/GuardingDynamicLinkerExporter.html" title="jdk.dynalink.linker 包中的类">GuardingDynamicLinkerExporter</a></div>
 <div class="col-last even-row-color">
 <div class="block">A class acting as a supplier of guarding dynamic linkers that can be
 automatically loaded by other language runtimes.</div>

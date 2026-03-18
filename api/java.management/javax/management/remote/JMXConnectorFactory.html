@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.management.remote</a></li>
 <li><a href="JMXConnectorFactory.html" class="current-selection">JMXConnectorFactory</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,19 +62,19 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#DEFAULT_CLASS_LOADER" tabindex="0">DEFAULT_CLASS_LOADER</a></li>
 <li><a href="#PROTOCOL_PROVIDER_PACKAGES" tabindex="0">PROTOCOL_PROVIDER_PACKAGES</a></li>
 <li><a href="#PROTOCOL_PROVIDER_CLASS_LOADER" tabindex="0">PROTOCOL_PROVIDER_CLASS_LOADER</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#connect(javax.management.remote.JMXServiceURL)" tabindex="0">connect(JMXServiceURL)</a></li>
 <li><a href="#connect(javax.management.remote.JMXServiceURL,java.util.Map)" tabindex="0">connect(JMXServiceURL, Map)</a></li>
@@ -86,16 +86,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class JMXConnectorFactory" class="title">Class JMXConnectorFactory</h1>
+<h1 title="类 JMXConnectorFactory" class="title">类 JMXConnectorFactory</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">javax.management.remote.JMXConnectorFactory</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">JMXConnectorFactory</span>
-<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block"><p>Factory to create JMX API connector clients.  There
 are no instances of this class.</p>
 
@@ -104,10 +104,10 @@ advanced applications can separate the creation of the connector
 client, using <a href="#newJMXConnector(javax.management.remote.JMXServiceURL,java.util.Map)"><code>newJMXConnector</code></a> and the establishment of the connection itself, using
 <a href="JMXConnector.html#connect(java.util.Map)"><code>JMXConnector.connect(Map)</code></a>.</p>
 
-<p>Each client is created by an instance of <a href="JMXConnectorProvider.html" title="interface in javax.management.remote"><code>JMXConnectorProvider</code></a>.  This instance is found as follows.  Suppose
-the given <a href="JMXServiceURL.html" title="class in javax.management.remote"><code>JMXServiceURL</code></a> looks like
+<p>Each client is created by an instance of <a href="JMXConnectorProvider.html" title="javax.management.remote 包中的接口"><code>JMXConnectorProvider</code></a>.  This instance is found as follows.  Suppose
+the given <a href="JMXServiceURL.html" title="javax.management.remote 包中的类"><code>JMXServiceURL</code></a> looks like
 <code>"service:jmx:<em>protocol</em>:<em>remainder</em>"</code>.
-Then the factory will attempt to find the appropriate <a href="JMXConnectorProvider.html" title="interface in javax.management.remote"><code>JMXConnectorProvider</code></a> for <code><em>protocol</em></code>.  Each
+Then the factory will attempt to find the appropriate <a href="JMXConnectorProvider.html" title="javax.management.remote 包中的接口"><code>JMXConnectorProvider</code></a> for <code><em>protocol</em></code>.  Each
 occurrence of the character <code>+</code> or <code>-</code> in
 <code><em>protocol</em></code> is replaced by <code>.</code> or
 <code>_</code>, respectively.</p>
@@ -132,7 +132,7 @@ is the provider package list.
 list of non-empty Java package names separated by vertical bars
 (<code>|</code>).  If the string is empty, then so is the provider
 package list.  If the provider package list is not a String, or if
-it contains an element that is an empty string, a <a href="JMXProviderException.html" title="class in javax.management.remote"><code>JMXProviderException</code></a> is thrown.</p>
+it contains an element that is an empty string, a <a href="JMXProviderException.html" title="javax.management.remote 包中的类"><code>JMXProviderException</code></a> is thrown.</p>
 
 <p>If the provider package list exists and is not empty, then for
 each element <code><em>pkg</em></code> of the list, the factory
@@ -145,17 +145,17 @@ will attempt to load the class
 <p>If the <code>environment</code> parameter to <a href="#newJMXConnector(javax.management.remote.JMXServiceURL,java.util.Map)"><code>newJMXConnector</code></a> contains the
 key <code>jmx.remote.protocol.provider.class.loader</code> then the
 associated value is the class loader to use to load the provider.
-If the associated value is not an instance of <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang"><code>ClassLoader</code></a>, an <a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> is thrown.</p>
+If the associated value is not an instance of <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>, an <a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> is thrown.</p>
 
 <p>If the <code>jmx.remote.protocol.provider.class.loader</code>
 key is not present in the <code>environment</code> parameter, the
 calling thread's context class loader is used.</p>
 
-<p>If the attempt to load this class produces a <a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang"><code>ClassNotFoundException</code></a>, the search for a handler continues with
+<p>If the attempt to load this class produces a <a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类"><code>ClassNotFoundException</code></a>, the search for a handler continues with
 the next element of the list.</p>
 
 <p>Otherwise, a problem with the provider found is signalled by a
-<a href="JMXProviderException.html" title="class in javax.management.remote"><code>JMXProviderException</code></a> whose <a href="../../../../java.base/java/lang/Throwable.html#getCause()"><code><em>cause</em></code></a> indicates the underlying
+<a href="JMXProviderException.html" title="javax.management.remote 包中的类"><code>JMXProviderException</code></a> whose <a href="../../../../java.base/java/lang/Throwable.html#getCause()"><code><em>cause</em></code></a> indicates the underlying
 exception, as follows:</p>
 
 <ul>
@@ -196,7 +196,7 @@ present in the <code>environment</code> parameter, it is added to
 the new read-only <code>Map</code>.  The associated value is the
 calling thread's context class loader.</p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -206,25 +206,25 @@ calling thread's context class loader.</p></div>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#DEFAULT_CLASS_LOADER" class="member-name-link">DEFAULT_CLASS_LOADER</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Name of the attribute that specifies the default class
 loader.</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#PROTOCOL_PROVIDER_CLASS_LOADER" class="member-name-link">PROTOCOL_PROVIDER_CLASS_LOADER</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Name of the attribute that specifies the class
 loader for loading protocol providers.</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color"><code>static final <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#PROTOCOL_PROVIDER_PACKAGES" class="member-name-link">PROTOCOL_PROVIDER_PACKAGES</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Name of the attribute that specifies the provider packages
@@ -236,30 +236,30 @@ that are consulted when looking for the handler for a protocol.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#connect(javax.management.remote.JMXServiceURL)" class="member-name-link">connect</a><wbr>(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#connect(javax.management.remote.JMXServiceURL)" class="member-name-link">connect</a><wbr>(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a connection to the connector server at the given
 address.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#connect(javax.management.remote.JMXServiceURL,java.util.Map)" class="member-name-link">connect</a><wbr>(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL,
- <a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;environment)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#connect(javax.management.remote.JMXServiceURL,java.util.Map)" class="member-name-link">connect</a><wbr>(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL,
+ <a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;environment)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a connection to the connector server at the given
 address.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newJMXConnector(javax.management.remote.JMXServiceURL,java.util.Map)" class="member-name-link">newJMXConnector</a><wbr>(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL,
- <a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;environment)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newJMXConnector(javax.management.remote.JMXServiceURL,java.util.Map)" class="member-name-link">newJMXConnector</a><wbr>(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL,
+ <a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;environment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a connector client for the connector server at the
 given address.</div>
@@ -268,7 +268,7 @@ given address.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -279,20 +279,20 @@ given address.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="DEFAULT_CLASS_LOADER">
 <h3>DEFAULT_CLASS_LOADER</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">DEFAULT_CLASS_LOADER</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">DEFAULT_CLASS_LOADER</span></div>
 <div class="block"><p>Name of the attribute that specifies the default class
 loader. This class loader is used to deserialize return values and
 exceptions from remote <code>MBeanServerConnection</code>
 calls.  The value associated with this attribute is an instance
-of <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang"><code>ClassLoader</code></a>.</p></div>
+of <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>.</p></div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#javax.management.remote.JMXConnectorFactory.DEFAULT_CLASS_LOADER">Constant Field Values</a></li>
@@ -306,13 +306,13 @@ of <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in ja
 <section class="detail" id="PROTOCOL_PROVIDER_PACKAGES">
 <h3>PROTOCOL_PROVIDER_PACKAGES</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">PROTOCOL_PROVIDER_PACKAGES</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">PROTOCOL_PROVIDER_PACKAGES</span></div>
 <div class="block"><p>Name of the attribute that specifies the provider packages
 that are consulted when looking for the handler for a protocol.
 The value associated with this attribute is a string with
 package names separated by vertical bars (<code>|</code>).</p></div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#javax.management.remote.JMXConnectorFactory.PROTOCOL_PROVIDER_PACKAGES">Constant Field Values</a></li>
@@ -326,13 +326,13 @@ package names separated by vertical bars (<code>|</code>).</p></div>
 <section class="detail" id="PROTOCOL_PROVIDER_CLASS_LOADER">
 <h3>PROTOCOL_PROVIDER_CLASS_LOADER</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">PROTOCOL_PROVIDER_CLASS_LOADER</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">PROTOCOL_PROVIDER_CLASS_LOADER</span></div>
 <div class="block"><p>Name of the attribute that specifies the class
 loader for loading protocol providers.
 The value associated with this attribute is an instance
-of <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang"><code>ClassLoader</code></a>.</p></div>
+of <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>.</p></div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#javax.management.remote.JMXConnectorFactory.PROTOCOL_PROVIDER_CLASS_LOADER">Constant Field Values</a></li>
@@ -348,29 +348,29 @@ of <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in ja
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="connect(javax.management.remote.JMXServiceURL)">
 <h3>connect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></span>&nbsp;<span class="element-name">connect</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL)</span>
-                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></span>&nbsp;<span class="element-name">connect</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL)</span>
+                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block"><p>Creates a connection to the connector server at the given
 address.</p>
 
 <p>This method is equivalent to <a href="#connect(javax.management.remote.JMXServiceURL,java.util.Map)"><code>connect(serviceURL, null)</code></a>.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>serviceURL</code> - the address of the connector server to
 connect to.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>JMXConnector</code> whose <a href="JMXConnector.html#connect()"><code>connect</code></a> method has been called.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if the connector client or the
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if the connector client or the
 connection cannot be made because of a communication problem.</dd>
-<dd><code><a href="../../../../java.base/java/lang/SecurityException.html" title="class in java.lang">SecurityException</a></code> - if the connection cannot be made
+<dd><code><a href="../../../../java.base/java/lang/SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - if the connection cannot be made
 for security reasons.</dd>
 </dl>
 </div>
@@ -380,9 +380,9 @@ for security reasons.</dd>
 <section class="detail" id="connect(javax.management.remote.JMXServiceURL,java.util.Map)">
 <h3>connect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></span>&nbsp;<span class="element-name">connect</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL,
- <a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;environment)</span>
-                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></span>&nbsp;<span class="element-name">connect</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL,
+ <a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;environment)</span>
+                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block"><p>Creates a connection to the connector server at the given
 address.</p>
 
@@ -394,22 +394,22 @@ JMXConnector conn = JMXConnectorFactory.newJMXConnector(serviceURL,
 conn.connect(environment);
 </pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>serviceURL</code> - the address of the connector server to connect to.</dd>
 <dd><code>environment</code> - a set of attributes to determine how the
 connection is made.  This parameter can be null.  Keys in this
 map must be Strings.  The appropriate type of each associated
 value depends on the attribute.  The contents of
 <code>environment</code> are not changed by this call.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>JMXConnector</code> representing the newly-made
 connection.  Each successful call to this method produces a
 different object.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if the connector client or the
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if the connector client or the
 connection cannot be made because of a communication problem.</dd>
-<dd><code><a href="../../../../java.base/java/lang/SecurityException.html" title="class in java.lang">SecurityException</a></code> - if the connection cannot be made
+<dd><code><a href="../../../../java.base/java/lang/SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - if the connection cannot be made
 for security reasons.</dd>
 </dl>
 </div>
@@ -419,31 +419,31 @@ for security reasons.</dd>
 <section class="detail" id="newJMXConnector(javax.management.remote.JMXServiceURL,java.util.Map)">
 <h3>newJMXConnector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="interface in javax.management.remote">JMXConnector</a></span>&nbsp;<span class="element-name">newJMXConnector</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="class in javax.management.remote">JMXServiceURL</a>&nbsp;serviceURL,
- <a href="../../../../java.base/java/util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>,<wbr>?&gt;&nbsp;environment)</span>
-                                    throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JMXConnector.html" title="javax.management.remote 包中的接口">JMXConnector</a></span>&nbsp;<span class="element-name">newJMXConnector</span><wbr><span class="parameters">(<a href="JMXServiceURL.html" title="javax.management.remote 包中的类">JMXServiceURL</a>&nbsp;serviceURL,
+ <a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>,<wbr>?&gt;&nbsp;environment)</span>
+                                    throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block"><p>Creates a connector client for the connector server at the
 given address.  The resultant client is not connected until its
 <a href="JMXConnector.html#connect(java.util.Map)"><code>connect</code></a> method is called.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>serviceURL</code> - the address of the connector server to connect to.</dd>
 <dd><code>environment</code> - a set of attributes to determine how the
 connection is made.  This parameter can be null.  Keys in this
 map must be Strings.  The appropriate type of each associated
 value depends on the attribute.  The contents of
 <code>environment</code> are not changed by this call.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>JMXConnector</code> representing the new
 connector client.  Each successful call to this method produces
 a different object.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if the connector client cannot be made
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>serviceURL</code> is null.</dd>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if the connector client cannot be made
 because of a communication problem.</dd>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if there is no provider for the
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if there is no provider for the
 protocol in <code>serviceURL</code>.</dd>
-<dd><code><a href="JMXProviderException.html" title="class in javax.management.remote">JMXProviderException</a></code> - if there is a provider for the
+<dd><code><a href="JMXProviderException.html" title="javax.management.remote 包中的类">JMXProviderException</a></code> - if there is a provider for the
 protocol in <code>serviceURL</code> but it cannot be used for
 some reason.</dd>
 </dl>

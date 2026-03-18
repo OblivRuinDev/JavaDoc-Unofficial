@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="ObjectInputFilter.html">ObjectInputFilter</a></li>
 <li><a href="ObjectInputFilter.Config.html" class="current-selection">Config</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -63,11 +63,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getSerialFilter()" tabindex="0">getSerialFilter()</a></li>
 <li><a href="#setSerialFilter(java.io.ObjectInputFilter)" tabindex="0">setSerialFilter(ObjectInputFilter)</a></li>
@@ -81,25 +81,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ObjectInputFilter.Config" class="title">Class ObjectInputFilter.Config</h1>
+<h1 title="类 ObjectInputFilter.Config" class="title">类 ObjectInputFilter.Config</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.io.ObjectInputFilter.Config</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Enclosing interface:</dt>
-<dd><code><a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></code></dd>
+<dd><code><a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public static final class </span><span class="element-name type-name-label">ObjectInputFilter.Config</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A utility class to set and get the JVM-wide deserialization filter factory,
 the static JVM-wide filter, or to create a filter from a pattern string.
 The static filter factory and the static filter apply to the whole Java runtime,
 or "JVM-wide", there is only one of each. For a complete description of
-the function and use refer to <a href="ObjectInputFilter.html" title="interface in java.io"><code>ObjectInputFilter</code></a>.
+the function and use refer to <a href="ObjectInputFilter.html" title="java.io 包中的接口"><code>ObjectInputFilter</code></a>.
 
 <p>The JVM-wide deserialization filter factory and the static JVM-wide filter
 can be configured from system properties during the initialization of the
@@ -107,15 +107,15 @@ can be configured from system properties during the initialization of the
 
 <p>If the Java virtual machine is started with the system property
 <code><span id="jdk.serialFilter" class="search-tag-result">jdk.serialFilter</span></code>, its value is used to configure the filter.
-If the system property is not defined, and the <a href="../security/Security.html" title="class in java.security"><code>Security</code></a> property
+If the system property is not defined, and the <a href="../security/Security.html" title="java.security 包中的类"><code>Security</code></a> property
 <code>jdk.serialFilter</code> is defined then it is used to configure the filter.
 The filter is created as if <a href="#createFilter(java.lang.String)"><code>createFilter</code></a> is called,
 if the filter string is invalid the initialization fails and subsequent attempts to
 <a href="#getSerialFilter()">get the filter</a>, <a href="#setSerialFilter(java.io.ObjectInputFilter)">set a filter</a>,
 or create an <a href="ObjectInputStream.html#%3Cinit%3E(java.io.InputStream)">ObjectInputStream</a>
-throw <a href="../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>. Deserialization is not possible with an
+throw <a href="../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>. Deserialization is not possible with an
 invalid serial filter.
-If the system property <code>jdk.serialFilter</code> or the <a href="../security/Security.html" title="class in java.security"><code>Security</code></a>
+If the system property <code>jdk.serialFilter</code> or the <a href="../security/Security.html" title="java.security 包中的类"><code>Security</code></a>
 property <code>jdk.serialFilter</code> is not set the filter can be set with
 <a href="#setSerialFilter(java.io.ObjectInputFilter)"><code>Config.setSerialFilter</code></a>.
 Setting the <code>jdk.serialFilter</code> with <a href="../lang/System.html#setProperty(java.lang.String,java.lang.String)"><code>System.setProperty</code></a> <em>does not set the filter</em>.
@@ -124,22 +124,22 @@ The syntax for the property value is the same as for the
 
 <p>
 If the Java virtual machine is started with the system property
-<code><span id="jdk.serialFilterFactory" class="search-tag-result">jdk.serialFilterFactory</span></code> or the <a href="../security/Security.html" title="class in java.security"><code>Security</code></a> property
+<code><span id="jdk.serialFilterFactory" class="search-tag-result">jdk.serialFilterFactory</span></code> or the <a href="../security/Security.html" title="java.security 包中的类"><code>Security</code></a> property
 of the same name, its value names the class to configure the JVM-wide deserialization
 filter factory.
-If the system property is not defined, and the <a href="../security/Security.html" title="class in java.security"><code>Security</code></a> property
+If the system property is not defined, and the <a href="../security/Security.html" title="java.security 包中的类"><code>Security</code></a> property
 <code>jdk.serialFilterFactory</code> is defined then it is used to configure the filter factory.
 If it remains unset, the filter factory is a builtin filter factory compatible
 with previous versions.
 
 <p>The class must be public, must have a public zero-argument constructor, implement the
-<a href="../util/function/BinaryOperator.html" title="interface in java.util.function"><code>BinaryOperator&lt;ObjectInputFilter&gt;</code></a> interface, provide its implementation and
+<a href="../util/function/BinaryOperator.html" title="java.util.function 包中的接口"><code>BinaryOperator&lt;ObjectInputFilter&gt;</code></a> interface, provide its implementation and
 be accessible via the <a href="../lang/ClassLoader.html#getSystemClassLoader()">application class loader</a>.
 If the filter factory constructor is not invoked successfully subsequent attempts to
 <a href="#getSerialFilterFactory()">get the factory</a>,
 <a href="#setSerialFilterFactory(java.util.function.BinaryOperator)">set the factory</a>, or create an
 <a href="ObjectInputStream.html#%3Cinit%3E(java.io.InputStream)"><code>ObjectInputStream</code></a>
-throw <a href="../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>. Deserialization is not possible with an
+throw <a href="../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>. Deserialization is not possible with an
 invalid serial filter factory.
 The filter factory configured using the system or security property during initialization
 can NOT be replaced with <a href="#setSerialFilterFactory(java.util.function.BinaryOperator)"><code>Config.setSerialFilterFactory</code></a>.
@@ -150,7 +150,7 @@ or intentionally by the application.
 The syntax for the system property value and security property value is the
 fully qualified class name of the deserialization filter factory.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -160,36 +160,36 @@ fully qualified class name of the deserialization filter factory.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFilter(java.lang.String)" class="member-name-link">createFilter</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;pattern)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFilter(java.lang.String)" class="member-name-link">createFilter</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pattern)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns an ObjectInputFilter from a string of patterns.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSerialFilter()" class="member-name-link">getSerialFilter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the static JVM-wide deserialization filter or <code>null</code> if not configured.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a><wbr>&lt;<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a><wbr>&lt;<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSerialFilterFactory()" class="member-name-link">getSerialFilterFactory</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the JVM-wide deserialization filter factory.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setSerialFilter(java.io.ObjectInputFilter)" class="member-name-link">setSerialFilter</a><wbr>(<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&nbsp;filter)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setSerialFilter(java.io.ObjectInputFilter)" class="member-name-link">setSerialFilter</a><wbr>(<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Set the static JVM-wide filter if it has not already been configured or set.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setSerialFilterFactory(java.util.function.BinaryOperator)" class="member-name-link">setSerialFilterFactory</a><wbr>(<a href="../util/function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&gt;&nbsp;filterFactory)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setSerialFilterFactory(java.util.function.BinaryOperator)" class="member-name-link">setSerialFilterFactory</a><wbr>(<a href="../util/function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&gt;&nbsp;filterFactory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Set the <a href="#getSerialFilterFactory()">JVM-wide deserialization filter factory</a>.</div>
 </div>
@@ -197,7 +197,7 @@ fully qualified class name of the deserialization filter factory.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -208,19 +208,19 @@ fully qualified class name of the deserialization filter factory.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getSerialFilter()">
 <h3>getSerialFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></span>&nbsp;<span class="element-name">getSerialFilter</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></span>&nbsp;<span class="element-name">getSerialFilter</span>()</div>
 <div class="block">Returns the static JVM-wide deserialization filter or <code>null</code> if not configured.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the static JVM-wide deserialization filter or <code>null</code> if not configured</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the initialization of the filter from the
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the initialization of the filter from the
      system property <code>jdk.serialFilter</code> or
      the security property <code>jdk.serialFilter</code> fails.</dd>
 </dl>
@@ -231,13 +231,13 @@ fully qualified class name of the deserialization filter factory.</div>
 <section class="detail" id="setSerialFilter(java.io.ObjectInputFilter)">
 <h3>setSerialFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSerialFilter</span><wbr><span class="parameters">(<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&nbsp;filter)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSerialFilter</span><wbr><span class="parameters">(<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&nbsp;filter)</span></div>
 <div class="block">Set the static JVM-wide filter if it has not already been configured or set.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>filter</code> - the deserialization filter to set as the JVM-wide filter; not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the filter has already been set or the initialization
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the filter has already been set or the initialization
       of the filter from the system property <code>jdk.serialFilter</code> or
       the security property <code>jdk.serialFilter</code> fails.</dd>
 </dl>
@@ -248,7 +248,7 @@ fully qualified class name of the deserialization filter factory.</div>
 <section class="detail" id="getSerialFilterFactory()">
 <h3>getSerialFilterFactory</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&gt;</span>&nbsp;<span class="element-name">getSerialFilterFactory</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&gt;</span>&nbsp;<span class="element-name">getSerialFilterFactory</span>()</div>
 <div class="block">Returns the JVM-wide deserialization filter factory.
 If the filter factory has been <a href="#setSerialFilterFactory(java.util.function.BinaryOperator)">set</a> it is returned,
 otherwise, a builtin deserialization filter factory is returned.
@@ -257,20 +257,20 @@ The filter factory provides a filter for every ObjectInputStream when invoked fr
 and when a stream-specific filter is set with
 <a href="ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)"><code>setObjectInputFilter</code></a>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The builtin deserialization filter factory provides the
 <a href="#getSerialFilter()">static JVM-wide filter</a> when invoked from
 <a href="ObjectInputStream.html#%3Cinit%3E(java.io.InputStream)">ObjectInputStream constructors</a>.
 When invoked <a href="ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)"><code>to set the stream-specific filter</code></a> the requested filter replaces the static JVM-wide filter,
 unless it has already been set.
 The builtin deserialization filter factory implements the behavior of earlier versions of
-setting the initial filter in the <a href="ObjectInputStream.html" title="class in java.io"><code>ObjectInputStream</code></a> constructor and
+setting the initial filter in the <a href="ObjectInputStream.html" title="java.io 包中的类"><code>ObjectInputStream</code></a> constructor and
 <a href="ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)"><code>ObjectInputStream.setObjectInputFilter(ObjectInputFilter)</code></a>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the JVM-wide deserialization filter factory; non-null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the filter factory initialization is incomplete</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the filter factory initialization is incomplete</dd>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -280,13 +280,13 @@ setting the initial filter in the <a href="ObjectInputStream.html" title="class 
 <section class="detail" id="setSerialFilterFactory(java.util.function.BinaryOperator)">
 <h3>setSerialFilterFactory</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSerialFilterFactory</span><wbr><span class="parameters">(<a href="../util/function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&gt;&nbsp;filterFactory)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSerialFilterFactory</span><wbr><span class="parameters">(<a href="../util/function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&gt;&nbsp;filterFactory)</span></div>
 <div class="block">Set the <a href="#getSerialFilterFactory()">JVM-wide deserialization filter factory</a>.
 The filter factory can be configured exactly once with one of:
 setting the <code>jdk.serialFilterFactory</code> property on the command line,
-setting the <code>jdk.serialFilterFactory</code> property in the <a href="../security/Security.html" title="class in java.security"><code>Security</code></a>
+setting the <code>jdk.serialFilterFactory</code> property in the <a href="../security/Security.html" title="java.security 包中的类"><code>Security</code></a>
 file, or using this <code>setSerialFilterFactory</code> method.
-The filter factory can be set only before any <a href="ObjectInputStream.html" title="class in java.io"><code>ObjectInputStream</code></a> has been
+The filter factory can be set only before any <a href="ObjectInputStream.html" title="java.io 包中的类"><code>ObjectInputStream</code></a> has been
 created to avoid any inconsistency in which filter factory is being used.
 
 <p>The JVM-wide filter factory is invoked when an ObjectInputStream
@@ -300,16 +300,16 @@ after it has been enabled.
 The factory determines the filter to be used for <code>ObjectInputStream</code> streams based
 on its inputs, any other filters, context, or state that is available.
 The factory may throw runtime exceptions to signal incorrect use or invalid parameters.
-See the <a href="ObjectInputFilter.html" title="interface in java.io">filter models</a> for examples of composition and delegation.</div>
+See the <a href="ObjectInputFilter.html" title="java.io 包中的接口">filter models</a> for examples of composition and delegation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>filterFactory</code> - the deserialization filter factory to set as the
         JVM-wide filter factory; not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the builtin deserialization filter factory
-        has already been replaced or any instance of <a href="ObjectInputStream.html" title="class in java.io"><code>ObjectInputStream</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the builtin deserialization filter factory
+        has already been replaced or any instance of <a href="ObjectInputStream.html" title="java.io 包中的类"><code>ObjectInputStream</code></a>
         has been created.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -319,7 +319,7 @@ See the <a href="ObjectInputFilter.html" title="interface in java.io">filter mod
 <section class="detail" id="createFilter(java.lang.String)">
 <h3>createFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></span>&nbsp;<span class="element-name">createFilter</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;pattern)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></span>&nbsp;<span class="element-name">createFilter</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pattern)</span></div>
 <div class="block">Returns an ObjectInputFilter from a string of patterns.
 <p>
 Patterns are separated by ";" (semicolon). Whitespace is significant and
@@ -366,13 +366,13 @@ or <a href="ObjectInputFilter.Status.html#REJECTED"><code>Status.REJECTED</code>
 If the limits are not exceeded and no pattern matches the class,
 the result is <a href="ObjectInputFilter.Status.html#UNDECIDED"><code>Status.UNDECIDED</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pattern</code> - the pattern string to parse; not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a filter to check a class being deserialized;
          <code>null</code> if no patterns</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the pattern string is illegal or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the pattern string is illegal or
         malformed and cannot be parsed.
         In particular, if any of the following is true:
 <ul>

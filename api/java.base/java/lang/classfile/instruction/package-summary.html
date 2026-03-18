@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.classfile.instruction</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,22 +56,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#provides-interfaces-describing-code-instructions-for-the-java-lang-classfile-library--heading" tabindex="0">Provides interfaces describing code instructions for the java.lang.classfile library.</a></li>
 <li><a href="#reading" tabindex="0">Reading of instructions</a></li>
 <li><a href="#writing" tabindex="0">Writing of instructions</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.classfile.instruction" class="title">Package java.lang.classfile.instruction</h1>
+<h1 title="包 java.lang.classfile.instruction" class="title">包 java.lang.classfile.instruction</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -83,36 +83,36 @@ The <code>java.lang.classfile.instruction</code> package contains interfaces des
 Implementations of these interfaces are immutable.
 <p>
 Unless otherwise specified, passing <code>null</code> or an array or collection containing a <code>null</code> element as an
-argument to a constructor or method of any Class-File API class or interface will cause a <a href="../../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a>
+argument to a constructor or method of any Class-File API class or interface will cause a <a href="../../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a>
 to be thrown.
 
 <h2 id="reading">Reading of instructions</h2>
-Instructions and pseudo-instructions are usually accessed from a <a href="../CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a>, such as <a href="../CompoundElement.html#forEach(java.util.function.Consumer)"><code>CodeModel::forEach</code></a>, and categorized by pattern-matching.
+Instructions and pseudo-instructions are usually accessed from a <a href="../CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a>, such as <a href="../CompoundElement.html#forEach(java.util.function.Consumer)"><code>CodeModel::forEach</code></a>, and categorized by pattern-matching.
 <p>
 When read from <code>class</code> files, instructions are lazily inflated; the contents of these instructions, besides the
 bare structure, are not evaluated to speed up parsing.  Instructions to users interest, such as those filtered by the
 pattern matching, have their contents read on demand, to avoid unnecessary reading of unrelated instructions in a code
 array.
 <p>
-Due to the lazy nature of <code>class</code> file parsing, <a href="../../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> indicating malformed
-<code>class</code> file data can be thrown at any method invocation.  For example, an instruction object for a <a href="TypeCheckInstruction.html" title="interface in java.lang.classfile.instruction"><code>TypeCheckInstruction</code></a> may be obtained from a <code>CodeModel</code>, but the subsequent invocation of <a href="TypeCheckInstruction.html#type()"><code>.type()</code></a> may fail with <code>IllegalArgumentException</code> because the instruction refers
+Due to the lazy nature of <code>class</code> file parsing, <a href="../../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> indicating malformed
+<code>class</code> file data can be thrown at any method invocation.  For example, an instruction object for a <a href="TypeCheckInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>TypeCheckInstruction</code></a> may be obtained from a <code>CodeModel</code>, but the subsequent invocation of <a href="TypeCheckInstruction.html#type()"><code>.type()</code></a> may fail with <code>IllegalArgumentException</code> because the instruction refers
 to a bad constant pool index.
 
 <h2 id="writing">Writing of instructions</h2>
-Writing of instructions happen on <a href="../CodeBuilder.html" title="interface in java.lang.classfile"><code>CodeBuilder</code></a>.  The most basic way to write instructions is to pass an
+Writing of instructions happen on <a href="../CodeBuilder.html" title="java.lang.classfile 包中的接口"><code>CodeBuilder</code></a>.  The most basic way to write instructions is to pass an
 instruction object to <a href="../ClassFileBuilder.html#with(E)"><code>CodeBuilder::with</code></a>, which supports all valid instructions.
 Yet, <code>CodeBuilder</code> provides a lot of <a href="../CodeBuilder.html#instruction-factories">convenience factory methods</a>
 for easy creation of instructions, named by their mnemonic.  These accessors are more concise, and often more
 efficient at run-time than passing instruction objects.
 <p>
 Due to restrictions in the <code>class</code> file format, some instructions may not be representable in a <code>CodeBuilder</code>.
-In some scenarios, such as for <a href="BranchInstruction.html" title="interface in java.lang.classfile.instruction"><code>BranchInstruction</code></a>, Class-File API options control if alternatives can be used
+In some scenarios, such as for <a href="BranchInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>BranchInstruction</code></a>, Class-File API options control if alternatives can be used
 in code generation instead.  Otherwise, they can be configured to fail-fast to ensure the parity of <code>CodeBuilder</code>
 commands with the generated <code>code</code> array data.</div>
 <dl class="notes"><dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-6.html#jvms-6.5">6.5 Instructions</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
 </dl>
 </section>
@@ -121,10 +121,10 @@ commands with the generated <code>code</code> array data.</div>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.lang.classfile</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classfile parsing, generation, and transformation library.</div>
@@ -144,187 +144,187 @@ commands with the generated <code>code</code> array data.</div>
 <div id="class-summary">
 <div class="caption"><span>Interfaces</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ArrayLoadInstruction.html" title="interface in java.lang.classfile.instruction">ArrayLoadInstruction</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ArrayLoadInstruction.html" title="java.lang.classfile.instruction 包中的接口">ArrayLoadInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an array load instruction in the <code>code</code> array of a <code>Code</code>
 attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ArrayStoreInstruction.html" title="interface in java.lang.classfile.instruction">ArrayStoreInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ArrayStoreInstruction.html" title="java.lang.classfile.instruction 包中的接口">ArrayStoreInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an array store instruction in the <code>code</code> array of a <code>Code</code>
 attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BranchInstruction.html" title="interface in java.lang.classfile.instruction">BranchInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BranchInstruction.html" title="java.lang.classfile.instruction 包中的接口">BranchInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a branching instruction (conditional or unconditional) in the <code>
 code</code> array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CharacterRange.html" title="interface in java.lang.classfile.instruction">CharacterRange</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CharacterRange.html" title="java.lang.classfile.instruction 包中的接口">CharacterRange</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/CharacterRangeTableAttribute.html" title="interface in java.lang.classfile.attribute"><code>CharacterRangeTable</code></a> attribute.</div>
+<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/CharacterRangeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>CharacterRangeTable</code></a> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.html" title="interface in java.lang.classfile.instruction">ConstantInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">ConstantInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a constant-load instruction in the <code>code</code> array of a <code>
-Code</code> attribute, including <a href="ConstantInstruction.IntrinsicConstantInstruction.html" title="interface in java.lang.classfile.instruction">"intrinsic"</a>, <a href="ConstantInstruction.ArgumentConstantInstruction.html" title="interface in java.lang.classfile.instruction">"argument"</a>, and
-<a href="ConstantInstruction.LoadConstantInstruction.html" title="interface in java.lang.classfile.instruction">"load"</a> constant instructions.</div>
+Code</code> attribute, including <a href="ConstantInstruction.IntrinsicConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">"intrinsic"</a>, <a href="ConstantInstruction.ArgumentConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">"argument"</a>, and
+<a href="ConstantInstruction.LoadConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">"load"</a> constant instructions.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.ArgumentConstantInstruction.html" title="interface in java.lang.classfile.instruction">ConstantInstruction.ArgumentConstantInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.ArgumentConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">ConstantInstruction.ArgumentConstantInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an "argument constant" instruction, which encodes the
 constant value in the instruction directly.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.IntrinsicConstantInstruction.html" title="interface in java.lang.classfile.instruction">ConstantInstruction.IntrinsicConstantInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.IntrinsicConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">ConstantInstruction.IntrinsicConstantInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an "intrinsic constant" instruction, which encodes
 the constant value in its opcode.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.LoadConstantInstruction.html" title="interface in java.lang.classfile.instruction">ConstantInstruction.LoadConstantInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantInstruction.LoadConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口">ConstantInstruction.LoadConstantInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a "load constant" instruction, which encodes the constant value
 in the constant pool.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConvertInstruction.html" title="interface in java.lang.classfile.instruction">ConvertInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConvertInstruction.html" title="java.lang.classfile.instruction 包中的接口">ConvertInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a primitive conversion instruction in the <code>code</code> array of a
 <code>Code</code> attribute, such as <a href="../Opcode.html#I2L"><code>i2l</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.html" title="interface in java.lang.classfile.instruction">DiscontinuedInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.html" title="java.lang.classfile.instruction 包中的接口">DiscontinuedInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for instruction discontinued from the <code>code</code> array of
 a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.JsrInstruction.html" title="interface in java.lang.classfile.instruction">DiscontinuedInstruction.JsrInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.JsrInstruction.html" title="java.lang.classfile.instruction 包中的接口">DiscontinuedInstruction.JsrInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models jump subroutine instructions discontinued from the <code>code</code>
 array of a <code>Code</code> attribute since class file major version <a href="../ClassFile.html#JAVA_7_VERSION">51</a> (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.9.1">4.9.1</a>).</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.RetInstruction.html" title="interface in java.lang.classfile.instruction">DiscontinuedInstruction.RetInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DiscontinuedInstruction.RetInstruction.html" title="java.lang.classfile.instruction 包中的接口">DiscontinuedInstruction.RetInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models return from subroutine instructions discontinued from the <code>
 code</code> array of a <code>Code</code> attribute since class file major version
 <a href="../ClassFile.html#JAVA_7_VERSION">51</a> (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.9.1">4.9.1</a>).</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ExceptionCatch.html" title="interface in java.lang.classfile.instruction">ExceptionCatch</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ExceptionCatch.html" title="java.lang.classfile.instruction 包中的接口">ExceptionCatch</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A pseudo-instruction modeling an entry in the <code>exception_table</code> array
-of a <a href="../attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute.</div>
+of a <a href="../attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldInstruction.html" title="interface in java.lang.classfile.instruction">FieldInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldInstruction.html" title="java.lang.classfile.instruction 包中的接口">FieldInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a field access instruction in the <code>code</code> array of a <code>Code</code>
 attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IncrementInstruction.html" title="interface in java.lang.classfile.instruction">IncrementInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="IncrementInstruction.html" title="java.lang.classfile.instruction 包中的接口">IncrementInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a local variable increment instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="InvokeDynamicInstruction.html" title="interface in java.lang.classfile.instruction">InvokeDynamicInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="InvokeDynamicInstruction.html" title="java.lang.classfile.instruction 包中的接口">InvokeDynamicInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a dynamically-computed call site invocation instruction in the
 <code>code</code> array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="InvokeInstruction.html" title="interface in java.lang.classfile.instruction">InvokeInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="InvokeInstruction.html" title="java.lang.classfile.instruction 包中的接口">InvokeInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a method invocation instruction in the <code>code</code> array of a <code>
-Code</code> attribute, other than <a href="InvokeDynamicInstruction.html" title="interface in java.lang.classfile.instruction"><code>invokedynamic</code></a>.</div>
+Code</code> attribute, other than <a href="InvokeDynamicInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>invokedynamic</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LabelTarget.html" title="interface in java.lang.classfile.instruction">LabelTarget</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LabelTarget.html" title="java.lang.classfile.instruction 包中的接口">LabelTarget</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A pseudo-instruction which indicates that the specified label corresponds to
 the current position in the <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LineNumber.html" title="interface in java.lang.classfile.instruction">LineNumber</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LineNumber.html" title="java.lang.classfile.instruction 包中的接口">LineNumber</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A pseudo-instruction which indicates the code for a given line number starts
-after the current position in a <a href="../attribute/CodeAttribute.html" title="interface in java.lang.classfile.attribute"><code>Code</code></a> attribute.</div>
+after the current position in a <a href="../attribute/CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>Code</code></a> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LoadInstruction.html" title="interface in java.lang.classfile.instruction">LoadInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LoadInstruction.html" title="java.lang.classfile.instruction 包中的接口">LoadInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a local variable load instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LocalVariable.html" title="interface in java.lang.classfile.instruction">LocalVariable</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LocalVariable.html" title="java.lang.classfile.instruction 包中的接口">LocalVariable</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTableAttribute.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableTable</code></a> attribute.</div>
+<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTableAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableTable</code></a> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LocalVariableType.html" title="interface in java.lang.classfile.instruction">LocalVariableType</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LocalVariableType.html" title="java.lang.classfile.instruction 包中的接口">LocalVariableType</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTypeTableAttribute.html" title="interface in java.lang.classfile.attribute"><code>LocalVariableTypeTable</code></a> attribute.</div>
+<div class="block">A pseudo-instruction which models a single entry in the <a href="../attribute/LocalVariableTypeTableAttribute.html" title="java.lang.classfile.attribute 包中的接口"><code>LocalVariableTypeTable</code></a> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LookupSwitchInstruction.html" title="interface in java.lang.classfile.instruction">LookupSwitchInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LookupSwitchInstruction.html" title="java.lang.classfile.instruction 包中的接口">LookupSwitchInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#LOOKUPSWITCH"><code>lookupswitch</code></a> instruction in the <code>
 code</code> array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MonitorInstruction.html" title="interface in java.lang.classfile.instruction">MonitorInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MonitorInstruction.html" title="java.lang.classfile.instruction 包中的接口">MonitorInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#MONITORENTER"><code>monitorenter</code></a> or <a href="../Opcode.html#MONITOREXIT"><code>monitorexit</code></a> instruction in the <code>code</code> array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NewMultiArrayInstruction.html" title="interface in java.lang.classfile.instruction">NewMultiArrayInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NewMultiArrayInstruction.html" title="java.lang.classfile.instruction 包中的接口">NewMultiArrayInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#MULTIANEWARRAY"><code>multianewarray</code></a> instruction in the <code>code</code>
 array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NewObjectInstruction.html" title="interface in java.lang.classfile.instruction">NewObjectInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NewObjectInstruction.html" title="java.lang.classfile.instruction 包中的接口">NewObjectInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#NEW"><code>new</code></a> instruction in the <code>code</code> array of a <code>Code</code>
 attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NewPrimitiveArrayInstruction.html" title="interface in java.lang.classfile.instruction">NewPrimitiveArrayInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NewPrimitiveArrayInstruction.html" title="java.lang.classfile.instruction 包中的接口">NewPrimitiveArrayInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#NEWARRAY"><code>newarray</code></a> instruction in the <code>code</code>
 array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NewReferenceArrayInstruction.html" title="interface in java.lang.classfile.instruction">NewReferenceArrayInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NewReferenceArrayInstruction.html" title="java.lang.classfile.instruction 包中的接口">NewReferenceArrayInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#ANEWARRAY"><code>anewarray</code></a> instruction in the <code>code</code>
 array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NopInstruction.html" title="interface in java.lang.classfile.instruction">NopInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="NopInstruction.html" title="java.lang.classfile.instruction 包中的接口">NopInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#NOP"><code>nop</code></a> instruction in the <code>code</code>
 array of a <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="OperatorInstruction.html" title="interface in java.lang.classfile.instruction">OperatorInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="OperatorInstruction.html" title="java.lang.classfile.instruction 包中的接口">OperatorInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an arithmetic operator instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ReturnInstruction.html" title="interface in java.lang.classfile.instruction">ReturnInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ReturnInstruction.html" title="java.lang.classfile.instruction 包中的接口">ReturnInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a return-from-method instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StackInstruction.html" title="interface in java.lang.classfile.instruction">StackInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StackInstruction.html" title="java.lang.classfile.instruction 包中的接口">StackInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a stack manipulation instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StoreInstruction.html" title="interface in java.lang.classfile.instruction">StoreInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StoreInstruction.html" title="java.lang.classfile.instruction 包中的接口">StoreInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a local variable store instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="SwitchCase.html" title="interface in java.lang.classfile.instruction">SwitchCase</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="SwitchCase.html" title="java.lang.classfile.instruction 包中的接口">SwitchCase</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Models a single case in a <a href="LookupSwitchInstruction.html" title="interface in java.lang.classfile.instruction"><code>lookupswitch</code></a> or
-<a href="TableSwitchInstruction.html" title="interface in java.lang.classfile.instruction"><code>tableswitch</code></a> instruction.</div>
+<div class="block">Models a single case in a <a href="LookupSwitchInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>lookupswitch</code></a> or
+<a href="TableSwitchInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>tableswitch</code></a> instruction.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TableSwitchInstruction.html" title="interface in java.lang.classfile.instruction">TableSwitchInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TableSwitchInstruction.html" title="java.lang.classfile.instruction 包中的接口">TableSwitchInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <a href="../Opcode.html#TABLESWITCH"><code>tableswitch</code></a> instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThrowInstruction.html" title="interface in java.lang.classfile.instruction">ThrowInstruction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThrowInstruction.html" title="java.lang.classfile.instruction 包中的接口">ThrowInstruction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an <a href="../Opcode.html#ATHROW"><code>athrow</code></a> instruction in the <code>code</code> array of a
 <code>Code</code> attribute.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeCheckInstruction.html" title="interface in java.lang.classfile.instruction">TypeCheckInstruction</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TypeCheckInstruction.html" title="java.lang.classfile.instruction 包中的接口">TypeCheckInstruction</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models an <a href="../Opcode.html#INSTANCEOF"><code>instanceof</code></a> or a <a href="../Opcode.html#CHECKCAST"><code>checkcast</code></a>
 instruction in the <code>code</code> array of a <code>Code</code> attribute.</div>

@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.invoke</a></li>
 <li><a href="VarHandle.html" class="current-selection">VarHandle</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -103,9 +103,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#compiling-invocation-of-access-mode-methods-heading" tabindex="0">Compiling invocation of access mode methods</a></li>
 <li><a href="#invoke" tabindex="0">Performing invocation of access mode methods</a></li>
@@ -115,9 +115,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#interoperation-between-varhandles-and-java-generics-heading" tabindex="0">Interoperation between VarHandles and Java generics</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#hasInvokeExactBehavior()" tabindex="0">hasInvokeExactBehavior()</a></li>
 <li><a href="#get(java.lang.Object...)" tabindex="0">get(Object...)</a></li>
@@ -172,21 +172,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class VarHandle" class="title">Class VarHandle</h1>
+<h1 title="类 VarHandle" class="title">类 VarHandle</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.invoke.VarHandle</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract sealed class </span><span class="element-name type-name-label">VarHandle</span>
-<span class="extends-implements">extends <a href="../Object.html" title="class in java.lang">Object</a>
-implements <a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></span></div>
+<span class="extends-implements">extends <a href="../Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></span></div>
 <div class="block">A VarHandle is a dynamically strongly typed reference to a variable, or to a
 parametrically-defined family of variables, including static fields,
 non-static fields, array elements, or components of an off-heap data
@@ -209,7 +209,7 @@ Variable and coordinate types may be primitive or reference, and are
 represented by <code>Class</code> objects.  The list of coordinate types may be
 empty.
 
-<p>Factory methods that produce or <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>lookup</code></a> VarHandle instances document the supported variable type and the list
+<p>Factory methods that produce or <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>lookup</code></a> VarHandle instances document the supported variable type and the list
 of coordinate types.
 
 <p>Each access mode is associated with one <em>access mode method</em>, a
@@ -225,7 +225,7 @@ and new value.
 <p>The arity and types of arguments to the invocation of an access mode
 method are not checked statically.  Instead, each access mode method
 specifies an <a href="#accessModeType(java.lang.invoke.VarHandle.AccessMode)"><code>access mode type</code></a>,
-represented as an instance of <a href="MethodType.html" title="class in java.lang.invoke"><code>MethodType</code></a>, that serves as a kind of
+represented as an instance of <a href="MethodType.html" title="java.lang.invoke 包中的类"><code>MethodType</code></a>, that serves as a kind of
 method signature against which the arguments are checked dynamically.  An
 access mode type gives formal parameter types in terms of the coordinate
 types of a VarHandle instance and the types for values of importance to the
@@ -325,7 +325,7 @@ consists of the methods
 <a href="#getAndBitwiseXorRelease(java.lang.Object...)"><code>getAndBitwiseXorRelease</code></a>.
 </ul>
 
-<p>Factory methods that produce or <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>lookup</code></a> VarHandle instances document the set of access modes that are
+<p>Factory methods that produce or <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>lookup</code></a> VarHandle instances document the set of access modes that are
 supported, which may also include documenting restrictions based on the
 variable type and whether a variable is read-only.  If an access mode is not
 supported then the corresponding access mode method will on invocation throw
@@ -493,7 +493,7 @@ Where, in this case, the method handle is bound to the VarHandle instance.
 <h2 id="invocation-checking-heading">Invocation checking</h2>
 In typical programs, VarHandle access mode type matching will usually
 succeed.  But if a match fails, the JVM will throw a
-<a href="WrongMethodTypeException.html" title="class in java.lang.invoke"><code>WrongMethodTypeException</code></a>.
+<a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类"><code>WrongMethodTypeException</code></a>.
 <p>
 Thus, an access mode type mismatch which might show up as a linkage error
 in a statically typed program can show up as a dynamic
@@ -528,7 +528,7 @@ untrusted code unless their use from the untrusted code would be harmless.
 <h2 id="varhandle-creation-heading">VarHandle creation</h2>
 Java code can create a VarHandle that directly accesses any field that is
 accessible to that code.  This is done via a reflective, capability-based
-API called <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>MethodHandles.Lookup</code></a>.
+API called <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>MethodHandles.Lookup</code></a>.
 For example, a VarHandle for a non-static field can be obtained
 from <a href="MethodHandles.Lookup.html#findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)"><code>Lookup.findVarHandle</code></a>.
 There is also a conversion method from Core Reflection API objects,
@@ -542,9 +542,9 @@ class outside the current package, the receiver argument will be narrowed to
 the type of the accessing class.
 
 <h2 id="interoperation-between-varhandles-and-the-core-reflection-api-heading">Interoperation between VarHandles and the Core Reflection API</h2>
-Using factory methods in the <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>Lookup</code></a> API, any field represented by a Core Reflection API object
+Using factory methods in the <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>Lookup</code></a> API, any field represented by a Core Reflection API object
 can be converted to a behaviorally equivalent VarHandle.
-For example, a reflective <a href="../reflect/Field.html" title="class in java.lang.reflect"><code>Field</code></a> can
+For example, a reflective <a href="../reflect/Field.html" title="java.lang.reflect 包中的类"><code>Field</code></a> can
 be converted to a VarHandle using
 <a href="MethodHandles.Lookup.html#unreflectVarHandle(java.lang.reflect.Field)"><code>Lookup.unreflectVarHandle</code></a>.
 The resulting VarHandles generally provide more direct and efficient
@@ -594,14 +594,14 @@ instances.  If this occurs, the compiler will replace those types by their
 erasures when it constructs the symbolic type descriptor for the
 <code>invokevirtual</code> instruction.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodHandle.html" title="class in java.lang.invoke"><code>MethodHandle</code></a></li>
-<li><a href="MethodHandles.html" title="class in java.lang.invoke"><code>MethodHandles</code></a></li>
-<li><a href="MethodType.html" title="class in java.lang.invoke"><code>MethodType</code></a></li>
+<li><a href="MethodHandle.html" title="java.lang.invoke 包中的类"><code>MethodHandle</code></a></li>
+<li><a href="MethodHandles.html" title="java.lang.invoke 包中的类"><code>MethodHandles</code></a></li>
+<li><a href="MethodType.html" title="java.lang.invoke 包中的类"><code>MethodType</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -612,23 +612,23 @@ erasures when it constructs the symbolic type descriptor for the
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">类</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="VarHandle.AccessMode.html" class="type-name-link" title="enum class in java.lang.invoke">VarHandle.AccessMode</a></code></div>
+<div class="col-second even-row-color"><code><a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The set of access modes that specify how a variable, referenced by a
 VarHandle, is accessed.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="VarHandle.VarHandleDesc.html" class="type-name-link" title="class in java.lang.invoke">VarHandle.VarHandleDesc</a></code></div>
+<div class="col-second odd-row-color"><code><a href="VarHandle.VarHandleDesc.html" title="java.lang.invoke 包中的类">VarHandle.VarHandleDesc</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">A <a href="../../../../java.base/java/lang/constant/package-summary.html#nominal">nominal descriptor</a> for a
-<a href="VarHandle.html" title="class in java.lang.invoke"><code>VarHandle</code></a> constant.</div>
+<a href="VarHandle.html" title="java.lang.invoke 包中的类"><code>VarHandle</code></a> constant.</div>
 </div>
 </div>
 </section>
@@ -636,16 +636,16 @@ VarHandle, is accessed.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#accessModeType(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">accessModeType</a><wbr>(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#accessModeType(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">accessModeType</a><wbr>(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtains the access mode type for this VarHandle and a given access mode.</div>
 </div>
@@ -655,8 +655,8 @@ VarHandle, is accessed.</div>
 <div class="block">Ensures that loads before the fence will not be reordered with loads and
 stores after the fence.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchange(java.lang.Object...)" class="member-name-link">compareAndExchange</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchange(java.lang.Object...)" class="member-name-link">compareAndExchange</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's current value,
@@ -664,8 +664,8 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <code>expectedValue</code>, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchangeAcquire(java.lang.Object...)" class="member-name-link">compareAndExchangeAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchangeAcquire(java.lang.Object...)" class="member-name-link">compareAndExchangeAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
@@ -673,8 +673,8 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <code>expectedValue</code>, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchangeRelease(java.lang.Object...)" class="member-name-link">compareAndExchangeRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndExchangeRelease(java.lang.Object...)" class="member-name-link">compareAndExchangeRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> if the variable's current value,
@@ -683,7 +683,7 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndSet(java.lang.Object...)" class="member-name-link">compareAndSet</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareAndSet(java.lang.Object...)" class="member-name-link">compareAndSet</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's current value,
@@ -691,16 +691,16 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <code>expectedValue</code>, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#coordinateTypes()" class="member-name-link">coordinateTypes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the coordinate types for this VarHandle.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="VarHandle.VarHandleDesc.html" title="class in java.lang.invoke">VarHandle.VarHandleDesc</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="VarHandle.VarHandleDesc.html" title="java.lang.invoke 包中的类">VarHandle.VarHandleDesc</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#describeConstable()" class="member-name-link">describeConstable</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fullFence()" class="member-name-link">fullFence</a>()</code></div>
@@ -709,44 +709,44 @@ constructed, or an empty <a href="../../util/Optional.html" title="class in java
 with
 loads and stores after the fence.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.lang.Object...)" class="member-name-link">get</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.lang.Object...)" class="member-name-link">get</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of a variable, with memory semantics of reading as
 if the variable was declared non-<code>volatile</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAcquire(java.lang.Object...)" class="member-name-link">getAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAcquire(java.lang.Object...)" class="member-name-link">getAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of a variable, and ensures that subsequent loads and
 stores are not reordered before this access.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAdd(java.lang.Object...)" class="member-name-link">getAndAdd</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAdd(java.lang.Object...)" class="member-name-link">getAndAdd</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAddAcquire(java.lang.Object...)" class="member-name-link">getAndAddAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAddAcquire(java.lang.Object...)" class="member-name-link">getAndAddAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAddRelease(java.lang.Object...)" class="member-name-link">getAndAddRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndAddRelease(java.lang.Object...)" class="member-name-link">getAndAddRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAnd(java.lang.Object...)" class="member-name-link">getAndBitwiseAnd</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAnd(java.lang.Object...)" class="member-name-link">getAndBitwiseAnd</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
@@ -754,8 +754,8 @@ with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>s
 variable's previous value, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAndAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseAndAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAndAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseAndAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
@@ -763,8 +763,8 @@ with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Objec
 variable's previous value, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAndRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseAndRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseAndRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseAndRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
@@ -772,8 +772,8 @@ with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>se
 variable's previous value, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOr(java.lang.Object...)" class="member-name-link">getAndBitwiseOr</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOr(java.lang.Object...)" class="member-name-link">getAndBitwiseOr</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
@@ -781,8 +781,8 @@ with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>s
 variable's previous value, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOrAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseOrAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOrAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseOrAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
@@ -790,8 +790,8 @@ with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Objec
 variable's previous value, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOrRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseOrRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseOrRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseOrRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
@@ -799,8 +799,8 @@ with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>se
 variable's previous value, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXor(java.lang.Object...)" class="member-name-link">getAndBitwiseXor</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXor(java.lang.Object...)" class="member-name-link">getAndBitwiseXor</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
@@ -808,8 +808,8 @@ with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>s
 variable's previous value, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXorAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseXorAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXorAcquire(java.lang.Object...)" class="member-name-link">getAndBitwiseXorAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
@@ -817,8 +817,8 @@ with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Objec
 variable's previous value, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXorRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseXorRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndBitwiseXorRelease(java.lang.Object...)" class="member-name-link">getAndBitwiseXorRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
@@ -826,38 +826,38 @@ with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>se
 variable's previous value, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSet(java.lang.Object...)" class="member-name-link">getAndSet</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSet(java.lang.Object...)" class="member-name-link">getAndSet</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSetAcquire(java.lang.Object...)" class="member-name-link">getAndSetAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSetAcquire(java.lang.Object...)" class="member-name-link">getAndSetAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSetRelease(java.lang.Object...)" class="member-name-link">getAndSetRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAndSetRelease(java.lang.Object...)" class="member-name-link">getAndSetRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOpaque(java.lang.Object...)" class="member-name-link">getOpaque</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOpaque(java.lang.Object...)" class="member-name-link">getOpaque</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of a variable, accessed in program order, but with no
 assurance of memory ordering effects with respect to other threads.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVolatile(java.lang.Object...)" class="member-name-link">getVolatile</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVolatile(java.lang.Object...)" class="member-name-link">getVolatile</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the value of a variable, with memory semantics of reading as if
 the variable was declared <code>volatile</code>.</div>
@@ -868,7 +868,7 @@ the variable was declared <code>volatile</code>.</div>
 <div class="block">Returns <code>true</code> if this VarHandle has <a href="#invoke-exact-behavior"><em>invoke-exact behavior</em></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAccessModeSupported(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">isAccessModeSupported</a><wbr>(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAccessModeSupported(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">isAccessModeSupported</a><wbr>(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>true</code> if the given access mode is supported, otherwise
 <code>false</code>.</div>
@@ -886,27 +886,27 @@ loads after the fence.</div>
 reordered with stores after the fence.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(java.lang.Object...)" class="member-name-link">set</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(java.lang.Object...)" class="member-name-link">set</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the value of a variable to the <code>newValue</code>, with memory
 semantics of setting as if the variable was declared non-<code>volatile</code>
 and non-<code>final</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOpaque(java.lang.Object...)" class="member-name-link">setOpaque</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOpaque(java.lang.Object...)" class="member-name-link">setOpaque</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the value of a variable to the <code>newValue</code>, in program order,
 but with no assurance of memory ordering effects with respect to other
 threads.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRelease(java.lang.Object...)" class="member-name-link">setRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setRelease(java.lang.Object...)" class="member-name-link">setRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the value of a variable to the <code>newValue</code>, and ensures that
 prior loads and stores are not reordered after this access.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVolatile(java.lang.Object...)" class="member-name-link">setVolatile</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setVolatile(java.lang.Object...)" class="member-name-link">setVolatile</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the value of a variable to the <code>newValue</code>, with memory
 semantics of setting as if the variable was declared <code>volatile</code>.</div>
@@ -917,25 +917,25 @@ semantics of setting as if the variable was declared <code>volatile</code>.</div
 <div class="block">Ensures that stores before the fence will not be reordered with
 stores after the fence.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMethodHandle(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">toMethodHandle</a><wbr>(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toMethodHandle(java.lang.invoke.VarHandle.AccessMode)" class="member-name-link">toMethodHandle</a><wbr>(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtains a method handle bound to this VarHandle and the given access
 mode.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns a compact textual description of this <a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a>,
+<div class="block">Returns a compact textual description of this <a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a>,
 including the type of variable described, and a description of its coordinates.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#varType()" class="member-name-link">varType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the variable type of variables referenced by this VarHandle.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSet(java.lang.Object...)" class="member-name-link">weakCompareAndSet</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSet(java.lang.Object...)" class="member-name-link">weakCompareAndSet</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's
@@ -944,7 +944,7 @@ current value, referred to as the <em>witness value</em>, <code>==</code> the
 <a href="#getVolatile(java.lang.Object...)"><code>getVolatile(Object...)</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetAcquire(java.lang.Object...)" class="member-name-link">weakCompareAndSetAcquire</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetAcquire(java.lang.Object...)" class="member-name-link">weakCompareAndSetAcquire</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
@@ -953,7 +953,7 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <a href="#getAcquire(java.lang.Object...)"><code>getAcquire(Object...)</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetPlain(java.lang.Object...)" class="member-name-link">weakCompareAndSetPlain</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetPlain(java.lang.Object...)" class="member-name-link">weakCompareAndSetPlain</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
@@ -962,7 +962,7 @@ referred to as the <em>witness value</em>, <code>==</code> the
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetRelease(java.lang.Object...)" class="member-name-link">weakCompareAndSetRelease</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#weakCompareAndSetRelease(java.lang.Object...)" class="member-name-link">weakCompareAndSetRelease</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> if the variable's current
@@ -970,14 +970,14 @@ value, referred to as the <em>witness value</em>, <code>==</code> the
 <code>expectedValue</code>, as accessed with the memory semantics of
 <a href="#get(java.lang.Object...)"><code>get(Object...)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withInvokeBehavior()" class="member-name-link">withInvokeBehavior</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
 invocation behavior of access mode methods is adjusted to
 <a href="#invoke-behavior"><em>invoke behavior</em></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#withInvokeExactBehavior()" class="member-name-link">withInvokeExactBehavior</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
@@ -988,7 +988,7 @@ invocation behavior of access mode methods is adjusted to
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../Object.html#clone()" title="clone()">clone</a>, <a href="../Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../Object.html#finalize()" title="finalize()">finalize</a>, <a href="../Object.html#getClass()" title="getClass()">getClass</a>, <a href="../Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../Object.html#notify()" title="notify()">notify</a>, <a href="../Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../Object.html#wait()" title="wait()">wait</a>, <a href="../Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -999,7 +999,7 @@ invocation behavior of access mode methods is adjusted to
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="hasInvokeExactBehavior()">
@@ -1008,11 +1008,11 @@ invocation behavior of access mode methods is adjusted to
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasInvokeExactBehavior</span>()</div>
 <div class="block">Returns <code>true</code> if this VarHandle has <a href="#invoke-exact-behavior"><em>invoke-exact behavior</em></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this VarHandle has <a href="#invoke-exact-behavior"><em>invoke-exact behavior</em></a>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#withInvokeExactBehavior()"><code>withInvokeExactBehavior()</code></a></li>
@@ -1027,7 +1027,7 @@ invocation behavior of access mode methods is adjusted to
 <section class="detail" id="get(java.lang.Object...)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Returns the value of a variable, with memory semantics of reading as
 if the variable was declared non-<code>volatile</code>.  Commonly referred to
 as plain read access.
@@ -1041,18 +1041,18 @@ must match the access mode type that is the result of calling
 <p>This access mode is supported by all VarHandle instances and never
 throws <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the value of the
 variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dt>抛出:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1062,7 +1062,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="set(java.lang.Object...)">
 <h3>set</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Sets the value of a variable to the <code>newValue</code>, with memory
 semantics of setting as if the variable was declared non-<code>volatile</code>
 and non-<code>final</code>.  Commonly referred to as plain write access.
@@ -1073,16 +1073,16 @@ and non-<code>final</code>.  Commonly referred to as plain write access.
 must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.SET)</code> on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1092,7 +1092,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getVolatile(java.lang.Object...)">
 <h3>getVolatile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getVolatile</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getVolatile</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Returns the value of a variable, with memory semantics of reading as if
 the variable was declared <code>volatile</code>.
 
@@ -1103,20 +1103,20 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_VOLATILE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the value of the
 variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1126,7 +1126,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="setVolatile(java.lang.Object...)">
 <h3>setVolatile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setVolatile</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setVolatile</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Sets the value of a variable to the <code>newValue</code>, with memory
 semantics of setting as if the variable was declared <code>volatile</code>.
 
@@ -1137,19 +1137,19 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.SET_VOLATILE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this method has
 memory ordering effects compatible with <code>memory_order_seq_cst</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1159,7 +1159,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getOpaque(java.lang.Object...)">
 <h3>getOpaque</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getOpaque</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getOpaque</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Returns the value of a variable, accessed in program order, but with no
 assurance of memory ordering effects with respect to other threads.
 
@@ -1170,20 +1170,20 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_OPAQUE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the value of the
 variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1193,7 +1193,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="setOpaque(java.lang.Object...)">
 <h3>setOpaque</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOpaque</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setOpaque</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Sets the value of a variable to the <code>newValue</code>, in program order,
 but with no assurance of memory ordering effects with respect to other
 threads.
@@ -1205,16 +1205,16 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.SET_OPAQUE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1224,7 +1224,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAcquire(java.lang.Object...)">
 <h3>getAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Returns the value of a variable, and ensures that subsequent loads and
 stores are not reordered before this access.
 
@@ -1235,24 +1235,24 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this method has
 memory ordering effects compatible with <code>memory_order_acquire</code>
 ordering.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the value of the
 variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1262,7 +1262,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="setRelease(java.lang.Object...)">
 <h3>setRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Sets the value of a variable to the <code>newValue</code>, and ensures that
 prior loads and stores are not reordered after this access.
 
@@ -1273,20 +1273,20 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.SET_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this method has
 memory ordering effects compatible with <code>memory_order_release</code>
 ordering.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
 </dl>
 </div>
@@ -1296,7 +1296,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="compareAndSet(java.lang.Object...)">
 <h3>compareAndSet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">compareAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">compareAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1310,21 +1310,21 @@ compareAndSet</code> must match the access mode type that is the result of
 calling <code>accessModeType(VarHandle.AccessMode.COMPARE_AND_SET)</code> on
 this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful, otherwise <code>false</code> if the
 <em>witness value</em> was not the same as the <code>expectedValue</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1339,7 +1339,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="compareAndExchange(java.lang.Object...)">
 <h3>compareAndExchange</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">compareAndExchange</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">compareAndExchange</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1354,22 +1354,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.COMPARE_AND_EXCHANGE)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the <em>witness value</em>, which
 will be the same as the <code>expectedValue</code> if successful
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type is not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type is not
 compatible with the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type is compatible with the
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type is compatible with the
 caller's symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1384,7 +1384,7 @@ caller's symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="compareAndExchangeAcquire(java.lang.Object...)">
 <h3>compareAndExchangeAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">compareAndExchangeAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">compareAndExchangeAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1399,22 +1399,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.COMPARE_AND_EXCHANGE_ACQUIRE)</code> on
 this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the <em>witness value</em>, which
 will be the same as the <code>expectedValue</code> if successful
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -1429,7 +1429,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="compareAndExchangeRelease(java.lang.Object...)">
 <h3>compareAndExchangeRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">compareAndExchangeRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">compareAndExchangeRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1444,22 +1444,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.COMPARE_AND_EXCHANGE_RELEASE)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the <em>witness value</em>, which
 will be the same as the <code>expectedValue</code> if successful
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a></li>
@@ -1474,7 +1474,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="weakCompareAndSetPlain(java.lang.Object...)">
 <h3>weakCompareAndSetPlain</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetPlain</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetPlain</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1491,22 +1491,22 @@ weakCompareAndSetPlain</code> must match the access mode type that is the result
 calling <code>accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_PLAIN)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful, otherwise <code>false</code> if the
 <em>witness value</em> was not the same as the <code>expectedValue</code> or if this
 operation spuriously failed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -1521,7 +1521,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="weakCompareAndSet(java.lang.Object...)">
 <h3>weakCompareAndSet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> if the variable's
 current value, referred to as the <em>witness value</em>, <code>==</code> the
@@ -1538,22 +1538,22 @@ weakCompareAndSet</code> must match the access mode type that is the
 result of calling <code>accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful, otherwise <code>false</code> if the
 <em>witness value</em> was not the same as the <code>expectedValue</code> or if this
 operation spuriously failed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1568,7 +1568,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="weakCompareAndSetAcquire(java.lang.Object...)">
 <h3>weakCompareAndSetAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> if the variable's current value,
 referred to as the <em>witness value</em>, <code>==</code> the
@@ -1586,22 +1586,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_ACQUIRE)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful, otherwise <code>false</code> if the
 <em>witness value</em> was not the same as the <code>expectedValue</code> or if this
 operation spuriously failed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -1616,7 +1616,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="weakCompareAndSetRelease(java.lang.Object...)">
 <h3>weakCompareAndSetRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">weakCompareAndSetRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Possibly atomically sets the value of a variable to the <code>newValue</code>
 with the semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> if the variable's current
 value, referred to as the <em>witness value</em>, <code>==</code> the
@@ -1634,22 +1634,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.WEAK_COMPARE_AND_SET_RELEASE)</code>
 on this VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T expectedValue, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successful, otherwise <code>false</code> if the
 <em>witness value</em> was not the same as the <code>expectedValue</code> or if this
 operation spuriously failed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a></li>
@@ -1664,7 +1664,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndSet(java.lang.Object...)">
 <h3>getAndSet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndSet</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1677,22 +1677,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_SET)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1707,7 +1707,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndSetAcquire(java.lang.Object...)">
 <h3>getAndSetAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndSetAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndSetAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1720,22 +1720,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_SET_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1750,7 +1750,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndSetRelease(java.lang.Object...)">
 <h3>getAndSetRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndSetRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndSetRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the <code>newValue</code> with the
 memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1763,22 +1763,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_SET_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T newValue)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1793,7 +1793,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndAdd(java.lang.Object...)">
 <h3>getAndAdd</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndAdd</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndAdd</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1806,22 +1806,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_ADD)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T value)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1836,7 +1836,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndAddAcquire(java.lang.Object...)">
 <h3>getAndAddAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndAddAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndAddAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1849,22 +1849,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_ADD_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T value)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1879,7 +1879,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndAddRelease(java.lang.Object...)">
 <h3>getAndAddRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndAddRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndAddRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically adds the <code>value</code> to the current value of a variable with
 the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a>, and returns the variable's
 previous value, as accessed with the memory semantics of
@@ -1892,22 +1892,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_ADD_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T value)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1922,7 +1922,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseOr(java.lang.Object...)">
 <h3>getAndBitwiseOr</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOr</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOr</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> and returns the
@@ -1939,22 +1939,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -1969,7 +1969,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseOrAcquire(java.lang.Object...)">
 <h3>getAndBitwiseOrAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOrAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOrAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> and returns the
@@ -1986,22 +1986,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -2016,7 +2016,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseOrRelease(java.lang.Object...)">
 <h3>getAndBitwiseOrRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOrRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseOrRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise OR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> and returns the
@@ -2033,22 +2033,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_OR_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a></li>
@@ -2063,7 +2063,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseAnd(java.lang.Object...)">
 <h3>getAndBitwiseAnd</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAnd</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAnd</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> and returns the
@@ -2080,22 +2080,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_AND)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -2110,7 +2110,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseAndAcquire(java.lang.Object...)">
 <h3>getAndBitwiseAndAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAndAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAndAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> and returns the
@@ -2127,22 +2127,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_AND_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -2157,7 +2157,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseAndRelease(java.lang.Object...)">
 <h3>getAndBitwiseAndRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAndRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseAndRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise AND between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> and returns the
@@ -2174,22 +2174,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_AND_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a></li>
@@ -2204,7 +2204,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseXor(java.lang.Object...)">
 <h3>getAndBitwiseXor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXor</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXor</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a> and returns the
@@ -2221,22 +2221,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_XOR)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setVolatile(java.lang.Object...)"><code>setVolatile(Object...)</code></a></li>
@@ -2251,7 +2251,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseXorAcquire(java.lang.Object...)">
 <h3>getAndBitwiseXorAcquire</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXorAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXorAcquire</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#set(java.lang.Object...)"><code>set(Object...)</code></a> and returns the
@@ -2268,22 +2268,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_XOR_ACQUIRE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#set(java.lang.Object...)"><code>set(Object...)</code></a></li>
@@ -2298,7 +2298,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="getAndBitwiseXorRelease(java.lang.Object...)">
 <h3>getAndBitwiseXorRelease</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXorRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAndBitwiseXorRelease</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span></div>
 <div class="block">Atomically sets the value of a variable to the result of
 bitwise XOR between the variable's current value and the <code>mask</code>
 with the memory semantics of <a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a> and returns the
@@ -2315,22 +2315,22 @@ must match the access mode type that is the result of calling
 <code>accessModeType(VarHandle.AccessMode.GET_AND_BITWISE_XOR_RELEASE)</code> on this
 VarHandle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list of the form
 <code>(CT1 ct1, ..., CTn ctn, T mask)</code>
 , statically represented using varargs.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result that is the previous value of
 the variable
 , statically represented using <code>Object</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the access mode is unsupported
+<dt>抛出:</dt>
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the access mode is unsupported
 for this VarHandle.</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the access mode type does not
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the access mode type does not
 match the caller's symbolic type descriptor.</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the access mode type matches the caller's
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the access mode type matches the caller's
 symbolic type descriptor, but a reference cast fails.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setRelease(java.lang.Object...)"><code>setRelease(Object...)</code></a></li>
@@ -2345,7 +2345,7 @@ symbolic type descriptor, but a reference cast fails.</dd>
 <section class="detail" id="withInvokeExactBehavior()">
 <h3>withInvokeExactBehavior</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></span>&nbsp;<span class="element-name">withInvokeExactBehavior</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></span>&nbsp;<span class="element-name">withInvokeExactBehavior</span>()</div>
 <div class="block">Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
 invocation behavior of access mode methods is adjusted to
 <a href="#invoke-exact-behavior"><em>invoke-exact behavior</em></a>.
@@ -2355,15 +2355,15 @@ If this VarHandle already has invoke-exact behavior this VarHandle is returned.
 Invoking <a href="#hasInvokeExactBehavior()"><code>hasInvokeExactBehavior()</code></a> on the returned var handle
 is guaranteed to return <code>true</code>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Invoke-exact behavior guarantees that upon invocation of an access mode method
 the types and arity of the arguments must match the <a href="#accessModeType(java.lang.invoke.VarHandle.AccessMode)"><code>access mode type</code></a>,
-otherwise a <a href="WrongMethodTypeException.html" title="class in java.lang.invoke"><code>WrongMethodTypeException</code></a> is thrown.</dd>
-<dt>Returns:</dt>
+otherwise a <a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类"><code>WrongMethodTypeException</code></a> is thrown.</dd>
+<dt>返回:</dt>
 <dd>a VarHandle with invoke-exact behavior</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#withInvokeBehavior()"><code>withInvokeBehavior()</code></a></li>
@@ -2378,7 +2378,7 @@ otherwise a <a href="WrongMethodTypeException.html" title="class in java.lang.in
 <section class="detail" id="withInvokeBehavior()">
 <h3>withInvokeBehavior</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></span>&nbsp;<span class="element-name">withInvokeBehavior</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></span>&nbsp;<span class="element-name">withInvokeBehavior</span>()</div>
 <div class="block">Returns a VarHandle, with access to the same variable(s) as this VarHandle, but whose
 invocation behavior of access mode methods is adjusted to
 <a href="#invoke-behavior"><em>invoke behavior</em></a>.
@@ -2388,11 +2388,11 @@ If this VarHandle already has invoke behavior this VarHandle is returned.
 Invoking <a href="#hasInvokeExactBehavior()"><code>hasInvokeExactBehavior()</code></a> on the returned var handle
 is guaranteed to return <code>false</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a VarHandle with invoke behavior</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#withInvokeExactBehavior()"><code>withInvokeExactBehavior()</code></a></li>
@@ -2407,14 +2407,14 @@ is guaranteed to return <code>false</code>.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block">Returns a compact textual description of this <a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a>,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Returns a compact textual description of this <a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a>,
 including the type of variable described, and a description of its coordinates.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
-<dd>A compact textual description of this <a href="VarHandle.html" title="class in java.lang.invoke">VarHandle</a></dd>
+<dt>重写:</dt>
+<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
+<dd>A compact textual description of this <a href="VarHandle.html" title="java.lang.invoke 包中的类">VarHandle</a></dd>
 </dl>
 </div>
 </section>
@@ -2423,10 +2423,10 @@ including the type of variable described, and a description of its coordinates.<
 <section class="detail" id="varType()">
 <h3>varType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">varType</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">varType</span>()</div>
 <div class="block">Returns the variable type of variables referenced by this VarHandle.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the variable type of variables referenced by this VarHandle</dd>
 </dl>
 </div>
@@ -2436,10 +2436,10 @@ including the type of variable described, and a description of its coordinates.<
 <section class="detail" id="coordinateTypes()">
 <h3>coordinateTypes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/List.html" title="interface in java.util">List</a>&lt;<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">coordinateTypes</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&gt;</span>&nbsp;<span class="element-name">coordinateTypes</span>()</div>
 <div class="block">Returns the coordinate types for this VarHandle.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the coordinate types for this VarHandle. The returned
 list is unmodifiable</dd>
 </dl>
@@ -2450,7 +2450,7 @@ list is unmodifiable</dd>
 <section class="detail" id="accessModeType(java.lang.invoke.VarHandle.AccessMode)">
 <h3>accessModeType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">accessModeType</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">accessModeType</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
 <div class="block">Obtains the access mode type for this VarHandle and a given access mode.
 
 <p>The access mode type's parameter types will consist of a prefix that
@@ -2459,10 +2459,10 @@ types as defined by the access mode method.
 The access mode type's return type is defined by the return type of the
 access mode method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>accessMode</code> - the access mode, corresponding to the
 signature-polymorphic method of the same name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the access mode type for the given access mode</dd>
 </dl>
 </div>
@@ -2472,7 +2472,7 @@ signature-polymorphic method of the same name</dd>
 <section class="detail" id="isAccessModeSupported(java.lang.invoke.VarHandle.AccessMode)">
 <h3>isAccessModeSupported</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAccessModeSupported</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isAccessModeSupported</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
 <div class="block">Returns <code>true</code> if the given access mode is supported, otherwise
 <code>false</code>.
 
@@ -2480,10 +2480,10 @@ signature-polymorphic method of the same name</dd>
 that an <code>UnsupportedOperationException</code> is thrown on invocation
 of the corresponding access mode method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>accessMode</code> - the access mode, corresponding to the
 signature-polymorphic method of the same name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the given access mode is supported, otherwise
 <code>false</code>.</dd>
 </dl>
@@ -2494,11 +2494,11 @@ signature-polymorphic method of the same name</dd>
 <section class="detail" id="toMethodHandle(java.lang.invoke.VarHandle.AccessMode)">
 <h3>toMethodHandle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">toMethodHandle</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="enum class in java.lang.invoke">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">toMethodHandle</span><wbr><span class="parameters">(<a href="VarHandle.AccessMode.html" title="java.lang.invoke 包中的枚举类">VarHandle.AccessMode</a>&nbsp;accessMode)</span></div>
 <div class="block">Obtains a method handle bound to this VarHandle and the given access
 mode.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method, for a VarHandle <code>vh</code> and access mode
 <code>{access-mode}</code>, returns a method handle that is equivalent to
 method handle <code>bmh</code> in the following code (though it may be more
@@ -2508,10 +2508,10 @@ efficient):
 
 MethodHandle bmh = mh.bindTo(vh);
 </code></pre></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>accessMode</code> - the access mode, corresponding to the
 signature-polymorphic method of the same name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method handle bound to this VarHandle and the given access mode</dd>
 </dl>
 </div>
@@ -2521,16 +2521,16 @@ signature-polymorphic method of the same name</dd>
 <section class="detail" id="describeConstable()">
 <h3>describeConstable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="VarHandle.VarHandleDesc.html" title="class in java.lang.invoke">VarHandle.VarHandleDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="VarHandle.VarHandleDesc.html" title="java.lang.invoke 包中的类">VarHandle.VarHandleDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
 <div class="block">Return a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></code></dd>
-<dt>Returns:</dt>
-<dd>An <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> containing the resulting nominal descriptor,
-or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be constructed.</dd>
-<dt>Since:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></code></dd>
+<dt>返回:</dt>
+<dd>An <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> containing the resulting nominal descriptor,
+or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be constructed.</dd>
+<dt>自:</dt>
 <dd>12</dd>
 </dl>
 </div>
@@ -2545,7 +2545,7 @@ or an empty <a href="../../util/Optional.html" title="class in java.util"><code>
 with
 loads and stores after the fence.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this
 method has memory ordering effects compatible with
 <code>atomic_thread_fence(memory_order_seq_cst)</code></dd>
@@ -2561,7 +2561,7 @@ method has memory ordering effects compatible with
 <div class="block">Ensures that loads before the fence will not be reordered with loads and
 stores after the fence.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this
 method has memory ordering effects compatible with
 <code>atomic_thread_fence(memory_order_acquire)</code></dd>
@@ -2577,7 +2577,7 @@ method has memory ordering effects compatible with
 <div class="block">Ensures that loads and stores before the fence will not be
 reordered with stores after the fence.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Ignoring the many semantic differences from C and C++, this
 method has memory ordering effects compatible with
 <code>atomic_thread_fence(memory_order_release)</code></dd>

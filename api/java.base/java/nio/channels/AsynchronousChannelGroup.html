@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="AsynchronousChannelGroup.html" class="current-selection">AsynchronousChannelGroup</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,22 +66,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#threading-heading" tabindex="0">Threading</a></li>
 <li><a href="#shutdown-and-termination-heading" tabindex="0">Shutdown and Termination</a></li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.nio.channels.spi.AsynchronousChannelProvider)" tabindex="0">AsynchronousChannelGroup(AsynchronousChannelProvider)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#provider()" tabindex="0">provider()</a></li>
 <li><a href="#withFixedThreadPool(int,java.util.concurrent.ThreadFactory)" tabindex="0">withFixedThreadPool(int, ThreadFactory)</a></li>
@@ -99,22 +99,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class AsynchronousChannelGroup" class="title">Class AsynchronousChannelGroup</h1>
+<h1 title="类 AsynchronousChannelGroup" class="title">类 AsynchronousChannelGroup</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.channels.AsynchronousChannelGroup</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">AsynchronousChannelGroup</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A grouping of asynchronous channels for the purpose of resource sharing.
 
 <p> An asynchronous channel group encapsulates the mechanics required to
-handle the completion of I/O operations initiated by <a href="AsynchronousChannel.html" title="interface in java.nio.channels"><code>asynchronous channels</code></a> that are bound to the group. A group has an associated
+handle the completion of I/O operations initiated by <a href="AsynchronousChannel.html" title="java.nio.channels 包中的接口"><code>asynchronous channels</code></a> that are bound to the group. A group has an associated
 thread pool to which tasks are submitted to handle I/O events and dispatch to
-<a href="CompletionHandler.html" title="interface in java.nio.channels"><code>completion-handlers</code></a> that consume the result of
+<a href="CompletionHandler.html" title="java.nio.channels 包中的接口"><code>completion-handlers</code></a> that consume the result of
 asynchronous operations performed on channels in the group. In addition to
 handling I/O events, the pooled threads may also execute other tasks required
 to support the execution of asynchronous I/O operations.
@@ -130,7 +130,7 @@ automatically. Asynchronous channels that do not specify a group at
 construction time are bound to the default group. The default group has an
 associated thread pool that creates new threads as needed. The default group
 may be configured by means of system properties defined in the table below.
-Where the <a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent"><code>ThreadFactory</code></a> for the
+Where the <a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> for the
 default group is not configured then the pooled threads of the default group
 are <a href="../../lang/Thread.html#isDaemon()"><code>daemon</code></a> threads.
 
@@ -148,7 +148,7 @@ are <a href="../../lang/Thread.html#isDaemon()"><code>daemon</code></a> threads.
       <code><span id="java.nio.channels.DefaultThreadPool.threadFactory" class="search-tag-result">java.nio.channels.DefaultThreadPool.threadFactory</span></code>
     </th>
     <td> The value of this property is taken to be the fully-qualified name
-    of a concrete <a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent"><code>ThreadFactory</code></a>
+    of a concrete <a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a>
     class. The class is loaded using the system class loader and instantiated.
     The factory's <a href="../../util/concurrent/ThreadFactory.html#newThread(java.lang.Runnable)"><code>newThread</code></a> method is invoked to create each thread for the default
     group's thread pool. If the process to load and instantiate the value
@@ -189,7 +189,7 @@ handler directly by the initiating thread (see <a href="AsynchronousServerSocket
 <p> The <a href="#shutdown()"><code>shutdown</code></a> method is used to initiate an <em>orderly
 shutdown</em> of a group. An orderly shutdown marks the group as shutdown;
 further attempts to construct a channel that binds to the group will throw
-<a href="ShutdownChannelGroupException.html" title="class in java.nio.channels"><code>ShutdownChannelGroupException</code></a>. Whether or not a group is shutdown can
+<a href="ShutdownChannelGroupException.html" title="java.nio.channels 包中的类"><code>ShutdownChannelGroupException</code></a>. Whether or not a group is shutdown can
 be tested using the <a href="#isShutdown()"><code>isShutdown</code></a> method. Once shutdown,
 the group <em>terminates</em> when all asynchronous channels that are bound to
 the group are closed, all actively executing completion handlers have run to
@@ -205,9 +205,9 @@ by an orderly shutdown, the <code>shutdownNow</code> method closes all open chan
 in the group as if by invoking the <a href="AsynchronousChannel.html#close()"><code>close</code></a>
 method.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="AsynchronousSocketChannel.html#open(java.nio.channels.AsynchronousChannelGroup)"><code>AsynchronousSocketChannel.open(AsynchronousChannelGroup)</code></a></li>
@@ -222,14 +222,14 @@ method.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.spi.AsynchronousChannelProvider)" class="member-name-link">AsynchronousChannelGroup</a><wbr>(<a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi">AsynchronousChannelProvider</a>&nbsp;provider)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.nio.channels.spi.AsynchronousChannelProvider)" class="member-name-link">AsynchronousChannelGroup</a><wbr>(<a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类">AsynchronousChannelProvider</a>&nbsp;provider)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Initialize a new instance of this class.</div>
 </div>
@@ -239,17 +239,17 @@ method.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#awaitTermination(long,java.util.concurrent.TimeUnit)" class="member-name-link">awaitTermination</a><wbr>(long&nbsp;timeout,
- <a href="../../util/concurrent/TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="../../util/concurrent/TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Awaits termination of the group.</div>
 </div>
@@ -263,7 +263,7 @@ method.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tells whether or not this group has terminated.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi">AsynchronousChannelProvider</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类">AsynchronousChannelProvider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the provider that created this channel group.</div>
@@ -278,21 +278,21 @@ method.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Shuts down the group and closes all open channels in the group.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withCachedThreadPool(java.util.concurrent.ExecutorService,int)" class="member-name-link">withCachedThreadPool</a><wbr>(<a href="../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withCachedThreadPool(java.util.concurrent.ExecutorService,int)" class="member-name-link">withCachedThreadPool</a><wbr>(<a href="../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor,
  int&nbsp;initialSize)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an asynchronous channel group with a given thread pool that
 creates new threads as needed.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withFixedThreadPool(int,java.util.concurrent.ThreadFactory)" class="member-name-link">withFixedThreadPool</a><wbr>(int&nbsp;nThreads,
- <a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent">ThreadFactory</a>&nbsp;threadFactory)</code></div>
+ <a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口">ThreadFactory</a>&nbsp;threadFactory)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an asynchronous channel group with a fixed thread pool.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withThreadPool(java.util.concurrent.ExecutorService)" class="member-name-link">withThreadPool</a><wbr>(<a href="../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#withThreadPool(java.util.concurrent.ExecutorService)" class="member-name-link">withThreadPool</a><wbr>(<a href="../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an asynchronous channel group with a given thread pool.</div>
 </div>
@@ -300,7 +300,7 @@ creates new threads as needed.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -311,16 +311,16 @@ creates new threads as needed.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.nio.channels.spi.AsynchronousChannelProvider)">
 <h3>AsynchronousChannelGroup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">AsynchronousChannelGroup</span><wbr><span class="parameters">(<a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi">AsynchronousChannelProvider</a>&nbsp;provider)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">AsynchronousChannelGroup</span><wbr><span class="parameters">(<a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类">AsynchronousChannelProvider</a>&nbsp;provider)</span></div>
 <div class="block">Initialize a new instance of this class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>provider</code> - The asynchronous channel provider for this group</dd>
 </dl>
 </div>
@@ -332,16 +332,16 @@ creates new threads as needed.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="provider()">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi">AsynchronousChannelProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类">AsynchronousChannelProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
 <div class="block">Returns the provider that created this channel group.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The provider that created this channel group</dd>
 </dl>
 </div>
@@ -351,9 +351,9 @@ creates new threads as needed.</div>
 <section class="detail" id="withFixedThreadPool(int,java.util.concurrent.ThreadFactory)">
 <h3>withFixedThreadPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withFixedThreadPool</span><wbr><span class="parameters">(int&nbsp;nThreads,
- <a href="../../util/concurrent/ThreadFactory.html" title="interface in java.util.concurrent">ThreadFactory</a>&nbsp;threadFactory)</span>
-                                                    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withFixedThreadPool</span><wbr><span class="parameters">(int&nbsp;nThreads,
+ <a href="../../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口">ThreadFactory</a>&nbsp;threadFactory)</span>
+                                                    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates an asynchronous channel group with a fixed thread pool.
 
 <p> The resulting asynchronous channel group reuses a fixed number of
@@ -363,16 +363,16 @@ completion results for operations initiated on asynchronous channels in
 the group.
 
 <p> The group is created by invoking the <a href="spi/AsynchronousChannelProvider.html#openAsynchronousChannelGroup(int,java.util.concurrent.ThreadFactory)"><code>openAsynchronousChannelGroup(int,ThreadFactory)</code></a> method of the system-wide
-default <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi"><code>AsynchronousChannelProvider</code></a> object.</div>
+default <a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类"><code>AsynchronousChannelProvider</code></a> object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>nThreads</code> - The number of threads in the pool</dd>
 <dd><code>threadFactory</code> - The factory to use when creating new threads</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new asynchronous channel group</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If <code>nThreads &lt;= 0</code></dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If <code>nThreads &lt;= 0</code></dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -381,9 +381,9 @@ default <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.
 <section class="detail" id="withCachedThreadPool(java.util.concurrent.ExecutorService,int)">
 <h3>withCachedThreadPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withCachedThreadPool</span><wbr><span class="parameters">(<a href="../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withCachedThreadPool</span><wbr><span class="parameters">(<a href="../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor,
  int&nbsp;initialSize)</span>
-                                                     throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                                                     throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates an asynchronous channel group with a given thread pool that
 creates new threads as needed.
 
@@ -405,17 +405,17 @@ service. Shutting down the executor service by other means results in
 unspecified behavior.
 
 <p> The group is created by invoking the <a href="spi/AsynchronousChannelProvider.html#openAsynchronousChannelGroup(java.util.concurrent.ExecutorService,int)"><code>openAsynchronousChannelGroup(ExecutorService,int)</code></a> method of the system-wide
-default <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi"><code>AsynchronousChannelProvider</code></a> object.</div>
+default <a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类"><code>AsynchronousChannelProvider</code></a> object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>executor</code> - The thread pool for the resulting group</dd>
 <dd><code>initialSize</code> - A value <code>&gt;=0</code> or a negative value for implementation
          specific default</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new asynchronous channel group</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../util/concurrent/Executors.html#newCachedThreadPool()"><code>Executors.newCachedThreadPool()</code></a></li>
@@ -429,8 +429,8 @@ default <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.
 <section class="detail" id="withThreadPool(java.util.concurrent.ExecutorService)">
 <h3>withThreadPool</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="class in java.nio.channels">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withThreadPool</span><wbr><span class="parameters">(<a href="../../util/concurrent/ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a>&nbsp;executor)</span>
-                                               throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="AsynchronousChannelGroup.html" title="java.nio.channels 包中的类">AsynchronousChannelGroup</a></span>&nbsp;<span class="element-name">withThreadPool</span><wbr><span class="parameters">(<a href="../../util/concurrent/ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a>&nbsp;executor)</span>
+                                               throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates an asynchronous channel group with a given thread pool.
 
 <p> The <code>executor</code> parameter is an <code>ExecutorService</code> that
@@ -449,15 +449,15 @@ service. Shutting down the executor service by other means results in
 unspecified behavior.
 
 <p> The group is created by invoking the <a href="spi/AsynchronousChannelProvider.html#openAsynchronousChannelGroup(java.util.concurrent.ExecutorService,int)"><code>openAsynchronousChannelGroup(ExecutorService,int)</code></a> method of the system-wide
-default <a href="spi/AsynchronousChannelProvider.html" title="class in java.nio.channels.spi"><code>AsynchronousChannelProvider</code></a> object with an <code>
+default <a href="spi/AsynchronousChannelProvider.html" title="java.nio.channels.spi 包中的类"><code>AsynchronousChannelProvider</code></a> object with an <code>
 initialSize</code> of <code>0</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>executor</code> - The thread pool for the resulting group</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A new asynchronous channel group</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -469,7 +469,7 @@ initialSize</code> of <code>0</code>.</div>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isShutdown</span>()</div>
 <div class="block">Tells whether or not this asynchronous channel group is shutdown.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this asynchronous channel group is shutdown or
          has been marked for shutdown.</dd>
 </dl>
@@ -486,7 +486,7 @@ initialSize</code> of <code>0</code>.</div>
 <p> Where this method returns <code>true</code>, then the associated thread
 pool has also <a href="../../util/concurrent/ExecutorService.html#isTerminated()"><code>terminated</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this group has terminated</dd>
 </dl>
 </div>
@@ -500,7 +500,7 @@ pool has also <a href="../../util/concurrent/ExecutorService.html#isTerminated()
 <div class="block">Initiates an orderly shutdown of the group.
 
 <p> This method marks the group as shutdown. Further attempts to construct
-channel that binds to this group will throw <a href="ShutdownChannelGroupException.html" title="class in java.nio.channels"><code>ShutdownChannelGroupException</code></a>.
+channel that binds to this group will throw <a href="ShutdownChannelGroupException.html" title="java.nio.channels 包中的类"><code>ShutdownChannelGroupException</code></a>.
 The group terminates when all asynchronous channels in the group are
 closed, all actively executing completion handlers have run to completion,
 and all resources have been released. This method has no effect if the
@@ -513,7 +513,7 @@ group is already shutdown.</div>
 <h3>shutdownNow</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">shutdownNow</span>()
-                          throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                          throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Shuts down the group and closes all open channels in the group.
 
 <p> In addition to the actions performed by the <a href="#shutdown()"><code>shutdown</code></a>
@@ -526,8 +526,8 @@ invoked at any time. If some other thread has already invoked it, then
 another invocation will block until the first invocation is complete,
 after which it will return without effect.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -537,21 +537,21 @@ after which it will return without effect.</div>
 <h3>awaitTermination</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">awaitTermination</span><wbr><span class="parameters">(long&nbsp;timeout,
- <a href="../../util/concurrent/TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-                                  throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+ <a href="../../util/concurrent/TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+                                  throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Awaits termination of the group.
 
 <p> This method blocks until the group has terminated, or the timeout
 occurs, or the current thread is interrupted, whichever happens first.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>timeout</code> - The maximum time to wait, or zero or less to not wait</dd>
 <dd><code>unit</code> - The time unit of the timeout argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the group has terminated; <code>false</code> if the
          timeout elapsed before termination</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - If interrupted while waiting</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - If interrupted while waiting</dd>
 </dl>
 </div>
 </section>

@@ -60,7 +60,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.sound.midi</a></li>
 <li><a href="MidiDevice.html" class="current-selection">MidiDevice</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -68,12 +68,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getDeviceInfo()" tabindex="0">getDeviceInfo()</a></li>
 <li><a href="#open()" tabindex="0">open()</a></li>
@@ -93,26 +93,26 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface MidiDevice" class="title">Interface MidiDevice</h1>
+<h1 title="接口 MidiDevice" class="title">接口 MidiDevice</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="Sequencer.html" title="interface in javax.sound.midi">Sequencer</a>, <a href="Synthesizer.html" title="interface in javax.sound.midi">Synthesizer</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="Sequencer.html" title="javax.sound.midi 包中的接口">Sequencer</a>, <a href="Synthesizer.html" title="javax.sound.midi 包中的接口">Synthesizer</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">MidiDevice</span><span class="extends-implements">
-extends <a href="../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
+extends <a href="../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
 <div class="block"><code>MidiDevice</code> is the base interface for all MIDI devices. Common devices
 include synthesizers, sequencers, MIDI input ports, and MIDI output ports.
 <p>
 A <code>MidiDevice</code> can be a transmitter or a receiver of MIDI events, or
-both. Therefore, it can provide <a href="Transmitter.html" title="interface in javax.sound.midi"><code>Transmitter</code></a> or <a href="Receiver.html" title="interface in javax.sound.midi"><code>Receiver</code></a>
+both. Therefore, it can provide <a href="Transmitter.html" title="javax.sound.midi 包中的接口"><code>Transmitter</code></a> or <a href="Receiver.html" title="javax.sound.midi 包中的接口"><code>Receiver</code></a>
 instances (or both). Typically, MIDI IN ports provide transmitters, MIDI OUT
 ports and synthesizers provide receivers. A Sequencer typically provides
 transmitters for playback and receivers for recording.
@@ -128,7 +128,7 @@ exit cleanly. Implicit opening is done by calling
 <code>MidiSystem.getTransmitter</code> is implementation-dependent unless the
 properties <code>javax.sound.midi.Receiver</code> and
 <code>javax.sound.midi.Transmitter</code> are used (see the description of
-properties to select default providers in <a href="MidiSystem.html" title="class in javax.sound.midi"><code>MidiSystem</code></a>). A
+properties to select default providers in <a href="MidiSystem.html" title="javax.sound.midi 包中的类"><code>MidiSystem</code></a>). A
 <code>MidiDevice</code> that was opened implicitly, is closed implicitly by
 closing the <code>Receiver</code> or <code>Transmitter</code> that resulted in opening
 it. If more than one implicitly opening <code>Receiver</code> or
@@ -162,16 +162,16 @@ if (!(device instanceof Sequencer) &amp;&amp; !(device instanceof Synthesizer)) 
 </code></pre>
 
 <p>
-A <code>MidiDevice</code> includes a <a href="MidiDevice.Info.html" title="class in javax.sound.midi"><code>MidiDevice.Info</code></a> object to provide manufacturer
+A <code>MidiDevice</code> includes a <a href="MidiDevice.Info.html" title="javax.sound.midi 包中的类"><code>MidiDevice.Info</code></a> object to provide manufacturer
 information and so on.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Synthesizer.html" title="interface in javax.sound.midi"><code>Synthesizer</code></a></li>
-<li><a href="Sequencer.html" title="interface in javax.sound.midi"><code>Sequencer</code></a></li>
-<li><a href="Receiver.html" title="interface in javax.sound.midi"><code>Receiver</code></a></li>
-<li><a href="Transmitter.html" title="interface in javax.sound.midi"><code>Transmitter</code></a></li>
+<li><a href="Synthesizer.html" title="javax.sound.midi 包中的接口"><code>Synthesizer</code></a></li>
+<li><a href="Sequencer.html" title="javax.sound.midi 包中的接口"><code>Sequencer</code></a></li>
+<li><a href="Receiver.html" title="javax.sound.midi 包中的接口"><code>Receiver</code></a></li>
+<li><a href="Transmitter.html" title="javax.sound.midi 包中的接口"><code>Transmitter</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -182,17 +182,17 @@ information and so on.</div>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="MidiDevice.Info.html" class="type-name-link" title="class in javax.sound.midi">MidiDevice.Info</a></code></div>
+<div class="col-second even-row-color"><code><a href="MidiDevice.Info.html" title="javax.sound.midi 包中的类">MidiDevice.Info</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">A <code>MidiDevice.Info</code> object contains assorted data about a
-<a href="MidiDevice.html" title="interface in javax.sound.midi"><code>MidiDevice</code></a>, including its name, the company who created it, and
+<a href="MidiDevice.html" title="javax.sound.midi 包中的接口"><code>MidiDevice</code></a>, including its name, the company who created it, and
 descriptive text.</div>
 </div>
 </div>
@@ -201,21 +201,21 @@ descriptive text.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes the device, indicating that the device should now release any
 system resources it is using.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MidiDevice.Info.html" title="class in javax.sound.midi">MidiDevice.Info</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MidiDevice.Info.html" title="javax.sound.midi 包中的类">MidiDevice.Info</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDeviceInfo()" class="member-name-link">getDeviceInfo</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Obtains information about the device, including its Java class and
@@ -238,25 +238,25 @@ device for transmitting MIDI data.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Obtains the current time-stamp of the device, in microseconds.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Receiver.html" title="interface in javax.sound.midi">Receiver</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Receiver.html" title="javax.sound.midi 包中的接口">Receiver</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getReceiver()" class="member-name-link">getReceiver</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Obtains a MIDI IN receiver through which the MIDI device may receive MIDI
 data.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="Receiver.html" title="interface in javax.sound.midi">Receiver</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="Receiver.html" title="javax.sound.midi 包中的接口">Receiver</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getReceivers()" class="member-name-link">getReceivers</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all currently active, non-closed receivers connected with this
 <code>MidiDevice</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Transmitter.html" title="interface in javax.sound.midi">Transmitter</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Transmitter.html" title="javax.sound.midi 包中的接口">Transmitter</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTransmitter()" class="member-name-link">getTransmitter</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Obtains a MIDI OUT connection from which the MIDI device will transmit
 MIDI data.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="Transmitter.html" title="interface in javax.sound.midi">Transmitter</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="Transmitter.html" title="javax.sound.midi 包中的接口">Transmitter</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTransmitters()" class="member-name-link">getTransmitters</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all currently active, non-closed transmitters connected with this
@@ -285,17 +285,17 @@ resources it requires and become operational.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getDeviceInfo()">
 <h3>getDeviceInfo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MidiDevice.Info.html" title="class in javax.sound.midi">MidiDevice.Info</a></span>&nbsp;<span class="element-name">getDeviceInfo</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="MidiDevice.Info.html" title="javax.sound.midi 包中的类">MidiDevice.Info</a></span>&nbsp;<span class="element-name">getDeviceInfo</span>()</div>
 <div class="block">Obtains information about the device, including its Java class and
 <code>Strings</code> containing its name, vendor, and description.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>device info</dd>
 </dl>
 </div>
@@ -306,7 +306,7 @@ resources it requires and become operational.</div>
 <h3>open</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">open</span>()
-   throws <span class="exceptions"><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></span></div>
+   throws <span class="exceptions"><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></span></div>
 <div class="block">Opens the device, indicating that it should now acquire any system
 resources it requires and become operational.
 <p>
@@ -318,10 +318,10 @@ Note that some devices, once closed, cannot be reopened. Attempts to
 reopen such a device will always result in a
 <code>MidiUnavailableException</code>.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></code> - thrown if the device cannot be opened
+<dt>抛出:</dt>
+<dd><code><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></code> - thrown if the device cannot be opened
         due to resource restrictions</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#close()"><code>close()</code></a></li>
@@ -344,9 +344,9 @@ All <code>Receiver</code> and <code>Transmitter</code> instances open from this
 device are closed. This includes instances retrieved via
 <code>MidiSystem</code>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>See Also:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../../../../java.base/java/lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#open()"><code>open()</code></a></li>
@@ -364,9 +364,9 @@ device are closed. This includes instances retrieved via
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isOpen</span>()</div>
 <div class="block">Reports whether the device is open.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the device is open, otherwise <code>false</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#open()"><code>open()</code></a></li>
@@ -388,7 +388,7 @@ device is opened and continue incrementing its time-stamp in microseconds
 until the device is closed. If it does not support time-stamps, it should
 always return -1.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current time-stamp of the device in microseconds, or -1 if
         time-stamping is not supported by the device</dd>
 </dl>
@@ -403,7 +403,7 @@ always return -1.</div>
 <div class="block">Obtains the maximum number of MIDI IN connections available on this MIDI
 device for receiving MIDI data.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>maximum number of MIDI IN connections, or -1 if an unlimited
         number of connections is available</dd>
 </dl>
@@ -418,7 +418,7 @@ device for receiving MIDI data.</div>
 <div class="block">Obtains the maximum number of MIDI OUT connections available on this MIDI
 device for transmitting MIDI data.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>maximum number of MIDI OUT connections, or -1 if an unlimited
         number of connections is available</dd>
 </dl>
@@ -429,8 +429,8 @@ device for transmitting MIDI data.</div>
 <section class="detail" id="getReceiver()">
 <h3>getReceiver</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Receiver.html" title="interface in javax.sound.midi">Receiver</a></span>&nbsp;<span class="element-name">getReceiver</span>()
-              throws <span class="exceptions"><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="Receiver.html" title="javax.sound.midi 包中的接口">Receiver</a></span>&nbsp;<span class="element-name">getReceiver</span>()
+              throws <span class="exceptions"><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></span></div>
 <div class="block">Obtains a MIDI IN receiver through which the MIDI device may receive MIDI
 data. The returned receiver must be closed when the application has
 finished using it.
@@ -443,12 +443,12 @@ To be able to use the device, it has to be opened explicitly by calling
 <a href="#open()"><code>open()</code></a>. Also, closing the <code>Receiver</code> does not close the
 device. It has to be closed explicitly by calling <a href="#close()"><code>close()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a receiver for the device</dd>
-<dt>Throws:</dt>
-<dd><code><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></code> - thrown if a receiver is not available
+<dt>抛出:</dt>
+<dd><code><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></code> - thrown if a receiver is not available
         due to resource restrictions</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Receiver.html#close()"><code>Receiver.close()</code></a></li>
@@ -462,7 +462,7 @@ device. It has to be closed explicitly by calling <a href="#close()"><code>close
 <section class="detail" id="getReceivers()">
 <h3>getReceivers</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="Receiver.html" title="interface in javax.sound.midi">Receiver</a>&gt;</span>&nbsp;<span class="element-name">getReceivers</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="Receiver.html" title="javax.sound.midi 包中的接口">Receiver</a>&gt;</span>&nbsp;<span class="element-name">getReceivers</span>()</div>
 <div class="block">Returns all currently active, non-closed receivers connected with this
 <code>MidiDevice</code>. A receiver can be removed from the device by closing
 it.
@@ -470,9 +470,9 @@ it.
 Usually the returned receivers implement the <code>MidiDeviceReceiver</code>
 interface.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an unmodifiable list of the open receivers</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -482,8 +482,8 @@ interface.</div>
 <section class="detail" id="getTransmitter()">
 <h3>getTransmitter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Transmitter.html" title="interface in javax.sound.midi">Transmitter</a></span>&nbsp;<span class="element-name">getTransmitter</span>()
-                    throws <span class="exceptions"><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="Transmitter.html" title="javax.sound.midi 包中的接口">Transmitter</a></span>&nbsp;<span class="element-name">getTransmitter</span>()
+                    throws <span class="exceptions"><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></span></div>
 <div class="block">Obtains a MIDI OUT connection from which the MIDI device will transmit
 MIDI data. The returned transmitter must be closed when the application
 has finished using it.
@@ -497,12 +497,12 @@ calling <a href="#open()"><code>open()</code></a>. Also, closing the <code>Trans
 close the device. It has to be closed explicitly by calling
 <a href="#close()"><code>close()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a MIDI OUT transmitter for the device</dd>
-<dt>Throws:</dt>
-<dd><code><a href="MidiUnavailableException.html" title="class in javax.sound.midi">MidiUnavailableException</a></code> - thrown if a transmitter is not available
+<dt>抛出:</dt>
+<dd><code><a href="MidiUnavailableException.html" title="javax.sound.midi 包中的类">MidiUnavailableException</a></code> - thrown if a transmitter is not available
         due to resource restrictions</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Transmitter.html#close()"><code>Transmitter.close()</code></a></li>
@@ -516,7 +516,7 @@ close the device. It has to be closed explicitly by calling
 <section class="detail" id="getTransmitters()">
 <h3>getTransmitters</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="Transmitter.html" title="interface in javax.sound.midi">Transmitter</a>&gt;</span>&nbsp;<span class="element-name">getTransmitters</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="Transmitter.html" title="javax.sound.midi 包中的接口">Transmitter</a>&gt;</span>&nbsp;<span class="element-name">getTransmitters</span>()</div>
 <div class="block">Returns all currently active, non-closed transmitters connected with this
 <code>MidiDevice</code>. A transmitter can be removed from the device by
 closing it.
@@ -524,9 +524,9 @@ closing it.
 Usually the returned transmitters implement the
 <code>MidiDeviceTransmitter</code> interface.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an unmodifiable list of the open transmitters</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>

@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.ref</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#reference-objects-heading" tabindex="0">Reference Objects</a></li>
 <li><a href="#reachability-heading" tabindex="0">Reachability</a></li>
@@ -66,13 +66,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#memory-consistency-properties-heading" tabindex="0">Memory Consistency Properties</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.ref" class="title">Package java.lang.ref</h1>
+<h1 title="包 java.lang.ref" class="title">包 java.lang.ref</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -99,10 +99,10 @@ implementing canonicalizing mappings that do not prevent their keys
 (or values) from being reclaimed, and phantom references are for
 scheduling post-mortem cleanup actions.
 Post-mortem cleanup actions can also be registered and managed by a
-<a href="Cleaner.html" title="class in java.lang.ref"><code>Cleaner</code></a>.
+<a href="Cleaner.html" title="java.lang.ref 包中的类"><code>Cleaner</code></a>.
 
 <p> Each reference-object type is implemented by a subclass of the
-abstract base <a href="Reference.html" title="class in java.lang.ref"><code>Reference</code></a> class.
+abstract base <a href="Reference.html" title="java.lang.ref 包中的类"><code>Reference</code></a> class.
 An instance of one of these subclasses encapsulates a single
 reference to a particular object, called the <em>referent</em>.
 Every reference object provides methods for getting and clearing
@@ -150,7 +150,7 @@ above ways.
 
 A program may request to be notified of changes in an object's
 reachability by <em>registering</em> an appropriate reference
-object with a <a href="ReferenceQueue.html" title="class in java.lang.ref"><code>ReferenceQueue</code></a>.
+object with a <a href="ReferenceQueue.html" title="java.lang.ref 包中的类"><code>ReferenceQueue</code></a>.
 This is done by providing the reference queue as
 a constructor argument when creating the reference object.
 Some time after the garbage collector
@@ -181,7 +181,7 @@ well is to examine a reference queue in the course of performing
 some other fairly-frequent action.  For example, a hashtable that
 uses weak references to implement weak keys could poll its
 reference queue each time the table is accessed.  This is how the
-<a href="../../util/WeakHashMap.html" title="class in java.util"><code>WeakHashMap</code></a> class works.  Because
+<a href="../../util/WeakHashMap.html" title="java.util 包中的类"><code>WeakHashMap</code></a> class works.  Because
 the <a href="ReferenceQueue.html#poll()"><code>ReferenceQueue.poll</code></a> method simply checks an internal data
 structure, this check will add little overhead to the hashtable
 access methods.
@@ -238,7 +238,7 @@ In particular, changes to the state of <code>x</code> made before
 a finalizer thread without additional synchronization.
 See JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5">17.4.5</a>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </section>
@@ -247,10 +247,10 @@ See JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.lang</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classes that are fundamental to the design of the Java
@@ -261,40 +261,40 @@ programming language.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Cleaner.html" title="class in java.lang.ref">Cleaner</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Cleaner.html" title="java.lang.ref 包中的类">Cleaner</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block"><code>Cleaner</code> manages a set of object references and corresponding cleaning actions.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Cleaner.Cleanable.html" title="interface in java.lang.ref">Cleaner.Cleanable</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Cleaner.Cleanable.html" title="java.lang.ref 包中的接口">Cleaner.Cleanable</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><code>Cleanable</code> represents an object and a
 cleaning action registered in a <code>Cleaner</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PhantomReference.html" title="class in java.lang.ref">PhantomReference</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PhantomReference.html" title="java.lang.ref 包中的类">PhantomReference</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Phantom reference objects, which are enqueued after the collector
 determines that their referents may otherwise be reclaimed.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Reference.html" title="class in java.lang.ref">Reference</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Reference.html" title="java.lang.ref 包中的类">Reference</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Abstract base class for reference objects.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ReferenceQueue.html" title="class in java.lang.ref">ReferenceQueue</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ReferenceQueue.html" title="java.lang.ref 包中的类">ReferenceQueue</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Reference queues, to which registered reference objects are appended by the
 garbage collector after the appropriate reachability changes are detected.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SoftReference.html" title="class in java.lang.ref">SoftReference</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SoftReference.html" title="java.lang.ref 包中的类">SoftReference</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Soft reference objects, which are cleared at the discretion of the garbage
 collector in response to memory demand.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="WeakReference.html" title="class in java.lang.ref">WeakReference</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="WeakReference.html" title="java.lang.ref 包中的类">WeakReference</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Weak reference objects, which do not prevent their referents from being
 made finalizable, finalized, and then reclaimed.</div>

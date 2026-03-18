@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util</a></li>
 <li><a href="Timer.html" class="current-selection">Timer</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,12 +61,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Timer()</a></li>
 <li><a href="#%3Cinit%3E(boolean)" tabindex="0">Timer(boolean)</a></li>
@@ -74,7 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="#%3Cinit%3E(java.lang.String,boolean)" tabindex="0">Timer(String, boolean)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#schedule(java.util.TimerTask,long)" tabindex="0">schedule(TimerTask, long)</a></li>
 <li><a href="#schedule(java.util.TimerTask,java.util.Date)" tabindex="0">schedule(TimerTask, Date)</a></li>
@@ -91,16 +91,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Timer" class="title">Class Timer</h1>
+<h1 title="类 Timer" class="title">类 Timer</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.Timer</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Timer</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A facility for threads to schedule tasks for future execution in a
 background thread.  Tasks may be scheduled for one-time execution, or for
 repeated execution at regular intervals.
@@ -134,9 +134,9 @@ method had been invoked.
 <p>This class does <i>not</i> offer real-time guarantees: it schedules
 tasks using the <code>Object.wait(long)</code> method.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Java 5.0 introduced the <code>java.util.concurrent</code> package and
-one of the concurrency utilities therein is the <a href="concurrent/ScheduledThreadPoolExecutor.html" title="class in java.util.concurrent"><code>ScheduledThreadPoolExecutor</code></a> which is a thread pool for repeatedly
+one of the concurrency utilities therein is the <a href="concurrent/ScheduledThreadPoolExecutor.html" title="java.util.concurrent 包中的类"><code>ScheduledThreadPoolExecutor</code></a> which is a thread pool for repeatedly
 executing tasks at a given rate or delay.  It is effectively a more
 versatile replacement for the <code>Timer</code>/<code>TimerTask</code>
 combination, as it allows multiple service threads, accepts various
@@ -144,18 +144,18 @@ time units, and doesn't require subclassing <code>TimerTask</code> (just
 implement <code>Runnable</code>).  Configuring <code>
 ScheduledThreadPoolExecutor</code> with one thread makes it equivalent to
 <code>Timer</code>.</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>This class scales to large numbers of concurrently
 scheduled tasks (thousands should present no problem).  Internally,
 it uses a binary heap to represent its task queue, so the cost to schedule
 a task is O(log n), where n is the number of concurrently scheduled tasks.
 <p> All constructors start a timer thread.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="TimerTask.html" title="class in java.util"><code>TimerTask</code></a></li>
+<li><a href="TimerTask.html" title="java.util 包中的类"><code>TimerTask</code></a></li>
 <li><a href="../lang/Object.html#wait(long)"><code>Object.wait(long)</code></a></li>
 </ul>
 </dd>
@@ -167,11 +167,11 @@ a task is O(log n), where n is the number of concurrently scheduled tasks.
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Timer</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new timer.</div>
@@ -181,11 +181,11 @@ a task is O(log n), where n is the number of concurrently scheduled tasks.
 <div class="block">Creates a new timer whose associated thread may be specified to
 <a href="../lang/Thread.html#setDaemon(boolean)">run as a daemon</a>.</div>
 </div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Timer</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Timer</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new timer whose associated thread has the specified name.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,boolean)" class="member-name-link">Timer</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,boolean)" class="member-name-link">Timer</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  boolean&nbsp;isDaemon)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a new timer whose associated thread has the specified name,
@@ -198,14 +198,14 @@ and may be specified to
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancel()" class="member-name-link">cancel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -217,13 +217,13 @@ and may be specified to
 <div class="block">Removes all <i>cancelled</i> tasks from this timer's task queue.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Schedules the specified task for execution after the specified delay.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,long,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,long,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay,
  long&nbsp;period)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -231,21 +231,21 @@ and may be specified to
 beginning after the specified delay.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,java.util.Date)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;time)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,java.util.Date)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;time)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Schedules the specified task for execution at the specified time.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,java.util.Date,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;firstTime,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#schedule(java.util.TimerTask,java.util.Date,long)" class="member-name-link">schedule</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;firstTime,
  long&nbsp;period)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Schedules the specified task for repeated <i>fixed-delay execution</i>,
 beginning at the specified time.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleAtFixedRate(java.util.TimerTask,long,long)" class="member-name-link">scheduleAtFixedRate</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleAtFixedRate(java.util.TimerTask,long,long)" class="member-name-link">scheduleAtFixedRate</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay,
  long&nbsp;period)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -253,8 +253,8 @@ beginning at the specified time.</div>
 beginning after the specified delay.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleAtFixedRate(java.util.TimerTask,java.util.Date,long)" class="member-name-link">scheduleAtFixedRate</a><wbr>(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;firstTime,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#scheduleAtFixedRate(java.util.TimerTask,java.util.Date,long)" class="member-name-link">scheduleAtFixedRate</a><wbr>(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;firstTime,
  long&nbsp;period)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Schedules the specified task for repeated <i>fixed-rate execution</i>,
@@ -264,7 +264,7 @@ beginning at the specified time.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -275,7 +275,7 @@ beginning at the specified time.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -299,7 +299,7 @@ schedule repeating "maintenance activities", which must be
 performed as long as the application is running, but should not
 prolong the lifetime of the application.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>isDaemon</code> - true if the associated thread should run as a daemon.</dd>
 </dl>
 </div>
@@ -309,16 +309,16 @@ prolong the lifetime of the application.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>Timer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Timer</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Timer</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Creates a new timer whose associated thread has the specified name.
 The associated thread does <i>not</i>
 <a href="../lang/Thread.html#setDaemon(boolean)">run as a daemon</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the associated thread</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is null</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is null</dd>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -328,18 +328,18 @@ The associated thread does <i>not</i>
 <section class="detail" id="&lt;init&gt;(java.lang.String,boolean)">
 <h3>Timer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Timer</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Timer</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  boolean&nbsp;isDaemon)</span></div>
 <div class="block">Creates a new timer whose associated thread has the specified name,
 and may be specified to
 <a href="../lang/Thread.html#setDaemon(boolean)">run as a daemon</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the associated thread</dd>
 <dd><code>isDaemon</code> - true if the associated thread should run as a daemon</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is null</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is null</dd>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -351,25 +351,25 @@ and may be specified to
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="schedule(java.util.TimerTask,long)">
 <h3>schedule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay)</span></div>
 <div class="block">Schedules the specified task for execution after the specified delay.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>delay</code> is negative, or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>delay</code> is negative, or
         <code>delay + System.currentTimeMillis()</code> is negative.</dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -378,19 +378,19 @@ and may be specified to
 <section class="detail" id="schedule(java.util.TimerTask,java.util.Date)">
 <h3>schedule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;time)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;time)</span></div>
 <div class="block">Schedules the specified task for execution at the specified time.  If
 the time is in the past, the task is scheduled for immediate execution.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>time</code> - time at which task is to be executed.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>time.getTime()</code> is negative.</dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>time.getTime()</code> is negative.</dd>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> or <code>time</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> or <code>time</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -399,7 +399,7 @@ the time is in the past, the task is scheduled for immediate execution.</div>
 <section class="detail" id="schedule(java.util.TimerTask,long,long)">
 <h3>schedule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay,
  long&nbsp;period)</span></div>
 <div class="block">Schedules the specified task for repeated <i>fixed-delay execution</i>,
@@ -423,17 +423,17 @@ tasks wherein regular activity is performed in response to human
 input, such as automatically repeating a character as long as a key
 is held down.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd>
 <dd><code>period</code> - time in milliseconds between successive task executions.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>delay &lt; 0</code>, or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>delay &lt; 0</code>, or
         <code>delay + System.currentTimeMillis() &lt; 0</code>, or
         <code>period &lt;= 0</code></dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -442,8 +442,8 @@ is held down.</div>
 <section class="detail" id="schedule(java.util.TimerTask,java.util.Date,long)">
 <h3>schedule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;firstTime,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">schedule</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;firstTime,
  long&nbsp;period)</span></div>
 <div class="block">Schedules the specified task for repeated <i>fixed-delay execution</i>,
 beginning at the specified time. Subsequent executions take place at
@@ -468,16 +468,16 @@ tasks wherein regular activity is performed in response to human
 input, such as automatically repeating a character as long as a key
 is held down.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>firstTime</code> - First time at which task is to be executed.</dd>
 <dd><code>period</code> - time in milliseconds between successive task executions.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>firstTime.getTime() &lt; 0</code>, or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>firstTime.getTime() &lt; 0</code>, or
         <code>period &lt;= 0</code></dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -486,7 +486,7 @@ is held down.</div>
 <section class="detail" id="scheduleAtFixedRate(java.util.TimerTask,long,long)">
 <h3>scheduleAtFixedRate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleAtFixedRate</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleAtFixedRate</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
  long&nbsp;delay,
  long&nbsp;period)</span></div>
 <div class="block">Schedules the specified task for repeated <i>fixed-rate execution</i>,
@@ -511,17 +511,17 @@ ten seconds.  Finally, fixed-rate execution is appropriate for
 scheduling multiple repeating timer tasks that must remain synchronized
 with respect to one another.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>delay</code> - delay in milliseconds before task is to be executed.</dd>
 <dd><code>period</code> - time in milliseconds between successive task executions.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>delay &lt; 0</code>, or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>delay &lt; 0</code>, or
         <code>delay + System.currentTimeMillis() &lt; 0</code>, or
         <code>period &lt;= 0</code></dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -530,8 +530,8 @@ with respect to one another.</div>
 <section class="detail" id="scheduleAtFixedRate(java.util.TimerTask,java.util.Date,long)">
 <h3>scheduleAtFixedRate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleAtFixedRate</span><wbr><span class="parameters">(<a href="TimerTask.html" title="class in java.util">TimerTask</a>&nbsp;task,
- <a href="Date.html" title="class in java.util">Date</a>&nbsp;firstTime,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">scheduleAtFixedRate</span><wbr><span class="parameters">(<a href="TimerTask.html" title="java.util 包中的类">TimerTask</a>&nbsp;task,
+ <a href="Date.html" title="java.util 包中的类">Date</a>&nbsp;firstTime,
  long&nbsp;period)</span></div>
 <div class="block">Schedules the specified task for repeated <i>fixed-rate execution</i>,
 beginning at the specified time. Subsequent executions take place at
@@ -558,16 +558,16 @@ ten seconds.  Finally, fixed-rate execution is appropriate for
 scheduling multiple repeating timer tasks that must remain synchronized
 with respect to one another.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - task to be scheduled.</dd>
 <dd><code>firstTime</code> - First time at which task is to be executed.</dd>
 <dd><code>period</code> - time in milliseconds between successive task executions.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>firstTime.getTime() &lt; 0</code> or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>firstTime.getTime() &lt; 0</code> or
         <code>period &lt;= 0</code></dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if task was already scheduled or
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if task was already scheduled or
         cancelled, timer was cancelled, or timer thread terminated.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>task</code> or <code>firstTime</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -594,7 +594,7 @@ be performed by this timer.
 <p>This method may be called repeatedly; the second and subsequent
 calls have no effect.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="TimerTask.html#cancel()"><code>TimerTask.cancel()</code></a></li>
@@ -625,11 +625,11 @@ of cancelled tasks.
 <p>Note that it is permissible to call this method from within
 a task scheduled on this timer.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of tasks removed from the queue.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#cancel()"><code>cancel()</code></a></li>

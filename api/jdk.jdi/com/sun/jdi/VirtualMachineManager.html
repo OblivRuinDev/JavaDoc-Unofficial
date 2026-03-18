@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.jdi</a></li>
 <li><a href="VirtualMachineManager.html" class="current-selection">VirtualMachineManager</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,11 +66,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#defaultConnector()" tabindex="0">defaultConnector()</a></li>
 <li><a href="#launchingConnectors()" tabindex="0">launchingConnectors()</a></li>
@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface VirtualMachineManager" class="title">Interface VirtualMachineManager</h1>
+<h1 title="接口 VirtualMachineManager" class="title">接口 VirtualMachineManager</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -101,18 +101,18 @@ multiple target VMs. (Note that the converse is not
 supported; a target VM can be debugged by only one
 debugger application.) This interface
 contains methods to manage connections
-to remote target VMs and to obtain the <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a>
+to remote target VMs and to obtain the <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a>
 mirror for available target VMs.
 <p>
 Connections can be made using one of several different
-<a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> objects. Each connector encapsulates
+<a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> objects. Each connector encapsulates
 a different way of connecting the debugger with a target VM.
 <p>
 The VirtualMachineManager supports many different scenarios for
 connecting a debugger to a virtual machine. Four examples
 are presented in the table below. The
 examples use the command line syntax in Sun's implementation.
-Some <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> implementations may require slightly
+Some <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> implementations may require slightly
 different handling than presented below.
 
 <TABLE class="striped">
@@ -129,7 +129,7 @@ different handling than presented below.
 <TD>Debugger calls the <a href="connect/LaunchingConnector.html#launch(java.util.Map)"><code>LaunchingConnector.launch(java.util.Map)</code></a>
 method of the default connector, obtained with <a href="#defaultConnector()"><code>defaultConnector()</code></a>. The
 target VM is launched, and a connection between that VM and the
-debugger is established. A <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror is returned.
+debugger is established. A <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror is returned.
 <P>Or, for more control
 <UL>
 <LI>
@@ -140,7 +140,7 @@ Debugger selects a connector from the list returned by
 Debugger calls the <a href="connect/LaunchingConnector.html#launch(java.util.Map)"><code>LaunchingConnector.launch(java.util.Map)</code></a>
 method of the selected connector. The
 target VM is launched, and a connection between that VM and the
-debugger is established. A <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror is returned.
+debugger is established. A <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror is returned.
 </UL>
 </TD>
 </TR>
@@ -165,7 +165,7 @@ Debugger presents the default connector parameters (obtained through
 fill in the transport-specific address generated by the target VM.
 <LI>
 Debugger calls the <a href="connect/AttachingConnector.html#attach(java.util.Map)"><code>AttachingConnector.attach(java.util.Map)</code></a> method
-of the selected to attach to the target VM. A <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a>
+of the selected to attach to the target VM. A <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a>
 mirror is returned.
 </UL>
 </TD>
@@ -199,7 +199,7 @@ is the address generated by
 transport.</LI>
 <LI>
 Debugger's call to <a href="connect/ListeningConnector.html#accept(java.util.Map)"><code>ListeningConnector.accept(java.util.Map)</code></a> returns
-a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror.</LI>
+a <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror.</LI>
 </UL>
 </TD>
 </TR>
@@ -236,7 +236,7 @@ other connector arguments can be presented to the user.
 <LI>
 Debugger calls the
 <a href="connect/AttachingConnector.html#attach(java.util.Map)"><code>AttachingConnector.attach(java.util.Map)</code></a> method
-of the selected to attach to the target VM. A <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a>
+of the selected to attach to the target VM. A <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a>
 mirror is returned.
 </UL>
 </TD>
@@ -253,21 +253,21 @@ obtained from the VirtualMachineManager by invoking the
 <p> Connectors are created at start-up time if they are
 installed on the platform. In addition, Connectors are created
 automatically by the VirtualMachineManager to encapsulate any
-<a href="connect/spi/TransportService.html" title="class in com.sun.jdi.connect.spi"><code>TransportService</code></a> implementations
+<a href="connect/spi/TransportService.html" title="com.sun.jdi.connect.spi 包中的类"><code>TransportService</code></a> implementations
 that are installed on the platform. These two mechanisms for
 creating Connectors are described here.
 
 <p> A Connector is installed on the platform if it is installed
 in a jar file that is visible to the defining class loader of
-the <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> type,
+the <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> type,
 and that jar file contains a provider configuration file named
 <code>Connector</code> in the resource directory
 <code>META-INF/services</code>, and the provider configuration file
 lists the full-qualified class name of the Connector
 implementation. A Connector is a class that implements the
-<a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> interface. More
+<a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> interface. More
 appropriately the class implements one of the specific Connector
-types, namely <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a>, <a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect"><code>ListeningConnector</code></a>, or <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a>. The format of the provider configuration file
+types, namely <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a>, <a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口"><code>ListeningConnector</code></a>, or <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a>. The format of the provider configuration file
 is one fully-qualified class name per line. Space and tab characters
 surrounding each class, as well as blank lines are ignored. The
 comment character is <code>'#'</code> (<code>0x23</code>), and on each
@@ -282,25 +282,25 @@ the start-up process continues despite of errors.
 
 <p> In addition to Connectors installed on the platform the
 VirtualMachineManager will also create Connectors to encapsulate
-any <a href="connect/spi/TransportService.html" title="class in com.sun.jdi.connect.spi"><code>TransportService</code></a> implementations
+any <a href="connect/spi/TransportService.html" title="com.sun.jdi.connect.spi 包中的类"><code>TransportService</code></a> implementations
 that are installed on the platform. A TransportService is
 installed on the platform if it installed in a jar file that is
 visible to the defining class loader for the
-<a href="connect/spi/TransportService.html" title="class in com.sun.jdi.connect.spi"><code>TransportService</code></a> type, and that jar
+<a href="connect/spi/TransportService.html" title="com.sun.jdi.connect.spi 包中的类"><code>TransportService</code></a> type, and that jar
 file contains a provider configuration file named
 <code>TransportService</code> in the resource
 directory <code>META-INF/services</code>, and the provider
 configuration file lists the full-qualified class name of the
 TransportService implementation. A TransportService is a concrete
-sub-class of <a href="connect/spi/TransportService.html" title="class in com.sun.jdi.connect.spi"><code>TransportService</code></a>. The format of the provider configuration file
+sub-class of <a href="connect/spi/TransportService.html" title="com.sun.jdi.connect.spi 包中的类"><code>TransportService</code></a>. The format of the provider configuration file
 is the same as the provider configuration file for Connectors
 except that each class listed must be the fully-qualified class
 name of a class that implements the TransportService interface.
 
 <p> For each TransportService installed on the platform, the
-VirtualMachineManager creates a corresponding <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a> and
-<a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect"><code>ListeningConnector</code></a>. These Connectors are created to encapsulate a
-<a href="connect/Transport.html" title="interface in com.sun.jdi.connect"><code>Transport</code></a> that in turn encapsulates the TransportService.
+VirtualMachineManager creates a corresponding <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a> and
+<a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口"><code>ListeningConnector</code></a>. These Connectors are created to encapsulate a
+<a href="connect/Transport.html" title="com.sun.jdi.connect 包中的接口"><code>Transport</code></a> that in turn encapsulates the TransportService.
 The AttachingConnector will be named based on the name of the
 transport service concatenated with the string <code>Attach</code>.
 For example, if the transport service <a href="connect/spi/TransportService.html#name()"><code>name()</code></a> method
@@ -311,11 +311,11 @@ name of the transport service. The <a href="connect/Connector.html#description()
 of both the AttachingConnector, and the ListeningConnector, will
 delegate to the <a href="connect/spi/TransportService.html#description()"><code>description()</code></a> method of the underlying transport service. Both
 the AttachingConnector and the ListeningConnector will have two
-Connector <a href="connect/Connector.Argument.html" title="interface in com.sun.jdi.connect"><code>Arguments</code></a>.
-A <a href="connect/Connector.StringArgument.html" title="interface in com.sun.jdi.connect"><code>StringArgument</code></a>
+Connector <a href="connect/Connector.Argument.html" title="com.sun.jdi.connect 包中的接口"><code>Arguments</code></a>.
+A <a href="connect/Connector.StringArgument.html" title="com.sun.jdi.connect 包中的接口"><code>StringArgument</code></a>
 named <code>address</code> is the connector argument to specify the
 address to attach too, or to listen on. A
-<a href="connect/Connector.IntegerArgument.html" title="interface in com.sun.jdi.connect"><code>IntegerArgument</code></a>
+<a href="connect/Connector.IntegerArgument.html" title="com.sun.jdi.connect 包中的接口"><code>IntegerArgument</code></a>
 named <code>timeout</code> is the connector argument to specify the
 timeout when attaching, or accepting. The timeout connector may be
 ignored depending on if the transport service supports an attach
@@ -326,7 +326,7 @@ timeout or accept timeout.
 error if the virtual machine manager is unable to create any
 connectors.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
 </dl>
 </div>
@@ -336,54 +336,54 @@ connectors.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="connect/Connector.html" title="interface in com.sun.jdi.connect">Connector</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口">Connector</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allConnectors()" class="member-name-link">allConnectors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the list of all known <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> objects.</div>
+<div class="block">Returns the list of all known <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> objects.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect">AttachingConnector</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口">AttachingConnector</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#attachingConnectors()" class="member-name-link">attachingConnectors</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the list of known <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a> objects.</div>
+<div class="block">Returns the list of known <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a> objects.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#connectedVirtualMachines()" class="member-name-link">connectedVirtualMachines</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Lists all target VMs which are connected to the debugger.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createVirtualMachine(com.sun.jdi.connect.spi.Connection)" class="member-name-link">createVirtualMachine</a><wbr>(<a href="connect/spi/Connection.html" title="class in com.sun.jdi.connect.spi">Connection</a>&nbsp;connection)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createVirtualMachine(com.sun.jdi.connect.spi.Connection)" class="member-name-link">createVirtualMachine</a><wbr>(<a href="connect/spi/Connection.html" title="com.sun.jdi.connect.spi 包中的类">Connection</a>&nbsp;connection)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a new virtual machine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createVirtualMachine(com.sun.jdi.connect.spi.Connection,java.lang.Process)" class="member-name-link">createVirtualMachine</a><wbr>(<a href="connect/spi/Connection.html" title="class in com.sun.jdi.connect.spi">Connection</a>&nbsp;connection,
- <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang">Process</a>&nbsp;process)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createVirtualMachine(com.sun.jdi.connect.spi.Connection,java.lang.Process)" class="member-name-link">createVirtualMachine</a><wbr>(<a href="connect/spi/Connection.html" title="com.sun.jdi.connect.spi 包中的类">Connection</a>&nbsp;connection,
+ <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类">Process</a>&nbsp;process)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Create a virtual machine mirror for a target VM.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect">LaunchingConnector</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口">LaunchingConnector</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#defaultConnector()" class="member-name-link">defaultConnector</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Identifies the default connector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect">LaunchingConnector</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口">LaunchingConnector</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#launchingConnectors()" class="member-name-link">launchingConnectors</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the list of known <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a> objects.</div>
+<div class="block">Returns the list of known <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a> objects.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect">ListeningConnector</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口">ListeningConnector</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#listeningConnectors()" class="member-name-link">listeningConnectors</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the list of known <a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect"><code>ListeningConnector</code></a> objects.</div>
+<div class="block">Returns the list of known <a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口"><code>ListeningConnector</code></a> objects.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#majorInterfaceVersion()" class="member-name-link">majorInterfaceVersion</a>()</code></div>
@@ -407,19 +407,19 @@ connectors.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="defaultConnector()">
 <h3>defaultConnector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect">LaunchingConnector</a></span>&nbsp;<span class="element-name">defaultConnector</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口">LaunchingConnector</a></span>&nbsp;<span class="element-name">defaultConnector</span>()</div>
 <div class="block">Identifies the default connector. This connector should
 be used as the launching connector when selection of a
 connector with specific characteristics is unnecessary.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the default <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a></dd>
+<dt>返回:</dt>
+<dd>the default <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a></dd>
 </dl>
 </div>
 </section>
@@ -428,16 +428,16 @@ connector with specific characteristics is unnecessary.</div>
 <section class="detail" id="launchingConnectors()">
 <h3>launchingConnectors</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect">LaunchingConnector</a>&gt;</span>&nbsp;<span class="element-name">launchingConnectors</span>()</div>
-<div class="block">Returns the list of known <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a> objects.
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口">LaunchingConnector</a>&gt;</span>&nbsp;<span class="element-name">launchingConnectors</span>()</div>
+<div class="block">Returns the list of known <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a> objects.
 Any of the returned objects can be used to launch a new target
-VM and immediately create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror for it.
+VM and immediately create a <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror for it.
 
 Note that a target VM launched by a launching connector is not guaranteed
-to be stable until after the <a href="event/VMStartEvent.html" title="interface in com.sun.jdi.event"><code>VMStartEvent</code></a> has been received.</div>
+to be stable until after the <a href="event/VMStartEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMStartEvent</code></a> has been received.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a> objects.</dd>
+<dt>返回:</dt>
+<dd>a list of <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a> objects.</dd>
 </dl>
 </div>
 </section>
@@ -446,13 +446,13 @@ to be stable until after the <a href="event/VMStartEvent.html" title="interface 
 <section class="detail" id="attachingConnectors()">
 <h3>attachingConnectors</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect">AttachingConnector</a>&gt;</span>&nbsp;<span class="element-name">attachingConnectors</span>()</div>
-<div class="block">Returns the list of known <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a> objects.
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口">AttachingConnector</a>&gt;</span>&nbsp;<span class="element-name">attachingConnectors</span>()</div>
+<div class="block">Returns the list of known <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a> objects.
 Any of the returned objects can be used to attach to an existing target
-VM and create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror for it.</div>
+VM and create a <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror for it.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="connect/AttachingConnector.html" title="interface in com.sun.jdi.connect"><code>AttachingConnector</code></a> objects.</dd>
+<dt>返回:</dt>
+<dd>a list of <a href="connect/AttachingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>AttachingConnector</code></a> objects.</dd>
 </dl>
 </div>
 </section>
@@ -461,14 +461,14 @@ VM and create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><
 <section class="detail" id="listeningConnectors()">
 <h3>listeningConnectors</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect">ListeningConnector</a>&gt;</span>&nbsp;<span class="element-name">listeningConnectors</span>()</div>
-<div class="block">Returns the list of known <a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect"><code>ListeningConnector</code></a> objects.
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口">ListeningConnector</a>&gt;</span>&nbsp;<span class="element-name">listeningConnectors</span>()</div>
+<div class="block">Returns the list of known <a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口"><code>ListeningConnector</code></a> objects.
 Any of the returned objects can be used to listen for a
 connection initiated by a target VM
-and create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> mirror for it.</div>
+and create a <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> mirror for it.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="connect/ListeningConnector.html" title="interface in com.sun.jdi.connect"><code>ListeningConnector</code></a> objects.</dd>
+<dt>返回:</dt>
+<dd>a list of <a href="connect/ListeningConnector.html" title="com.sun.jdi.connect 包中的接口"><code>ListeningConnector</code></a> objects.</dd>
 </dl>
 </div>
 </section>
@@ -477,11 +477,11 @@ and create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><cod
 <section class="detail" id="allConnectors()">
 <h3>allConnectors</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="connect/Connector.html" title="interface in com.sun.jdi.connect">Connector</a>&gt;</span>&nbsp;<span class="element-name">allConnectors</span>()</div>
-<div class="block">Returns the list of all known <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> objects.</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口">Connector</a>&gt;</span>&nbsp;<span class="element-name">allConnectors</span>()</div>
+<div class="block">Returns the list of all known <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> objects.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> objects.</dd>
+<dt>返回:</dt>
+<dd>a list of <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> objects.</dd>
 </dl>
 </div>
 </section>
@@ -490,19 +490,19 @@ and create a <a href="VirtualMachine.html" title="interface in com.sun.jdi"><cod
 <section class="detail" id="connectedVirtualMachines()">
 <h3>connectedVirtualMachines</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="interface in java.util">List</a>&lt;<a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a>&gt;</span>&nbsp;<span class="element-name">connectedVirtualMachines</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a>&gt;</span>&nbsp;<span class="element-name">connectedVirtualMachines</span>()</div>
 <div class="block">Lists all target VMs which are connected to the debugger.
-The list includes <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> instances for
+The list includes <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> instances for
 any target VMs which initiated a connection
 and any
 target VMs to which this manager has initiated a connection.
 A target VM will remain in this list
 until the VM is disconnected.
-<a href="event/VMDisconnectEvent.html" title="interface in com.sun.jdi.event"><code>VMDisconnectEvent</code></a> is placed in the event queue
+<a href="event/VMDisconnectEvent.html" title="com.sun.jdi.event 包中的接口"><code>VMDisconnectEvent</code></a> is placed in the event queue
 after the VM is removed from the list.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>a list of <a href="VirtualMachine.html" title="interface in com.sun.jdi"><code>VirtualMachine</code></a> objects, each mirroring
+<dt>返回:</dt>
+<dd>a list of <a href="VirtualMachine.html" title="com.sun.jdi 包中的接口"><code>VirtualMachine</code></a> objects, each mirroring
 a target VM.</dd>
 </dl>
 </div>
@@ -518,7 +518,7 @@ See <a href="VirtualMachine.html#version()"><code>VirtualMachine.version()</code
 information and
 <a href="VirtualMachine.html#description()"><code>VirtualMachine.description()</code></a> more version information.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the integer major version number.</dd>
 </dl>
 </div>
@@ -534,7 +534,7 @@ See <a href="VirtualMachine.html#version()"><code>VirtualMachine.version()</code
 information and
 <a href="VirtualMachine.html#description()"><code>VirtualMachine.description()</code></a> more version information.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the integer minor version number</dd>
 </dl>
 </div>
@@ -544,22 +544,22 @@ information and
 <section class="detail" id="createVirtualMachine(com.sun.jdi.connect.spi.Connection,java.lang.Process)">
 <h3>createVirtualMachine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a></span>&nbsp;<span class="element-name">createVirtualMachine</span><wbr><span class="parameters">(<a href="connect/spi/Connection.html" title="class in com.sun.jdi.connect.spi">Connection</a>&nbsp;connection,
- <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang">Process</a>&nbsp;process)</span>
-                             throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a></span>&nbsp;<span class="element-name">createVirtualMachine</span><wbr><span class="parameters">(<a href="connect/spi/Connection.html" title="com.sun.jdi.connect.spi 包中的类">Connection</a>&nbsp;connection,
+ <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类">Process</a>&nbsp;process)</span>
+                             throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Create a virtual machine mirror for a target VM.
 
 <p> Creates a virtual machine mirror for a target VM
-for which a <a href="connect/spi/Connection.html" title="class in com.sun.jdi.connect.spi"><code>Connection</code></a>
-already exists. A Connection is created when a <a href="connect/Connector.html" title="interface in com.sun.jdi.connect"><code>Connector</code></a> establishes
+for which a <a href="connect/spi/Connection.html" title="com.sun.jdi.connect.spi 包中的类"><code>Connection</code></a>
+already exists. A Connection is created when a <a href="connect/Connector.html" title="com.sun.jdi.connect 包中的接口"><code>Connector</code></a> establishes
 a connection and successfully handshakes with a target VM.
 A Connector can then use this method to create a virtual machine
 mirror to represent the composite state of the target VM.
 
 <p> The <code>process</code> argument specifies the
-<a href="../../../../java.base/java/lang/Process.html" title="class in java.lang"><code>Process</code></a> object for the target VM. It may be
+<a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类"><code>Process</code></a> object for the target VM. It may be
 specified as <code>null</code>. If the target VM is launched
-by a <a href="connect/LaunchingConnector.html" title="interface in com.sun.jdi.connect"><code>LaunchingConnector</code></a> the <code>process</code> argument should be
+by a <a href="connect/LaunchingConnector.html" title="com.sun.jdi.connect 包中的接口"><code>LaunchingConnector</code></a> the <code>process</code> argument should be
 specified, otherwise calling <a href="VirtualMachine.html#process()"><code>VirtualMachine.process()</code></a>
 on the created virtual machine will return <code>null</code>.
 
@@ -569,18 +569,18 @@ to a target VM. Only developers creating new Connector
 implementations should need to make direct use of this
 method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>connection</code> - The open connection to the target VM.</dd>
-<dd><code>process</code> - If launched, the <a href="../../../../java.base/java/lang/Process.html" title="class in java.lang"><code>Process</code></a> object for
+<dd><code>process</code> - If launched, the <a href="../../../../java.base/java/lang/Process.html" title="java.lang 包中的类"><code>Process</code></a> object for
         the target VM. <code>null</code> if not launched.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>new virtual machine representing the target VM.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the connection is not open</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the connection is not open</dd>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="connect/spi/Connection.html#isOpen()"><code>Connection.isOpen()</code></a></li>
@@ -595,8 +595,8 @@ method.</div>
 <section class="detail" id="createVirtualMachine(com.sun.jdi.connect.spi.Connection)">
 <h3>createVirtualMachine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="VirtualMachine.html" title="interface in com.sun.jdi">VirtualMachine</a></span>&nbsp;<span class="element-name">createVirtualMachine</span><wbr><span class="parameters">(<a href="connect/spi/Connection.html" title="class in com.sun.jdi.connect.spi">Connection</a>&nbsp;connection)</span>
-                             throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="VirtualMachine.html" title="com.sun.jdi 包中的接口">VirtualMachine</a></span>&nbsp;<span class="element-name">createVirtualMachine</span><wbr><span class="parameters">(<a href="connect/spi/Connection.html" title="com.sun.jdi.connect.spi 包中的类">Connection</a>&nbsp;connection)</span>
+                             throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates a new virtual machine.
 
 <p> This convenience method works as if by invoking <a href="#createVirtualMachine(com.sun.jdi.connect.spi.Connection,java.lang.Process)"><code>createVirtualMachine(Connection, Process)</code></a> method and
@@ -608,12 +608,12 @@ to a target VM. Only developers creating new Connector
 implementations should need to make direct use of this
 method.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new virtual machine</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the connection is not open</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the connection is not open</dd>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>

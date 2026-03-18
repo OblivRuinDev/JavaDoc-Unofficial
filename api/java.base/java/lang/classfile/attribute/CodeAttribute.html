@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.classfile.attribute</a></li>
 <li><a href="CodeAttribute.html" class="current-selection">CodeAttribute</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,11 +62,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#maxLocals()" tabindex="0">maxLocals()</a></li>
 <li><a href="#maxStack()" tabindex="0">maxStack()</a></li>
@@ -80,17 +80,17 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface CodeAttribute" class="title">Interface CodeAttribute</h1>
+<h1 title="接口 CodeAttribute" class="title">接口 CodeAttribute</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;<a href="CodeAttribute.html" title="interface in java.lang.classfile.attribute">CodeAttribute</a>&gt;, <a href="../AttributedElement.html" title="interface in java.lang.classfile">AttributedElement</a>, <a href="../ClassFileElement.html" title="interface in java.lang.classfile">ClassFileElement</a>, <a href="../CodeModel.html" title="interface in java.lang.classfile">CodeModel</a>, <a href="../CompoundElement.html" title="interface in java.lang.classfile">CompoundElement</a>&lt;<a href="../CodeElement.html" title="interface in java.lang.classfile">CodeElement</a>&gt;, <a href="../../Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../CodeElement.html" title="interface in java.lang.classfile">CodeElement</a>&gt;, <a href="../MethodElement.html" title="interface in java.lang.classfile">MethodElement</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;<a href="CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口">CodeAttribute</a>&gt;, <a href="../AttributedElement.html" title="java.lang.classfile 包中的接口">AttributedElement</a>, <a href="../ClassFileElement.html" title="java.lang.classfile 包中的接口">ClassFileElement</a>, <a href="../CodeModel.html" title="java.lang.classfile 包中的接口">CodeModel</a>, <a href="../CompoundElement.html" title="java.lang.classfile 包中的接口">CompoundElement</a>&lt;<a href="../CodeElement.html" title="java.lang.classfile 包中的接口">CodeElement</a>&gt;, <a href="../../Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../CodeElement.html" title="java.lang.classfile 包中的接口">CodeElement</a>&gt;, <a href="../MethodElement.html" title="java.lang.classfile 包中的接口">MethodElement</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">CodeAttribute</span><span class="extends-implements">
-extends <a href="../Attribute.html" title="interface in java.lang.classfile">Attribute</a>&lt;<a href="CodeAttribute.html" title="interface in java.lang.classfile.attribute">CodeAttribute</a>&gt;, <a href="../CodeModel.html" title="interface in java.lang.classfile">CodeModel</a></span></div>
+extends <a href="../Attribute.html" title="java.lang.classfile 包中的接口">Attribute</a>&lt;<a href="CodeAttribute.html" title="java.lang.classfile.attribute 包中的接口">CodeAttribute</a>&gt;, <a href="../CodeModel.html" title="java.lang.classfile 包中的接口">CodeModel</a></span></div>
 <div class="block">Models the <a href="../Attributes.html#code()"><code>Code</code></a> attribute (JVMS <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.3">4.7.3</a>),
 which contains the bytecode of this method.
 <p>
@@ -100,21 +100,21 @@ data dependency on the <a href="../AttributeMapper.AttributeStability.html#CP_RE
 This attribute was introduced in the Java Platform version 1.0.2, major
 version <a href="../ClassFile.html#JAVA_1_VERSION">45</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd><code>CodeAttribute</code> models properties of a <code>Code</code> attribute read
 from <code>class</code> files.  General <code>class</code> file transformation should
-process and traverse a <a href="../CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a> in the traversal of a <a href="../MethodModel.html" title="interface in java.lang.classfile"><code>MethodModel</code></a>, to support transformation of <code>Code</code> attributes currently
+process and traverse a <a href="../CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a> in the traversal of a <a href="../MethodModel.html" title="java.lang.classfile 包中的接口"><code>MethodModel</code></a>, to support transformation of <code>Code</code> attributes currently
 being built.</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.7.3">4.7.3 The <code>Code</code> Attribute</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../Attributes.html#code()"><code>Attributes.code()</code></a></li>
-<li><a href="../CodeModel.html" title="interface in java.lang.classfile"><code>CodeModel</code></a></li>
+<li><a href="../CodeModel.html" title="java.lang.classfile 包中的接口"><code>CodeModel</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -125,14 +125,14 @@ being built.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#codeArray()" class="member-name-link">codeArray</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -144,7 +144,7 @@ being built.</dd>
 <div class="block">Returns The length of the code array in bytes.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#labelToBci(java.lang.classfile.Label)" class="member-name-link">labelToBci</a><wbr>(<a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;label)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#labelToBci(java.lang.classfile.Label)" class="member-name-link">labelToBci</a><wbr>(<a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;label)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the position of the <code>label</code> in the <a href="#codeArray()"><code>codeArray</code></a>.</div>
 </div>
@@ -162,19 +162,19 @@ being built.</dd>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.Attribute">Methods declared in interface&nbsp;<a href="../Attribute.html#method-summary" title="interface in java.lang.classfile">Attribute</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.Attribute">在接口 <a href="../Attribute.html#method-summary" title="java.lang.classfile 包中的接口">Attribute</a> 中声明的方法</h3>
 <code><a href="../Attribute.html#attributeMapper()" title="attributeMapper()">attributeMapper</a>, <a href="../Attribute.html#attributeName()" title="attributeName()">attributeName</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.AttributedElement">Methods declared in interface&nbsp;<a href="../AttributedElement.html#method-summary" title="interface in java.lang.classfile">AttributedElement</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.AttributedElement">在接口 <a href="../AttributedElement.html#method-summary" title="java.lang.classfile 包中的接口">AttributedElement</a> 中声明的方法</h3>
 <code><a href="../AttributedElement.html#attributes()" title="attributes()">attributes</a>, <a href="../AttributedElement.html#findAttribute(java.lang.classfile.AttributeMapper)" title="findAttribute(AttributeMapper)">findAttribute</a>, <a href="../AttributedElement.html#findAttributes(java.lang.classfile.AttributeMapper)" title="findAttributes(AttributeMapper)">findAttributes</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.CodeModel">Methods declared in interface&nbsp;<a href="../CodeModel.html#method-summary" title="interface in java.lang.classfile">CodeModel</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.CodeModel">在接口 <a href="../CodeModel.html#method-summary" title="java.lang.classfile 包中的接口">CodeModel</a> 中声明的方法</h3>
 <code><a href="../CodeModel.html#exceptionHandlers()" title="exceptionHandlers()">exceptionHandlers</a>, <a href="../CodeModel.html#parent()" title="parent()">parent</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.classfile.CompoundElement">Methods declared in interface&nbsp;<a href="../CompoundElement.html#method-summary" title="interface in java.lang.classfile">CompoundElement</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.classfile.CompoundElement">在接口 <a href="../CompoundElement.html#method-summary" title="java.lang.classfile 包中的接口">CompoundElement</a> 中声明的方法</h3>
 <code><a href="../CompoundElement.html#elementList()" title="elementList()">elementList</a>, <a href="../CompoundElement.html#elementStream()" title="elementStream()">elementStream</a>, <a href="../CompoundElement.html#forEach(java.util.function.Consumer)" title="forEach(Consumer)">forEach</a>, <a href="../CompoundElement.html#iterator()" title="iterator()">iterator</a>, <a href="../CompoundElement.html#toDebugString()" title="toDebugString()">toDebugString</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Iterable">Methods declared in interface&nbsp;<a href="../../Iterable.html#method-summary" title="interface in java.lang">Iterable</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Iterable">在接口 <a href="../../Iterable.html#method-summary" title="java.lang 包中的接口">Iterable</a> 中声明的方法</h3>
 <code><a href="../../Iterable.html#spliterator()" title="spliterator()">spliterator</a></code></div>
 </section>
 </li>
@@ -185,7 +185,7 @@ being built.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="maxLocals()">
@@ -194,7 +194,7 @@ being built.</dd>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">maxLocals</span>()</div>
 <div class="block">Returns the maximum size of the local variable table.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum size of the local variable table</dd>
 </dl>
 </div>
@@ -207,7 +207,7 @@ being built.</dd>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">maxStack</span>()</div>
 <div class="block">Returns the maximum size of the operand stack.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum size of the operand stack</dd>
 </dl>
 </div>
@@ -220,7 +220,7 @@ being built.</dd>
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">codeLength</span>()</div>
 <div class="block">Returns The length of the code array in bytes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The length of the code array in bytes</dd>
 </dl>
 </div>
@@ -233,7 +233,7 @@ being built.</dd>
 <div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="element-name">codeArray</span>()</div>
 <div class="block">Returns the bytes (bytecode) of the code array.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the bytes (bytecode) of the code array</dd>
 </dl>
 </div>
@@ -243,17 +243,17 @@ being built.</dd>
 <section class="detail" id="labelToBci(java.lang.classfile.Label)">
 <h3>labelToBci</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">labelToBci</span><wbr><span class="parameters">(<a href="../Label.html" title="interface in java.lang.classfile">Label</a>&nbsp;label)</span></div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">labelToBci</span><wbr><span class="parameters">(<a href="../Label.html" title="java.lang.classfile 包中的接口">Label</a>&nbsp;label)</span></div>
 <div class="block">Returns the position of the <code>label</code> in the <a href="#codeArray()"><code>codeArray</code></a>.
 The label represents a cursor pointing at immediately before the returned
 index into the <code>code</code> array.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>label</code> - a marker for a position within this <code>CodeAttribute</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the position of the <code>label</code> in the <a href="#codeArray()"><code>codeArray</code></a></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <code>label</code> is not from this attribute</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <code>label</code> is not from this attribute</dd>
 </dl>
 </div>
 </section>

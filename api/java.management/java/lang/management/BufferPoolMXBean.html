@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.management</a></li>
 <li><a href="BufferPoolMXBean.html" class="current-selection">BufferPoolMXBean</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,11 +61,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getName()" tabindex="0">getName()</a></li>
 <li><a href="#getCount()" tabindex="0">getCount()</a></li>
@@ -78,22 +78,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface BufferPoolMXBean" class="title">Interface BufferPoolMXBean</h1>
+<h1 title="接口 BufferPoolMXBean" class="title">接口 BufferPoolMXBean</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="PlatformManagedObject.html" title="interface in java.lang.management">PlatformManagedObject</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="PlatformManagedObject.html" title="java.lang.management 包中的接口">PlatformManagedObject</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BufferPoolMXBean</span><span class="extends-implements">
-extends <a href="PlatformManagedObject.html" title="interface in java.lang.management">PlatformManagedObject</a></span></div>
+extends <a href="PlatformManagedObject.html" title="java.lang.management 包中的接口">PlatformManagedObject</a></span></div>
 <div class="block">The management interface for a buffer pool, for example a pool of
-<a href="../../../../java.base/java/nio/ByteBuffer.html#allocateDirect(int)"><code>direct</code></a> or <a href="../../../../java.base/java/nio/MappedByteBuffer.html" title="class in java.nio"><code>mapped</code></a> buffers.
+<a href="../../../../java.base/java/nio/ByteBuffer.html#allocateDirect(int)"><code>direct</code></a> or <a href="../../../../java.base/java/nio/MappedByteBuffer.html" title="java.nio 包中的类"><code>mapped</code></a> buffers.
 
 <p> A class implementing this interface is an
-<a href="../../../javax/management/MXBean.html" title="annotation interface in javax.management"><code>MXBean</code></a>. A Java
+<a href="../../../javax/management/MXBean.html" title="javax.management 包中的注解接口"><code>MXBean</code></a>. A Java
 virtual machine has one or more implementations of this interface. The <a href="ManagementFactory.html#getPlatformMXBeans(java.lang.Class)"><code>getPlatformMXBeans</code></a>
 method can be used to obtain the list of <code>BufferPoolMXBean</code> objects
 representing the management interfaces for pools of buffers as follows:
@@ -101,14 +101,14 @@ representing the management interfaces for pools of buffers as follows:
     List&lt;BufferPoolMXBean&gt; pools = ManagementFactory.getPlatformMXBeans(BufferPoolMXBean.class);
 </pre>
 
-<p> The management interfaces are also registered with the platform <a href="../../../javax/management/MBeanServer.html" title="interface in javax.management"><code>MBeanServer</code></a>. The <a href="../../../javax/management/ObjectName.html" title="class in javax.management"><code>ObjectName</code></a> that uniquely identifies the
+<p> The management interfaces are also registered with the platform <a href="../../../javax/management/MBeanServer.html" title="javax.management 包中的接口"><code>MBeanServer</code></a>. The <a href="../../../javax/management/ObjectName.html" title="javax.management 包中的类"><code>ObjectName</code></a> that uniquely identifies the
 management interface within the <code>MBeanServer</code> takes the form:
 <pre>
     java.nio:type=BufferPool,name=<i>pool name</i>
 </pre>
 where <em>pool name</em> is the <a href="#getName()"><code>name</code></a> of the buffer pool.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -118,14 +118,14 @@ where <em>pool name</em> is the <a href="#getName()"><code>name</code></a> of th
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getCount()" class="member-name-link">getCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -137,7 +137,7 @@ where <em>pool name</em> is the <a href="#getName()"><code>name</code></a> of th
 <div class="block">Returns an estimate of the memory that the Java virtual machine is using
 for this buffer pool.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the name representing this buffer pool.</div>
@@ -151,7 +151,7 @@ for this buffer pool.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.management.PlatformManagedObject">Methods declared in interface&nbsp;<a href="PlatformManagedObject.html#method-summary" title="interface in java.lang.management">PlatformManagedObject</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.management.PlatformManagedObject">在接口 <a href="PlatformManagedObject.html#method-summary" title="java.lang.management 包中的接口">PlatformManagedObject</a> 中声明的方法</h3>
 <code><a href="PlatformManagedObject.html#getObjectName()" title="getObjectName()">getObjectName</a></code></div>
 </section>
 </li>
@@ -162,16 +162,16 @@ for this buffer pool.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
 <div class="block">Returns the name representing this buffer pool.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The name of this buffer pool.</dd>
 </dl>
 </div>
@@ -184,7 +184,7 @@ for this buffer pool.</div>
 <div class="member-signature"><span class="return-type">long</span>&nbsp;<span class="element-name">getCount</span>()</div>
 <div class="block">Returns an estimate of the number of buffers in the pool.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An estimate of the number of buffers in this pool</dd>
 </dl>
 </div>
@@ -200,7 +200,7 @@ A buffer's capacity is the number of elements it contains and the value
 returned by this method is an estimate of the total capacity of buffers
 in the pool in bytes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An estimate of the total capacity of the buffers in this pool
          in bytes</dd>
 </dl>
@@ -218,7 +218,7 @@ from the estimate of the total <a href="#getTotalCapacity()"><code>capacity</cod
 the buffers in this pool. This difference is explained by alignment,
 memory allocator, and other implementation specific reasons.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An estimate of the memory that the Java virtual machine is using
          for this buffer pool in bytes, or <code>-1L</code> if an estimate of
          the memory usage is not available</dd>

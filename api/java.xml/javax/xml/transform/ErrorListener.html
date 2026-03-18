@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.xml.transform</a></li>
 <li><a href="ErrorListener.html" class="current-selection">ErrorListener</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,11 +60,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#warning(javax.xml.transform.TransformerException)" tabindex="0">warning(TransformerException)</a></li>
 <li><a href="#error(javax.xml.transform.TransformerException)" tabindex="0">error(TransformerException)</a></li>
@@ -76,28 +76,28 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface ErrorListener" class="title">Interface ErrorListener</h1>
+<h1 title="接口 ErrorListener" class="title">接口 ErrorListener</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ErrorListener</span></div>
-<div class="block">The listener interface used by a <a href="TransformerFactory.html" title="class in javax.xml.transform"><code>TransformerFactory</code></a> or <a href="Transformer.html" title="class in javax.xml.transform"><code>Transformer</code></a>
+<div class="block">The listener interface used by a <a href="TransformerFactory.html" title="javax.xml.transform 包中的类"><code>TransformerFactory</code></a> or <a href="Transformer.html" title="javax.xml.transform 包中的类"><code>Transformer</code></a>
 to notify callers of error messages that occur during a transformation process.
 An ErrorListener receives three levels of messages: warnings, errors and fatal
 errors as classified by their severity. Each of them is handled as described
 in their respective method.
 
 <p>
-An ErrorListener instance can be registered to a <a href="TransformerFactory.html" title="class in javax.xml.transform"><code>TransformerFactory</code></a>
-or <a href="Transformer.html" title="class in javax.xml.transform"><code>Transformer</code></a> through
+An ErrorListener instance can be registered to a <a href="TransformerFactory.html" title="javax.xml.transform 包中的类"><code>TransformerFactory</code></a>
+or <a href="Transformer.html" title="javax.xml.transform 包中的类"><code>Transformer</code></a> through
 the <a href="TransformerFactory.html#setErrorListener(javax.xml.transform.ErrorListener)"><code>TransformerFactory.setErrorListener(ErrorListener)</code></a>
 or <a href="Transformer.html#setErrorListener(javax.xml.transform.ErrorListener)"><code>Transformer.setErrorListener(ErrorListener)</code></a>
 method to receive errors and warnings reported by the TransformerFactory
 or Transformer.
 
 <p>
-When a listener is registered, the <a href="TransformerFactory.html" title="class in javax.xml.transform"><code>TransformerFactory</code></a> or <a href="Transformer.html" title="class in javax.xml.transform"><code>Transformer</code></a>
+When a listener is registered, the <a href="TransformerFactory.html" title="javax.xml.transform 包中的类"><code>TransformerFactory</code></a> or <a href="Transformer.html" title="javax.xml.transform 包中的类"><code>Transformer</code></a>
 must use this interface to pass on all warnings and errors to the listener
 and let the application decide how to handle them.
 Note that the <code>TransformerFactory</code> or <code>Transformer</code> is not
@@ -105,18 +105,18 @@ required to continue with the transformation after a call to
 <a href="#fatalError(javax.xml.transform.TransformerException)"><code>fatalError(TransformerException exception)</code></a>.
 
 <p>
-If an application does not provide a listener, the <a href="TransformerFactory.html" title="class in javax.xml.transform"><code>TransformerFactory</code></a>
-or <a href="Transformer.html" title="class in javax.xml.transform"><code>Transformer</code></a> shall create one on its own. The default <code>ErrorListener</code>
+If an application does not provide a listener, the <a href="TransformerFactory.html" title="javax.xml.transform 包中的类"><code>TransformerFactory</code></a>
+or <a href="Transformer.html" title="javax.xml.transform 包中的类"><code>Transformer</code></a> shall create one on its own. The default <code>ErrorListener</code>
 may take no action for warnings and recoverable errors, and allow the
 transformation to continue.
 However, the <code>TransformerFactory</code> or <code>Transformer</code> may still throw
 <code>TransformerException</code> when it decides it can not continue processing.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>It is recommended that applications register and use their own
 <code>ErrorListener</code> to override the default behavior in order to ensure
 proper handling of warnings and errors.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -126,26 +126,26 @@ proper handling of warnings and errors.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#error(javax.xml.transform.TransformerException)" class="member-name-link">error</a><wbr>(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#error(javax.xml.transform.TransformerException)" class="member-name-link">error</a><wbr>(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Receive notification of a recoverable error.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fatalError(javax.xml.transform.TransformerException)" class="member-name-link">fatalError</a><wbr>(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fatalError(javax.xml.transform.TransformerException)" class="member-name-link">fatalError</a><wbr>(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Receive notification of a non-recoverable error.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#warning(javax.xml.transform.TransformerException)" class="member-name-link">warning</a><wbr>(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#warning(javax.xml.transform.TransformerException)" class="member-name-link">warning</a><wbr>(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Receive notification of a warning.</div>
 </div>
@@ -161,17 +161,17 @@ proper handling of warnings and errors.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="warning(javax.xml.transform.TransformerException)">
 <h3>warning</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">warning</span><wbr><span class="parameters">(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</span>
-      throws <span class="exceptions"><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">warning</span><wbr><span class="parameters">(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</span>
+      throws <span class="exceptions"><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></span></div>
 <div class="block">Receive notification of a warning.
 
-<p><a href="Transformer.html" title="class in javax.xml.transform"><code>Transformer</code></a> can use this method to report
+<p><a href="Transformer.html" title="javax.xml.transform 包中的类"><code>Transformer</code></a> can use this method to report
 conditions that are not errors or fatal errors.  The default behaviour
 is to take no action.</p>
 
@@ -179,16 +179,16 @@ is to take no action.</p>
 the transformation. It should still be possible for the
 application to process the document through to the end.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>exception</code> - The warning information encapsulated in a
                  transformer exception.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></code> - if the application
+<dt>抛出:</dt>
+<dd><code><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></code> - if the application
 chooses to discontinue the transformation.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="TransformerException.html" title="class in javax.xml.transform"><code>TransformerException</code></a></li>
+<li><a href="TransformerException.html" title="javax.xml.transform 包中的类"><code>TransformerException</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -199,8 +199,8 @@ chooses to discontinue the transformation.</dd>
 <section class="detail" id="error(javax.xml.transform.TransformerException)">
 <h3>error</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">error</span><wbr><span class="parameters">(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</span>
-    throws <span class="exceptions"><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">error</span><wbr><span class="parameters">(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</span>
+    throws <span class="exceptions"><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></span></div>
 <div class="block">Receive notification of a recoverable error.
 
 <p>The transformer must continue to try and provide normal transformation
@@ -208,16 +208,16 @@ after invoking this method.  It should still be possible for the
 application to process the document through to the end if no other errors
 are encountered.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>exception</code> - The error information encapsulated in a
                  transformer exception.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></code> - if the application
+<dt>抛出:</dt>
+<dd><code><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></code> - if the application
 chooses to discontinue the transformation.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="TransformerException.html" title="class in javax.xml.transform"><code>TransformerException</code></a></li>
+<li><a href="TransformerException.html" title="javax.xml.transform 包中的类"><code>TransformerException</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -228,8 +228,8 @@ chooses to discontinue the transformation.</dd>
 <section class="detail" id="fatalError(javax.xml.transform.TransformerException)">
 <h3>fatalError</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">fatalError</span><wbr><span class="parameters">(<a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a>&nbsp;exception)</span>
-         throws <span class="exceptions"><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">fatalError</span><wbr><span class="parameters">(<a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a>&nbsp;exception)</span>
+         throws <span class="exceptions"><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></span></div>
 <div class="block"><p>Receive notification of a non-recoverable error.</p>
 
 <p>The processor may choose to continue, but will not normally
@@ -240,16 +240,16 @@ process the error, or if it wishes execution to terminate
 immediately. The processor will not necessarily honor this
 request.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>exception</code> - The error information encapsulated in a
    <code>TransformerException</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="TransformerException.html" title="class in javax.xml.transform">TransformerException</a></code> - if the application
+<dt>抛出:</dt>
+<dd><code><a href="TransformerException.html" title="javax.xml.transform 包中的类">TransformerException</a></code> - if the application
 chooses to discontinue the transformation.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="TransformerException.html" title="class in javax.xml.transform"><code>TransformerException</code></a></li>
+<li><a href="TransformerException.html" title="javax.xml.transform 包中的类"><code>TransformerException</code></a></li>
 </ul>
 </dd>
 </dl>

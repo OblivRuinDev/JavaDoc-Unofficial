@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.stream</a></li>
 <li><a href="Stream.html" class="current-selection">Stream</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -99,12 +99,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#filter(java.util.function.Predicate)" tabindex="0">filter(Predicate)</a></li>
 <li><a href="#map(java.util.function.Function)" tabindex="0">map(Function)</a></li>
@@ -162,24 +162,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Stream" class="title">Interface Stream&lt;T&gt;</h1>
+<h1 title="接口 Stream" class="title">接口 Stream&lt;T&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the type of the stream elements</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="BaseStream.html" title="interface in java.util.stream">BaseStream</a>&lt;T, <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="BaseStream.html" title="java.util.stream 包中的接口">BaseStream</a>&lt;T, <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Stream&lt;T&gt;</span><span class="extends-implements">
-extends <a href="BaseStream.html" title="interface in java.util.stream">BaseStream</a>&lt;T, <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;&gt;</span></div>
+extends <a href="BaseStream.html" title="java.util.stream 包中的接口">BaseStream</a>&lt;T, <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;&gt;</span></div>
 <div class="block">A sequence of elements supporting sequential and parallel aggregate
 operations.  The following example illustrates an aggregate operation using
-<a href="Stream.html" title="interface in java.util.stream"><code>Stream</code></a> and <a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a>:
+<a href="Stream.html" title="java.util.stream 包中的接口"><code>Stream</code></a> and <a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a>:
 
 <pre><code>    int sum = widgets.stream()
                      .filter(w -&gt; w.getColor() == RED)
@@ -194,8 +194,8 @@ transform it into a stream of <code>int</code> values representing the weight of
 each red widget. Then this stream is summed to produce a total weight.
 
 <p>In addition to <code>Stream</code>, which is a stream of object references,
-there are primitive specializations for <a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a>, <a href="LongStream.html" title="interface in java.util.stream"><code>LongStream</code></a>,
-and <a href="DoubleStream.html" title="interface in java.util.stream"><code>DoubleStream</code></a>, all of which are referred to as "streams" and
+there are primitive specializations for <a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a>, <a href="LongStream.html" title="java.util.stream 包中的接口"><code>LongStream</code></a>,
+and <a href="DoubleStream.html" title="java.util.stream 包中的接口"><code>DoubleStream</code></a>, all of which are referred to as "streams" and
 conform to the characteristics and restrictions described here.
 
 <p>To perform a computation, stream
@@ -235,7 +235,7 @@ can be used to perform a controlled traversal.
 
 <p>A stream pipeline, like the "widgets" example above, can be viewed as
 a <em>query</em> on the stream source.  Unless the source was explicitly
-designed for concurrent modification (such as a <a href="../concurrent/ConcurrentHashMap.html" title="class in java.util.concurrent"><code>ConcurrentHashMap</code></a>),
+designed for concurrent modification (such as a <a href="../concurrent/ConcurrentHashMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentHashMap</code></a>),
 unpredictable or erroneous behavior may result from modifying the stream
 source while it is being queried.
 
@@ -253,20 +253,20 @@ of the stream pipeline).</li>
 
 <p>Such parameters are always instances of a
 <a href="../function/package-summary.html">functional interface</a> such
-as <a href="../function/Function.html" title="interface in java.util.function"><code>Function</code></a>, and are often lambda expressions or
+as <a href="../function/Function.html" title="java.util.function 包中的接口"><code>Function</code></a>, and are often lambda expressions or
 method references.  Unless otherwise specified these parameters must be
 <em>non-null</em>.
 
 <p>A stream should be operated on (invoking an intermediate or terminal stream
 operation) only once.  This rules out, for example, "forked" streams, where
 the same source feeds two or more pipelines, or multiple traversals of the
-same stream.  A stream implementation may throw <a href="../../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>
+same stream.  A stream implementation may throw <a href="../../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>
 if it detects that the stream is being reused. However, since some stream
 operations may return their receiver rather than a new stream object, it may
 not be possible to detect reuse in all cases.
 
-<p>Streams have a <a href="BaseStream.html#close()"><code>BaseStream.close()</code></a> method and implement <a href="../../lang/AutoCloseable.html" title="interface in java.lang"><code>AutoCloseable</code></a>.
-Operating on a stream after it has been closed will throw <a href="../../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a>.
+<p>Streams have a <a href="BaseStream.html#close()"><code>BaseStream.close()</code></a> method and implement <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口"><code>AutoCloseable</code></a>.
+Operating on a stream after it has been closed will throw <a href="../../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a>.
 Most stream instances do not actually need to be closed after use, as they
 are backed by collections, arrays, or generating functions, which require no
 special resource management. Generally, only streams whose source is an IO channel,
@@ -285,14 +285,14 @@ a parallel one.)  This choice of execution mode may be modified by the
 <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> or <a href="BaseStream.html#parallel()"><code>BaseStream.parallel()</code></a> methods, and may be queried with
 the <a href="BaseStream.html#isParallel()"><code>BaseStream.isParallel()</code></a> method.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a></li>
-<li><a href="LongStream.html" title="interface in java.util.stream"><code>LongStream</code></a></li>
-<li><a href="DoubleStream.html" title="interface in java.util.stream"><code>DoubleStream</code></a></li>
+<li><a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a></li>
+<li><a href="LongStream.html" title="java.util.stream 包中的接口"><code>LongStream</code></a></li>
+<li><a href="DoubleStream.html" title="java.util.stream 包中的接口"><code>DoubleStream</code></a></li>
 <li><a href="package-summary.html">java.util.stream</a></li>
 </ul>
 </dd>
@@ -304,14 +304,14 @@ the <a href="BaseStream.html#isParallel()"><code>BaseStream.isParallel()</code><
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="Stream.Builder.html" class="type-name-link" title="interface in java.util.stream">Stream.Builder</a>&lt;<a href="Stream.Builder.html#type-param-T" title="type parameter in Stream.Builder">T</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="Stream.Builder.html" title="java.util.stream 包中的接口">Stream.Builder</a>&lt;<a href="Stream.Builder.html#type-param-T" title="Stream.Builder 中的类型参数">T</a>&gt;</code></div>
 <div class="col-last even-row-color">
 <div class="block">A mutable builder for a <code>Stream</code>.</div>
 </div>
@@ -321,48 +321,48 @@ the <a href="BaseStream.html#isParallel()"><code>BaseStream.isParallel()</code><
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allMatch(java.util.function.Predicate)" class="member-name-link">allMatch</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allMatch(java.util.function.Predicate)" class="member-name-link">allMatch</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns whether all elements of this stream match the provided predicate.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#anyMatch(java.util.function.Predicate)" class="member-name-link">anyMatch</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#anyMatch(java.util.function.Predicate)" class="member-name-link">anyMatch</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns whether any elements of this stream match the provided
 predicate.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.Builder.html" title="interface in java.util.stream">Stream.Builder</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.Builder.html" title="java.util.stream 包中的接口">Stream.Builder</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#builder()" class="member-name-link">builder</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a builder for a <code>Stream</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;R</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)" class="member-name-link">collect</a><wbr>(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R, ? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R,<wbr>R&gt;&nbsp;combiner)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)" class="member-name-link">collect</a><wbr>(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;R&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R, ? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R,<wbr>R&gt;&nbsp;combiner)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs a <a href="package-summary.html#MutableReduction">mutable
 reduction</a> operation on the elements of this stream.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R,<wbr>A&gt;&nbsp;R</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#collect(java.util.stream.Collector)" class="member-name-link">collect</a><wbr>(<a href="Collector.html" title="interface in java.util.stream">Collector</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, A, R&gt;&nbsp;collector)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#collect(java.util.stream.Collector)" class="member-name-link">collect</a><wbr>(<a href="Collector.html" title="java.util.stream 包中的接口">Collector</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, A, R&gt;&nbsp;collector)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs a <a href="package-summary.html#MutableReduction">mutable
 reduction</a> operation on the elements of this stream using a
 <code>Collector</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#concat(java.util.stream.Stream,java.util.stream.Stream)" class="member-name-link">concat</a><wbr>(<a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends T&gt;&nbsp;a,
- <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends T&gt;&nbsp;b)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#concat(java.util.stream.Stream,java.util.stream.Stream)" class="member-name-link">concat</a><wbr>(<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends T&gt;&nbsp;a,
+ <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends T&gt;&nbsp;b)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Creates a lazily concatenated stream whose elements are all the
 elements of the first stream followed by all the elements of the
@@ -373,210 +373,210 @@ second stream.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the count of elements in this stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#distinct()" class="member-name-link">distinct</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the distinct elements (according to
 <a href="../../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a>) of this stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#dropWhile(java.util.function.Predicate)" class="member-name-link">dropWhile</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#dropWhile(java.util.function.Predicate)" class="member-name-link">dropWhile</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns, if this stream is ordered, a stream consisting of the remaining
 elements of this stream after dropping the longest prefix of elements
 that match the given predicate.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#empty()" class="member-name-link">empty</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns an empty sequential <code>Stream</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#filter(java.util.function.Predicate)" class="member-name-link">filter</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#filter(java.util.function.Predicate)" class="member-name-link">filter</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the elements of this stream that match
 the given predicate.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findAny()" class="member-name-link">findAny</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns an <a href="../Optional.html" title="class in java.util"><code>Optional</code></a> describing some element of the stream, or an
+<div class="block">Returns an <a href="../Optional.html" title="java.util 包中的类"><code>Optional</code></a> describing some element of the stream, or an
 empty <code>Optional</code> if the stream is empty.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#findFirst()" class="member-name-link">findFirst</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns an <a href="../Optional.html" title="class in java.util"><code>Optional</code></a> describing the first element of this stream,
+<div class="block">Returns an <a href="../Optional.html" title="java.util 包中的类"><code>Optional</code></a> describing the first element of this stream,
 or an empty <code>Optional</code> if the stream is empty.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMap(java.util.function.Function)" class="member-name-link">flatMap</a><wbr>(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMap(java.util.function.Function)" class="member-name-link">flatMap</a><wbr>(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the results of replacing each element of
 this stream with the contents of a mapped stream produced by applying
 the provided mapping function to each element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToDouble(java.util.function.Function)" class="member-name-link">flatMapToDouble</a><wbr>(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToDouble(java.util.function.Function)" class="member-name-link">flatMapToDouble</a><wbr>(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an <code>DoubleStream</code> consisting of the results of replacing
 each element of this stream with the contents of a mapped stream produced
 by applying the provided mapping function to each element.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToInt(java.util.function.Function)" class="member-name-link">flatMapToInt</a><wbr>(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="IntStream.html" title="interface in java.util.stream">IntStream</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToInt(java.util.function.Function)" class="member-name-link">flatMapToInt</a><wbr>(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an <code>IntStream</code> consisting of the results of replacing each
 element of this stream with the contents of a mapped stream produced by
 applying the provided mapping function to each element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToLong(java.util.function.Function)" class="member-name-link">flatMapToLong</a><wbr>(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="LongStream.html" title="interface in java.util.stream">LongStream</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#flatMapToLong(java.util.function.Function)" class="member-name-link">flatMapToLong</a><wbr>(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an <code>LongStream</code> consisting of the results of replacing each
 element of this stream with the contents of a mapped stream produced by
 applying the provided mapping function to each element.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEach(java.util.function.Consumer)" class="member-name-link">forEach</a><wbr>(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEach(java.util.function.Consumer)" class="member-name-link">forEach</a><wbr>(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs an action for each element of this stream.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEachOrdered(java.util.function.Consumer)" class="member-name-link">forEachOrdered</a><wbr>(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#forEachOrdered(java.util.function.Consumer)" class="member-name-link">forEachOrdered</a><wbr>(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs an action for each element of this stream, in the encounter
 order of the stream if the stream has a defined encounter order.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;R&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#gather(java.util.stream.Gatherer)" class="member-name-link">gather</a><wbr>(<a href="Gatherer.html" title="interface in java.util.stream">Gatherer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ?, R&gt;&nbsp;gatherer)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;R&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#gather(java.util.stream.Gatherer)" class="member-name-link">gather</a><wbr>(<a href="Gatherer.html" title="java.util.stream 包中的接口">Gatherer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ?, R&gt;&nbsp;gatherer)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a stream consisting of the results of applying the given
-<a href="Gatherer.html" title="interface in java.util.stream"><code>Gatherer</code></a> to the elements of this stream.</div>
+<a href="Gatherer.html" title="java.util.stream 包中的接口"><code>Gatherer</code></a> to the elements of this stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#generate(java.util.function.Supplier)" class="member-name-link">generate</a><wbr>(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends T&gt;&nbsp;s)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#generate(java.util.function.Supplier)" class="member-name-link">generate</a><wbr>(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends T&gt;&nbsp;s)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns an infinite sequential unordered stream where each element is
 generated by the provided <code>Supplier</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#iterate(T,java.util.function.Predicate,java.util.function.UnaryOperator)" class="member-name-link">iterate</a><wbr>(T&nbsp;seed,
- <a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super T&gt;&nbsp;hasNext,
- <a href="../function/UnaryOperator.html" title="interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;next)</code></div>
+ <a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super T&gt;&nbsp;hasNext,
+ <a href="../function/UnaryOperator.html" title="java.util.function 包中的接口">UnaryOperator</a>&lt;T&gt;&nbsp;next)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a sequential ordered <code>Stream</code> produced by iterative
 application of the given <code>next</code> function to an initial element,
 conditioned on satisfying the given <code>hasNext</code> predicate.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#iterate(T,java.util.function.UnaryOperator)" class="member-name-link">iterate</a><wbr>(T&nbsp;seed,
- <a href="../function/UnaryOperator.html" title="interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;f)</code></div>
+ <a href="../function/UnaryOperator.html" title="java.util.function 包中的接口">UnaryOperator</a>&lt;T&gt;&nbsp;f)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns an infinite sequential ordered <code>Stream</code> produced by iterative
 application of a function <code>f</code> to an initial element <code>seed</code>,
 producing a <code>Stream</code> consisting of <code>seed</code>, <code>f(seed)</code>,
 <code>f(f(seed))</code>, etc.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#limit(long)" class="member-name-link">limit</a><wbr>(long&nbsp;maxSize)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the elements of this stream, truncated
 to be no longer than <code>maxSize</code> in length.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#map(java.util.function.Function)" class="member-name-link">map</a><wbr>(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends R&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;R&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#map(java.util.function.Function)" class="member-name-link">map</a><wbr>(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends R&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the results of applying the given
 function to the elements of this stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;R&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMulti(java.util.function.BiConsumer)" class="member-name-link">mapMulti</a><wbr>(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;R&gt;&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;R&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMulti(java.util.function.BiConsumer)" class="member-name-link">mapMulti</a><wbr>(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;R&gt;&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a stream consisting of the results of replacing each element of
 this stream with multiple elements, specifically zero or more elements.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToDouble(java.util.function.BiConsumer)" class="member-name-link">mapMultiToDouble</a><wbr>(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/DoubleConsumer.html" title="interface in java.util.function">DoubleConsumer</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToDouble(java.util.function.BiConsumer)" class="member-name-link">mapMultiToDouble</a><wbr>(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/DoubleConsumer.html" title="java.util.function 包中的接口">DoubleConsumer</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a <code>DoubleStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="IntStream.html" title="interface in java.util.stream">IntStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToInt(java.util.function.BiConsumer)" class="member-name-link">mapMultiToInt</a><wbr>(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/IntConsumer.html" title="interface in java.util.function">IntConsumer</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToInt(java.util.function.BiConsumer)" class="member-name-link">mapMultiToInt</a><wbr>(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/IntConsumer.html" title="java.util.function 包中的接口">IntConsumer</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns an <code>IntStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="LongStream.html" title="interface in java.util.stream">LongStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToLong(java.util.function.BiConsumer)" class="member-name-link">mapMultiToLong</a><wbr>(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/LongConsumer.html" title="interface in java.util.function">LongConsumer</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#mapMultiToLong(java.util.function.BiConsumer)" class="member-name-link">mapMultiToLong</a><wbr>(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/LongConsumer.html" title="java.util.function 包中的接口">LongConsumer</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a <code>LongStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToDouble(java.util.function.ToDoubleFunction)" class="member-name-link">mapToDouble</a><wbr>(<a href="../function/ToDoubleFunction.html" title="interface in java.util.function">ToDoubleFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToDouble(java.util.function.ToDoubleFunction)" class="member-name-link">mapToDouble</a><wbr>(<a href="../function/ToDoubleFunction.html" title="java.util.function 包中的接口">ToDoubleFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <code>DoubleStream</code> consisting of the results of applying the
 given function to the elements of this stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToInt(java.util.function.ToIntFunction)" class="member-name-link">mapToInt</a><wbr>(<a href="../function/ToIntFunction.html" title="interface in java.util.function">ToIntFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToInt(java.util.function.ToIntFunction)" class="member-name-link">mapToInt</a><wbr>(<a href="../function/ToIntFunction.html" title="java.util.function 包中的接口">ToIntFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an <code>IntStream</code> consisting of the results of applying the
 given function to the elements of this stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToLong(java.util.function.ToLongFunction)" class="member-name-link">mapToLong</a><wbr>(<a href="../function/ToLongFunction.html" title="interface in java.util.function">ToLongFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mapToLong(java.util.function.ToLongFunction)" class="member-name-link">mapToLong</a><wbr>(<a href="../function/ToLongFunction.html" title="java.util.function 包中的接口">ToLongFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <code>LongStream</code> consisting of the results of applying the
 given function to the elements of this stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#max(java.util.Comparator)" class="member-name-link">max</a><wbr>(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#max(java.util.Comparator)" class="member-name-link">max</a><wbr>(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the maximum element of this stream according to the provided
 <code>Comparator</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#min(java.util.Comparator)" class="member-name-link">min</a><wbr>(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#min(java.util.Comparator)" class="member-name-link">min</a><wbr>(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the minimum element of this stream according to the provided
 <code>Comparator</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#noneMatch(java.util.function.Predicate)" class="member-name-link">noneMatch</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#noneMatch(java.util.function.Predicate)" class="member-name-link">noneMatch</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns whether no elements of this stream match the provided predicate.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(T)" class="member-name-link">of</a><wbr>(T&nbsp;t)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a sequential <code>Stream</code> containing a single element.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(T...)" class="member-name-link">of</a><wbr>(T...&nbsp;values)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a sequential ordered stream whose elements are the specified values.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;T&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofNullable(T)" class="member-name-link">ofNullable</a><wbr>(T&nbsp;t)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a sequential <code>Stream</code> containing a single element, if
 non-null, otherwise returns an empty <code>Stream</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#peek(java.util.function.Consumer)" class="member-name-link">peek</a><wbr>(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#peek(java.util.function.Consumer)" class="member-name-link">peek</a><wbr>(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the elements of this stream, additionally
 performing the provided action on each element as elements are consumed
 from the resulting stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reduce(java.util.function.BinaryOperator)" class="member-name-link">reduce</a><wbr>(<a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reduce(java.util.function.BinaryOperator)" class="member-name-link">reduce</a><wbr>(<a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using an
@@ -584,9 +584,9 @@ elements of this stream, using an
 function, and returns an <code>Optional</code> describing the reduced value,
 if any.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="type parameter in Stream">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reduce(T,java.util.function.BinaryOperator)" class="member-name-link">reduce</a><wbr>(<a href="#type-param-T" title="type parameter in Stream">T</a>&nbsp;identity,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="Stream 中的类型参数">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reduce(T,java.util.function.BinaryOperator)" class="member-name-link">reduce</a><wbr>(<a href="#type-param-T" title="Stream 中的类型参数">T</a>&nbsp;identity,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using the provided identity value and an
@@ -595,51 +595,51 @@ accumulation function, and returns the reduced value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;U&gt;&nbsp;U</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#reduce(U,java.util.function.BiFunction,java.util.function.BinaryOperator)" class="member-name-link">reduce</a><wbr>(U&nbsp;identity,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;U, ? super <a href="#type-param-T" title="type parameter in Stream">T</a>, U&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;U&gt;&nbsp;combiner)</code></div>
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;U, ? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, U&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;U&gt;&nbsp;combiner)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using the provided identity, accumulation and
 combining functions.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#skip(long)" class="member-name-link">skip</a><wbr>(long&nbsp;n)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the remaining elements of this stream
 after discarding the first <code>n</code> elements of the stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sorted()" class="member-name-link">sorted</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the elements of this stream, sorted
 according to natural order.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sorted(java.util.Comparator)" class="member-name-link">sorted</a><wbr>(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sorted(java.util.Comparator)" class="member-name-link">sorted</a><wbr>(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream consisting of the elements of this stream, sorted
 according to the provided <code>Comparator</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#takeWhile(java.util.function.Predicate)" class="member-name-link">takeWhile</a><wbr>(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#takeWhile(java.util.function.Predicate)" class="member-name-link">takeWhile</a><wbr>(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns, if this stream is ordered, a stream consisting of the longest
 prefix of elements taken from this stream that match the given predicate.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../lang/Object.html" title="class in java.lang">Object</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toArray()" class="member-name-link">toArray</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an array containing the elements of this stream.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;A&gt;&nbsp;A[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toArray(java.util.function.IntFunction)" class="member-name-link">toArray</a><wbr>(<a href="../function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;A[]&gt;&nbsp;generator)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toArray(java.util.function.IntFunction)" class="member-name-link">toArray</a><wbr>(<a href="../function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;A[]&gt;&nbsp;generator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an array containing the elements of this stream, using the
 provided <code>generator</code> function to allocate the returned array, as
 well as any additional arrays that might be required for a partitioned
 execution or for resizing.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../List.html" title="interface in java.util">List</a><wbr>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#toList()" class="member-name-link">toList</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Accumulates the elements of this stream into a <code>List</code>.</div>
@@ -648,7 +648,7 @@ execution or for resizing.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.stream.BaseStream">Methods declared in interface&nbsp;<a href="BaseStream.html#method-summary" title="interface in java.util.stream">BaseStream</a></h3>
+<h3 id="methods-inherited-from-class-java.util.stream.BaseStream">在接口 <a href="BaseStream.html#method-summary" title="java.util.stream 包中的接口">BaseStream</a> 中声明的方法</h3>
 <code><a href="BaseStream.html#close()" title="close()">close</a>, <a href="BaseStream.html#isParallel()" title="isParallel()">isParallel</a>, <a href="BaseStream.html#iterator()" title="iterator()">iterator</a>, <a href="BaseStream.html#onClose(java.lang.Runnable)" title="onClose(Runnable)">onClose</a>, <a href="BaseStream.html#parallel()" title="parallel()">parallel</a>, <a href="BaseStream.html#sequential()" title="sequential()">sequential</a>, <a href="BaseStream.html#spliterator()" title="spliterator()">spliterator</a>, <a href="BaseStream.html#unordered()" title="unordered()">unordered</a></code></div>
 </section>
 </li>
@@ -659,25 +659,25 @@ execution or for resizing.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="filter(java.util.function.Predicate)">
 <h3>filter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">filter</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">filter</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns a stream consisting of the elements of this stream that match
 the given predicate.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to each element to determine if it
                  should be included</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -687,20 +687,20 @@ operation</a>.</div>
 <section class="detail" id="map(java.util.function.Function)">
 <h3>map</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends R&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends R&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a stream consisting of the results of applying the given
 function to the elements of this stream.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="map(java.util.function.Function)-type-param-R"><code>R</code> - The element type of the new stream</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -710,18 +710,18 @@ operation</a>.</div>
 <section class="detail" id="mapToInt(java.util.function.ToIntFunction)">
 <h3>mapToInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></span>&nbsp;<span class="element-name">mapToInt</span><wbr><span class="parameters">(<a href="../function/ToIntFunction.html" title="interface in java.util.function">ToIntFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></span>&nbsp;<span class="element-name">mapToInt</span><wbr><span class="parameters">(<a href="../function/ToIntFunction.html" title="java.util.function 包中的接口">ToIntFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns an <code>IntStream</code> consisting of the results of applying the
 given function to the elements of this stream.
 
 <p>This is an <a href="package-summary.html#StreamOps">
     intermediate operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -731,18 +731,18 @@ given function to the elements of this stream.
 <section class="detail" id="mapToLong(java.util.function.ToLongFunction)">
 <h3>mapToLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></span>&nbsp;<span class="element-name">mapToLong</span><wbr><span class="parameters">(<a href="../function/ToLongFunction.html" title="interface in java.util.function">ToLongFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></span>&nbsp;<span class="element-name">mapToLong</span><wbr><span class="parameters">(<a href="../function/ToLongFunction.html" title="java.util.function 包中的接口">ToLongFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a <code>LongStream</code> consisting of the results of applying the
 given function to the elements of this stream.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -752,18 +752,18 @@ operation</a>.</div>
 <section class="detail" id="mapToDouble(java.util.function.ToDoubleFunction)">
 <h3>mapToDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></span>&nbsp;<span class="element-name">mapToDouble</span><wbr><span class="parameters">(<a href="../function/ToDoubleFunction.html" title="interface in java.util.function">ToDoubleFunction</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></span>&nbsp;<span class="element-name">mapToDouble</span><wbr><span class="parameters">(<a href="../function/ToDoubleFunction.html" title="java.util.function 包中的接口">ToDoubleFunction</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a <code>DoubleStream</code> consisting of the results of applying the
 given function to the elements of this stream.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -773,7 +773,7 @@ operation</a>.</div>
 <section class="detail" id="flatMap(java.util.function.Function)">
 <h3>flatMap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">flatMap</span><wbr><span class="parameters">(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">flatMap</span><wbr><span class="parameters">(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends R&gt;&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a stream consisting of the results of replacing each element of
 this stream with the contents of a mapped stream produced by applying
 the provided mapping function to each element.  Each mapped stream is
@@ -784,7 +784,7 @@ an empty stream is used, instead.)
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The <code>flatMap()</code> operation has the effect of applying a one-to-many
 transformation to the elements of the stream, and then flattening the
 resulting elements into a new stream.
@@ -805,16 +805,16 @@ stream of the <code>words</code> contained in that file:
 The <code>mapper</code> function passed to <code>flatMap</code> splits a line,
 using a simple regular expression, into an array of words, and then
 creates a stream of words from that array.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="flatMap(java.util.function.Function)-type-param-R"><code>R</code> - The element type of the new stream</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element which produces a stream
               of new values</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#mapMulti(java.util.function.BiConsumer)"><code>mapMulti</code></a></li>
@@ -828,7 +828,7 @@ creates a stream of words from that array.</dd>
 <section class="detail" id="flatMapToInt(java.util.function.Function)">
 <h3>flatMapToInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></span>&nbsp;<span class="element-name">flatMapToInt</span><wbr><span class="parameters">(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="IntStream.html" title="interface in java.util.stream">IntStream</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></span>&nbsp;<span class="element-name">flatMapToInt</span><wbr><span class="parameters">(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns an <code>IntStream</code> consisting of the results of replacing each
 element of this stream with the contents of a mapped stream produced by
 applying the provided mapping function to each element.  Each mapped
@@ -839,14 +839,14 @@ contents have been placed into this stream.  (If a mapped stream is
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element which produces a stream
               of new values</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a></li>
@@ -860,7 +860,7 @@ operation</a>.</div>
 <section class="detail" id="flatMapToLong(java.util.function.Function)">
 <h3>flatMapToLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></span>&nbsp;<span class="element-name">flatMapToLong</span><wbr><span class="parameters">(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="LongStream.html" title="interface in java.util.stream">LongStream</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></span>&nbsp;<span class="element-name">flatMapToLong</span><wbr><span class="parameters">(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns an <code>LongStream</code> consisting of the results of replacing each
 element of this stream with the contents of a mapped stream produced by
 applying the provided mapping function to each element.  Each mapped
@@ -871,14 +871,14 @@ contents have been placed into this stream.  (If a mapped stream is
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element which produces a stream
               of new values</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a></li>
@@ -892,7 +892,7 @@ operation</a>.</div>
 <section class="detail" id="flatMapToDouble(java.util.function.Function)">
 <h3>flatMapToDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></span>&nbsp;<span class="element-name">flatMapToDouble</span><wbr><span class="parameters">(<a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? extends <a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="return-type"><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></span>&nbsp;<span class="element-name">flatMapToDouble</span><wbr><span class="parameters">(<a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? extends <a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns an <code>DoubleStream</code> consisting of the results of replacing
 each element of this stream with the contents of a mapped stream produced
 by applying the provided mapping function to each element.  Each mapped
@@ -903,14 +903,14 @@ contents have placed been into this stream.  (If a mapped stream is
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function to apply to each element which produces a stream
               of new values</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a></li>
@@ -924,21 +924,21 @@ operation</a>.</div>
 <section class="detail" id="mapMulti(java.util.function.BiConsumer)">
 <h3>mapMulti</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">mapMulti</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;R&gt;&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">mapMulti</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;R&gt;&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a stream consisting of the results of replacing each element of
 this stream with multiple elements, specifically zero or more elements.
 Replacement is performed by applying the provided mapping function to each
-element in conjunction with a <a href="../function/Consumer.html" title="interface in java.util.function">consumer</a> argument
+element in conjunction with a <a href="../function/Consumer.html" title="java.util.function 包中的接口">consumer</a> argument
 that accepts replacement elements. The mapping function calls the consumer
 zero or more times to provide the replacement elements.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.
 
-<p>If the <a href="../function/Consumer.html" title="interface in java.util.function">consumer</a> argument is used outside the scope of
+<p>If the <a href="../function/Consumer.html" title="java.util.function 包中的接口">consumer</a> argument is used outside the scope of
 its application to the mapping function, the results are undefined.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method is similar to <a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a> in that it applies a one-to-many
 transformation to the elements of the stream and flattens the result elements
 into a new stream. This method is preferable to <code>flatMap</code> in the following
@@ -987,23 +987,23 @@ that are themselves of type <code>Iterable</code>, we can use <code>mapMulti</co
     }
 }
 </code></pre></dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes <a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a> on this stream,
 passing a function that behaves as follows. First, it calls the mapper function
 with a <code>Consumer</code> that accumulates replacement elements into a newly created
 internal buffer. When the mapper function returns, it creates a stream from the
 internal buffer. Finally, it returns this stream to <code>flatMap</code>.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="mapMulti(java.util.function.BiConsumer)-type-param-R"><code>R</code> - The element type of the new stream</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function that generates replacement elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flatMap(java.util.function.Function)"><code>flatMap</code></a></li>
@@ -1017,36 +1017,36 @@ internal buffer. Finally, it returns this stream to <code>flatMap</code>.</dd>
 <section class="detail" id="mapMultiToInt(java.util.function.BiConsumer)">
 <h3>mapMultiToInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="IntStream.html" title="interface in java.util.stream">IntStream</a></span>&nbsp;<span class="element-name">mapMultiToInt</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/IntConsumer.html" title="interface in java.util.function">IntConsumer</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a></span>&nbsp;<span class="element-name">mapMultiToInt</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/IntConsumer.html" title="java.util.function 包中的接口">IntConsumer</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns an <code>IntStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.
 Replacement is performed by applying the provided mapping function to each
-element in conjunction with a <a href="../function/IntConsumer.html" title="interface in java.util.function">consumer</a> argument
+element in conjunction with a <a href="../function/IntConsumer.html" title="java.util.function 包中的接口">consumer</a> argument
 that accepts replacement elements. The mapping function calls the consumer
 zero or more times to provide the replacement elements.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.
 
-<p>If the <a href="../function/IntConsumer.html" title="interface in java.util.function">consumer</a> argument is used outside the scope of
+<p>If the <a href="../function/IntConsumer.html" title="java.util.function 包中的接口">consumer</a> argument is used outside the scope of
 its application to the mapping function, the results are undefined.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes <a href="#flatMapToInt(java.util.function.Function)"><code>flatMapToInt</code></a> on this stream,
 passing a function that behaves as follows. First, it calls the mapper function
 with an <code>IntConsumer</code> that accumulates replacement elements into a newly created
 internal buffer. When the mapper function returns, it creates an <code>IntStream</code> from
 the internal buffer. Finally, it returns this stream to <code>flatMapToInt</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function that generates replacement elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#mapMulti(java.util.function.BiConsumer)"><code>mapMulti</code></a></li>
@@ -1060,36 +1060,36 @@ the internal buffer. Finally, it returns this stream to <code>flatMapToInt</code
 <section class="detail" id="mapMultiToLong(java.util.function.BiConsumer)">
 <h3>mapMultiToLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="LongStream.html" title="interface in java.util.stream">LongStream</a></span>&nbsp;<span class="element-name">mapMultiToLong</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/LongConsumer.html" title="interface in java.util.function">LongConsumer</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a></span>&nbsp;<span class="element-name">mapMultiToLong</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/LongConsumer.html" title="java.util.function 包中的接口">LongConsumer</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a <code>LongStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.
 Replacement is performed by applying the provided mapping function to each
-element in conjunction with a <a href="../function/LongConsumer.html" title="interface in java.util.function">consumer</a> argument
+element in conjunction with a <a href="../function/LongConsumer.html" title="java.util.function 包中的接口">consumer</a> argument
 that accepts replacement elements. The mapping function calls the consumer
 zero or more times to provide the replacement elements.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.
 
-<p>If the <a href="../function/LongConsumer.html" title="interface in java.util.function">consumer</a> argument is used outside the scope of
+<p>If the <a href="../function/LongConsumer.html" title="java.util.function 包中的接口">consumer</a> argument is used outside the scope of
 its application to the mapping function, the results are undefined.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes <a href="#flatMapToLong(java.util.function.Function)"><code>flatMapToLong</code></a> on this stream,
 passing a function that behaves as follows. First, it calls the mapper function
 with a <code>LongConsumer</code> that accumulates replacement elements into a newly created
 internal buffer. When the mapper function returns, it creates a <code>LongStream</code> from
 the internal buffer. Finally, it returns this stream to <code>flatMapToLong</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function that generates replacement elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#mapMulti(java.util.function.BiConsumer)"><code>mapMulti</code></a></li>
@@ -1103,36 +1103,36 @@ the internal buffer. Finally, it returns this stream to <code>flatMapToLong</cod
 <section class="detail" id="mapMultiToDouble(java.util.function.BiConsumer)">
 <h3>mapMultiToDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a></span>&nbsp;<span class="element-name">mapMultiToDouble</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ? super <a href="../function/DoubleConsumer.html" title="interface in java.util.function">DoubleConsumer</a>&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a></span>&nbsp;<span class="element-name">mapMultiToDouble</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ? super <a href="../function/DoubleConsumer.html" title="java.util.function 包中的接口">DoubleConsumer</a>&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a <code>DoubleStream</code> consisting of the results of replacing each
 element of this stream with multiple elements, specifically zero or more
 elements.
 Replacement is performed by applying the provided mapping function to each
-element in conjunction with a <a href="../function/DoubleConsumer.html" title="interface in java.util.function">consumer</a> argument
+element in conjunction with a <a href="../function/DoubleConsumer.html" title="java.util.function 包中的接口">consumer</a> argument
 that accepts replacement elements. The mapping function calls the consumer
 zero or more times to provide the replacement elements.
 
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.
 
-<p>If the <a href="../function/DoubleConsumer.html" title="interface in java.util.function">consumer</a> argument is used outside the scope of
+<p>If the <a href="../function/DoubleConsumer.html" title="java.util.function 包中的接口">consumer</a> argument is used outside the scope of
 its application to the mapping function, the results are undefined.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes <a href="#flatMapToDouble(java.util.function.Function)"><code>flatMapToDouble</code></a> on this stream,
 passing a function that behaves as follows. First, it calls the mapper function
 with an <code>DoubleConsumer</code> that accumulates replacement elements into a newly created
 internal buffer. When the mapper function returns, it creates a <code>DoubleStream</code> from
 the internal buffer. Finally, it returns this stream to <code>flatMapToDouble</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mapper</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
               <a href="package-summary.html#Statelessness">stateless</a>
               function that generates replacement elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#mapMulti(java.util.function.BiConsumer)"><code>mapMulti</code></a></li>
@@ -1146,7 +1146,7 @@ the internal buffer. Finally, it returns this stream to <code>flatMapToDouble</c
 <section class="detail" id="distinct()">
 <h3>distinct</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">distinct</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">distinct</span>()</div>
 <div class="block">Returns a stream consisting of the distinct elements (according to
 <a href="../../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a>) of this stream.
 
@@ -1158,7 +1158,7 @@ are made.
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Preserving stability for <code>distinct()</code> in parallel pipelines is
 relatively expensive (requires that the operation act as a full barrier,
 with substantial buffering overhead), and stability is often not needed.
@@ -1170,7 +1170,7 @@ with encounter order is required, and you are experiencing poor performance
 or memory utilization with <code>distinct()</code> in parallel pipelines,
 switching to sequential execution with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> may improve
 performance.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -1180,7 +1180,7 @@ performance.</dd>
 <section class="detail" id="sorted()">
 <h3>sorted</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">sorted</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">sorted</span>()</div>
 <div class="block">Returns a stream consisting of the elements of this stream, sorted
 according to natural order.  If the elements of this stream are not
 <code>Comparable</code>, a <code>java.lang.ClassCastException</code> may be thrown
@@ -1192,7 +1192,7 @@ stability guarantees are made.
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -1202,7 +1202,7 @@ intermediate operation</a>.</div>
 <section class="detail" id="sorted(java.util.Comparator)">
 <h3>sorted</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">sorted</span><wbr><span class="parameters">(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">sorted</span><wbr><span class="parameters">(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</span></div>
 <div class="block">Returns a stream consisting of the elements of this stream, sorted
 according to the provided <code>Comparator</code>.
 
@@ -1212,11 +1212,11 @@ stability guarantees are made.
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>comparator</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                   <a href="package-summary.html#Statelessness">stateless</a>
                   <code>Comparator</code> to be used to compare stream elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -1226,7 +1226,7 @@ intermediate operation</a>.</div>
 <section class="detail" id="peek(java.util.function.Consumer)">
 <h3>peek</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">peek</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">peek</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</span></div>
 <div class="block">Returns a stream consisting of the elements of this stream, additionally
 performing the provided action on each element as elements are consumed
 from the resulting stream.
@@ -1239,7 +1239,7 @@ whatever time and in whatever thread the element is made available by the
 upstream operation.  If the action modifies shared state,
 it is responsible for providing the required synchronization.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method exists mainly to support debugging, where you want
 to see the elements as they flow past a certain point in a pipeline:
 <pre><code>    Stream.of("one", "two", "three", "four")
@@ -1254,11 +1254,11 @@ to see the elements as they flow past a certain point in a pipeline:
 production of some or all the elements (such as with short-circuiting
 operations like <code>findFirst</code>, or in the example described in
 <a href="#count()"><code>count()</code></a>), the action will not be invoked for those elements.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - a <a href="package-summary.html#NonInterference">
                 non-interfering</a> action to perform on the elements as
                 they are consumed from the stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -1268,14 +1268,14 @@ operations like <code>findFirst</code>, or in the example described in
 <section class="detail" id="limit(long)">
 <h3>limit</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">limit</span><wbr><span class="parameters">(long&nbsp;maxSize)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">limit</span><wbr><span class="parameters">(long&nbsp;maxSize)</span></div>
 <div class="block">Returns a stream consisting of the elements of this stream, truncated
 to be no longer than <code>maxSize</code> in length.
 
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 stateful intermediate operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>While <code>limit()</code> is generally a cheap operation on sequential
 stream pipelines, it can be quite expensive on ordered parallel pipelines,
 especially for large values of <code>maxSize</code>, since <code>limit(n)</code>
@@ -1288,12 +1288,12 @@ your situation permit.  If consistency with encounter order is required,
 and you are experiencing poor performance or memory utilization with
 <code>limit()</code> in parallel pipelines, switching to sequential execution
 with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> may improve performance.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>maxSize</code> - the number of elements the stream should be limited to</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>maxSize</code> is negative</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>maxSize</code> is negative</dd>
 </dl>
 </div>
 </section>
@@ -1302,7 +1302,7 @@ with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code>
 <section class="detail" id="skip(long)">
 <h3>skip</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">skip</span><wbr><span class="parameters">(long&nbsp;n)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">skip</span><wbr><span class="parameters">(long&nbsp;n)</span></div>
 <div class="block">Returns a stream consisting of the remaining elements of this stream
 after discarding the first <code>n</code> elements of the stream.
 If this stream contains fewer than <code>n</code> elements then an
@@ -1311,7 +1311,7 @@ empty stream will be returned.
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>While <code>skip()</code> is generally a cheap operation on sequential
 stream pipelines, it can be quite expensive on ordered parallel pipelines,
 especially for large values of <code>n</code>, since <code>skip(n)</code>
@@ -1324,12 +1324,12 @@ your situation permit.  If consistency with encounter order is required,
 and you are experiencing poor performance or memory utilization with
 <code>skip()</code> in parallel pipelines, switching to sequential execution
 with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> may improve performance.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>n</code> - the number of leading elements to skip</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>n</code> is negative</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>n</code> is negative</dd>
 </dl>
 </div>
 </section>
@@ -1338,7 +1338,7 @@ with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code>
 <section class="detail" id="takeWhile(java.util.function.Predicate)">
 <h3>takeWhile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">takeWhile</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">takeWhile</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns, if this stream is ordered, a stream consisting of the longest
 prefix of elements taken from this stream that match the given predicate.
 Otherwise returns, if this stream is unordered, a stream consisting of a
@@ -1364,7 +1364,7 @@ taken (the result is an empty stream).
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 stateful intermediate operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>While <code>takeWhile()</code> is generally a cheap operation on sequential
 stream pipelines, it can be quite expensive on ordered parallel
 pipelines, since the operation is constrained to return not just any
@@ -1376,7 +1376,7 @@ semantics of your situation permit.  If consistency with encounter order
 is required, and you are experiencing poor performance or memory
 utilization with <code>takeWhile()</code> in parallel pipelines, switching to
 sequential execution with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> may improve performance.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation obtains the <a href="BaseStream.html#spliterator()"><code>spliterator</code></a>
 of this stream, wraps that spliterator so as to support the semantics
 of this operation on traversal, and returns a new stream associated with
@@ -1385,14 +1385,14 @@ characteristics of this stream (namely parallel or sequential execution
 as per <a href="BaseStream.html#isParallel()"><code>BaseStream.isParallel()</code></a>) but the wrapped spliterator may choose to
 not support splitting.  When the returned stream is closed, the close
 handlers for both the returned and this stream are invoked.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to elements to determine the longest
                  prefix of elements.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1402,7 +1402,7 @@ handlers for both the returned and this stream are invoked.</dd>
 <section class="detail" id="dropWhile(java.util.function.Predicate)">
 <h3>dropWhile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">dropWhile</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">dropWhile</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns, if this stream is ordered, a stream consisting of the remaining
 elements of this stream after dropping the longest prefix of elements
 that match the given predicate.  Otherwise returns, if this stream is
@@ -1429,7 +1429,7 @@ result is the same as the input).
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>While <code>dropWhile()</code> is generally a cheap operation on sequential
 stream pipelines, it can be quite expensive on ordered parallel
 pipelines, since the operation is constrained to return not just any
@@ -1441,7 +1441,7 @@ semantics of your situation permit.  If consistency with encounter order
 is required, and you are experiencing poor performance or memory
 utilization with <code>dropWhile()</code> in parallel pipelines, switching to
 sequential execution with <a href="BaseStream.html#sequential()"><code>BaseStream.sequential()</code></a> may improve performance.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation obtains the <a href="BaseStream.html#spliterator()"><code>spliterator</code></a>
 of this stream, wraps that spliterator so as to support the semantics
 of this operation on traversal, and returns a new stream associated with
@@ -1450,14 +1450,14 @@ characteristics of this stream (namely parallel or sequential execution
 as per <a href="BaseStream.html#isParallel()"><code>BaseStream.isParallel()</code></a>) but the wrapped spliterator may choose to
 not support splitting.  When the returned stream is closed, the close
 handlers for both the returned and this stream are invoked.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to elements to determine the longest
                  prefix of elements.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1467,7 +1467,7 @@ handlers for both the returned and this stream are invoked.</dd>
 <section class="detail" id="forEach(java.util.function.Consumer)">
 <h3>forEach</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forEach</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forEach</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</span></div>
 <div class="block">Performs an action for each element of this stream.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal
@@ -1481,7 +1481,7 @@ action may be performed at whatever time and in whatever thread the
 library chooses.  If the action accesses shared state, it is
 responsible for providing the required synchronization.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - a <a href="package-summary.html#NonInterference">
               non-interfering</a> action to perform on the elements</dd>
 </dl>
@@ -1492,7 +1492,7 @@ responsible for providing the required synchronization.</div>
 <section class="detail" id="forEachOrdered(java.util.function.Consumer)">
 <h3>forEachOrdered</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forEachOrdered</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="interface in java.util.function">Consumer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;action)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">forEachOrdered</span><wbr><span class="parameters">(<a href="../function/Consumer.html" title="java.util.function 包中的接口">Consumer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;action)</span></div>
 <div class="block">Performs an action for each element of this stream, in the encounter
 order of the stream if the stream has a defined encounter order.
 
@@ -1505,10 +1505,10 @@ order if one exists.  Performing the action for one element
 performing the action for subsequent elements, but for any given element,
 the action may be performed in whatever thread the library chooses.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - a <a href="package-summary.html#NonInterference">
               non-interfering</a> action to perform on the elements</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#forEach(java.util.function.Consumer)"><code>forEach(Consumer)</code></a></li>
@@ -1522,13 +1522,13 @@ the action may be performed in whatever thread the library chooses.</div>
 <section class="detail" id="toArray()">
 <h3>toArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../lang/Object.html" title="class in java.lang">Object</a>[]</span>&nbsp;<span class="element-name">toArray</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>[]</span>&nbsp;<span class="element-name">toArray</span>()</div>
 <div class="block">Returns an array containing the elements of this stream.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array, whose <a href="../../lang/Class.html#getComponentType()">runtime component
 type</a> is <code>Object</code>, containing the elements of this stream</dd>
 </dl>
@@ -1539,7 +1539,7 @@ type</a> is <code>Object</code>, containing the elements of this stream</dd>
 <section class="detail" id="toArray(java.util.function.IntFunction)">
 <h3>toArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type">A[]</span>&nbsp;<span class="element-name">toArray</span><wbr><span class="parameters">(<a href="../function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;A[]&gt;&nbsp;generator)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;A&gt;</span>&nbsp;<span class="return-type">A[]</span>&nbsp;<span class="element-name">toArray</span><wbr><span class="parameters">(<a href="../function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;A[]&gt;&nbsp;generator)</span></div>
 <div class="block">Returns an array containing the elements of this stream, using the
 provided <code>generator</code> function to allocate the returned array, as
 well as any additional arrays that might be required for a partitioned
@@ -1548,7 +1548,7 @@ execution or for resizing.
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The generator function takes an integer, which is the size of the
 desired array, and produces an array of the desired size.  This can be
 concisely expressed with an array constructor reference:
@@ -1556,15 +1556,15 @@ concisely expressed with an array constructor reference:
                          .filter(p -&gt; p.getGender() == MALE)
                          .toArray(Person[]::new);
 </code></pre></dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="toArray(java.util.function.IntFunction)-type-param-A"><code>A</code> - the component type of the resulting array</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>generator</code> - a function which produces a new array of the desired
                  type and the provided length</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array containing the elements in this stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/ArrayStoreException.html" title="class in java.lang">ArrayStoreException</a></code> - if the runtime type of any element of this
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/ArrayStoreException.html" title="java.lang 包中的类">ArrayStoreException</a></code> - if the runtime type of any element of this
         stream is not assignable to the <a href="../../lang/Class.html#getComponentType()">runtime component type</a> of the generated array</dd>
 </dl>
 </div>
@@ -1574,8 +1574,8 @@ concisely expressed with an array constructor reference:
 <section class="detail" id="reduce(T,java.util.function.BinaryOperator)">
 <h3 id="reduce(java.lang.Object,java.util.function.BinaryOperator)">reduce</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in Stream">T</a></span>&nbsp;<span class="element-name">reduce</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in Stream">T</a>&nbsp;identity,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="Stream 中的类型参数">T</a></span>&nbsp;<span class="element-name">reduce</span><wbr><span class="parameters">(<a href="#type-param-T" title="Stream 中的类型参数">T</a>&nbsp;identity,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator)</span></div>
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using the provided identity value and an
 <a href="package-summary.html#Associativity">associative</a>
@@ -1598,7 +1598,7 @@ The <code>accumulator</code> function must be an
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Sum, min, max, average, and string concatenation are all special
 cases of reduction. Summing a stream of numbers can be expressed as:
 
@@ -1614,13 +1614,13 @@ or:
 compared to simply mutating a running total in a loop, reduction
 operations parallelize more gracefully, without needing additional
 synchronization and with greatly reduced risk of data races.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>identity</code> - the identity value for the accumulating function</dd>
 <dd><code>accumulator</code> - an <a href="package-summary.html#Associativity">associative</a>,
                    <a href="package-summary.html#NonInterference">non-interfering</a>,
                    <a href="package-summary.html#Statelessness">stateless</a>
                    function for combining two values</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result of the reduction</dd>
 </dl>
 </div>
@@ -1630,7 +1630,7 @@ synchronization and with greatly reduced risk of data races.</dd>
 <section class="detail" id="reduce(java.util.function.BinaryOperator)">
 <h3>reduce</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">reduce</span><wbr><span class="parameters">(<a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">reduce</span><wbr><span class="parameters">(<a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator)</span></div>
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using an
 <a href="package-summary.html#Associativity">associative</a> accumulation
@@ -1657,16 +1657,16 @@ but is not constrained to execute sequentially.
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>accumulator</code> - an <a href="package-summary.html#Associativity">associative</a>,
                    <a href="package-summary.html#NonInterference">non-interfering</a>,
                    <a href="package-summary.html#Statelessness">stateless</a>
                    function for combining two values</dd>
-<dt>Returns:</dt>
-<dd>an <a href="../Optional.html" title="class in java.util"><code>Optional</code></a> describing the result of the reduction</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the result of the reduction is null</dd>
-<dt>See Also:</dt>
+<dt>返回:</dt>
+<dd>an <a href="../Optional.html" title="java.util 包中的类"><code>Optional</code></a> describing the result of the reduction</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the result of the reduction is null</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#reduce(T,java.util.function.BinaryOperator)"><code>reduce(Object, BinaryOperator)</code></a></li>
@@ -1683,8 +1683,8 @@ operation</a>.</div>
 <h3 id="reduce(java.lang.Object,java.util.function.BiFunction,java.util.function.BinaryOperator)">reduce</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="type-parameters">&lt;U&gt;</span>&nbsp;<span class="return-type">U</span>&nbsp;<span class="element-name">reduce</span><wbr><span class="parameters">(U&nbsp;identity,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;U, ? super <a href="#type-param-T" title="type parameter in Stream">T</a>, U&gt;&nbsp;accumulator,
- <a href="../function/BinaryOperator.html" title="interface in java.util.function">BinaryOperator</a>&lt;U&gt;&nbsp;combiner)</span></div>
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;U, ? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, U&gt;&nbsp;accumulator,
+ <a href="../function/BinaryOperator.html" title="java.util.function 包中的接口">BinaryOperator</a>&lt;U&gt;&nbsp;combiner)</span></div>
 <div class="block">Performs a <a href="package-summary.html#Reduction">reduction</a> on the
 elements of this stream, using the provided identity, accumulation and
 combining functions.  This is equivalent to:
@@ -1707,16 +1707,16 @@ must be compatible with the <code>accumulator</code> function; for all
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Many reductions using this form can be represented more simply
 by an explicit combination of <code>map</code> and <code>reduce</code> operations.
 The <code>accumulator</code> function acts as a fused mapper and accumulator,
 which can sometimes be more efficient than separate mapping and reduction,
 such as when knowing the previously reduced value allows you to avoid
 some computation.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="reduce(U,java.util.function.BiFunction,java.util.function.BinaryOperator)-type-param-U"><code>U</code> - The type of the result</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>identity</code> - the identity value for the combiner function</dd>
 <dd><code>accumulator</code> - an <a href="package-summary.html#Associativity">associative</a>,
                    <a href="package-summary.html#NonInterference">non-interfering</a>,
@@ -1727,9 +1727,9 @@ some computation.</dd>
                    <a href="package-summary.html#Statelessness">stateless</a>
                    function for combining two values, which must be
                    compatible with the accumulator function</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result of the reduction</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#reduce(java.util.function.BinaryOperator)"><code>reduce(BinaryOperator)</code></a></li>
@@ -1744,9 +1744,9 @@ some computation.</dd>
 <section class="detail" id="gather(java.util.stream.Gatherer)">
 <h3>gather</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">gather</span><wbr><span class="parameters">(<a href="Gatherer.html" title="interface in java.util.stream">Gatherer</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, ?, R&gt;&nbsp;gatherer)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;R&gt;</span>&nbsp;<span class="element-name">gather</span><wbr><span class="parameters">(<a href="Gatherer.html" title="java.util.stream 包中的接口">Gatherer</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, ?, R&gt;&nbsp;gatherer)</span></div>
 <div class="block">Returns a stream consisting of the results of applying the given
-<a href="Gatherer.html" title="interface in java.util.stream"><code>Gatherer</code></a> to the elements of this stream.
+<a href="Gatherer.html" title="java.util.stream 包中的接口"><code>Gatherer</code></a> to the elements of this stream.
 
 <p>This is a <a href="package-summary.html#StreamOps">stateful
 intermediate operation</a> that is an
@@ -1770,7 +1770,7 @@ make the first expression below behave like the second:
     var stream2 = Stream.of(...).gather(gatherer1.andThen(gatherer2));
 </code></pre></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation obtains the <a href="BaseStream.html#spliterator()"><code>spliterator</code></a>
 of this stream, wraps that spliterator so as to support the semantics
 of this operation on traversal, and returns a new stream associated with
@@ -1781,18 +1781,18 @@ not support splitting.  When the returned stream is closed, the close
 handlers for both the returned and this stream are invoked.
 Implementations of this interface should provide their own
 implementation of this method.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="gather(java.util.stream.Gatherer)-type-param-R"><code>R</code> - The element type of the new stream</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>gatherer</code> - a gatherer</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Gatherers.html" title="class in java.util.stream"><code>Gatherers</code></a></li>
+<li><a href="Gatherers.html" title="java.util.stream 包中的类"><code>Gatherers</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1803,9 +1803,9 @@ implementation of this method.</dd>
 <section class="detail" id="collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)">
 <h3>collect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">collect</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;R&gt;&nbsp;supplier,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R, ? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;accumulator,
- <a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;R,<wbr>R&gt;&nbsp;combiner)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">collect</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;R&gt;&nbsp;supplier,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R, ? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;accumulator,
+ <a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;R,<wbr>R&gt;&nbsp;combiner)</span></div>
 <div class="block">Performs a <a href="package-summary.html#MutableReduction">mutable
 reduction</a> operation on the elements of this stream.  A mutable
 reduction is one in which the reduced value is a mutable result container,
@@ -1824,7 +1824,7 @@ can be parallelized without requiring additional synchronization.
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>There are many existing classes in the JDK whose signatures are
 well-suited for use with method references as arguments to <code>collect()</code>.
 For example, the following will accumulate strings into an <code>ArrayList</code>:
@@ -1838,9 +1838,9 @@ single string:
                                          StringBuilder::append)
                                 .toString();
 </code></pre></dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)-type-param-R"><code>R</code> - the type of the mutable result container</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>supplier</code> - a function that creates a new mutable result container.
                 For a parallel execution, this function may be called
                 multiple times and must return a fresh value each time.</dd>
@@ -1857,7 +1857,7 @@ single string:
                    accumulator function.  The combiner function must fold
                    the elements from the second result container into the
                    first result container.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result of the reduction</dd>
 </dl>
 </div>
@@ -1867,7 +1867,7 @@ single string:
 <section class="detail" id="collect(java.util.stream.Collector)">
 <h3>collect</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;R,<wbr>A&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">collect</span><wbr><span class="parameters">(<a href="Collector.html" title="interface in java.util.stream">Collector</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>, A, R&gt;&nbsp;collector)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;R,<wbr>A&gt;</span>&nbsp;<span class="return-type">R</span>&nbsp;<span class="element-name">collect</span><wbr><span class="parameters">(<a href="Collector.html" title="java.util.stream 包中的接口">Collector</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>, A, R&gt;&nbsp;collector)</span></div>
 <div class="block">Performs a <a href="package-summary.html#MutableReduction">mutable
 reduction</a> operation on the elements of this stream using a
 <code>Collector</code>.  A <code>Collector</code>
@@ -1880,7 +1880,7 @@ multiple-level grouping or partitioning.
 is <a href="Collector.Characteristics.html#CONCURRENT"><code>concurrent</code></a>, and
 either the stream is unordered or the collector is
 <a href="Collector.Characteristics.html#UNORDERED"><code>unordered</code></a>,
-then a concurrent reduction will be performed (see <a href="Collector.html" title="interface in java.util.stream"><code>Collector</code></a> for
+then a concurrent reduction will be performed (see <a href="Collector.html" title="java.util.stream 包中的接口"><code>Collector</code></a> for
 details on concurrent reduction.)
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal
@@ -1892,7 +1892,7 @@ mutable data structures.  Therefore, even when executed in parallel
 with non-thread-safe data structures (such as <code>ArrayList</code>), no
 additional synchronization is needed for a parallel reduction.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The following will accumulate strings into a List:
 <pre><code>    List&lt;String&gt; asList = stringStream.collect(Collectors.toList());
 </code></pre>
@@ -1908,18 +1908,18 @@ cascading two <code>Collector</code>s together:
         = personStream.collect(Collectors.groupingBy(Person::getState,
                                                      Collectors.groupingBy(Person::getCity)));
 </code></pre></dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="collect(java.util.stream.Collector)-type-param-R"><code>R</code> - the type of the result</span></dd>
 <dd><span id="collect(java.util.stream.Collector)-type-param-A"><code>A</code> - the intermediate accumulation type of the <code>Collector</code></span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>collector</code> - the <code>Collector</code> describing the reduction</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result of the reduction</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)"><code>collect(Supplier, BiConsumer, BiConsumer)</code></a></li>
-<li><a href="Collectors.html" title="class in java.util.stream"><code>Collectors</code></a></li>
+<li><a href="Collectors.html" title="java.util.stream 包中的类"><code>Collectors</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1930,7 +1930,7 @@ cascading two <code>Collector</code>s together:
 <section class="detail" id="toList()">
 <h3>toList</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../List.html" title="interface in java.util">List</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">toList</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../List.html" title="java.util 包中的接口">List</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">toList</span>()</div>
 <div class="block">Accumulates the elements of this stream into a <code>List</code>. The elements in
 the list will be in this stream's encounter order, if one exists. The returned List
 is unmodifiable; calls to any mutator method will always cause
@@ -1944,19 +1944,19 @@ identity hash code, and synchronization) are unreliable and should be avoided.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>If more control over the returned object is required, use
 <a href="Collectors.html#toCollection(java.util.function.Supplier)"><code>Collectors.toCollection(Supplier)</code></a>.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation in this interface returns a List produced as if by the following:
 <pre><code>Collections.unmodifiableList(new ArrayList&lt;&gt;(Arrays.asList(this.toArray())))
 </code></pre></dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>Most instances of Stream will override this method and provide an implementation
 that is highly optimized compared to the implementation in this interface.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a List containing the stream elements</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>16</dd>
 </dl>
 </div>
@@ -1966,22 +1966,22 @@ that is highly optimized compared to the implementation in this interface.</dd>
 <section class="detail" id="min(java.util.Comparator)">
 <h3>min</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">min</span><wbr><span class="parameters">(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">min</span><wbr><span class="parameters">(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</span></div>
 <div class="block">Returns the minimum element of this stream according to the provided
 <code>Comparator</code>.  This is a special case of a
 <a href="package-summary.html#Reduction">reduction</a>.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>comparator</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                   <a href="package-summary.html#Statelessness">stateless</a>
                   <code>Comparator</code> to compare elements of this stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional</code> describing the minimum element of this stream,
 or an empty <code>Optional</code> if the stream is empty</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the minimum element is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the minimum element is null</dd>
 </dl>
 </div>
 </section>
@@ -1990,7 +1990,7 @@ or an empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="max(java.util.Comparator)">
 <h3>max</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">max</span><wbr><span class="parameters">(<a href="../Comparator.html" title="interface in java.util">Comparator</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;comparator)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">max</span><wbr><span class="parameters">(<a href="../Comparator.html" title="java.util 包中的接口">Comparator</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;comparator)</span></div>
 <div class="block">Returns the maximum element of this stream according to the provided
 <code>Comparator</code>.  This is a special case of a
 <a href="package-summary.html#Reduction">reduction</a>.
@@ -1998,15 +1998,15 @@ or an empty <code>Optional</code> if the stream is empty</dd>
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>comparator</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                   <a href="package-summary.html#Statelessness">stateless</a>
                   <code>Comparator</code> to compare elements of this stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional</code> describing the maximum element of this stream,
 or an empty <code>Optional</code> if the stream is empty</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the maximum element is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the maximum element is null</dd>
 </dl>
 </div>
 </section>
@@ -2024,7 +2024,7 @@ equivalent to:
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>An implementation may choose to not execute the stream pipeline (either
 sequentially or in parallel) if it is capable of computing the count
 directly from the stream source.  In such cases no source elements will
@@ -2041,7 +2041,7 @@ or remove elements from the stream (as may be the case for
 <code>flatMap</code> or <code>filter</code> operations).  Thus the count is the
 size of the <code>List</code> and there is no need to execute the pipeline
 and, as a side-effect, print out the list elements.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the count of elements in this stream</dd>
 </dl>
 </div>
@@ -2051,7 +2051,7 @@ and, as a side-effect, print out the list elements.</dd>
 <section class="detail" id="anyMatch(java.util.function.Predicate)">
 <h3>anyMatch</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">anyMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">anyMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns whether any elements of this stream match the provided
 predicate.  May not evaluate the predicate on all elements if not
 necessary for determining the result.  If the stream is empty then
@@ -2060,14 +2060,14 @@ necessary for determining the result.  If the stream is empty then
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 terminal operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method evaluates the <em>existential quantification</em> of the
 predicate over the elements of the stream (for some x P(x)).</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to elements of this stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if any elements of the stream match the provided
 predicate, otherwise <code>false</code></dd>
 </dl>
@@ -2078,7 +2078,7 @@ predicate, otherwise <code>false</code></dd>
 <section class="detail" id="allMatch(java.util.function.Predicate)">
 <h3>allMatch</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">allMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">allMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns whether all elements of this stream match the provided predicate.
 May not evaluate the predicate on all elements if not necessary for
 determining the result.  If the stream is empty then <code>true</code> is
@@ -2087,16 +2087,16 @@ returned and the predicate is not evaluated.
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 terminal operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method evaluates the <em>universal quantification</em> of the
 predicate over the elements of the stream (for all x P(x)).  If the
 stream is empty, the quantification is said to be <em>vacuously
 satisfied</em> and is always <code>true</code> (regardless of P(x)).</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to elements of this stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if either all elements of the stream match the
 provided predicate or the stream is empty, otherwise <code>false</code></dd>
 </dl>
@@ -2107,7 +2107,7 @@ provided predicate or the stream is empty, otherwise <code>false</code></dd>
 <section class="detail" id="noneMatch(java.util.function.Predicate)">
 <h3>noneMatch</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">noneMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super <a href="#type-param-T" title="type parameter in Stream">T</a>&gt;&nbsp;predicate)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">noneMatch</span><wbr><span class="parameters">(<a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super <a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;&nbsp;predicate)</span></div>
 <div class="block">Returns whether no elements of this stream match the provided predicate.
 May not evaluate the predicate on all elements if not necessary for
 determining the result.  If the stream is empty then <code>true</code> is
@@ -2116,16 +2116,16 @@ returned and the predicate is not evaluated.
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 terminal operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method evaluates the <em>universal quantification</em> of the
 negated predicate over the elements of the stream (for all x ~P(x)).  If
 the stream is empty, the quantification is said to be vacuously satisfied
 and is always <code>true</code>, regardless of P(x).</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>predicate</code> - a <a href="package-summary.html#NonInterference">non-interfering</a>,
                  <a href="package-summary.html#Statelessness">stateless</a>
                  predicate to apply to elements of this stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if either no elements of the stream match the
 provided predicate or the stream is empty, otherwise <code>false</code></dd>
 </dl>
@@ -2136,19 +2136,19 @@ provided predicate or the stream is empty, otherwise <code>false</code></dd>
 <section class="detail" id="findFirst()">
 <h3>findFirst</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">findFirst</span>()</div>
-<div class="block">Returns an <a href="../Optional.html" title="class in java.util"><code>Optional</code></a> describing the first element of this stream,
+<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">findFirst</span>()</div>
+<div class="block">Returns an <a href="../Optional.html" title="java.util 包中的类"><code>Optional</code></a> describing the first element of this stream,
 or an empty <code>Optional</code> if the stream is empty.  If the stream has
 no encounter order, then any element may be returned.
 
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
 terminal operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional</code> describing the first element of this stream,
 or an empty <code>Optional</code> if the stream is empty</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the element selected is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the element selected is null</dd>
 </dl>
 </div>
 </section>
@@ -2157,8 +2157,8 @@ or an empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="findAny()">
 <h3>findAny</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="class in java.util">Optional</a>&lt;<a href="#type-param-T" title="type parameter in Stream">T</a>&gt;</span>&nbsp;<span class="element-name">findAny</span>()</div>
-<div class="block">Returns an <a href="../Optional.html" title="class in java.util"><code>Optional</code></a> describing some element of the stream, or an
+<div class="member-signature"><span class="return-type"><a href="../Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="#type-param-T" title="Stream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">findAny</span>()</div>
+<div class="block">Returns an <a href="../Optional.html" title="java.util 包中的类"><code>Optional</code></a> describing some element of the stream, or an
 empty <code>Optional</code> if the stream is empty.
 
 <p>This is a <a href="package-summary.html#StreamOps">short-circuiting
@@ -2170,12 +2170,12 @@ performance in parallel operations; the cost is that multiple invocations
 on the same source may not return the same result.  (If a stable result
 is desired, use <a href="#findFirst()"><code>findFirst()</code></a> instead.)</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional</code> describing some element of this stream, or an
 empty <code>Optional</code> if the stream is empty</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the element selected is null</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the element selected is null</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#findFirst()"><code>findFirst()</code></a></li>
@@ -2189,12 +2189,12 @@ empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="builder()">
 <h3>builder</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.Builder.html" title="interface in java.util.stream">Stream.Builder</a>&lt;T&gt;</span>&nbsp;<span class="element-name">builder</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.Builder.html" title="java.util.stream 包中的接口">Stream.Builder</a>&lt;T&gt;</span>&nbsp;<span class="element-name">builder</span>()</div>
 <div class="block">Returns a builder for a <code>Stream</code>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="builder()-type-param-T"><code>T</code> - type of elements</span></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a stream builder</dd>
 </dl>
 </div>
@@ -2204,12 +2204,12 @@ empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="empty()">
 <h3>empty</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">empty</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">empty</span>()</div>
 <div class="block">Returns an empty sequential <code>Stream</code>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="empty()-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an empty sequential stream</dd>
 </dl>
 </div>
@@ -2219,14 +2219,14 @@ empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="of(T)">
 <h3 id="of(java.lang.Object)">of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T&nbsp;t)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T&nbsp;t)</span></div>
 <div class="block">Returns a sequential <code>Stream</code> containing a single element.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of(T)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>t</code> - the single element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a singleton sequential stream</dd>
 </dl>
 </div>
@@ -2236,18 +2236,18 @@ empty <code>Optional</code> if the stream is empty</dd>
 <section class="detail" id="ofNullable(T)">
 <h3 id="ofNullable(java.lang.Object)">ofNullable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">ofNullable</span><wbr><span class="parameters">(T&nbsp;t)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">ofNullable</span><wbr><span class="parameters">(T&nbsp;t)</span></div>
 <div class="block">Returns a sequential <code>Stream</code> containing a single element, if
 non-null, otherwise returns an empty <code>Stream</code>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="ofNullable(T)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>t</code> - the single element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a stream with a single element if the specified element
         is non-null, otherwise an empty stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -2257,15 +2257,15 @@ non-null, otherwise returns an empty <code>Stream</code>.</div>
 <section class="detail" id="of(T...)">
 <h3 id="of(java.lang.Object[])">of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../lang/SafeVarargs.html" title="annotation interface in java.lang">@SafeVarargs</a>
-</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T...&nbsp;values)</span></div>
+<div class="member-signature"><span class="annotations"><a href="../../lang/SafeVarargs.html" title="java.lang 包中的注解接口">@SafeVarargs</a>
+</span><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T...&nbsp;values)</span></div>
 <div class="block">Returns a sequential ordered stream whose elements are the specified values.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of(T...)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>values</code> - the elements of the new stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new stream</dd>
 </dl>
 </div>
@@ -2275,8 +2275,8 @@ non-null, otherwise returns an empty <code>Stream</code>.</div>
 <section class="detail" id="iterate(T,java.util.function.UnaryOperator)">
 <h3 id="iterate(java.lang.Object,java.util.function.UnaryOperator)">iterate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">iterate</span><wbr><span class="parameters">(T&nbsp;seed,
- <a href="../function/UnaryOperator.html" title="interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;f)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">iterate</span><wbr><span class="parameters">(T&nbsp;seed,
+ <a href="../function/UnaryOperator.html" title="java.util.function 包中的接口">UnaryOperator</a>&lt;T&gt;&nbsp;f)</span></div>
 <div class="block">Returns an infinite sequential ordered <code>Stream</code> produced by iterative
 application of a function <code>f</code> to an initial element <code>seed</code>,
 producing a <code>Stream</code> consisting of <code>seed</code>, <code>f(seed)</code>,
@@ -2293,13 +2293,13 @@ the action of applying <code>f</code> for subsequent elements.  For any given
 element the action may be performed in whatever thread the library
 chooses.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="iterate(T,java.util.function.UnaryOperator)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>seed</code> - the initial element</dd>
 <dd><code>f</code> - a function to be applied to the previous element to produce
          a new element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new sequential <code>Stream</code></dd>
 </dl>
 </div>
@@ -2309,9 +2309,9 @@ chooses.</div>
 <section class="detail" id="iterate(T,java.util.function.Predicate,java.util.function.UnaryOperator)">
 <h3 id="iterate(java.lang.Object,java.util.function.Predicate,java.util.function.UnaryOperator)">iterate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">iterate</span><wbr><span class="parameters">(T&nbsp;seed,
- <a href="../function/Predicate.html" title="interface in java.util.function">Predicate</a>&lt;? super T&gt;&nbsp;hasNext,
- <a href="../function/UnaryOperator.html" title="interface in java.util.function">UnaryOperator</a>&lt;T&gt;&nbsp;next)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">iterate</span><wbr><span class="parameters">(T&nbsp;seed,
+ <a href="../function/Predicate.html" title="java.util.function 包中的接口">Predicate</a>&lt;? super T&gt;&nbsp;hasNext,
+ <a href="../function/UnaryOperator.html" title="java.util.function 包中的接口">UnaryOperator</a>&lt;T&gt;&nbsp;next)</span></div>
 <div class="block">Returns a sequential ordered <code>Stream</code> produced by iterative
 application of the given <code>next</code> function to an initial element,
 conditioned on satisfying the given <code>hasNext</code> predicate.  The
@@ -2339,17 +2339,17 @@ action of applying the <code>next</code> function for one element
 predicate for subsequent elements.  For any given element an action may
 be performed in whatever thread the library chooses.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="iterate(T,java.util.function.Predicate,java.util.function.UnaryOperator)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>seed</code> - the initial element</dd>
 <dd><code>hasNext</code> - a predicate to apply to elements to determine when the
                stream must terminate.</dd>
 <dd><code>next</code> - a function to be applied to the previous element to produce
             a new element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new sequential <code>Stream</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -2359,16 +2359,16 @@ be performed in whatever thread the library chooses.</div>
 <section class="detail" id="generate(java.util.function.Supplier)">
 <h3>generate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">generate</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends T&gt;&nbsp;s)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">generate</span><wbr><span class="parameters">(<a href="../function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends T&gt;&nbsp;s)</span></div>
 <div class="block">Returns an infinite sequential unordered stream where each element is
 generated by the provided <code>Supplier</code>.  This is suitable for
 generating constant streams, streams of random elements, etc.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="generate(java.util.function.Supplier)-type-param-T"><code>T</code> - the type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>s</code> - the <code>Supplier</code> of generated elements</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new infinite sequential unordered <code>Stream</code></dd>
 </dl>
 </div>
@@ -2378,8 +2378,8 @@ generating constant streams, streams of random elements, etc.</div>
 <section class="detail" id="concat(java.util.stream.Stream,java.util.stream.Stream)">
 <h3>concat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">concat</span><wbr><span class="parameters">(<a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends T&gt;&nbsp;a,
- <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;? extends T&gt;&nbsp;b)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</span>&nbsp;<span class="element-name">concat</span><wbr><span class="parameters">(<a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends T&gt;&nbsp;a,
+ <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;? extends T&gt;&nbsp;b)</span></div>
 <div class="block">Creates a lazily concatenated stream whose elements are all the
 elements of the first stream followed by all the elements of the
 second stream.  The resulting stream is ordered if both
@@ -2391,7 +2391,7 @@ handlers for both input streams are invoked.
 to its source.  As a result subsequent modifications to an input stream
 source may not be reflected in the concatenated stream result.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>To preserve optimization opportunities this method binds each stream to
 its source and accepts only two streams as parameters.  For example, the
 exact size of the concatenated stream source can be computed if the exact
@@ -2401,19 +2401,19 @@ this method, try creating a stream of streams and flat-mapping with the
 identity function, for example:
 <pre><code>    Stream&lt;T&gt; concat = Stream.of(s1, s2, s3, s4).flatMap(s -&gt; s);
 </code></pre></dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>Use caution when constructing streams from repeated concatenation.
 Accessing an element of a deeply concatenated stream can result in deep
 call chains, or even <code>StackOverflowError</code>.
 
 <p>Subsequent changes to the sequential/parallel execution mode of the
 returned stream are not guaranteed to be propagated to the input streams.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="concat(java.util.stream.Stream,java.util.stream.Stream)-type-param-T"><code>T</code> - The type of stream elements</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>a</code> - the first stream</dd>
 <dd><code>b</code> - the second stream</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the concatenation of the two input streams</dd>
 </dl>
 </div>

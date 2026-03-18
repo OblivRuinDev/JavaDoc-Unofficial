@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="SelectableChannel.html" class="current-selection">SelectableChannel</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -65,21 +65,21 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#blocking-mode-heading" tabindex="0">Blocking mode</a></li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">SelectableChannel()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#provider()" tabindex="0">provider()</a></li>
 <li><a href="#validOps()" tabindex="0">validOps()</a></li>
@@ -97,31 +97,31 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class SelectableChannel" class="title">Class SelectableChannel</h1>
+<h1 title="类 SelectableChannel" class="title">类 SelectableChannel</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="spi/AbstractInterruptibleChannel.html" title="class in java.nio.channels.spi">java.nio.channels.spi.AbstractInterruptibleChannel</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="spi/AbstractInterruptibleChannel.html" title="java.nio.channels.spi 包中的类">java.nio.channels.spi.AbstractInterruptibleChannel</a>
 <div class="inheritance">java.nio.channels.SelectableChannel</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a>, <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="Channel.html" title="interface in java.nio.channels">Channel</a>, <a href="InterruptibleChannel.html" title="interface in java.nio.channels">InterruptibleChannel</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a>, <a href="InterruptibleChannel.html" title="java.nio.channels 包中的接口">InterruptibleChannel</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="spi/AbstractSelectableChannel.html" title="class in java.nio.channels.spi">AbstractSelectableChannel</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="spi/AbstractSelectableChannel.html" title="java.nio.channels.spi 包中的类">AbstractSelectableChannel</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">SelectableChannel</span>
-<span class="extends-implements">extends <a href="spi/AbstractInterruptibleChannel.html" title="class in java.nio.channels.spi">AbstractInterruptibleChannel</a>
-implements <a href="Channel.html" title="interface in java.nio.channels">Channel</a></span></div>
-<div class="block">A channel that can be multiplexed via a <a href="Selector.html" title="class in java.nio.channels"><code>Selector</code></a>.
+<span class="extends-implements">extends <a href="spi/AbstractInterruptibleChannel.html" title="java.nio.channels.spi 包中的类">AbstractInterruptibleChannel</a>
+implements <a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></span></div>
+<div class="block">A channel that can be multiplexed via a <a href="Selector.html" title="java.nio.channels 包中的类"><code>Selector</code></a>.
 
 <p> In order to be used with a selector, an instance of this class must
-first be <i>registered</i> via the <a href="#register(java.nio.channels.Selector,int,java.lang.Object)"><code>register</code></a> method.  This method returns a new <a href="SelectionKey.html" title="class in java.nio.channels"><code>SelectionKey</code></a> object
+first be <i>registered</i> via the <a href="#register(java.nio.channels.Selector,int,java.lang.Object)"><code>register</code></a> method.  This method returns a new <a href="SelectionKey.html" title="java.nio.channels 包中的类"><code>SelectionKey</code></a> object
 that represents the channel's registration with the selector.
 
 <p> Once registered with a selector, a channel remains registered until it
@@ -164,13 +164,13 @@ multiplexing.  A channel must be placed into non-blocking mode before being
 registered with a selector, and may not be returned to blocking mode until
 it has been deregistered.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SelectionKey.html" title="class in java.nio.channels"><code>SelectionKey</code></a></li>
-<li><a href="Selector.html" title="class in java.nio.channels"><code>Selector</code></a></li>
+<li><a href="SelectionKey.html" title="java.nio.channels 包中的类"><code>SelectionKey</code></a></li>
+<li><a href="Selector.html" title="java.nio.channels 包中的类"><code>Selector</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -181,8 +181,8 @@ it has been deregistered.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -198,20 +198,20 @@ it has been deregistered.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#blockingLock()" class="member-name-link">blockingLock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieves the object upon which the <a href="#configureBlocking(boolean)"><code>configureBlocking</code></a> and <a href="#register(java.nio.channels.Selector,int,java.lang.Object)"><code>register</code></a> methods synchronize.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectableChannel.html" title="class in java.nio.channels">SelectableChannel</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectableChannel.html" title="java.nio.channels 包中的类">SelectableChannel</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#configureBlocking(boolean)" class="member-name-link">configureBlocking</a><wbr>(boolean&nbsp;block)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Adjusts this channel's blocking mode.</div>
@@ -228,28 +228,28 @@ until it completes.</div>
 <div class="block">Tells whether or not this channel is currently registered with any
 selectors.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#keyFor(java.nio.channels.Selector)" class="member-name-link">keyFor</a><wbr>(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#keyFor(java.nio.channels.Selector)" class="member-name-link">keyFor</a><wbr>(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retrieves the key representing the channel's registration with the given
 selector.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi">SelectorProvider</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类">SelectorProvider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#provider()" class="member-name-link">provider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the provider that created this channel.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(java.nio.channels.Selector,int)" class="member-name-link">register</a><wbr>(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#register(java.nio.channels.Selector,int)" class="member-name-link">register</a><wbr>(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel,
  int&nbsp;ops)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Registers this channel with the given selector, returning a selection
 key.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#register(java.nio.channels.Selector,int,java.lang.Object)" class="member-name-link">register</a><wbr>(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#register(java.nio.channels.Selector,int,java.lang.Object)" class="member-name-link">register</a><wbr>(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel,
  int&nbsp;ops,
- <a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;att)</code></div>
+ <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;att)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Registers this channel with the given selector, returning a selection
 key.</div>
@@ -264,13 +264,13 @@ identifying this channel's supported operations.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.channels.spi.AbstractInterruptibleChannel">Methods declared in class&nbsp;<a href="spi/AbstractInterruptibleChannel.html#method-summary" title="class in java.nio.channels.spi">AbstractInterruptibleChannel</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.channels.spi.AbstractInterruptibleChannel">在类 <a href="spi/AbstractInterruptibleChannel.html#method-summary" title="java.nio.channels.spi 包中的类">AbstractInterruptibleChannel</a> 中声明的方法</h3>
 <code><a href="spi/AbstractInterruptibleChannel.html#begin()" title="begin()">begin</a>, <a href="spi/AbstractInterruptibleChannel.html#close()" title="close()">close</a>, <a href="spi/AbstractInterruptibleChannel.html#end(boolean)" title="end(boolean)">end</a>, <a href="spi/AbstractInterruptibleChannel.html#implCloseChannel()" title="implCloseChannel()">implCloseChannel</a>, <a href="spi/AbstractInterruptibleChannel.html#isOpen()" title="isOpen()">isOpen</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.channels.Channel">Methods declared in interface&nbsp;<a href="Channel.html#method-summary" title="interface in java.nio.channels">Channel</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.channels.Channel">在接口 <a href="Channel.html#method-summary" title="java.nio.channels 包中的接口">Channel</a> 中声明的方法</h3>
 <code><a href="Channel.html#isOpen()" title="isOpen()">isOpen</a></code></div>
 </section>
 </li>
@@ -281,7 +281,7 @@ identifying this channel's supported operations.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -298,16 +298,16 @@ identifying this channel's supported operations.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="provider()">
 <h3>provider</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="spi/SelectorProvider.html" title="class in java.nio.channels.spi">SelectorProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="spi/SelectorProvider.html" title="java.nio.channels.spi 包中的类">SelectorProvider</a></span>&nbsp;<span class="element-name">provider</span>()</div>
 <div class="block">Returns the provider that created this channel.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The provider that created this channel</dd>
 </dl>
 </div>
@@ -324,7 +324,7 @@ in this integer value denote exactly the operations that are valid for
 this channel.  This method always returns the same value for a given
 concrete channel class.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The valid-operation set</dd>
 </dl>
 </div>
@@ -343,7 +343,7 @@ deregistration, a channel may remain registered for some time after all
 of its keys have been cancelled.  A channel may also remain registered
 for some time after it is closed.  </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this channel is registered</dd>
 </dl>
 </div>
@@ -353,13 +353,13 @@ for some time after it is closed.  </p></div>
 <section class="detail" id="keyFor(java.nio.channels.Selector)">
 <h3>keyFor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></span>&nbsp;<span class="element-name">keyFor</span><wbr><span class="parameters">(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></span>&nbsp;<span class="element-name">keyFor</span><wbr><span class="parameters">(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel)</span></div>
 <div class="block">Retrieves the key representing the channel's registration with the given
 selector.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>sel</code> - The selector</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The key returned when this channel was last registered with the
          given selector, or <code>null</code> if this channel is not
          currently registered with that selector</dd>
@@ -371,10 +371,10 @@ selector.</div>
 <section class="detail" id="register(java.nio.channels.Selector,int,java.lang.Object)">
 <h3>register</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel,
  int&nbsp;ops,
- <a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;att)</span>
-                               throws <span class="exceptions"><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></span></div>
+ <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;att)</span>
+                               throws <span class="exceptions"><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></span></div>
 <div class="block">Registers this channel with the given selector, returning a selection
 key.
 
@@ -383,7 +383,7 @@ the selection key representing that registration is returned.  The key's
 interest set will have been changed to <code>ops</code>, as if by invoking
 the <a href="SelectionKey.html#interestOps(int)"><code>interestOps(int)</code></a> method.  If
 the <code>att</code> argument is not <code>null</code> then the key's attachment
-will have been set to that value.  A <a href="CancelledKeyException.html" title="class in java.nio.channels"><code>CancelledKeyException</code></a> will
+will have been set to that value.  A <a href="CancelledKeyException.html" title="java.nio.channels 包中的类"><code>CancelledKeyException</code></a> will
 be thrown if the key has already been cancelled.
 
 <p> Otherwise this channel has not yet been registered with the given
@@ -403,22 +403,22 @@ been adjusted.
 the key returned by this method will have been cancelled and will
 therefore be invalid. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>sel</code> - The selector with which this channel is to be registered</dd>
 <dd><code>ops</code> - The interest set for the resulting key</dd>
 <dd><code>att</code> - The attachment for the resulting key; may be <code>null</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A key representing the registration of this channel with
          the given selector</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If this channel is closed</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If the selector is closed</dd>
-<dd><code><a href="IllegalBlockingModeException.html" title="class in java.nio.channels">IllegalBlockingModeException</a></code> - If this channel is in blocking mode</dd>
-<dd><code><a href="IllegalSelectorException.html" title="class in java.nio.channels">IllegalSelectorException</a></code> - If this channel was not created by the same provider
+<dt>抛出:</dt>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If this channel is closed</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If the selector is closed</dd>
+<dd><code><a href="IllegalBlockingModeException.html" title="java.nio.channels 包中的类">IllegalBlockingModeException</a></code> - If this channel is in blocking mode</dd>
+<dd><code><a href="IllegalSelectorException.html" title="java.nio.channels 包中的类">IllegalSelectorException</a></code> - If this channel was not created by the same provider
          as the given selector</dd>
-<dd><code><a href="CancelledKeyException.html" title="class in java.nio.channels">CancelledKeyException</a></code> - If this channel is currently registered with the given selector
+<dd><code><a href="CancelledKeyException.html" title="java.nio.channels 包中的类">CancelledKeyException</a></code> - If this channel is currently registered with the given selector
          but the corresponding key has already been cancelled</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If a bit in the <code>ops</code> set does not correspond to an
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If a bit in the <code>ops</code> set does not correspond to an
          operation that is supported by this channel, that is, if
          <code>set &amp; ~validOps() != 0</code></dd>
 </dl>
@@ -429,9 +429,9 @@ therefore be invalid. </p></div>
 <section class="detail" id="register(java.nio.channels.Selector,int)">
 <h3>register</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="class in java.nio.channels">SelectionKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="Selector.html" title="class in java.nio.channels">Selector</a>&nbsp;sel,
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="SelectionKey.html" title="java.nio.channels 包中的类">SelectionKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="Selector.html" title="java.nio.channels 包中的类">Selector</a>&nbsp;sel,
  int&nbsp;ops)</span>
-                            throws <span class="exceptions"><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></span></div>
+                            throws <span class="exceptions"><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></span></div>
 <div class="block">Registers this channel with the given selector, returning a selection
 key.
 
@@ -443,21 +443,21 @@ behaves in exactly the same way as the invocation
 
 <blockquote><code>sc.</code><a href="#register(java.nio.channels.Selector,int,java.lang.Object)"><code>register(sel, ops, null)</code></a></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>sel</code> - The selector with which this channel is to be registered</dd>
 <dd><code>ops</code> - The interest set for the resulting key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A key representing the registration of this channel with
          the given selector</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If this channel is closed</dd>
-<dd><code><a href="ClosedSelectorException.html" title="class in java.nio.channels">ClosedSelectorException</a></code> - If the selector is closed</dd>
-<dd><code><a href="IllegalBlockingModeException.html" title="class in java.nio.channels">IllegalBlockingModeException</a></code> - If this channel is in blocking mode</dd>
-<dd><code><a href="IllegalSelectorException.html" title="class in java.nio.channels">IllegalSelectorException</a></code> - If this channel was not created by the same provider
+<dt>抛出:</dt>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If this channel is closed</dd>
+<dd><code><a href="ClosedSelectorException.html" title="java.nio.channels 包中的类">ClosedSelectorException</a></code> - If the selector is closed</dd>
+<dd><code><a href="IllegalBlockingModeException.html" title="java.nio.channels 包中的类">IllegalBlockingModeException</a></code> - If this channel is in blocking mode</dd>
+<dd><code><a href="IllegalSelectorException.html" title="java.nio.channels 包中的类">IllegalSelectorException</a></code> - If this channel was not created by the same provider
          as the given selector</dd>
-<dd><code><a href="CancelledKeyException.html" title="class in java.nio.channels">CancelledKeyException</a></code> - If this channel is currently registered with the given selector
+<dd><code><a href="CancelledKeyException.html" title="java.nio.channels 包中的类">CancelledKeyException</a></code> - If this channel is currently registered with the given selector
          but the corresponding key has already been cancelled</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If a bit in <code>ops</code> does not correspond to an operation
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If a bit in <code>ops</code> does not correspond to an operation
          that is supported by this channel, that is, if <code>set &amp;
          ~validOps() != 0</code></dd>
 </dl>
@@ -468,12 +468,12 @@ behaves in exactly the same way as the invocation
 <section class="detail" id="configureBlocking(boolean)">
 <h3>configureBlocking</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectableChannel.html" title="class in java.nio.channels">SelectableChannel</a></span>&nbsp;<span class="element-name">configureBlocking</span><wbr><span class="parameters">(boolean&nbsp;block)</span>
-                                             throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SelectableChannel.html" title="java.nio.channels 包中的类">SelectableChannel</a></span>&nbsp;<span class="element-name">configureBlocking</span><wbr><span class="parameters">(boolean&nbsp;block)</span>
+                                             throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Adjusts this channel's blocking mode.
 
 <p> If this channel is registered with one or more selectors then an
-attempt to place it into blocking mode will cause an <a href="IllegalBlockingModeException.html" title="class in java.nio.channels"><code>IllegalBlockingModeException</code></a> to be thrown.
+attempt to place it into blocking mode will cause an <a href="IllegalBlockingModeException.html" title="java.nio.channels 包中的类"><code>IllegalBlockingModeException</code></a> to be thrown.
 
 <p> This method may be invoked at any time.  The new blocking mode will
 only affect I/O operations that are initiated after this method returns.
@@ -484,17 +484,17 @@ operations are complete.
 of the <a href="#register(java.nio.channels.Selector,int)"><code>register</code></a> method is in progress
 then it will first block until the other operation is complete. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>block</code> - If <code>true</code> then this channel will be placed in
                blocking mode; if <code>false</code> then it will be placed
                non-blocking mode</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>This selectable channel</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If this channel is closed</dd>
-<dd><code><a href="IllegalBlockingModeException.html" title="class in java.nio.channels">IllegalBlockingModeException</a></code> - If <code>block</code> is <code>true</code> and this channel is
+<dt>抛出:</dt>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If this channel is closed</dd>
+<dd><code><a href="IllegalBlockingModeException.html" title="java.nio.channels 包中的类">IllegalBlockingModeException</a></code> - If <code>block</code> is <code>true</code> and this channel is
          registered with one or more selectors</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -510,7 +510,7 @@ until it completes.  A newly-created channel is always in blocking mode.
 <p> If this channel is closed then the value returned by this method is
 not specified. </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this channel is in blocking mode</dd>
 </dl>
 </div>
@@ -520,12 +520,12 @@ not specified. </p></div>
 <section class="detail" id="blockingLock()">
 <h3>blockingLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">blockingLock</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">blockingLock</span>()</div>
 <div class="block">Retrieves the object upon which the <a href="#configureBlocking(boolean)"><code>configureBlocking</code></a> and <a href="#register(java.nio.channels.Selector,int,java.lang.Object)"><code>register</code></a> methods synchronize.
 This is often useful in the implementation of adaptors that require a
 specific blocking mode to be maintained for a short period of time.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The blocking-mode lock object</dd>
 </dl>
 </div>

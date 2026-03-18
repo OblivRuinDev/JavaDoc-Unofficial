@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.foreign</a></li>
 <li><a href="SymbolLookup.html" class="current-selection">SymbolLookup</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,15 +62,15 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#obtaining" tabindex="0">Obtaining a symbol lookup</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#find(java.lang.String)" tabindex="0">find(String)</a></li>
 <li><a href="#findOrThrow(java.lang.String)" tabindex="0">findOrThrow(String)</a></li>
@@ -85,7 +85,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface SymbolLookup" class="title">Interface SymbolLookup</h1>
+<h1 title="接口 SymbolLookup" class="title">接口 SymbolLookup</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="annotations"><a href="../FunctionalInterface.html" title="annotation interface in java.lang">@FunctionalInterface</a>
+<div class="type-signature"><span class="annotations"><a href="../FunctionalInterface.html" title="java.lang 包中的注解接口">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">SymbolLookup</span></div>
 <div class="block">A <em>symbol lookup</em> retrieves the address of a symbol in one or more libraries.
  A symbol is a named entity, such as a function or a global variable.
@@ -104,9 +104,9 @@ loadScripts(document, 'script');</script>
  and returns the address of the symbol in that library.
  <p>
  The address of a symbol is modeled as a zero-length
- <a href="MemorySegment.html" title="interface in java.lang.foreign">memory segment</a>. The segment can be used in different ways:
+ <a href="MemorySegment.html" title="java.lang.foreign 包中的接口">memory segment</a>. The segment can be used in different ways:
  <ul>
-     <li>It can be passed to a <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> to create a downcall method handle, which
+     <li>It can be passed to a <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> to create a downcall method handle, which
          can then be used to call the foreign function at the segment's address.</li>
      <li>It can be passed to an existing
          <a href="Linker.html#downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">downcall method handle</a><sup class="restricted-mark"><a href="Linker.html#restricted-downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">RESTRICTED</a></sup>,
@@ -124,7 +124,7 @@ loadScripts(document, 'script');</script>
  <a href="#libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)"><code>libraryLookup(Path, Arena)</code></a><sup class="restricted-mark"><a href="#restricted-libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)">RESTRICTED</a></sup> create a symbol lookup for a library known to
  the operating system. The library is specified by either its name or a path.
  The library is loaded if not already loaded. The symbol lookup, which is known as a
- <em>library lookup</em>, and its lifetime is controlled by an <a href="Arena.html" title="interface in java.lang.foreign">arena</a>.
+ <em>library lookup</em>, and its lifetime is controlled by an <a href="Arena.html" title="java.lang.foreign 包中的接口">arena</a>.
  For instance, if the provided arena is a confined arena, the library associated with
  the symbol lookup is unloaded when the confined arena is <a href="Arena.html#close()">closed</a>:
 
@@ -185,10 +185,10 @@ MemorySegment glGetString = libGL.findOrThrow("glGetString");
 
 
  <p>
- Finally, each <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> provides a symbol lookup for libraries that are commonly
- used on the OS and processor combination supported by that <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a>. This
+ Finally, each <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> provides a symbol lookup for libraries that are commonly
+ used on the OS and processor combination supported by that <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a>. This
  symbol lookup, which is known as a <em>default lookup</em>, helps clients to quickly
- find addresses of well-known symbols. For example, a <a href="Linker.html" title="interface in java.lang.foreign"><code>Linker</code></a> for Linux/x64
+ find addresses of well-known symbols. For example, a <a href="Linker.html" title="java.lang.foreign 包中的接口"><code>Linker</code></a> for Linux/x64
  might choose to expose symbols in <code>libc</code> through the default lookup:
 
  
@@ -200,7 +200,7 @@ MemorySegment glGetString = libGL.findOrThrow("glGetString");
 </div>
 </div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>22</dd>
 </dl>
 </div>
@@ -210,48 +210,48 @@ MemorySegment glGetString = libGL.findOrThrow("glGetString");
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#find(java.lang.String)" class="member-name-link">find</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#find(java.lang.String)" class="member-name-link">find</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the address of the symbol with the given name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findOrThrow(java.lang.String)" class="member-name-link">findOrThrow</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#findOrThrow(java.lang.String)" class="member-name-link">findOrThrow</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the address of the symbol with the given name or throws an exception.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#libraryLookup(java.lang.String,java.lang.foreign.Arena)" class="member-name-link">libraryLookup</a><wbr>(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#libraryLookup(java.lang.String,java.lang.foreign.Arena)" class="member-name-link">libraryLookup</a><wbr>(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block"><span class="restricted-label">Restricted.</span></div>
 <div class="block">Loads a library with the given name (if not already loaded) and creates a symbol
 lookup for symbols in that library.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)" class="member-name-link">libraryLookup</a><wbr>(<a href="../../nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)" class="member-name-link">libraryLookup</a><wbr>(<a href="../../nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block"><span class="restricted-label">Restricted.</span></div>
 <div class="block">Loads a library from the given path (if not already loaded) and creates a symbol
 lookup for symbols in that library.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#loaderLookup()" class="member-name-link">loaderLookup</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a symbol lookup for symbols in the libraries associated with the caller's
 class loader.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#or(java.lang.foreign.SymbolLookup)" class="member-name-link">or</a><wbr>(<a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a>&nbsp;other)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#or(java.lang.foreign.SymbolLookup)" class="member-name-link">or</a><wbr>(<a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a composed symbol lookup that returns the result of finding the symbol
           with this lookup if found, otherwise returns the result of finding
@@ -269,21 +269,21 @@ class loader.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="find(java.lang.String)">
 <h3>find</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a>&gt;</span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a>&gt;</span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns the address of the symbol with the given name.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the symbol name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a zero-length memory segment whose address indicates the address of
         the symbol, if found</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#findOrThrow(java.lang.String)"><code>findOrThrow(String)</code></a></li>
@@ -297,7 +297,7 @@ class loader.</div>
 <section class="detail" id="findOrThrow(java.lang.String)">
 <h3>findOrThrow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></span>&nbsp;<span class="element-name">findOrThrow</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></span>&nbsp;<span class="element-name">findOrThrow</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns the address of the symbol with the given name or throws an exception.
 <p>
  This is equivalent to the following code, but is more efficient:
@@ -311,17 +311,17 @@ class loader.</div>
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the symbol name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a zero-length memory segment whose address indicates the address of
          the symbol</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../util/NoSuchElementException.html" title="class in java.util">NoSuchElementException</a></code> - if no symbol address can be found for the
+<dt>抛出:</dt>
+<dd><code><a href="../../util/NoSuchElementException.html" title="java.util 包中的类">NoSuchElementException</a></code> - if no symbol address can be found for the
          given name</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>23</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#find(java.lang.String)"><code>find(String)</code></a></li>
@@ -335,12 +335,12 @@ class loader.</div>
 <section class="detail" id="or(java.lang.foreign.SymbolLookup)">
 <h3>or</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></span>&nbsp;<span class="element-name">or</span><wbr><span class="parameters">(<a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></span>&nbsp;<span class="element-name">or</span><wbr><span class="parameters">(<a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a>&nbsp;other)</span></div>
 <div class="block">Returns a composed symbol lookup that returns the result of finding the symbol
           with this lookup if found, otherwise returns the result of finding
           the symbol with the other lookup.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method could be used to chain multiple symbol lookups together,
           e.g. so that symbols could be retrieved, in order, from multiple
           libraries:
@@ -356,10 +356,10 @@ class loader.</div>
  the "foo" library. If no symbol is found in "foo" then "bar" is searched.
  Finally, if a symbol is neither found in "foo" nor in "bar", the
  <a href="#loaderLookup()">loader lookup</a> is used.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the symbol lookup that should be used to look for symbols not found
               in this lookup</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a composed symbol lookup that returns the result of finding the symbol
           with this lookup if found, otherwise returns the result of finding
           the symbol with the other lookup</dd>
@@ -371,7 +371,7 @@ class loader.</div>
 <section class="detail" id="loaderLookup()">
 <h3>loaderLookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></span>&nbsp;<span class="element-name">loaderLookup</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></span>&nbsp;<span class="element-name">loaderLookup</span>()</div>
 <div class="block">Returns a symbol lookup for symbols in the libraries associated with the caller's
 class loader.
 <p>
@@ -387,7 +387,7 @@ were loaded after this method returned.
 Libraries associated with a class loader are unloaded when the class loader becomes
 <a href="../ref/package-summary.html#reachability">unreachable</a>. The
 symbol lookup returned by this method is associated with an automatic
-<a href="MemorySegment.Scope.html" title="interface in java.lang.foreign">scope</a> which keeps the caller's class loader
+<a href="MemorySegment.Scope.html" title="java.lang.foreign 包中的接口">scope</a> which keeps the caller's class loader
 reachable. Therefore, libraries associated with the caller's class loader are
 kept loaded (and their symbols available) as long as a loader lookup for that
 class loader, or any of the segments obtained by it, is reachable.
@@ -397,10 +397,10 @@ frame on the stack (e.g. when called directly from a JNI attached thread), the
 caller's class loader defaults to the
 <a href="../ClassLoader.html#getSystemClassLoader()">system class loader</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a symbol lookup for symbols in the libraries associated with
         the caller's class loader</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../System.html#load(java.lang.String)"><code>System.load(String)</code></a><sup class="restricted-mark"><a href="../System.html#restricted-load(java.lang.String)">RESTRICTED</a></sup></li>
@@ -415,8 +415,8 @@ caller's class loader defaults to the
 <section class="detail" id="libraryLookup(java.lang.String,java.lang.foreign.Arena)">
 <h3>libraryLookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></span>&nbsp;<span class="element-name">libraryLookup</span><wbr><span class="parameters">(<a href="../String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></span>&nbsp;<span class="element-name">libraryLookup</span><wbr><span class="parameters">(<a href="../String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena)</span></div>
 <div class="restricted-block" id="restricted-libraryLookup(java.lang.String,java.lang.foreign.Arena)"><span class="restricted-label"><code>libraryLookup</code> is a <a href="../doc-files/RestrictedMethods.html">restricted method</a> of the Java platform.</span>
 <div class="restricted-comment">Programs can only use <code>libraryLookup</code> when access to restricted methods is enabled.</div>
 <div class="restricted-comment">Restricted methods are unsafe, and, if used incorrectly, might crash the JVM or result in memory corruption.</div>
@@ -427,24 +427,24 @@ is controlled by the provided arena. For instance, if the provided arena is a
 confined arena, the library associated with the returned lookup will be unloaded
 when the provided confined arena is <a href="Arena.html#close()">closed</a>.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The process of resolving a library name is OS-specific. For instance,
           in a POSIX-compliant OS, the library name is resolved according to the
           specification of the <code>dlopen</code> function for that OS. In Windows,
           the library name is resolved according to the specification of the
           <code>LoadLibrary</code> function.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the library in which symbols should be looked up</dd>
 <dd><code>arena</code> - the arena associated with symbols obtained from the returned lookup</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new symbol lookup suitable to find symbols in a library with the
         given name</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
-<dd><code><a href="../WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
+<dd><code><a href="../WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
         is called from a thread <code>T</code>, other than the arena's owner thread</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>name</code> does not identify a valid library</dd>
-<dd><code><a href="../IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is in a module that does not have
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>name</code> does not identify a valid library</dd>
+<dd><code><a href="../IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is in a module that does not have
         native access enabled</dd>
 </dl>
 </div>
@@ -454,8 +454,8 @@ when the provided confined arena is <a href="Arena.html#close()">closed</a>.</di
 <section class="detail" id="libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)">
 <h3>libraryLookup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="interface in java.lang.foreign">SymbolLookup</a></span>&nbsp;<span class="element-name">libraryLookup</span><wbr><span class="parameters">(<a href="../../nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;path,
- <a href="Arena.html" title="interface in java.lang.foreign">Arena</a>&nbsp;arena)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="SymbolLookup.html" title="java.lang.foreign 包中的接口">SymbolLookup</a></span>&nbsp;<span class="element-name">libraryLookup</span><wbr><span class="parameters">(<a href="../../nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;path,
+ <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a>&nbsp;arena)</span></div>
 <div class="restricted-block" id="restricted-libraryLookup(java.nio.file.Path,java.lang.foreign.Arena)"><span class="restricted-label"><code>libraryLookup</code> is a <a href="../doc-files/RestrictedMethods.html">restricted method</a> of the Java platform.</span>
 <div class="restricted-comment">Programs can only use <code>libraryLookup</code> when access to restricted methods is enabled.</div>
 <div class="restricted-comment">Restricted methods are unsafe, and, if used incorrectly, might crash the JVM or result in memory corruption.</div>
@@ -466,23 +466,23 @@ is controlled by the provided arena. For instance, if the provided arena is a
 confined arena, the library associated with the returned lookup will be unloaded
 when the provided confined arena is <a href="Arena.html#close()">closed</a>.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>On Linux, the functionalities provided by this factory method and the
           returned symbol lookup are implemented using the <code>dlopen</code>,
           <code>dlsym</code> and <code>dlclose</code> functions.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>path</code> - the path of the library in which symbols should be looked up</dd>
 <dd><code>arena</code> - the arena associated with symbols obtained from the returned lookup</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new symbol lookup suitable to find symbols in a library with the given
         path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
-<dd><code><a href="../WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if <code>arena.scope().isAlive() == false</code></dd>
+<dd><code><a href="../WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if <code>arena</code> is a confined arena, and this method
         is called from a thread <code>T</code>, other than the arena's owner thread</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>path</code> does not point to a valid library
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>path</code> does not point to a valid library
         in the default file system</dd>
-<dd><code><a href="../IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is in a module that does not have
+<dd><code><a href="../IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is in a module that does not have
         native access enabled</dd>
 </dl>
 </div>

@@ -68,7 +68,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent.locks</a></li>
 <li><a href="ReentrantReadWriteLock.html" class="current-selection">ReentrantReadWriteLock</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -76,23 +76,23 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#implementation-notes-heading" tabindex="0">Implementation Notes</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ReentrantReadWriteLock()</a></li>
 <li><a href="#%3Cinit%3E(boolean)" tabindex="0">ReentrantReadWriteLock(boolean)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#writeLock()" tabindex="0">writeLock()</a></li>
 <li><a href="#readLock()" tabindex="0">readLock()</a></li>
@@ -120,23 +120,23 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ReentrantReadWriteLock" class="title">Class ReentrantReadWriteLock</h1>
+<h1 title="类 ReentrantReadWriteLock" class="title">类 ReentrantReadWriteLock</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.concurrent.locks.ReentrantReadWriteLock</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../../io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ReentrantReadWriteLock</span>
-<span class="extends-implements">extends <a href="../../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a>, <a href="../../../io/Serializable.html" title="interface in java.io">Serializable</a></span></div>
-<div class="block">An implementation of <a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks"><code>ReadWriteLock</code></a> supporting similar
-semantics to <a href="ReentrantLock.html" title="class in java.util.concurrent.locks"><code>ReentrantLock</code></a>.
+<span class="extends-implements">extends <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a>, <a href="../../../io/Serializable.html" title="java.io 包中的接口">Serializable</a></span></div>
+<div class="block">An implementation of <a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口"><code>ReadWriteLock</code></a> supporting similar
+semantics to <a href="ReentrantLock.html" title="java.util.concurrent.locks 包中的类"><code>ReentrantLock</code></a>.
 <p>This class has the following properties:
 
 <ul>
@@ -182,7 +182,7 @@ if it is possible, regardless of waiting threads.)
 <li><b>Reentrancy</b>
 
 <p>This lock allows both readers and writers to reacquire read or
-write locks in the style of a <a href="ReentrantLock.html" title="class in java.util.concurrent.locks"><code>ReentrantLock</code></a>. Non-reentrant
+write locks in the style of a <a href="ReentrantLock.html" title="java.util.concurrent.locks 包中的类"><code>ReentrantLock</code></a>. Non-reentrant
 readers are not allowed until all write locks held by the writing
 thread have been released.
 
@@ -202,14 +202,14 @@ write lock. However, upgrading from a read lock to the write lock is
 <p>The read lock and write lock both support interruption during lock
 acquisition.
 
-<li><b><a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> support</b>
-<p>The write lock provides a <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> implementation that
+<li><b><a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> support</b>
+<p>The write lock provides a <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> implementation that
 behaves in the same way, with respect to the write lock, as the
-<a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> implementation provided by
-<a href="ReentrantLock.html#newCondition()"><code>ReentrantLock.newCondition()</code></a> does for <a href="ReentrantLock.html" title="class in java.util.concurrent.locks"><code>ReentrantLock</code></a>.
-This <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> can, of course, only be used with the write lock.
+<a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> implementation provided by
+<a href="ReentrantLock.html#newCondition()"><code>ReentrantLock.newCondition()</code></a> does for <a href="ReentrantLock.html" title="java.util.concurrent.locks 包中的类"><code>ReentrantLock</code></a>.
+This <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> can, of course, only be used with the write lock.
 
-<p>The read lock does not support a <a href="Condition.html" title="interface in java.util.concurrent.locks"><code>Condition</code></a> and
+<p>The read lock does not support a <a href="Condition.html" title="java.util.concurrent.locks 包中的接口"><code>Condition</code></a> and
 <code>readLock().newCondition()</code> throws
 <code>UnsupportedOperationException</code>.
 
@@ -302,11 +302,11 @@ concurrently accessed.
 
 <p>This lock supports a maximum of <a href="../../../lang/Integer.html#MAX_VALUE"><code>Integer.MAX_VALUE</code></a> recursive write locks
 and <a href="../../../lang/Integer.html#MAX_VALUE"><code>Integer.MAX_VALUE</code></a> read locks. Attempts to exceed these limits result in
-<a href="../../../lang/Error.html" title="class in java.lang"><code>Error</code></a> throws from locking methods.</div>
+<a href="../../../lang/Error.html" title="java.lang 包中的类"><code>Error</code></a> throws from locking methods.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../../serialized-form.html#java.util.concurrent.locks.ReentrantReadWriteLock">Serialized Form</a></li>
@@ -320,19 +320,19 @@ and <a href="../../../lang/Integer.html#MAX_VALUE"><code>Integer.MAX_VALUE</code
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ReentrantReadWriteLock.ReadLock.html" class="type-name-link" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.ReadLock</a></code></div>
+<div class="col-second even-row-color"><code><a href="ReentrantReadWriteLock.ReadLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.ReadLock</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The lock returned by method <a href="#readLock()"><code>readLock()</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="ReentrantReadWriteLock.WriteLock.html" class="type-name-link" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.WriteLock</a></code></div>
+<div class="col-second odd-row-color"><code><a href="ReentrantReadWriteLock.WriteLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.WriteLock</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">The lock returned by method <a href="#writeLock()"><code>writeLock()</code></a>.</div>
 </div>
@@ -342,11 +342,11 @@ and <a href="../../../lang/Integer.html#MAX_VALUE"><code>Integer.MAX_VALUE</code
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ReentrantReadWriteLock</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new <code>ReentrantReadWriteLock</code> with
@@ -363,33 +363,33 @@ the given fairness policy.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../lang/Thread.html" title="class in java.lang">Thread</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOwner()" class="member-name-link">getOwner</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the thread that currently owns the write lock, or
 <code>null</code> if not owned.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="interface in java.util">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="java.util 包中的接口">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQueuedReaderThreads()" class="member-name-link">getQueuedReaderThreads</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a collection containing threads that may be waiting to
 acquire the read lock.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="interface in java.util">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="java.util 包中的接口">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQueuedThreads()" class="member-name-link">getQueuedThreads</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a collection containing threads that may be waiting to
 acquire either the read or write lock.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="interface in java.util">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="java.util 包中的接口">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getQueuedWriterThreads()" class="member-name-link">getQueuedWriterThreads</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a collection containing threads that may be waiting to
@@ -412,14 +412,14 @@ current thread.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries the number of read locks held for this lock.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="interface in java.util">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaitingThreads(java.util.concurrent.locks.Condition)" class="member-name-link">getWaitingThreads</a><wbr>(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../Collection.html" title="java.util 包中的接口">Collection</a><wbr>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaitingThreads(java.util.concurrent.locks.Condition)" class="member-name-link">getWaitingThreads</a><wbr>(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a collection containing those threads that may be
 waiting on the given condition associated with the write lock.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaitQueueLength(java.util.concurrent.locks.Condition)" class="member-name-link">getWaitQueueLength</a><wbr>(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWaitQueueLength(java.util.concurrent.locks.Condition)" class="member-name-link">getWaitQueueLength</a><wbr>(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an estimate of the number of threads waiting on the
 given condition associated with the write lock.</div>
@@ -431,7 +431,7 @@ given condition associated with the write lock.</div>
 current thread.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasQueuedThread(java.lang.Thread)" class="member-name-link">hasQueuedThread</a><wbr>(<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&nbsp;thread)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasQueuedThread(java.lang.Thread)" class="member-name-link">hasQueuedThread</a><wbr>(<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&nbsp;thread)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries whether the given thread is waiting to acquire either
 the read or write lock.</div>
@@ -443,7 +443,7 @@ the read or write lock.</div>
 write lock.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasWaiters(java.util.concurrent.locks.Condition)" class="member-name-link">hasWaiters</a><wbr>(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasWaiters(java.util.concurrent.locks.Condition)" class="member-name-link">hasWaiters</a><wbr>(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries whether any threads are waiting on the given condition
 associated with the write lock.</div>
@@ -463,17 +463,17 @@ associated with the write lock.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Queries if the write lock is held by the current thread.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReentrantReadWriteLock.ReadLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.ReadLock</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReentrantReadWriteLock.ReadLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.ReadLock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readLock()" class="member-name-link">readLock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the lock used for reading.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string identifying this lock, as well as its lock state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReentrantReadWriteLock.WriteLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.WriteLock</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ReentrantReadWriteLock.WriteLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.WriteLock</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#writeLock()" class="member-name-link">writeLock</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the lock used for writing.</div>
@@ -482,7 +482,7 @@ associated with the write lock.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -493,7 +493,7 @@ associated with the write lock.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -513,7 +513,7 @@ default (nonfair) ordering properties.</div>
 <div class="block">Creates a new <code>ReentrantReadWriteLock</code> with
 the given fairness policy.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fair</code> - <code>true</code> if this lock should use a fair ordering policy</dd>
 </dl>
 </div>
@@ -525,19 +525,19 @@ the given fairness policy.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="writeLock()">
 <h3>writeLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReentrantReadWriteLock.WriteLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.WriteLock</a></span>&nbsp;<span class="element-name">writeLock</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReentrantReadWriteLock.WriteLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.WriteLock</a></span>&nbsp;<span class="element-name">writeLock</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ReadWriteLock.html#writeLock()">ReadWriteLock</a></code></span></div>
 <div class="block">Returns the lock used for writing.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ReadWriteLock.html#writeLock()">writeLock</a></code>&nbsp;in interface&nbsp;<code><a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ReadWriteLock.html#writeLock()">writeLock</a></code>&nbsp;in interface&nbsp;<code><a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a></code></dd>
+<dt>返回:</dt>
 <dd>the lock used for writing</dd>
 </dl>
 </div>
@@ -547,13 +547,13 @@ the given fairness policy.</div>
 <section class="detail" id="readLock()">
 <h3>readLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReentrantReadWriteLock.ReadLock.html" title="class in java.util.concurrent.locks">ReentrantReadWriteLock.ReadLock</a></span>&nbsp;<span class="element-name">readLock</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ReentrantReadWriteLock.ReadLock.html" title="java.util.concurrent.locks 包中的类">ReentrantReadWriteLock.ReadLock</a></span>&nbsp;<span class="element-name">readLock</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="ReadWriteLock.html#readLock()">ReadWriteLock</a></code></span></div>
 <div class="block">Returns the lock used for reading.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ReadWriteLock.html#readLock()">readLock</a></code>&nbsp;in interface&nbsp;<code><a href="ReadWriteLock.html" title="interface in java.util.concurrent.locks">ReadWriteLock</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ReadWriteLock.html#readLock()">readLock</a></code>&nbsp;in interface&nbsp;<code><a href="ReadWriteLock.html" title="java.util.concurrent.locks 包中的接口">ReadWriteLock</a></code></dd>
+<dt>返回:</dt>
 <dd>the lock used for reading</dd>
 </dl>
 </div>
@@ -566,7 +566,7 @@ the given fairness policy.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isFair</span>()</div>
 <div class="block">Returns <code>true</code> if this lock has fairness set true.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this lock has fairness set true</dd>
 </dl>
 </div>
@@ -576,7 +576,7 @@ the given fairness policy.</div>
 <section class="detail" id="getOwner()">
 <h3>getOwner</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../lang/Thread.html" title="class in java.lang">Thread</a></span>&nbsp;<span class="element-name">getOwner</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a></span>&nbsp;<span class="element-name">getOwner</span>()</div>
 <div class="block">Returns the thread that currently owns the write lock, or
 <code>null</code> if not owned. When this method is called by a
 thread that is not the owner, the return value reflects a
@@ -587,7 +587,7 @@ This method is designed to facilitate construction of
 subclasses that provide more extensive lock monitoring
 facilities.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the owner, or <code>null</code> if not owned</dd>
 </dl>
 </div>
@@ -602,7 +602,7 @@ facilities.</div>
 method is designed for use in monitoring system state, not for
 synchronization control.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of read locks held</dd>
 </dl>
 </div>
@@ -617,7 +617,7 @@ synchronization control.</div>
 designed for use in monitoring system state, not for
 synchronization control.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if any thread holds the write lock and
         <code>false</code> otherwise</dd>
 </dl>
@@ -631,7 +631,7 @@ synchronization control.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isWriteLockedByCurrentThread</span>()</div>
 <div class="block">Queries if the write lock is held by the current thread.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the current thread holds the write lock and
         <code>false</code> otherwise</dd>
 </dl>
@@ -647,7 +647,7 @@ synchronization control.</div>
 current thread.  A writer thread has a hold on a lock for
 each lock action that is not matched by an unlock action.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of holds on the write lock by the current thread,
         or zero if the write lock is not held by the current thread</dd>
 </dl>
@@ -663,10 +663,10 @@ each lock action that is not matched by an unlock action.</div>
 current thread.  A reader thread has a hold on a lock for
 each lock action that is not matched by an unlock action.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of holds on the read lock by the current thread,
         or zero if the read lock is not held by the current thread</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -676,7 +676,7 @@ each lock action that is not matched by an unlock action.</div>
 <section class="detail" id="getQueuedWriterThreads()">
 <h3>getQueuedWriterThreads</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="interface in java.util">Collection</a>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedWriterThreads</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="java.util 包中的接口">Collection</a>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedWriterThreads</span>()</div>
 <div class="block">Returns a collection containing threads that may be waiting to
 acquire the write lock.  Because the actual set of threads may
 change dynamically while constructing this result, the returned
@@ -685,7 +685,7 @@ returned collection are in no particular order.  This method is
 designed to facilitate construction of subclasses that provide
 more extensive lock monitoring facilities.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the collection of threads</dd>
 </dl>
 </div>
@@ -695,7 +695,7 @@ more extensive lock monitoring facilities.</div>
 <section class="detail" id="getQueuedReaderThreads()">
 <h3>getQueuedReaderThreads</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="interface in java.util">Collection</a>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedReaderThreads</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="java.util 包中的接口">Collection</a>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedReaderThreads</span>()</div>
 <div class="block">Returns a collection containing threads that may be waiting to
 acquire the read lock.  Because the actual set of threads may
 change dynamically while constructing this result, the returned
@@ -704,7 +704,7 @@ returned collection are in no particular order.  This method is
 designed to facilitate construction of subclasses that provide
 more extensive lock monitoring facilities.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the collection of threads</dd>
 </dl>
 </div>
@@ -721,7 +721,7 @@ time, a <code>true</code> return does not guarantee that any other
 thread will ever acquire a lock.  This method is designed
 primarily for use in monitoring of the system state.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if there may be other threads waiting to
         acquire the lock</dd>
 </dl>
@@ -732,19 +732,19 @@ primarily for use in monitoring of the system state.</div>
 <section class="detail" id="hasQueuedThread(java.lang.Thread)">
 <h3>hasQueuedThread</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasQueuedThread</span><wbr><span class="parameters">(<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&nbsp;thread)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasQueuedThread</span><wbr><span class="parameters">(<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&nbsp;thread)</span></div>
 <div class="block">Queries whether the given thread is waiting to acquire either
 the read or write lock. Note that because cancellations may
 occur at any time, a <code>true</code> return does not guarantee
 that this thread will ever acquire a lock.  This method is
 designed primarily for use in monitoring of the system state.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>thread</code> - the thread</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the given thread is queued waiting for this lock</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the thread is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the thread is null</dd>
 </dl>
 </div>
 </section>
@@ -761,7 +761,7 @@ method traverses internal data structures.  This method is
 designed for use in monitoring system state, not for
 synchronization control.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the estimated number of threads waiting for this lock</dd>
 </dl>
 </div>
@@ -771,7 +771,7 @@ synchronization control.</div>
 <section class="detail" id="getQueuedThreads()">
 <h3>getQueuedThreads</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="interface in java.util">Collection</a>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedThreads</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="java.util 包中的接口">Collection</a>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</span>&nbsp;<span class="element-name">getQueuedThreads</span>()</div>
 <div class="block">Returns a collection containing threads that may be waiting to
 acquire either the read or write lock.  Because the actual set
 of threads may change dynamically while constructing this
@@ -780,7 +780,7 @@ The elements of the returned collection are in no particular
 order.  This method is designed to facilitate construction of
 subclasses that provide more extensive monitoring facilities.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the collection of threads</dd>
 </dl>
 </div>
@@ -790,7 +790,7 @@ subclasses that provide more extensive monitoring facilities.</div>
 <section class="detail" id="hasWaiters(java.util.concurrent.locks.Condition)">
 <h3>hasWaiters</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasWaiters</span><wbr><span class="parameters">(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasWaiters</span><wbr><span class="parameters">(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</span></div>
 <div class="block">Queries whether any threads are waiting on the given condition
 associated with the write lock. Note that because timeouts and
 interrupts may occur at any time, a <code>true</code> return does
@@ -798,15 +798,15 @@ not guarantee that a future <code>signal</code> will awaken any
 threads.  This method is designed primarily for use in
 monitoring of the system state.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>condition</code> - the condition</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if there are any waiting threads</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given condition is
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given condition is
         not associated with this lock</dd>
-<dd><code><a href="../../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the condition is null</dd>
+<dd><code><a href="../../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the condition is null</dd>
 </dl>
 </div>
 </section>
@@ -815,7 +815,7 @@ monitoring of the system state.</div>
 <section class="detail" id="getWaitQueueLength(java.util.concurrent.locks.Condition)">
 <h3>getWaitQueueLength</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWaitQueueLength</span><wbr><span class="parameters">(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getWaitQueueLength</span><wbr><span class="parameters">(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</span></div>
 <div class="block">Returns an estimate of the number of threads waiting on the
 given condition associated with the write lock. Note that because
 timeouts and interrupts may occur at any time, the estimate
@@ -823,15 +823,15 @@ serves only as an upper bound on the actual number of waiters.
 This method is designed for use in monitoring of the system
 state, not for synchronization control.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>condition</code> - the condition</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the estimated number of waiting threads</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given condition is
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given condition is
         not associated with this lock</dd>
-<dd><code><a href="../../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the condition is null</dd>
+<dd><code><a href="../../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the condition is null</dd>
 </dl>
 </div>
 </section>
@@ -840,7 +840,7 @@ state, not for synchronization control.</div>
 <section class="detail" id="getWaitingThreads(java.util.concurrent.locks.Condition)">
 <h3>getWaitingThreads</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="interface in java.util">Collection</a>&lt;<a href="../../../lang/Thread.html" title="class in java.lang">Thread</a>&gt;</span>&nbsp;<span class="element-name">getWaitingThreads</span><wbr><span class="parameters">(<a href="Condition.html" title="interface in java.util.concurrent.locks">Condition</a>&nbsp;condition)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../../Collection.html" title="java.util 包中的接口">Collection</a>&lt;<a href="../../../lang/Thread.html" title="java.lang 包中的类">Thread</a>&gt;</span>&nbsp;<span class="element-name">getWaitingThreads</span><wbr><span class="parameters">(<a href="Condition.html" title="java.util.concurrent.locks 包中的接口">Condition</a>&nbsp;condition)</span></div>
 <div class="block">Returns a collection containing those threads that may be
 waiting on the given condition associated with the write lock.
 Because the actual set of threads may change dynamically while
@@ -850,15 +850,15 @@ are in no particular order.  This method is designed to
 facilitate construction of subclasses that provide more
 extensive condition monitoring facilities.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>condition</code> - the condition</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the collection of threads</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="class in java.lang">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
-<dd><code><a href="../../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given condition is
+<dt>抛出:</dt>
+<dd><code><a href="../../../lang/IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></code> - if this lock is not held</dd>
+<dd><code><a href="../../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given condition is
         not associated with this lock</dd>
-<dd><code><a href="../../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the condition is null</dd>
+<dd><code><a href="../../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the condition is null</dd>
 </dl>
 </div>
 </section>
@@ -867,16 +867,16 @@ extensive condition monitoring facilities.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string identifying this lock, as well as its lock state.
 The state, in brackets, includes the String <code>"Write locks ="</code>
 followed by the number of reentrantly held write locks, and the
 String <code>"Read locks ="</code> followed by the number of held
 read locks.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string identifying this lock, as well as its lock state</dd>
 </dl>
 </div>

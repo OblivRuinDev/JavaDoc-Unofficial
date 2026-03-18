@@ -53,7 +53,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.net</a></li>
 <li><a href="CookieManager.html" class="current-selection">CookieManager</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -61,18 +61,18 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">CookieManager()</a></li>
 <li><a href="#%3Cinit%3E(java.net.CookieStore,java.net.CookiePolicy)" tabindex="0">CookieManager(CookieStore, CookiePolicy)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#setCookiePolicy(java.net.CookiePolicy)" tabindex="0">setCookiePolicy(CookiePolicy)</a></li>
 <li><a href="#getCookieStore()" tabindex="0">getCookieStore()</a></li>
@@ -85,10 +85,10 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class CookieManager" class="title">Class CookieManager</h1>
+<h1 title="类 CookieManager" class="title">类 CookieManager</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="CookieHandler.html" title="class in java.net">java.net.CookieHandler</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="CookieHandler.html" title="java.net 包中的类">java.net.CookieHandler</a>
 <div class="inheritance">java.net.CookieManager</div>
 </div>
 </div>
@@ -96,11 +96,11 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CookieManager</span>
-<span class="extends-implements">extends <a href="CookieHandler.html" title="class in java.net">CookieHandler</a></span></div>
-<div class="block">CookieManager provides a concrete implementation of <a href="CookieHandler.html" title="class in java.net"><code>CookieHandler</code></a>,
+<span class="extends-implements">extends <a href="CookieHandler.html" title="java.net 包中的类">CookieHandler</a></span></div>
+<div class="block">CookieManager provides a concrete implementation of <a href="CookieHandler.html" title="java.net 包中的类"><code>CookieHandler</code></a>,
 which separates the storage of cookies from the policy surrounding accepting
-and rejecting cookies. A CookieManager is initialized with a <a href="CookieStore.html" title="interface in java.net"><code>CookieStore</code></a>
-which manages storage, and a <a href="CookiePolicy.html" title="interface in java.net"><code>CookiePolicy</code></a> object, which makes
+and rejecting cookies. A CookieManager is initialized with a <a href="CookieStore.html" title="java.net 包中的接口"><code>CookieStore</code></a>
+which manages storage, and a <a href="CookiePolicy.html" title="java.net 包中的接口"><code>CookiePolicy</code></a> object, which makes
 policy decisions on cookie acceptance/rejection.
 
 <p> The HTTP cookie management in java.net package looks like:
@@ -152,16 +152,16 @@ CookieManager -------&gt; CookiePolicy
 <p>There're various ways user can hook up his own HTTP cookie management behavior, e.g.
 <blockquote>
 <ul>
-  <li>Use CookieHandler.setDefault to set a brand new <a href="CookieHandler.html" title="class in java.net"><code>CookieHandler</code></a> implementation
-  <li>Let CookieManager be the default <a href="CookieHandler.html" title="class in java.net"><code>CookieHandler</code></a> implementation,
-      but implement user's own <a href="CookieStore.html" title="interface in java.net"><code>CookieStore</code></a> and <a href="CookiePolicy.html" title="interface in java.net"><code>CookiePolicy</code></a>
+  <li>Use CookieHandler.setDefault to set a brand new <a href="CookieHandler.html" title="java.net 包中的类"><code>CookieHandler</code></a> implementation
+  <li>Let CookieManager be the default <a href="CookieHandler.html" title="java.net 包中的类"><code>CookieHandler</code></a> implementation,
+      but implement user's own <a href="CookieStore.html" title="java.net 包中的接口"><code>CookieStore</code></a> and <a href="CookiePolicy.html" title="java.net 包中的接口"><code>CookiePolicy</code></a>
       and tell default CookieManager to use them:
     <blockquote><pre>
       // this should be done at the beginning of an HTTP session
       CookieHandler.setDefault(new CookieManager(new MyCookieStore(), new MyCookiePolicy()));
     </pre></blockquote>
-  <li>Let CookieManager be the default <a href="CookieHandler.html" title="class in java.net"><code>CookieHandler</code></a> implementation, but
-      use customized <a href="CookiePolicy.html" title="interface in java.net"><code>CookiePolicy</code></a>:
+  <li>Let CookieManager be the default <a href="CookieHandler.html" title="java.net 包中的类"><code>CookieHandler</code></a> implementation, but
+      use customized <a href="CookiePolicy.html" title="java.net 包中的接口"><code>CookiePolicy</code></a>:
     <blockquote><pre>
       // this should be done at the beginning of an HTTP session
       CookieHandler.setDefault(new CookieManager());
@@ -173,18 +173,18 @@ CookieManager -------&gt; CookiePolicy
 
 <p>The implementation conforms to <a href="http://www.ietf.org/rfc/rfc2965.txt">RFC 2965</a>, section 3.3.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc2965"><span id="RFC2965:HTTPStateManagementMechanism" class="search-tag-result">RFC 2965: HTTP State Management Mechanism</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="CookiePolicy.html" title="interface in java.net"><code>CookiePolicy</code></a></li>
+<li><a href="CookiePolicy.html" title="java.net 包中的接口"><code>CookiePolicy</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -195,17 +195,17 @@ CookieManager -------&gt; CookiePolicy
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CookieManager</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create a new cookie manager.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.net.CookieStore,java.net.CookiePolicy)" class="member-name-link">CookieManager</a><wbr>(<a href="CookieStore.html" title="interface in java.net">CookieStore</a>&nbsp;store,
- <a href="CookiePolicy.html" title="interface in java.net">CookiePolicy</a>&nbsp;cookiePolicy)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.net.CookieStore,java.net.CookiePolicy)" class="member-name-link">CookieManager</a><wbr>(<a href="CookieStore.html" title="java.net 包中的接口">CookieStore</a>&nbsp;store,
+ <a href="CookiePolicy.html" title="java.net 包中的接口">CookiePolicy</a>&nbsp;cookiePolicy)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create a new cookie manager with specified cookie store and cookie policy.</div>
 </div>
@@ -215,36 +215,36 @@ CookieManager -------&gt; CookiePolicy
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/Map.html" title="interface in java.util">Map</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.net.URI,java.util.Map)" class="member-name-link">get</a><wbr>(<a href="URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;&nbsp;requestHeaders)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/Map.html" title="java.util 包中的接口">Map</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.net.URI,java.util.Map)" class="member-name-link">get</a><wbr>(<a href="URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;&nbsp;requestHeaders)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets all the applicable cookies from a cookie cache for the
 specified uri in the request header.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CookieStore.html" title="interface in java.net">CookieStore</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CookieStore.html" title="java.net 包中的接口">CookieStore</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCookieStore()" class="member-name-link">getCookieStore</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">To retrieve current cookie store.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(java.net.URI,java.util.Map)" class="member-name-link">put</a><wbr>(<a href="URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;&nbsp;responseHeaders)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#put(java.net.URI,java.util.Map)" class="member-name-link">put</a><wbr>(<a href="URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;&nbsp;responseHeaders)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets all the applicable cookies, examples are response header
 fields that are named Set-Cookie2, present in the response
 headers into a cookie cache.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCookiePolicy(java.net.CookiePolicy)" class="member-name-link">setCookiePolicy</a><wbr>(<a href="CookiePolicy.html" title="interface in java.net">CookiePolicy</a>&nbsp;cookiePolicy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCookiePolicy(java.net.CookiePolicy)" class="member-name-link">setCookiePolicy</a><wbr>(<a href="CookiePolicy.html" title="java.net 包中的接口">CookiePolicy</a>&nbsp;cookiePolicy)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">To set the cookie policy of this cookie manager.</div>
 </div>
@@ -252,10 +252,10 @@ headers into a cookie cache.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.net.CookieHandler">Methods declared in class&nbsp;<a href="CookieHandler.html#method-summary" title="class in java.net">CookieHandler</a></h3>
+<h3 id="methods-inherited-from-class-java.net.CookieHandler">在类 <a href="CookieHandler.html#method-summary" title="java.net 包中的类">CookieHandler</a> 中声明的方法</h3>
 <code><a href="CookieHandler.html#getDefault()" title="getDefault()">getDefault</a>, <a href="CookieHandler.html#setDefault(java.net.CookieHandler)" title="setDefault(CookieHandler)">setDefault</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -266,7 +266,7 @@ headers into a cookie cache.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -285,11 +285,11 @@ cookie store and accept policy. The effect is same as
 <section class="detail" id="&lt;init&gt;(java.net.CookieStore,java.net.CookiePolicy)">
 <h3>CookieManager</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CookieManager</span><wbr><span class="parameters">(<a href="CookieStore.html" title="interface in java.net">CookieStore</a>&nbsp;store,
- <a href="CookiePolicy.html" title="interface in java.net">CookiePolicy</a>&nbsp;cookiePolicy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CookieManager</span><wbr><span class="parameters">(<a href="CookieStore.html" title="java.net 包中的接口">CookieStore</a>&nbsp;store,
+ <a href="CookiePolicy.html" title="java.net 包中的接口">CookiePolicy</a>&nbsp;cookiePolicy)</span></div>
 <div class="block">Create a new cookie manager with specified cookie store and cookie policy.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>store</code> - a <code>CookieStore</code> to be used by cookie manager.
                  if <code>null</code>, cookie manager will use a default one,
                  which is an in-memory CookieStore implementation.</dd>
@@ -307,20 +307,20 @@ cookie store and accept policy. The effect is same as
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="setCookiePolicy(java.net.CookiePolicy)">
 <h3>setCookiePolicy</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCookiePolicy</span><wbr><span class="parameters">(<a href="CookiePolicy.html" title="interface in java.net">CookiePolicy</a>&nbsp;cookiePolicy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCookiePolicy</span><wbr><span class="parameters">(<a href="CookiePolicy.html" title="java.net 包中的接口">CookiePolicy</a>&nbsp;cookiePolicy)</span></div>
 <div class="block">To set the cookie policy of this cookie manager.
 
 <p> An instance of <code>CookieManager</code> will have
 cookie policy ACCEPT_ORIGINAL_SERVER by default. Users always
 can call this method to set another cookie policy.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>cookiePolicy</code> - the cookie policy. Can be <code>null</code>, which
                          has no effects on current cookie policy.</dd>
 </dl>
@@ -331,10 +331,10 @@ can call this method to set another cookie policy.</div>
 <section class="detail" id="getCookieStore()">
 <h3>getCookieStore</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CookieStore.html" title="interface in java.net">CookieStore</a></span>&nbsp;<span class="element-name">getCookieStore</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CookieStore.html" title="java.net 包中的接口">CookieStore</a></span>&nbsp;<span class="element-name">getCookieStore</span>()</div>
 <div class="block">To retrieve current cookie store.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the cookie store currently used by cookie manager.</dd>
 </dl>
 </div>
@@ -344,9 +344,9 @@ can call this method to set another cookie policy.</div>
 <section class="detail" id="get(java.net.URI,java.util.Map)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;&nbsp;requestHeaders)</span>
-                              throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;&nbsp;requestHeaders)</span>
+                              throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="CookieHandler.html#get(java.net.URI,java.util.Map)">CookieHandler</a></code></span></div>
 <div class="block">Gets all the applicable cookies from a cookie cache for the
 specified uri in the request header.
@@ -364,21 +364,21 @@ should be returned.</P>
 called after all request headers related to choosing cookies
 are added, and before the request is sent.</P></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="CookieHandler.html#get(java.net.URI,java.util.Map)">get</a></code>&nbsp;in class&nbsp;<code><a href="CookieHandler.html" title="class in java.net">CookieHandler</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="CookieHandler.html#get(java.net.URI,java.util.Map)">get</a></code>&nbsp;in class&nbsp;<code><a href="CookieHandler.html" title="java.net 包中的类">CookieHandler</a></code></dd>
+<dt>参数:</dt>
 <dd><code>uri</code> - a <code>URI</code> representing the intended use for the
            cookies</dd>
 <dd><code>requestHeaders</code> - a Map from request header
            field names to lists of field values representing
            the current request headers</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an immutable map from state management headers, with
            field names "Cookie" or "Cookie2" to a list of
            cookies containing state information</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="CookieHandler.html#put(java.net.URI,java.util.Map)"><code>CookieHandler.put(URI, Map)</code></a></li>
@@ -392,24 +392,24 @@ are added, and before the request is sent.</P></div>
 <section class="detail" id="put(java.net.URI,java.util.Map)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="URI.html" title="class in java.net">URI</a>&nbsp;uri,
- <a href="../util/Map.html" title="interface in java.util">Map</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>, <a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;&gt;&nbsp;responseHeaders)</span>
-         throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="URI.html" title="java.net 包中的类">URI</a>&nbsp;uri,
+ <a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>, <a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;&gt;&nbsp;responseHeaders)</span>
+         throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from class:&nbsp;<code><a href="CookieHandler.html#put(java.net.URI,java.util.Map)">CookieHandler</a></code></span></div>
 <div class="block">Sets all the applicable cookies, examples are response header
 fields that are named Set-Cookie2, present in the response
 headers into a cookie cache.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="CookieHandler.html#put(java.net.URI,java.util.Map)">put</a></code>&nbsp;in class&nbsp;<code><a href="CookieHandler.html" title="class in java.net">CookieHandler</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="CookieHandler.html#put(java.net.URI,java.util.Map)">put</a></code>&nbsp;in class&nbsp;<code><a href="CookieHandler.html" title="java.net 包中的类">CookieHandler</a></code></dd>
+<dt>参数:</dt>
 <dd><code>uri</code> - a <code>URI</code> where the cookies come from</dd>
 <dd><code>responseHeaders</code> - an immutable map from field names to
            lists of field values representing the response
            header fields returned</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="CookieHandler.html#get(java.net.URI,java.util.Map)"><code>CookieHandler.get(URI, Map)</code></a></li>

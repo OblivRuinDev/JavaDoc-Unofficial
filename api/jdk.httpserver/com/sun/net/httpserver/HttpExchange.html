@@ -66,7 +66,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.net.httpserver</a></li>
 <li><a href="HttpExchange.html" class="current-selection">HttpExchange</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -74,17 +74,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">HttpExchange()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getRequestHeaders()" tabindex="0">getRequestHeaders()</a></li>
 <li><a href="#getResponseHeaders()" tabindex="0">getResponseHeaders()</a></li>
@@ -110,25 +110,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class HttpExchange" class="title">Class HttpExchange</h1>
+<h1 title="类 HttpExchange" class="title">类 HttpExchange</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">com.sun.net.httpserver.HttpExchange</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Request.html" title="interface in com.sun.net.httpserver">Request</a>, <a href="../../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="Request.html" title="com.sun.net.httpserver 包中的接口">Request</a>, <a href="../../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="HttpsExchange.html" title="class in com.sun.net.httpserver">HttpsExchange</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="HttpsExchange.html" title="com.sun.net.httpserver 包中的类">HttpsExchange</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">HttpExchange</span>
-<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="Request.html" title="interface in com.sun.net.httpserver">Request</a></span></div>
+<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="Request.html" title="com.sun.net.httpserver 包中的接口">Request</a></span></div>
 <div class="block">This class encapsulates a HTTP request received and a
 response to be generated in one exchange. It provides methods
 for examining the request from the client, and for building and
@@ -140,14 +140,14 @@ below:
     <li><a href="#getRequestMethod()"><code>getRequestMethod()</code></a> to determine the command.
     <li><a href="#getRequestHeaders()"><code>getRequestHeaders()</code></a> to examine the request headers (if
     needed).
-    <li><a href="#getRequestBody()"><code>getRequestBody()</code></a> returns an <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a> for
+    <li><a href="#getRequestBody()"><code>getRequestBody()</code></a> returns an <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a> for
     reading the request body. After reading the request body, the stream
     should be closed.
     <li><a href="#getResponseHeaders()"><code>getResponseHeaders()</code></a> to set any response headers, except
     content-length.
     <li><a href="#sendResponseHeaders(int,long)"><code>sendResponseHeaders(int,long)</code></a> to send the response headers.
     Must be called before next step.
-    <li><a href="#getResponseBody()"><code>getResponseBody()</code></a> to get a <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a> to
+    <li><a href="#getResponseBody()"><code>getResponseBody()</code></a> to get a <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a> to
     send the response body. When the response body has been written, the
     stream must be closed to terminate the exchange.
 </ol>
@@ -163,7 +163,7 @@ an error but may make the underlying TCP connection unusable for following
 exchanges. The effect of failing to terminate an exchange is undefined, but
 will typically result in resources failing to be freed/reused.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -173,8 +173,8 @@ will typically result in resources failing to be freed/reused.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -190,77 +190,77 @@ will typically result in resources failing to be freed/reused.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Ends this exchange by doing the following in sequence:
 
-      close the request <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a>, if not already closed.</div>
+      close the request <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a>, if not already closed.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAttribute(java.lang.String)" class="member-name-link">getAttribute</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getAttribute(java.lang.String)" class="member-name-link">getAttribute</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block"><a href="Filter.html" title="class in com.sun.net.httpserver"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
+<div class="block"><a href="Filter.html" title="com.sun.net.httpserver 包中的类"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
 instances as an out-of-band communication mechanism.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="HttpContext.html" title="class in com.sun.net.httpserver">HttpContext</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="HttpContext.html" title="com.sun.net.httpserver 包中的类">HttpContext</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getHttpContext()" class="member-name-link">getHttpContext</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the <a href="HttpContext.html" title="class in com.sun.net.httpserver"><code>HttpContext</code></a> for this exchange.</div>
+<div class="block">Returns the <a href="HttpContext.html" title="com.sun.net.httpserver 包中的类"><code>HttpContext</code></a> for this exchange.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLocalAddress()" class="member-name-link">getLocalAddress</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the local address on which the request was received.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="HttpPrincipal.html" title="class in com.sun.net.httpserver">HttpPrincipal</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="HttpPrincipal.html" title="com.sun.net.httpserver 包中的类">HttpPrincipal</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPrincipal()" class="member-name-link">getPrincipal</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">If an authenticator is set on the <a href="HttpContext.html" title="class in com.sun.net.httpserver"><code>HttpContext</code></a> that owns this exchange,
-then this method will return the <a href="HttpPrincipal.html" title="class in com.sun.net.httpserver"><code>HttpPrincipal</code></a> that represents
+<div class="block">If an authenticator is set on the <a href="HttpContext.html" title="com.sun.net.httpserver 包中的类"><code>HttpContext</code></a> that owns this exchange,
+then this method will return the <a href="HttpPrincipal.html" title="com.sun.net.httpserver 包中的类"><code>HttpPrincipal</code></a> that represents
 the authenticated user for this <code>HttpExchange</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getProtocol()" class="member-name-link">getProtocol</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the protocol string from the request in the form
 <i>protocol/majorVersion.minorVersion</i>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRemoteAddress()" class="member-name-link">getRemoteAddress</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the address of the remote entity invoking this request.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRequestBody()" class="member-name-link">getRequestBody</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream from which the request body can be read.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Headers.html" title="class in com.sun.net.httpserver">Headers</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Headers.html" title="com.sun.net.httpserver 包中的类">Headers</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRequestHeaders()" class="member-name-link">getRequestHeaders</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns an immutable <a href="Headers.html" title="class in com.sun.net.httpserver"><code>Headers</code></a> containing the HTTP headers that
+<div class="block">Returns an immutable <a href="Headers.html" title="com.sun.net.httpserver 包中的类"><code>Headers</code></a> containing the HTTP headers that
 were included with this request.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRequestMethod()" class="member-name-link">getRequestMethod</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the request method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/URI.html" title="class in java.net">URI</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/net/URI.html" title="java.net 包中的类">URI</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRequestURI()" class="member-name-link">getRequestURI</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns the request <a href="../../../../../java.base/java/net/URI.html" title="class in java.net"><code>URI</code></a>.</div>
+<div class="block">Returns the request <a href="../../../../../java.base/java/net/URI.html" title="java.net 包中的类"><code>URI</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResponseBody()" class="member-name-link">getResponseBody</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a stream to which the response body must be
@@ -271,10 +271,10 @@ written.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the response code, if it has already been set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Headers.html" title="class in com.sun.net.httpserver">Headers</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Headers.html" title="com.sun.net.httpserver 包中的类">Headers</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getResponseHeaders()" class="member-name-link">getResponseHeaders</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Returns a mutable <a href="Headers.html" title="class in com.sun.net.httpserver"><code>Headers</code></a> into which the HTTP response headers
+<div class="block">Returns a mutable <a href="Headers.html" title="com.sun.net.httpserver 包中的类"><code>Headers</code></a> into which the HTTP response headers
 can be stored and which will be transmitted as part of this response.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
@@ -286,19 +286,19 @@ response headers and the numeric response code as specified in this
 method.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAttribute(java.lang.String,java.lang.Object)" class="member-name-link">setAttribute</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setAttribute(java.lang.String,java.lang.Object)" class="member-name-link">setAttribute</a><wbr>(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block"><a href="Filter.html" title="class in com.sun.net.httpserver"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
+<div class="block"><a href="Filter.html" title="com.sun.net.httpserver 包中的类"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
 instances as an out-of-band communication mechanism.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStreams(java.io.InputStream,java.io.OutputStream)" class="member-name-link">setStreams</a><wbr>(<a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;i,
- <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;o)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setStreams(java.io.InputStream,java.io.OutputStream)" class="member-name-link">setStreams</a><wbr>(<a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;i,
+ <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Used by <a href="Filter.html" title="class in com.sun.net.httpserver">Filters</a> to wrap either
-(or both) of this exchange's <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a> and
-<a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a>, with the given filtered streams so that
+<div class="block">Used by <a href="Filter.html" title="com.sun.net.httpserver 包中的类">Filters</a> to wrap either
+(or both) of this exchange's <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a> and
+<a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a>, with the given filtered streams so that
 subsequent calls to <a href="#getRequestBody()"><code>getRequestBody()</code></a> will return the given
 <code>InputStream</code>, and calls to <a href="#getResponseBody()"><code>getResponseBody()</code></a> will return
 the given <code>OutputStream</code>.</div>
@@ -307,10 +307,10 @@ the given <code>OutputStream</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.sun.net.httpserver.Request">Methods declared in interface&nbsp;<a href="Request.html#method-summary" title="interface in com.sun.net.httpserver">Request</a></h3>
+<h3 id="methods-inherited-from-class-com.sun.net.httpserver.Request">在接口 <a href="Request.html#method-summary" title="com.sun.net.httpserver 包中的接口">Request</a> 中声明的方法</h3>
 <code><a href="Request.html#with(java.lang.String,java.util.List)" title="with(String, List)">with</a></code></div>
 </section>
 </li>
@@ -321,7 +321,7 @@ the given <code>OutputStream</code>.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -338,27 +338,27 @@ the given <code>OutputStream</code>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getRequestHeaders()">
 <h3>getRequestHeaders</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Headers.html" title="class in com.sun.net.httpserver">Headers</a></span>&nbsp;<span class="element-name">getRequestHeaders</span>()</div>
-<div class="block">Returns an immutable <a href="Headers.html" title="class in com.sun.net.httpserver"><code>Headers</code></a> containing the HTTP headers that
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Headers.html" title="com.sun.net.httpserver 包中的类">Headers</a></span>&nbsp;<span class="element-name">getRequestHeaders</span>()</div>
+<div class="block">Returns an immutable <a href="Headers.html" title="com.sun.net.httpserver 包中的类"><code>Headers</code></a> containing the HTTP headers that
 were included with this request.
 
 <p> The keys in this <code>Headers</code> are the header names, while the
-values are a <a href="../../../../../java.base/java/util/List.html" title="interface in java.util"><code>List</code></a> of
-<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">Strings</a> containing each value that was
+values are a <a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口"><code>List</code></a> of
+<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">Strings</a> containing each value that was
 included in the request, in the order they were included. Header fields
 appearing multiple times are represented as multiple string values.
 
 <p> The keys in <code>Headers</code> are case-insensitive.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Request.html#getRequestHeaders()">getRequestHeaders</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="interface in com.sun.net.httpserver">Request</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Request.html#getRequestHeaders()">getRequestHeaders</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="com.sun.net.httpserver 包中的接口">Request</a></code></dd>
+<dt>返回:</dt>
 <dd>a read-only <code>Headers</code> which can be used to access request
         headers.</dd>
 </dl>
@@ -369,18 +369,18 @@ appearing multiple times are represented as multiple string values.
 <section class="detail" id="getResponseHeaders()">
 <h3>getResponseHeaders</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Headers.html" title="class in com.sun.net.httpserver">Headers</a></span>&nbsp;<span class="element-name">getResponseHeaders</span>()</div>
-<div class="block">Returns a mutable <a href="Headers.html" title="class in com.sun.net.httpserver"><code>Headers</code></a> into which the HTTP response headers
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Headers.html" title="com.sun.net.httpserver 包中的类">Headers</a></span>&nbsp;<span class="element-name">getResponseHeaders</span>()</div>
+<div class="block">Returns a mutable <a href="Headers.html" title="com.sun.net.httpserver 包中的类"><code>Headers</code></a> into which the HTTP response headers
 can be stored and which will be transmitted as part of this response.
 
 <p> The keys in the <code>Headers</code> are the header names, while the
-values must be a <a href="../../../../../java.base/java/util/List.html" title="interface in java.util"><code>List</code></a> of <a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">Strings</a>
+values must be a <a href="../../../../../java.base/java/util/List.html" title="java.util 包中的接口"><code>List</code></a> of <a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">Strings</a>
 containing each value that should be included multiple times (in the
 order that they should be included).
 
 <p> The keys in <code>Headers</code> are case-insensitive.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a writable <code>Headers</code> which can be used to set response
         headers.</dd>
 </dl>
@@ -391,12 +391,12 @@ order that they should be included).
 <section class="detail" id="getRequestURI()">
 <h3>getRequestURI</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/URI.html" title="class in java.net">URI</a></span>&nbsp;<span class="element-name">getRequestURI</span>()</div>
-<div class="block">Returns the request <a href="../../../../../java.base/java/net/URI.html" title="class in java.net"><code>URI</code></a>.</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/URI.html" title="java.net 包中的类">URI</a></span>&nbsp;<span class="element-name">getRequestURI</span>()</div>
+<div class="block">Returns the request <a href="../../../../../java.base/java/net/URI.html" title="java.net 包中的类"><code>URI</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Request.html#getRequestURI()">getRequestURI</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="interface in com.sun.net.httpserver">Request</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Request.html#getRequestURI()">getRequestURI</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="com.sun.net.httpserver 包中的接口">Request</a></code></dd>
+<dt>返回:</dt>
 <dd>the request <code>URI</code></dd>
 </dl>
 </div>
@@ -406,12 +406,12 @@ order that they should be included).
 <section class="detail" id="getRequestMethod()">
 <h3>getRequestMethod</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getRequestMethod</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getRequestMethod</span>()</div>
 <div class="block">Returns the request method.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Request.html#getRequestMethod()">getRequestMethod</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="interface in com.sun.net.httpserver">Request</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Request.html#getRequestMethod()">getRequestMethod</a></code>&nbsp;in interface&nbsp;<code><a href="Request.html" title="com.sun.net.httpserver 包中的接口">Request</a></code></dd>
+<dt>返回:</dt>
 <dd>the request method string</dd>
 </dl>
 </div>
@@ -421,10 +421,10 @@ order that they should be included).
 <section class="detail" id="getHttpContext()">
 <h3>getHttpContext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="HttpContext.html" title="class in com.sun.net.httpserver">HttpContext</a></span>&nbsp;<span class="element-name">getHttpContext</span>()</div>
-<div class="block">Returns the <a href="HttpContext.html" title="class in com.sun.net.httpserver"><code>HttpContext</code></a> for this exchange.</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="HttpContext.html" title="com.sun.net.httpserver 包中的类">HttpContext</a></span>&nbsp;<span class="element-name">getHttpContext</span>()</div>
+<div class="block">Returns the <a href="HttpContext.html" title="com.sun.net.httpserver 包中的类"><code>HttpContext</code></a> for this exchange.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>HttpContext</code></dd>
 </dl>
 </div>
@@ -437,12 +437,12 @@ order that they should be included).
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()</div>
 <div class="block">Ends this exchange by doing the following in sequence:
 <ol>
-     <li> close the request <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a>, if not already closed.
-     <li> close the response <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a>, if not already closed.
+     <li> close the request <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a>, if not already closed.
+     <li> close the response <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a>, if not already closed.
 </ol></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 </div>
 </section>
@@ -451,7 +451,7 @@ order that they should be included).
 <section class="detail" id="getRequestBody()">
 <h3>getRequestBody</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a></span>&nbsp;<span class="element-name">getRequestBody</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a></span>&nbsp;<span class="element-name">getRequestBody</span>()</div>
 <div class="block">Returns a stream from which the request body can be read.
 Multiple calls to this method will return the same stream.
 It is recommended that applications should consume (read) all of the data
@@ -460,7 +460,7 @@ has been read, then the <a href="../../../../../java.base/java/io/InputStream.ht
 and discard remaining data (up to an implementation specific number of
 bytes).</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the stream from which the request body can be read</dd>
 </dl>
 </div>
@@ -470,26 +470,26 @@ bytes).</div>
 <section class="detail" id="getResponseBody()">
 <h3>getResponseBody</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a></span>&nbsp;<span class="element-name">getResponseBody</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a></span>&nbsp;<span class="element-name">getResponseBody</span>()</div>
 <div class="block">Returns a stream to which the response body must be
 written. <a href="#sendResponseHeaders(int,long)"><code>sendResponseHeaders(int,long)</code></a>) must be called prior to
 calling this method. Multiple calls to this method (for the same exchange)
 will return the same stream. In order to correctly terminate each exchange,
 the output stream must be closed, even if no response body is being sent.
 
-<p> Closing this stream implicitly closes the <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a>
+<p> Closing this stream implicitly closes the <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a>
 returned from <a href="#getRequestBody()"><code>getRequestBody()</code></a> (if it is not already closed).
 
 <p> If the call to <a href="#sendResponseHeaders(int,long)"><code>sendResponseHeaders(int, long)</code></a> specified a
 fixed response body length, then the exact number of bytes specified in
 that call must be written to this stream. If too many bytes are written,
-then the write method of <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a> will throw an <code>IOException</code>.
+then the write method of <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a> will throw an <code>IOException</code>.
 If too few bytes are written then the stream
 <a href="../../../../../java.base/java/io/OutputStream.html#close()"><code>OutputStream.close()</code></a> will throw an <code>IOException</code>.
 In both cases, the exchange is aborted and the underlying TCP connection
 closed.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the stream to which the response body is written</dd>
 </dl>
 </div>
@@ -501,7 +501,7 @@ closed.</div>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendResponseHeaders</span><wbr><span class="parameters">(int&nbsp;rCode,
  long&nbsp;responseLength)</span>
-                                  throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+                                  throws <span class="exceptions"><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Starts sending the response back to the client using the current set of
 response headers and the numeric response code as specified in this
 method. The response body length is also specified as follows. If the
@@ -510,7 +510,7 @@ exact number of bytes to send and the application must send that exact
 amount of data. If the response length parameter is <code>zero</code>, then
 chunked transfer encoding is used and an arbitrary amount of data may be
 sent. The application terminates the response body by closing the
-<a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a>.
+<a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a>.
 If response length has the value <code>-1</code> then no response body is
 being sent.
 
@@ -520,12 +520,12 @@ parameter.
 
 <p> This method must be called prior to calling <a href="#getResponseBody()"><code>getResponseBody()</code></a>.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>This implementation allows the caller to instruct the
 server to force a connection close after the exchange terminates, by
 supplying a <code>Connection: close</code> header to the <a href="#getResponseHeaders()">response headers</a> before <code>sendResponseHeaders</code>
 is called.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rCode</code> - the response code to send</dd>
 <dd><code>responseLength</code> - if &gt; 0, specifies a fixed response body
                       length and that exact number of bytes must be written
@@ -534,9 +534,9 @@ is called.</dd>
                       and an arbitrary number of bytes may be written.
                       If &lt;= -1, then no response body length is
                       specified and no response body may be written.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if the response headers have already been sent or an I/O error occurs</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if the response headers have already been sent or an I/O error occurs</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getResponseBody()"><code>getResponseBody()</code></a></li>
@@ -550,11 +550,11 @@ is called.</dd>
 <section class="detail" id="getRemoteAddress()">
 <h3>getRemoteAddress</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a></span>&nbsp;<span class="element-name">getRemoteAddress</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a></span>&nbsp;<span class="element-name">getRemoteAddress</span>()</div>
 <div class="block">Returns the address of the remote entity invoking this request.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net"><code>InetSocketAddress</code></a> of the caller</dd>
+<dt>返回:</dt>
+<dd>the <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类"><code>InetSocketAddress</code></a> of the caller</dd>
 </dl>
 </div>
 </section>
@@ -566,7 +566,7 @@ is called.</dd>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getResponseCode</span>()</div>
 <div class="block">Returns the response code, if it has already been set.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the response code, if available. <code>-1</code> if not available yet.</dd>
 </dl>
 </div>
@@ -576,11 +576,11 @@ is called.</dd>
 <section class="detail" id="getLocalAddress()">
 <h3>getLocalAddress</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a></span>&nbsp;<span class="element-name">getLocalAddress</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a></span>&nbsp;<span class="element-name">getLocalAddress</span>()</div>
 <div class="block">Returns the local address on which the request was received.</div>
 <dl class="notes">
-<dt>Returns:</dt>
-<dd>the <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net"><code>InetSocketAddress</code></a> of the local interface</dd>
+<dt>返回:</dt>
+<dd>the <a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类"><code>InetSocketAddress</code></a> of the local interface</dd>
 </dl>
 </div>
 </section>
@@ -589,12 +589,12 @@ is called.</dd>
 <section class="detail" id="getProtocol()">
 <h3>getProtocol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getProtocol</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getProtocol</span>()</div>
 <div class="block">Returns the protocol string from the request in the form
 <i>protocol/majorVersion.minorVersion</i>. For example,
 "<code>HTTP/1.1</code>".</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the protocol string from the request</dd>
 </dl>
 </div>
@@ -604,20 +604,20 @@ is called.</dd>
 <section class="detail" id="getAttribute(java.lang.String)">
 <h3>getAttribute</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getAttribute</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
-<div class="block"><a href="Filter.html" title="class in com.sun.net.httpserver"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getAttribute</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
+<div class="block"><a href="Filter.html" title="com.sun.net.httpserver 包中的类"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
 instances as an out-of-band communication mechanism. Other filters
 or the exchange handler may then access these objects.
 
 <p> Each <code>Filter</code> class will document the attributes which they make
 available.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the attribute to retrieve</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the attribute object, or <code>null</code> if it does not exist</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if name is <code>null</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if name is <code>null</code></dd>
 </dl>
 </div>
 </section>
@@ -626,21 +626,21 @@ available.</div>
 <section class="detail" id="setAttribute(java.lang.String,java.lang.Object)">
 <h3>setAttribute</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAttribute</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;value)</span></div>
-<div class="block"><a href="Filter.html" title="class in com.sun.net.httpserver"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAttribute</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value)</span></div>
+<div class="block"><a href="Filter.html" title="com.sun.net.httpserver 包中的类"><code>Filter</code></a> modules may store arbitrary objects with <code>HttpExchange</code>
 instances as an out-of-band communication mechanism. Other filters
 or the exchange handler may then access these objects.
 
 <p> Each <code>Filter</code> class will document the attributes which they make
 available.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name to associate with the attribute value</dd>
 <dd><code>value</code> - the object to store as the attribute value. <code>null</code>
              value is permitted.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if name is <code>null</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if name is <code>null</code></dd>
 </dl>
 </div>
 </section>
@@ -649,18 +649,18 @@ available.</div>
 <section class="detail" id="setStreams(java.io.InputStream,java.io.OutputStream)">
 <h3>setStreams</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStreams</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;i,
- <a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;o)</span></div>
-<div class="block">Used by <a href="Filter.html" title="class in com.sun.net.httpserver">Filters</a> to wrap either
-(or both) of this exchange's <a href="../../../../../java.base/java/io/InputStream.html" title="class in java.io"><code>InputStream</code></a> and
-<a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io"><code>OutputStream</code></a>, with the given filtered streams so that
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setStreams</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;i,
+ <a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;o)</span></div>
+<div class="block">Used by <a href="Filter.html" title="com.sun.net.httpserver 包中的类">Filters</a> to wrap either
+(or both) of this exchange's <a href="../../../../../java.base/java/io/InputStream.html" title="java.io 包中的类"><code>InputStream</code></a> and
+<a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类"><code>OutputStream</code></a>, with the given filtered streams so that
 subsequent calls to <a href="#getRequestBody()"><code>getRequestBody()</code></a> will return the given
 <code>InputStream</code>, and calls to <a href="#getResponseBody()"><code>getResponseBody()</code></a> will return
 the given <code>OutputStream</code>. The streams provided to this call must wrap
 the original streams, and may be (but are not required to be) sub-classes
-of <a href="../../../../../java.base/java/io/FilterInputStream.html" title="class in java.io"><code>FilterInputStream</code></a> and <a href="../../../../../java.base/java/io/FilterOutputStream.html" title="class in java.io"><code>FilterOutputStream</code></a>.</div>
+of <a href="../../../../../java.base/java/io/FilterInputStream.html" title="java.io 包中的类"><code>FilterInputStream</code></a> and <a href="../../../../../java.base/java/io/FilterOutputStream.html" title="java.io 包中的类"><code>FilterOutputStream</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>i</code> - the filtered input stream to set as this object's
          <code>Inputstream</code>, or <code>null</code> if no change</dd>
 <dd><code>o</code> - the filtered output stream to set as this object's
@@ -673,12 +673,12 @@ of <a href="../../../../../java.base/java/io/FilterInputStream.html" title="clas
 <section class="detail" id="getPrincipal()">
 <h3>getPrincipal</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="HttpPrincipal.html" title="class in com.sun.net.httpserver">HttpPrincipal</a></span>&nbsp;<span class="element-name">getPrincipal</span>()</div>
-<div class="block">If an authenticator is set on the <a href="HttpContext.html" title="class in com.sun.net.httpserver"><code>HttpContext</code></a> that owns this exchange,
-then this method will return the <a href="HttpPrincipal.html" title="class in com.sun.net.httpserver"><code>HttpPrincipal</code></a> that represents
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="HttpPrincipal.html" title="com.sun.net.httpserver 包中的类">HttpPrincipal</a></span>&nbsp;<span class="element-name">getPrincipal</span>()</div>
+<div class="block">If an authenticator is set on the <a href="HttpContext.html" title="com.sun.net.httpserver 包中的类"><code>HttpContext</code></a> that owns this exchange,
+then this method will return the <a href="HttpPrincipal.html" title="com.sun.net.httpserver 包中的类"><code>HttpPrincipal</code></a> that represents
 the authenticated user for this <code>HttpExchange</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>HttpPrincipal</code>, or <code>null</code> if no authenticator is set</dd>
 </dl>
 </div>

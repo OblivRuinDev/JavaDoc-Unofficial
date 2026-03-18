@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.tools</a></li>
 <li><a href="JavaCompiler.html" class="current-selection">JavaCompiler</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,12 +59,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getTask(java.io.Writer,javax.tools.JavaFileManager,javax.tools.DiagnosticListener,java.lang.Iterable,java.lang.Iterable,java.lang.Iterable)" tabindex="0">getTask(Writer, JavaFileManager, DiagnosticListener, Iterable, Iterable, Iterable)</a></li>
 <li><a href="#getStandardFileManager(javax.tools.DiagnosticListener,java.util.Locale,java.nio.charset.Charset)" tabindex="0">getStandardFileManager(DiagnosticListener, Locale, Charset)</a></li>
@@ -75,17 +75,17 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface JavaCompiler" class="title">Interface JavaCompiler</h1>
+<h1 title="接口 JavaCompiler" class="title">接口 JavaCompiler</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="OptionChecker.html" title="interface in javax.tools">OptionChecker</a>, <a href="Tool.html" title="interface in javax.tools">Tool</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="OptionChecker.html" title="javax.tools 包中的接口">OptionChecker</a>, <a href="Tool.html" title="javax.tools 包中的接口">Tool</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">JavaCompiler</span><span class="extends-implements">
-extends <a href="Tool.html" title="interface in javax.tools">Tool</a>, <a href="OptionChecker.html" title="interface in javax.tools">OptionChecker</a></span></div>
+extends <a href="Tool.html" title="javax.tools 包中的接口">Tool</a>, <a href="OptionChecker.html" title="javax.tools 包中的接口">OptionChecker</a></span></div>
 <div class="block">Interface to invoke Java programming language compilers from
 programs.
 
@@ -112,16 +112,16 @@ standard file manager such as the one returned by <a href="#getStandardFileManag
 and generate class files conforming to
 <cite>The Java Virtual Machine Specification</cite>.
 The versions of these
-specifications are defined in the <a href="Tool.html" title="interface in javax.tools">Tool</a> interface.
+specifications are defined in the <a href="Tool.html" title="javax.tools 包中的接口">Tool</a> interface.
 
 Additionally, an instance of this interface supporting <a href="../lang/model/SourceVersion.html#RELEASE_6"><code>SourceVersion.RELEASE_6</code></a>
 or higher must also support <a href="../annotation/processing/package-summary.html">annotation processing</a>.
 
-<p>The compiler relies on two services: <a href="DiagnosticListener.html" title="interface in javax.tools">diagnostic listener</a> and <a href="JavaFileManager.html" title="interface in javax.tools">file manager</a>.  Although most classes and
+<p>The compiler relies on two services: <a href="DiagnosticListener.html" title="javax.tools 包中的接口">diagnostic listener</a> and <a href="JavaFileManager.html" title="javax.tools 包中的接口">file manager</a>.  Although most classes and
 interfaces in this package defines an API for compilers (and
-tools in general) the interfaces <a href="DiagnosticListener.html" title="interface in javax.tools">DiagnosticListener</a>,
-<a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a>, <a href="FileObject.html" title="interface in javax.tools">FileObject</a>, and
-<a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a> are not intended to be used in
+tools in general) the interfaces <a href="DiagnosticListener.html" title="javax.tools 包中的接口">DiagnosticListener</a>,
+<a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a>, <a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>, and
+<a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a> are not intended to be used in
 applications.  Instead these interfaces are intended to be
 implemented and used to provide customized services for a
 compiler and thus defines an SPI for compilers.
@@ -131,11 +131,11 @@ which are designed to ease the implementation of the SPI to
 customize the behavior of a compiler:
 
 <dl>
-  <dt><a href="StandardJavaFileManager.html" title="interface in javax.tools"><code>StandardJavaFileManager</code></a></dt>
+  <dt><a href="StandardJavaFileManager.html" title="javax.tools 包中的接口"><code>StandardJavaFileManager</code></a></dt>
   <dd>
 
     Every compiler which implements this interface provides a
-    standard file manager for operating on regular <a href="../../../java.base/java/io/File.html" title="class in java.io">files</a>.  The StandardJavaFileManager interface
+    standard file manager for operating on regular <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">files</a>.  The StandardJavaFileManager interface
     defines additional methods for creating file objects from
     regular files.
 
@@ -177,7 +177,7 @@ fileManager.close();
 
   </dd>
 
-  <dt><a href="DiagnosticCollector.html" title="class in javax.tools"><code>DiagnosticCollector</code></a></dt>
+  <dt><a href="DiagnosticCollector.html" title="javax.tools 包中的类"><code>DiagnosticCollector</code></a></dt>
   <dd>
     Used to collect diagnostics in a list, for example:
     
@@ -201,8 +201,8 @@ fileManager.close();
   </dd>
 
   <dt>
-    <a href="ForwardingJavaFileManager.html" title="class in javax.tools"><code>ForwardingJavaFileManager</code></a>, <a href="ForwardingFileObject.html" title="class in javax.tools"><code>ForwardingFileObject</code></a>, and
-    <a href="ForwardingJavaFileObject.html" title="class in javax.tools"><code>ForwardingJavaFileObject</code></a>
+    <a href="ForwardingJavaFileManager.html" title="javax.tools 包中的类"><code>ForwardingJavaFileManager</code></a>, <a href="ForwardingFileObject.html" title="javax.tools 包中的类"><code>ForwardingFileObject</code></a>, and
+    <a href="ForwardingJavaFileObject.html" title="javax.tools 包中的类"><code>ForwardingJavaFileObject</code></a>
   </dt>
   <dd>
 
@@ -234,7 +234,7 @@ compiler.getTask(null, fileManager, null, null, null, compilationUnits).call();
 
   </dd>
 
-  <dt><a href="SimpleJavaFileObject.html" title="class in javax.tools"><code>SimpleJavaFileObject</code></a></dt>
+  <dt><a href="SimpleJavaFileObject.html" title="javax.tools 包中的类"><code>SimpleJavaFileObject</code></a></dt>
   <dd>
 
     This class provides a basic file object implementation which
@@ -275,14 +275,14 @@ public class JavaSourceFromString extends SimpleJavaFileObject {
   </dd>
 </dl></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="DiagnosticListener.html" title="interface in javax.tools"><code>DiagnosticListener</code></a></li>
-<li><a href="Diagnostic.html" title="interface in javax.tools"><code>Diagnostic</code></a></li>
-<li><a href="JavaFileManager.html" title="interface in javax.tools"><code>JavaFileManager</code></a></li>
+<li><a href="DiagnosticListener.html" title="javax.tools 包中的接口"><code>DiagnosticListener</code></a></li>
+<li><a href="Diagnostic.html" title="javax.tools 包中的接口"><code>Diagnostic</code></a></li>
+<li><a href="JavaFileManager.html" title="javax.tools 包中的接口"><code>JavaFileManager</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -293,14 +293,14 @@ public class JavaSourceFromString extends SimpleJavaFileObject {
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="JavaCompiler.CompilationTask.html" class="type-name-link" title="interface in javax.tools">JavaCompiler.CompilationTask</a></code></div>
+<div class="col-second even-row-color"><code><a href="JavaCompiler.CompilationTask.html" title="javax.tools 包中的接口">JavaCompiler.CompilationTask</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Interface representing a future for a compilation task.</div>
 </div>
@@ -310,29 +310,29 @@ public class JavaSourceFromString extends SimpleJavaFileObject {
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="StandardJavaFileManager.html" title="interface in javax.tools">StandardJavaFileManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStandardFileManager(javax.tools.DiagnosticListener,java.util.Locale,java.nio.charset.Charset)" class="member-name-link">getStandardFileManager</a><wbr>(<a href="DiagnosticListener.html" title="interface in javax.tools">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
- <a href="../../../java.base/java/util/Locale.html" title="class in java.util">Locale</a>&nbsp;locale,
- <a href="../../../java.base/java/nio/charset/Charset.html" title="class in java.nio.charset">Charset</a>&nbsp;charset)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="StandardJavaFileManager.html" title="javax.tools 包中的接口">StandardJavaFileManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getStandardFileManager(javax.tools.DiagnosticListener,java.util.Locale,java.nio.charset.Charset)" class="member-name-link">getStandardFileManager</a><wbr>(<a href="DiagnosticListener.html" title="javax.tools 包中的接口">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
+ <a href="../../../java.base/java/util/Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale,
+ <a href="../../../java.base/java/nio/charset/Charset.html" title="java.nio.charset 包中的类">Charset</a>&nbsp;charset)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a new instance of the standard file manager implementation
 for this tool.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="JavaCompiler.CompilationTask.html" title="interface in javax.tools">JavaCompiler.CompilationTask</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTask(java.io.Writer,javax.tools.JavaFileManager,javax.tools.DiagnosticListener,java.lang.Iterable,java.lang.Iterable,java.lang.Iterable)" class="member-name-link">getTask</a><wbr>(<a href="../../../java.base/java/io/Writer.html" title="class in java.io">Writer</a>&nbsp;out,
- <a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a>&nbsp;fileManager,
- <a href="DiagnosticListener.html" title="interface in javax.tools">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;options,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;classes,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;compilationUnits)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="JavaCompiler.CompilationTask.html" title="javax.tools 包中的接口">JavaCompiler.CompilationTask</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getTask(java.io.Writer,javax.tools.JavaFileManager,javax.tools.DiagnosticListener,java.lang.Iterable,java.lang.Iterable,java.lang.Iterable)" class="member-name-link">getTask</a><wbr>(<a href="../../../java.base/java/io/Writer.html" title="java.io 包中的类">Writer</a>&nbsp;out,
+ <a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a>&nbsp;fileManager,
+ <a href="DiagnosticListener.html" title="javax.tools 包中的接口">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;options,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;classes,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;compilationUnits)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a future for a compilation task with the given
 components and arguments.</div>
@@ -341,10 +341,10 @@ components and arguments.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.tools.OptionChecker">Methods declared in interface&nbsp;<a href="OptionChecker.html#method-summary" title="interface in javax.tools">OptionChecker</a></h3>
+<h3 id="methods-inherited-from-class-javax.tools.OptionChecker">在接口 <a href="OptionChecker.html#method-summary" title="javax.tools 包中的接口">OptionChecker</a> 中声明的方法</h3>
 <code><a href="OptionChecker.html#isSupportedOption(java.lang.String)" title="isSupportedOption(String)">isSupportedOption</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.tools.Tool">Methods declared in interface&nbsp;<a href="Tool.html#method-summary" title="interface in javax.tools">Tool</a></h3>
+<h3 id="methods-inherited-from-class-javax.tools.Tool">在接口 <a href="Tool.html#method-summary" title="javax.tools 包中的接口">Tool</a> 中声明的方法</h3>
 <code><a href="Tool.html#getSourceVersions()" title="getSourceVersions()">getSourceVersions</a>, <a href="Tool.html#name()" title="name()">name</a>, <a href="Tool.html#run(java.io.InputStream,java.io.OutputStream,java.io.OutputStream,java.lang.String...)" title="run(InputStream, OutputStream, OutputStream, String...)">run</a></code></div>
 </section>
 </li>
@@ -355,24 +355,24 @@ components and arguments.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getTask(java.io.Writer,javax.tools.JavaFileManager,javax.tools.DiagnosticListener,java.lang.Iterable,java.lang.Iterable,java.lang.Iterable)">
 <h3>getTask</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="JavaCompiler.CompilationTask.html" title="interface in javax.tools">JavaCompiler.CompilationTask</a></span>&nbsp;<span class="element-name">getTask</span><wbr><span class="parameters">(<a href="../../../java.base/java/io/Writer.html" title="class in java.io">Writer</a>&nbsp;out,
- <a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a>&nbsp;fileManager,
- <a href="DiagnosticListener.html" title="interface in javax.tools">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;options,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;classes,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;compilationUnits)</span></div>
+<div class="member-signature"><span class="return-type"><a href="JavaCompiler.CompilationTask.html" title="javax.tools 包中的接口">JavaCompiler.CompilationTask</a></span>&nbsp;<span class="element-name">getTask</span><wbr><span class="parameters">(<a href="../../../java.base/java/io/Writer.html" title="java.io 包中的类">Writer</a>&nbsp;out,
+ <a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a>&nbsp;fileManager,
+ <a href="DiagnosticListener.html" title="javax.tools 包中的接口">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;options,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;classes,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;compilationUnits)</span></div>
 <div class="block">Creates a future for a compilation task with the given
 components and arguments.  The compilation might not have
 completed as described in the CompilationTask interface.
 
 <p>If a file manager is provided, it must be able to handle all
-locations defined in <a href="StandardLocation.html" title="enum class in javax.tools"><code>StandardLocation</code></a>.
+locations defined in <a href="StandardLocation.html" title="javax.tools 包中的枚举类"><code>StandardLocation</code></a>.
 
 <p>Note that annotation processing can process both the
 compilation units of source code to be compiled, passed with
@@ -380,7 +380,7 @@ the <code>compilationUnits</code> parameter, as well as class
 files, whose names are passed with the <code>classes</code>
 parameter.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>out</code> - a Writer for additional output from the compiler;
 use <code>System.err</code> if <code>null</code></dd>
 <dd><code>fileManager</code> - a file manager; if <code>null</code> use the
@@ -393,14 +393,14 @@ diagnostics</dd>
 processing, <code>null</code> means no class names</dd>
 <dd><code>compilationUnits</code> - the compilation units to compile, <code>
 null</code> means no compilation units</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an object representing the compilation</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/RuntimeException.html" title="class in java.lang">RuntimeException</a></code> - if an unrecoverable error
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/RuntimeException.html" title="java.lang 包中的类">RuntimeException</a></code> - if an unrecoverable error
 occurred in a user supplied component.  The
 <a href="../../../java.base/java/lang/Throwable.html#getCause()">cause</a> will be the error in
 user code.</dd>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if any of the options are invalid,
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if any of the options are invalid,
 or if any of the given compilation units are of other kind than
 <a href="JavaFileObject.Kind.html#SOURCE">source</a></dd>
 </dl>
@@ -411,9 +411,9 @@ or if any of the given compilation units are of other kind than
 <section class="detail" id="getStandardFileManager(javax.tools.DiagnosticListener,java.util.Locale,java.nio.charset.Charset)">
 <h3>getStandardFileManager</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="StandardJavaFileManager.html" title="interface in javax.tools">StandardJavaFileManager</a></span>&nbsp;<span class="element-name">getStandardFileManager</span><wbr><span class="parameters">(<a href="DiagnosticListener.html" title="interface in javax.tools">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
- <a href="../../../java.base/java/util/Locale.html" title="class in java.util">Locale</a>&nbsp;locale,
- <a href="../../../java.base/java/nio/charset/Charset.html" title="class in java.nio.charset">Charset</a>&nbsp;charset)</span></div>
+<div class="member-signature"><span class="return-type"><a href="StandardJavaFileManager.html" title="javax.tools 包中的接口">StandardJavaFileManager</a></span>&nbsp;<span class="element-name">getStandardFileManager</span><wbr><span class="parameters">(<a href="DiagnosticListener.html" title="javax.tools 包中的接口">DiagnosticListener</a>&lt;? super <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;&nbsp;diagnosticListener,
+ <a href="../../../java.base/java/util/Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale,
+ <a href="../../../java.base/java/nio/charset/Charset.html" title="java.nio.charset 包中的类">Charset</a>&nbsp;charset)</span></div>
 <div class="block">Returns a new instance of the standard file manager implementation
 for this tool.  The file manager will use the given diagnostic
 listener for producing any non-fatal diagnostics.  Fatal errors
@@ -423,7 +423,7 @@ will be signaled with the appropriate exceptions.
 it is accessed after calls to <code>flush</code> or <code>close</code>.
 The standard file manager must be usable with other tools.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>diagnosticListener</code> - a diagnostic listener for non-fatal
 diagnostics; if <code>null</code> use the compiler's default method
 for reporting diagnostics</dd>
@@ -431,7 +431,7 @@ for reporting diagnostics</dd>
 <code>null</code> means the <a href="../../../java.base/java/util/Locale.html#getDefault()">default locale</a>.</dd>
 <dd><code>charset</code> - the character set used for decoding bytes; if
 <code>null</code> use the platform default</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the standard file manager</dd>
 </dl>
 </div>

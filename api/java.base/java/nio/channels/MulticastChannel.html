@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="MulticastChannel.html" class="current-selection">MulticastChannel</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,15 +59,15 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#platform-dependencies-heading" tabindex="0">Platform dependencies</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#close()" tabindex="0">close()</a></li>
 <li><a href="#join(java.net.InetAddress,java.net.NetworkInterface)" tabindex="0">join(InetAddress, NetworkInterface)</a></li>
@@ -79,21 +79,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface MulticastChannel" class="title">Interface MulticastChannel</h1>
+<h1 title="接口 MulticastChannel" class="title">接口 MulticastChannel</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="Channel.html" title="interface in java.nio.channels">Channel</a>, <a href="../../io/Closeable.html" title="interface in java.io">Closeable</a>, <a href="NetworkChannel.html" title="interface in java.nio.channels">NetworkChannel</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a>, <a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="NetworkChannel.html" title="java.nio.channels 包中的接口">NetworkChannel</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="DatagramChannel.html" title="class in java.nio.channels">DatagramChannel</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="DatagramChannel.html" title="java.nio.channels 包中的类">DatagramChannel</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">MulticastChannel</span><span class="extends-implements">
-extends <a href="NetworkChannel.html" title="interface in java.nio.channels">NetworkChannel</a></span></div>
+extends <a href="NetworkChannel.html" title="java.nio.channels 包中的接口">NetworkChannel</a></span></div>
 <div class="block">A network channel that supports Internet Protocol (IP) multicasting.
 
 <p> IP multicasting is the transmission of IP datagrams to members of
@@ -115,17 +115,17 @@ Discovery Version 2 (MLDv2) for IPv6</i></a>.
 <p> The <a href="#join(java.net.InetAddress,java.net.NetworkInterface)"><code>join(InetAddress,NetworkInterface)</code></a> method is used to
 join a group and receive all multicast datagrams sent to the group. A channel
 may join several multicast groups and may join the same group on several
-<a href="../../net/NetworkInterface.html" title="class in java.net"><code>interfaces</code></a>. Membership is dropped by invoking the <a href="MembershipKey.html#drop()"><code>drop</code></a> method on the returned <a href="MembershipKey.html" title="class in java.nio.channels"><code>MembershipKey</code></a>. If the
+<a href="../../net/NetworkInterface.html" title="java.net 包中的类"><code>interfaces</code></a>. Membership is dropped by invoking the <a href="MembershipKey.html#drop()"><code>drop</code></a> method on the returned <a href="MembershipKey.html" title="java.nio.channels 包中的类"><code>MembershipKey</code></a>. If the
 underlying platform supports source filtering then the <a href="MembershipKey.html#block(java.net.InetAddress)"><code>block</code></a> and <a href="MembershipKey.html#unblock(java.net.InetAddress)"><code>unblock</code></a> methods can be used to block or
 unblock multicast datagrams from particular source addresses.
 
 <p> The <a href="#join(java.net.InetAddress,java.net.NetworkInterface,java.net.InetAddress)"><code>join(InetAddress,NetworkInterface,InetAddress)</code></a> method
 is used to begin receiving datagrams sent to a group whose source address matches
-a given source address. This method throws <a href="../../lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>
+a given source address. This method throws <a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>
 if the underlying platform does not support source filtering.  Membership is
 <em>cumulative</em> and this method may be invoked again with the same group
 and interface to allow receiving datagrams from other source addresses. The
-method returns a <a href="MembershipKey.html" title="class in java.nio.channels"><code>MembershipKey</code></a> that represents membership to receive
+method returns a <a href="MembershipKey.html" title="java.nio.channels 包中的类"><code>MembershipKey</code></a> that represents membership to receive
 datagrams from the given source address. Invoking the key's <a href="MembershipKey.html#drop()"><code>drop</code></a> method drops membership so that datagrams from the
 source address can no longer be received.
 
@@ -137,7 +137,7 @@ when developing an application that receives IP multicast datagrams:
 
 <ol>
 
-<li><p> The creation of the channel should specify the <a href="../../net/ProtocolFamily.html" title="interface in java.net"><code>ProtocolFamily</code></a>
+<li><p> The creation of the channel should specify the <a href="../../net/ProtocolFamily.html" title="java.net 包中的接口"><code>ProtocolFamily</code></a>
 that corresponds to the address type of the multicast groups that the channel
 will join. There is no guarantee that a channel to a socket in one protocol
 family can join and receive multicast datagrams when the address of the
@@ -175,9 +175,9 @@ address. </p></li>
 </div>
 </div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc2236"><span id="RFC2236:InternetGroupManagementProtocol,Version2" class="search-tag-result">RFC 2236: Internet Group Management Protocol, Version 2</span></a></li>
@@ -194,30 +194,30 @@ address. </p></li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes this channel.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MembershipKey.html" title="class in java.nio.channels">MembershipKey</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#join(java.net.InetAddress,java.net.NetworkInterface)" class="member-name-link">join</a><wbr>(<a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;group,
- <a href="../../net/NetworkInterface.html" title="class in java.net">NetworkInterface</a>&nbsp;interf)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MembershipKey.html" title="java.nio.channels 包中的类">MembershipKey</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#join(java.net.InetAddress,java.net.NetworkInterface)" class="member-name-link">join</a><wbr>(<a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;group,
+ <a href="../../net/NetworkInterface.html" title="java.net 包中的类">NetworkInterface</a>&nbsp;interf)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Joins a multicast group to begin receiving all datagrams sent to the group,
 returning a membership key.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MembershipKey.html" title="class in java.nio.channels">MembershipKey</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#join(java.net.InetAddress,java.net.NetworkInterface,java.net.InetAddress)" class="member-name-link">join</a><wbr>(<a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;group,
- <a href="../../net/NetworkInterface.html" title="class in java.net">NetworkInterface</a>&nbsp;interf,
- <a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;source)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MembershipKey.html" title="java.nio.channels 包中的类">MembershipKey</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#join(java.net.InetAddress,java.net.NetworkInterface,java.net.InetAddress)" class="member-name-link">join</a><wbr>(<a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;group,
+ <a href="../../net/NetworkInterface.html" title="java.net 包中的类">NetworkInterface</a>&nbsp;interf,
+ <a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Joins a multicast group to begin receiving datagrams sent to the group
 from a given source address.</div>
@@ -226,10 +226,10 @@ from a given source address.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.channels.Channel">Methods declared in interface&nbsp;<a href="Channel.html#method-summary" title="interface in java.nio.channels">Channel</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.channels.Channel">在接口 <a href="Channel.html#method-summary" title="java.nio.channels 包中的接口">Channel</a> 中声明的方法</h3>
 <code><a href="Channel.html#isOpen()" title="isOpen()">isOpen</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.channels.NetworkChannel">Methods declared in interface&nbsp;<a href="NetworkChannel.html#method-summary" title="interface in java.nio.channels">NetworkChannel</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.channels.NetworkChannel">在接口 <a href="NetworkChannel.html#method-summary" title="java.nio.channels 包中的接口">NetworkChannel</a> 中声明的方法</h3>
 <code><a href="NetworkChannel.html#bind(java.net.SocketAddress)" title="bind(SocketAddress)">bind</a>, <a href="NetworkChannel.html#getLocalAddress()" title="getLocalAddress()">getLocalAddress</a>, <a href="NetworkChannel.html#getOption(java.net.SocketOption)" title="getOption(SocketOption)">getOption</a>, <a href="NetworkChannel.html#setOption(java.net.SocketOption,T)" title="setOption(SocketOption, T)">setOption</a>, <a href="NetworkChannel.html#supportedOptions()" title="supportedOptions()">supportedOptions</a></code></div>
 </section>
 </li>
@@ -240,29 +240,29 @@ from a given source address.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this channel.
 
 <p> If the channel is a member of a multicast group then the membership
-is <a href="MembershipKey.html#drop()"><code>dropped</code></a>. Upon return, the <a href="MembershipKey.html" title="class in java.nio.channels"><code>membership-key</code></a> will be <a href="MembershipKey.html#isValid()"><code>invalid</code></a>.
+is <a href="MembershipKey.html#drop()"><code>dropped</code></a>. Upon return, the <a href="MembershipKey.html" title="java.nio.channels 包中的类"><code>membership-key</code></a> will be <a href="MembershipKey.html#isValid()"><code>invalid</code></a>.
 
-<p> This method otherwise behaves exactly as specified by the <a href="Channel.html" title="interface in java.nio.channels"><code>Channel</code></a> interface.</div>
+<p> This method otherwise behaves exactly as specified by the <a href="Channel.html" title="java.nio.channels 包中的接口"><code>Channel</code></a> interface.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Channel.html" title="interface in java.nio.channels">Channel</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -271,9 +271,9 @@ is <a href="MembershipKey.html#drop()"><code>dropped</code></a>. Upon return, th
 <section class="detail" id="join(java.net.InetAddress,java.net.NetworkInterface)">
 <h3>join</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MembershipKey.html" title="class in java.nio.channels">MembershipKey</a></span>&nbsp;<span class="element-name">join</span><wbr><span class="parameters">(<a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;group,
- <a href="../../net/NetworkInterface.html" title="class in java.net">NetworkInterface</a>&nbsp;interf)</span>
-            throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="MembershipKey.html" title="java.nio.channels 包中的类">MembershipKey</a></span>&nbsp;<span class="element-name">join</span><wbr><span class="parameters">(<a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;group,
+ <a href="../../net/NetworkInterface.html" title="java.net 包中的类">NetworkInterface</a>&nbsp;interf)</span>
+            throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Joins a multicast group to begin receiving all datagrams sent to the group,
 returning a membership key.
 
@@ -287,20 +287,20 @@ is not <a href="MembershipKey.html#sourceAddress()"><code>source-specific</code>
 the same group on more than one interface. An implementation may impose a
 limit on the number of groups that may be joined at the same time.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>group</code> - The multicast address to join</dd>
 <dd><code>interf</code> - The network interface on which to join the group</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The membership key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the group parameter is not a <a href="../../net/InetAddress.html#isMulticastAddress()"><code>multicast</code></a> address, or the group parameter is an address type
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the group parameter is not a <a href="../../net/InetAddress.html#isMulticastAddress()"><code>multicast</code></a> address, or the group parameter is an address type
          that is not supported by this channel</dd>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - If the channel already has source-specific membership of the
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - If the channel already has source-specific membership of the
          group on the interface</dd>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If the channel's socket is not an Internet Protocol socket, or
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If the channel's socket is not an Internet Protocol socket, or
          the platform does not support multicasting</dd>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If this channel is closed</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If this channel is closed</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -309,10 +309,10 @@ limit on the number of groups that may be joined at the same time.</div>
 <section class="detail" id="join(java.net.InetAddress,java.net.NetworkInterface,java.net.InetAddress)">
 <h3>join</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MembershipKey.html" title="class in java.nio.channels">MembershipKey</a></span>&nbsp;<span class="element-name">join</span><wbr><span class="parameters">(<a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;group,
- <a href="../../net/NetworkInterface.html" title="class in java.net">NetworkInterface</a>&nbsp;interf,
- <a href="../../net/InetAddress.html" title="class in java.net">InetAddress</a>&nbsp;source)</span>
-            throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="MembershipKey.html" title="java.nio.channels 包中的类">MembershipKey</a></span>&nbsp;<span class="element-name">join</span><wbr><span class="parameters">(<a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;group,
+ <a href="../../net/NetworkInterface.html" title="java.net 包中的类">NetworkInterface</a>&nbsp;interf,
+ <a href="../../net/InetAddress.html" title="java.net 包中的类">InetAddress</a>&nbsp;source)</span>
+            throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Joins a multicast group to begin receiving datagrams sent to the group
 from a given source address.
 
@@ -326,24 +326,24 @@ The resulting membership key is <a href="MembershipKey.html#sourceAddress()"><co
 again with the same group and interface to allow receiving datagrams sent
 by other source addresses to the group.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>group</code> - The multicast address to join</dd>
 <dd><code>interf</code> - The network interface on which to join the group</dd>
 <dd><code>source</code> - The source address</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The membership key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the group parameter is not a <a href="../../net/InetAddress.html#isMulticastAddress()"><code>multicast</code></a> address, the
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the group parameter is not a <a href="../../net/InetAddress.html#isMulticastAddress()"><code>multicast</code></a> address, the
          source parameter is not a unicast address, the group
          parameter is an address type that is not supported by this channel,
          or the source parameter is not the same address type as the group</dd>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - If the channel is currently a member of the group on the given
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - If the channel is currently a member of the group on the given
          interface to receive all datagrams</dd>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If the channel's socket is not an Internet Protocol socket, or
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If the channel's socket is not an Internet Protocol socket, or
          source filtering is not supported, or the platform does not
          support multicasting</dd>
-<dd><code><a href="ClosedChannelException.html" title="class in java.nio.channels">ClosedChannelException</a></code> - If this channel is closed</dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="ClosedChannelException.html" title="java.nio.channels 包中的类">ClosedChannelException</a></code> - If this channel is closed</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>

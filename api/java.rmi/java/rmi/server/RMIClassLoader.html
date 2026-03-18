@@ -55,7 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.rmi.server</a></li>
 <li><a href="RMIClassLoader.html" class="current-selection">RMIClassLoader</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -63,11 +63,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#loadClass(java.lang.String)" tabindex="0">loadClass(String)</a></li>
 <li><a href="#loadClass(java.net.URL,java.lang.String)" tabindex="0">loadClass(URL, String)</a></li>
@@ -85,16 +85,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class RMIClassLoader" class="title">Class RMIClassLoader</h1>
+<h1 title="类 RMIClassLoader" class="title">类 RMIClassLoader</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.rmi.server.RMIClassLoader</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">RMIClassLoader</span>
-<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block"><code>RMIClassLoader</code> comprises static methods to support
 dynamic class loading with RMI.  Included are methods for loading
 classes from a network location (one or more URLs) and obtaining
@@ -116,7 +116,7 @@ and return values of remote method calls.
 
 </ul>
 
-is provided by an instance of <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a>, the
+is provided by an instance of <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a>, the
 service provider interface for those methods.  When one of the
 methods is invoked, its behavior is to delegate to a corresponding
 method on the service provider instance.  The details of how each
@@ -133,7 +133,7 @@ its value equals the string <code>"default"</code>, the provider
 instance will be the value returned by an invocation of the <a href="#getDefaultProviderInstance()"><code>getDefaultProviderInstance()</code></a> method, and for any other value, if
 a class named with the value of the property can be loaded by the
 system class loader (see <a href="../../../../java.base/java/lang/ClassLoader.html#getSystemClassLoader()"><code>ClassLoader.getSystemClassLoader()</code></a>)
-and that class is assignable to <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a> and has a
+and that class is assignable to <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a> and has a
 public no-argument constructor, then that constructor will be
 invoked to create the provider instance.  If the property is
 defined but any other of those conditions are not true, then an
@@ -147,7 +147,7 @@ visible to the system class loader, then the contents of that
 resource are interpreted as a provider-configuration file, and the
 first class name specified in that file is used as the provider
 class name.  If a class with that name can be loaded by the system
-class loader and that class is assignable to <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a> and has a public no-argument constructor, then
+class loader and that class is assignable to <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a> and has a public no-argument constructor, then
 that constructor will be invoked to create the provider instance.
 If the resource is found but a provider cannot be instantiated as
 described, then an unspecified <code>Error</code> will be thrown to
@@ -159,12 +159,12 @@ an invocation of the <a href="#getDefaultProviderInstance()"><code>getDefaultPro
 
 </ul></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a></li>
+<li><a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -175,73 +175,73 @@ an invocation of the <a href="#getDefaultProviderInstance()"><code>getDefaultPro
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassAnnotation(java.lang.Class)" class="member-name-link">getClassAnnotation</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;cl)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassAnnotation(java.lang.Class)" class="member-name-link">getClassAnnotation</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;cl)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the annotation string (representing a location for
 the class definition) that RMI will use to annotate the class
 descriptor when marshalling objects of the given class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassLoader(java.lang.String)" class="member-name-link">getClassLoader</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassLoader(java.lang.String)" class="member-name-link">getClassLoader</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a class loader that loads classes from the given codebase
 URL path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server">RMIClassLoaderSpi</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类">RMIClassLoaderSpi</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDefaultProviderInstance()" class="member-name-link">getDefaultProviderInstance</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the canonical instance of the default provider
-for the service provider interface <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a>.</div>
+for the service provider interface <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSecurityContext(java.lang.ClassLoader)" class="member-name-link">getSecurityContext</a><wbr>(<a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getSecurityContext(java.lang.ClassLoader)" class="member-name-link">getSecurityContext</a><wbr>(<a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">no replacement.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#loadClass(java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code>static <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#loadClass(java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">replaced by <code>loadClass(String,String)</code> method</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Loads a class from a codebase URL path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,java.lang.String,java.lang.ClassLoader)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;defaultLoader)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,java.lang.String,java.lang.ClassLoader)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;defaultLoader)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Loads a class from a codebase URL path, optionally using the
 supplied loader.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.net.URL,java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/net/URL.html" title="class in java.net">URL</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadClass(java.net.URL,java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="../../../../java.base/java/net/URL.html" title="java.net 包中的类">URL</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Loads a class from a codebase URL.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadProxyClass(java.lang.String,java.lang.String%5B%5D,java.lang.ClassLoader)" class="member-name-link">loadProxyClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;interfaces,
- <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;defaultLoader)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#loadProxyClass(java.lang.String,java.lang.String%5B%5D,java.lang.ClassLoader)" class="member-name-link">loadProxyClass</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;interfaces,
+ <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;defaultLoader)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Loads a dynamic proxy class (see <a href="../../../../java.base/java/lang/reflect/Proxy.html" title="class in java.lang.reflect"><code>Proxy</code></a>)
+<div class="block">Loads a dynamic proxy class (see <a href="../../../../java.base/java/lang/reflect/Proxy.html" title="java.lang.reflect 包中的类"><code>Proxy</code></a>)
 that implements a set of interfaces with the given names
 from a codebase URL path.</div>
 </div>
@@ -249,7 +249,7 @@ from a codebase URL path.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -260,16 +260,16 @@ from a codebase URL path.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="loadClass(java.lang.String)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>
-</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a>,
-<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a>,
+<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">replaced by <code>loadClass(String,String)</code> method</div>
 </div>
@@ -279,16 +279,16 @@ from a codebase URL path.</div>
 passing <code>null</code> as the first argument and
 <code>name</code> as the second argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the class to load</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>Class</code> object representing the loaded class</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if a provider-specific URL used
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if a provider-specific URL used
 to load classes is invalid</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if a definition for the class
+<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if a definition for the class
 could not be found at the codebase location</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#loadClass(java.lang.String,java.lang.String)"><code>loadClass(String,String)</code></a></li>
@@ -302,10 +302,10 @@ could not be found at the codebase location</dd>
 <section class="detail" id="loadClass(java.net.URL,java.lang.String)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/net/URL.html" title="class in java.net">URL</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a>,
-<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/net/URL.html" title="java.net 包中的类">URL</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a>,
+<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Loads a class from a codebase URL.
 
 If <code>codebase</code> is <code>null</code>, then this method
@@ -320,16 +320,16 @@ method of the provider instance, passing the result of invoking
 <code>name</code> as the second argument,
 and <code>null</code> as the third argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>codebase</code> - the URL to load the class from, or <code>null</code></dd>
 <dd><code>name</code> - the name of the class to load</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>Class</code> object representing the loaded class</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if <code>codebase</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if <code>codebase</code> is
 <code>null</code> and a provider-specific URL used
 to load classes is invalid</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if a definition for the class
+<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if a definition for the class
 could not be found at the specified URL</dd>
 </dl>
 </div>
@@ -339,10 +339,10 @@ could not be found at the specified URL</dd>
 <section class="detail" id="loadClass(java.lang.String,java.lang.String)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a>,
-<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a>,
+<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Loads a class from a codebase URL path.
 
 <p>This method delegates to the
@@ -351,20 +351,20 @@ method of the provider instance, passing <code>codebase</code>
 as the first argument, <code>name</code> as the second argument,
 and <code>null</code> as the third argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>codebase</code> - the list of URLs (separated by spaces) to load
 the class from, or <code>null</code></dd>
 <dd><code>name</code> - the name of the class to load</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>Class</code> object representing the loaded class</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if <code>codebase</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if <code>codebase</code> is
 non-<code>null</code> and contains an invalid URL, or if
 <code>codebase</code> is <code>null</code> and a provider-specific
 URL used to load classes is invalid</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if a definition for the class
+<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if a definition for the class
 could not be found at the specified location</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -374,11 +374,11 @@ could not be found at the specified location</dd>
 <section class="detail" id="loadClass(java.lang.String,java.lang.String,java.lang.ClassLoader)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;defaultLoader)</span>
-                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a>,
-<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;defaultLoader)</span>
+                          throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a>,
+<a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Loads a class from a codebase URL path, optionally using the
 supplied loader.
 
@@ -396,22 +396,22 @@ method of the provider instance, passing <code>codebase</code>
 as the first argument, <code>name</code> as the second argument,
 and <code>defaultLoader</code> as the third argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>codebase</code> - the list of URLs (separated by spaces) to load
 the class from, or <code>null</code></dd>
 <dd><code>name</code> - the name of the class to load</dd>
 <dd><code>defaultLoader</code> - additional contextual class loader
 to use, or <code>null</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>Class</code> object representing the loaded class</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if <code>codebase</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if <code>codebase</code> is
 non-<code>null</code> and contains an invalid URL, or if
 <code>codebase</code> is <code>null</code> and a provider-specific
 URL used to load classes is invalid</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if a definition for the class
+<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if a definition for the class
 could not be found at the specified location</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -421,12 +421,12 @@ could not be found at the specified location</dd>
 <section class="detail" id="loadProxyClass(java.lang.String,java.lang.String[],java.lang.ClassLoader)">
 <h3>loadProxyClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadProxyClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;interfaces,
- <a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;defaultLoader)</span>
-                               throws <span class="exceptions"><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a>,
-<a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></span></div>
-<div class="block">Loads a dynamic proxy class (see <a href="../../../../java.base/java/lang/reflect/Proxy.html" title="class in java.lang.reflect"><code>Proxy</code></a>)
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadProxyClass</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;interfaces,
+ <a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;defaultLoader)</span>
+                               throws <span class="exceptions"><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a>,
+<a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></span></div>
+<div class="block">Loads a dynamic proxy class (see <a href="../../../../java.base/java/lang/reflect/Proxy.html" title="java.lang.reflect 包中的类"><code>Proxy</code></a>)
 that implements a set of interfaces with the given names
 from a codebase URL path.
 
@@ -440,27 +440,27 @@ method of the provider instance, passing <code>codebase</code>
 as the first argument, <code>interfaces</code> as the second argument,
 and <code>defaultLoader</code> as the third argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>codebase</code> - the list of URLs (space-separated) to load
 classes from, or <code>null</code></dd>
 <dd><code>interfaces</code> - the names of the interfaces for the proxy class
 to implement</dd>
 <dd><code>defaultLoader</code> - additional contextual class loader
 to use, or <code>null</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a dynamic proxy class that implements the named interfaces</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if <code>codebase</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if <code>codebase</code> is
 non-<code>null</code> and contains an invalid URL, or
 if <code>codebase</code> is <code>null</code> and a provider-specific
 URL used to load classes is invalid</dd>
-<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if a definition for one of
+<dd><code><a href="../../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if a definition for one of
 the named interfaces could not be found at the specified location,
 or if creation of the dynamic proxy class failed (such as if
 <a href="../../../../java.base/java/lang/reflect/Proxy.html#getProxyClass(java.lang.ClassLoader,java.lang.Class...)"><code>Proxy.getProxyClass(ClassLoader,Class[])</code></a>
 would throw an <code>IllegalArgumentException</code> for the given
 interface list)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -470,8 +470,8 @@ interface list)</dd>
 <section class="detail" id="getClassLoader(java.lang.String)">
 <h3>getClassLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a></span>&nbsp;<span class="element-name">getClassLoader</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;codebase)</span>
-                                  throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></span>&nbsp;<span class="element-name">getClassLoader</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;codebase)</span>
+                                  throws <span class="exceptions"><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></span></div>
 <div class="block">Returns a class loader that loads classes from the given codebase
 URL path.
 
@@ -483,18 +483,18 @@ for the same <code>codebase</code> argument.
 <a href="RMIClassLoaderSpi.html#getClassLoader(java.lang.String)"><code>RMIClassLoaderSpi.getClassLoader(String)</code></a> method
 of the provider instance, passing <code>codebase</code> as the argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>codebase</code> - the list of URLs (space-separated) from which
 the returned class loader will load classes from, or <code>null</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a class loader that loads classes from the given codebase URL
 path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="class in java.net">MalformedURLException</a></code> - if <code>codebase</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/net/MalformedURLException.html" title="java.net 包中的类">MalformedURLException</a></code> - if <code>codebase</code> is
 non-<code>null</code> and contains an invalid URL, or
 if <code>codebase</code> is <code>null</code> and a provider-specific
 URL used to identify the class loader is invalid</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
 </dl>
 </div>
@@ -504,7 +504,7 @@ URL used to identify the class loader is invalid</dd>
 <section class="detail" id="getClassAnnotation(java.lang.Class)">
 <h3>getClassAnnotation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getClassAnnotation</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;cl)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getClassAnnotation</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;cl)</span></div>
 <div class="block">Returns the annotation string (representing a location for
 the class definition) that RMI will use to annotate the class
 descriptor when marshalling objects of the given class.
@@ -513,14 +513,14 @@ descriptor when marshalling objects of the given class.
 <a href="RMIClassLoaderSpi.html#getClassAnnotation(java.lang.Class)"><code>RMIClassLoaderSpi.getClassAnnotation(Class)</code></a> method
 of the provider instance, passing <code>cl</code> as the argument.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>cl</code> - the class to obtain the annotation for</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a string to be used to annotate the given class when
 it gets marshalled, or <code>null</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>cl</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>cl</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -530,9 +530,9 @@ it gets marshalled, or <code>null</code></dd>
 <section class="detail" id="getDefaultProviderInstance()">
 <h3>getDefaultProviderInstance</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RMIClassLoaderSpi.html" title="class in java.rmi.server">RMIClassLoaderSpi</a></span>&nbsp;<span class="element-name">getDefaultProviderInstance</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类">RMIClassLoaderSpi</a></span>&nbsp;<span class="element-name">getDefaultProviderInstance</span>()</div>
 <div class="block">Returns the canonical instance of the default provider
-for the service provider interface <a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a>.
+for the service provider interface <a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a>.
 If the system property <code>java.rmi.server.RMIClassLoaderSpi</code>
 is not defined, then the <code>RMIClassLoader</code> static
 methods
@@ -552,7 +552,7 @@ will use the canonical instance of the default provider
 as the service provider instance.
 
 <p>The default service provider instance implements
-<a href="RMIClassLoaderSpi.html" title="class in java.rmi.server"><code>RMIClassLoaderSpi</code></a> as follows:
+<a href="RMIClassLoaderSpi.html" title="java.rmi.server 包中的类"><code>RMIClassLoaderSpi</code></a> as follows:
 
 <blockquote>
 
@@ -688,9 +688,9 @@ for one of the named interfaces that could not be resolved.
 
 </blockquote></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the canonical instance of the default service provider</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -700,17 +700,17 @@ for one of the named interfaces that could not be resolved.
 <section class="detail" id="getSecurityContext(java.lang.ClassLoader)">
 <h3>getSecurityContext</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>
-</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getSecurityContext</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span></div>
+<div class="member-signature"><span class="annotations"><a href="../../../../java.base/java/lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getSecurityContext</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">no replacement. This method has no purpose in the absence
 of a Security Manager.</div>
 </div>
 <div class="block">Always returns null.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>loader</code> - a class loader from which to get the security context</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>null</dd>
 </dl>
 </div>

@@ -50,7 +50,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels</a></li>
 <li><a href="AsynchronousChannel.html" class="current-selection">AsynchronousChannel</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -58,15 +58,15 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#cancellation-heading" tabindex="0">Cancellation</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#close()" tabindex="0">close()</a></li>
 </ol>
@@ -76,31 +76,31 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface AsynchronousChannel" class="title">Interface AsynchronousChannel</h1>
+<h1 title="接口 AsynchronousChannel" class="title">接口 AsynchronousChannel</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="Channel.html" title="interface in java.nio.channels">Channel</a>, <a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a>, <a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="AsynchronousByteChannel.html" title="interface in java.nio.channels">AsynchronousByteChannel</a></code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="AsynchronousByteChannel.html" title="java.nio.channels 包中的接口">AsynchronousByteChannel</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="AsynchronousFileChannel.html" title="class in java.nio.channels">AsynchronousFileChannel</a>, <a href="AsynchronousServerSocketChannel.html" title="class in java.nio.channels">AsynchronousServerSocketChannel</a>, <a href="AsynchronousSocketChannel.html" title="class in java.nio.channels">AsynchronousSocketChannel</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="AsynchronousFileChannel.html" title="java.nio.channels 包中的类">AsynchronousFileChannel</a>, <a href="AsynchronousServerSocketChannel.html" title="java.nio.channels 包中的类">AsynchronousServerSocketChannel</a>, <a href="AsynchronousSocketChannel.html" title="java.nio.channels 包中的类">AsynchronousSocketChannel</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">AsynchronousChannel</span><span class="extends-implements">
-extends <a href="Channel.html" title="interface in java.nio.channels">Channel</a></span></div>
+extends <a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></span></div>
 <div class="block">A channel that supports asynchronous I/O operations. Asynchronous I/O
 operations will usually take one of two forms:
 
 <ol>
-<li><pre><a href="../../util/concurrent/Future.html" title="interface in java.util.concurrent"><code>Future</code></a>&lt;V&gt; <em>operation</em>(<em>...</em>)</pre></li>
-<li><pre>void <em>operation</em>(<em>...</em> A attachment, <a href="CompletionHandler.html" title="interface in java.nio.channels"><code>CompletionHandler</code></a>&lt;V,? super A&gt; handler)</pre></li>
+<li><pre><a href="../../util/concurrent/Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a>&lt;V&gt; <em>operation</em>(<em>...</em>)</pre></li>
+<li><pre>void <em>operation</em>(<em>...</em> A attachment, <a href="CompletionHandler.html" title="java.nio.channels 包中的接口"><code>CompletionHandler</code></a>&lt;V,? super A&gt; handler)</pre></li>
 </ol>
 
 where <i>operation</i> is the name of the I/O operation (read or write for
@@ -110,15 +110,15 @@ consuming the result. The attachment is important for cases where a
 <em>state-less</em> <code>CompletionHandler</code> is used to consume the result
 of many I/O operations.
 
-<p> In the first form, the methods defined by the <a href="../../util/concurrent/Future.html" title="interface in java.util.concurrent"><code>Future</code></a>
+<p> In the first form, the methods defined by the <a href="../../util/concurrent/Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a>
 interface may be used to check if the operation has completed, wait for its
-completion, and to retrieve the result. In the second form, a <a href="CompletionHandler.html" title="interface in java.nio.channels"><code>CompletionHandler</code></a> is invoked to consume the result of the I/O operation when
+completion, and to retrieve the result. In the second form, a <a href="CompletionHandler.html" title="java.nio.channels 包中的接口"><code>CompletionHandler</code></a> is invoked to consume the result of the I/O operation when
 it completes or fails.
 
 <p> A channel that implements this interface is <em>asynchronously
 closeable</em>: If an I/O operation is outstanding on the channel and the
 channel's <a href="#close()"><code>close</code></a> method is invoked, then the I/O operation
-fails with the exception <a href="AsynchronousCloseException.html" title="class in java.nio.channels"><code>AsynchronousCloseException</code></a>.
+fails with the exception <a href="AsynchronousCloseException.html" title="java.nio.channels 包中的类"><code>AsynchronousCloseException</code></a>.
 
 <p> Asynchronous channels are safe for use by multiple concurrent threads.
 Some channel implementations may support concurrent reading and writing, but
@@ -129,7 +129,7 @@ any given time.
 
 <p> The <code>Future</code> interface defines the <a href="../../util/concurrent/Future.html#cancel(boolean)"><code>cancel</code></a>
 method to cancel execution. This causes all threads waiting on the result of
-the I/O operation to throw <a href="../../util/concurrent/CancellationException.html" title="class in java.util.concurrent"><code>CancellationException</code></a>.
+the I/O operation to throw <a href="../../util/concurrent/CancellationException.html" title="java.util.concurrent 包中的类"><code>CancellationException</code></a>.
 Whether the underlying I/O operation can be cancelled is highly implementation
 specific and therefore not specified. Where cancellation leaves the channel,
 or the entity to which it is connected, in an inconsistent state, then the
@@ -149,14 +149,14 @@ mayInterruptIfRunning</code> parameter set to <code>true</code> then the I/O ope
 may be interrupted by closing the channel. In that case all threads waiting
 on the result of the I/O operation throw <code>CancellationException</code> and
 any other I/O operations outstanding on the channel complete with the
-exception <a href="AsynchronousCloseException.html" title="class in java.nio.channels"><code>AsynchronousCloseException</code></a>.
+exception <a href="AsynchronousCloseException.html" title="java.nio.channels 包中的类"><code>AsynchronousCloseException</code></a>.
 
 <p> Where the <code>cancel</code> method is invoked to cancel read or write
 operations then it is recommended that all buffers used in the I/O operations
 be discarded or care taken to ensure that the buffers are not accessed while
 the channel remains open.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -166,14 +166,14 @@ the channel remains open.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -183,7 +183,7 @@ the channel remains open.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.nio.channels.Channel">Methods declared in interface&nbsp;<a href="Channel.html#method-summary" title="interface in java.nio.channels">Channel</a></h3>
+<h3 id="methods-inherited-from-class-java.nio.channels.Channel">在接口 <a href="Channel.html#method-summary" title="java.nio.channels 包中的接口">Channel</a> 中声明的方法</h3>
 <code><a href="Channel.html#isOpen()" title="isOpen()">isOpen</a></code></div>
 </section>
 </li>
@@ -194,31 +194,31 @@ the channel remains open.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-    throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+    throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this channel.
 
 <p> Any outstanding asynchronous operations upon this channel will
-complete with the exception <a href="AsynchronousCloseException.html" title="class in java.nio.channels"><code>AsynchronousCloseException</code></a>. After a
+complete with the exception <a href="AsynchronousCloseException.html" title="java.nio.channels 包中的类"><code>AsynchronousCloseException</code></a>. After a
 channel is closed, further attempts to initiate asynchronous I/O
-operations complete immediately with cause <a href="ClosedChannelException.html" title="class in java.nio.channels"><code>ClosedChannelException</code></a>.
+operations complete immediately with cause <a href="ClosedChannelException.html" title="java.nio.channels 包中的类"><code>ClosedChannelException</code></a>.
 
-<p>  This method otherwise behaves exactly as specified by the <a href="Channel.html" title="interface in java.nio.channels"><code>Channel</code></a> interface.</div>
+<p>  This method otherwise behaves exactly as specified by the <a href="Channel.html" title="java.nio.channels 包中的接口"><code>Channel</code></a> interface.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Channel.html" title="interface in java.nio.channels">Channel</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Channel.html" title="java.nio.channels 包中的接口">Channel</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>

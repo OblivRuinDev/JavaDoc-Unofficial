@@ -59,7 +59,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent</a></li>
 <li><a href="ConcurrentMap.html" class="current-selection">ConcurrentMap</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -67,12 +67,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getOrDefault(java.lang.Object,V)" tabindex="0">getOrDefault(Object, V)</a></li>
 <li><a href="#forEach(java.util.function.BiConsumer)" tabindex="0">forEach(BiConsumer)</a></li>
@@ -92,34 +92,34 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface ConcurrentMap" class="title">Interface ConcurrentMap&lt;K,<wbr>V&gt;</h1>
+<h1 title="接口 ConcurrentMap" class="title">接口 ConcurrentMap&lt;K,<wbr>V&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-K"><code>K</code> - the type of keys maintained by this map</span></dd>
 <dd><span id="type-param-V"><code>V</code> - the type of mapped values</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../Map.html" title="interface in java.util">Map</a>&lt;K,<wbr>V&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;K,<wbr>V&gt;</code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="ConcurrentNavigableMap.html" title="interface in java.util.concurrent">ConcurrentNavigableMap</a>&lt;K,<wbr>V&gt;</code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="ConcurrentNavigableMap.html" title="java.util.concurrent 包中的接口">ConcurrentNavigableMap</a>&lt;K,<wbr>V&gt;</code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="ConcurrentHashMap.html" title="class in java.util.concurrent">ConcurrentHashMap</a>, <a href="ConcurrentSkipListMap.html" title="class in java.util.concurrent">ConcurrentSkipListMap</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="ConcurrentHashMap.html" title="java.util.concurrent 包中的类">ConcurrentHashMap</a>, <a href="ConcurrentSkipListMap.html" title="java.util.concurrent 包中的类">ConcurrentSkipListMap</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ConcurrentMap&lt;K,<wbr>V&gt;</span><span class="extends-implements">
-extends <a href="../Map.html" title="interface in java.util">Map</a>&lt;K,<wbr>V&gt;</span></div>
-<div class="block">A <a href="../Map.html" title="interface in java.util"><code>Map</code></a> providing thread safety and atomicity guarantees.
+extends <a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;K,<wbr>V&gt;</span></div>
+<div class="block">A <a href="../Map.html" title="java.util 包中的接口"><code>Map</code></a> providing thread safety and atomicity guarantees.
 
 <p>To maintain the specified guarantees, default implementations of
-methods including <a href="#putIfAbsent(K,V)"><code>putIfAbsent(K, V)</code></a> inherited from <a href="../Map.html" title="interface in java.util"><code>Map</code></a>
+methods including <a href="#putIfAbsent(K,V)"><code>putIfAbsent(K, V)</code></a> inherited from <a href="../Map.html" title="java.util 包中的接口"><code>Map</code></a>
 must be overridden by implementations of this interface. Similarly,
 implementations of the collections returned by methods <a href="../Map.html#keySet()"><code>Map.keySet()</code></a>, <a href="../Map.html#values()"><code>Map.values()</code></a>, and <a href="../Map.html#entrySet()"><code>Map.entrySet()</code></a> must override
 methods such as <code>removeIf</code> when necessary to
@@ -136,7 +136,7 @@ the <code>ConcurrentMap</code> in another thread.
 <a href="../../../../java.base/java/util/package-summary.html#CollectionsFramework">
 Java Collections Framework</a>.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -146,97 +146,97 @@ Java Collections Framework</a>.</div>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-java.util.Map">Nested classes/interfaces declared in interface&nbsp;<a href="../Map.html#nested-class-summary" title="interface in java.util">Map</a></h3>
-<code><a href="../Map.Entry.html" title="interface in java.util">Map.Entry</a>&lt;K,<wbr>V&gt;</code></div>
+<h3 id="nested-classes-inherited-from-class-java.util.Map">在接口 <a href="../Map.html#nested-class-summary" title="java.util 包中的接口">Map</a> 中声明的嵌套类/接口</h3>
+<code><a href="../Map.Entry.html" title="java.util 包中的接口">Map.Entry</a>&lt;K,<wbr>V&gt;</code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#compute(K,java.util.function.BiFunction)" class="member-name-link">compute</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#compute(K,java.util.function.BiFunction)" class="member-name-link">compute</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Attempts to compute a mapping for the specified key and its current
 mapped value, or <code>null</code> if there is no current mapping (optional
 operation).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeIfAbsent(K,java.util.function.Function)" class="member-name-link">computeIfAbsent</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;mappingFunction)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeIfAbsent(K,java.util.function.Function)" class="member-name-link">computeIfAbsent</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;mappingFunction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">If the specified key is not already associated with a value (or is mapped
 to <code>null</code>), attempts to compute its value using the given mapping
 function and enters it into this map unless <code>null</code> (optional operation).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeIfPresent(K,java.util.function.BiFunction)" class="member-name-link">computeIfPresent</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#computeIfPresent(K,java.util.function.BiFunction)" class="member-name-link">computeIfPresent</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">If the value for the specified key is present and non-null, attempts to
 compute a new mapping given the key and its current mapped value
 (optional operation).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#forEach(java.util.function.BiConsumer)" class="member-name-link">forEach</a><wbr>(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;action)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#forEach(java.util.function.BiConsumer)" class="member-name-link">forEach</a><wbr>(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;action)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Performs the given action for each entry in this map until all entries
 have been processed or the action throws an exception.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getOrDefault(java.lang.Object,V)" class="member-name-link">getOrDefault</a><wbr>(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;defaultValue)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getOrDefault(java.lang.Object,V)" class="member-name-link">getOrDefault</a><wbr>(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;defaultValue)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the value to which the specified key is mapped, or
 <code>defaultValue</code> if this map contains no mapping for the key.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#merge(K,V,java.util.function.BiFunction)" class="member-name-link">merge</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#merge(K,V,java.util.function.BiFunction)" class="member-name-link">merge</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">If the specified key is not already associated with a value or is
 associated with null, associates it with the given non-null value (optional
 operation).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putIfAbsent(K,V)" class="member-name-link">putIfAbsent</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putIfAbsent(K,V)" class="member-name-link">putIfAbsent</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">If the specified key is not already associated
 with a value, associates it with the given value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.Object,java.lang.Object)" class="member-name-link">remove</a><wbr>(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;key,
- <a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;value)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.Object,java.lang.Object)" class="member-name-link">remove</a><wbr>(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;key,
+ <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes the entry for a key only if currently mapped to a given value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#replace(K,V)" class="member-name-link">replace</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#replace(K,V)" class="member-name-link">replace</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Replaces the entry for a key only if currently mapped to some value.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#replace(K,V,V)" class="member-name-link">replace</a><wbr>(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;oldValue,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;newValue)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#replace(K,V,V)" class="member-name-link">replace</a><wbr>(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;oldValue,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;newValue)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Replaces the entry for a key only if currently mapped to a given value.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replaceAll(java.util.function.BiFunction)" class="member-name-link">replaceAll</a><wbr>(<a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;function)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replaceAll(java.util.function.BiFunction)" class="member-name-link">replaceAll</a><wbr>(<a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;function)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Replaces each entry's value with the result of invoking the given
 function on that entry until all entries have been processed or the
@@ -246,7 +246,7 @@ function throws an exception (optional operation).</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.Map">Methods declared in interface&nbsp;<a href="../Map.html#method-summary" title="interface in java.util">Map</a></h3>
+<h3 id="methods-inherited-from-class-java.util.Map">在接口 <a href="../Map.html#method-summary" title="java.util 包中的接口">Map</a> 中声明的方法</h3>
 <code><a href="../Map.html#clear()" title="clear()">clear</a>, <a href="../Map.html#containsKey(java.lang.Object)" title="containsKey(Object)">containsKey</a>, <a href="../Map.html#containsValue(java.lang.Object)" title="containsValue(Object)">containsValue</a>, <a href="../Map.html#entrySet()" title="entrySet()">entrySet</a>, <a href="../Map.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../Map.html#get(java.lang.Object)" title="get(Object)">get</a>, <a href="../Map.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../Map.html#isEmpty()" title="isEmpty()">isEmpty</a>, <a href="../Map.html#keySet()" title="keySet()">keySet</a>, <a href="../Map.html#put(K,V)" title="put(K, V)">put</a>, <a href="../Map.html#putAll(java.util.Map)" title="putAll(Map)">putAll</a>, <a href="../Map.html#remove(java.lang.Object)" title="remove(Object)">remove</a>, <a href="../Map.html#size()" title="size()">size</a>, <a href="../Map.html#values()" title="values()">values</a></code></div>
 </section>
 </li>
@@ -257,36 +257,36 @@ function throws an exception (optional operation).</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getOrDefault(java.lang.Object,V)">
 <h3 id="getOrDefault(java.lang.Object,java.lang.Object)">getOrDefault</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">getOrDefault</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;defaultValue)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">getOrDefault</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;defaultValue)</span></div>
 <div class="block">Returns the value to which the specified key is mapped, or
 <code>defaultValue</code> if this map contains no mapping for the key.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#getOrDefault(java.lang.Object,V)">getOrDefault</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#getOrDefault(java.lang.Object,V)">getOrDefault</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现说明:</dt>
 <dd>This implementation assumes that the ConcurrentMap cannot
 contain null values and <code>get()</code> returning null unambiguously means
 the key is absent. Implementations which support null values
 <strong>must</strong> override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the key whose associated value is to be returned</dd>
 <dd><code>defaultValue</code> - the default mapping of the key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the value to which the specified key is mapped, or
 <code>defaultValue</code> if this map contains no mapping for the key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the key is of an inappropriate type for
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the key is of an inappropriate type for
 this map (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key is null and this map
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key is null and this map
 does not permit null keys (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -296,31 +296,31 @@ does not permit null keys (<a href="../Collection.html#optional-restrictions">op
 <section class="detail" id="forEach(java.util.function.BiConsumer)">
 <h3>forEach</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forEach</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="interface in java.util.function">BiConsumer</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;action)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">forEach</span><wbr><span class="parameters">(<a href="../function/BiConsumer.html" title="java.util.function 包中的接口">BiConsumer</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;action)</span></div>
 <div class="block">Performs the given action for each entry in this map until all entries
 have been processed or the action throws an exception.   Unless
 otherwise specified by the implementing class, actions are performed in
 the order of entry set iteration (if an iteration order is specified.)
 Exceptions thrown by the action are relayed to the caller.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#forEach(java.util.function.BiConsumer)">forEach</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#forEach(java.util.function.BiConsumer)">forEach</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to, for this
 <code>map</code>:
 <pre><code>for (Map.Entry&lt;K,V&gt; entry : map.entrySet()) {
   action.accept(entry.getKey(), entry.getValue());
 }</code></pre></dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The default implementation assumes that
 <code>IllegalStateException</code> thrown by <code>getKey()</code> or
 <code>getValue()</code> indicates that the entry has been removed and cannot
 be processed. Operation continues for subsequent entries.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>action</code> - The action to be performed for each entry</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified action is null</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified action is null</dd>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -330,8 +330,8 @@ be processed. Operation continues for subsequent entries.</dd>
 <section class="detail" id="putIfAbsent(K,V)">
 <h3 id="putIfAbsent(java.lang.Object,java.lang.Object)">putIfAbsent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">putIfAbsent</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">putIfAbsent</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value)</span></div>
 <div class="block">If the specified key is not already associated
 with a value, associates it with the given value.
 This is equivalent to, for this <code>map</code>:
@@ -342,28 +342,28 @@ else
 
 except that the action is performed atomically.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#putIfAbsent(K,V)">putIfAbsent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#putIfAbsent(K,V)">putIfAbsent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现说明:</dt>
 <dd>This implementation intentionally re-abstracts the
 inappropriate default provided in <code>Map</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is to be associated</dd>
 <dd><code>value</code> - value to be associated with the specified key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the previous value associated with the specified key, or
         <code>null</code> if there was no mapping for the key.
         (A <code>null</code> return can also indicate that the map
         previously associated <code>null</code> with the key,
         if the implementation supports null values.)</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>put</code> operation
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>put</code> operation
         is not supported by this map</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key or value is null,
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key or value is null,
         and this map does not permit null keys or values</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map</dd>
 </dl>
 </div>
@@ -373,8 +373,8 @@ inappropriate default provided in <code>Map</code>.</dd>
 <section class="detail" id="remove(java.lang.Object,java.lang.Object)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;key,
- <a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;key,
+ <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;value)</span></div>
 <div class="block">Removes the entry for a key only if currently mapped to a given value.
 This is equivalent to, for this <code>map</code>:
 <pre><code>if (map.containsKey(key)
@@ -387,23 +387,23 @@ This is equivalent to, for this <code>map</code>:
 
 except that the action is performed atomically.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#remove(java.lang.Object,java.lang.Object)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#remove(java.lang.Object,java.lang.Object)">remove</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现说明:</dt>
 <dd>This implementation intentionally re-abstracts the
 inappropriate default provided in <code>Map</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is associated</dd>
 <dd><code>value</code> - value expected to be associated with the specified key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the value was removed</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>remove</code> operation
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>remove</code> operation
         is not supported by this map</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the key or value is of an inappropriate
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the key or value is of an inappropriate
         type for this map
 (<a href="../../../../java.base/java/util/Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key or value is null,
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key or value is null,
         and this map does not permit null keys or values
 (<a href="../../../../java.base/java/util/Collection.html#optional-restrictions">optional</a>)</dd>
 </dl>
@@ -414,9 +414,9 @@ inappropriate default provided in <code>Map</code>.</dd>
 <section class="detail" id="replace(K,V,V)">
 <h3 id="replace(java.lang.Object,java.lang.Object,java.lang.Object)">replace</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">replace</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;oldValue,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;newValue)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">replace</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;oldValue,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;newValue)</span></div>
 <div class="block">Replaces the entry for a key only if currently mapped to a given value.
 This is equivalent to, for this <code>map</code>:
 <pre><code>if (map.containsKey(key)
@@ -429,25 +429,25 @@ This is equivalent to, for this <code>map</code>:
 
 except that the action is performed atomically.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#replace(K,V,V)">replace</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#replace(K,V,V)">replace</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现说明:</dt>
 <dd>This implementation intentionally re-abstracts the
 inappropriate default provided in <code>Map</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is associated</dd>
 <dd><code>oldValue</code> - value expected to be associated with the specified key</dd>
 <dd><code>newValue</code> - value to be associated with the specified key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the value was replaced</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>put</code> operation
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>put</code> operation
         is not supported by this map</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of a specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of a specified key or value
         prevents it from being stored in this map</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if a specified key or value is null,
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if a specified key or value is null,
         and this map does not permit null keys or values</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of a specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of a specified key
         or value prevents it from being stored in this map</dd>
 </dl>
 </div>
@@ -457,8 +457,8 @@ inappropriate default provided in <code>Map</code>.</dd>
 <section class="detail" id="replace(K,V)">
 <h3 id="replace(java.lang.Object,java.lang.Object)">replace</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">replace</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">replace</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value)</span></div>
 <div class="block">Replaces the entry for a key only if currently mapped to some value.
 This is equivalent to, for this <code>map</code>:
 <pre><code>if (map.containsKey(key))
@@ -468,28 +468,28 @@ else
 
 except that the action is performed atomically.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#replace(K,V)">replace</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#replace(K,V)">replace</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现说明:</dt>
 <dd>This implementation intentionally re-abstracts the
 inappropriate default provided in <code>Map</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is associated</dd>
 <dd><code>value</code> - value to be associated with the specified key</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the previous value associated with the specified key, or
         <code>null</code> if there was no mapping for the key.
         (A <code>null</code> return can also indicate that the map
         previously associated <code>null</code> with the key,
         if the implementation supports null values.)</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>put</code> operation
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>put</code> operation
         is not supported by this map</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key or value is null,
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key or value is null,
         and this map does not permit null keys or values</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map</dd>
 </dl>
 </div>
@@ -499,15 +499,15 @@ inappropriate default provided in <code>Map</code>.</dd>
 <section class="detail" id="replaceAll(java.util.function.BiFunction)">
 <h3>replaceAll</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">replaceAll</span><wbr><span class="parameters">(<a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;function)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">replaceAll</span><wbr><span class="parameters">(<a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;function)</span></div>
 <div class="block">Replaces each entry's value with the result of invoking the given
 function on that entry until all entries have been processed or the
 function throws an exception (optional operation). Exceptions thrown
 by the function are relayed to the caller.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#replaceAll(java.util.function.BiFunction)">replaceAll</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#replaceAll(java.util.function.BiFunction)">replaceAll</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd><p>The default implementation is equivalent to, for this <code>map</code>:
 <pre><code>for (Map.Entry&lt;K,V&gt; entry : map.entrySet()) {
   K k;
@@ -526,22 +526,22 @@ repeatedly for a given key.
 values and <code>get()</code> returning null unambiguously means the key is
 absent. Implementations which support null values <strong>must</strong>
 override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>function</code> - the function to apply to each entry</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>replaceAll</code> operation
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>replaceAll</code> operation
         is not supported by this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified function is null, or if a
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified function is null, or if a
         replacement value is null and this map does not permit null values
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of a replacement value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of a replacement value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of a replacement value
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of a replacement value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -551,8 +551,8 @@ override this default implementation.</dd>
 <section class="detail" id="computeIfAbsent(K,java.util.function.Function)">
 <h3 id="computeIfAbsent(java.lang.Object,java.util.function.Function)">computeIfAbsent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">computeIfAbsent</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;mappingFunction)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">computeIfAbsent</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;mappingFunction)</span></div>
 <div class="block">If the specified key is not already associated with a value (or is mapped
 to <code>null</code>), attempts to compute its value using the given mapping
 function and enters it into this map unless <code>null</code> (optional operation).
@@ -574,9 +574,9 @@ supporting multiple values per key:
 
 <p>The mapping function should not modify this map during computation.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#computeIfAbsent(K,java.util.function.Function)">computeIfAbsent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#computeIfAbsent(K,java.util.function.Function)">computeIfAbsent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to the following steps for this
 <code>map</code>:
 
@@ -591,25 +591,25 @@ return ((oldValue = map.get(key)) == null
 values and <code>get()</code> returning null unambiguously means the key is
 absent. Implementations which support null values <strong>must</strong>
 override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is to be associated</dd>
 <dd><code>mappingFunction</code> - the mapping function to compute a value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current (existing or computed) value associated with
         the specified key, or null if the computed value is null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>computeIfAbsent</code> operation is not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>computeIfAbsent</code> operation is not
         supported by this map (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key is null and
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key is null and
         this map does not support null keys, or the mappingFunction
         is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -619,8 +619,8 @@ override this default implementation.</dd>
 <section class="detail" id="computeIfPresent(K,java.util.function.BiFunction)">
 <h3 id="computeIfPresent(java.lang.Object,java.util.function.BiFunction)">computeIfPresent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">computeIfPresent</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">computeIfPresent</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</span></div>
 <div class="block">If the value for the specified key is present and non-null, attempts to
 compute a new mapping given the key and its current mapped value
 (optional operation).
@@ -631,9 +631,9 @@ exception is rethrown, and the current mapping is left unchanged.
 
 <p>The remapping function should not modify this map during computation.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#computeIfPresent(K,java.util.function.BiFunction)">computeIfPresent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#computeIfPresent(K,java.util.function.BiFunction)">computeIfPresent</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to performing the following
 steps for this <code>map</code>:
 
@@ -652,24 +652,24 @@ remapping function may be called multiple times.
 values and <code>get()</code> returning null unambiguously means the key is
 absent. Implementations which support null values <strong>must</strong>
 override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is to be associated</dd>
 <dd><code>remappingFunction</code> - the remapping function to compute a value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new value associated with the specified key, or null if none</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>computeIfPresent</code> operation is not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>computeIfPresent</code> operation is not
         supported by this map (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key is null and
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key is null and
         this map does not support null keys, or the
         remappingFunction is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -679,8 +679,8 @@ override this default implementation.</dd>
 <section class="detail" id="compute(K,java.util.function.BiFunction)">
 <h3 id="compute(java.lang.Object,java.util.function.BiFunction)">compute</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">compute</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">compute</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</span></div>
 <div class="block">Attempts to compute a mapping for the specified key and its current
 mapped value, or <code>null</code> if there is no current mapping (optional
 operation). For example, to either create or append a <code>String</code>
@@ -696,9 +696,9 @@ the current mapping is left unchanged.
 
 <p>The remapping function should not modify this map during computation.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#compute(K,java.util.function.BiFunction)">compute</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#compute(K,java.util.function.BiFunction)">compute</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to performing the following
 steps for this <code>map</code>:
 
@@ -721,24 +721,24 @@ remapping function may be called multiple times.
 values and <code>get()</code> returning null unambiguously means the key is
 absent. Implementations which support null values <strong>must</strong>
 override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is to be associated</dd>
 <dd><code>remappingFunction</code> - the remapping function to compute a value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new value associated with the specified key, or null if none</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>compute</code> operation is not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>compute</code> operation is not
         supported by this map (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key is null and
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key is null and
         this map does not support null keys, or the
         remappingFunction is null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -748,9 +748,9 @@ override this default implementation.</dd>
 <section class="detail" id="merge(K,V,java.util.function.BiFunction)">
 <h3 id="merge(java.lang.Object,java.lang.Object,java.util.function.BiFunction)">merge</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a></span>&nbsp;<span class="element-name">merge</span><wbr><span class="parameters">(<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>&nbsp;key,
- <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&nbsp;value,
- <a href="../function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? super <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>, ? extends <a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;&nbsp;remappingFunction)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a></span>&nbsp;<span class="element-name">merge</span><wbr><span class="parameters">(<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>&nbsp;key,
+ <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&nbsp;value,
+ <a href="../function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? super <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>, ? extends <a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;&nbsp;remappingFunction)</span></div>
 <div class="block">If the specified key is not already associated with a value or is
 associated with null, associates it with the given non-null value (optional
 operation). Otherwise, replaces the associated value with the results of
@@ -768,9 +768,9 @@ exception is rethrown, and the current mapping is left unchanged.
 
 <p>The remapping function should not modify this map during computation.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Map.html#merge(K,V,java.util.function.BiFunction)">merge</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="interface in java.util">Map</a>&lt;<a href="#type-param-K" title="type parameter in ConcurrentMap">K</a>,<wbr><a href="#type-param-V" title="type parameter in ConcurrentMap">V</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Map.html#merge(K,V,java.util.function.BiFunction)">merge</a></code>&nbsp;in interface&nbsp;<code><a href="../Map.html" title="java.util 包中的接口">Map</a>&lt;<a href="#type-param-K" title="ConcurrentMap 中的类型参数">K</a>,<wbr><a href="#type-param-V" title="ConcurrentMap 中的类型参数">V</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to performing the following
 steps for this <code>map</code>:
 
@@ -795,29 +795,29 @@ remapping function may be called multiple times.
 values and <code>get()</code> returning null unambiguously means the key is
 absent. Implementations which support null values <strong>must</strong>
 override this default implementation.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the resulting value is to be associated</dd>
 <dd><code>value</code> - the non-null value to be merged with the existing value
        associated with the key or, if no existing value or a null value
        is associated with the key, to be associated with the key</dd>
 <dd><code>remappingFunction</code> - the remapping function to recompute a value if
        present</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the new value associated with the specified key, or null if no
         value is associated with the key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the <code>merge</code> operation is not
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the <code>merge</code> operation is not
         supported by this map (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the class of the specified key or value
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the class of the specified key or value
         prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified key is null and this map
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified key is null and this map
         does not support null keys or the value or remappingFunction is
         null</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if some property of the specified key
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if some property of the specified key
         or value prevents it from being stored in this map
         (<a href="../Collection.html#optional-restrictions">optional</a>)</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>

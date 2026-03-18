@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.management</a></li>
 <li><a href="package-summary.html" class="current-selection">javax.management.monitor</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,16 +56,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package javax.management.monitor" class="title">Package javax.management.monitor</h1>
+<h1 title="包 javax.management.monitor" class="title">包 javax.management.monitor</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -74,16 +74,16 @@ loadScripts(document, 'script');</script>
 <div class="block"><p>Provides the definition of the monitor classes.  A Monitor is
 an MBean that periodically observes the value of an attribute in
 one or more other MBeans.  If the attribute meets a certain
-condition, the Monitor emits a <a href="MonitorNotification.html" title="class in javax.management.monitor"><code>MonitorNotification</code></a>. When the monitor MBean periodically calls
+condition, the Monitor emits a <a href="MonitorNotification.html" title="javax.management.monitor 包中的类"><code>MonitorNotification</code></a>. When the monitor MBean periodically calls
 <a href="../MBeanServer.html#getAttribute(javax.management.ObjectName,java.lang.String)"><code>getAttribute</code></a>
 to retrieve the value of the attribute being monitored it does
 so within the access control context of the
 <a href="Monitor.html#start()"><code>Monitor.start()</code></a> caller.</p>
 
 <p id="complex">The value being monitored can be a simple value
-contained within a complex type. For example, the <a href="../../../java/lang/management/MemoryMXBean.html" title="interface in java.lang.management"><code>MemoryMXBean</code></a> defined in
+contained within a complex type. For example, the <a href="../../../java/lang/management/MemoryMXBean.html" title="java.lang.management 包中的接口"><code>MemoryMXBean</code></a> defined in
 <code>java.lang.management</code> has an attribute
-<code>HeapMemoryUsage</code> of type <a href="../../../java/lang/management/MemoryUsage.html" title="class in java.lang.management"><code>MemoryUsage</code></a>. To monitor the
+<code>HeapMemoryUsage</code> of type <a href="../../../java/lang/management/MemoryUsage.html" title="java.lang.management 包中的类"><code>MemoryUsage</code></a>. To monitor the
 amount of <i>used</i> memory, described by the <code>used</code>
 property of <code>MemoryUsage</code>, you could monitor
 "<code>HeapMemoryUsage.used</code>". That string would be the
@@ -99,7 +99,7 @@ would be <code>"used"</code> in the example).</p>
 
   <ul>
 
-  <li>If <i>v</i> is a <a href="../openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a> and if <i>v</i>.<a href="../openmbean/CompositeData.html#get(java.lang.String)"><code>get</code></a>(<i>e</i>)
+  <li>If <i>v</i> is a <a href="../openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a> and if <i>v</i>.<a href="../openmbean/CompositeData.html#get(java.lang.String)"><code>get</code></a>(<i>e</i>)
   returns a value then <i>x</i> is that value.</li>
   <li>If <i>v</i> is an array and <i>e</i> is the string <code>"length"</code>
   then <i>x</i> is the length of the array.</li>
@@ -136,7 +136,7 @@ would be <code>"used"</code> in the example).</p>
   <code>ObservedAttribute</code> contains a period (<code>.</code>), the monitor
   will check whether an attribute exists whose name is the full
   <code>ObservedAttribute</code> string (<code>HeapMemoryUsage.used</code> in the
-  example). It does this by calling <a href="../MBeanServer.html#getMBeanInfo(javax.management.ObjectName)"><code>getMBeanInfo</code></a> for the observed MBean and looking for a contained <a href="../MBeanAttributeInfo.html" title="class in javax.management"><code>MBeanAttributeInfo</code></a> with the given
+  example). It does this by calling <a href="../MBeanServer.html#getMBeanInfo(javax.management.ObjectName)"><code>getMBeanInfo</code></a> for the observed MBean and looking for a contained <a href="../MBeanAttributeInfo.html" title="javax.management 包中的类"><code>MBeanAttributeInfo</code></a> with the given
   name. If one is found, then that is what is monitored. If more than one
   MBean is being observed, the behavior is unspecified if some of them have
   a <code>HeapMemoryUsage.used</code> attribute and others do not. An
@@ -153,7 +153,7 @@ summary.</p>
   <ul>
 <li>
 
-  <p>A <a href="CounterMonitor.html" title="class in javax.management.monitor"><code>CounterMonitor</code></a> observes attributes of integer
+  <p>A <a href="CounterMonitor.html" title="javax.management.monitor 包中的类"><code>CounterMonitor</code></a> observes attributes of integer
     type.  The attributes are assumed to be non-negative, and
     monotonically increasing except for a possible
     <em>roll-over</em> at a specified <em>modulus</em>.  Each
@@ -175,7 +175,7 @@ summary.</p>
 </li>
 <li>
 
-  <p>A <a href="GaugeMonitor.html" title="class in javax.management.monitor"><code>GaugeMonitor</code></a> observes attributes of numerical type.  Each
+  <p>A <a href="GaugeMonitor.html" title="javax.management.monitor 包中的类"><code>GaugeMonitor</code></a> observes attributes of numerical type.  Each
     observed attribute has an associated <em>high
       threshold</em> and <em>low threshold</em>.</p>
 
@@ -206,7 +206,7 @@ summary.</p>
 </li>
 <li>
 
-  <p>A <a href="StringMonitor.html" title="class in javax.management.monitor"><code>StringMonitor</code></a> observes attributes of type
+  <p>A <a href="StringMonitor.html" title="javax.management.monitor 包中的类"><code>StringMonitor</code></a> observes attributes of type
     <code>String</code>.  A notification is sent when an
     observed attribute becomes equal and/or not equal to a
     given string.</p>
@@ -214,9 +214,9 @@ summary.</p>
 </li>
   </ul></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a id="spec" href="https://jcp.org/aboutJava/communityprocess/mrel/jsr160/index2.html">
@@ -230,10 +230,10 @@ summary.</p>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">javax.management</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides the core classes for the Java Management Extensions.</div>
@@ -243,50 +243,50 @@ summary.</p>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">异常类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CounterMonitor.html" title="class in javax.management.monitor">CounterMonitor</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CounterMonitor.html" title="javax.management.monitor 包中的类">CounterMonitor</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Defines a monitor MBean designed to observe the values of a counter
 attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CounterMonitorMBean.html" title="interface in javax.management.monitor">CounterMonitorMBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CounterMonitorMBean.html" title="javax.management.monitor 包中的接口">CounterMonitorMBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Exposes the remote management interface of the counter monitor MBean.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="GaugeMonitor.html" title="class in javax.management.monitor">GaugeMonitor</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="GaugeMonitor.html" title="javax.management.monitor 包中的类">GaugeMonitor</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Defines a monitor MBean designed to observe the values of a gauge attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GaugeMonitorMBean.html" title="interface in javax.management.monitor">GaugeMonitorMBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GaugeMonitorMBean.html" title="javax.management.monitor 包中的接口">GaugeMonitorMBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Exposes the remote management interface of the gauge monitor MBean.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Monitor.html" title="class in javax.management.monitor">Monitor</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Monitor.html" title="javax.management.monitor 包中的类">Monitor</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Defines the part common to all monitor MBeans.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MonitorMBean.html" title="interface in javax.management.monitor">MonitorMBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MonitorMBean.html" title="javax.management.monitor 包中的接口">MonitorMBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Exposes the remote management interface of monitor MBeans.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MonitorNotification.html" title="class in javax.management.monitor">MonitorNotification</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MonitorNotification.html" title="javax.management.monitor 包中的类">MonitorNotification</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Provides definitions of the notifications sent by monitor MBeans.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="MonitorSettingException.html" title="class in javax.management.monitor">MonitorSettingException</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="MonitorSettingException.html" title="javax.management.monitor 包中的类">MonitorSettingException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">Exception thrown by the monitor when a monitor setting becomes invalid while the monitor is running.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StringMonitor.html" title="class in javax.management.monitor">StringMonitor</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StringMonitor.html" title="javax.management.monitor 包中的类">StringMonitor</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Defines a monitor MBean designed to observe the values of a string
 attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StringMonitorMBean.html" title="interface in javax.management.monitor">StringMonitorMBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StringMonitorMBean.html" title="javax.management.monitor 包中的接口">StringMonitorMBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Exposes the remote management interface of the string monitor MBean.</div>
 </div>

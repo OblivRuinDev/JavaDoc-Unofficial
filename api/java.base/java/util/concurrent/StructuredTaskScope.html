@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent</a></li>
 <li><a href="StructuredTaskScope.html" class="current-selection">StructuredTaskScope</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,9 +62,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#joiners-heading" tabindex="0">Joiners</a></li>
 <li><a href="#exception-handling-heading" tabindex="0">Exception handling</a></li>
@@ -74,9 +74,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#general-exceptions-heading" tabindex="0">General exceptions</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)" tabindex="0">open(StructuredTaskScope.Joiner, Function)</a></li>
 <li><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner)" tabindex="0">open(StructuredTaskScope.Joiner)</a></li>
@@ -93,22 +93,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface StructuredTaskScope" class="title">Interface StructuredTaskScope&lt;T,<wbr>R&gt;</h1>
+<h1 title="接口 StructuredTaskScope" class="title">接口 StructuredTaskScope&lt;T,<wbr>R&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the result type of subtasks executed in the scope</span></dd>
 <dd><span id="type-param-R"><code>R</code> - the result type of the scope</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public sealed interface </span><span class="element-name type-name-label">StructuredTaskScope&lt;T,<wbr>R&gt;</span><span class="extends-implements">
-extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
+extends <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
 <div class="preview-block" id="preview-java.util.concurrent.StructuredTaskScope"><span class="preview-label"><code>StructuredTaskScope</code> is a preview API of the Java platform.</span>
 <div class="preview-comment">Programs can only use <code>StructuredTaskScope</code> when preview features are enabled.</div>
 <div class="preview-comment">Preview features may be removed in a future release, or upgraded to permanent features of the Java platform.</div>
@@ -127,7 +127,7 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
  The code inside the block uses the <a href="#fork(java.util.concurrent.Callable)"><code>fork</code></a> method to fork subtasks.
  After forking, it uses the <a href="#join()"><code>join</code></a> method to wait for all subtasks to
  finish (or some other outcome) as a single operation. Forking a subtask starts a new
- <a href="../../lang/Thread.html" title="class in java.lang"><code>Thread</code></a> to run the subtask. The thread executing the task does not continue
+ <a href="../../lang/Thread.html" title="java.lang 包中的类"><code>Thread</code></a> to run the subtask. The thread executing the task does not continue
  beyond the <code>close</code> method until all threads started to execute subtasks have finished.
  To ensure correct usage, the <code>fork</code>, <code>join</code> and <code>close</code> methods may
  only be invoked by the <em>owner thread</em> (the thread that opened the <code>
@@ -161,10 +161,10 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 
 
  <p> If both subtasks complete successfully then the <code>join</code> method completes
- normally and the task uses the <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> method to get
+ normally and the task uses the <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup> method to get
  the result of each subtask. If one of the subtasks fails then the other subtask is
  cancelled (this will <a href="../../lang/Thread.html#interrupt()">interrupt</a> the thread executing the
- other subtask) and the <code>join</code> method throws <a href="StructuredTaskScope.FailedException.html" title="class in java.util.concurrent"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup> with the
+ other subtask) and the <code>join</code> method throws <a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup> with the
  exception from the failed subtask as the <a href="../../lang/Throwable.html#getCause()">cause</a>.
 
  <p> To allow for cancellation, subtasks must be coded so that they finish as soon as
@@ -183,7 +183,7 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 
  <p> In the example above, the task fails if any subtask fails. If all subtasks
  succeed then the <code>join</code> method completes normally. Other policy and outcome is
- supported by creating a <code>StructuredTaskScope</code> with a <a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent"><code>StructuredTaskScope.Joiner</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> that
+ supported by creating a <code>StructuredTaskScope</code> with a <a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口"><code>StructuredTaskScope.Joiner</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> that
  implements the desired policy. A <code>Joiner</code> handles subtask completion and produces
  the outcome for the <a href="#join()"><code>join</code></a> method. In the example above, <code>join</code>
  returns <code>null</code>. Depending on the <code>Joiner</code>, <code>join</code> may return a
@@ -203,7 +203,7 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 
  <p> Now consider another example that splits into two subtasks. In this example,
  each subtask produces a <code>String</code> result and the task is only interested in
- the result from the first subtask to complete successfully. The example uses <a href="StructuredTaskScope.Joiner.html#anySuccessfulResultOrThrow()"><code>Joiner.anySuccessfulResultOrThrow()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> to
+ the result from the first subtask to complete successfully. The example uses <a href="StructuredTaskScope.Joiner.html#anySuccessfulResultOrThrow()"><code>Joiner.anySuccessfulResultOrThrow()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> to
  create a <code>Joiner</code> that makes available the result of the first subtask to
  complete successfully. The type parameter in the example is "<code>String</code>" so that
  only subtasks that return a <code>String</code> can be forked.
@@ -236,15 +236,15 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
  that return results of the same type and where the <code>join</code> method returns a result
  for the task to use. Code that forks subtasks that return results of different
  types, and uses a <code>Joiner</code> such as <code>Joiner.awaitAllSuccessfulOrThrow()</code> that
- does not return a result, will use <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> after joining.
+ does not return a result, will use <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup> after joining.
 
  <h2 id="exception-handling-heading">Exception handling</h2>
 
- <p> A <code>StructuredTaskScope</code> is opened with a <a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent"><code>Joiner</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> that
+ <p> A <code>StructuredTaskScope</code> is opened with a <a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口"><code>Joiner</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> that
  handles subtask completion and produces the outcome for the <a href="#join()"><code>join</code></a> method.
  In some cases, the outcome will be a result, in other cases it will be an exception.
- If the outcome is an exception then the <code>join</code> method throws <a href="StructuredTaskScope.FailedException.html" title="class in java.util.concurrent"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup> with the exception as the <a href="../../lang/Throwable.html#getCause()">cause</a>. For many <code>Joiner</code> implementations, the exception will be an exception
- thrown by a subtask that failed. In the case of <a href="StructuredTaskScope.Joiner.html#allSuccessfulOrThrow()"><code>allSuccessfulOrThrow</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> and <a href="StructuredTaskScope.Joiner.html#awaitAllSuccessfulOrThrow()"><code>awaitAllSuccessfulOrThrow</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>
+ If the outcome is an exception then the <code>join</code> method throws <a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup> with the exception as the <a href="../../lang/Throwable.html#getCause()">cause</a>. For many <code>Joiner</code> implementations, the exception will be an exception
+ thrown by a subtask that failed. In the case of <a href="StructuredTaskScope.Joiner.html#allSuccessfulOrThrow()"><code>allSuccessfulOrThrow</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> and <a href="StructuredTaskScope.Joiner.html#awaitAllSuccessfulOrThrow()"><code>awaitAllSuccessfulOrThrow</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>
  for example, the exception is from the first subtask to fail.
 
  <p> Many of the details for how exceptions are handled will depend on usage. In some
@@ -270,7 +270,7 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 </div>
 
  In other cases it may not be useful to catch <code>FailedException</code> but instead leave
- it to propagate to the configured <a href="../../lang/Thread.UncaughtExceptionHandler.html" title="interface in java.lang">uncaught
+ it to propagate to the configured <a href="../../lang/Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">uncaught
  exception handler</a> for logging purposes.
 
  <p> For cases where a specific exception triggers the use of a default result then it
@@ -280,8 +280,8 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
  <h2 id="configuration-heading">Configuration</h2>
 
 
- A <code>StructuredTaskScope</code> is opened with <a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">configuration</a>
- that consists of a <a href="ThreadFactory.html" title="interface in java.util.concurrent"><code>ThreadFactory</code></a> to create threads, an optional name for
+ A <code>StructuredTaskScope</code> is opened with <a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">configuration</a>
+ that consists of a <a href="ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> to create threads, an optional name for
  monitoring and management purposes, and an optional timeout.
 
  <p> The <a href="#open()"><code>open()</code></a> and <a href="#open(java.util.concurrent.StructuredTaskScope.Joiner)"><code>open(Joiner)</code></a> methods create a <code>StructuredTaskScope</code>
@@ -294,8 +294,8 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
  <code>StructuredTaskScope</code> that uses a different <code>ThreadFactory</code>, has a name for
  the purposes of monitoring and management, or has a timeout that cancels the scope if
  the timeout expires before or while waiting for subtasks to complete. The <code>open</code>
- method is called with a <a href="../function/Function.html" title="interface in java.util.function">function</a> that is applied to the default
- configuration and returns a <a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent"><code>Configuration</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup> for the
+ method is called with a <a href="../function/Function.html" title="java.util.function 包中的接口">function</a> that is applied to the default
+ configuration and returns a <a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口"><code>Configuration</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup> for the
  <code>StructuredTaskScope</code> under construction.
 
  <p> The following example opens a new <code>StructuredTaskScope</code> with a <code>
@@ -317,11 +317,11 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 </div>
 
 
- <p> A second example sets a timeout, represented by a <a href="../../time/Duration.html" title="class in java.time"><code>Duration</code></a>. The timeout
+ <p> A second example sets a timeout, represented by a <a href="../../time/Duration.html" title="java.time 包中的类"><code>Duration</code></a>. The timeout
  starts when the new scope is opened. If the timeout expires before the <code>join</code>
  method has completed then the scope is <a href="#Cancallation">cancelled</a>. This
  interrupts the threads executing the two subtasks and causes the <a href="#join()"><code>join</code></a>
- method to throw <a href="StructuredTaskScope.TimeoutException.html" title="class in java.util.concurrent"><code>StructuredTaskScope.TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup>.
+ method to throw <a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类"><code>StructuredTaskScope.TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup>.
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.util.concurrent.StructuredTaskScope5"><code class="language-java">   Duration timeout = Duration.ofSeconds(10);
@@ -343,7 +343,7 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 
  <h2 id="inheritance-of-scoped-value-bindings-heading">Inheritance of scoped value bindings</h2>
 
- <a href="../../lang/ScopedValue.html" title="class in java.lang"><code>ScopedValue</code></a> supports the execution of a method with a <code>ScopedValue</code> bound
+ <a href="../../lang/ScopedValue.html" title="java.lang 包中的类"><code>ScopedValue</code></a> supports the execution of a method with a <code>ScopedValue</code> bound
  to a value for the bounded period of execution of the method by the <em>current thread</em>.
  It allows a value to be safely and efficiently shared to methods without using method
  parameters.
@@ -418,16 +418,16 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
  <a href="#fork(java.util.concurrent.Callable)">forking</a> of a subtask
  <a href="../../../../java.base/java/util/concurrent/package-summary.html#MemoryVisibility">
  <i>happen-before</i></a> any actions taken by that subtask, which in turn
- <i>happen-before</i> the subtask result is <a href="StructuredTaskScope.Subtask.html#get()">retrieved</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>.
+ <i>happen-before</i> the subtask result is <a href="StructuredTaskScope.Subtask.html#get()">retrieved</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>.
 
  <h2 id="general-exceptions-heading">General exceptions</h2>
 
  <p> Unless otherwise specified, passing a <code>null</code> argument to a method in this
- class will cause a <a href="../../lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown.</div>
+ class will cause a <a href="../../lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown.</div>
 <dl class="notes"><dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5">17.4.5 Happens-before Order</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>21</dd>
 </dl>
 </div>
@@ -437,41 +437,41 @@ extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">A
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StructuredTaskScope.Configuration.html" class="type-name-link" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup></code></div>
+<div class="col-second even-row-color"><code><a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup></code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Represents the configuration for a <code>StructuredTaskScope</code>.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="StructuredTaskScope.FailedException.html" class="type-name-link" title="class in java.util.concurrent">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup></code></div>
+<div class="col-second odd-row-color"><code><a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup></code></div>
 <div class="col-last odd-row-color">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Exception thrown by <a href="#join()"><code>join()</code></a> when the outcome is an exception rather than a
 result.</div>
 </div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StructuredTaskScope.Joiner.html" class="type-name-link" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;<a href="StructuredTaskScope.Joiner.html#type-param-T" title="type parameter in StructuredTaskScope.Joiner">T</a>,<wbr><a href="StructuredTaskScope.Joiner.html#type-param-R" title="type parameter in StructuredTaskScope.Joiner">R</a>&gt;</code></div>
+<div class="col-second even-row-color"><code><a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;<a href="StructuredTaskScope.Joiner.html#type-param-T" title="StructuredTaskScope.Joiner 中的类型参数">T</a>,<wbr><a href="StructuredTaskScope.Joiner.html#type-param-R" title="StructuredTaskScope.Joiner 中的类型参数">R</a>&gt;</code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">An object used with a <a href="StructuredTaskScope.html" title="interface in java.util.concurrent"><code>StructuredTaskScope</code></a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> to handle subtask completion and
+<div class="block">An object used with a <a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口"><code>StructuredTaskScope</code></a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> to handle subtask completion and
 produce the result for the scope owner waiting in the <a href="#join()"><code>join</code></a> method
 for subtasks to complete.</div>
 </div>
 <div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="StructuredTaskScope.Subtask.html" class="type-name-link" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>&lt;<a href="StructuredTaskScope.Subtask.html#type-param-T" title="type parameter in StructuredTaskScope.Subtask">T</a>&gt;</code></div>
+<div class="col-second odd-row-color"><code><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>&lt;<a href="StructuredTaskScope.Subtask.html#type-param-T" title="StructuredTaskScope.Subtask 中的类型参数">T</a>&gt;</code></div>
 <div class="col-last odd-row-color">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Represents a subtask forked with <a href="#fork(java.util.concurrent.Callable)"><code>fork(Callable)</code></a> or <a href="#fork(java.lang.Runnable)"><code>fork(Runnable)</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>static final class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StructuredTaskScope.TimeoutException.html" class="type-name-link" title="class in java.util.concurrent">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup></code></div>
+<div class="col-second even-row-color"><code><a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup></code></div>
 <div class="col-last even-row-color">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Exception thrown by <a href="#join()"><code>join()</code></a> if the scope was created with a timeout and
@@ -483,27 +483,27 @@ the timeout expired before or while waiting in <code>join</code>.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes this scope.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;U extends <a href="#type-param-T" title="type parameter in StructuredTaskScope">T</a>&gt;<br><a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup><wbr>&lt;U&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fork(java.lang.Runnable)" class="member-name-link">fork</a><wbr>(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;task)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;U extends <a href="#type-param-T" title="StructuredTaskScope 中的类型参数">T</a>&gt;<br><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup><wbr>&lt;U&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fork(java.lang.Runnable)" class="member-name-link">fork</a><wbr>(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;task)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Fork a subtask by starting a new thread in this scope to execute a method that
 does not return a result.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;U extends <a href="#type-param-T" title="type parameter in StructuredTaskScope">T</a>&gt;<br><a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup><wbr>&lt;U&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fork(java.util.concurrent.Callable)" class="member-name-link">fork</a><wbr>(<a href="Callable.html" title="interface in java.util.concurrent">Callable</a>&lt;? extends U&gt;&nbsp;task)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>&lt;U extends <a href="#type-param-T" title="StructuredTaskScope 中的类型参数">T</a>&gt;<br><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup><wbr>&lt;U&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#fork(java.util.concurrent.Callable)" class="member-name-link">fork</a><wbr>(<a href="Callable.html" title="java.util.concurrent 包中的接口">Callable</a>&lt;? extends U&gt;&nbsp;task)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Fork a subtask by starting a new thread in this scope to execute a value-returning
 method.</div>
@@ -514,26 +514,26 @@ method.</div>
 <div class="block">Returns <code>true</code> if this scope is <a href="#Cancallation">cancelled</a> or in
 the process of being cancelled, otherwise <code>false</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-R" title="type parameter in StructuredTaskScope">R</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-R" title="StructuredTaskScope 中的类型参数">R</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#join()" class="member-name-link">join</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the result, or throws, after waiting for all subtasks to complete or
 the scope to be <a href="#Cancallation">cancelled</a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup><wbr>&lt;T,<wbr><a href="../../lang/Void.html" title="class in java.lang">Void</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup><wbr>&lt;T,<wbr><a href="../../lang/Void.html" title="java.lang 包中的类">Void</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#open()" class="member-name-link">open</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Opens a new <code>StructuredTaskScope</code> that can be used to fork subtasks that return
 results of any type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup><wbr>&lt;T,<wbr>R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner)" class="member-name-link">open</a><wbr>(<a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup><wbr>&lt;T,<wbr>R&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner)" class="member-name-link">open</a><wbr>(<a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Opens a new <code>StructuredTaskScope</code>to use the given <code>Joiner</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup><wbr>&lt;T,<wbr>R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)" class="member-name-link">open</a><wbr>(<a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;<a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>, <a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>&gt;&nbsp;configFunction)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup><wbr>&lt;T,<wbr>R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)" class="member-name-link">open</a><wbr>(<a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;<a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>, <a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>&gt;&nbsp;configFunction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Opens a new <code>StructuredTaskScope</code> to use the given <code>Joiner</code> object and
 with configuration that is the result of applying the given function to the
@@ -551,22 +551,22 @@ with configuration that is the result of applying the given function to the
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)">
 <h3>open</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">open</span><wbr><span class="parameters">(<a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner,
- <a href="../function/Function.html" title="interface in java.util.function">Function</a>&lt;<a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>, <a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>&gt;&nbsp;configFunction)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">open</span><wbr><span class="parameters">(<a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner,
+ <a href="../function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;<a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>, <a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>&gt;&nbsp;configFunction)</span></div>
 <div class="block">Opens a new <code>StructuredTaskScope</code> to use the given <code>Joiner</code> object and
 with configuration that is the result of applying the given function to the
 <a href="#DefaultConfiguration">default configuration</a>.
 
 <p> The <code>configFunction</code> is called with the default configuration and returns
 the configuration for the new scope. The function may, for example, set the
-<a href="StructuredTaskScope.Configuration.html#withThreadFactory(java.util.concurrent.ThreadFactory)">ThreadFactory</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup> or set a
-<a href="StructuredTaskScope.Configuration.html#withTimeout(java.time.Duration)">timeout</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>. If the function completes
+<a href="StructuredTaskScope.Configuration.html#withThreadFactory(java.util.concurrent.ThreadFactory)">ThreadFactory</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup> or set a
+<a href="StructuredTaskScope.Configuration.html#withTimeout(java.time.Duration)">timeout</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>. If the function completes
 with an exception or error then it is propagated by this method. If the function
 returns <code>null</code> then <code>NullPointerException</code> is thrown.
 
@@ -576,24 +576,24 @@ forking subtasks will create an unnamed virtual thread for each subtask.
 <p> If a <a href="StructuredTaskScope.Configuration.html#withTimeout(java.time.Duration)">timeout</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup> is set then it
 starts when the scope is opened. If the timeout expires before the scope has
 <a href="#join()">joined</a> then the scope is <a href="#Cancallation">cancelled</a>
-and the <code>join</code> method throws <a href="StructuredTaskScope.TimeoutException.html" title="class in java.util.concurrent"><code>StructuredTaskScope.TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup>.
+and the <code>join</code> method throws <a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类"><code>StructuredTaskScope.TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup>.
 
 <p> The new scope is owned by the current thread. Only code executing in this
 thread can <a href="#fork(java.util.concurrent.Callable)">fork</a>, <a href="#join()">join</a>, or
 <a href="#close()">close</a> the scope.
 
-<p> Construction captures the current thread's <a href="../../lang/ScopedValue.html" title="class in java.lang">scoped
+<p> Construction captures the current thread's <a href="../../lang/ScopedValue.html" title="java.lang 包中的类">scoped
 value</a> bindings for inheritance by threads started in the scope.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)-type-param-T"><code>T</code> - the result type of subtasks executed in the scope</span></dd>
 <dd><span id="open(java.util.concurrent.StructuredTaskScope.Joiner,java.util.function.Function)-type-param-R"><code>R</code> - the result type of the scope</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>joiner</code> - the joiner</dd>
 <dd><code>configFunction</code> - a function to produce the configuration</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new scope</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -603,24 +603,24 @@ value</a> bindings for inheritance by threads started in the scope.</div>
 <section class="detail" id="open(java.util.concurrent.StructuredTaskScope.Joiner)">
 <h3>open</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">open</span><wbr><span class="parameters">(<a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">open</span><wbr><span class="parameters">(<a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;? super T, ? extends R&gt;&nbsp;joiner)</span></div>
 <div class="block">Opens a new <code>StructuredTaskScope</code>to use the given <code>Joiner</code> object. The
 scope is created with the <a href="#DefaultConfiguration">default configuration</a>.
 The default configuration has a <code>ThreadFactory</code> that creates unnamed
 <a href="../../../../java.base/java/lang/Thread.html#virtual-threads">virtual threads</a>,
 is unnamed for monitoring and management purposes, and has no timeout.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This factory method is equivalent to invoking the 2-arg open method with the given
 joiner and the <a href="../function/Function.html#identity()">identity function</a>.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="open(java.util.concurrent.StructuredTaskScope.Joiner)-type-param-T"><code>T</code> - the result type of subtasks executed in the scope</span></dd>
 <dd><span id="open(java.util.concurrent.StructuredTaskScope.Joiner)-type-param-R"><code>R</code> - the result type of the scope</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>joiner</code> - the joiner</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new scope</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -630,13 +630,13 @@ joiner and the <a href="../function/Function.html#identity()">identity function<
 <section class="detail" id="open()">
 <h3>open</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup>&lt;T,<wbr><a href="../../lang/Void.html" title="class in java.lang">Void</a>&gt;</span>&nbsp;<span class="element-name">open</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup>&lt;T,<wbr><a href="../../lang/Void.html" title="java.lang 包中的类">Void</a>&gt;</span>&nbsp;<span class="element-name">open</span>()</div>
 <div class="block">Opens a new <code>StructuredTaskScope</code> that can be used to fork subtasks that return
 results of any type. The scope's <a href="#join()"><code>join()</code></a> method waits for all subtasks to
 succeed or any subtask to fail.
 
 <p> The <code>join</code> method returns <code>null</code> if all subtasks complete successfully.
-It throws <a href="StructuredTaskScope.FailedException.html" title="class in java.util.concurrent"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup> if any subtask fails, with the exception from
+It throws <a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类"><code>StructuredTaskScope.FailedException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup> if any subtask fails, with the exception from
 the first subtask to fail as the cause.
 
 <p> The scope is created with the <a href="#DefaultConfiguration">default
@@ -644,15 +644,15 @@ configuration</a>. The default configuration has a <code>ThreadFactory</code> th
 unnamed <a href="../../../../java.base/java/lang/Thread.html#virtual-threads">virtual
 threads</a>, is unnamed for monitoring and management purposes, and has no timeout.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This factory method is equivalent to invoking the 2-arg open method with a joiner
-created with <a href="StructuredTaskScope.Joiner.html#awaitAllSuccessfulOrThrow()"><code>awaitAllSuccessfulOrThrow()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>
+created with <a href="StructuredTaskScope.Joiner.html#awaitAllSuccessfulOrThrow()"><code>awaitAllSuccessfulOrThrow()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>
 and the <a href="../function/Function.html#identity()">identity function</a>.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="open()-type-param-T"><code>T</code> - the result type of subtasks</span></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new scope</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -662,59 +662,59 @@ and the <a href="../function/Function.html#identity()">identity function</a>.</d
 <section class="detail" id="fork(java.util.concurrent.Callable)">
 <h3>fork</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;U extends <a href="#type-param-T" title="type parameter in StructuredTaskScope">T</a>&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>&lt;U&gt;</span>&nbsp;<span class="element-name">fork</span><wbr><span class="parameters">(<a href="Callable.html" title="interface in java.util.concurrent">Callable</a>&lt;? extends U&gt;&nbsp;task)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;U extends <a href="#type-param-T" title="StructuredTaskScope 中的类型参数">T</a>&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>&lt;U&gt;</span>&nbsp;<span class="element-name">fork</span><wbr><span class="parameters">(<a href="Callable.html" title="java.util.concurrent 包中的接口">Callable</a>&lt;? extends U&gt;&nbsp;task)</span></div>
 <div class="block">Fork a subtask by starting a new thread in this scope to execute a value-returning
 method. The new thread executes the subtask concurrently with the current thread.
-The parameter to this method is a <a href="Callable.html" title="interface in java.util.concurrent"><code>Callable</code></a>, the new thread executes its
+The parameter to this method is a <a href="Callable.html" title="java.util.concurrent 包中的接口"><code>Callable</code></a>, the new thread executes its
 <a href="Callable.html#call()"><code>call()</code></a> method.
 
-<p> This method first creates a <a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent"><code>Subtask</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> object to represent the
-<em>forked subtask</em>. It invokes the joiner's <a href="StructuredTaskScope.Joiner.html#onFork(java.util.concurrent.StructuredTaskScope.Subtask)"><code>onFork</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>
-method with the subtask in the <a href="StructuredTaskScope.Subtask.State.html#UNAVAILABLE"><code>UNAVAILABLE</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">PREVIEW</a></sup> state.
+<p> This method first creates a <a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口"><code>Subtask</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup> object to represent the
+<em>forked subtask</em>. It invokes the joiner's <a href="StructuredTaskScope.Joiner.html#onFork(java.util.concurrent.StructuredTaskScope.Subtask)"><code>onFork</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>
+method with the subtask in the <a href="StructuredTaskScope.Subtask.State.html#UNAVAILABLE"><code>UNAVAILABLE</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">预览</a></sup> state.
 If the <code>onFork</code> completes with an exception or error then it is propagated by
 the <code>fork</code> method without creating a thread. If the scope is already
 <a href="#Cancallation">cancelled</a>, or <code>onFork</code> returns <code>true</code> to
 cancel the scope, then this method returns the <code>Subtask</code>, in the
-<a href="StructuredTaskScope.Subtask.State.html#UNAVAILABLE"><code>UNAVAILABLE</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">PREVIEW</a></sup> state, without creating a thread to
+<a href="StructuredTaskScope.Subtask.State.html#UNAVAILABLE"><code>UNAVAILABLE</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">预览</a></sup> state, without creating a thread to
 execute the subtask.
 
 <p> If the scope is not cancelled, and the <code>onFork</code> method returns <code>false</code>,
-then a thread is created with the <a href="ThreadFactory.html" title="interface in java.util.concurrent"><code>ThreadFactory</code></a> configured when the scope
+then a thread is created with the <a href="ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> configured when the scope
 was opened, and the thread is started. Forking a subtask inherits the current thread's
-<a href="../../lang/ScopedValue.html" title="class in java.lang">scoped value</a> bindings. The bindings must match the bindings
+<a href="../../lang/ScopedValue.html" title="java.lang 包中的类">scoped value</a> bindings. The bindings must match the bindings
 captured when the scope was opened. If the subtask completes (successfully or with
 an exception) before the scope is cancelled, then the thread invokes the joiner's
-<a href="StructuredTaskScope.Joiner.html#onComplete(java.util.concurrent.StructuredTaskScope.Subtask)"><code>onComplete</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> method with the subtask in the
-<a href="StructuredTaskScope.Subtask.State.html#SUCCESS"><code>SUCCESS</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">PREVIEW</a></sup> or <a href="StructuredTaskScope.Subtask.State.html#FAILED"><code>FAILED</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">PREVIEW</a></sup> state.
+<a href="StructuredTaskScope.Joiner.html#onComplete(java.util.concurrent.StructuredTaskScope.Subtask)"><code>onComplete</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> method with the subtask in the
+<a href="StructuredTaskScope.Subtask.State.html#SUCCESS"><code>SUCCESS</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">预览</a></sup> or <a href="StructuredTaskScope.Subtask.State.html#FAILED"><code>FAILED</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">预览</a></sup> state.
 If the <code>onComplete</code> method completes with an exception or error, then the
-<a href="../../lang/Thread.UncaughtExceptionHandler.html" title="interface in java.lang">uncaught exception handler</a> is invoked
+<a href="../../lang/Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">uncaught exception handler</a> is invoked
 with the exception or error before the thread terminates.
 
-<p> This method returns the <a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent"><code>Subtask</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> object. In some usages, this
+<p> This method returns the <a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口"><code>Subtask</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> object. In some usages, this
 object may be used to get its result. In other cases it may be used for correlation
-or be discarded. To ensure correct usage, the <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>
+or be discarded. To ensure correct usage, the <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>
 method may only be called by the scope owner to get the result after it has
 waited for subtasks to complete with the <a href="#join()"><code>join</code></a> method and the subtask
-completed successfully. Similarly, the <a href="StructuredTaskScope.Subtask.html#exception()"><code>Subtask.exception()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>
+completed successfully. Similarly, the <a href="StructuredTaskScope.Subtask.html#exception()"><code>Subtask.exception()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>
 method may only be called by the scope owner after it has joined and the subtask
 failed. If the scope was cancelled before the subtask was forked, or before it
 completes, then neither method can be used to obtain the outcome.
 
 <p> This method may only be invoked by the scope owner.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="fork(java.util.concurrent.Callable)-type-param-U"><code>U</code> - the result type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - the value-returning task for the thread to execute</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the subtask</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the owner has already <a href="#join()">joined</a>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the owner has already <a href="#join()">joined</a>
 or the scope is closed</dd>
-<dd><code><a href="StructureViolationException.html" title="class in java.util.concurrent">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">PREVIEW</a></sup></code> - if the current scoped value bindings are not
+<dd><code><a href="StructureViolationException.html" title="java.util.concurrent 包中的类">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">预览</a></sup></code> - if the current scoped value bindings are not
 the same as when the scope was created</dd>
-<dd><code><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></code> - if the thread factory rejected creating a
+<dd><code><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></code> - if the thread factory rejected creating a
 thread to run the subtask</dd>
 </dl>
 </div>
@@ -724,30 +724,30 @@ thread to run the subtask</dd>
 <section class="detail" id="fork(java.lang.Runnable)">
 <h3>fork</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="type-parameters">&lt;U extends <a href="#type-param-T" title="type parameter in StructuredTaskScope">T</a>&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>&lt;U&gt;</span>&nbsp;<span class="element-name">fork</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;task)</span></div>
+<div class="member-signature"><span class="type-parameters">&lt;U extends <a href="#type-param-T" title="StructuredTaskScope 中的类型参数">T</a>&gt;</span>&nbsp;<span class="return-type"><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>&lt;U&gt;</span>&nbsp;<span class="element-name">fork</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;task)</span></div>
 <div class="block">Fork a subtask by starting a new thread in this scope to execute a method that
 does not return a result.
 
 <p> This method works exactly the same as <a href="#fork(java.util.concurrent.Callable)"><code>fork(Callable)</code></a> except that the
-parameter to this method is a <a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a>, the new thread executes its
-<a href="../../lang/Runnable.html#run()"><code>run</code></a> method, and <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup> returns
+parameter to this method is a <a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a>, the new thread executes its
+<a href="../../lang/Runnable.html#run()"><code>run</code></a> method, and <a href="StructuredTaskScope.Subtask.html#get()"><code>Subtask.get()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup> returns
 <code>null</code> if the subtask completes successfully.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="fork(java.lang.Runnable)-type-param-U"><code>U</code> - the result type</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>task</code> - the task for the thread to execute</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the subtask</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the owner has already <a href="#join()">joined</a>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the owner has already <a href="#join()">joined</a>
 or the scope is closed</dd>
-<dd><code><a href="StructureViolationException.html" title="class in java.util.concurrent">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">PREVIEW</a></sup></code> - if the current scoped value bindings are not
+<dd><code><a href="StructureViolationException.html" title="java.util.concurrent 包中的类">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">预览</a></sup></code> - if the current scoped value bindings are not
 the same as when the scope was created</dd>
-<dd><code><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></code> - if the thread factory rejected creating a
+<dd><code><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></code> - if the thread factory rejected creating a
 thread to run the subtask</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -757,32 +757,32 @@ thread to run the subtask</dd>
 <section class="detail" id="join()">
 <h3>join</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-R" title="type parameter in StructuredTaskScope">R</a></span>&nbsp;<span class="element-name">join</span>()
-throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-R" title="StructuredTaskScope 中的类型参数">R</a></span>&nbsp;<span class="element-name">join</span>()
+throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></span></div>
 <div class="block">Returns the result, or throws, after waiting for all subtasks to complete or
 the scope to be <a href="#Cancallation">cancelled</a>.
 
 <p> This method waits for all subtasks started in this scope to complete or the
-scope to be cancelled. If a <a href="StructuredTaskScope.Configuration.html#withTimeout(java.time.Duration)">timeout</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup>
+scope to be cancelled. If a <a href="StructuredTaskScope.Configuration.html#withTimeout(java.time.Duration)">timeout</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup>
 is configured and the timeout expires before or while waiting, then the scope is
-cancelled and <a href="StructuredTaskScope.TimeoutException.html" title="class in java.util.concurrent"><code>TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup> is thrown. Once finished
-waiting, the <code>Joiner</code>'s <a href="StructuredTaskScope.Joiner.html#result()"><code>result()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> method is invoked
+cancelled and <a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类"><code>TimeoutException</code></a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup> is thrown. Once finished
+waiting, the <code>Joiner</code>'s <a href="StructuredTaskScope.Joiner.html#result()"><code>result()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> method is invoked
 to get the result or throw an exception. If the <code>result()</code> method throws
 then this method throws <code>FailedException</code> with the exception as the cause.
 
 <p> This method may only be invoked by the scope owner, and only once.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if already joined or this scope is closed</dd>
-<dd><code><a href="StructuredTaskScope.FailedException.html" title="class in java.util.concurrent">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup></code> - if the <i>outcome</i> is an exception, thrown with the
-exception from <a href="StructuredTaskScope.Joiner.html#result()"><code>Joiner.result()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup> as the cause</dd>
-<dd><code><a href="StructuredTaskScope.TimeoutException.html" title="class in java.util.concurrent">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup></code> - if a timeout is set and the timeout expires before or
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if already joined or this scope is closed</dd>
+<dd><code><a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup></code> - if the <i>outcome</i> is an exception, thrown with the
+exception from <a href="StructuredTaskScope.Joiner.html#result()"><code>Joiner.result()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup> as the cause</dd>
+<dd><code><a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup></code> - if a timeout is set and the timeout expires before or
 while waiting</dd>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if interrupted while waiting</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if interrupted while waiting</dd>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -802,14 +802,14 @@ It may take some time before the interrupted threads finish execution; this
 method may return <code>true</code> before all threads have been interrupted or before
 all threads have finished.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>A task with a lengthy "forking phase" (the code that executes before
 it invokes <a href="#join()"><code>join</code></a>) may use this method to avoid doing work in cases
 where scope is cancelled by the completion of a previously forked subtask or timeout.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this scope is <a href="#Cancallation">cancelled</a> or in
 the process of being cancelled, otherwise <code>false</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -835,9 +835,9 @@ is already closed then the scope owner invoking this method has no effect.
 manner</em>. If this method is called to close a scope before nested task
 scopes are closed then it closes the underlying construct of each nested scope
 (in the reverse order that they were created in), closes this scope, and then
-throws <a href="StructureViolationException.html" title="class in java.util.concurrent"><code>StructureViolationException</code></a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">PREVIEW</a></sup>.
+throws <a href="StructureViolationException.html" title="java.util.concurrent 包中的类"><code>StructureViolationException</code></a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">预览</a></sup>.
 Similarly, if this method is called to close a scope while executing with
-<a href="../../lang/ScopedValue.html" title="class in java.lang">scoped value</a> bindings, and the scope was created
+<a href="../../lang/ScopedValue.html" title="java.lang 包中的类">scoped value</a> bindings, and the scope was created
 before the scoped values were bound, then <code>StructureViolationException</code> is
 thrown after closing the scope.
 If a thread terminates without first closing scopes that it owns then
@@ -846,13 +846,13 @@ be closed. Closing is performed in the reverse order that the scopes were
 created in. Thread termination may therefore be delayed when the scope owner
 has to wait for threads forked in these scopes to finish.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - thrown after closing the scope if the scope
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - thrown after closing the scope if the scope
 owner did not attempt to join after forking</dd>
-<dd><code><a href="../../lang/WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
-<dd><code><a href="StructureViolationException.html" title="class in java.util.concurrent">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">PREVIEW</a></sup></code> - if a structure violation was detected</dd>
+<dd><code><a href="../../lang/WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if the current thread is not the scope owner</dd>
+<dd><code><a href="StructureViolationException.html" title="java.util.concurrent 包中的类">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">预览</a></sup></code> - if a structure violation was detected</dd>
 </dl>
 </div>
 </section>

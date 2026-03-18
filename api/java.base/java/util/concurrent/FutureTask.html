@@ -62,7 +62,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.concurrent</a></li>
 <li><a href="FutureTask.html" class="current-selection">FutureTask</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -70,19 +70,19 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.util.concurrent.Callable)" tabindex="0">FutureTask(Callable)</a></li>
 <li><a href="#%3Cinit%3E(java.lang.Runnable,V)" tabindex="0">FutureTask(Runnable, V)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#isCancelled()" tabindex="0">isCancelled()</a></li>
 <li><a href="#isDone()" tabindex="0">isDone()</a></li>
@@ -105,27 +105,27 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class FutureTask" class="title">Class FutureTask&lt;V&gt;</h1>
+<h1 title="类 FutureTask" class="title">类 FutureTask&lt;V&gt;</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.concurrent.FutureTask&lt;V&gt;</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-V"><code>V</code> - The result type returned by this FutureTask's <code>get</code> methods</span></dd>
 </dl>
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>, <a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;V&gt;, <a href="RunnableFuture.html" title="interface in java.util.concurrent">RunnableFuture</a>&lt;V&gt;</code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>, <a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;V&gt;, <a href="RunnableFuture.html" title="java.util.concurrent 包中的接口">RunnableFuture</a>&lt;V&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">FutureTask&lt;V&gt;</span>
-<span class="extends-implements">extends <a href="../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="RunnableFuture.html" title="interface in java.util.concurrent">RunnableFuture</a>&lt;V&gt;</span></div>
+<span class="extends-implements">extends <a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="RunnableFuture.html" title="java.util.concurrent 包中的接口">RunnableFuture</a>&lt;V&gt;</span></div>
 <div class="block">A cancellable asynchronous computation.  This class provides a base
-implementation of <a href="Future.html" title="interface in java.util.concurrent"><code>Future</code></a>, with methods to start and cancel
+implementation of <a href="Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a>, with methods to start and cancel
 a computation, query to see if the computation is complete, and
 retrieve the result of the computation.  The result can only be
 retrieved when the computation has completed; the <code>get</code>
@@ -134,16 +134,16 @@ the computation has completed, the computation cannot be restarted
 or cancelled (unless the computation is invoked using
 <a href="#runAndReset()"><code>runAndReset()</code></a>).
 
-<p>A <code>FutureTask</code> can be used to wrap a <a href="Callable.html" title="interface in java.util.concurrent"><code>Callable</code></a> or
-<a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a> object.  Because <code>FutureTask</code> implements
+<p>A <code>FutureTask</code> can be used to wrap a <a href="Callable.html" title="java.util.concurrent 包中的接口"><code>Callable</code></a> or
+<a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a> object.  Because <code>FutureTask</code> implements
 <code>Runnable</code>, a <code>FutureTask</code> can be submitted to an
-<a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a> for execution.
+<a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a> for execution.
 
 <p>In addition to serving as a standalone class, this class provides
 <code>protected</code> functionality that may be useful when creating
 customized task classes.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -153,28 +153,28 @@ customized task classes.</div>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
+<h2>嵌套类概要</h2>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-java.util.concurrent.Future">Nested classes/interfaces declared in interface&nbsp;<a href="Future.html#nested-class-summary" title="interface in java.util.concurrent">Future</a></h3>
-<code><a href="Future.State.html" title="enum class in java.util.concurrent">Future.State</a></code></div>
+<h3 id="nested-classes-inherited-from-class-java.util.concurrent.Future">在接口 <a href="Future.html#nested-class-summary" title="java.util.concurrent 包中的接口">Future</a> 中声明的嵌套类/接口</h3>
+<code><a href="Future.State.html" title="java.util.concurrent 包中的枚举类">Future.State</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Runnable,V)" class="member-name-link">FutureTask</a><wbr>(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;runnable,
- <a href="#type-param-V" title="type parameter in FutureTask">V</a>&nbsp;result)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.Runnable,V)" class="member-name-link">FutureTask</a><wbr>(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;runnable,
+ <a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&nbsp;result)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a <code>FutureTask</code> that will, upon running, execute the
 given <code>Runnable</code>, and arrange that <code>get</code> will return the
 given result on successful completion.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Callable)" class="member-name-link">FutureTask</a><wbr>(<a href="Callable.html" title="interface in java.util.concurrent">Callable</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;&nbsp;callable)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.util.concurrent.Callable)" class="member-name-link">FutureTask</a><wbr>(<a href="Callable.html" title="java.util.concurrent 包中的接口">Callable</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;&nbsp;callable)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a <code>FutureTask</code> that will, upon running, execute the
 given <code>Callable</code>.</div>
@@ -185,14 +185,14 @@ given <code>Callable</code>.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#cancel(boolean)" class="member-name-link">cancel</a><wbr>(boolean&nbsp;mayInterruptIfRunning)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -204,20 +204,20 @@ given <code>Callable</code>.</div>
 <div class="block">Protected method invoked when this task transitions to state
 <code>isDone</code> (whether normally or via cancellation).</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exceptionNow()" class="member-name-link">exceptionNow</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the exception thrown by the task, without waiting.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="type parameter in FutureTask">V</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get()" class="member-name-link">get</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Waits if necessary for the computation to complete, and then
 retrieves its result.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="type parameter in FutureTask">V</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(long,java.util.concurrent.TimeUnit)" class="member-name-link">get</a><wbr>(long&nbsp;timeout,
- <a href="TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</code></div>
+ <a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Waits if necessary for at most the given time for the computation
 to complete, and then retrieves its result, if available.</div>
@@ -233,7 +233,7 @@ normally.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>true</code> if this task completed.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="type parameter in FutureTask">V</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resultNow()" class="member-name-link">resultNow</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the computed result, without waiting.</div>
@@ -252,24 +252,24 @@ resets this future to initial state, failing to do so if the
 computation encounters an exception or is cancelled.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(V)" class="member-name-link">set</a><wbr>(<a href="#type-param-V" title="type parameter in FutureTask">V</a>&nbsp;v)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(V)" class="member-name-link">set</a><wbr>(<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&nbsp;v)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the result of this future to the given value unless
 this future has already been set or has been cancelled.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setException(java.lang.Throwable)" class="member-name-link">setException</a><wbr>(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;t)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setException(java.lang.Throwable)" class="member-name-link">setException</a><wbr>(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;t)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Causes this future to report an <a href="ExecutionException.html" title="class in java.util.concurrent"><code>ExecutionException</code></a>
+<div class="block">Causes this future to report an <a href="ExecutionException.html" title="java.util.concurrent 包中的类"><code>ExecutionException</code></a>
 with the given throwable as its cause, unless this future has
 already been set or has been cancelled.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Future.State.html" title="enum class in java.util.concurrent">Future.State</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Future.State.html" title="java.util.concurrent 包中的枚举类">Future.State</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#state()" class="member-name-link">state</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the computation state.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this FutureTask.</div>
@@ -278,7 +278,7 @@ already been set or has been cancelled.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -289,20 +289,20 @@ already been set or has been cancelled.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.util.concurrent.Callable)">
 <h3>FutureTask</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FutureTask</span><wbr><span class="parameters">(<a href="Callable.html" title="interface in java.util.concurrent">Callable</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;&nbsp;callable)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FutureTask</span><wbr><span class="parameters">(<a href="Callable.html" title="java.util.concurrent 包中的接口">Callable</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;&nbsp;callable)</span></div>
 <div class="block">Creates a <code>FutureTask</code> that will, upon running, execute the
 given <code>Callable</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>callable</code> - the callable task</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the callable is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the callable is null</dd>
 </dl>
 </div>
 </section>
@@ -311,20 +311,20 @@ given <code>Callable</code>.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.Runnable,V)">
 <h3 id="&lt;init&gt;(java.lang.Runnable,java.lang.Object)">FutureTask</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FutureTask</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;runnable,
- <a href="#type-param-V" title="type parameter in FutureTask">V</a>&nbsp;result)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">FutureTask</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;runnable,
+ <a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&nbsp;result)</span></div>
 <div class="block">Creates a <code>FutureTask</code> that will, upon running, execute the
 given <code>Runnable</code>, and arrange that <code>get</code> will return the
 given result on successful completion.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>runnable</code> - the runnable task</dd>
 <dd><code>result</code> - the result to return on successful completion. If
 you don't need a particular result, consider using
 constructions of the form:
 <code>Future&lt;?&gt; f = new FutureTask&lt;Void&gt;(runnable, null)</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the runnable is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the runnable is null</dd>
 </dl>
 </div>
 </section>
@@ -335,7 +335,7 @@ constructions of the form:
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="isCancelled()">
@@ -346,9 +346,9 @@ constructions of the form:
 <div class="block">Returns <code>true</code> if this task was cancelled before it completed
 normally.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if this task was cancelled before it completed</dd>
 </dl>
 </div>
@@ -366,9 +366,9 @@ Completion may be due to normal termination, an exception, or
 cancellation -- in all of these cases, this method will return
 <code>true</code>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#isDone()">isDone</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#isDone()">isDone</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if this task completed</dd>
 </dl>
 </div>
@@ -392,14 +392,14 @@ is interrupted in an attempt to stop the task.
 <p>The return value from this method does not necessarily
 indicate whether the task is now cancelled; use <a href="Future.html#isCancelled()"><code>Future.isCancelled()</code></a>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#cancel(boolean)">cancel</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#cancel(boolean)">cancel</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>mayInterruptIfRunning</code> - <code>true</code> if the thread
 executing this task should be interrupted (if the thread is
 known to the implementation); otherwise, in-progress tasks are
 allowed to complete</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>false</code> if the task could not be cancelled,
 typically because it has already completed; <code>true</code>
 otherwise. If two or more threads cause a task to be cancelled,
@@ -413,22 +413,22 @@ may provide stronger guarantees.</dd>
 <section class="detail" id="get()">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in FutureTask">V</a></span>&nbsp;<span class="element-name">get</span>()
-      throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a>,
-<a href="ExecutionException.html" title="class in java.util.concurrent">ExecutionException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></span>&nbsp;<span class="element-name">get</span>()
+      throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a>,
+<a href="ExecutionException.html" title="java.util.concurrent 包中的类">ExecutionException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Future.html#get()">Future</a></code></span></div>
 <div class="block">Waits if necessary for the computation to complete, and then
 retrieves its result.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#get()">get</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#get()">get</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the computed result</dd>
-<dt>Throws:</dt>
-<dd><code><a href="CancellationException.html" title="class in java.util.concurrent">CancellationException</a></code> - if the computation was cancelled</dd>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread was interrupted
+<dt>抛出:</dt>
+<dd><code><a href="CancellationException.html" title="java.util.concurrent 包中的类">CancellationException</a></code> - if the computation was cancelled</dd>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread was interrupted
 while waiting</dd>
-<dd><code><a href="ExecutionException.html" title="class in java.util.concurrent">ExecutionException</a></code> - if the computation threw an
+<dd><code><a href="ExecutionException.html" title="java.util.concurrent 包中的类">ExecutionException</a></code> - if the computation threw an
 exception</dd>
 </dl>
 </div>
@@ -438,29 +438,29 @@ exception</dd>
 <section class="detail" id="get(long,java.util.concurrent.TimeUnit)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in FutureTask">V</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(long&nbsp;timeout,
- <a href="TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a>&nbsp;unit)</span>
-      throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a>,
-<a href="ExecutionException.html" title="class in java.util.concurrent">ExecutionException</a>,
-<a href="TimeoutException.html" title="class in java.util.concurrent">TimeoutException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(long&nbsp;timeout,
+ <a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a>&nbsp;unit)</span>
+      throws <span class="exceptions"><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a>,
+<a href="ExecutionException.html" title="java.util.concurrent 包中的类">ExecutionException</a>,
+<a href="TimeoutException.html" title="java.util.concurrent 包中的类">TimeoutException</a></span></div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Future.html#get(long,java.util.concurrent.TimeUnit)">Future</a></code></span></div>
 <div class="block">Waits if necessary for at most the given time for the computation
 to complete, and then retrieves its result, if available.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#get(long,java.util.concurrent.TimeUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#get(long,java.util.concurrent.TimeUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>timeout</code> - the maximum time to wait</dd>
 <dd><code>unit</code> - the time unit of the timeout argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the computed result</dd>
-<dt>Throws:</dt>
-<dd><code><a href="CancellationException.html" title="class in java.util.concurrent">CancellationException</a></code> - if the computation was cancelled</dd>
-<dd><code><a href="../../lang/InterruptedException.html" title="class in java.lang">InterruptedException</a></code> - if the current thread was interrupted
+<dt>抛出:</dt>
+<dd><code><a href="CancellationException.html" title="java.util.concurrent 包中的类">CancellationException</a></code> - if the computation was cancelled</dd>
+<dd><code><a href="../../lang/InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></code> - if the current thread was interrupted
 while waiting</dd>
-<dd><code><a href="ExecutionException.html" title="class in java.util.concurrent">ExecutionException</a></code> - if the computation threw an
+<dd><code><a href="ExecutionException.html" title="java.util.concurrent 包中的类">ExecutionException</a></code> - if the computation threw an
 exception</dd>
-<dd><code><a href="TimeoutException.html" title="class in java.util.concurrent">TimeoutException</a></code> - if the wait timed out</dd>
+<dd><code><a href="TimeoutException.html" title="java.util.concurrent 包中的类">TimeoutException</a></code> - if the wait timed out</dd>
 </dl>
 </div>
 </section>
@@ -469,7 +469,7 @@ exception</dd>
 <section class="detail" id="resultNow()">
 <h3>resultNow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="type parameter in FutureTask">V</a></span>&nbsp;<span class="element-name">resultNow</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="#type-param-V" title="FutureTask 中的类型参数">V</a></span>&nbsp;<span class="element-name">resultNow</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Future.html#resultNow()">Future</a></code></span></div>
 <div class="block">Returns the computed result, without waiting.
 
@@ -486,11 +486,11 @@ operation to obtain a stream of results.
 </div>
 </div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#resultNow()">resultNow</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#resultNow()">resultNow</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the computed result</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>19</dd>
 </dl>
 </div>
@@ -500,18 +500,18 @@ operation to obtain a stream of results.
 <section class="detail" id="exceptionNow()">
 <h3>exceptionNow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a></span>&nbsp;<span class="element-name">exceptionNow</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a></span>&nbsp;<span class="element-name">exceptionNow</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Future.html#exceptionNow()">Future</a></code></span></div>
 <div class="block">Returns the exception thrown by the task, without waiting.
 
 <p> This method is for cases where the caller knows that the task
 has already completed with an exception.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#exceptionNow()">exceptionNow</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#exceptionNow()">exceptionNow</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the exception thrown by the task</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>19</dd>
 </dl>
 </div>
@@ -521,15 +521,15 @@ has already completed with an exception.</div>
 <section class="detail" id="state()">
 <h3>state</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Future.State.html" title="enum class in java.util.concurrent">Future.State</a></span>&nbsp;<span class="element-name">state</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Future.State.html" title="java.util.concurrent 包中的枚举类">Future.State</a></span>&nbsp;<span class="element-name">state</span>()</div>
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="Future.html#state()">Future</a></code></span></div>
 <div class="block">Returns the computation state.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Future.html#state()">state</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Future.html#state()">state</a></code>&nbsp;in interface&nbsp;<code><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
+<dt>返回:</dt>
 <dd>the computation state</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>19</dd>
 </dl>
 </div>
@@ -554,14 +554,14 @@ has been cancelled.</div>
 <section class="detail" id="set(V)">
 <h3 id="set(java.lang.Object)">set</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="#type-param-V" title="type parameter in FutureTask">V</a>&nbsp;v)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&nbsp;v)</span></div>
 <div class="block">Sets the result of this future to the given value unless
 this future has already been set or has been cancelled.
 
 <p>This method is invoked internally by the <a href="#run()"><code>run()</code></a> method
 upon successful completion of the computation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>v</code> - the value</dd>
 </dl>
 </div>
@@ -571,15 +571,15 @@ upon successful completion of the computation.</div>
 <section class="detail" id="setException(java.lang.Throwable)">
 <h3>setException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setException</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="class in java.lang">Throwable</a>&nbsp;t)</span></div>
-<div class="block">Causes this future to report an <a href="ExecutionException.html" title="class in java.util.concurrent"><code>ExecutionException</code></a>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setException</span><wbr><span class="parameters">(<a href="../../lang/Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;t)</span></div>
+<div class="block">Causes this future to report an <a href="ExecutionException.html" title="java.util.concurrent 包中的类"><code>ExecutionException</code></a>
 with the given throwable as its cause, unless this future has
 already been set or has been cancelled.
 
 <p>This method is invoked internally by the <a href="#run()"><code>run()</code></a> method
 upon failure of the computation.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>t</code> - the cause of failure</dd>
 </dl>
 </div>
@@ -594,10 +594,10 @@ upon failure of the computation.</div>
 <div class="block">Sets this Future to the result of its computation
 unless it has been cancelled.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/Runnable.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="RunnableFuture.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="RunnableFuture.html" title="interface in java.util.concurrent">RunnableFuture</a>&lt;<a href="#type-param-V" title="type parameter in FutureTask">V</a>&gt;</code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/Runnable.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="RunnableFuture.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="RunnableFuture.html" title="java.util.concurrent 包中的接口">RunnableFuture</a>&lt;<a href="#type-param-V" title="FutureTask 中的类型参数">V</a>&gt;</code></dd>
 </dl>
 </div>
 </section>
@@ -613,7 +613,7 @@ computation encounters an exception or is cancelled.  This is
 designed for use with tasks that intrinsically execute more
 than once.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if successfully run and reset</dd>
 </dl>
 </div>
@@ -623,18 +623,18 @@ than once.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string representation of this FutureTask.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation returns a string identifying this
 FutureTask, as well as its completion state.  The state, in
 brackets, contains one of the strings <code>"Completed Normally"</code>,
 <code>"Completed Exceptionally"</code>, <code>"Cancelled"</code>, or <code>
 "Not completed"</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a string representation of this FutureTask</dd>
 </dl>
 </div>

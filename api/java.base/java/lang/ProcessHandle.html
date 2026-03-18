@@ -65,7 +65,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang</a></li>
 <li><a href="ProcessHandle.html" class="current-selection">ProcessHandle</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -73,12 +73,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#pid()" tabindex="0">pid()</a></li>
 <li><a href="#of(long)" tabindex="0">of(long)</a></li>
@@ -103,21 +103,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface ProcessHandle" class="title">Interface ProcessHandle</h1>
+<h1 title="接口 ProcessHandle" class="title">接口 ProcessHandle</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ProcessHandle</span><span class="extends-implements">
-extends <a href="Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span></div>
+extends <a href="Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span></div>
 <div class="block">ProcessHandle identifies and provides control of native processes. Each
 individual process can be monitored for liveness, list its children,
 get information about the process or destroy it.
-By comparison, <a href="Process.html" title="class in java.lang"><code>Process</code></a> instances were started
+By comparison, <a href="Process.html" title="java.lang 包中的类"><code>Process</code></a> instances were started
 by the current process and additionally provide access to the process
 input, output, and error streams.
 <p>
@@ -140,12 +140,12 @@ system. ProcessHandles are returned from the factory methods <a href="#current()
 <a href="#children()"><code>children()</code></a>, <a href="#descendants()"><code>descendants()</code></a>, <a href="#parent()"><code>parent()</code></a> and
 <a href="#allProcesses()"><code>allProcesses()</code></a>.
 <p>
-The <a href="Process.html" title="class in java.lang"><code>Process</code></a> instances created by <a href="ProcessBuilder.html" title="class in java.lang"><code>ProcessBuilder</code></a> can be queried
+The <a href="Process.html" title="java.lang 包中的类"><code>Process</code></a> instances created by <a href="ProcessBuilder.html" title="java.lang 包中的类"><code>ProcessBuilder</code></a> can be queried
 for a ProcessHandle that provides information about the Process.
 ProcessHandle references should not be freely distributed.
 
 <p>
-A <a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent"><code>CompletableFuture</code></a> available from <a href="#onExit()"><code>onExit()</code></a>
+A <a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类"><code>CompletableFuture</code></a> available from <a href="#onExit()"><code>onExit()</code></a>
 can be used to wait for process termination, and possibly trigger dependent
 actions.
 <p>
@@ -153,10 +153,10 @@ The ability to control processes may be restricted by the native system,
 ProcessHandle provides no more access to, or control over, the native process
 than would be allowed by a native application.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>In the case where ProcessHandles cannot be supported then the factory
-methods must consistently throw <a href="UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.
-The methods of this class throw <a href="UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>
+methods must consistently throw <a href="UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.
+The methods of this class throw <a href="UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>
 if the operating system does not allow access to query or kill a process.
 
 <p>
@@ -168,12 +168,12 @@ use instances for synchronization, or unpredictable behavior may occur.
 For example, in a future release, synchronization may fail.
 Use the <code>equals</code> or <a href="#compareTo(java.lang.ProcessHandle)"><code>compareTo</code></a> methods
 to compare ProcessHandles.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Process.html" title="class in java.lang"><code>Process</code></a></li>
+<li><a href="Process.html" title="java.lang 包中的类"><code>Process</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -184,14 +184,14 @@ to compare ProcessHandles.</dd>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ProcessHandle.Info.html" class="type-name-link" title="interface in java.lang">ProcessHandle.Info</a></code></div>
+<div class="col-second even-row-color"><code><a href="ProcessHandle.Info.html" title="java.lang 包中的接口">ProcessHandle.Info</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Information snapshot about the process.</div>
 </div>
@@ -201,35 +201,35 @@ to compare ProcessHandles.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#allProcesses()" class="member-name-link">allProcesses</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a snapshot of all processes visible to the current process.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#children()" class="member-name-link">children</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a snapshot of the current direct children of the process.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#compareTo(java.lang.ProcessHandle)" class="member-name-link">compareTo</a><wbr>(<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#compareTo(java.lang.ProcessHandle)" class="member-name-link">compareTo</a><wbr>(<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compares this ProcessHandle with the specified ProcessHandle for order.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#current()" class="member-name-link">current</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a ProcessHandle for the current process.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#descendants()" class="member-name-link">descendants</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a snapshot of the descendants of the process.</div>
@@ -245,7 +245,7 @@ to compare ProcessHandles.</dd>
 <div class="block">Requests the process to be killed forcibly.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="Object.html" title="class in java.lang">Object</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="Object.html" title="java.lang 包中的类">Object</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if <code>other</code> object is non-null, is of the
 same implementation, and represents the same system process;
@@ -256,7 +256,7 @@ otherwise it returns <code>false</code>.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a hash code value for this ProcessHandle.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ProcessHandle.Info.html" title="interface in java.lang">ProcessHandle.Info</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="ProcessHandle.Info.html" title="java.lang 包中的接口">ProcessHandle.Info</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#info()" class="member-name-link">info</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a snapshot of information about the process.</div>
@@ -266,18 +266,18 @@ otherwise it returns <code>false</code>.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tests whether the process represented by this <code>ProcessHandle</code> is alive.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(long)" class="member-name-link">of</a><wbr>(long&nbsp;pid)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns an <code>Optional&lt;ProcessHandle&gt;</code> for an existing native process.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#onExit()" class="member-name-link">onExit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <code>CompletableFuture&lt;ProcessHandle&gt;</code> for the termination
 of the process.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an <code>Optional&lt;ProcessHandle&gt;</code> for the parent process.</div>
@@ -305,7 +305,7 @@ normally terminates the process.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="pid()">
@@ -318,10 +318,10 @@ The operating system may reuse the process ID after a process terminates.
 Use <a href="#equals(java.lang.Object)"><code>equals</code></a> or
 <a href="#compareTo(java.lang.ProcessHandle)"><code>compareTo</code></a> to compare ProcessHandles.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the native process ID of the process</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation
+<dt>抛出:</dt>
+<dd><code><a href="UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation
         does not support this operation</dd>
 </dl>
 </div>
@@ -331,16 +331,16 @@ Use <a href="#equals(java.lang.Object)"><code>equals</code></a> or
 <section class="detail" id="of(long)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(long&nbsp;pid)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(long&nbsp;pid)</span></div>
 <div class="block">Returns an <code>Optional&lt;ProcessHandle&gt;</code> for an existing native process.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pid</code> - a native process ID</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional&lt;ProcessHandle&gt;</code> of the PID for the process;
         the <code>Optional</code> is empty if the process does not exist</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation
+<dt>抛出:</dt>
+<dd><code><a href="UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation
         does not support this operation</dd>
 </dl>
 </div>
@@ -350,14 +350,14 @@ Use <a href="#equals(java.lang.Object)"><code>equals</code></a> or
 <section class="detail" id="current()">
 <h3>current</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a></span>&nbsp;<span class="element-name">current</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a></span>&nbsp;<span class="element-name">current</span>()</div>
 <div class="block">Returns a ProcessHandle for the current process. The ProcessHandle cannot be
 used to destroy the current process, use <a href="System.html#exit(int)"><code>System.exit</code></a> instead.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a ProcessHandle for the current process</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation
+<dt>抛出:</dt>
+<dd><code><a href="UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation
         does not support this operation</dd>
 </dl>
 </div>
@@ -367,11 +367,11 @@ used to destroy the current process, use <a href="System.html#exit(int)"><code>S
 <section class="detail" id="parent()">
 <h3>parent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">parent</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">parent</span>()</div>
 <div class="block">Returns an <code>Optional&lt;ProcessHandle&gt;</code> for the parent process.
 Note that Processes in a zombie state usually don't have a parent.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Optional&lt;ProcessHandle&gt;</code> of the parent process;
         the <code>Optional</code> is empty if the child process does not have a parent
         or if the parent is not available, possibly due to operating system limitations</dd>
@@ -383,7 +383,7 @@ Note that Processes in a zombie state usually don't have a parent.</div>
 <section class="detail" id="children()">
 <h3>children</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">children</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">children</span>()</div>
 <div class="block">Returns a snapshot of the current direct children of the process.
 The <a href="#parent()"><code>parent()</code></a> of a direct child process is the process.
 Typically, a process that is <a href="#isAlive()"><code>not alive</code></a> has no children.
@@ -392,7 +392,7 @@ Typically, a process that is <a href="#isAlive()"><code>not alive</code></a> has
 There is no guarantee that a process is <a href="#isAlive()"><code>alive</code></a>.
 </em></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a sequential Stream of ProcessHandles for processes that are
         direct children of the process</dd>
 </dl>
@@ -403,7 +403,7 @@ There is no guarantee that a process is <a href="#isAlive()"><code>alive</code><
 <section class="detail" id="descendants()">
 <h3>descendants</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">descendants</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">descendants</span>()</div>
 <div class="block">Returns a snapshot of the descendants of the process.
 The descendants of a process are the children of the process
 plus the descendants of those children, recursively.
@@ -413,7 +413,7 @@ Typically, a process that is <a href="#isAlive()"><code>not alive</code></a> has
 There is no guarantee that a process is <a href="#isAlive()"><code>alive</code></a>.
 </em></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a sequential Stream of ProcessHandles for processes that
         are descendants of the process</dd>
 </dl>
@@ -424,7 +424,7 @@ There is no guarantee that a process is <a href="#isAlive()"><code>alive</code><
 <section class="detail" id="allProcesses()">
 <h3>allProcesses</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">allProcesses</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">allProcesses</span>()</div>
 <div class="block">Returns a snapshot of all processes visible to the current process.
 <p>
 <em>Note that processes are created and terminate asynchronously. There
@@ -432,10 +432,10 @@ is no guarantee that a process in the stream is alive or that no other
 processes may have been created since the inception of the snapshot.
 </em></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a Stream of ProcessHandles for all processes</dd>
-<dt>Throws:</dt>
-<dd><code><a href="UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the implementation
+<dt>抛出:</dt>
+<dd><code><a href="UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the implementation
         does not support this operation</dd>
 </dl>
 </div>
@@ -445,13 +445,13 @@ processes may have been created since the inception of the snapshot.
 <section class="detail" id="info()">
 <h3>info</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="ProcessHandle.Info.html" title="interface in java.lang">ProcessHandle.Info</a></span>&nbsp;<span class="element-name">info</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="ProcessHandle.Info.html" title="java.lang 包中的接口">ProcessHandle.Info</a></span>&nbsp;<span class="element-name">info</span>()</div>
 <div class="block">Returns a snapshot of information about the process.
 
-<p> A <a href="ProcessHandle.Info.html" title="interface in java.lang"><code>ProcessHandle.Info</code></a> instance has accessor methods that return
+<p> A <a href="ProcessHandle.Info.html" title="java.lang 包中的接口"><code>ProcessHandle.Info</code></a> instance has accessor methods that return
 information about the process if it is available.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a snapshot of information about the process, always non-null</dd>
 </dl>
 </div>
@@ -461,10 +461,10 @@ information about the process if it is available.</div>
 <section class="detail" id="onExit()">
 <h3>onExit</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">onExit</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</span>&nbsp;<span class="element-name">onExit</span>()</div>
 <div class="block">Returns a <code>CompletableFuture&lt;ProcessHandle&gt;</code> for the termination
 of the process.
-The <a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent"><code>CompletableFuture</code></a> provides the ability
+The <a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类"><code>CompletableFuture</code></a> provides the ability
 to trigger dependent functions or actions that may be run synchronously
 or asynchronously upon process termination.
 When the process has terminated the CompletableFuture is
@@ -478,15 +478,15 @@ the ProcessHandle. The future can be used to check if the process is
 <a href="../util/concurrent/CompletableFuture.html#isDone()"><code>done</code></a> or to
 <a href="../util/concurrent/Future.html#get()"><code>wait</code></a> for it to terminate.
 <a href="../util/concurrent/Future.html#cancel(boolean)"><code>Cancelling</code></a>
-the <a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a> does not affect the Process.</div>
+the <a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a> does not affect the Process.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The process may be observed to have terminated with <a href="#isAlive()"><code>isAlive()</code></a>
 before the <code>CompletableFuture</code> is completed and dependent actions are invoked.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>CompletableFuture&lt;ProcessHandle&gt;</code> for the ProcessHandle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the process is the current process</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the process is the current process</dd>
 </dl>
 </div>
 </section>
@@ -501,7 +501,7 @@ normally terminates the process.
 Returns <code>false</code> if the implementation of <code>destroy</code>
 forcibly and immediately terminates the process.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the implementation of <a href="#destroy()"><code>destroy()</code></a>
         normally terminates the process;
         otherwise, <a href="#destroy()"><code>destroy()</code></a> forcibly terminates the process</dd>
@@ -524,7 +524,7 @@ If the process is not alive, no action is taken.
 The operating system access controls may prevent the process
 from being killed.
 <p>
-The <a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent"><code>CompletableFuture</code></a> from <a href="#onExit()"><code>onExit()</code></a> is
+The <a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类"><code>CompletableFuture</code></a> from <a href="#onExit()"><code>onExit()</code></a> is
 <a href="../util/concurrent/CompletableFuture.html#complete(T)"><code>completed</code></a>
 when the process has terminated.
 <p>
@@ -532,11 +532,11 @@ Note: The process may not terminate immediately.
 For example, <code>isAlive()</code> may return true for a brief period
 after <code>destroy()</code> is called.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if termination was successfully requested,
         otherwise <code>false</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the process is the current process</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the process is the current process</dd>
 </dl>
 </div>
 </section>
@@ -555,7 +555,7 @@ If the process is not alive, no action is taken.
 The operating system access controls may prevent the process
 from being killed.
 <p>
-The <a href="../util/concurrent/CompletableFuture.html" title="class in java.util.concurrent"><code>CompletableFuture</code></a> from <a href="#onExit()"><code>onExit()</code></a> is
+The <a href="../util/concurrent/CompletableFuture.html" title="java.util.concurrent 包中的类"><code>CompletableFuture</code></a> from <a href="#onExit()"><code>onExit()</code></a> is
 <a href="../util/concurrent/CompletableFuture.html#complete(T)"><code>completed</code></a>
 when the process has terminated.
 <p>
@@ -563,11 +563,11 @@ Note: The process may not terminate immediately.
 For example, <code>isAlive()</code> may return true for a brief period
 after <code>destroyForcibly()</code> is called.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if termination was successfully requested,
         otherwise <code>false</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the process is the current process</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the process is the current process</dd>
 </dl>
 </div>
 </section>
@@ -581,7 +581,7 @@ after <code>destroyForcibly()</code> is called.</div>
 Process termination is implementation and operating system specific.
 The process is considered alive as long as the PID is valid.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the process represented by this
         <code>ProcessHandle</code> object has not yet terminated</dd>
 </dl>
@@ -601,11 +601,11 @@ If two ProcessHandles are equal according to the <a href="#equals(java.lang.Obje
 method, then calling the hashCode method on each of the two objects
 must produce the same integer result.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a hash code value for this object</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -620,14 +620,14 @@ must produce the same integer result.</div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="Object.html" title="class in java.lang">Object</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="Object.html" title="java.lang 包中的类">Object</a>&nbsp;other)</span></div>
 <div class="block">Returns <code>true</code> if <code>other</code> object is non-null, is of the
 same implementation, and represents the same system process;
 otherwise it returns <code>false</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Implementation Note:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>实现说明:</dt>
 <dd>It is implementation specific whether ProcessHandles with the same PID
 represent the same system process. ProcessHandle implementations
 should contain additional information to uniquely identify the process.
@@ -636,17 +636,17 @@ to determine if the PID has been re-used.
 The implementation of <code>equals</code> should return <code>true</code> for two
 ProcessHandles with the same PID unless there is information to
 distinguish them.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - another object</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the <code>other</code> object is non-null,
         is of the same implementation class and represents
         the same system process; otherwise returns <code>false</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -657,25 +657,25 @@ distinguish them.</dd>
 <section class="detail" id="compareTo(java.lang.ProcessHandle)">
 <h3>compareTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&nbsp;other)</span></div>
 <div class="block">Compares this ProcessHandle with the specified ProcessHandle for order.
 The order is not specified, but is consistent with <a href="Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a>,
 which returns <code>true</code> if and only if two instances of ProcessHandle
 are of the same implementation and represent the same system process.
 Comparison is only supported among objects of same implementation.
 If attempt is made to mutually compare two different implementations
-of <a href="ProcessHandle.html" title="interface in java.lang"><code>ProcessHandle</code></a>s, <a href="ClassCastException.html" title="class in java.lang"><code>ClassCastException</code></a> is thrown.</div>
+of <a href="ProcessHandle.html" title="java.lang 包中的接口"><code>ProcessHandle</code></a>s, <a href="ClassCastException.html" title="java.lang 包中的类"><code>ClassCastException</code></a> is thrown.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="ProcessHandle.html" title="interface in java.lang">ProcessHandle</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>other</code> - the ProcessHandle to be compared</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a negative integer, zero, or a positive integer as this object
 is less than, equal to, or greater than the specified object.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the specified object is null</dd>
-<dd><code><a href="ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the specified object is not of same class
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the specified object is null</dd>
+<dd><code><a href="ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the specified object is not of same class
         as this object</dd>
 </dl>
 </div>

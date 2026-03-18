@@ -52,7 +52,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">com.sun.net.httpserver</a></li>
 <li><a href="SimpleFileServer.html" class="current-selection">SimpleFileServer</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -60,9 +60,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#simple-file-server-heading" tabindex="0">Simple file server</a></li>
 <li><a href="#file-handler-heading" tabindex="0">File handler</a></li>
@@ -70,9 +70,9 @@ loadScripts(document, 'script');</script>
 <li><a href="#jwebserver-tool-heading" tabindex="0">jwebserver Tool</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#createFileServer(java.net.InetSocketAddress,java.nio.file.Path,com.sun.net.httpserver.SimpleFileServer.OutputLevel)" tabindex="0">createFileServer(InetSocketAddress, Path, SimpleFileServer.OutputLevel)</a></li>
 <li><a href="#createFileHandler(java.nio.file.Path)" tabindex="0">createFileHandler(Path)</a></li>
@@ -84,25 +84,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class SimpleFileServer" class="title">Class SimpleFileServer</h1>
+<h1 title="类 SimpleFileServer" class="title">类 SimpleFileServer</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">com.sun.net.httpserver.SimpleFileServer</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">SimpleFileServer</span>
-<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A simple HTTP file server and its components (intended for testing,
 development and debugging purposes only).
 
 <p> A simple file server is composed of three components:
 <ul>
-  <li> an <a href="HttpServer.html" title="class in com.sun.net.httpserver"><code>HttpServer</code></a> that is bound to a given address, </li>
-  <li> an <a href="HttpHandler.html" title="interface in com.sun.net.httpserver"><code>HttpHandler</code></a> that serves files from a given
+  <li> an <a href="HttpServer.html" title="com.sun.net.httpserver 包中的类"><code>HttpServer</code></a> that is bound to a given address, </li>
+  <li> an <a href="HttpHandler.html" title="com.sun.net.httpserver 包中的接口"><code>HttpHandler</code></a> that serves files from a given
        directory path, and </li>
-  <li> an optional <a href="Filter.html" title="class in com.sun.net.httpserver"><code>Filter</code></a> that prints log messages relating to
+  <li> an optional <a href="Filter.html" title="com.sun.net.httpserver 包中的类"><code>Filter</code></a> that prints log messages relating to
        the exchanges handled by the server. </li>
 </ul>
 The individual server components can be retrieved for reuse and extension via
@@ -111,7 +111,7 @@ the static methods provided.
 <h2 id="simple-file-server-heading">Simple file server</h2>
 
 <p> The <a href="#createFileServer(java.net.InetSocketAddress,java.nio.file.Path,com.sun.net.httpserver.SimpleFileServer.OutputLevel)"><code>createFileServer</code></a>
-static factory method returns an <a href="HttpServer.html" title="class in com.sun.net.httpserver"><code>HttpServer</code></a> that is a
+static factory method returns an <a href="HttpServer.html" title="com.sun.net.httpserver 包中的类"><code>HttpServer</code></a> that is a
 simple out-of-the-box file server. The server comes with an initial handler
 that serves files from a given directory path (and its subdirectories).
 The output level determines what log messages are printed to
@@ -149,7 +149,7 @@ handler via
 static factory method returns a
 <a href="Filter.html#afterHandler(java.lang.String,java.util.function.Consumer)"><code>post-processing filter</code></a> that
 prints log messages relating to the exchanges handled by the server. The
-output format is specified by the <a href="SimpleFileServer.OutputLevel.html" title="enum class in com.sun.net.httpserver"><code>outputLevel</code></a>.
+output format is specified by the <a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类"><code>outputLevel</code></a>.
 
 <p> Example of an output filter:
 <pre><code>   var filter = SimpleFileServer.createOutputFilter(System.out, OutputLevel.VERBOSE);
@@ -161,9 +161,9 @@ output format is specified by the <a href="SimpleFileServer.OutputLevel.html" ti
 
 <p>A simple HTTP file server implementation is provided via the
 <code>jwebserver</code> tool.</div>
-<dl class="notes"><dt>Tool Guides:</dt>
+<dl class="notes"><dt>工具指南:</dt>
 <dd><a href="../../../../../../specs/man/jwebserver.html">jwebserver</a></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>18</dd>
 </dl>
 </div>
@@ -173,14 +173,14 @@ output format is specified by the <a href="SimpleFileServer.OutputLevel.html" ti
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="SimpleFileServer.OutputLevel.html" class="type-name-link" title="enum class in com.sun.net.httpserver">SimpleFileServer.OutputLevel</a></code></div>
+<div class="col-second even-row-color"><code><a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类">SimpleFileServer.OutputLevel</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Describes the log message output level produced by the server when
 processing exchanges.</div>
@@ -191,39 +191,39 @@ processing exchanges.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="HttpHandler.html" title="interface in com.sun.net.httpserver">HttpHandler</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFileHandler(java.nio.file.Path)" class="member-name-link">createFileHandler</a><wbr>(<a href="../../../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;rootDirectory)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="HttpHandler.html" title="com.sun.net.httpserver 包中的接口">HttpHandler</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFileHandler(java.nio.file.Path)" class="member-name-link">createFileHandler</a><wbr>(<a href="../../../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;rootDirectory)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a <i>file handler</i> that serves files from a given directory
 path (and its subdirectories).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="HttpServer.html" title="class in com.sun.net.httpserver">HttpServer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFileServer(java.net.InetSocketAddress,java.nio.file.Path,com.sun.net.httpserver.SimpleFileServer.OutputLevel)" class="member-name-link">createFileServer</a><wbr>(<a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a>&nbsp;addr,
- <a href="../../../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;rootDirectory,
- <a href="SimpleFileServer.OutputLevel.html" title="enum class in com.sun.net.httpserver">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="HttpServer.html" title="com.sun.net.httpserver 包中的类">HttpServer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFileServer(java.net.InetSocketAddress,java.nio.file.Path,com.sun.net.httpserver.SimpleFileServer.OutputLevel)" class="member-name-link">createFileServer</a><wbr>(<a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a>&nbsp;addr,
+ <a href="../../../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;rootDirectory,
+ <a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a <i>file server</i> that serves files from a given path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Filter.html" title="class in com.sun.net.httpserver">Filter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createOutputFilter(java.io.OutputStream,com.sun.net.httpserver.SimpleFileServer.OutputLevel)" class="member-name-link">createOutputFilter</a><wbr>(<a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;out,
- <a href="SimpleFileServer.OutputLevel.html" title="enum class in com.sun.net.httpserver">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Filter.html" title="com.sun.net.httpserver 包中的类">Filter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createOutputFilter(java.io.OutputStream,com.sun.net.httpserver.SimpleFileServer.OutputLevel)" class="member-name-link">createOutputFilter</a><wbr>(<a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;out,
+ <a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a <a href="Filter.html#afterHandler(java.lang.String,java.util.function.Consumer)">post-processing Filter</a> that prints log messages about
-<a href="HttpExchange.html" title="class in com.sun.net.httpserver">exchanges</a>.</div>
+<a href="HttpExchange.html" title="com.sun.net.httpserver 包中的类">exchanges</a>.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -234,15 +234,15 @@ path (and its subdirectories).</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="createFileServer(java.net.InetSocketAddress,java.nio.file.Path,com.sun.net.httpserver.SimpleFileServer.OutputLevel)">
 <h3>createFileServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="HttpServer.html" title="class in com.sun.net.httpserver">HttpServer</a></span>&nbsp;<span class="element-name">createFileServer</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/net/InetSocketAddress.html" title="class in java.net">InetSocketAddress</a>&nbsp;addr,
- <a href="../../../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;rootDirectory,
- <a href="SimpleFileServer.OutputLevel.html" title="enum class in com.sun.net.httpserver">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="HttpServer.html" title="com.sun.net.httpserver 包中的类">HttpServer</a></span>&nbsp;<span class="element-name">createFileServer</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/net/InetSocketAddress.html" title="java.net 包中的类">InetSocketAddress</a>&nbsp;addr,
+ <a href="../../../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;rootDirectory,
+ <a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</span></div>
 <div class="block">Creates a <i>file server</i> that serves files from a given path.
 
 <p> The server is configured with an initial context that maps the
@@ -258,17 +258,17 @@ exchanges handled by the server. The log messages, if any, are printed to
 <code>System.out</code>. If <a href="SimpleFileServer.OutputLevel.html#NONE"><code>OutputLevel.NONE</code></a> is
 given, no log messages are printed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>addr</code> - the address to listen on</dd>
 <dd><code>rootDirectory</code> - the root directory to be served, must be an absolute path</dd>
 <dd><code>outputLevel</code> - the log message output level</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an HttpServer</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if root does not exist, is not absolute,
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if root does not exist, is not absolute,
         is not a directory, or is not readable</dd>
-<dd><code><a href="../../../../../java.base/java/io/UncheckedIOException.html" title="class in java.io">UncheckedIOException</a></code> - if an I/O error occurs</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if any argument is null</dd>
+<dd><code><a href="../../../../../java.base/java/io/UncheckedIOException.html" title="java.io 包中的类">UncheckedIOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if any argument is null</dd>
 </dl>
 </div>
 </section>
@@ -277,7 +277,7 @@ given, no log messages are printed.</div>
 <section class="detail" id="createFileHandler(java.nio.file.Path)">
 <h3>createFileHandler</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="HttpHandler.html" title="interface in com.sun.net.httpserver">HttpHandler</a></span>&nbsp;<span class="element-name">createFileHandler</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&nbsp;rootDirectory)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="HttpHandler.html" title="com.sun.net.httpserver 包中的接口">HttpHandler</a></span>&nbsp;<span class="element-name">createFileHandler</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;rootDirectory)</span></div>
 <div class="block">Creates a <i>file handler</i> that serves files from a given directory
 path (and its subdirectories).
 
@@ -296,14 +296,14 @@ well as the contents of the file as the response body.
 method, and will reply with a <code>405</code> response code for requests with
 any other method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>rootDirectory</code> - the root directory to be served, must be an absolute path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a file handler</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if rootDirectory does not exist,
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if rootDirectory does not exist,
         is not absolute, is not a directory, or is not readable</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the argument is null</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the argument is null</dd>
 </dl>
 </div>
 </section>
@@ -312,23 +312,23 @@ any other method.</div>
 <section class="detail" id="createOutputFilter(java.io.OutputStream,com.sun.net.httpserver.SimpleFileServer.OutputLevel)">
 <h3>createOutputFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Filter.html" title="class in com.sun.net.httpserver">Filter</a></span>&nbsp;<span class="element-name">createOutputFilter</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;out,
- <a href="SimpleFileServer.OutputLevel.html" title="enum class in com.sun.net.httpserver">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Filter.html" title="com.sun.net.httpserver 包中的类">Filter</a></span>&nbsp;<span class="element-name">createOutputFilter</span><wbr><span class="parameters">(<a href="../../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;out,
+ <a href="SimpleFileServer.OutputLevel.html" title="com.sun.net.httpserver 包中的枚举类">SimpleFileServer.OutputLevel</a>&nbsp;outputLevel)</span></div>
 <div class="block">Creates a <a href="Filter.html#afterHandler(java.lang.String,java.util.function.Consumer)">post-processing Filter</a> that prints log messages about
-<a href="HttpExchange.html" title="class in com.sun.net.httpserver">exchanges</a>. The log messages are printed to
+<a href="HttpExchange.html" title="com.sun.net.httpserver 包中的类">exchanges</a>. The log messages are printed to
 the given <code>OutputStream</code> in <code>UTF-8</code> encoding.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>To not output any log messages it is recommended to not use a filter.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>out</code> - the stream to print to</dd>
 <dd><code>outputLevel</code> - the output level</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a post-processing filter</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <a href="SimpleFileServer.OutputLevel.html#NONE"><code>OutputLevel.NONE</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <a href="SimpleFileServer.OutputLevel.html#NONE"><code>OutputLevel.NONE</code></a>
                                  is given</dd>
-<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if any argument is null</dd>
+<dd><code><a href="../../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if any argument is null</dd>
 </dl>
 </div>
 </section>

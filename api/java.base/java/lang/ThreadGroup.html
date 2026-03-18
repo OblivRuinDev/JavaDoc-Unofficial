@@ -66,7 +66,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang</a></li>
 <li><a href="ThreadGroup.html" class="current-selection">ThreadGroup</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -74,22 +74,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#virtualthreadgroup" tabindex="0">Thread groups and virtual threads</a></li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.lang.String)" tabindex="0">ThreadGroup(String)</a></li>
 <li><a href="#%3Cinit%3E(java.lang.ThreadGroup,java.lang.String)" tabindex="0">ThreadGroup(ThreadGroup, String)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getName()" tabindex="0">getName()</a></li>
 <li><a href="#getParent()" tabindex="0">getParent()</a></li>
@@ -118,21 +118,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ThreadGroup" class="title">Class ThreadGroup</h1>
+<h1 title="类 ThreadGroup" class="title">类 ThreadGroup</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.ThreadGroup</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Thread.UncaughtExceptionHandler.html" title="interface in java.lang">Thread.UncaughtExceptionHandler</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">Thread.UncaughtExceptionHandler</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ThreadGroup</span>
-<span class="extends-implements">extends <a href="Object.html" title="class in java.lang">Object</a>
-implements <a href="Thread.UncaughtExceptionHandler.html" title="interface in java.lang">Thread.UncaughtExceptionHandler</a></span></div>
+<span class="extends-implements">extends <a href="Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">Thread.UncaughtExceptionHandler</a></span></div>
 <div class="block">A thread group represents a set of threads. In addition, a thread group can
 also include other thread groups. The thread groups form a tree in which
 every thread group except the initial thread group has a parent.
@@ -148,7 +148,7 @@ collection when there are no <a href="Thread.html#isAlive()">live</a> threads in
 group and the thread group is otherwise <i>unreachable</i>.
 
 <p> Unless otherwise specified, passing a <code>null</code> argument to a constructor
-or method in this class will cause a <a href="NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown.
+or method in this class will cause a <a href="NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown.
 
 <h2><a id="virtualthreadgroup">Thread groups and virtual threads</a></h2>
 The Java runtime creates a special thread group for
@@ -160,12 +160,12 @@ groups in that its maximum priority is fixed and cannot be changed with the
 Virtual threads are not included in the estimated thread count returned by the
 <a href="#activeCount()"><code>activeCount</code></a> method, are not enumerated by the <a href="#enumerate(java.lang.Thread%5B%5D)"><code>enumerate</code></a> method, and are not interrupted by the <a href="#interrupt()"><code>interrupt</code></a> method.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Thread groups provided a way in early Java releases to group threads and provide
 a form of <i>job control</i> for threads. Thread groups supported the isolation
 of applets and defined methods intended for diagnostic purposes. It should be
 rare for new applications to create ThreadGroups and interact with this API.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.0</dd>
 </dl>
 </div>
@@ -175,17 +175,17 @@ rare for new applications to create ThreadGroups and interact with this API.</dd
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">ThreadGroup</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">ThreadGroup</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructs a new thread group.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.ThreadGroup,java.lang.String)" class="member-name-link">ThreadGroup</a><wbr>(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>&nbsp;parent,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.ThreadGroup,java.lang.String)" class="member-name-link">ThreadGroup</a><wbr>(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>&nbsp;parent,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a new thread group.</div>
 </div>
@@ -195,14 +195,14 @@ rare for new applications to create ThreadGroups and interact with this API.</dd
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#activeCount()" class="member-name-link">activeCount</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -232,26 +232,26 @@ thread had permission to modify this thread group.</div>
 </div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.Thread%5B%5D)" class="member-name-link">enumerate</a><wbr>(<a href="Thread.html" title="class in java.lang">Thread</a>[]&nbsp;list)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.Thread%5B%5D)" class="member-name-link">enumerate</a><wbr>(<a href="Thread.html" title="java.lang 包中的类">Thread</a>[]&nbsp;list)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies into the specified array every <a href="Thread.html#isAlive()">live</a>
 platform thread in this thread group and its subgroups.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.Thread%5B%5D,boolean)" class="member-name-link">enumerate</a><wbr>(<a href="Thread.html" title="class in java.lang">Thread</a>[]&nbsp;list,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.Thread%5B%5D,boolean)" class="member-name-link">enumerate</a><wbr>(<a href="Thread.html" title="java.lang 包中的类">Thread</a>[]&nbsp;list,
  boolean&nbsp;recurse)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies into the specified array every <a href="Thread.html#isAlive()">live</a>
 platform thread in this thread group.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.ThreadGroup%5B%5D)" class="member-name-link">enumerate</a><wbr>(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>[]&nbsp;list)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.ThreadGroup%5B%5D)" class="member-name-link">enumerate</a><wbr>(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>[]&nbsp;list)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies into the specified array references to every subgroup in this
 thread group and its subgroups.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.ThreadGroup%5B%5D,boolean)" class="member-name-link">enumerate</a><wbr>(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>[]&nbsp;list,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enumerate(java.lang.ThreadGroup%5B%5D,boolean)" class="member-name-link">enumerate</a><wbr>(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>[]&nbsp;list,
  boolean&nbsp;recurse)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Copies into the specified array references to every subgroup in this
@@ -262,12 +262,12 @@ thread group.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the maximum priority of this thread group.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the name of this thread group.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParent()" class="member-name-link">getParent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the parent of this thread group.</div>
@@ -302,7 +302,7 @@ this thread group and its subgroups.</div>
 output.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentOf(java.lang.ThreadGroup)" class="member-name-link">parentOf</a><wbr>(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>&nbsp;g)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parentOf(java.lang.ThreadGroup)" class="member-name-link">parentOf</a><wbr>(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>&nbsp;g)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Tests if this thread group is either the thread group
 argument or one of its ancestor thread groups.</div>
@@ -321,25 +321,25 @@ argument or one of its ancestor thread groups.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the maximum priority of the group.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of this Thread group.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#uncaughtException(java.lang.Thread,java.lang.Throwable)" class="member-name-link">uncaughtException</a><wbr>(<a href="Thread.html" title="class in java.lang">Thread</a>&nbsp;t,
- <a href="Throwable.html" title="class in java.lang">Throwable</a>&nbsp;e)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#uncaughtException(java.lang.Thread,java.lang.Throwable)" class="member-name-link">uncaughtException</a><wbr>(<a href="Thread.html" title="java.lang 包中的类">Thread</a>&nbsp;t,
+ <a href="Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called by the Java Virtual Machine when a thread in this
 thread group stops because of an uncaught exception, and the thread
-does not have a specific <a href="Thread.UncaughtExceptionHandler.html" title="interface in java.lang"><code>Thread.UncaughtExceptionHandler</code></a>
+does not have a specific <a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口"><code>Thread.UncaughtExceptionHandler</code></a>
 installed.</div>
 </div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="Object.html#clone()" title="clone()">clone</a>, <a href="Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="Object.html#finalize()" title="finalize()">finalize</a>, <a href="Object.html#getClass()" title="getClass()">getClass</a>, <a href="Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="Object.html#notify()" title="notify()">notify</a>, <a href="Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="Object.html#wait()" title="wait()">wait</a>, <a href="Object.html#wait(long)" title="wait(long)">wait</a>, <a href="Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -350,17 +350,17 @@ installed.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>ThreadGroup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThreadGroup</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThreadGroup</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Constructs a new thread group. The parent of this new group is
 the thread group of the currently running thread.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - the name of the new thread group, can be <code>null</code></dd>
 </dl>
 </div>
@@ -370,12 +370,12 @@ the thread group of the currently running thread.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.ThreadGroup,java.lang.String)">
 <h3>ThreadGroup</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThreadGroup</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>&nbsp;parent,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ThreadGroup</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>&nbsp;parent,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Creates a new thread group. The parent of this new group is the
 specified thread group.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>parent</code> - the parent thread group.</dd>
 <dd><code>name</code> - the name of the new thread group, can be <code>null</code></dd>
 </dl>
@@ -388,16 +388,16 @@ specified thread group.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
 <div class="block">Returns the name of this thread group.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the name of this thread group, may be <code>null</code></dd>
 </dl>
 </div>
@@ -407,10 +407,10 @@ specified thread group.</div>
 <section class="detail" id="getParent()">
 <h3>getParent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
 <div class="block">Returns the parent of this thread group.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the parent of this thread group. The top-level thread group
          is the only thread group whose parent is <code>null</code>.</dd>
 </dl>
@@ -425,9 +425,9 @@ specified thread group.</div>
 <div class="block">Returns the maximum priority of this thread group. This is the maximum
 priority for new threads created in the thread group.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum priority for new threads created in the thread group</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setMaxPriority(int)"><code>setMaxPriority(int)</code></a></li>
@@ -441,7 +441,7 @@ priority for new threads created in the thread group.</div>
 <section class="detail" id="isDaemon()">
 <h3>isDaemon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
             <a href="Deprecated.html#forRemoval()">forRemoval</a>=true)
 </span><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDaemon</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
@@ -455,7 +455,7 @@ priority for new threads created in the thread group.</div>
 <div class="block">Returns the daemon status of this thread group.
 The daemon status is not used for anything.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the daemon status of this thread group</dd>
 </dl>
 </div>
@@ -465,7 +465,7 @@ The daemon status is not used for anything.</div>
 <section class="detail" id="isDestroyed()">
 <h3>isDestroyed</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
             <a href="Deprecated.html#forRemoval()">forRemoval</a>=true)
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isDestroyed</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
@@ -477,9 +477,9 @@ The daemon status is not used for anything.</div>
 </div>
 <div class="block">Returns false.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>false</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -489,7 +489,7 @@ The daemon status is not used for anything.</div>
 <section class="detail" id="setDaemon(boolean)">
 <h3>setDaemon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
             <a href="Deprecated.html#forRemoval()">forRemoval</a>=true)
 </span><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setDaemon</span><wbr><span class="parameters">(boolean&nbsp;daemon)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
@@ -503,7 +503,7 @@ The daemon status is not used for anything.</div>
 <div class="block">Sets the daemon status of this thread group.
 The daemon status is not used for anything.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>daemon</code> - the daemon status</dd>
 </dl>
 </div>
@@ -533,9 +533,9 @@ priority is simply set to <code>pri</code>.) Then this method is
 called recursively, with <code>pri</code> as its argument, for
 every thread group that belongs to this thread group.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pri</code> - the new priority of the thread group.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getMaxPriority()"><code>getMaxPriority()</code></a></li>
@@ -549,13 +549,13 @@ every thread group that belongs to this thread group.</div>
 <section class="detail" id="parentOf(java.lang.ThreadGroup)">
 <h3>parentOf</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">parentOf</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>&nbsp;g)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">parentOf</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>&nbsp;g)</span></div>
 <div class="block">Tests if this thread group is either the thread group
 argument or one of its ancestor thread groups.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>g</code> - a thread group, can be <code>null</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this thread group is the thread group
          argument or one of its ancestor thread groups;
          <code>false</code> otherwise.</dd>
@@ -567,13 +567,13 @@ argument or one of its ancestor thread groups.</div>
 <section class="detail" id="checkAccess()">
 <h3>checkAccess</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="17",
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="17",
             <a href="Deprecated.html#forRemoval()">forRemoval</a>=true)
 </span><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">checkAccess</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
 <div class="deprecation-comment">This method originally determined if the currently running
 thread had permission to modify this thread group. This method was only
-useful in conjunction with <a href="SecurityManager.html" title="class in java.lang">the Security Manager</a>,
+useful in conjunction with <a href="SecurityManager.html" title="java.lang 包中的类">the Security Manager</a>,
 which is no longer supported. There is no replacement for the Security
 Manager or this method.</div>
 </div>
@@ -597,7 +597,7 @@ data structures, and might be affected by the presence of certain
 system threads. This method is intended primarily for debugging
 and monitoring purposes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an estimate of the number of live threads in this thread
          group and in any other thread group that has this thread
          group as an ancestor</dd>
@@ -609,7 +609,7 @@ and monitoring purposes.</div>
 <section class="detail" id="enumerate(java.lang.Thread[])">
 <h3>enumerate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="Thread.html" title="class in java.lang">Thread</a>[]&nbsp;list)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="Thread.html" title="java.lang 包中的类">Thread</a>[]&nbsp;list)</span></div>
 <div class="block">Copies into the specified array every <a href="Thread.html#isAlive()">live</a>
 platform thread in this thread group and its subgroups. Virtual threads
 are not enumerated by this method.
@@ -621,9 +621,9 @@ way as the invocation
 <a href="#enumerate(java.lang.Thread%5B%5D,boolean)">enumerate</a><code>(list, true)</code>
 </blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>list</code> - an array into which to put the list of threads</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of threads put into the array</dd>
 </dl>
 </div>
@@ -633,7 +633,7 @@ way as the invocation
 <section class="detail" id="enumerate(java.lang.Thread[],boolean)">
 <h3>enumerate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="Thread.html" title="class in java.lang">Thread</a>[]&nbsp;list,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="Thread.html" title="java.lang 包中的类">Thread</a>[]&nbsp;list,
  boolean&nbsp;recurse)</span></div>
 <div class="block">Copies into the specified array every <a href="Thread.html#isAlive()">live</a>
 platform thread in this thread group. Virtual threads are not enumerated
@@ -652,11 +652,11 @@ int value is strictly less than the length of <code>list</code>.
 <p> Due to the inherent race condition in this method, it is recommended
 that the method only be used for debugging and monitoring purposes.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>list</code> - an array into which to put the list of threads</dd>
 <dd><code>recurse</code> - if <code>true</code>, recursively enumerate all subgroups of this
         thread group</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of threads put into the array</dd>
 </dl>
 </div>
@@ -675,7 +675,7 @@ thread groups may change dynamically while this method traverses
 internal data structures. This method is intended primarily for
 debugging and monitoring purposes.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of thread groups with this thread group as
          an ancestor</dd>
 </dl>
@@ -686,7 +686,7 @@ debugging and monitoring purposes.</div>
 <section class="detail" id="enumerate(java.lang.ThreadGroup[])">
 <h3>enumerate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>[]&nbsp;list)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>[]&nbsp;list)</span></div>
 <div class="block">Copies into the specified array references to every subgroup in this
 thread group and its subgroups.
 
@@ -697,9 +697,9 @@ way as the invocation
 <a href="#enumerate(java.lang.ThreadGroup%5B%5D,boolean)">enumerate</a><code>(list, true)</code>
 </blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>list</code> - an array into which to put the list of thread groups</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of thread groups put into the array</dd>
 </dl>
 </div>
@@ -709,7 +709,7 @@ way as the invocation
 <section class="detail" id="enumerate(java.lang.ThreadGroup[],boolean)">
 <h3>enumerate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="class in java.lang">ThreadGroup</a>[]&nbsp;list,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">enumerate</span><wbr><span class="parameters">(<a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a>[]&nbsp;list,
  boolean&nbsp;recurse)</span></div>
 <div class="block">Copies into the specified array references to every subgroup in this
 thread group. If <code>recurse</code> is <code>true</code>, this method recursively
@@ -728,10 +728,10 @@ the returned int value is strictly less than the length of
 <p> Due to the inherent race condition in this method, it is recommended
 that the method only be used for debugging and monitoring purposes.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>list</code> - an array into which to put the list of thread groups</dd>
 <dd><code>recurse</code> - if <code>true</code>, recursively enumerate all subgroups</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of thread groups put into the array</dd>
 </dl>
 </div>
@@ -745,9 +745,9 @@ that the method only be used for debugging and monitoring purposes.</div>
 <div class="block">Interrupts all <a href="Thread.html#isAlive()">live</a> platform threads in
 this thread group and its subgroups.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Thread.html#interrupt()"><code>Thread.interrupt()</code></a></li>
@@ -761,7 +761,7 @@ this thread group and its subgroups.</div>
 <section class="detail" id="destroy()">
 <h3>destroy</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="16",
             <a href="Deprecated.html#forRemoval()">forRemoval</a>=true)
 </span><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">destroy</span>()</div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
@@ -789,11 +789,11 @@ output. This method is useful only for debugging.</div>
 <section class="detail" id="uncaughtException(java.lang.Thread,java.lang.Throwable)">
 <h3>uncaughtException</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">uncaughtException</span><wbr><span class="parameters">(<a href="Thread.html" title="class in java.lang">Thread</a>&nbsp;t,
- <a href="Throwable.html" title="class in java.lang">Throwable</a>&nbsp;e)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">uncaughtException</span><wbr><span class="parameters">(<a href="Thread.html" title="java.lang 包中的类">Thread</a>&nbsp;t,
+ <a href="Throwable.html" title="java.lang 包中的类">Throwable</a>&nbsp;e)</span></div>
 <div class="block">Called by the Java Virtual Machine when a thread in this
 thread group stops because of an uncaught exception, and the thread
-does not have a specific <a href="Thread.UncaughtExceptionHandler.html" title="interface in java.lang"><code>Thread.UncaughtExceptionHandler</code></a>
+does not have a specific <a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口"><code>Thread.UncaughtExceptionHandler</code></a>
 installed.
 <p>
 The <code>uncaughtException</code> method of
@@ -817,9 +817,9 @@ Applications can override this method in subclasses of
 <code>ThreadGroup</code> to provide alternative handling of
 uncaught exceptions.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Thread.UncaughtExceptionHandler.html#uncaughtException(java.lang.Thread,java.lang.Throwable)">uncaughtException</a></code>&nbsp;in interface&nbsp;<code><a href="Thread.UncaughtExceptionHandler.html" title="interface in java.lang">Thread.UncaughtExceptionHandler</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Thread.UncaughtExceptionHandler.html#uncaughtException(java.lang.Thread,java.lang.Throwable)">uncaughtException</a></code>&nbsp;in interface&nbsp;<code><a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">Thread.UncaughtExceptionHandler</a></code></dd>
+<dt>参数:</dt>
 <dd><code>t</code> - the thread that is about to exit.</dd>
 <dd><code>e</code> - the uncaught exception.</dd>
 </dl>
@@ -830,12 +830,12 @@ uncaught exceptions.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string representation of this Thread group.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of this thread group.</dd>
 </dl>
 </div>

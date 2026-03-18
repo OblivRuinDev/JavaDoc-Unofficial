@@ -58,7 +58,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.dynalink</a></li>
 <li><a href="CallSiteDescriptor.html" class="current-selection">CallSiteDescriptor</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -66,18 +66,18 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.lang.invoke.MethodHandles.Lookup,jdk.dynalink.Operation,java.lang.invoke.MethodType)" tabindex="0">CallSiteDescriptor(MethodHandles.Lookup, Operation, MethodType)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getOperation()" tabindex="0">getOperation()</a></li>
 <li><a href="#getMethodType()" tabindex="0">getMethodType()</a></li>
@@ -95,10 +95,10 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class CallSiteDescriptor" class="title">Class CallSiteDescriptor</h1>
+<h1 title="类 CallSiteDescriptor" class="title">类 CallSiteDescriptor</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="SecureLookupSupplier.html" title="class in jdk.dynalink">jdk.dynalink.SecureLookupSupplier</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="SecureLookupSupplier.html" title="jdk.dynalink 包中的类">jdk.dynalink.SecureLookupSupplier</a>
 <div class="inheritance">jdk.dynalink.CallSiteDescriptor</div>
 </div>
 </div>
@@ -106,16 +106,16 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CallSiteDescriptor</span>
-<span class="extends-implements">extends <a href="SecureLookupSupplier.html" title="class in jdk.dynalink">SecureLookupSupplier</a></span></div>
+<span class="extends-implements">extends <a href="SecureLookupSupplier.html" title="jdk.dynalink 包中的类">SecureLookupSupplier</a></span></div>
 <div class="block">Call site descriptors contain all the information necessary for linking a
 call site. This information is normally passed as parameters to bootstrap
 methods and consists of the <code>MethodHandles.Lookup</code> object on the caller
 class in which the call site occurs, the dynamic operation at the call
 site, and the method type of the call site. <code>CallSiteDescriptor</code>
 objects are used in Dynalink to capture and store these parameters for
-subsequent use by the <a href="DynamicLinker.html" title="class in jdk.dynalink"><code>DynamicLinker</code></a>.
+subsequent use by the <a href="DynamicLinker.html" title="jdk.dynalink 包中的类"><code>DynamicLinker</code></a>.
 <p>
-The constructors of built-in <a href="RelinkableCallSite.html" title="interface in jdk.dynalink"><code>RelinkableCallSite</code></a> implementations all
+The constructors of built-in <a href="RelinkableCallSite.html" title="jdk.dynalink 包中的接口"><code>RelinkableCallSite</code></a> implementations all
 take a call site descriptor.
 <p>
 Call site descriptors must be immutable. You can use this class as-is or you
@@ -124,12 +124,12 @@ descriptors (typically, values passed in additional parameters to the
 bootstrap method. Since the descriptors must be immutable, you can set up a
 cache for equivalent descriptors to have the call sites share them.
 <p>
-The class extends <a href="SecureLookupSupplier.html" title="class in jdk.dynalink"><code>SecureLookupSupplier</code></a> to encapsulate the <code>
+The class extends <a href="SecureLookupSupplier.html" title="jdk.dynalink 包中的类"><code>SecureLookupSupplier</code></a> to encapsulate the <code>
 MethodHandles.Lookup</code> object. This lookup should be used
 to find method handles to set as targets of the call site described by this
 descriptor.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -139,23 +139,23 @@ descriptor.</div>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
+<h2>字段概要</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-jdk.dynalink.SecureLookupSupplier">Fields declared in class&nbsp;<a href="SecureLookupSupplier.html#field-summary" title="class in jdk.dynalink">SecureLookupSupplier</a></h3>
+<h3 id="fields-inherited-from-class-jdk.dynalink.SecureLookupSupplier">在类 <a href="SecureLookupSupplier.html#field-summary" title="jdk.dynalink 包中的类">SecureLookupSupplier</a> 中声明的字段</h3>
 <code><a href="SecureLookupSupplier.html#GET_LOOKUP_PERMISSION_NAME">GET_LOOKUP_PERMISSION_NAME</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.invoke.MethodHandles.Lookup,jdk.dynalink.Operation,java.lang.invoke.MethodType)" class="member-name-link">CallSiteDescriptor</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class in java.lang.invoke">MethodHandles.Lookup</a>&nbsp;lookup,
- <a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;operation,
- <a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;methodType)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.invoke.MethodHandles.Lookup,jdk.dynalink.Operation,java.lang.invoke.MethodType)" class="member-name-link">CallSiteDescriptor</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html" title="java.lang.invoke 包中的类">MethodHandles.Lookup</a>&nbsp;lookup,
+ <a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;operation,
+ <a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;methodType)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new call site descriptor.</div>
 </div>
@@ -165,49 +165,49 @@ descriptor.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeMethodType(java.lang.invoke.MethodType)" class="member-name-link">changeMethodType</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newMethodType)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeMethodType(java.lang.invoke.MethodType)" class="member-name-link">changeMethodType</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newMethodType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a call site descriptor that only differs in its
 method type from this descriptor.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeMethodTypeInternal(java.lang.invoke.MethodType)" class="member-name-link">changeMethodTypeInternal</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newMethodType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeMethodTypeInternal(java.lang.invoke.MethodType)" class="member-name-link">changeMethodTypeInternal</a><wbr>(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newMethodType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a call site descriptor that only differs in its
 method type from this descriptor.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeOperation(jdk.dynalink.Operation)" class="member-name-link">changeOperation</a><wbr>(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;newOperation)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeOperation(jdk.dynalink.Operation)" class="member-name-link">changeOperation</a><wbr>(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;newOperation)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a call site descriptor that only differs in its
 operation from this descriptor.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeOperationInternal(jdk.dynalink.Operation)" class="member-name-link">changeOperationInternal</a><wbr>(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;newOperation)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#changeOperationInternal(jdk.dynalink.Operation)" class="member-name-link">changeOperationInternal</a><wbr>(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;newOperation)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds or creates a call site descriptor that only differs in its
 operation from this descriptor.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns true if this call site descriptor is equal to the passed object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMethodType()" class="member-name-link">getMethodType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The type of the method at the call site.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Operation.html" title="interface in jdk.dynalink">Operation</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOperation()" class="member-name-link">getOperation</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the operation at the call site.</div>
@@ -219,7 +219,7 @@ operation from this descriptor.</div>
 from its operation, method type, and lookup object's lookup class and
 lookup modes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the string representation of this call site descriptor, of the
@@ -229,10 +229,10 @@ format <code>name(parameterTypes)returnType@lookup</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-jdk.dynalink.SecureLookupSupplier">Methods declared in class&nbsp;<a href="SecureLookupSupplier.html#method-summary" title="class in jdk.dynalink">SecureLookupSupplier</a></h3>
+<h3 id="methods-inherited-from-class-jdk.dynalink.SecureLookupSupplier">在类 <a href="SecureLookupSupplier.html#method-summary" title="jdk.dynalink 包中的类">SecureLookupSupplier</a> 中声明的方法</h3>
 <code><a href="SecureLookupSupplier.html#getLookup()" title="getLookup()">getLookup</a>, <a href="SecureLookupSupplier.html#getLookupPrivileged()" title="getLookupPrivileged()">getLookupPrivileged</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -243,18 +243,18 @@ format <code>name(parameterTypes)returnType@lookup</code>.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.invoke.MethodHandles.Lookup,jdk.dynalink.Operation,java.lang.invoke.MethodType)">
 <h3>CallSiteDescriptor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CallSiteDescriptor</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html" title="class in java.lang.invoke">MethodHandles.Lookup</a>&nbsp;lookup,
- <a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;operation,
- <a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;methodType)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CallSiteDescriptor</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html" title="java.lang.invoke 包中的类">MethodHandles.Lookup</a>&nbsp;lookup,
+ <a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;operation,
+ <a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;methodType)</span></div>
 <div class="block">Creates a new call site descriptor.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>lookup</code> - the lookup object describing the class the call site belongs to.
 When creating descriptors from a <a href="../../../java.base/java/lang/invoke/package-summary.html"><code>java.lang.invoke</code></a> bootstrap method,
 it should be the lookup passed to the bootstrap.</dd>
@@ -272,16 +272,16 @@ the method type passed to the bootstrap.</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getOperation()">
 <h3>getOperation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Operation.html" title="interface in jdk.dynalink">Operation</a></span>&nbsp;<span class="element-name">getOperation</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a></span>&nbsp;<span class="element-name">getOperation</span>()</div>
 <div class="block">Returns the operation at the call site.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the operation at the call site.</dd>
 </dl>
 </div>
@@ -291,10 +291,10 @@ the method type passed to the bootstrap.</dd>
 <section class="detail" id="getMethodType()">
 <h3>getMethodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">getMethodType</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">getMethodType</span>()</div>
 <div class="block">The type of the method at the call site.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>type of the method at the call site.</dd>
 </dl>
 </div>
@@ -304,17 +304,17 @@ the method type passed to the bootstrap.</dd>
 <section class="detail" id="changeMethodType(java.lang.invoke.MethodType)">
 <h3>changeMethodType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeMethodType</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newMethodType)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeMethodType</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newMethodType)</span></div>
 <div class="block">Finds or creates a call site descriptor that only differs in its
 method type from this descriptor.
 Invokes <a href="#changeMethodTypeInternal(java.lang.invoke.MethodType)"><code>changeMethodTypeInternal(MethodType)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newMethodType</code> - the new method type</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a call site descriptor with changed method type.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>newMethodType</code> is null.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>newMethodType</code> is null.</dd>
 </dl>
 </div>
 </section>
@@ -323,7 +323,7 @@ Invokes <a href="#changeMethodTypeInternal(java.lang.invoke.MethodType)"><code>c
 <section class="detail" id="changeMethodTypeInternal(java.lang.invoke.MethodType)">
 <h3>changeMethodTypeInternal</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeMethodTypeInternal</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newMethodType)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeMethodTypeInternal</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/invoke/MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newMethodType)</span></div>
 <div class="block">Finds or creates a call site descriptor that only differs in its
 method type from this descriptor. Subclasses must override this method
 to return an object of their exact class. If an overridden method changes
@@ -331,9 +331,9 @@ something other than the method type in the descriptor (its class, lookup,
 or operation), or returns null, an <code>AssertionError</code> will be thrown
 from <a href="#changeMethodType(java.lang.invoke.MethodType)"><code>changeMethodType(MethodType)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newMethodType</code> - the new method type</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a call site descriptor with the changed method type.</dd>
 </dl>
 </div>
@@ -343,17 +343,17 @@ from <a href="#changeMethodType(java.lang.invoke.MethodType)"><code>changeMethod
 <section class="detail" id="changeOperation(jdk.dynalink.Operation)">
 <h3>changeOperation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;newOperation)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeOperation</span><wbr><span class="parameters">(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;newOperation)</span></div>
 <div class="block">Finds or creates a call site descriptor that only differs in its
 operation from this descriptor.
 Invokes <a href="#changeOperationInternal(jdk.dynalink.Operation)"><code>changeOperationInternal(Operation)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newOperation</code> - the new operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a call site descriptor with the changed operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>newOperation</code> is null.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>newOperation</code> is null.</dd>
 </dl>
 </div>
 </section>
@@ -362,7 +362,7 @@ Invokes <a href="#changeOperationInternal(jdk.dynalink.Operation)"><code>changeO
 <section class="detail" id="changeOperationInternal(jdk.dynalink.Operation)">
 <h3>changeOperationInternal</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="class in jdk.dynalink">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeOperationInternal</span><wbr><span class="parameters">(<a href="Operation.html" title="interface in jdk.dynalink">Operation</a>&nbsp;newOperation)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="CallSiteDescriptor.html" title="jdk.dynalink 包中的类">CallSiteDescriptor</a></span>&nbsp;<span class="element-name">changeOperationInternal</span><wbr><span class="parameters">(<a href="Operation.html" title="jdk.dynalink 包中的接口">Operation</a>&nbsp;newOperation)</span></div>
 <div class="block">Finds or creates a call site descriptor that only differs in its
 operation from this descriptor. Subclasses must override this method
 to return an object of their exact class. If an overridden method changes
@@ -370,9 +370,9 @@ something other than the operation in the descriptor (its class, lookup,
 or method type), or returns null, an <code>AssertionError</code> will be thrown
 from <a href="#changeOperation(jdk.dynalink.Operation)"><code>changeOperation(Operation)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newOperation</code> - the new operation</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a call site descriptor with the changed operation.</dd>
 </dl>
 </div>
@@ -382,25 +382,25 @@ from <a href="#changeOperation(jdk.dynalink.Operation)"><code>changeOperation(Op
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Returns true if this call site descriptor is equal to the passed object.
 It is considered equal if the other object is of the exact same class,
 their operations and method types are equal, and their lookups have the
 same <a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html#lookupClass()"><code>MethodHandles.Lookup.lookupClass()</code></a> and
 <a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html#lookupModes()"><code>MethodHandles.Lookup.lookupModes()</code></a>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the reference object with which to compare.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this object is the same as the obj
          argument; <code>false</code> otherwise.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../java.base/java/lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../../java.base/java/util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../../java.base/java/util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -416,11 +416,11 @@ same <a href="../../../java.base/java/lang/invoke/MethodHandles.Lookup.html#look
 from its operation, method type, and lookup object's lookup class and
 lookup modes.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>value-based hash code for this call site descriptor.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -435,13 +435,13 @@ lookup modes.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns the string representation of this call site descriptor, of the
 format <code>name(parameterTypes)returnType@lookup</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>

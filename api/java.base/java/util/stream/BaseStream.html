@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.stream</a></li>
 <li><a href="BaseStream.html" class="current-selection">BaseStream</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -65,11 +65,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#iterator()" tabindex="0">iterator()</a></li>
 <li><a href="#spliterator()" tabindex="0">spliterator()</a></li>
@@ -86,30 +86,30 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface BaseStream" class="title">Interface BaseStream&lt;T, S extends BaseStream&lt;T,<wbr>S&gt;&gt;</h1>
+<h1 title="接口 BaseStream" class="title">接口 BaseStream&lt;T, S extends BaseStream&lt;T,<wbr>S&gt;&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - the type of the stream elements</span></dd>
 <dd><span id="type-param-S"><code>S</code> - the type of the stream implementing <code>BaseStream</code></span></dd>
 </dl>
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>All Known Subinterfaces:</dt>
-<dd><code><a href="DoubleStream.html" title="interface in java.util.stream">DoubleStream</a>, <a href="IntStream.html" title="interface in java.util.stream">IntStream</a>, <a href="LongStream.html" title="interface in java.util.stream">LongStream</a>, <a href="Stream.html" title="interface in java.util.stream">Stream</a>&lt;T&gt;</code></dd>
+<dt>所有已知子接口:</dt>
+<dd><code><a href="DoubleStream.html" title="java.util.stream 包中的接口">DoubleStream</a>, <a href="IntStream.html" title="java.util.stream 包中的接口">IntStream</a>, <a href="LongStream.html" title="java.util.stream 包中的接口">LongStream</a>, <a href="Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;T&gt;</code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BaseStream&lt;T, S extends BaseStream&lt;T,<wbr>S&gt;&gt;</span><span class="extends-implements">
-extends <a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
+extends <a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
 <div class="block">Base interface for streams, which are sequences of elements supporting
 sequential and parallel aggregate operations.  The following example
-illustrates an aggregate operation using the stream types <a href="Stream.html" title="interface in java.util.stream"><code>Stream</code></a>
-and <a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a>, computing the sum of the weights of the red widgets:
+illustrates an aggregate operation using the stream types <a href="Stream.html" title="java.util.stream 包中的接口"><code>Stream</code></a>
+and <a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a>, computing the sum of the weights of the red widgets:
 
 <pre><code>    int sum = widgets.stream()
                      .filter(w -&gt; w.getColor() == RED)
@@ -117,20 +117,20 @@ and <a href="IntStream.html" title="interface in java.util.stream"><code>IntStre
                      .sum();
 </code></pre>
 
-See the class documentation for <a href="Stream.html" title="interface in java.util.stream"><code>Stream</code></a> and the package documentation
+See the class documentation for <a href="Stream.html" title="java.util.stream 包中的接口"><code>Stream</code></a> and the package documentation
 for <a href="package-summary.html">java.util.stream</a> for additional
 specification of streams, stream operations, stream pipelines, and
 parallelism, which governs the behavior of all stream types.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Stream.html" title="interface in java.util.stream"><code>Stream</code></a></li>
-<li><a href="IntStream.html" title="interface in java.util.stream"><code>IntStream</code></a></li>
-<li><a href="LongStream.html" title="interface in java.util.stream"><code>LongStream</code></a></li>
-<li><a href="DoubleStream.html" title="interface in java.util.stream"><code>DoubleStream</code></a></li>
+<li><a href="Stream.html" title="java.util.stream 包中的接口"><code>Stream</code></a></li>
+<li><a href="IntStream.html" title="java.util.stream 包中的接口"><code>IntStream</code></a></li>
+<li><a href="LongStream.html" title="java.util.stream 包中的接口"><code>LongStream</code></a></li>
+<li><a href="DoubleStream.html" title="java.util.stream 包中的接口"><code>DoubleStream</code></a></li>
 <li><a href="package-summary.html">java.util.stream</a></li>
 </ul>
 </dd>
@@ -142,14 +142,14 @@ parallelism, which governs the behavior of all stream types.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#close()" class="member-name-link">close</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -162,32 +162,32 @@ to be called.</div>
 <div class="block">Returns whether this stream, if a terminal operation were to be executed,
 would execute in parallel.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Iterator.html" title="interface in java.util">Iterator</a><wbr>&lt;<a href="#type-param-T" title="type parameter in BaseStream">T</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Iterator.html" title="java.util 包中的接口">Iterator</a><wbr>&lt;<a href="#type-param-T" title="BaseStream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#iterator()" class="member-name-link">iterator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an iterator for the elements of this stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="type parameter in BaseStream">S</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#onClose(java.lang.Runnable)" class="member-name-link">onClose</a><wbr>(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;closeHandler)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#onClose(java.lang.Runnable)" class="member-name-link">onClose</a><wbr>(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;closeHandler)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an equivalent stream with an additional close handler.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="type parameter in BaseStream">S</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parallel()" class="member-name-link">parallel</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an equivalent stream that is parallel.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="type parameter in BaseStream">S</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sequential()" class="member-name-link">sequential</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an equivalent stream that is sequential.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Spliterator.html" title="interface in java.util">Spliterator</a><wbr>&lt;<a href="#type-param-T" title="type parameter in BaseStream">T</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Spliterator.html" title="java.util 包中的接口">Spliterator</a><wbr>&lt;<a href="#type-param-T" title="BaseStream 中的类型参数">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#spliterator()" class="member-name-link">spliterator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a spliterator for the elements of this stream.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="type parameter in BaseStream">S</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#unordered()" class="member-name-link">unordered</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an equivalent stream that is
@@ -205,23 +205,23 @@ would execute in parallel.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="iterator()">
 <h3>iterator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Iterator.html" title="interface in java.util">Iterator</a>&lt;<a href="#type-param-T" title="type parameter in BaseStream">T</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../Iterator.html" title="java.util 包中的接口">Iterator</a>&lt;<a href="#type-param-T" title="BaseStream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
 <div class="block">Returns an iterator for the elements of this stream.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This operation is provided as an "escape hatch" to enable
 arbitrary client-controlled pipeline traversals in the event that the
 existing operations are not sufficient to the task.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the element iterator for this stream</dd>
 </dl>
 </div>
@@ -231,13 +231,13 @@ existing operations are not sufficient to the task.</dd>
 <section class="detail" id="spliterator()">
 <h3>spliterator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../Spliterator.html" title="interface in java.util">Spliterator</a>&lt;<a href="#type-param-T" title="type parameter in BaseStream">T</a>&gt;</span>&nbsp;<span class="element-name">spliterator</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../Spliterator.html" title="java.util 包中的接口">Spliterator</a>&lt;<a href="#type-param-T" title="BaseStream 中的类型参数">T</a>&gt;</span>&nbsp;<span class="element-name">spliterator</span>()</div>
 <div class="block">Returns a spliterator for the elements of this stream.
 
 <p>This is a <a href="package-summary.html#StreamOps">terminal
 operation</a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This operation is provided as an "escape hatch" to enable
 arbitrary client-controlled pipeline traversals in the event that the
 existing operations are not sufficient to the task.
@@ -249,7 +249,7 @@ stream source spliterator and the intermediate operations).
 Implementations may report a sub-set of those characteristics.  For
 example, it may be too expensive to compute the entire set for some or
 all possible stream pipelines.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the element spliterator for this stream</dd>
 </dl>
 </div>
@@ -264,7 +264,7 @@ all possible stream pipelines.</dd>
 would execute in parallel.  Calling this method after invoking an
 terminal stream operation method may yield unpredictable results.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this stream would execute in parallel if executed</dd>
 </dl>
 </div>
@@ -274,7 +274,7 @@ terminal stream operation method may yield unpredictable results.</div>
 <section class="detail" id="sequential()">
 <h3>sequential</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="type parameter in BaseStream">S</a></span>&nbsp;<span class="element-name">sequential</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></span>&nbsp;<span class="element-name">sequential</span>()</div>
 <div class="block">Returns an equivalent stream that is sequential.  May return
 itself, either because the stream was already sequential, or because
 the underlying stream state was modified to be sequential.
@@ -282,7 +282,7 @@ the underlying stream state was modified to be sequential.
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a sequential stream</dd>
 </dl>
 </div>
@@ -292,7 +292,7 @@ operation</a>.</div>
 <section class="detail" id="parallel()">
 <h3>parallel</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="type parameter in BaseStream">S</a></span>&nbsp;<span class="element-name">parallel</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></span>&nbsp;<span class="element-name">parallel</span>()</div>
 <div class="block">Returns an equivalent stream that is parallel.  May return
 itself, either because the stream was already parallel, or because
 the underlying stream state was modified to be parallel.
@@ -300,7 +300,7 @@ the underlying stream state was modified to be parallel.
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a parallel stream</dd>
 </dl>
 </div>
@@ -310,7 +310,7 @@ operation</a>.</div>
 <section class="detail" id="unordered()">
 <h3>unordered</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="type parameter in BaseStream">S</a></span>&nbsp;<span class="element-name">unordered</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></span>&nbsp;<span class="element-name">unordered</span>()</div>
 <div class="block">Returns an equivalent stream that is
 <a href="package-summary.html#Ordering">unordered</a>.  May return
 itself, either because the stream was already unordered, or because
@@ -319,7 +319,7 @@ the underlying stream state was modified to be unordered.
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an unordered stream</dd>
 </dl>
 </div>
@@ -329,7 +329,7 @@ operation</a>.</div>
 <section class="detail" id="onClose(java.lang.Runnable)">
 <h3>onClose</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="type parameter in BaseStream">S</a></span>&nbsp;<span class="element-name">onClose</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="interface in java.lang">Runnable</a>&nbsp;closeHandler)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-S" title="BaseStream 中的类型参数">S</a></span>&nbsp;<span class="element-name">onClose</span><wbr><span class="parameters">(<a href="../../lang/Runnable.html" title="java.lang 包中的接口">Runnable</a>&nbsp;closeHandler)</span></div>
 <div class="block">Returns an equivalent stream with an additional close handler.  Close
 handlers are run when the <a href="#close()"><code>close()</code></a> method
 is called on the stream, and are executed in the order they were
@@ -344,9 +344,9 @@ return itself.
 <p>This is an <a href="package-summary.html#StreamOps">intermediate
 operation</a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>closeHandler</code> - A task to execute when the stream is closed</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a stream with a handler that is run if the stream is closed</dd>
 </dl>
 </div>
@@ -360,9 +360,9 @@ operation</a>.</div>
 <div class="block">Closes this stream, causing all close handlers for this stream pipeline
 to be called.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>See Also:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../lang/AutoCloseable.html#close()"><code>AutoCloseable.close()</code></a></li>

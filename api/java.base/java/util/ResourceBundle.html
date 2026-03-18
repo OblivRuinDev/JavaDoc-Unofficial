@@ -63,7 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util</a></li>
 <li><a href="ResourceBundle.html" class="current-selection">ResourceBundle</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -71,9 +71,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#resource-bundle-modules" tabindex="0">Resource Bundles and Named Modules</a>
 <ol class="toc-list">
@@ -88,21 +88,21 @@ loadScripts(document, 'script');</script>
 <li><a href="#example-heading" tabindex="0">Example</a></li>
 </ol>
 </li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#parent" tabindex="0">parent</a></li>
 </ol>
 </li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">ResourceBundle()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getBaseBundleName()" tabindex="0">getBaseBundleName()</a></li>
 <li><a href="#getString(java.lang.String)" tabindex="0">getString(String)</a></li>
@@ -132,20 +132,20 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ResourceBundle" class="title">Class ResourceBundle</h1>
+<h1 title="类 ResourceBundle" class="title">类 ResourceBundle</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.ResourceBundle</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="ListResourceBundle.html" title="class in java.util">ListResourceBundle</a>, <a href="PropertyResourceBundle.html" title="class in java.util">PropertyResourceBundle</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="ListResourceBundle.html" title="java.util 包中的类">ListResourceBundle</a>, <a href="PropertyResourceBundle.html" title="java.util 包中的类">PropertyResourceBundle</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ResourceBundle</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">Resource bundles contain locale-specific objects.  When your program needs a
 locale-specific resource, a <code>String</code> for example, your program can
 load it from the resource bundle that is appropriate for the current user's
@@ -286,19 +286,19 @@ or <a href="#getBundle(java.lang.String,java.util.Locale)"><code>getBundle(Strin
 <h3><a id="service-providers">Resource bundles as service providers</a></h3>
 
 Resource bundles can be deployed in one or more <em>service provider modules</em>
-and they can be located using <a href="ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a>.
-A <a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi">service</a> interface or class must be
+and they can be located using <a href="ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a>.
+A <a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口">service</a> interface or class must be
 defined. The caller module declares that it uses the service, the service
 provider modules declare that they provide implementations of the service.
-Refer to <a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi"><code>ResourceBundleProvider</code></a> for developing resource bundle
+Refer to <a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleProvider</code></a> for developing resource bundle
 services and deploying resource bundle providers.
 The module obtaining the resource bundle can be a resource bundle
 provider itself; in which case this module only locates the resource bundle
 via service provider mechanism.
 
-<p>A <a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi">resource bundle provider</a> can
+<p>A <a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口">resource bundle provider</a> can
 provide resource bundles in any format such XML which replaces the need
-of <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a>.
+of <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a>.
 
 <h3><a id="other-modules">Resource bundles in other modules and class path</a></h3>
 
@@ -310,7 +310,7 @@ in <a href="../lang/Module.html#getResourceAsStream(java.lang.String)"><code>Mod
 
 <p>The <code>getBundle</code> factory methods with no <code>Control</code> parameter
 locate and load resource bundles from
-<a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi">service providers</a>.
+<a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口">service providers</a>.
 It may continue the search as if calling <a href="../lang/Module.html#getResourceAsStream(java.lang.String)"><code>Module.getResourceAsStream(String)</code></a>
 to find the named resource from a given module and calling
 <a href="../lang/ClassLoader.html#getResourceAsStream(java.lang.String)"><code>ClassLoader.getResourceAsStream(String)</code></a>; refer to
@@ -329,7 +329,7 @@ a JNI attached thread), the caller module is default to the unnamed module for t
 
 <h3 id="resource-bundles-in-automatic-modules-heading">Resource bundles in automatic modules</h3>
 
-A common format of resource bundles is in <a href="PropertyResourceBundle.html" title="class in java.util">.properties</a> file format.  Typically <code>.properties</code> resource bundles
+A common format of resource bundles is in <a href="PropertyResourceBundle.html" title="java.util 包中的类">.properties</a> file format.  Typically <code>.properties</code> resource bundles
 are packaged in a JAR file.  Resource bundle only JAR file can be readily
 deployed as an <a href="../lang/module/ModuleFinder.html#automatic-modules">automatic module</a>.  For example, if the JAR file contains the
 entry "<code>p/q/Foo_ja.properties</code>" and no <code>.class</code> entry,
@@ -341,7 +341,7 @@ automatic modules.
 
 <h3 id="resourcebundle-control-heading">ResourceBundle.Control</h3>
 
-The <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> class provides information necessary
+The <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> class provides information necessary
 to perform the bundle loading process by the <code>getBundle</code>
 factory methods that take a <code>ResourceBundle.Control</code>
 instance. You can implement your own subclass in order to enable
@@ -350,22 +350,22 @@ define caching parameters. Refer to the descriptions of the class and the
 <a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)"><code>getBundle</code></a>
 factory method for details.
 
-<p> <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> is designed for an application deployed
+<p> <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> is designed for an application deployed
 in an unnamed module, for example to support resource bundles in
 non-standard formats or package localized resources in a non-traditional
-convention. <a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi"><code>ResourceBundleProvider</code></a> is the replacement for
+convention. <a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleProvider</code></a> is the replacement for
 <code>ResourceBundle.Control</code> when migrating to modules.
 <code>UnsupportedOperationException</code> will be thrown when a factory
 method that takes the <code>ResourceBundle.Control</code> parameter is called.
 
 <p><a id="modify_default_behavior">For the <code>getBundle</code> factory</a>
-methods that take no <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> instance, their <a href="#default_behavior"> default behavior</a> of resource bundle loading
-can be modified with custom <a href="spi/ResourceBundleControlProvider.html" title="interface in java.util.spi"><code>ResourceBundleControlProvider</code></a> implementations.
+methods that take no <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> instance, their <a href="#default_behavior"> default behavior</a> of resource bundle loading
+can be modified with custom <a href="spi/ResourceBundleControlProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleControlProvider</code></a> implementations.
 If any of the
-providers provides a <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> for the given base name, that <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> will be used instead of the default <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a>. If there is
+providers provides a <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> for the given base name, that <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> will be used instead of the default <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a>. If there is
 more than one service provider for supporting the same base name,
-the first one returned from <a href="ServiceLoader.html" title="class in java.util"><code>ServiceLoader</code></a> will be used.
-A custom <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> implementation is ignored by named modules.
+the first one returned from <a href="ServiceLoader.html" title="java.util 包中的类"><code>ServiceLoader</code></a> will be used.
+A custom <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> implementation is ignored by named modules.
 
 <h2 id="cache-management-heading">Cache Management</h2>
 
@@ -433,15 +433,15 @@ exception messages, <code>ExceptionResources</code>
 and one for widgets, <code>WidgetResource</code> (<code>WidgetResources_fr</code>,
 <code>WidgetResources_de</code>, ...); breaking up the resources however you like.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="ListResourceBundle.html" title="class in java.util"><code>ListResourceBundle</code></a></li>
-<li><a href="PropertyResourceBundle.html" title="class in java.util"><code>PropertyResourceBundle</code></a></li>
-<li><a href="MissingResourceException.html" title="class in java.util"><code>MissingResourceException</code></a></li>
-<li><a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi"><code>ResourceBundleProvider</code></a></li>
+<li><a href="ListResourceBundle.html" title="java.util 包中的类"><code>ListResourceBundle</code></a></li>
+<li><a href="PropertyResourceBundle.html" title="java.util 包中的类"><code>PropertyResourceBundle</code></a></li>
+<li><a href="MissingResourceException.html" title="java.util 包中的类"><code>MissingResourceException</code></a></li>
+<li><a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleProvider</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -452,14 +452,14 @@ and one for widgets, <code>WidgetResource</code> (<code>WidgetResources_fr</code
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ResourceBundle.Control.html" class="type-name-link" title="class in java.util">ResourceBundle.Control</a></code></div>
+<div class="col-second even-row-color"><code><a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a></code></div>
 <div class="col-last even-row-color">
 <div class="block"><code>ResourceBundle.Control</code> defines a set of callback methods
 that are invoked by the <a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)"><code>ResourceBundle.getBundle</code></a> factory
@@ -471,13 +471,13 @@ methods during the bundle loading process.</div>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>protected <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><code>protected <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
 <div class="col-second even-row-color"><code><a href="#parent" class="member-name-link">parent</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The parent bundle of this bundle.</div>
@@ -488,11 +488,11 @@ methods during the bundle loading process.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ResourceBundle</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Sole constructor.</div>
@@ -503,14 +503,14 @@ methods during the bundle loading process.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearCache()" class="member-name-link">clearCache</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -518,126 +518,126 @@ methods during the bundle loading process.</div>
 by the caller's module.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearCache(java.lang.ClassLoader)" class="member-name-link">clearCache</a><wbr>(<a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#clearCache(java.lang.ClassLoader)" class="member-name-link">clearCache</a><wbr>(<a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Removes all resource bundles from the cache that have been loaded
 by the given class loader.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsKey(java.lang.String)" class="member-name-link">containsKey</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#containsKey(java.lang.String)" class="member-name-link">containsKey</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determines whether the given <code>key</code> is contained in
 this <code>ResourceBundle</code> or its parent bundles.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getBaseBundleName()" class="member-name-link">getBaseBundleName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the base name of this bundle, if known, or <code>null</code> if unknown.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets a resource bundle using the specified base name, the default locale,
 and the caller module.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.lang.Module)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="../lang/Module.html" title="class in java.lang">Module</a>&nbsp;module)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.lang.Module)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="../lang/Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets a resource bundle using the specified base name and the default locale
 on behalf of the specified module.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;locale)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets a resource bundle using the specified base name and locale,
 and the caller module.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;locale,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets a resource bundle using the specified base name, locale, and class
 loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a resource bundle using the specified base name, target
 locale, class loader and control.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.Module)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="../lang/Module.html" title="class in java.lang">Module</a>&nbsp;module)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.Module)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="../lang/Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Gets a resource bundle using the specified base name and locale
 on behalf of the specified module.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a resource bundle using the specified base name, target
 locale and control, and the caller's class loader.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static final <a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getBundle(java.lang.String,java.util.ResourceBundle.Control)" class="member-name-link">getBundle</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns a resource bundle using the specified base name, the
 default locale and the specified control.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Enumeration.html" title="interface in java.util">Enumeration</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Enumeration.html" title="java.util 包中的接口">Enumeration</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getKeys()" class="member-name-link">getKeys</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns an enumeration of the keys.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Locale.html" title="class in java.util">Locale</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Locale.html" title="java.util 包中的类">Locale</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLocale()" class="member-name-link">getLocale</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the locale of this resource bundle.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObject(java.lang.String)" class="member-name-link">getObject</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObject(java.lang.String)" class="member-name-link">getObject</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets an object for the given key from this resource bundle or one of its parents.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getString(java.lang.String)" class="member-name-link">getString</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getString(java.lang.String)" class="member-name-link">getString</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets a string for the given key from this resource bundle or one of its parents.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/String.html" title="class in java.lang">String</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStringArray(java.lang.String)" class="member-name-link">getStringArray</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getStringArray(java.lang.String)" class="member-name-link">getStringArray</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets a string array for the given key from this resource bundle or one of its parents.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#handleGetObject(java.lang.String)" class="member-name-link">handleGetObject</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#handleGetObject(java.lang.String)" class="member-name-link">handleGetObject</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets an object for the given key from this resource bundle.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#handleKeySet()" class="member-name-link">handleKeySet</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a <code>Set</code> of the keys contained <em>only</em>
 in this <code>ResourceBundle</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Set.html" title="interface in java.util">Set</a><wbr>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Set.html" title="java.util 包中的接口">Set</a><wbr>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#keySet()" class="member-name-link">keySet</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a <code>Set</code> of all keys contained in this
 <code>ResourceBundle</code> and its parent bundles.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setParent(java.util.ResourceBundle)" class="member-name-link">setParent</a><wbr>(<a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a>&nbsp;parent)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setParent(java.util.ResourceBundle)" class="member-name-link">setParent</a><wbr>(<a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a>&nbsp;parent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the parent bundle of this bundle.</div>
 </div>
@@ -645,7 +645,7 @@ in this <code>ResourceBundle</code>.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -656,13 +656,13 @@ in this <code>ResourceBundle</code>.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="parent">
 <h3>parent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">parent</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">parent</span></div>
 <div class="block">The parent bundle of this bundle.
 The parent bundle is searched by <a href="#getObject(java.lang.String)"><code>getObject</code></a>
 when this bundle does not contain a particular resource.</div>
@@ -675,7 +675,7 @@ when this bundle does not contain a particular resource.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -693,25 +693,25 @@ implicit.)</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getBaseBundleName()">
 <h3>getBaseBundleName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getBaseBundleName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getBaseBundleName</span>()</div>
 <div class="block">Returns the base name of this bundle, if known, or <code>null</code> if unknown.
 
 If not null, then this is the value of the <code>baseName</code> parameter
 that was passed to the <code>ResourceBundle.getBundle(...)</code> method
 when the resource bundle was loaded.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The base name of the resource bundle, as provided to and expected
 by the <code>ResourceBundle.getBundle(...)</code> methods.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)"><code>getBundle(java.lang.String, java.util.Locale, java.lang.ClassLoader)</code></a></li>
@@ -725,7 +725,7 @@ by the <code>ResourceBundle.getBundle(...)</code> methods.</dd>
 <section class="detail" id="getString(java.lang.String)">
 <h3>getString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getString</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getString</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Gets a string for the given key from this resource bundle or one of its parents.
 Calling this method is equivalent to calling
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -734,14 +734,14 @@ Calling this method is equivalent to calling
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the key for the desired string</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the string for the given key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no object for the given key can be found</dd>
-<dd><code><a href="../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the object found for the given key is not a string</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no object for the given key can be found</dd>
+<dd><code><a href="../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the object found for the given key is not a string</dd>
 </dl>
 </div>
 </section>
@@ -750,7 +750,7 @@ Calling this method is equivalent to calling
 <section class="detail" id="getStringArray(java.lang.String)">
 <h3>getStringArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getStringArray</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getStringArray</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Gets a string array for the given key from this resource bundle or one of its parents.
 Calling this method is equivalent to calling
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -759,14 +759,14 @@ Calling this method is equivalent to calling
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the key for the desired string array</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the string array for the given key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no object for the given key can be found</dd>
-<dd><code><a href="../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the object found for the given key is not a string array</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no object for the given key can be found</dd>
+<dd><code><a href="../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the object found for the given key is not a string array</dd>
 </dl>
 </div>
 </section>
@@ -775,7 +775,7 @@ Calling this method is equivalent to calling
 <section class="detail" id="getObject(java.lang.String)">
 <h3>getObject</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getObject</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getObject</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Gets an object for the given key from this resource bundle or one of its parents.
 This method first tries to obtain the object from this resource bundle using
 <a href="#handleGetObject(java.lang.String)"><code>handleGetObject</code></a>.
@@ -783,13 +783,13 @@ If not successful, and the parent resource bundle is not null,
 it calls the parent's <code>getObject</code> method.
 If still not successful, it throws a MissingResourceException.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the key for the desired object</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the object for the given key</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no object for the given key can be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no object for the given key can be found</dd>
 </dl>
 </div>
 </section>
@@ -798,12 +798,12 @@ If still not successful, it throws a MissingResourceException.</div>
 <section class="detail" id="getLocale()">
 <h3>getLocale</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Locale.html" title="class in java.util">Locale</a></span>&nbsp;<span class="element-name">getLocale</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Locale.html" title="java.util 包中的类">Locale</a></span>&nbsp;<span class="element-name">getLocale</span>()</div>
 <div class="block">Returns the locale of this resource bundle. This method can be used after a
 call to getBundle() to determine whether the resource bundle returned really
 corresponds to the requested locale or is a fallback.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the locale of this resource bundle</dd>
 </dl>
 </div>
@@ -813,12 +813,12 @@ corresponds to the requested locale or is a fallback.</div>
 <section class="detail" id="setParent(java.util.ResourceBundle)">
 <h3>setParent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setParent</span><wbr><span class="parameters">(<a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a>&nbsp;parent)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setParent</span><wbr><span class="parameters">(<a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a>&nbsp;parent)</span></div>
 <div class="block">Sets the parent bundle of this bundle.
 The parent bundle is searched by <a href="#getObject(java.lang.String)"><code>getObject</code></a>
 when this bundle does not contain a particular resource.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>parent</code> - this bundle's parent bundle.</dd>
 </dl>
 </div>
@@ -828,7 +828,7 @@ when this bundle does not contain a particular resource.</div>
 <section class="detail" id="getBundle(java.lang.String)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName)</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName)</span></div>
 <div class="block">Gets a resource bundle using the specified base name, the default locale,
 and the caller module. Calling this method is equivalent to calling
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -837,14 +837,14 @@ and the caller module. Calling this method is equivalent to calling
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified class name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and the default locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#default_behavior">Resource Bundle Search and Loading Strategy</a></li>
@@ -859,8 +859,8 @@ and the caller module. Calling this method is equivalent to calling
 <section class="detail" id="getBundle(java.lang.String,java.util.ResourceBundle.Control)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</span></div>
 <div class="block">Returns a resource bundle using the specified base name, the
 default locale and the specified control. Calling this method
 is equivalent to calling
@@ -875,23 +875,23 @@ privileges of <code>ResourceBundle</code>.  See <a href="#getBundle(java.lang.St
 complete description of the resource bundle loading process with a
 <code>ResourceBundle.Control</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified class
        name</dd>
 <dd><code>control</code> - the control which gives information for the resource bundle
        loading process</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and the default locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code> or <code>control</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code> or <code>control</code> is
         <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
         (e.g., <code>control.getCandidateLocales</code> returns null.)
         Note that validation of <code>control</code> is performed as
         needed.</dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
-<dt>Since:</dt>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -901,8 +901,8 @@ complete description of the resource bundle loading process with a
 <section class="detail" id="getBundle(java.lang.String,java.util.Locale)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;locale)</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale)</span></div>
 <div class="block">Gets a resource bundle using the specified base name and locale,
 and the caller module. Calling this method is equivalent to calling
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -911,15 +911,15 @@ and the caller module. Calling this method is equivalent to calling
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified class name</dd>
 <dd><code>locale</code> - the locale for which a resource bundle is desired</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code> or <code>locale</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code> or <code>locale</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#default_behavior">Resource Bundle Search and Loading Strategy</a></li>
@@ -934,8 +934,8 @@ and the caller module. Calling this method is equivalent to calling
 <section class="detail" id="getBundle(java.lang.String,java.lang.Module)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="../lang/Module.html" title="class in java.lang">Module</a>&nbsp;module)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="../lang/Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</span></div>
 <div class="block">Gets a resource bundle using the specified base name and the default locale
 on behalf of the specified module. This method is equivalent to calling
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -944,22 +944,22 @@ on behalf of the specified module. This method is equivalent to calling
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle,
                 a fully qualified class name</dd>
 <dd><code>module</code> - the module for which the resource bundle is searched</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and the default locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code> or <code>module</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found in the
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code> or <code>module</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found in the
         specified module</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi"><code>ResourceBundleProvider</code></a></li>
+<li><a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleProvider</code></a></li>
 <li><a href="#default_behavior">Resource Bundle Search and Loading Strategy</a></li>
 <li><a href="#resource-bundle-modules">Resource Bundles and Named Modules</a></li>
 </ul>
@@ -972,17 +972,17 @@ on behalf of the specified module. This method is equivalent to calling
 <section class="detail" id="getBundle(java.lang.String,java.util.Locale,java.lang.Module)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="../lang/Module.html" title="class in java.lang">Module</a>&nbsp;module)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="../lang/Module.html" title="java.lang 包中的类">Module</a>&nbsp;module)</span></div>
 <div class="block">Gets a resource bundle using the specified base name and locale
 on behalf of the specified module.
 
 <p> Resource bundles in named modules may be encapsulated.  When
 the resource bundle is loaded from a
-<a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi">service provider</a>, the caller module
+<a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口">service provider</a>, the caller module
 must have an appropriate <i>uses</i> clause in its <i>module descriptor</i>
-to declare that the module uses of <a href="spi/ResourceBundleProvider.html" title="interface in java.util.spi"><code>ResourceBundleProvider</code></a>
+to declare that the module uses of <a href="spi/ResourceBundleProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleProvider</code></a>
 for the named resource bundle.
 Otherwise, it will load the resource bundles that are local in the
 given module as if calling <a href="../lang/Module.html#getResourceAsStream(java.lang.String)"><code>Module.getResourceAsStream(String)</code></a>
@@ -996,25 +996,25 @@ subject to the encapsulation rules specified by
 If the given <code>module</code> is an unnamed module, then this method is
 equivalent to calling <a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)"><code>getBundle(baseName, targetLocale, module.getClassLoader()</code></a> to load
 resource bundles that are visible to the class loader of the given
-unnamed module. Custom <a href="spi/ResourceBundleControlProvider.html" title="interface in java.util.spi"><code>ResourceBundleControlProvider</code></a>
+unnamed module. Custom <a href="spi/ResourceBundleControlProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleControlProvider</code></a>
 implementations, if present, will only be invoked if the specified
 module is an unnamed module.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle,
                 a fully qualified class name</dd>
 <dd><code>targetLocale</code> - the locale for which a resource bundle is desired</dd>
 <dd><code>module</code> - the module for which the resource bundle is searched</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and locale in the module</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code>, <code>targetLocale</code>, or <code>module</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code>, <code>targetLocale</code>, or <code>module</code> is
         <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name and locale can
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name and locale can
         be found in the specified <code>module</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#default_behavior">Resource Bundle Search and Loading Strategy</a></li>
@@ -1029,9 +1029,9 @@ module is an unnamed module.</div>
 <section class="detail" id="getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle.Control)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</span></div>
 <div class="block">Returns a resource bundle using the specified base name, target
 locale and control, and the caller's class loader. Calling this
 method is equivalent to calling
@@ -1046,26 +1046,26 @@ privileges of <code>ResourceBundle</code>.  See <a href="#getBundle(java.lang.St
 complete description of the resource bundle loading process with a
 <code>ResourceBundle.Control</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified
        class name</dd>
 <dd><code>targetLocale</code> - the locale for which a resource bundle is desired</dd>
 <dd><code>control</code> - the control which gives information for the resource
        bundle loading process</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and a
         <code>Locale</code> in <code>locales</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code>, <code>locales</code> or
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code>, <code>locales</code> or
         <code>control</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name in any
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name in any
         of the <code>locales</code> can be found.</dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
         (e.g., <code>control.getCandidateLocales</code> returns null.)
         Note that validation of <code>control</code> is performed as
         needed.</dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
-<dt>Since:</dt>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1075,9 +1075,9 @@ complete description of the resource bundle loading process with a
 <section class="detail" id="getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;locale,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;locale,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span></div>
 <div class="block">Gets a resource bundle using the specified base name, locale, and class
 loader.
 
@@ -1096,9 +1096,9 @@ otherwise, this is equivalent to calling:
 </code></pre>
 </div>
 
-where <code>control</code> is the default instance of <a href="ResourceBundle.Control.html" title="class in java.util"><code>ResourceBundle.Control</code></a> unless
+where <code>control</code> is the default instance of <a href="ResourceBundle.Control.html" title="java.util 包中的类"><code>ResourceBundle.Control</code></a> unless
 a <code>Control</code> instance is provided by
-<a href="spi/ResourceBundleControlProvider.html" title="interface in java.util.spi"><code>ResourceBundleControlProvider</code></a> SPI.  Refer to the
+<a href="spi/ResourceBundleControlProvider.html" title="java.util.spi 包中的接口"><code>ResourceBundleControlProvider</code></a> SPI.  Refer to the
 description of <a href="#modify_default_behavior">modifying the default
 behavior</a>. The following describes the default behavior.
 
@@ -1178,7 +1178,7 @@ with "/" and appending the string ".properties".  It attempts to find a
 "resource" with this name using <a href="../lang/ClassLoader.html#getResource(java.lang.String)"><code>ClassLoader.getResource</code></a>.  (Note that a "resource" in the sense of
 <code>getResource</code> has nothing to do with the contents of a
 resource bundle, it is just a container of data, such as a file.)  If it
-finds a "resource", it attempts to create a new <a href="PropertyResourceBundle.html" title="class in java.util"><code>PropertyResourceBundle</code></a> instance from its contents.  If successful, this
+finds a "resource", it attempts to create a new <a href="PropertyResourceBundle.html" title="java.util 包中的类"><code>PropertyResourceBundle</code></a> instance from its contents.  If successful, this
 instance becomes the <em>result resource bundle</em>.  </ul>
 
 <p>This continues until a result resource bundle is instantiated or the
@@ -1260,25 +1260,25 @@ instantiate resource bundles as follows:
 hidden by the MyResources_fr_CH.class. Likewise, MyResources.properties
 is also hidden by MyResources.class.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>If the caller module is a named module and the given
 <code>loader</code> is the caller module's class loader, this method is
 equivalent to <code>getBundle(baseName, locale)</code>; otherwise, it may not
 find resource bundles from named modules.
 Use <a href="#getBundle(java.lang.String,java.util.Locale,java.lang.Module)"><code>getBundle(String, Locale, Module)</code></a> to load resource bundles
 on behalf on a specific module instead.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified class name</dd>
 <dd><code>locale</code> - the locale for which a resource bundle is desired</dd>
 <dd><code>loader</code> - the class loader from which to load the resource bundle</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code>, <code>locale</code>, or <code>loader</code> is <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code>, <code>locale</code>, or <code>loader</code> is <code>null</code></dd>
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#resource-bundle-modules">Resource Bundles and Named Modules</a></li>
@@ -1292,10 +1292,10 @@ on behalf on a specific module instead.</dd>
 <section class="detail" id="getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)">
 <h3>getBundle</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="class in java.util">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;baseName,
- <a href="Locale.html" title="class in java.util">Locale</a>&nbsp;targetLocale,
- <a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader,
- <a href="ResourceBundle.Control.html" title="class in java.util">ResourceBundle.Control</a>&nbsp;control)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ResourceBundle.html" title="java.util 包中的类">ResourceBundle</a></span>&nbsp;<span class="element-name">getBundle</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;baseName,
+ <a href="Locale.html" title="java.util 包中的类">Locale</a>&nbsp;targetLocale,
+ <a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader,
+ <a href="ResourceBundle.Control.html" title="java.util 包中的类">ResourceBundle.Control</a>&nbsp;control)</span></div>
 <div class="block">Returns a resource bundle using the specified base name, target
 locale, class loader and control. Unlike the <a href="#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)"><code>getBundle</code></a>
 factory methods with no <code>control</code> argument, the given
@@ -1315,7 +1315,7 @@ loading process below.</li>
 <li>The <a href="ResourceBundle.Control.html#getFormats(java.lang.String)"><code>control.getFormats</code></a> method is called to get resource bundle formats
 to produce bundle or resource names. The strings
 <code>"java.class"</code> and <code>"java.properties"</code>
-designate class-based and <a href="PropertyResourceBundle.html" title="class in java.util">property</a>-based resource bundles, respectively. Other strings
+designate class-based and <a href="PropertyResourceBundle.html" title="java.util 包中的类">property</a>-based resource bundles, respectively. Other strings
 starting with <code>"java."</code> are reserved for future extensions
 and must not be used for application-defined formats. Other strings
 designate application-defined formats.</li>
@@ -1468,26 +1468,26 @@ sets up its parent chain from the list of the candidate locales.  Only
 that becomes the parent of the instance for
 <code>foo/bar/Messages_fr.properties</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseName</code> - the base name of the resource bundle, a fully qualified
        class name</dd>
 <dd><code>targetLocale</code> - the locale for which a resource bundle is desired</dd>
 <dd><code>loader</code> - the class loader from which to load the resource bundle</dd>
 <dd><code>control</code> - the control which gives information for the resource
        bundle loading process</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a resource bundle for the given base name and locale</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>baseName</code>, <code>targetLocale</code>,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>baseName</code>, <code>targetLocale</code>,
         <code>loader</code>, or <code>control</code> is
         <code>null</code></dd>
-<dd><code><a href="MissingResourceException.html" title="class in java.util">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
+<dd><code><a href="MissingResourceException.html" title="java.util 包中的类">MissingResourceException</a></code> - if no resource bundle for the specified base name can be found</dd>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given <code>control</code> doesn't perform properly
         (e.g., <code>control.getCandidateLocales</code> returns null.)
         Note that validation of <code>control</code> is performed as
         needed.</dd>
-<dd><code><a href="../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
-<dt>Since:</dt>
+<dd><code><a href="../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this method is called in a named module</dd>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1501,9 +1501,9 @@ that becomes the parent of the instance for
 <div class="block">Removes all resource bundles from the cache that have been loaded
 by the caller's module.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ResourceBundle.Control.html#getTimeToLive(java.lang.String,java.util.Locale)"><code>ResourceBundle.Control.getTimeToLive(String,Locale)</code></a></li>
@@ -1517,17 +1517,17 @@ by the caller's module.</div>
 <section class="detail" id="clearCache(java.lang.ClassLoader)">
 <h3>clearCache</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearCache</span><wbr><span class="parameters">(<a href="../lang/ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;loader)</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clearCache</span><wbr><span class="parameters">(<a href="../lang/ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;loader)</span></div>
 <div class="block">Removes all resource bundles from the cache that have been loaded
 by the given class loader.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>loader</code> - the class loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>loader</code> is null</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>loader</code> is null</dd>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ResourceBundle.Control.html#getTimeToLive(java.lang.String,java.util.Locale)"><code>ResourceBundle.Control.getTimeToLive(String,Locale)</code></a></li>
@@ -1541,17 +1541,17 @@ by the given class loader.</div>
 <section class="detail" id="handleGetObject(java.lang.String)">
 <h3>handleGetObject</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">handleGetObject</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">handleGetObject</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Gets an object for the given key from this resource bundle.
 Returns null if this resource bundle does not contain an
 object for the given key.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the key for the desired object</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the object for the given key, or null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
 </dl>
 </div>
 </section>
@@ -1560,10 +1560,10 @@ object for the given key.</div>
 <section class="detail" id="getKeys()">
 <h3>getKeys</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Enumeration.html" title="interface in java.util">Enumeration</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">getKeys</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Enumeration.html" title="java.util 包中的接口">Enumeration</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">getKeys</span>()</div>
 <div class="block">Returns an enumeration of the keys.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>Enumeration</code> of the keys contained in
         this <code>ResourceBundle</code> and its parent bundles.</dd>
 </dl>
@@ -1574,19 +1574,19 @@ object for the given key.</div>
 <section class="detail" id="containsKey(java.lang.String)">
 <h3>containsKey</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsKey</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">containsKey</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Determines whether the given <code>key</code> is contained in
 this <code>ResourceBundle</code> or its parent bundles.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - the resource <code>key</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the given <code>key</code> is
        contained in this <code>ResourceBundle</code> or its
        parent bundles; <code>false</code> otherwise.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1596,14 +1596,14 @@ this <code>ResourceBundle</code> or its parent bundles.</div>
 <section class="detail" id="keySet()">
 <h3>keySet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Set.html" title="interface in java.util">Set</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">keySet</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">keySet</span>()</div>
 <div class="block">Returns a <code>Set</code> of all keys contained in this
 <code>ResourceBundle</code> and its parent bundles.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Set</code> of all keys contained in this
         <code>ResourceBundle</code> and its parent bundles.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1613,7 +1613,7 @@ this <code>ResourceBundle</code> or its parent bundles.</div>
 <section class="detail" id="handleKeySet()">
 <h3>handleKeySet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Set.html" title="interface in java.util">Set</a>&lt;<a href="../lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">handleKeySet</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Set.html" title="java.util 包中的接口">Set</a>&lt;<a href="../lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">handleKeySet</span>()</div>
 <div class="block">Returns a <code>Set</code> of the keys contained <em>only</em>
 in this <code>ResourceBundle</code>.
 
@@ -1625,10 +1625,10 @@ for the ones for which the <a href="#handleGetObject(java.lang.String)"><code>ha
 same <code>Set</code> in subsequent calls. Subclasses can
 override this method for faster handling.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Set</code> of the keys contained only in this
        <code>ResourceBundle</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>

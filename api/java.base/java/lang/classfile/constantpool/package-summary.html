@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.classfile.constantpool</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,22 +56,22 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#provides-interfaces-describing-constant-pool-entries-for-the-java-lang-classfile-library--heading" tabindex="0">Provides interfaces describing constant pool entries for the java.lang.classfile library.</a></li>
 <li><a href="#reading" tabindex="0">Reading the constant pool entries</a></li>
 <li><a href="#writing" tabindex="0">Writing the constant pool entries</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.classfile.constantpool" class="title">Package java.lang.classfile.constantpool</h1>
+<h1 title="包 java.lang.classfile.constantpool" class="title">包 java.lang.classfile.constantpool</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -84,7 +84,7 @@ The <code>java.lang.classfile.constantpool</code> package contains interfaces de
 of a <code>class</code> file.
 <p>
 Unless otherwise specified, passing <code>null</code> or an array or collection containing a <code>null</code> element as an
-argument to a constructor or method of any Class-File API class or interface will cause a <a href="../../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a>
+argument to a constructor or method of any Class-File API class or interface will cause a <a href="../../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a>
 to be thrown.
 
 <h2 id="reading">Reading the constant pool entries</h2>
@@ -107,12 +107,12 @@ against <a href="Utf8Entry.html#stringValue()"><code>Utf8Entry.stringValue()</co
 <p>
 The entries also define accessors to validated symbolic information with nominal descriptor abstractions from the
 <a href="../../constant/package-summary.html"><code>java.lang.constant</code></a> package.  These symbolic information accessors perform validation against the read
-<code>class</code> files, and throw <a href="../../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> when the accessed constant pool entry contains
+<code>class</code> files, and throw <a href="../../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> when the accessed constant pool entry contains
 invalid data.  The nominal descriptors represent validated data, which saves users from extra validations in future
 processing.
 <p>
-Due to the lazy nature of <code>class</code> file parsing, <a href="../../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> indicating malformed
-<code>class</code> file data can be thrown at any method invocation.  For example, an exception may come from a <a href="ClassEntry.html" title="interface in java.lang.classfile.constantpool"><code>ClassEntry</code></a> when it is first read from the constant pool (referring to an invalid index or wrong type of entry), when
+Due to the lazy nature of <code>class</code> file parsing, <a href="../../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> indicating malformed
+<code>class</code> file data can be thrown at any method invocation.  For example, an exception may come from a <a href="ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>ClassEntry</code></a> when it is first read from the constant pool (referring to an invalid index or wrong type of entry), when
 its referred UTF-8 entry is expanded (malformed UTF-8 data), or when its symbolic information is accessed (the string
 is not valid for a class entry).
 
@@ -127,14 +127,14 @@ generation by avoiding extraneous parsing of raw constant pool entry data.
 As always, users can use factories that accept constant pool entries if they already have them by hand, or if they
 desire fine-grained control over <code>class</code> file generation.
 <p>
-If many models and elements are reused from another <a href="../ClassModel.html" title="interface in java.lang.classfile"><code>ClassModel</code></a> in class building, the class building process
+If many models and elements are reused from another <a href="../ClassModel.html" title="java.lang.classfile 包中的接口"><code>ClassModel</code></a> in class building, the class building process
 can use a constant pool builder that extends from the given <code>ClassModel</code>, available through <a href="ConstantPoolBuilder.html#of(java.lang.classfile.ClassModel)"><code>ConstantPoolBuilder::of(ClassModel)</code></a>, so that byte data with constant pool
 references can be copied in batch, speeding up class building.  This is especially applicable to class transformations,
-and <a href="../ClassFile.ConstantPoolSharingOption.html" title="enum class in java.lang.classfile"><code>ConstantPoolSharingOption</code></a> exists to control this behavior.</div>
+and <a href="../ClassFile.ConstantPoolSharingOption.html" title="java.lang.classfile 包中的枚举类"><code>ConstantPoolSharingOption</code></a> exists to control this behavior.</div>
 <dl class="notes"><dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-4.html#jvms-4.4">4.4 The Constant Pool</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>24</dd>
 </dl>
 </section>
@@ -143,10 +143,10 @@ and <a href="../ClassFile.ConstantPoolSharingOption.html" title="enum class in j
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.lang.classfile</a></div>
 <div class="col-last even-row-color">
 <div class="block">Provides classfile parsing, generation, and transformation library.</div>
@@ -164,141 +164,141 @@ and <a href="../ClassFile.ConstantPoolSharingOption.html" title="enum class in j
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">异常类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationConstantValueEntry.html" title="interface in java.lang.classfile.constantpool">AnnotationConstantValueEntry</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="AnnotationConstantValueEntry.html" title="java.lang.classfile.constantpool 包中的接口">AnnotationConstantValueEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for constant pool entries that can represent constant values
 associated with elements of annotations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassEntry.html" title="interface in java.lang.classfile.constantpool">ClassEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassEntry.html" title="java.lang.classfile.constantpool 包中的接口">ClassEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Class_info</code> structure, representing a reference
 type, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantDynamicEntry.html" title="interface in java.lang.classfile.constantpool">ConstantDynamicEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantDynamicEntry.html" title="java.lang.classfile.constantpool 包中的接口">ConstantDynamicEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Dynamic_info</code> structure, representing a <dfn>dynamically-computed constant</dfn>, in the constant pool of a <code>
 class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantPool.html" title="interface in java.lang.classfile.constantpool">ConstantPool</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConstantPool.html" title="java.lang.classfile.constantpool 包中的接口">ConstantPool</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Provides read access to the constant pool and the bootstrap method table of a
 <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantPoolBuilder.html" title="interface in java.lang.classfile.constantpool">ConstantPoolBuilder</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantPoolBuilder.html" title="java.lang.classfile.constantpool 包中的接口">ConstantPoolBuilder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Builder for the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="ConstantPoolException.html" title="class in java.lang.classfile.constantpool">ConstantPoolException</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="ConstantPoolException.html" title="java.lang.classfile.constantpool 包中的类">ConstantPoolException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">Thrown to indicate that requested entry cannot be obtained from the constant
 pool or the bootstrap method table.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantValueEntry.html" title="interface in java.lang.classfile.constantpool">ConstantValueEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConstantValueEntry.html" title="java.lang.classfile.constantpool 包中的接口">ConstantValueEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for constant pool entries that can represent constant values
 in the <a href="../Attributes.html#constantValue()"><code>ConstantValue</code></a> attribute.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DoubleEntry.html" title="interface in java.lang.classfile.constantpool">DoubleEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DoubleEntry.html" title="java.lang.classfile.constantpool 包中的接口">DoubleEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Double_info</code> structure, representing a <code>
 double</code> constant, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DynamicConstantPoolEntry.html" title="interface in java.lang.classfile.constantpool">DynamicConstantPoolEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="DynamicConstantPoolEntry.html" title="java.lang.classfile.constantpool 包中的接口">DynamicConstantPoolEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Superinterface modeling dynamically-computed constant pool entries, which
-include <a href="ConstantDynamicEntry.html" title="interface in java.lang.classfile.constantpool"><code>ConstantDynamicEntry</code></a> and <a href="InvokeDynamicEntry.html" title="interface in java.lang.classfile.constantpool"><code>InvokeDynamicEntry</code></a>, in the
+include <a href="ConstantDynamicEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>ConstantDynamicEntry</code></a> and <a href="InvokeDynamicEntry.html" title="java.lang.classfile.constantpool 包中的接口"><code>InvokeDynamicEntry</code></a>, in the
 constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldRefEntry.html" title="interface in java.lang.classfile.constantpool">FieldRefEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="FieldRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">FieldRefEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Fieldref_info</code> structure, or a symbolic reference
 to a field, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FloatEntry.html" title="interface in java.lang.classfile.constantpool">FloatEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="FloatEntry.html" title="java.lang.classfile.constantpool 包中的接口">FloatEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Float_info</code> structure, or a <code>float</code> constant,
 in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="IntegerEntry.html" title="interface in java.lang.classfile.constantpool">IntegerEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="IntegerEntry.html" title="java.lang.classfile.constantpool 包中的接口">IntegerEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Integer_info</code> structure, or an <code>int</code> constant,
 in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="InterfaceMethodRefEntry.html" title="interface in java.lang.classfile.constantpool">InterfaceMethodRefEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="InterfaceMethodRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">InterfaceMethodRefEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_InterfaceMethodRef_info</code> structure, or a symbolic
 reference to an interface method, in the constant pool of a <code>class</code>
 file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="InvokeDynamicEntry.html" title="interface in java.lang.classfile.constantpool">InvokeDynamicEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="InvokeDynamicEntry.html" title="java.lang.classfile.constantpool 包中的接口">InvokeDynamicEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_InvokeDynamic_info</code> structure, or the symbolic
 reference to a <dfn>dynamically-computed call site</dfn>, in the
 constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LoadableConstantEntry.html" title="interface in java.lang.classfile.constantpool">LoadableConstantEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LoadableConstantEntry.html" title="java.lang.classfile.constantpool 包中的接口">LoadableConstantEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Marker interface for constant pool entries suitable for loading via the
-<a href="../instruction/ConstantInstruction.LoadConstantInstruction.html" title="interface in java.lang.classfile.instruction"><code>ldc</code></a> instructions.</div>
+<a href="../instruction/ConstantInstruction.LoadConstantInstruction.html" title="java.lang.classfile.instruction 包中的接口"><code>ldc</code></a> instructions.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongEntry.html" title="interface in java.lang.classfile.constantpool">LongEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LongEntry.html" title="java.lang.classfile.constantpool 包中的接口">LongEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Long_info</code> structure, or a <code>long</code> constant, in
 the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemberRefEntry.html" title="interface in java.lang.classfile.constantpool">MemberRefEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemberRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">MemberRefEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Superinterface modeling symbolic references to a member of a class or interface
 in the constant pool of a <code>class</code> file, which include references to
-<a href="FieldRefEntry.html" title="interface in java.lang.classfile.constantpool">fields</a>, <a href="MethodRefEntry.html" title="interface in java.lang.classfile.constantpool">class methods</a>,
-and <a href="InterfaceMethodRefEntry.html" title="interface in java.lang.classfile.constantpool">interface methods</a>.</div>
+<a href="FieldRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">fields</a>, <a href="MethodRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">class methods</a>,
+and <a href="InterfaceMethodRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">interface methods</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodHandleEntry.html" title="interface in java.lang.classfile.constantpool">MethodHandleEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodHandleEntry.html" title="java.lang.classfile.constantpool 包中的接口">MethodHandleEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_MethodHandle_info</code> structure, or a symbolic
-reference to a <a href="../../invoke/MethodHandle.html" title="class in java.lang.invoke">method handle</a>, in the constant pool
+reference to a <a href="../../invoke/MethodHandle.html" title="java.lang.invoke 包中的类">method handle</a>, in the constant pool
 of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodRefEntry.html" title="interface in java.lang.classfile.constantpool">MethodRefEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodRefEntry.html" title="java.lang.classfile.constantpool 包中的接口">MethodRefEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_MethodRef_info</code> structure, or a symbolic reference
 to a class method, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodTypeEntry.html" title="interface in java.lang.classfile.constantpool">MethodTypeEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodTypeEntry.html" title="java.lang.classfile.constantpool 包中的接口">MethodTypeEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_MethodType_info</code> structure, or a symbolic reference
 to a method type, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ModuleEntry.html" title="interface in java.lang.classfile.constantpool">ModuleEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ModuleEntry.html" title="java.lang.classfile.constantpool 包中的接口">ModuleEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Module_info</code> structure, denoting a module, in the
 constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NameAndTypeEntry.html" title="interface in java.lang.classfile.constantpool">NameAndTypeEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="NameAndTypeEntry.html" title="java.lang.classfile.constantpool 包中的接口">NameAndTypeEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_NameAndType_info</code> structure, representing a field or
 method, in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="PackageEntry.html" title="interface in java.lang.classfile.constantpool">PackageEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="PackageEntry.html" title="java.lang.classfile.constantpool 包中的接口">PackageEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_Package_info</code>, representing a package, in the
 constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PoolEntry.html" title="interface in java.lang.classfile.constantpool">PoolEntry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PoolEntry.html" title="java.lang.classfile.constantpool 包中的接口">PoolEntry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models an entry in the constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StringEntry.html" title="interface in java.lang.classfile.constantpool">StringEntry</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StringEntry.html" title="java.lang.classfile.constantpool 包中的接口">StringEntry</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_String_info</code> structure, or a string constant, in the
 constant pool of a <code>class</code> file.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Utf8Entry.html" title="interface in java.lang.classfile.constantpool">Utf8Entry</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Utf8Entry.html" title="java.lang.classfile.constantpool 包中的接口">Utf8Entry</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Models a <code>CONSTANT_UTF8_info</code> constant, representing strings, in the
 constant pool of a <code>class</code> file.</div>

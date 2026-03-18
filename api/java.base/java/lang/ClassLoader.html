@@ -83,7 +83,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang</a></li>
 <li><a href="ClassLoader.html" class="current-selection">ClassLoader</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -91,9 +91,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#builtinLoaders" tabindex="0">Run-time Built-in Class Loaders</a>
 <ol class="toc-list">
@@ -102,16 +102,16 @@ loadScripts(document, 'script');</script>
 </li>
 </ol>
 </li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.lang.String,java.lang.ClassLoader)" tabindex="0">ClassLoader(String, ClassLoader)</a></li>
 <li><a href="#%3Cinit%3E(java.lang.ClassLoader)" tabindex="0">ClassLoader(ClassLoader)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">ClassLoader()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getName()" tabindex="0">getName()</a></li>
 <li><a href="#loadClass(java.lang.String)" tabindex="0">loadClass(String)</a></li>
@@ -160,27 +160,27 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ClassLoader" class="title">Class ClassLoader</h1>
+<h1 title="类 ClassLoader" class="title">类 ClassLoader</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.ClassLoader</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="../security/SecureClassLoader.html" title="class in java.security">SecureClassLoader</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="../security/SecureClassLoader.html" title="java.security 包中的类">SecureClassLoader</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ClassLoader</span>
-<span class="extends-implements">extends <a href="Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A class loader is an object that is responsible for loading classes. The
 class <code>ClassLoader</code> is an abstract class.  Given the <a href="#binary-name">binary name</a> of a class, a class loader should attempt to
 locate or generate data that constitutes a definition for the class.  A
 typical strategy is to transform the name into a file name and then read a
 "class file" of that name from a file system.
 
-<p> Every <a href="Class.html" title="class in java.lang"><code>Class</code></a> object contains a <a href="Class.html#getClassLoader()"><code>reference</code></a> to the <code>ClassLoader</code> that defined
+<p> Every <a href="Class.html" title="java.lang 包中的类"><code>Class</code></a> object contains a <a href="Class.html#getClassLoader()"><code>reference</code></a> to the <code>ClassLoader</code> that defined
 it.
 
 <p> <code>Class</code> objects for array classes are not created by class
@@ -318,9 +318,9 @@ or a fully qualified name as defined by
 <dl class="notes"><dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-6.html#jls-6.7">6.7 Fully Qualified Names and Canonical Names</a><br><a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-13.html#jls-13.1">13.1 The Form of a Binary</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.0</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#resolveClass(java.lang.Class)"><code>resolveClass(Class)</code></a></li>
@@ -334,12 +334,12 @@ or a fully qualified name as defined by
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数概要</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符</div>
+<div class="table-header col-second">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ClassLoader</a>()</code></div>
 <div class="col-last even-row-color">
@@ -347,14 +347,14 @@ or a fully qualified name as defined by
 the method <a href="#getSystemClassLoader()"><code>getSystemClassLoader()</code></a> as the parent class loader.</div>
 </div>
 <div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.ClassLoader)" class="member-name-link">ClassLoader</a><wbr>(<a href="ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;parent)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.ClassLoader)" class="member-name-link">ClassLoader</a><wbr>(<a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;parent)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a new class loader using the specified parent class loader for
 delegation.</div>
 </div>
 <div class="col-first even-row-color"><code>protected </code></div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.ClassLoader)" class="member-name-link">ClassLoader</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;parent)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,java.lang.ClassLoader)" class="member-name-link">ClassLoader</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;parent)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new class loader of the specified name and using the
 specified parent class loader for delegation.</div>
@@ -365,14 +365,14 @@ specified parent class loader for delegation.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clearAssertionStatus()" class="member-name-link">clearAssertionStatus</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -380,7 +380,7 @@ specified parent class loader for delegation.</div>
 <code>false</code> and discards any package defaults or class assertion
 status settings associated with the class loader.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#defineClass(byte%5B%5D,int,int)" class="member-name-link">defineClass</a><wbr>(byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len)</code></div>
@@ -389,116 +389,116 @@ status settings associated with the class loader.</div>
 <div class="deprecation-comment">Replaced by <a href="#defineClass(java.lang.String,byte%5B%5D,int,int)"><code>defineClass(String, byte[], int, int)</code></a></div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,byte%5B%5D,int,int)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,byte%5B%5D,int,int)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts an array of bytes into an instance of class <code>Class</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len,
- <a href="../security/ProtectionDomain.html" title="class in java.security">ProtectionDomain</a>&nbsp;protectionDomain)</code></div>
+ <a href="../security/ProtectionDomain.html" title="java.security 包中的类">ProtectionDomain</a>&nbsp;protectionDomain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts an array of bytes into an instance of class <code>Class</code>,
 with a given <code>ProtectionDomain</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,java.nio.ByteBuffer,java.security.ProtectionDomain)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;b,
- <a href="../security/ProtectionDomain.html" title="class in java.security">ProtectionDomain</a>&nbsp;protectionDomain)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#defineClass(java.lang.String,java.nio.ByteBuffer,java.security.ProtectionDomain)" class="member-name-link">defineClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;b,
+ <a href="../security/ProtectionDomain.html" title="java.security 包中的类">ProtectionDomain</a>&nbsp;protectionDomain)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Converts a <a href="../nio/ByteBuffer.html" title="class in java.nio"><code>ByteBuffer</code></a> into an instance
+<div class="block">Converts a <a href="../nio/ByteBuffer.html" title="java.nio 包中的类"><code>ByteBuffer</code></a> into an instance
  of class <code>Class</code>, with the given <code>ProtectionDomain</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Package.html" title="class in java.lang">Package</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)" class="member-name-link">definePackage</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specTitle,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specVersion,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specVendor,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implTitle,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implVersion,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implVendor,
- <a href="../net/URL.html" title="class in java.net">URL</a>&nbsp;sealBase)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Package.html" title="java.lang 包中的类">Package</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)" class="member-name-link">definePackage</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specTitle,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specVersion,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specVendor,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implTitle,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implVersion,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implVendor,
+ <a href="../net/URL.html" title="java.net 包中的类">URL</a>&nbsp;sealBase)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Defines a package by <a href="#binary-name">name</a> in this <code>ClassLoader</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findClass(java.lang.String)" class="member-name-link">findClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findClass(java.lang.String)" class="member-name-link">findClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds the class with the specified <a href="#binary-name">binary name</a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findClass(java.lang.String,java.lang.String)" class="member-name-link">findClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findClass(java.lang.String,java.lang.String)" class="member-name-link">findClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds the class with the given <a href="#binary-name">binary name</a>
 in a module defined to this class loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLibrary(java.lang.String)" class="member-name-link">findLibrary</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;libname)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLibrary(java.lang.String)" class="member-name-link">findLibrary</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;libname)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the absolute path name of a native library.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLoadedClass(java.lang.String)" class="member-name-link">findLoadedClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findLoadedClass(java.lang.String)" class="member-name-link">findLoadedClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the class with the given <a href="#binary-name">binary name</a> if this
 loader has been recorded by the Java virtual machine as an initiating
 loader of a class with that <a href="#binary-name">binary name</a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../net/URL.html" title="class in java.net">URL</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResource(java.lang.String)" class="member-name-link">findResource</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../net/URL.html" title="java.net 包中的类">URL</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResource(java.lang.String)" class="member-name-link">findResource</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds the resource with the given name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../net/URL.html" title="class in java.net">URL</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResource(java.lang.String,java.lang.String)" class="member-name-link">findResource</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../net/URL.html" title="java.net 包中的类">URL</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResource(java.lang.String,java.lang.String)" class="member-name-link">findResource</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a URL to a resource in a module defined to this class loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResources(java.lang.String)" class="member-name-link">findResources</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findResources(java.lang.String)" class="member-name-link">findResources</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns an enumeration of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects
+<div class="block">Returns an enumeration of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects
 representing all the resources with the given name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findSystemClass(java.lang.String)" class="member-name-link">findSystemClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findSystemClass(java.lang.String)" class="member-name-link">findSystemClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds a class with the specified <a href="#binary-name">binary name</a>,
 loading it if necessary.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClassLoadingLock(java.lang.String)" class="member-name-link">getClassLoadingLock</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;className)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getClassLoadingLock(java.lang.String)" class="member-name-link">getClassLoadingLock</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;className)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the lock object for class loading operations.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Package.html" title="class in java.lang">Package</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDefinedPackage(java.lang.String)" class="member-name-link">getDefinedPackage</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Package.html" title="java.lang 包中的类">Package</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDefinedPackage(java.lang.String)" class="member-name-link">getDefinedPackage</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a <code>Package</code> of the given <a href="#binary-name">name</a> that
 has been defined by this class loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Package.html" title="class in java.lang">Package</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Package.html" title="java.lang 包中的类">Package</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDefinedPackages()" class="member-name-link">getDefinedPackages</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns all of the <code>Package</code>s that have been defined by
 this class loader.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the name of this class loader or <code>null</code> if
 this class loader is not named.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected <a href="Package.html" title="class in java.lang">Package</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getPackage(java.lang.String)" class="member-name-link">getPackage</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected <a href="Package.html" title="java.lang 包中的类">Package</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getPackage(java.lang.String)" class="member-name-link">getPackage</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">If multiple class loaders delegate to each other and define classes
@@ -508,61 +508,61 @@ a parent loader, then the properties exposed by the <code>Package</code>
 may not be as expected in the rest of the program.</div>
 </div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Package.html" title="class in java.lang">Package</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Package.html" title="java.lang 包中的类">Package</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPackages()" class="member-name-link">getPackages</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns all of the <code>Package</code>s that have been defined by
 this class loader and its ancestors.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getParent()" class="member-name-link">getParent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the parent class loader for delegation.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getPlatformClassLoader()" class="member-name-link">getPlatformClassLoader</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the platform class loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../net/URL.html" title="class in java.net">URL</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResource(java.lang.String)" class="member-name-link">getResource</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../net/URL.html" title="java.net 包中的类">URL</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResource(java.lang.String)" class="member-name-link">getResource</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds the resource with the given name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../io/InputStream.html" title="class in java.io">InputStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourceAsStream(java.lang.String)" class="member-name-link">getResourceAsStream</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResourceAsStream(java.lang.String)" class="member-name-link">getResourceAsStream</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an input stream for reading the specified resource.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResources(java.lang.String)" class="member-name-link">getResources</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResources(java.lang.String)" class="member-name-link">getResources</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finds all the resources with the given name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemClassLoader()" class="member-name-link">getSystemClassLoader</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the system class loader.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../net/URL.html" title="class in java.net">URL</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResource(java.lang.String)" class="member-name-link">getSystemResource</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../net/URL.html" title="java.net 包中的类">URL</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResource(java.lang.String)" class="member-name-link">getSystemResource</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Find a resource of the specified name from the search path used to load
 classes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../io/InputStream.html" title="class in java.io">InputStream</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResourceAsStream(java.lang.String)" class="member-name-link">getSystemResourceAsStream</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResourceAsStream(java.lang.String)" class="member-name-link">getSystemResourceAsStream</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Open for reading, a resource of the specified name from the search path
 used to load classes.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResources(java.lang.String)" class="member-name-link">getSystemResources</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a><wbr>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getSystemResources(java.lang.String)" class="member-name-link">getSystemResources</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Finds all resources of the specified name from the search path used to
 load classes.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Module.html" title="class in java.lang">Module</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="Module.html" title="java.lang 包中的类">Module</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnnamedModule()" class="member-name-link">getUnnamedModule</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the unnamed <code>Module</code> for this class loader.</div>
@@ -574,13 +574,13 @@ load classes.</div>
 <a href="#registerAsParallelCapable()">parallel capable</a>, otherwise
 <code>false</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String)" class="member-name-link">loadClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Loads the class with the specified <a href="#binary-name">binary name</a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,boolean)" class="member-name-link">loadClass</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadClass(java.lang.String,boolean)" class="member-name-link">loadClass</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  boolean&nbsp;resolve)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Loads the class with the specified <a href="#binary-name">binary name</a>.</div>
@@ -592,18 +592,18 @@ load classes.</div>
 <a href="#isRegisteredAsParallelCapable()">parallel capable</a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveClass(java.lang.Class)" class="member-name-link">resolveClass</a><wbr>(<a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveClass(java.lang.Class)" class="member-name-link">resolveClass</a><wbr>(<a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Links the specified class.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a><wbr>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resources(java.lang.String)" class="member-name-link">resources</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a><wbr>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resources(java.lang.String)" class="member-name-link">resources</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a stream whose elements are the URLs of all the resources with
 the given name.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setClassAssertionStatus(java.lang.String,boolean)" class="member-name-link">setClassAssertionStatus</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;className,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setClassAssertionStatus(java.lang.String,boolean)" class="member-name-link">setClassAssertionStatus</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;className,
  boolean&nbsp;enabled)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the desired assertion status for the named top-level class in this
@@ -615,14 +615,14 @@ class loader and any nested classes contained therein.</div>
 <div class="block">Sets the default assertion status for this class loader.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPackageAssertionStatus(java.lang.String,boolean)" class="member-name-link">setPackageAssertionStatus</a><wbr>(<a href="String.html" title="class in java.lang">String</a>&nbsp;packageName,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPackageAssertionStatus(java.lang.String,boolean)" class="member-name-link">setPackageAssertionStatus</a><wbr>(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;packageName,
  boolean&nbsp;enabled)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the package default assertion status for the named package.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSigners(java.lang.Class,java.lang.Object%5B%5D)" class="member-name-link">setSigners</a><wbr>(<a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c,
- <a href="Object.html" title="class in java.lang">Object</a>[]&nbsp;signers)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSigners(java.lang.Class,java.lang.Object%5B%5D)" class="member-name-link">setSigners</a><wbr>(<a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c,
+ <a href="Object.html" title="java.lang 包中的类">Object</a>[]&nbsp;signers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the signers of a class.</div>
 </div>
@@ -630,7 +630,7 @@ class loader and any nested classes contained therein.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="Object.html#clone()" title="clone()">clone</a>, <a href="Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="Object.html#finalize()" title="finalize()">finalize</a>, <a href="Object.html#getClass()" title="getClass()">getClass</a>, <a href="Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="Object.html#notify()" title="notify()">notify</a>, <a href="Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="Object.html#toString()" title="toString()">toString</a>, <a href="Object.html#wait()" title="wait()">wait</a>, <a href="Object.html#wait(long)" title="wait(long)">wait</a>, <a href="Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -641,27 +641,27 @@ class loader and any nested classes contained therein.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,java.lang.ClassLoader)">
 <h3>ClassLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ClassLoader</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;parent)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ClassLoader</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;parent)</span></div>
 <div class="block">Creates a new class loader of the specified name and using the
 specified parent class loader for delegation.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>If the parent is specified as <code>null</code> (for the
 bootstrap class loader) then there is no guarantee that all platform
 classes are visible.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - class loader name; or <code>null</code> if not named</dd>
 <dd><code>parent</code> - the parent class loader</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the given name is empty.</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the given name is empty.</dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -671,17 +671,17 @@ classes are visible.</dd>
 <section class="detail" id="&lt;init&gt;(java.lang.ClassLoader)">
 <h3>ClassLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ClassLoader</span><wbr><span class="parameters">(<a href="ClassLoader.html" title="class in java.lang">ClassLoader</a>&nbsp;parent)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ClassLoader</span><wbr><span class="parameters">(<a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a>&nbsp;parent)</span></div>
 <div class="block">Creates a new class loader using the specified parent class loader for
 delegation.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>If the parent is specified as <code>null</code> (for the
 bootstrap class loader) then there is no guarantee that all platform
 classes are visible.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>parent</code> - The parent class loader</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -703,24 +703,24 @@ the method <a href="#getSystemClassLoader()"><code>getSystemClassLoader()</code>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
 <div class="block">Returns the name of this class loader or <code>null</code> if
 this class loader is not named.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method is non-final for compatibility.  If this
 method is overridden, this method must return the same name
 as specified when this class loader was instantiated.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>name of this class loader; or <code>null</code> if
 this class loader is not named.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -730,20 +730,20 @@ this class loader is not named.</dd>
 <section class="detail" id="loadClass(java.lang.String)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                   throws <span class="exceptions"><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                   throws <span class="exceptions"><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Loads the class with the specified <a href="#binary-name">binary name</a>.
 This method searches for classes in the same manner as the <a href="#loadClass(java.lang.String,boolean)"><code>loadClass(String, boolean)</code></a> method.  It is invoked by the Java virtual
 machine to resolve class references.  Invoking this method is equivalent
 to invoking <a href="#loadClass(java.lang.String,boolean)"><code>loadClass(name,
 false)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The resulting <code>Class</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - If the class was not found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - If the class was not found</dd>
 </dl>
 </div>
 </section>
@@ -752,9 +752,9 @@ false)</code></a>.</div>
 <section class="detail" id="loadClass(java.lang.String,boolean)">
 <h3>loadClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">loadClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  boolean&nbsp;resolve)</span>
-                      throws <span class="exceptions"><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+                      throws <span class="exceptions"><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Loads the class with the specified <a href="#binary-name">binary name</a>.  The
 default implementation of this method searches for classes in the
 following order:
@@ -782,13 +782,13 @@ following order:
 <a href="#getClassLoadingLock(java.lang.String)"><code>getClassLoadingLock</code></a> method
 during the entire class loading process.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
 <dd><code>resolve</code> - If <code>true</code> then resolve the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The resulting <code>Class</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - If the class could not be found</dd>
+<dt>抛出:</dt>
+<dd><code><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - If the class could not be found</dd>
 </dl>
 </div>
 </section>
@@ -797,10 +797,10 @@ during the entire class loading process.</div>
 <section class="detail" id="getClassLoadingLock(java.lang.String)">
 <h3>getClassLoadingLock</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">getClassLoadingLock</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;className)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">getClassLoadingLock</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;className)</span></div>
 <div class="block">Returns the lock object for class loading operations.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method allows parallel capable class loaders to implement
 finer-grained locking schemes such that multiple threads may load classes
 concurrently without deadlocks.  For non-parallel-capable class loaders,
@@ -808,19 +808,19 @@ the <code>ClassLoader</code> object is synchronized on during the class loading
 operations.  Class loaders with non-hierarchical delegation should be
 <a href="#registerAsParallelCapable()">registered as parallel capable</a>
 to prevent deadlocks.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>If this <code>ClassLoader</code> object is registered as parallel capable,
 this method returns a dedicated object associated with the specified
 class name. Otherwise, this method returns this <code>ClassLoader</code> object.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>className</code> - The name of the to-be-loaded class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the lock for class loading operations</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If registered as parallel capable and <code>className</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If registered as parallel capable and <code>className</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#loadClass(java.lang.String,boolean)"><code>loadClass(String, boolean)</code></a></li>
@@ -834,23 +834,23 @@ class name. Otherwise, this method returns this <code>ClassLoader</code> object.
 <section class="detail" id="findClass(java.lang.String)">
 <h3>findClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                      throws <span class="exceptions"><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                      throws <span class="exceptions"><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Finds the class with the specified <a href="#binary-name">binary name</a>.
 This method should be overridden by class loader implementations that
 follow the delegation model for loading classes, and will be invoked by
 the <a href="#loadClass(java.lang.String)"><code>loadClass</code></a> method after checking the
 parent class loader for the requested class.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation throws <code>ClassNotFoundException</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The resulting <code>Class</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - If the class could not be found</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - If the class could not be found</dd>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -860,29 +860,29 @@ parent class loader for the requested class.</div>
 <section class="detail" id="findClass(java.lang.String,java.lang.String)">
 <h3>findClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Finds the class with the given <a href="#binary-name">binary name</a>
 in a module defined to this class loader.
 Class loader implementations that support loading from modules
 should override this method.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method returns <code>null</code> rather than throwing
          <code>ClassNotFoundException</code> if the class could not be found.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation attempts to find the class by
 invoking <a href="#findClass(java.lang.String)"><code>findClass(String)</code></a> when the <code>moduleName</code> is
 <code>null</code>. It otherwise returns <code>null</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>moduleName</code> - The module name; or <code>null</code> to find the class in the
         <a href="#getUnnamedModule()">unnamed module</a> for this
         class loader</dd>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The resulting <code>Class</code> object, or <code>null</code>
         if the class could not be found.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -892,11 +892,11 @@ invoking <a href="#findClass(java.lang.String)"><code>findClass(String)</code></
 <section class="detail" id="defineClass(byte[],int,int)">
 <h3>defineClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="1.1")
-</span><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(byte[]&nbsp;b,
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="1.1")
+</span><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len)</span>
-                              throws <span class="exceptions"><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></span></div>
+                              throws <span class="exceptions"><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">Replaced by <a href="#defineClass(java.lang.String,byte%5B%5D,int,int)"><code>defineClass(String, byte[], int, int)</code></a></div>
 </div>
@@ -904,26 +904,26 @@ invoking <a href="#findClass(java.lang.String)"><code>findClass(String)</code></
 Before the <code>Class</code> can be used it must be resolved.  This method
 is deprecated in favor of the version that takes a <a href="#binary-name">binary name</a> as its first argument, and is more secure.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>b</code> - The bytes that make up the class data.  The bytes in positions
         <code>off</code> through <code>off+len-1</code> should have the format
         of a valid class file as defined by
         <cite>The Java Virtual Machine Specification</cite>.</dd>
 <dd><code>off</code> - The start offset in <code>b</code> of the class data</dd>
 <dd><code>len</code> - The length of the class data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object that was created from the specified
          class data</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
-<dd><code><a href="IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
+<dt>抛出:</dt>
+<dd><code><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
+<dd><code><a href="IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
          <code>off+len</code> is greater than <code>b.length</code>.</dd>
-<dd><code><a href="SecurityException.html" title="class in java.lang">SecurityException</a></code> - If an attempt is made to add this class to a package that
+<dd><code><a href="SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - If an attempt is made to add this class to a package that
          contains classes that were signed by a different set of
          certificates than this class, or if an attempt is made
          to define a class in a package with a fully-qualified name
          that starts with "<code>java.</code>".</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#loadClass(java.lang.String,boolean)"><code>loadClass(String, boolean)</code></a></li>
@@ -938,15 +938,15 @@ is deprecated in favor of the version that takes a <a href="#binary-name">binary
 <section class="detail" id="defineClass(java.lang.String,byte[],int,int)">
 <h3>defineClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len)</span>
-                              throws <span class="exceptions"><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></span></div>
+                              throws <span class="exceptions"><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></span></div>
 <div class="block">Converts an array of bytes into an instance of class <code>Class</code>.
 Before the <code>Class</code> can be used it must be resolved.
 
-<p> This method assigns a default <a href="../security/ProtectionDomain.html" title="class in java.security"><code>ProtectionDomain</code></a> to the newly defined class. The
+<p> This method assigns a default <a href="../security/ProtectionDomain.html" title="java.security 包中的类"><code>ProtectionDomain</code></a> to the newly defined class. The
 <code>getPermissions</code> method of the <code>ProtectionDomain</code> always
 returns <code>null</code>.
 The default protection domain is created on the first invocation
@@ -963,9 +963,9 @@ package of the <code>Class</code> (if such a package has not already been define
 in this class loader). The name of the defined package is derived from
 the <a href="#binary-name">binary name</a> of the class specified by
 the byte array <code>b</code>.
-Other properties of the defined package are as specified by <a href="Package.html" title="class in java.lang"><code>Package</code></a>.</div>
+Other properties of the defined package are as specified by <a href="Package.html" title="java.lang 包中的类"><code>Package</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The expected <a href="#binary-name">binary name</a> of the class, or
         <code>null</code> if not known</dd>
 <dd><code>b</code> - The bytes that make up the class data.  The bytes in positions
@@ -974,26 +974,26 @@ Other properties of the defined package are as specified by <a href="Package.htm
         <cite>The Java Virtual Machine Specification</cite>.</dd>
 <dd><code>off</code> - The start offset in <code>b</code> of the class data</dd>
 <dd><code>len</code> - The length of the class data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object that was created from the specified
          class data.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
-<dd><code><a href="IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
+<dt>抛出:</dt>
+<dd><code><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
+<dd><code><a href="IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
          <code>off+len</code> is greater than <code>b.length</code>.</dd>
-<dd><code><a href="SecurityException.html" title="class in java.lang">SecurityException</a></code> - If an attempt is made to add this class to a package that
+<dd><code><a href="SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - If an attempt is made to add this class to a package that
          contains classes that were signed by a different set of
          certificates than this class (which is unsigned), or if
          <code>name</code> begins with "<code>java.</code>".</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#loadClass(java.lang.String,boolean)"><code>loadClass(String, boolean)</code></a></li>
 <li><a href="#resolveClass(java.lang.Class)"><code>resolveClass(Class)</code></a></li>
-<li><a href="../security/CodeSource.html" title="class in java.security"><code>CodeSource</code></a></li>
-<li><a href="../security/SecureClassLoader.html" title="class in java.security"><code>SecureClassLoader</code></a></li>
+<li><a href="../security/CodeSource.html" title="java.security 包中的类"><code>CodeSource</code></a></li>
+<li><a href="../security/SecureClassLoader.html" title="java.security 包中的类"><code>SecureClassLoader</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1004,12 +1004,12 @@ Other properties of the defined package are as specified by <a href="Package.htm
 <section class="detail" id="defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)">
 <h3>defineClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
  byte[]&nbsp;b,
  int&nbsp;off,
  int&nbsp;len,
- <a href="../security/ProtectionDomain.html" title="class in java.security">ProtectionDomain</a>&nbsp;protectionDomain)</span>
-                              throws <span class="exceptions"><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></span></div>
+ <a href="../security/ProtectionDomain.html" title="java.security 包中的类">ProtectionDomain</a>&nbsp;protectionDomain)</span>
+                              throws <span class="exceptions"><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></span></div>
 <div class="block">Converts an array of bytes into an instance of class <code>Class</code>,
 with a given <code>ProtectionDomain</code>.
 
@@ -1021,7 +1021,7 @@ Before the class can be used it must be resolved.
 <p> The first class defined in a package determines the exact set of
 certificates that all subsequent classes defined in that package must
 contain.  The set of certificates for a class is obtained from the
-<a href="../security/CodeSource.html" title="class in java.security"><code>CodeSource</code></a> within the
+<a href="../security/CodeSource.html" title="java.security 包中的类"><code>CodeSource</code></a> within the
 <code>ProtectionDomain</code> of the class.  Any classes added to that
 package must contain the same set of certificates or a
 <code>SecurityException</code> will be thrown.  Note that if
@@ -1034,16 +1034,16 @@ class you are defining is indeed the class you think it is.
 only be defined by the <a href="#getPlatformClassLoader()">platform class loader</a> or its ancestors; otherwise <code>SecurityException</code>
 will be thrown.  If <code>name</code> is not <code>null</code>, it must be equal to
 the <a href="#binary-name">binary name</a> of the class
-specified by the byte array <code>b</code>, otherwise a <a href="NoClassDefFoundError.html" title="class in java.lang"><code>NoClassDefFoundError</code></a> will be thrown.
+specified by the byte array <code>b</code>, otherwise a <a href="NoClassDefFoundError.html" title="java.lang 包中的类"><code>NoClassDefFoundError</code></a> will be thrown.
 
 <p> This method defines a package in this class loader corresponding to the
 package of the <code>Class</code> (if such a package has not already been defined
 in this class loader). The name of the defined package is derived from
 the <a href="#binary-name">binary name</a> of the class specified by
 the byte array <code>b</code>.
-Other properties of the defined package are as specified by <a href="Package.html" title="class in java.lang"><code>Package</code></a>.</div>
+Other properties of the defined package are as specified by <a href="Package.html" title="java.lang 包中的类"><code>Package</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The expected <a href="#binary-name">binary name</a> of the class, or
         <code>null</code> if not known</dd>
 <dd><code>b</code> - The bytes that make up the class data. The bytes in positions
@@ -1053,16 +1053,16 @@ Other properties of the defined package are as specified by <a href="Package.htm
 <dd><code>off</code> - The start offset in <code>b</code> of the class data</dd>
 <dd><code>len</code> - The length of the class data</dd>
 <dd><code>protectionDomain</code> - The <code>ProtectionDomain</code> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object created from the data,
          and <code>ProtectionDomain</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
-<dd><code><a href="NoClassDefFoundError.html" title="class in java.lang">NoClassDefFoundError</a></code> - If <code>name</code> is not <code>null</code> and not equal to the
+<dt>抛出:</dt>
+<dd><code><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></code> - If the data did not contain a valid class</dd>
+<dd><code><a href="NoClassDefFoundError.html" title="java.lang 包中的类">NoClassDefFoundError</a></code> - If <code>name</code> is not <code>null</code> and not equal to the
          <a href="#binary-name">binary name</a> of the class specified by <code>b</code></dd>
-<dd><code><a href="IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
+<dd><code><a href="IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If either <code>off</code> or <code>len</code> is negative, or if
          <code>off+len</code> is greater than <code>b.length</code>.</dd>
-<dd><code><a href="SecurityException.html" title="class in java.lang">SecurityException</a></code> - If an attempt is made to add this class to a package that
+<dd><code><a href="SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - If an attempt is made to add this class to a package that
          contains classes that were signed by a different set of
          certificates than this class, or if <code>name</code> begins with
          "<code>java.</code>" and this class loader is not the platform
@@ -1075,11 +1075,11 @@ Other properties of the defined package are as specified by <a href="Package.htm
 <section class="detail" id="defineClass(java.lang.String,java.nio.ByteBuffer,java.security.ProtectionDomain)">
 <h3>defineClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="../nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;b,
- <a href="../security/ProtectionDomain.html" title="class in java.security">ProtectionDomain</a>&nbsp;protectionDomain)</span>
-                              throws <span class="exceptions"><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></span></div>
-<div class="block">Converts a <a href="../nio/ByteBuffer.html" title="class in java.nio"><code>ByteBuffer</code></a> into an instance
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">defineClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="../nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;b,
+ <a href="../security/ProtectionDomain.html" title="java.security 包中的类">ProtectionDomain</a>&nbsp;protectionDomain)</span>
+                              throws <span class="exceptions"><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></span></div>
+<div class="block">Converts a <a href="../nio/ByteBuffer.html" title="java.nio 包中的类"><code>ByteBuffer</code></a> into an instance
  of class <code>Class</code>, with the given <code>ProtectionDomain</code>.
  If the given <code>ProtectionDomain</code> is <code>null</code>, then a default
  protection domain will be assigned to the class as
@@ -1103,7 +1103,7 @@ Other properties of the defined package are as specified by <a href="Package.htm
  temp.length, pd);<br>
  </code></p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The expected <a href="#binary-name">binary name</a>. of the class, or
          <code>null</code> if not known</dd>
 <dd><code>b</code> - The bytes that make up the class data. The bytes from positions
@@ -1111,20 +1111,20 @@ Other properties of the defined package are as specified by <a href="Package.htm
          </code> should have the format of a valid class file as defined by
          <cite>The Java Virtual Machine Specification</cite>.</dd>
 <dd><code>protectionDomain</code> - The <code>ProtectionDomain</code> of the class, or <code>null</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object created from the data,
           and <code>ProtectionDomain</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassFormatError.html" title="class in java.lang">ClassFormatError</a></code> - If the data did not contain a valid class.</dd>
-<dd><code><a href="NoClassDefFoundError.html" title="class in java.lang">NoClassDefFoundError</a></code> - If <code>name</code> is not <code>null</code> and not equal to the
+<dt>抛出:</dt>
+<dd><code><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></code> - If the data did not contain a valid class.</dd>
+<dd><code><a href="NoClassDefFoundError.html" title="java.lang 包中的类">NoClassDefFoundError</a></code> - If <code>name</code> is not <code>null</code> and not equal to the
           <a href="#binary-name">binary name</a> of the class specified by <code>b</code></dd>
-<dd><code><a href="SecurityException.html" title="class in java.lang">SecurityException</a></code> - If an attempt is made to add this class to a package that
+<dd><code><a href="SecurityException.html" title="java.lang 包中的类">SecurityException</a></code> - If an attempt is made to add this class to a package that
           contains classes that were signed by a different set of
           certificates than this class, or if <code>name</code> begins with
           "<code>java.</code>".</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)"><code>defineClass(String, byte[], int, int, ProtectionDomain)</code></a></li>
@@ -1138,18 +1138,18 @@ Other properties of the defined package are as specified by <a href="Package.htm
 <section class="detail" id="resolveClass(java.lang.Class)">
 <h3>resolveClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resolveClass</span><wbr><span class="parameters">(<a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">resolveClass</span><wbr><span class="parameters">(<a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</span></div>
 <div class="block">Links the specified class.  This (misleadingly named) method may be
 used by a class loader to link a class.  If the class <code>c</code> has
 already been linked, then this method simply returns. Otherwise, the
 class is linked as described in the "Execution" chapter of
 <cite>The Java Language Specification</cite>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>c</code> - The class to link</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>c</code> is <code>null</code>.</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>c</code> is <code>null</code>.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#defineClass(java.lang.String,byte%5B%5D,int,int)"><code>defineClass(String, byte[], int, int)</code></a></li>
@@ -1163,8 +1163,8 @@ class is linked as described in the "Execution" chapter of
 <section class="detail" id="findSystemClass(java.lang.String)">
 <h3>findSystemClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findSystemClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                                  throws <span class="exceptions"><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findSystemClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                                  throws <span class="exceptions"><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Finds a class with the specified <a href="#binary-name">binary name</a>,
 loading it if necessary.
 
@@ -1174,13 +1174,13 @@ might have more than one <code>ClassLoader</code> associated with it.
 Subclasses of <code>ClassLoader</code> need not usually invoke this method,
 because most class loaders need to override just <a href="#findClass(java.lang.String)"><code>findClass(String)</code></a>.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object for the specified <code>name</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - If the class could not be found</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - If the class could not be found</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#%3Cinit%3E(java.lang.ClassLoader)"><code>ClassLoader(ClassLoader)</code></a></li>
@@ -1195,18 +1195,18 @@ because most class loaders need to override just <a href="#findClass(java.lang.S
 <section class="detail" id="findLoadedClass(java.lang.String)">
 <h3>findLoadedClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findLoadedClass</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">findLoadedClass</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns the class with the given <a href="#binary-name">binary name</a> if this
 loader has been recorded by the Java virtual machine as an initiating
 loader of a class with that <a href="#binary-name">binary name</a>.  Otherwise
 <code>null</code> is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">binary name</a> of the class</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Class</code> object, or <code>null</code> if the class has
          not been loaded</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1216,15 +1216,15 @@ loader of a class with that <a href="#binary-name">binary name</a>.  Otherwise
 <section class="detail" id="setSigners(java.lang.Class,java.lang.Object[])">
 <h3>setSigners</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSigners</span><wbr><span class="parameters">(<a href="Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c,
- <a href="Object.html" title="class in java.lang">Object</a>[]&nbsp;signers)</span></div>
+<div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSigners</span><wbr><span class="parameters">(<a href="Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c,
+ <a href="Object.html" title="java.lang 包中的类">Object</a>[]&nbsp;signers)</span></div>
 <div class="block">Sets the signers of a class.  This should be invoked after defining a
 class.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>c</code> - The <code>Class</code> object</dd>
 <dd><code>signers</code> - The signers for the class</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1234,35 +1234,35 @@ class.</div>
 <section class="detail" id="findResource(java.lang.String,java.lang.String)">
 <h3>findResource</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="class in java.net">URL</a></span>&nbsp;<span class="element-name">findResource</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                    throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="java.net 包中的类">URL</a></span>&nbsp;<span class="element-name">findResource</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                    throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Returns a URL to a resource in a module defined to this class loader.
 Class loader implementations that support loading from modules
 should override this method.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method is the basis for the <a href="Class.html#getResource(java.lang.String)"><code>Class.getResource</code></a>, <a href="Class.html#getResourceAsStream(java.lang.String)"><code>Class.getResourceAsStream</code></a>, and <a href="Module.html#getResourceAsStream(java.lang.String)"><code>Module.getResourceAsStream</code></a> methods. It is not subject to the rules for
 encapsulation specified by <code>Module.getResourceAsStream</code>.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation attempts to find the resource by
 invoking <a href="#findResource(java.lang.String)"><code>findResource(String)</code></a> when the <code>moduleName</code> is
 <code>null</code>. It otherwise returns <code>null</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>moduleName</code> - The module name; or <code>null</code> to find a resource in the
         <a href="#getUnnamedModule()">unnamed module</a> for this
         class loader</dd>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A URL to the resource; <code>null</code> if the resource could not be
         found, a URL could not be constructed to locate the resource, or
         there isn't a module of the given name defined to the class
         loader.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - If I/O errors occur</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If I/O errors occur</dd>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="module/ModuleReader.html#find(java.lang.String)"><code>ModuleReader.find(String)</code></a></li>
@@ -1276,7 +1276,7 @@ invoking <a href="#findResource(java.lang.String)"><code>findResource(String)</c
 <section class="detail" id="getResource(java.lang.String)">
 <h3>getResource</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="class in java.net">URL</a></span>&nbsp;<span class="element-name">getResource</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="java.net 包中的类">URL</a></span>&nbsp;<span class="element-name">getResource</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Finds the resource with the given name.  A resource is some data
 (images, audio, text, etc) that can be accessed by class code in a way
 that is independent of the location of the code.
@@ -1291,28 +1291,28 @@ name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally (even if the caller of this method is in the
 same module as the resource). </p></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Where several modules are defined to the same class loader,
 and where more than one module contains a resource with the given name,
 then the ordering that modules are searched is not specified and may be
 very unpredictable.
 When overriding this method it is recommended that an implementation
 ensures that any delegation is consistent with the <a href="#getResources(java.lang.String)"><code>getResources(String)</code></a> method.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation will first search the parent class
 loader for the resource; if the parent is <code>null</code> the path of the
 class loader built into the virtual machine is searched. If not found,
 this method will invoke <a href="#findResource(java.lang.String)"><code>findResource(String)</code></a> to find the resource.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>URL</code> object for reading the resource; <code>null</code> if
          the resource could not be found, a <code>URL</code> could not be
          constructed to locate the resource, or the resource is in a package
          that is not opened unconditionally.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1322,8 +1322,8 @@ this method will invoke <a href="#findResource(java.lang.String)"><code>findReso
 <section class="detail" id="getResources(java.lang.String)">
 <h3>getResources</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</span>&nbsp;<span class="element-name">getResources</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                              throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</span>&nbsp;<span class="element-name">getResources</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                              throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Finds all the resources with the given name. A resource is some data
 (images, audio, text, etc) that can be accessed by class code in a way
 that is independent of the location of the code.
@@ -1338,7 +1338,7 @@ name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally (even if the caller of this method is in the
 same module as the resource). </p></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Where several modules are defined to the same class loader,
 and where more than one module contains a resource with the given name,
 then the ordering is not specified and may be very unpredictable.
@@ -1347,7 +1347,7 @@ implementation ensures that any delegation is consistent with the <a href="#getR
 ensure that the first element returned by the Enumeration's
 <code>nextElement</code> method is the same resource that the
 <code>getResource(String)</code> method would return.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation will first search the parent class
 loader for the resource; if the parent is <code>null</code> the path of the
 class loader built into the virtual machine is searched. It then
@@ -1355,18 +1355,18 @@ invokes <a href="#findResources(java.lang.String)"><code>findResources(String)</
 name in this class loader. It returns an enumeration whose elements
 are the URLs found by searching the parent class loader followed by
 the elements found with <code>findResources</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
-<dd>An enumeration of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects for the
+<dt>返回:</dt>
+<dd>An enumeration of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects for the
          resource. If no resources could be found, the enumeration will
          be empty. Resources for which a <code>URL</code> cannot be
          constructed, or are in a package that is not opened
          unconditionally, are not returned in the enumeration.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - If I/O errors occur</dd>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If I/O errors occur</dd>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -1376,7 +1376,7 @@ the elements found with <code>findResources</code>.</dd>
 <section class="detail" id="resources(java.lang.String)">
 <h3>resources</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/stream/Stream.html" title="interface in java.util.stream">Stream</a>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</span>&nbsp;<span class="element-name">resources</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/stream/Stream.html" title="java.util.stream 包中的接口">Stream</a>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</span>&nbsp;<span class="element-name">resources</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns a stream whose elements are the URLs of all the resources with
 the given name. A resource is some data (images, audio, text, etc) that
 can be accessed by class code in a way that is independent of the
@@ -1387,7 +1387,7 @@ identifies the resource.
 
 <p> The resources will be located when the returned stream is evaluated.
 If the evaluation results in an <code>IOException</code> then the I/O
-exception is wrapped in an <a href="../io/UncheckedIOException.html" title="class in java.io"><code>UncheckedIOException</code></a> that is then
+exception is wrapped in an <a href="../io/UncheckedIOException.html" title="java.io 包中的类"><code>UncheckedIOException</code></a> that is then
 thrown.
 
 <p> Resources in named modules are subject to the encapsulation rules
@@ -1397,24 +1397,24 @@ name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally (even if the caller of this method is in the
 same module as the resource). </p></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>When overriding this method it is recommended that an
 implementation ensures that any delegation is consistent with the <a href="#getResource(java.lang.String)"><code>getResource(String)</code></a> method. This should
 ensure that the first element returned by the stream is the same
 resource that the <code>getResource(String)</code> method would return.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation invokes <a href="#getResources(java.lang.String)"><code>getResources</code></a> to find all the resources with the given name and returns
 a stream with the elements in the enumeration as the source.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
-<dd>A stream of resource <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects. If no
+<dt>返回:</dt>
+<dd>A stream of resource <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects. If no
          resources could  be found, the stream will be empty. Resources
          for which a <code>URL</code> cannot be constructed, or are in a package
          that is not opened unconditionally, will not be in the stream.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1424,7 +1424,7 @@ a stream with the elements in the enumeration as the source.</dd>
 <section class="detail" id="findResource(java.lang.String)">
 <h3>findResource</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="class in java.net">URL</a></span>&nbsp;<span class="element-name">findResource</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="java.net 包中的类">URL</a></span>&nbsp;<span class="element-name">findResource</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Finds the resource with the given name. Class loader implementations
 should override this method.
 
@@ -1434,16 +1434,16 @@ it must not find non-"<code>.class</code>" resources in packages of named
 modules unless the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a>
 unconditionally. </p></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation returns <code>null</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>URL</code> object for reading the resource; <code>null</code> if
          the resource could not be found, a <code>URL</code> could not be
          constructed to locate the resource, or the resource is in a package
          that is not opened unconditionally.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -1453,9 +1453,9 @@ unconditionally. </p></div>
 <section class="detail" id="findResources(java.lang.String)">
 <h3>findResources</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</span>&nbsp;<span class="element-name">findResources</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                                  throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
-<div class="block">Returns an enumeration of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</span>&nbsp;<span class="element-name">findResources</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                                  throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
+<div class="block">Returns an enumeration of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects
 representing all the resources with the given name. Class loader
 implementations should override this method.
 
@@ -1465,20 +1465,20 @@ it must not find non-"<code>.class</code>" resources in packages of named
 modules unless the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a>
 unconditionally. </p></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation returns an enumeration that
 contains no elements.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
-<dd>An enumeration of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects for
+<dt>返回:</dt>
+<dd>An enumeration of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects for
          the resource. If no resources could  be found, the enumeration
          will be empty. Resources for which a <code>URL</code> cannot be
          constructed, or are in a package that is not opened unconditionally,
          are not returned in the enumeration.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - If I/O errors occur</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If I/O errors occur</dd>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -1507,14 +1507,14 @@ stack (e.g. when called directly from a JNI attached thread),
 <code>IllegalCallerException</code> is thrown.
 </p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the caller is successfully registered as
          parallel capable and <code>false</code> if otherwise.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalCallerException.html" title="class in java.lang">IllegalCallerException</a></code> - if the caller is not a subclass of <code>ClassLoader</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></code> - if the caller is not a subclass of <code>ClassLoader</code></dd>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#isRegisteredAsParallelCapable()"><code>isRegisteredAsParallelCapable()</code></a></li>
@@ -1533,12 +1533,12 @@ stack (e.g. when called directly from a JNI attached thread),
 <a href="#registerAsParallelCapable()">parallel capable</a>, otherwise
 <code>false</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this class loader is parallel capable,
          otherwise <code>false</code>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#registerAsParallelCapable()"><code>registerAsParallelCapable()</code></a></li>
@@ -1552,7 +1552,7 @@ stack (e.g. when called directly from a JNI attached thread),
 <section class="detail" id="getSystemResource(java.lang.String)">
 <h3>getSystemResource</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="class in java.net">URL</a></span>&nbsp;<span class="element-name">getSystemResource</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../net/URL.html" title="java.net 包中的类">URL</a></span>&nbsp;<span class="element-name">getSystemResource</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Find a resource of the specified name from the search path used to load
 classes.  This method locates the resource through the system class
 loader (see <a href="#getSystemClassLoader()"><code>getSystemClassLoader()</code></a>).
@@ -1563,14 +1563,14 @@ Additionally, and except for the special case where the resource has a
 name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
-<dd>A <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> to the resource; <code>
+<dt>返回:</dt>
+<dd>A <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> to the resource; <code>
          null</code> if the resource could not be found, a URL could not be
          constructed to locate the resource, or the resource is in a package
          that is not opened unconditionally.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1580,11 +1580,11 @@ packages of named modules when the package is <a href="Module.html#isOpen(java.l
 <section class="detail" id="getSystemResources(java.lang.String)">
 <h3>getSystemResources</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="interface in java.util">Enumeration</a>&lt;<a href="../net/URL.html" title="class in java.net">URL</a>&gt;</span>&nbsp;<span class="element-name">getSystemResources</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span>
-                                           throws <span class="exceptions"><a href="../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../util/Enumeration.html" title="java.util 包中的接口">Enumeration</a>&lt;<a href="../net/URL.html" title="java.net 包中的类">URL</a>&gt;</span>&nbsp;<span class="element-name">getSystemResources</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span>
+                                           throws <span class="exceptions"><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Finds all resources of the specified name from the search path used to
 load classes.  The resources thus found are returned as an
-<a href="../util/Enumeration.html" title="interface in java.util"><code>Enumeration</code></a> of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects.
+<a href="../util/Enumeration.html" title="java.util 包中的接口"><code>Enumeration</code></a> of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects.
 
 <p> The search order is described in the documentation for <a href="#getSystemResource(java.lang.String)"><code>getSystemResource(String)</code></a>.  </p>
 
@@ -1594,17 +1594,17 @@ Additionally, and except for the special case where the resource has a
 name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
-<dd>An enumeration of <a href="../net/URL.html" title="class in java.net"><code>URL</code></a> objects for
+<dt>返回:</dt>
+<dd>An enumeration of <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a> objects for
          the resource. If no resources could  be found, the enumeration
          will be empty. Resources for which a <code>URL</code> cannot be
          constructed, or are in a package that is not opened unconditionally,
          are not returned in the enumeration.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../io/IOException.html" title="class in java.io">IOException</a></code> - If I/O errors occur</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If I/O errors occur</dd>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -1614,7 +1614,7 @@ packages of named modules when the package is <a href="Module.html#isOpen(java.l
 <section class="detail" id="getResourceAsStream(java.lang.String)">
 <h3>getResourceAsStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../io/InputStream.html" title="class in java.io">InputStream</a></span>&nbsp;<span class="element-name">getResourceAsStream</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a></span>&nbsp;<span class="element-name">getResourceAsStream</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns an input stream for reading the specified resource.
 
 <p> The search order is described in the documentation for <a href="#getResource(java.lang.String)"><code>getResource(String)</code></a>.  </p>
@@ -1625,15 +1625,15 @@ Additionally, and except for the special case where the resource has a
 name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An input stream for reading the resource; <code>null</code> if the
          resource could not be found, or the resource is in a package that
          is not opened unconditionally.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>name</code> is <code>null</code></dd>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1643,7 +1643,7 @@ packages of named modules when the package is <a href="Module.html#isOpen(java.l
 <section class="detail" id="getSystemResourceAsStream(java.lang.String)">
 <h3>getSystemResourceAsStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../io/InputStream.html" title="class in java.io">InputStream</a></span>&nbsp;<span class="element-name">getSystemResourceAsStream</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../io/InputStream.html" title="java.io 包中的类">InputStream</a></span>&nbsp;<span class="element-name">getSystemResourceAsStream</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Open for reading, a resource of the specified name from the search path
 used to load classes.  This method locates the resource through the
 system class loader (see <a href="#getSystemClassLoader()"><code>getSystemClassLoader()</code></a>).
@@ -1654,13 +1654,13 @@ Additionally, and except for the special case where the resource has a
 name ending with "<code>.class</code>", this method will only find resources in
 packages of named modules when the package is <a href="Module.html#isOpen(java.lang.String)"><code>opened</code></a> unconditionally. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The resource name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>An input stream for reading the resource; <code>null</code> if the
          resource could not be found, or the resource is in a package that
          is not opened unconditionally.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
 </dl>
 </div>
@@ -1670,15 +1670,15 @@ packages of named modules when the package is <a href="Module.html#isOpen(java.l
 <section class="detail" id="getParent()">
 <h3>getParent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
 <div class="block">Returns the parent class loader for delegation. Some implementations may
 use <code>null</code> to represent the bootstrap class loader. This method
 will return <code>null</code> in such implementations if this class loader's
 parent is the bootstrap class loader.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The parent <code>ClassLoader</code></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -1688,14 +1688,14 @@ parent is the bootstrap class loader.</div>
 <section class="detail" id="getUnnamedModule()">
 <h3>getUnnamedModule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Module.html" title="class in java.lang">Module</a></span>&nbsp;<span class="element-name">getUnnamedModule</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Module.html" title="java.lang 包中的类">Module</a></span>&nbsp;<span class="element-name">getUnnamedModule</span>()</div>
 <div class="block">Returns the unnamed <code>Module</code> for this class loader.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The unnamed Module for this class loader</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Module.html#isNamed()"><code>Module.isNamed()</code></a></li>
@@ -1709,17 +1709,17 @@ parent is the bootstrap class loader.</div>
 <section class="detail" id="getPlatformClassLoader()">
 <h3>getPlatformClassLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></span>&nbsp;<span class="element-name">getPlatformClassLoader</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></span>&nbsp;<span class="element-name">getPlatformClassLoader</span>()</div>
 <div class="block">Returns the platform class loader.  All
 <a href="#builtinLoaders">platform classes</a> are visible to
 the platform class loader.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The name of the builtin platform class loader is
 <code>"platform"</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The platform <code>ClassLoader</code>.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1729,7 +1729,7 @@ the platform class loader.</div>
 <section class="detail" id="getSystemClassLoader()">
 <h3>getSystemClassLoader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="class in java.lang">ClassLoader</a></span>&nbsp;<span class="element-name">getSystemClassLoader</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></span>&nbsp;<span class="element-name">getSystemClassLoader</span>()</div>
 <div class="block">Returns the system class loader.  This is the default
 delegation parent for new <code>ClassLoader</code> instances, and is
 typically the class loader used to start the application.
@@ -1756,7 +1756,7 @@ should take great care to avoid calling <code>getSystemClassLoader()</code>.
 If circular initialization of the system class loader is detected then
 an <code>IllegalStateException</code> is thrown.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The system property to override the system class loader is not
 examined until the VM is almost fully initialized. Code that executes
 this method during startup should take care not to cache the return
@@ -1782,13 +1782,13 @@ entries are ignored.  For debugging purposes, ignored entries can be
 printed to the console if the
 <code><span id="jdk.net.URLClassPath.showIgnoredClassPathEntries" class="search-tag-result">jdk.net.URLClassPath.showIgnoredClassPathEntries</span></code> system
 property is set to <code>true</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The system <code>ClassLoader</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - If invoked recursively during the construction of the class
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - If invoked recursively during the construction of the class
          loader specified by the "<code>java.system.class.loader</code>"
          property.</dd>
-<dd><code><a href="Error.html" title="class in java.lang">Error</a></code> - If the system property "<code>java.system.class.loader</code>"
+<dd><code><a href="Error.html" title="java.lang 包中的类">Error</a></code> - If the system property "<code>java.system.class.loader</code>"
          is defined but the named class could not be loaded, the
          provider class does not define the required constructor, or an
          exception is thrown by that constructor when it is invoked. The
@@ -1802,14 +1802,14 @@ property is set to <code>true</code>.</dd>
 <section class="detail" id="definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)">
 <h3>definePackage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="class in java.lang">Package</a></span>&nbsp;<span class="element-name">definePackage</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specTitle,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specVersion,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;specVendor,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implTitle,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implVersion,
- <a href="String.html" title="class in java.lang">String</a>&nbsp;implVendor,
- <a href="../net/URL.html" title="class in java.net">URL</a>&nbsp;sealBase)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="java.lang 包中的类">Package</a></span>&nbsp;<span class="element-name">definePackage</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specTitle,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specVersion,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;specVendor,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implTitle,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implVersion,
+ <a href="String.html" title="java.lang 包中的类">String</a>&nbsp;implVendor,
+ <a href="../net/URL.html" title="java.net 包中的类">URL</a>&nbsp;sealBase)</span></div>
 <div class="block">Defines a package by <a href="#binary-name">name</a> in this <code>ClassLoader</code>.
 <p>
 <a href="#binary-name">Package names</a> must be unique within a class loader and
@@ -1822,9 +1822,9 @@ Otherwise, the
 <a href="#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)"><code>defineClass</code></a>
 method will define a package in this class loader corresponding to the package
 of the newly defined class; the properties of this defined package are
-specified by <a href="Package.html" title="class in java.lang"><code>Package</code></a>.</div>
+specified by <a href="Package.html" title="java.lang 包中的类"><code>Package</code></a>.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>A class loader that wishes to define a package for classes in a JAR
 typically uses the specification and implementation titles, versions, and
 vendors from the JAR's manifest. If the package is specified as
@@ -1841,9 +1841,9 @@ method to explicitly define packages in <em>named modules</em>; instead,
 the package will be automatically defined when a class is <a href="#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)">being defined</a>.
 If it is desirable to define <code>Package</code> explicitly, it should ensure
 that all packages in a named module are defined with the properties
-specified by <a href="Package.html" title="class in java.lang"><code>Package</code></a>.  Otherwise, some <code>Package</code> objects
+specified by <a href="Package.html" title="java.lang 包中的类"><code>Package</code></a>.  Otherwise, some <code>Package</code> objects
 in a named module may be for example sealed with different seal base.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">package name</a></dd>
 <dd><code>specTitle</code> - The specification title</dd>
 <dd><code>specVersion</code> - The specification version</dd>
@@ -1852,20 +1852,20 @@ in a named module may be for example sealed with different seal base.</dd>
 <dd><code>implVersion</code> - The implementation version</dd>
 <dd><code>implVendor</code> - The implementation vendor</dd>
 <dd><code>sealBase</code> - If not <code>null</code>, then this package is sealed with
-        respect to the given code source <a href="../net/URL.html" title="class in java.net"><code>URL</code></a>
+        respect to the given code source <a href="../net/URL.html" title="java.net 包中的类"><code>URL</code></a>
         object.  Otherwise, the package is not sealed.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The newly defined <code>Package</code> object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
-<dd><code><a href="IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if a package of the given <code>name</code> is already
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
+<dd><code><a href="IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if a package of the given <code>name</code> is already
          defined by this class loader</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.3">5.3 Creation and Loading</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../specs/jar/jar.html#package-sealing">
@@ -1880,21 +1880,21 @@ in a named module may be for example sealed with different seal base.</dd>
 <section class="detail" id="getDefinedPackage(java.lang.String)">
 <h3>getDefinedPackage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Package.html" title="class in java.lang">Package</a></span>&nbsp;<span class="element-name">getDefinedPackage</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Package.html" title="java.lang 包中的类">Package</a></span>&nbsp;<span class="element-name">getDefinedPackage</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="block">Returns a <code>Package</code> of the given <a href="#binary-name">name</a> that
 has been defined by this class loader.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">package name</a></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Package</code> of the given name that has been defined
         by this class loader, or <code>null</code> if not found</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.3">5.3 Creation and Loading</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1904,22 +1904,22 @@ has been defined by this class loader.</div>
 <section class="detail" id="getDefinedPackages()">
 <h3>getDefinedPackages</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Package.html" title="class in java.lang">Package</a>[]</span>&nbsp;<span class="element-name">getDefinedPackages</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="Package.html" title="java.lang 包中的类">Package</a>[]</span>&nbsp;<span class="element-name">getDefinedPackages</span>()</div>
 <div class="block">Returns all of the <code>Package</code>s that have been defined by
 this class loader.  The returned array has no duplicated <code>Package</code>s
 of the same name.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method returns an array rather than a <code>Set</code> or <code>Stream</code>
          for consistency with the existing <a href="#getPackages()"><code>getPackages()</code></a> method.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The array of <code>Package</code> objects that have been defined by
         this class loader; or a zero length array if no package has been
         defined by this class loader.</dd>
 <dt>See <i>Java Virtual Machine Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jvms/se25/html/jvms-5.html#jvms-5.3">5.3 Creation and Loading</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1929,8 +1929,8 @@ of the same name.</div>
 <section class="detail" id="getPackage(java.lang.String)">
 <h3>getPackage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="9")
-</span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="class in java.lang">Package</a></span>&nbsp;<span class="element-name">getPackage</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;name)</span></div>
+<div class="member-signature"><span class="annotations"><a href="Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="Deprecated.html#since()">since</a>="9")
+</span><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="java.lang 包中的类">Package</a></span>&nbsp;<span class="element-name">getPackage</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;name)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">If multiple class loaders delegate to each other and define classes
 with the same package name, and one such loader relies on the lookup
@@ -1951,22 +1951,22 @@ the <code>Package</code> is returned. Otherwise, the ancestors of
 this class loader are searched recursively (parent by parent)
 for a <code>Package</code> of the given name.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The <a href="#getPlatformClassLoader()"><code>platform class loader</code></a>
 may delegate to the application class loader but the application class
 loader is not its ancestor.  When invoked on the platform class loader,
 this method  will not find packages defined to the application
 class loader.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>name</code> - The <a href="#binary-name">package name</a></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Package</code> of the given name that has been defined by
         this class loader or its ancestors, or <code>null</code> if not found.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>name</code> is <code>null</code>.</dd>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getDefinedPackage(java.lang.String)"><code>getDefinedPackage(String)</code></a></li>
@@ -1980,13 +1980,13 @@ class loader.</dd>
 <section class="detail" id="getPackages()">
 <h3>getPackages</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="class in java.lang">Package</a>[]</span>&nbsp;<span class="element-name">getPackages</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="Package.html" title="java.lang 包中的类">Package</a>[]</span>&nbsp;<span class="element-name">getPackages</span>()</div>
 <div class="block">Returns all of the <code>Package</code>s that have been defined by
 this class loader and its ancestors.  The returned array may contain
 more than one <code>Package</code> object of the same package name, each
 defined by a different class loader in the class loader hierarchy.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The <a href="#getPlatformClassLoader()"><code>platform class loader</code></a>
 may delegate to the application class loader. In other words,
 packages in modules defined to the application class loader may be
@@ -1994,12 +1994,12 @@ visible to the platform class loader.  On the other hand,
 the application class loader is not its ancestor and hence
 when invoked on the platform class loader, this method will not
 return any packages defined to the application class loader.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The array of <code>Package</code> objects that have been defined by
          this class loader and its ancestors</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getDefinedPackages()"><code>getDefinedPackages()</code></a></li>
@@ -2013,20 +2013,20 @@ return any packages defined to the application class loader.</dd>
 <section class="detail" id="findLibrary(java.lang.String)">
 <h3>findLibrary</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">findLibrary</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;libname)</span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">findLibrary</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;libname)</span></div>
 <div class="block">Returns the absolute path name of a native library.  The VM invokes this
 method to locate the native libraries that belong to classes loaded with
 this class loader. If this method returns <code>null</code>, the VM
 searches the library along the path specified as the
 "<code>java.library.path</code>" property.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>libname</code> - The library name</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The absolute path of the native library</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="System.html#loadLibrary(java.lang.String)"><code>System.loadLibrary(String)</code></a><sup class="restricted-mark"><a href="System.html#restricted-loadLibrary(java.lang.String)">RESTRICTED</a></sup></li>
@@ -2048,11 +2048,11 @@ in the future will have assertions enabled or disabled by default.
 This setting may be overridden on a per-package or per-class basis by
 invoking <a href="#setPackageAssertionStatus(java.lang.String,boolean)"><code>setPackageAssertionStatus(String, boolean)</code></a> or <a href="#setClassAssertionStatus(java.lang.String,boolean)"><code>setClassAssertionStatus(String, boolean)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>enabled</code> - <code>true</code> if classes loaded by this class loader will
         henceforth have assertions enabled by default, <code>false</code>
         if they will have assertions disabled by default.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -2062,7 +2062,7 @@ invoking <a href="#setPackageAssertionStatus(java.lang.String,boolean)"><code>se
 <section class="detail" id="setPackageAssertionStatus(java.lang.String,boolean)">
 <h3>setPackageAssertionStatus</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPackageAssertionStatus</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;packageName,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPackageAssertionStatus</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;packageName,
  boolean&nbsp;enabled)</span></div>
 <div class="block">Sets the package default assertion status for the named package.  The
 package default assertion status determines the assertion status for
@@ -2085,7 +2085,7 @@ them, the latter package default applies to classes in
 assertion status, and may be overridden on a per-class basis by invoking
 <a href="#setClassAssertionStatus(java.lang.String,boolean)"><code>setClassAssertionStatus(String, boolean)</code></a>.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>packageName</code> - The name of the package whose package default assertion status
         is to be set. A <code>null</code> value indicates the unnamed
         package that is "current"
@@ -2095,7 +2095,7 @@ assertion status, and may be overridden on a per-class basis by invoking
         belonging to the named package or any of its subpackages will
         have assertions enabled by default, <code>false</code> if they will
         have assertions disabled by default.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -2105,7 +2105,7 @@ assertion status, and may be overridden on a per-class basis by invoking
 <section class="detail" id="setClassAssertionStatus(java.lang.String,boolean)">
 <h3>setClassAssertionStatus</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setClassAssertionStatus</span><wbr><span class="parameters">(<a href="String.html" title="class in java.lang">String</a>&nbsp;className,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setClassAssertionStatus</span><wbr><span class="parameters">(<a href="String.html" title="java.lang 包中的类">String</a>&nbsp;className,
  boolean&nbsp;enabled)</span></div>
 <div class="block">Sets the desired assertion status for the named top-level class in this
 class loader and any nested classes contained therein.  This setting
@@ -2117,13 +2117,13 @@ initialized, its assertion status cannot change.)
 <p> If the named class is not a top-level class, this invocation will
 have no effect on the actual assertion status of any class. </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>className</code> - The fully qualified class name of the top-level class whose
         assertion status is to be set.</dd>
 <dd><code>enabled</code> - <code>true</code> if the named class is to have assertions
         enabled when (and if) it is initialized, <code>false</code> if the
         class is to have assertions disabled.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -2140,7 +2140,7 @@ status settings associated with the class loader.  This method is
 provided so that class loaders can be made to ignore any command line or
 persistent assertion status settings and "start with a clean slate."</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>

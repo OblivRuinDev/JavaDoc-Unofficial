@@ -80,7 +80,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.io</a></li>
 <li><a href="ObjectInputStream.html" class="current-selection">ObjectInputStream</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -88,20 +88,20 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.io.InputStream)" tabindex="0">ObjectInputStream(InputStream)</a></li>
 <li><a href="#%3Cinit%3E()" tabindex="0">ObjectInputStream()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#readObject()" tabindex="0">readObject()</a></li>
 <li><a href="#readObjectOverride()" tabindex="0">readObjectOverride()</a></li>
@@ -143,23 +143,23 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class ObjectInputStream" class="title">Class ObjectInputStream</h1>
+<h1 title="类 ObjectInputStream" class="title">类 ObjectInputStream</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="InputStream.html" title="class in java.io">java.io.InputStream</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="InputStream.html" title="java.io 包中的类">java.io.InputStream</a>
 <div class="inheritance">java.io.ObjectInputStream</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Closeable.html" title="interface in java.io">Closeable</a>, <a href="DataInput.html" title="interface in java.io">DataInput</a>, <a href="ObjectInput.html" title="interface in java.io">ObjectInput</a>, <a href="ObjectStreamConstants.html" title="interface in java.io">ObjectStreamConstants</a>, <a href="../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="DataInput.html" title="java.io 包中的接口">DataInput</a>, <a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a>, <a href="ObjectStreamConstants.html" title="java.io 包中的接口">ObjectStreamConstants</a>, <a href="../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ObjectInputStream</span>
-<span class="extends-implements">extends <a href="InputStream.html" title="class in java.io">InputStream</a>
-implements <a href="ObjectInput.html" title="interface in java.io">ObjectInput</a>, <a href="ObjectStreamConstants.html" title="interface in java.io">ObjectStreamConstants</a></span></div>
+<span class="extends-implements">extends <a href="InputStream.html" title="java.io 包中的类">InputStream</a>
+implements <a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a>, <a href="ObjectStreamConstants.html" title="java.io 包中的接口">ObjectStreamConstants</a></span></div>
 <div class="block">An ObjectInputStream deserializes primitive data and objects previously
 written using an ObjectOutputStream.
 
@@ -174,16 +174,16 @@ practices for defensive use of serial filters.
 <p>The key to disabling deserialization attacks is to prevent instances of
 arbitrary classes from being deserialized, thereby preventing the direct or
 indirect execution of their methods.
-<a href="ObjectInputFilter.html" title="interface in java.io"><code>ObjectInputFilter</code></a> describes how to use filters and
-<a href="ObjectInputFilter.Config.html" title="class in java.io"><code>ObjectInputFilter.Config</code></a> describes how to configure the filter and filter factory.
+<a href="ObjectInputFilter.html" title="java.io 包中的接口"><code>ObjectInputFilter</code></a> describes how to use filters and
+<a href="ObjectInputFilter.Config.html" title="java.io 包中的类"><code>ObjectInputFilter.Config</code></a> describes how to configure the filter and filter factory.
 Each stream has an optional deserialization filter
 to check the classes and resource limits during deserialization.
-The JVM-wide filter factory ensures that a filter can be set on every <a href="ObjectInputStream.html" title="class in java.io"><code>ObjectInputStream</code></a>
+The JVM-wide filter factory ensures that a filter can be set on every <a href="ObjectInputStream.html" title="java.io 包中的类"><code>ObjectInputStream</code></a>
 and every object read from the stream can be checked.
 The <a href="#%3Cinit%3E()">ObjectInputStream constructors</a> invoke the filter factory
 to select the initial filter which may be updated or replaced by <a href="#setObjectInputFilter(java.io.ObjectInputFilter)"><code>setObjectInputFilter(ObjectInputFilter)</code></a>.
 <p>
-If an ObjectInputStream has a filter, the <a href="ObjectInputFilter.html" title="interface in java.io"><code>ObjectInputFilter</code></a> can check that
+If an ObjectInputStream has a filter, the <a href="ObjectInputFilter.html" title="java.io 包中的接口"><code>ObjectInputFilter</code></a> can check that
 the classes, array lengths, number of references in the stream, depth, and
 number of bytes consumed from the input stream are allowed and
 if not, can terminate deserialization.
@@ -226,7 +226,7 @@ with the serializable class closest to java.lang.object and finishing with
 the object's most specific class.
 
 <p>For example to read from a stream as written by the example in
-<a href="ObjectOutputStream.html" title="class in java.io"><code>ObjectOutputStream</code></a>:
+<a href="ObjectOutputStream.html" title="java.io 包中的类"><code>ObjectOutputStream</code></a>:
 <br>
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-java.io.ObjectInputStream1"><code class="language-java">    try (FileInputStream fis = new FileInputStream("t.tmp");
@@ -355,20 +355,20 @@ as readObject and writeObject, are ignored for serializable records. See
 <cite>Java Object Serialization Specification,</cite> Section 1.13,
 "Serialization of Records"</a> for additional information.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.1</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../specs/serialization/index.html"><span id="JavaObjectSerializationSpecification" class="search-tag-result">Java Object Serialization Specification</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="DataInput.html" title="interface in java.io"><code>DataInput</code></a></li>
-<li><a href="ObjectOutputStream.html" title="class in java.io"><code>ObjectOutputStream</code></a></li>
-<li><a href="Serializable.html" title="interface in java.io"><code>Serializable</code></a></li>
+<li><a href="DataInput.html" title="java.io 包中的接口"><code>DataInput</code></a></li>
+<li><a href="ObjectOutputStream.html" title="java.io 包中的类"><code>ObjectOutputStream</code></a></li>
+<li><a href="Serializable.html" title="java.io 包中的接口"><code>Serializable</code></a></li>
 <li><a href="../../../../specs/serialization/input.html">
      <cite>Java Object Serialization Specification,</cite> Section 3, "Object Input Classes"</a></li>
 </ul>
@@ -381,14 +381,14 @@ as readObject and writeObject, are ignored for serializable records. See
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Class</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">类</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="ObjectInputStream.GetField.html" class="type-name-link" title="class in java.io">ObjectInputStream.GetField</a></code></div>
+<div class="col-second even-row-color"><code><a href="ObjectInputStream.GetField.html" title="java.io 包中的类">ObjectInputStream.GetField</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Provide access to the persistent fields read from the input stream.</div>
 </div>
@@ -398,21 +398,21 @@ as readObject and writeObject, are ignored for serializable records. See
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
+<h2>字段概要</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-java.io.ObjectStreamConstants">Fields declared in interface&nbsp;<a href="ObjectStreamConstants.html#field-summary" title="interface in java.io">ObjectStreamConstants</a></h3>
+<h3 id="fields-inherited-from-class-java.io.ObjectStreamConstants">在接口 <a href="ObjectStreamConstants.html#field-summary" title="java.io 包中的接口">ObjectStreamConstants</a> 中声明的字段</h3>
 <code><a href="ObjectStreamConstants.html#baseWireHandle">baseWireHandle</a>, <a href="ObjectStreamConstants.html#PROTOCOL_VERSION_1">PROTOCOL_VERSION_1</a>, <a href="ObjectStreamConstants.html#PROTOCOL_VERSION_2">PROTOCOL_VERSION_2</a>, <a href="ObjectStreamConstants.html#SC_BLOCK_DATA">SC_BLOCK_DATA</a>, <a href="ObjectStreamConstants.html#SC_ENUM">SC_ENUM</a>, <a href="ObjectStreamConstants.html#SC_EXTERNALIZABLE">SC_EXTERNALIZABLE</a>, <a href="ObjectStreamConstants.html#SC_SERIALIZABLE">SC_SERIALIZABLE</a>, <a href="ObjectStreamConstants.html#SC_WRITE_METHOD">SC_WRITE_METHOD</a>, <a href="ObjectStreamConstants.html#SERIAL_FILTER_PERMISSION">SERIAL_FILTER_PERMISSION</a>, <a href="ObjectStreamConstants.html#STREAM_MAGIC">STREAM_MAGIC</a>, <a href="ObjectStreamConstants.html#STREAM_VERSION">STREAM_VERSION</a>, <a href="ObjectStreamConstants.html#SUBCLASS_IMPLEMENTATION_PERMISSION">SUBCLASS_IMPLEMENTATION_PERMISSION</a>, <a href="ObjectStreamConstants.html#SUBSTITUTION_PERMISSION">SUBSTITUTION_PERMISSION</a>, <a href="ObjectStreamConstants.html#TC_ARRAY">TC_ARRAY</a>, <a href="ObjectStreamConstants.html#TC_BASE">TC_BASE</a>, <a href="ObjectStreamConstants.html#TC_BLOCKDATA">TC_BLOCKDATA</a>, <a href="ObjectStreamConstants.html#TC_BLOCKDATALONG">TC_BLOCKDATALONG</a>, <a href="ObjectStreamConstants.html#TC_CLASS">TC_CLASS</a>, <a href="ObjectStreamConstants.html#TC_CLASSDESC">TC_CLASSDESC</a>, <a href="ObjectStreamConstants.html#TC_ENDBLOCKDATA">TC_ENDBLOCKDATA</a>, <a href="ObjectStreamConstants.html#TC_ENUM">TC_ENUM</a>, <a href="ObjectStreamConstants.html#TC_EXCEPTION">TC_EXCEPTION</a>, <a href="ObjectStreamConstants.html#TC_LONGSTRING">TC_LONGSTRING</a>, <a href="ObjectStreamConstants.html#TC_MAX">TC_MAX</a>, <a href="ObjectStreamConstants.html#TC_NULL">TC_NULL</a>, <a href="ObjectStreamConstants.html#TC_OBJECT">TC_OBJECT</a>, <a href="ObjectStreamConstants.html#TC_PROXYCLASSDESC">TC_PROXYCLASSDESC</a>, <a href="ObjectStreamConstants.html#TC_REFERENCE">TC_REFERENCE</a>, <a href="ObjectStreamConstants.html#TC_RESET">TC_RESET</a>, <a href="ObjectStreamConstants.html#TC_STRING">TC_STRING</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数概要</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符</div>
+<div class="table-header col-second">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>protected </code></div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ObjectInputStream</a>()</code></div>
 <div class="col-last even-row-color">
@@ -421,7 +421,7 @@ ObjectInputStream to not have to allocate private data just used by this
 implementation of ObjectInputStream.</div>
 </div>
 <div class="col-first odd-row-color"><code>&nbsp;</code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.io.InputStream)" class="member-name-link">ObjectInputStream</a><wbr>(<a href="InputStream.html" title="class in java.io">InputStream</a>&nbsp;in)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.io.InputStream)" class="member-name-link">ObjectInputStream</a><wbr>(<a href="InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;in)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates an ObjectInputStream that reads from the specified InputStream.</div>
 </div>
@@ -431,14 +431,14 @@ implementation of ObjectInputStream.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#available()" class="member-name-link">available</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -461,7 +461,7 @@ this stream.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables the stream to do replacement of objects read from the stream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObjectInputFilter()" class="member-name-link">getObjectInputFilter</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the deserialization filter for this stream.</div>
@@ -493,7 +493,7 @@ this stream.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a 16-bit char.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ObjectStreamClass.html" title="class in java.io">ObjectStreamClass</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="ObjectStreamClass.html" title="java.io 包中的类">ObjectStreamClass</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readClassDescriptor()" class="member-name-link">readClassDescriptor</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Read a class descriptor from the serialization stream.</div>
@@ -503,7 +503,7 @@ this stream.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a 64-bit double.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ObjectInputStream.GetField.html" title="class in java.io">ObjectInputStream.GetField</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ObjectInputStream.GetField.html" title="java.io 包中的类">ObjectInputStream.GetField</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readFields()" class="member-name-link">readFields</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads the persistent fields from the stream and makes them available by
@@ -531,7 +531,7 @@ name.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a 32-bit int.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#readLine()" class="member-name-link">readLine</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
@@ -543,12 +543,12 @@ name.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a 64-bit long.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readObject()" class="member-name-link">readObject</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Read an object from the ObjectInputStream.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readObjectOverride()" class="member-name-link">readObjectOverride</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This method is called by trusted subclasses of ObjectInputStream that
@@ -565,7 +565,7 @@ constructed ObjectInputStream using the protected no-arg constructor.</div>
 <div class="block">The readStreamHeader method is provided to allow subclasses to read and
 verify their own stream headers.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readUnshared()" class="member-name-link">readUnshared</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads an "unshared" object from the ObjectInputStream.</div>
@@ -580,7 +580,7 @@ verify their own stream headers.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads an unsigned 16-bit short.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readUTF()" class="member-name-link">readUTF</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a String in
@@ -588,25 +588,25 @@ verify their own stream headers.</div>
 format.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerValidation(java.io.ObjectInputValidation,int)" class="member-name-link">registerValidation</a><wbr>(<a href="ObjectInputValidation.html" title="interface in java.io">ObjectInputValidation</a>&nbsp;obj,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerValidation(java.io.ObjectInputValidation,int)" class="member-name-link">registerValidation</a><wbr>(<a href="ObjectInputValidation.html" title="java.io 包中的接口">ObjectInputValidation</a>&nbsp;obj,
  int&nbsp;prio)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register an object to be validated before the graph is returned.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveClass(java.io.ObjectStreamClass)" class="member-name-link">resolveClass</a><wbr>(<a href="ObjectStreamClass.html" title="class in java.io">ObjectStreamClass</a>&nbsp;desc)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveClass(java.io.ObjectStreamClass)" class="member-name-link">resolveClass</a><wbr>(<a href="ObjectStreamClass.html" title="java.io 包中的类">ObjectStreamClass</a>&nbsp;desc)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load the local class equivalent of the specified stream class
 description.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveObject(java.lang.Object)" class="member-name-link">resolveObject</a><wbr>(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveObject(java.lang.Object)" class="member-name-link">resolveObject</a><wbr>(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">This method will allow trusted subclasses of ObjectInputStream to
 substitute one object for another during deserialization.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Class.html" title="class in java.lang">Class</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveProxyClass(java.lang.String%5B%5D)" class="member-name-link">resolveProxyClass</a><wbr>(<a href="../lang/String.html" title="class in java.lang">String</a>[]&nbsp;interfaces)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../lang/Class.html" title="java.lang 包中的类">Class</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveProxyClass(java.lang.String%5B%5D)" class="member-name-link">resolveProxyClass</a><wbr>(<a href="../lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;interfaces)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a proxy class that implements the interfaces named in a proxy
 class descriptor; subclasses may implement this method to read custom
@@ -615,7 +615,7 @@ classes, allowing them to use an alternate loading mechanism for the
 interfaces and the proxy class.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setObjectInputFilter(java.io.ObjectInputFilter)" class="member-name-link">setObjectInputFilter</a><wbr>(<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&nbsp;filter)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setObjectInputFilter(java.io.ObjectInputFilter)" class="member-name-link">setObjectInputFilter</a><wbr>(<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&nbsp;filter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the deserialization filter for the stream.</div>
 </div>
@@ -628,13 +628,13 @@ interfaces and the proxy class.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.io.InputStream">Methods declared in class&nbsp;<a href="InputStream.html#method-summary" title="class in java.io">InputStream</a></h3>
+<h3 id="methods-inherited-from-class-java.io.InputStream">在类 <a href="InputStream.html#method-summary" title="java.io 包中的类">InputStream</a> 中声明的方法</h3>
 <code><a href="InputStream.html#mark(int)" title="mark(int)">mark</a>, <a href="InputStream.html#markSupported()" title="markSupported()">markSupported</a>, <a href="InputStream.html#nullInputStream()" title="nullInputStream()">nullInputStream</a>, <a href="InputStream.html#read(byte%5B%5D)" title="read(byte[])">read</a>, <a href="InputStream.html#readAllBytes()" title="readAllBytes()">readAllBytes</a>, <a href="InputStream.html#readNBytes(byte%5B%5D,int,int)" title="readNBytes(byte[], int, int)">readNBytes</a>, <a href="InputStream.html#readNBytes(int)" title="readNBytes(int)">readNBytes</a>, <a href="InputStream.html#reset()" title="reset()">reset</a>, <a href="InputStream.html#skip(long)" title="skip(long)">skip</a>, <a href="InputStream.html#skipNBytes(long)" title="skipNBytes(long)">skipNBytes</a>, <a href="InputStream.html#transferTo(java.io.OutputStream)" title="transferTo(OutputStream)">transferTo</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.io.ObjectInput">Methods declared in interface&nbsp;<a href="ObjectInput.html#method-summary" title="interface in java.io">ObjectInput</a></h3>
+<h3 id="methods-inherited-from-class-java.io.ObjectInput">在接口 <a href="ObjectInput.html#method-summary" title="java.io 包中的接口">ObjectInput</a> 中声明的方法</h3>
 <code><a href="ObjectInput.html#read(byte%5B%5D)" title="read(byte[])">read</a>, <a href="ObjectInput.html#skip(long)" title="skip(long)">skip</a></code></div>
 </section>
 </li>
@@ -645,14 +645,14 @@ interfaces and the proxy class.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.io.InputStream)">
 <h3>ObjectInputStream</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectInputStream</span><wbr><span class="parameters">(<a href="InputStream.html" title="class in java.io">InputStream</a>&nbsp;in)</span>
-                  throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ObjectInputStream</span><wbr><span class="parameters">(<a href="InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;in)</span>
+                  throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Creates an ObjectInputStream that reads from the specified InputStream.
 A serialization stream header is read from the stream and verified.
 This constructor will block until the corresponding ObjectOutputStream
@@ -663,19 +663,19 @@ by invoking the serial filter factory returned from <a href="ObjectInputFilter.C
 with <code>null</code> for the current filter
 and the <a href="ObjectInputFilter.Config.html#getSerialFilter()">static JVM-wide filter</a> for the requested filter.
 If the serial filter or serial filter factory properties are invalid
-an <a href="../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a> is thrown.
+an <a href="../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a> is thrown.
 When the filter factory <code>apply</code> method is invoked it may throw a runtime exception
 preventing the <code>ObjectInputStream</code> from being constructed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>in</code> - input stream to read from</dd>
-<dt>Throws:</dt>
-<dd><code><a href="StreamCorruptedException.html" title="class in java.io">StreamCorruptedException</a></code> - if the stream header is incorrect</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs while reading stream header</dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the initialization of <a href="ObjectInputFilter.Config.html" title="class in java.io"><code>ObjectInputFilter.Config</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="StreamCorruptedException.html" title="java.io 包中的类">StreamCorruptedException</a></code> - if the stream header is incorrect</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs while reading stream header</dd>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the initialization of <a href="ObjectInputFilter.Config.html" title="java.io 包中的类"><code>ObjectInputFilter.Config</code></a>
          fails due to invalid serial filter or serial filter factory properties.</dd>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>in</code> is <code>null</code></dd>
-<dt>See Also:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>in</code> is <code>null</code></dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#%3Cinit%3E()"><code>ObjectInputStream()</code></a></li>
@@ -692,7 +692,7 @@ preventing the <code>ObjectInputStream</code> from being constructed.</div>
 <h3>ObjectInputStream</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">ObjectInputStream</span>()
-                     throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                     throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Provide a way for subclasses that are completely reimplementing
 ObjectInputStream to not have to allocate private data just used by this
 implementation of ObjectInputStream.
@@ -702,13 +702,13 @@ by invoking the serial filter factory returned from <a href="ObjectInputFilter.C
 with <code>null</code> for the current filter
 and the <a href="ObjectInputFilter.Config.html#getSerialFilter()">static JVM-wide filter</a> for the requested filter.
 If the serial filter or serial filter factory properties are invalid
-an <a href="../lang/IllegalStateException.html" title="class in java.lang"><code>IllegalStateException</code></a> is thrown.
+an <a href="../lang/IllegalStateException.html" title="java.lang 包中的类"><code>IllegalStateException</code></a> is thrown.
 When the filter factory <code>apply</code> method is invoked it may throw a runtime exception
 preventing the <code>ObjectInputStream</code> from being constructed.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs while creating this stream</dd>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the initialization of <a href="ObjectInputFilter.Config.html" title="class in java.io"><code>ObjectInputFilter.Config</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs while creating this stream</dd>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the initialization of <a href="ObjectInputFilter.Config.html" title="java.io 包中的类"><code>ObjectInputFilter.Config</code></a>
      fails due to invalid serial filter or serial filter factory properties.</dd>
 </dl>
 </div>
@@ -720,15 +720,15 @@ preventing the <code>ObjectInputStream</code> from being constructed.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="readObject()">
 <h3>readObject</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">readObject</span>()
-                        throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">readObject</span>()
+                        throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Read an object from the ObjectInputStream.  The class of the object, the
 signature of the class, and the values of the non-transient and
 non-static fields of the class and all of its supertypes are read.
@@ -752,20 +752,20 @@ classes that should not be deserialized.  All exceptions are fatal to
 the InputStream and leave it in an indeterminate state; it is up to the
 caller to ignore or recover the stream state.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ObjectInput.html#readObject()">readObject</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="interface in java.io">ObjectInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ObjectInput.html#readObject()">readObject</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the object read from the stream</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - Class of a serialized object cannot be
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - Class of a serialized object cannot be
          found.</dd>
-<dd><code><a href="InvalidClassException.html" title="class in java.io">InvalidClassException</a></code> - Something is wrong with a class used by
+<dd><code><a href="InvalidClassException.html" title="java.io 包中的类">InvalidClassException</a></code> - Something is wrong with a class used by
          deserialization.</dd>
-<dd><code><a href="StreamCorruptedException.html" title="class in java.io">StreamCorruptedException</a></code> - Control information in the
+<dd><code><a href="StreamCorruptedException.html" title="java.io 包中的类">StreamCorruptedException</a></code> - Control information in the
          stream is inconsistent.</dd>
-<dd><code><a href="OptionalDataException.html" title="class in java.io">OptionalDataException</a></code> - Primitive data was found in the
+<dd><code><a href="OptionalDataException.html" title="java.io 包中的类">OptionalDataException</a></code> - Primitive data was found in the
          stream instead of objects.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - Any of the usual Input/Output related exceptions.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - Any of the usual Input/Output related exceptions.</dd>
 </dl>
 </div>
 </section>
@@ -774,26 +774,26 @@ caller to ignore or recover the stream state.</div>
 <section class="detail" id="readObjectOverride()">
 <h3>readObjectOverride</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">readObjectOverride</span>()
-                             throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">readObjectOverride</span>()
+                             throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">This method is called by trusted subclasses of ObjectInputStream that
 constructed ObjectInputStream using the protected no-arg constructor.
 The subclass is expected to provide an override method with the modifier
 "final".</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the Object read from the stream.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - Class definition of a serialized object
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - Class definition of a serialized object
          cannot be found.</dd>
-<dd><code><a href="OptionalDataException.html" title="class in java.io">OptionalDataException</a></code> - Primitive data was found in the stream
+<dd><code><a href="OptionalDataException.html" title="java.io 包中的类">OptionalDataException</a></code> - Primitive data was found in the stream
          instead of objects.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if I/O errors occurred while reading from the
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if I/O errors occurred while reading from the
          underlying stream</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#%3Cinit%3E()"><code>ObjectInputStream()</code></a></li>
@@ -808,9 +808,9 @@ The subclass is expected to provide an override method with the modifier
 <section class="detail" id="readUnshared()">
 <h3>readUnshared</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">readUnshared</span>()
-                    throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">readUnshared</span>()
+                    throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Reads an "unshared" object from the ObjectInputStream.  This method is
 identical to readObject, except that it prevents subsequent calls to
 readObject and readUnshared from returning additional references to the
@@ -842,18 +842,18 @@ even if the underlying data stream has been manipulated.
 each object (regular or class) read to reconstruct the root object.
 See <a href="#setObjectInputFilter(java.io.ObjectInputFilter)"><code>setObjectInputFilter</code></a> for details.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>reference to deserialized object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if class of an object to deserialize
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if class of an object to deserialize
          cannot be found</dd>
-<dd><code><a href="StreamCorruptedException.html" title="class in java.io">StreamCorruptedException</a></code> - if control information in the stream
+<dd><code><a href="StreamCorruptedException.html" title="java.io 包中的类">StreamCorruptedException</a></code> - if control information in the stream
          is inconsistent</dd>
-<dd><code><a href="ObjectStreamException.html" title="class in java.io">ObjectStreamException</a></code> - if object to deserialize has already
+<dd><code><a href="ObjectStreamException.html" title="java.io 包中的类">ObjectStreamException</a></code> - if object to deserialize has already
          appeared in stream</dd>
-<dd><code><a href="OptionalDataException.html" title="class in java.io">OptionalDataException</a></code> - if primitive data is next in stream</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs during deserialization</dd>
-<dt>Since:</dt>
+<dd><code><a href="OptionalDataException.html" title="java.io 包中的类">OptionalDataException</a></code> - if primitive data is next in stream</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs during deserialization</dd>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -864,18 +864,18 @@ See <a href="#setObjectInputFilter(java.io.ObjectInputFilter)"><code>setObjectIn
 <h3>defaultReadObject</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">defaultReadObject</span>()
-                       throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+                       throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Read the non-static and non-transient fields of the current class from
 this stream.  This may only be called from the readObject method of the
 class being deserialized. It will throw the NotActiveException if it is
 called otherwise.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if the class of a serialized object
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if the class of a serialized object
          could not be found.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs.</dd>
-<dd><code><a href="NotActiveException.html" title="class in java.io">NotActiveException</a></code> - if the stream is not currently reading
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs.</dd>
+<dd><code><a href="NotActiveException.html" title="java.io 包中的类">NotActiveException</a></code> - if the stream is not currently reading
          objects.</dd>
 </dl>
 </div>
@@ -885,22 +885,22 @@ called otherwise.</div>
 <section class="detail" id="readFields()">
 <h3>readFields</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ObjectInputStream.GetField.html" title="class in java.io">ObjectInputStream.GetField</a></span>&nbsp;<span class="element-name">readFields</span>()
-                                      throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ObjectInputStream.GetField.html" title="java.io 包中的类">ObjectInputStream.GetField</a></span>&nbsp;<span class="element-name">readFields</span>()
+                                      throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Reads the persistent fields from the stream and makes them available by
 name.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>GetField</code> object representing the persistent
          fields of the object being deserialized</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if the class of a serialized object
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if the class of a serialized object
          could not be found.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs.</dd>
-<dd><code><a href="NotActiveException.html" title="class in java.io">NotActiveException</a></code> - if the stream is not currently reading
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs.</dd>
+<dd><code><a href="NotActiveException.html" title="java.io 包中的类">NotActiveException</a></code> - if the stream is not currently reading
          objects.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.2</dd>
 </dl>
 </div>
@@ -910,26 +910,26 @@ name.</div>
 <section class="detail" id="registerValidation(java.io.ObjectInputValidation,int)">
 <h3>registerValidation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerValidation</span><wbr><span class="parameters">(<a href="ObjectInputValidation.html" title="interface in java.io">ObjectInputValidation</a>&nbsp;obj,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">registerValidation</span><wbr><span class="parameters">(<a href="ObjectInputValidation.html" title="java.io 包中的接口">ObjectInputValidation</a>&nbsp;obj,
  int&nbsp;prio)</span>
-                        throws <span class="exceptions"><a href="NotActiveException.html" title="class in java.io">NotActiveException</a>,
-<a href="InvalidObjectException.html" title="class in java.io">InvalidObjectException</a></span></div>
+                        throws <span class="exceptions"><a href="NotActiveException.html" title="java.io 包中的类">NotActiveException</a>,
+<a href="InvalidObjectException.html" title="java.io 包中的类">InvalidObjectException</a></span></div>
 <div class="block">Register an object to be validated before the graph is returned.  While
 similar to resolveObject these validations are called after the entire
 graph has been reconstituted.  Typically, a readObject method will
 register the object with the stream so that when all of the objects are
 restored a final set of validations can be performed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to receive the validation callback.</dd>
 <dd><code>prio</code> - controls the order of callbacks; zero is a good default.
          Use higher numbers to be called back earlier, lower numbers for
          later callbacks. Within a priority, callbacks are processed in
          no particular order.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="NotActiveException.html" title="class in java.io">NotActiveException</a></code> - The stream is not currently reading objects
+<dt>抛出:</dt>
+<dd><code><a href="NotActiveException.html" title="java.io 包中的类">NotActiveException</a></code> - The stream is not currently reading objects
          so it is invalid to register a callback.</dd>
-<dd><code><a href="InvalidObjectException.html" title="class in java.io">InvalidObjectException</a></code> - The validation object is null.</dd>
+<dd><code><a href="InvalidObjectException.html" title="java.io 包中的类">InvalidObjectException</a></code> - The validation object is null.</dd>
 </dl>
 </div>
 </section>
@@ -938,9 +938,9 @@ restored a final set of validations can be performed.</div>
 <section class="detail" id="resolveClass(java.io.ObjectStreamClass)">
 <h3>resolveClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">resolveClass</span><wbr><span class="parameters">(<a href="ObjectStreamClass.html" title="class in java.io">ObjectStreamClass</a>&nbsp;desc)</span>
-                         throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">resolveClass</span><wbr><span class="parameters">(<a href="ObjectStreamClass.html" title="java.io 包中的类">ObjectStreamClass</a>&nbsp;desc)</span>
+                         throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Load the local class equivalent of the specified stream class
 description.  Subclasses may implement this method to allow classes to
 be fetched from an alternate source.
@@ -952,7 +952,7 @@ subclasses to use an alternate loading mechanism but must return a
 <code>Class</code> object. Once returned, if the class is not an array
 class, its serialVersionUID is compared to the serialVersionUID of the
 serialized class, and if there is a mismatch, the deserialization fails
-and an <a href="InvalidClassException.html" title="class in java.io"><code>InvalidClassException</code></a> is thrown.
+and an <a href="InvalidClassException.html" title="java.io 包中的类"><code>InvalidClassException</code></a> is thrown.
 
 <p>The default implementation of this method in
 <code>ObjectInputStream</code> returns the result of calling
@@ -975,13 +975,13 @@ representing that primitive type or void will be returned
 Otherwise, the <code>ClassNotFoundException</code> will be thrown to
 the caller of this method.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>desc</code> - an instance of class <code>ObjectStreamClass</code></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Class</code> object corresponding to <code>desc</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - any of the usual Input/Output exceptions.</dd>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if class of a serialized object cannot
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - any of the usual Input/Output exceptions.</dd>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if class of a serialized object cannot
          be found.</dd>
 </dl>
 </div>
@@ -991,9 +991,9 @@ the caller of this method.</div>
 <section class="detail" id="resolveProxyClass(java.lang.String[])">
 <h3>resolveProxyClass</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">resolveProxyClass</span><wbr><span class="parameters">(<a href="../lang/String.html" title="class in java.lang">String</a>[]&nbsp;interfaces)</span>
-                              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;</span>&nbsp;<span class="element-name">resolveProxyClass</span><wbr><span class="parameters">(<a href="../lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;interfaces)</span>
+                              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Returns a proxy class that implements the interfaces named in a proxy
 class descriptor; subclasses may implement this method to read custom
 data from the stream along with the descriptors for dynamic proxy
@@ -1037,19 +1037,19 @@ If <code>Proxy.getProxyClass</code> throws an
 will throw a <code>ClassNotFoundException</code> containing the
 <code>IllegalArgumentException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>interfaces</code> - the list of interface names that were
                deserialized in the proxy class descriptor</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a proxy class for the specified interfaces</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - any exception thrown by the underlying
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - any exception thrown by the underlying
                <code>InputStream</code></dd>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - if the proxy class or any of the
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - if the proxy class or any of the
                named interfaces could not be found</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ObjectOutputStream.html#annotateProxyClass(java.lang.Class)"><code>ObjectOutputStream.annotateProxyClass(Class)</code></a></li>
@@ -1063,8 +1063,8 @@ will throw a <code>ClassNotFoundException</code> containing the
 <section class="detail" id="resolveObject(java.lang.Object)">
 <h3>resolveObject</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">resolveObject</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span>
-                        throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">resolveObject</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span>
+                        throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">This method will allow trusted subclasses of ObjectInputStream to
 substitute one object for another during deserialization. Replacing
 objects is disabled until enableResolveObject is called. The
@@ -1087,12 +1087,12 @@ and the object is not be stored.
 encountered.  All subsequent references to the object will be redirected
 to the new object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>obj</code> - object to be substituted</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the substituted object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - Any of the usual Input/Output exceptions.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - Any of the usual Input/Output exceptions.</dd>
 </dl>
 </div>
 </section>
@@ -1106,10 +1106,10 @@ to the new object.</div>
 enabled, the <a href="#resolveObject(java.lang.Object)"><code>resolveObject(Object)</code></a> method is called for every object being
 deserialized.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>enable</code> - true for enabling use of <code>resolveObject</code> for
          every object being deserialized</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the previous setting before this method was invoked</dd>
 </dl>
 </div>
@@ -1120,16 +1120,16 @@ deserialized.</div>
 <h3>readStreamHeader</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readStreamHeader</span>()
-                         throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="StreamCorruptedException.html" title="class in java.io">StreamCorruptedException</a></span></div>
+                         throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="StreamCorruptedException.html" title="java.io 包中的类">StreamCorruptedException</a></span></div>
 <div class="block">The readStreamHeader method is provided to allow subclasses to read and
 verify their own stream headers. It reads and verifies the magic number
 and version number.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if there are I/O errors while reading from the
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if there are I/O errors while reading from the
          underlying <code>InputStream</code></dd>
-<dd><code><a href="StreamCorruptedException.html" title="class in java.io">StreamCorruptedException</a></code> - if control information in the stream
+<dd><code><a href="StreamCorruptedException.html" title="java.io 包中的类">StreamCorruptedException</a></code> - if control information in the stream
          is inconsistent</dd>
 </dl>
 </div>
@@ -1139,9 +1139,9 @@ and version number.</div>
 <section class="detail" id="readClassDescriptor()">
 <h3>readClassDescriptor</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ObjectStreamClass.html" title="class in java.io">ObjectStreamClass</a></span>&nbsp;<span class="element-name">readClassDescriptor</span>()
-                                         throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a>,
-<a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="ObjectStreamClass.html" title="java.io 包中的类">ObjectStreamClass</a></span>&nbsp;<span class="element-name">readClassDescriptor</span>()
+                                         throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></span></div>
 <div class="block">Read a class descriptor from the serialization stream.  This method is
 called when the ObjectInputStream expects a class descriptor as the next
 item in the serialization stream.  Subclasses of ObjectInputStream may
@@ -1151,15 +1151,15 @@ overridden the <code>writeClassDescriptor</code> method).  By default,
 this method reads class descriptors according to the format defined in
 the Object Serialization specification.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the class descriptor read</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If an I/O error has occurred.</dd>
-<dd><code><a href="../lang/ClassNotFoundException.html" title="class in java.lang">ClassNotFoundException</a></code> - If the Class of a serialized object used
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error has occurred.</dd>
+<dd><code><a href="../lang/ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></code> - If the Class of a serialized object used
          in the class descriptor representation cannot be found</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.3</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="ObjectOutputStream.html#writeClassDescriptor(java.io.ObjectStreamClass)"><code>ObjectOutputStream.writeClassDescriptor(java.io.ObjectStreamClass)</code></a></li>
@@ -1174,17 +1174,17 @@ the Object Serialization specification.</div>
 <h3>read</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">read</span>()
-         throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+         throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a byte of data. This method will block if no input is available.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ObjectInput.html#read()">read</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="interface in java.io">ObjectInput</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="InputStream.html#read()">read</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="class in java.io">InputStream</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ObjectInput.html#read()">read</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="InputStream.html#read()">read</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="java.io 包中的类">InputStream</a></code></dd>
+<dt>返回:</dt>
 <dd>the byte read, or -1 if the end of the stream is reached.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs.</dd>
 </dl>
 </div>
 </section>
@@ -1196,30 +1196,30 @@ the Object Serialization specification.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">read</span><wbr><span class="parameters">(byte[]&nbsp;buf,
  int&nbsp;off,
  int&nbsp;len)</span>
-         throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+         throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads into an array of bytes.  This method will block until some input
 is available. Consider using java.io.DataInputStream.readFully to read
 exactly 'length' bytes.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ObjectInput.html#read(byte%5B%5D,int,int)">read</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="interface in java.io">ObjectInput</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="InputStream.html#read(byte%5B%5D,int,int)">read</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="class in java.io">InputStream</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ObjectInput.html#read(byte%5B%5D,int,int)">read</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="InputStream.html#read(byte%5B%5D,int,int)">read</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="java.io 包中的类">InputStream</a></code></dd>
+<dt>参数:</dt>
 <dd><code>buf</code> - the buffer into which the data is read</dd>
 <dd><code>off</code> - the start offset in the destination array <code>buf</code></dd>
 <dd><code>len</code> - the maximum number of bytes read</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the total number of bytes read into the buffer, or
          <code>-1</code> if there is no more data because the end of
          the stream has been reached.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>buf</code> is <code>null</code>.</dd>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if <code>off</code> is negative,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>buf</code> is <code>null</code>.</dd>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if <code>off</code> is negative,
          <code>len</code> is negative, or <code>len</code> is greater than
          <code>buf.length - off</code>.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If an I/O error has occurred.</dd>
-<dt>See Also:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error has occurred.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="DataInputStream.html#readFully(byte%5B%5D,int,int)"><code>DataInputStream.readFully(byte[],int,int)</code></a></li>
@@ -1234,17 +1234,17 @@ exactly 'length' bytes.</div>
 <h3>available</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">available</span>()
-              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Returns the number of bytes that can be read without blocking.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="ObjectInput.html#available()">available</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="interface in java.io">ObjectInput</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="InputStream.html#available()">available</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="class in java.io">InputStream</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="ObjectInput.html#available()">available</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="InputStream.html#available()">available</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="java.io 包中的类">InputStream</a></code></dd>
+<dt>返回:</dt>
 <dd>the number of available bytes.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if there are I/O errors while reading from the
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if there are I/O errors while reading from the
          underlying <code>InputStream</code></dd>
 </dl>
 </div>
@@ -1255,20 +1255,20 @@ exactly 'length' bytes.</div>
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-           throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+           throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this input stream and releases any system resources associated
 with the stream.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="ObjectInput.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="interface in java.io">ObjectInput</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="InputStream.html#close()">close</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="class in java.io">InputStream</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs.</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="ObjectInput.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="ObjectInput.html" title="java.io 包中的接口">ObjectInput</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="InputStream.html#close()">close</a></code>&nbsp;in class&nbsp;<code><a href="InputStream.html" title="java.io 包中的类">InputStream</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs.</dd>
 </dl>
 </div>
 </section>
@@ -1278,16 +1278,16 @@ with the stream.</div>
 <h3>readBoolean</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">readBoolean</span>()
-                    throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                    throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads in a boolean.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readBoolean()">readBoolean</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readBoolean()">readBoolean</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the boolean read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1297,16 +1297,16 @@ with the stream.</div>
 <h3>readByte</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte</span>&nbsp;<span class="element-name">readByte</span>()
-              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads an 8-bit byte.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readByte()">readByte</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readByte()">readByte</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 8-bit byte read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1316,16 +1316,16 @@ with the stream.</div>
 <h3>readUnsignedByte</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readUnsignedByte</span>()
-                     throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                     throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads an unsigned 8-bit byte.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readUnsignedByte()">readUnsignedByte</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readUnsignedByte()">readUnsignedByte</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 8-bit byte read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1335,16 +1335,16 @@ with the stream.</div>
 <h3>readChar</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">char</span>&nbsp;<span class="element-name">readChar</span>()
-              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 16-bit char.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readChar()">readChar</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readChar()">readChar</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 16-bit char read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1354,16 +1354,16 @@ with the stream.</div>
 <h3>readShort</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">short</span>&nbsp;<span class="element-name">readShort</span>()
-                throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 16-bit short.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readShort()">readShort</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readShort()">readShort</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 16-bit short read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1373,16 +1373,16 @@ with the stream.</div>
 <h3>readUnsignedShort</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readUnsignedShort</span>()
-                      throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                      throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads an unsigned 16-bit short.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readUnsignedShort()">readUnsignedShort</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readUnsignedShort()">readUnsignedShort</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 16-bit short read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1392,16 +1392,16 @@ with the stream.</div>
 <h3>readInt</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">readInt</span>()
-            throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+            throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 32-bit int.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readInt()">readInt</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readInt()">readInt</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 32-bit integer read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1411,16 +1411,16 @@ with the stream.</div>
 <h3>readLong</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">readLong</span>()
-              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 64-bit long.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readLong()">readLong</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readLong()">readLong</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the read 64-bit long.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1430,16 +1430,16 @@ with the stream.</div>
 <h3>readFloat</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">readFloat</span>()
-                throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 32-bit float.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readFloat()">readFloat</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readFloat()">readFloat</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 32-bit float read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1449,16 +1449,16 @@ with the stream.</div>
 <h3>readDouble</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">readDouble</span>()
-                  throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+                  throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a 64-bit double.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readDouble()">readDouble</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readDouble()">readDouble</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the 64-bit double read.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1468,17 +1468,17 @@ with the stream.</div>
 <h3>readFully</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFully</span><wbr><span class="parameters">(byte[]&nbsp;buf)</span>
-               throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+               throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads bytes, blocking until all bytes are read.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readFully(byte%5B%5D)">readFully</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readFully(byte%5B%5D)">readFully</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>参数:</dt>
 <dd><code>buf</code> - the buffer into which the data is read</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>buf</code> is <code>null</code>.</dd>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>buf</code> is <code>null</code>.</dd>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1490,22 +1490,22 @@ with the stream.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFully</span><wbr><span class="parameters">(byte[]&nbsp;buf,
  int&nbsp;off,
  int&nbsp;len)</span>
-               throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+               throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads bytes, blocking until all bytes are read.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readFully(byte%5B%5D,int,int)">readFully</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readFully(byte%5B%5D,int,int)">readFully</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>参数:</dt>
 <dd><code>buf</code> - the buffer into which the data is read</dd>
 <dd><code>off</code> - the start offset into the data array <code>buf</code></dd>
 <dd><code>len</code> - the maximum number of bytes to read</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>buf</code> is <code>null</code>.</dd>
-<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If <code>off</code> is negative,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>buf</code> is <code>null</code>.</dd>
+<dd><code><a href="../lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If <code>off</code> is negative,
          <code>len</code> is negative, or <code>len</code> is greater than
          <code>buf.length - off</code>.</dd>
-<dd><code><a href="EOFException.html" title="class in java.io">EOFException</a></code> - If end of file is reached.</dd>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If other I/O error has occurred.</dd>
+<dd><code><a href="EOFException.html" title="java.io 包中的类">EOFException</a></code> - If end of file is reached.</dd>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If other I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1515,17 +1515,17 @@ with the stream.</div>
 <h3>skipBytes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">skipBytes</span><wbr><span class="parameters">(int&nbsp;len)</span>
-              throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+              throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Skips bytes.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#skipBytes(int)">skipBytes</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#skipBytes(int)">skipBytes</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>参数:</dt>
 <dd><code>len</code> - the number of bytes to be skipped</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the actual number of bytes skipped.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - If an I/O error has occurred.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error has occurred.</dd>
 </dl>
 </div>
 </section>
@@ -1534,21 +1534,21 @@ with the stream.</div>
 <section class="detail" id="readLine()">
 <h3>readLine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">readLine</span>()
-                throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="annotations"><a href="../lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">readLine</span>()
+                throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">This method does not properly convert bytes to characters.
          see DataInputStream for the details and alternatives.</div>
 </div>
 <div class="block">Reads in a line that has been terminated by a \n, \r, \r\n or EOF.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readLine()">readLine</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readLine()">readLine</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>a String copy of the line.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if there are I/O errors while reading from the
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if there are I/O errors while reading from the
          underlying <code>InputStream</code></dd>
 </dl>
 </div>
@@ -1558,20 +1558,20 @@ with the stream.</div>
 <section class="detail" id="readUTF()">
 <h3>readUTF</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">readUTF</span>()
-               throws <span class="exceptions"><a href="IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">readUTF</span>()
+               throws <span class="exceptions"><a href="IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Reads a String in
 <a href="DataInput.html#modified-utf-8">modified UTF-8</a>
 format.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="DataInput.html#readUTF()">readUTF</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="interface in java.io">DataInput</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="DataInput.html#readUTF()">readUTF</a></code>&nbsp;in interface&nbsp;<code><a href="DataInput.html" title="java.io 包中的接口">DataInput</a></code></dd>
+<dt>返回:</dt>
 <dd>the String.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IOException.html" title="class in java.io">IOException</a></code> - if there are I/O errors while reading from the
+<dt>抛出:</dt>
+<dd><code><a href="IOException.html" title="java.io 包中的类">IOException</a></code> - if there are I/O errors while reading from the
          underlying <code>InputStream</code></dd>
-<dd><code><a href="UTFDataFormatException.html" title="class in java.io">UTFDataFormatException</a></code> - if read bytes do not represent a valid
+<dd><code><a href="UTFDataFormatException.html" title="java.io 包中的类">UTFDataFormatException</a></code> - if read bytes do not represent a valid
          modified UTF-8 encoding of a string</dd>
 </dl>
 </div>
@@ -1581,16 +1581,16 @@ format.</div>
 <section class="detail" id="getObjectInputFilter()">
 <h3>getObjectInputFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a></span>&nbsp;<span class="element-name">getObjectInputFilter</span>()</div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a></span>&nbsp;<span class="element-name">getObjectInputFilter</span>()</div>
 <div class="block">Returns the deserialization filter for this stream.
 The filter is the result of invoking the
 <a href="ObjectInputFilter.Config.html#getSerialFilterFactory()"><code>JVM-wide filter factory</code></a>
 either by the <a href="#%3Cinit%3E()">constructor</a> or the most recent invocation of
 <a href="#setObjectInputFilter(java.io.ObjectInputFilter)"><code>setObjectInputFilter</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the deserialization filter for the stream; may be null</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -1600,7 +1600,7 @@ either by the <a href="#%3Cinit%3E()">constructor</a> or the most recent invocat
 <section class="detail" id="setObjectInputFilter(java.io.ObjectInputFilter)">
 <h3>setObjectInputFilter</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setObjectInputFilter</span><wbr><span class="parameters">(<a href="ObjectInputFilter.html" title="interface in java.io">ObjectInputFilter</a>&nbsp;filter)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setObjectInputFilter</span><wbr><span class="parameters">(<a href="ObjectInputFilter.html" title="java.io 包中的接口">ObjectInputFilter</a>&nbsp;filter)</span></div>
 <div class="block">Set the deserialization filter for the stream.
 
 The deserialization filter is set to the filter returned by invoking the
@@ -1630,12 +1630,12 @@ The filter is invoked only when reading objects from the stream and not for
 primitives.
 <p>
 If the filter returns <a href="ObjectInputFilter.Status.html#REJECTED"><code>Status.REJECTED</code></a>,
-<code>null</code> or throws a <a href="../lang/RuntimeException.html" title="class in java.lang"><code>RuntimeException</code></a>,
+<code>null</code> or throws a <a href="../lang/RuntimeException.html" title="java.lang 包中的类"><code>RuntimeException</code></a>,
 the active <code>readObject</code> or <code>readUnshared</code>
-throws <a href="InvalidClassException.html" title="class in java.io"><code>InvalidClassException</code></a>, otherwise deserialization
+throws <a href="InvalidClassException.html" title="java.io 包中的类"><code>InvalidClassException</code></a>, otherwise deserialization
 continues uninterrupted.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The filter, when not <code>null</code>, is invoked during <a href="#readObject()"><code>readObject</code></a>
 and <a href="#readUnshared()"><code>readUnshared</code></a> for each object (regular or class) in the stream.
 Strings are treated as primitives and do not invoke the filter.
@@ -1673,14 +1673,14 @@ The depth starts at <code>1</code> and increases for each nested object and
 decrements when each nested call returns.
 The count of references in the stream starts at <code>1</code> and
 is increased before reading an object.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>filter</code> - the filter, may be null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if an object has been read,
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if an object has been read,
       if the filter factory returns <code>null</code> when the
       <a href="#getObjectInputFilter()">current filter</a> is non-null, or
       if the filter has already been set.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>

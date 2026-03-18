@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">jdk.javadoc</a></li>
 <li><a href="package-summary.html" class="current-selection">jdk.javadoc.doclet</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#terminology-heading" tabindex="0">Terminology</a></li>
 <li><a href="#options-heading" tabindex="0">Options</a>
@@ -70,12 +70,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#migration" tabindex="0">Migration Guide</a></li>
 </ol>
 </li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package jdk.javadoc.doclet" class="title">Package jdk.javadoc.doclet</h1>
+<h1 title="包 jdk.javadoc.doclet" class="title">包 jdk.javadoc.doclet</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -87,9 +87,9 @@ to inspect the source-level structures of programs and
 libraries, including API comments embedded in the source.
 
 <p>
-The <a href="StandardDoclet.html" title="class in jdk.javadoc.doclet"><code>standard doclet</code></a> can be used to
+The <a href="StandardDoclet.html" title="jdk.javadoc.doclet 包中的类"><code>standard doclet</code></a> can be used to
 generate HTML-formatted documentation. It supports user-defined
-<a href="Taglet.html" title="interface in jdk.javadoc.doclet"><code>taglets</code></a>, which can be used to generate customized
+<a href="Taglet.html" title="jdk.javadoc.doclet 包中的接口"><code>taglets</code></a>, which can be used to generate customized
 output for user-defined tags in documentation comments.
 
 <p style="font-style: italic">
@@ -105,7 +105,7 @@ program information to files.  For example, the standard doclet is
 invoked by default, to generate HTML documentation.
 <p>
 
-The invocation is defined by the interface <a href="Doclet.html" title="interface in jdk.javadoc.doclet"><code>Doclet</code></a>
+The invocation is defined by the interface <a href="Doclet.html" title="jdk.javadoc.doclet 包中的接口"><code>Doclet</code></a>
 -- the <a href="Doclet.html#run(jdk.javadoc.doclet.DocletEnvironment)"><code>run</code></a> interface
 method, defines the entry point.
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -113,10 +113,10 @@ method, defines the entry point.
 </code></pre>
 </div>
 
-The <a href="DocletEnvironment.html" title="interface in jdk.javadoc.doclet"><code>DocletEnvironment</code></a> instance holds the
+The <a href="DocletEnvironment.html" title="jdk.javadoc.doclet 包中的接口"><code>DocletEnvironment</code></a> instance holds the
 environment that the doclet will be initialized with. From this environment
 all other information can be extracted, in the form of
-<a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element"><code>elements</code></a>. One can further use the APIs and utilities
+<a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口"><code>elements</code></a>. One can further use the APIs and utilities
 described by <a href="../../../../java.compiler/javax/lang/model/package-summary.html"><code>Language Model API</code></a> to query Elements and Types.
 <p>
 
@@ -390,47 +390,47 @@ In some cases, there is no direct equivalent.
     <tr><th scope="col">Old Type<th scope="col">New Type
   </thead>
   <tbody style="text-align:left">
-    <tr><th scope="row"><code>AnnotatedType</code>            <td><a href="../../../../java.compiler/javax/lang/model/type/TypeMirror.html" title="interface in javax.lang.model.type"><code>javax.lang.model.type.TypeMirror</code></a>
-    <tr><th scope="row"><code>AnnotationDesc</code>           <td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationMirror.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.AnnotationMirror</code></a>
-    <tr><th scope="row"><code>AnnotationDesc.ElementValuePair</code><td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationValue.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.AnnotationValue</code></a>
-    <tr><th scope="row"><code>AnnotationTypeDoc</code>        <td><a href="../../../../java.compiler/javax/lang/model/element/TypeElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.TypeElement</code></a>
-    <tr><th scope="row"><code>AnnotationTypeElementDoc</code> <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.ExecutableElement</code></a>
-    <tr><th scope="row"><code>AnnotationValue</code>          <td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationValue.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.AnnotationValue</code></a>
-    <tr><th scope="row"><code>ClassDoc</code>                 <td><a href="../../../../java.compiler/javax/lang/model/element/TypeElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.TypeElement</code></a>
-    <tr><th scope="row"><code>ConstructorDoc</code>           <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.ExecutableElement</code></a>
-    <tr><th scope="row"><code>Doc</code>                      <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.Element</code></a>
-    <tr><th scope="row"><code>DocErrorReporter</code>         <td><a href="Reporter.html" title="interface in jdk.javadoc.doclet"><code>jdk.javadoc.doclet.Reporter</code></a>
-    <tr><th scope="row"><code>Doclet</code>                   <td><a href="Doclet.html" title="interface in jdk.javadoc.doclet"><code>jdk.javadoc.doclet.Doclet</code></a>
-    <tr><th scope="row"><code>ExecutableMemberDoc</code>      <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.ExecutableElement</code></a>
-    <tr><th scope="row"><code>FieldDoc</code>                 <td><a href="../../../../java.compiler/javax/lang/model/element/VariableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.VariableElement</code></a>
-    <tr><th scope="row"><code>LanguageVersion</code>          <td><a href="../../../../java.compiler/javax/lang/model/SourceVersion.html" title="enum class in javax.lang.model"><code>javax.lang.model.SourceVersion</code></a>
-    <tr><th scope="row"><code>MemberDoc</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.Element</code></a>
-    <tr><th scope="row"><code>MethodDoc</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.ExecutableElement</code></a>
-    <tr><th scope="row"><code>PackageDoc</code>               <td><a href="../../../../java.compiler/javax/lang/model/element/PackageElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.PackageElement</code></a>
-    <tr><th scope="row"><code>Parameter</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/VariableElement.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.VariableElement</code></a>
-    <tr><th scope="row"><code>ParameterizedType</code>        <td><a href="../../../../java.compiler/javax/lang/model/type/DeclaredType.html" title="interface in javax.lang.model.type"><code>javax.lang.model.type.DeclaredType</code></a>
-    <tr><th scope="row"><code>ParamTag</code>                 <td><a href="../../../../jdk.compiler/com/sun/source/doctree/ParamTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.ParamTree</code></a>
-    <tr><th scope="row"><code>ProgramElementDoc</code>        <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="interface in javax.lang.model.element"><code>javax.lang.model.element.Element</code></a>
-    <tr><th scope="row"><code>RootDoc</code>                  <td><a href="DocletEnvironment.html" title="interface in jdk.javadoc.doclet"><code>jdk.javadoc.doclet.DocletEnvironment</code></a>
-    <tr><th scope="row"><code>SeeTag</code>                   <td><a href="../../../../jdk.compiler/com/sun/source/doctree/LinkTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.LinkTree</code></a><br>
-                                                             <a href="../../../../jdk.compiler/com/sun/source/doctree/SeeTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.SeeTree</code></a>
-    <tr><th scope="row"><code>SerialFieldTag</code>           <td><a href="../../../../jdk.compiler/com/sun/source/doctree/SerialFieldTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.SerialFieldTree</code></a>
-    <tr><th scope="row"><code>SourcePosition</code>           <td><a href="../../../../jdk.compiler/com/sun/source/util/SourcePositions.html" title="interface in com.sun.source.util"><code>com.sun.source.util.SourcePositions</code></a>
-    <tr><th scope="row"><code>Tag</code>                      <td><a href="../../../../jdk.compiler/com/sun/source/doctree/DocTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.DocTree</code></a>
-    <tr><th scope="row"><code>ThrowsTag</code>                <td><a href="../../../../jdk.compiler/com/sun/source/doctree/ThrowsTree.html" title="interface in com.sun.source.doctree"><code>com.sun.source.doctree.ThrowsTree</code></a>
-    <tr><th scope="row"><code>Type</code>                     <td><a href="../../../../java.compiler/javax/lang/model/type/TypeMirror.html" title="interface in javax.lang.model.type"><code>javax.lang.model.type.TypeMirror</code></a>
-    <tr><th scope="row"><code>TypeVariable</code>             <td><a href="../../../../java.compiler/javax/lang/model/type/TypeVariable.html" title="interface in javax.lang.model.type"><code>javax.lang.model.type.TypeVariable</code></a>
-    <tr><th scope="row"><code>WildcardType</code>             <td><a href="../../../../java.compiler/javax/lang/model/type/WildcardType.html" title="interface in javax.lang.model.type"><code>javax.lang.model.type.WildcardType</code></a>
+    <tr><th scope="row"><code>AnnotatedType</code>            <td><a href="../../../../java.compiler/javax/lang/model/type/TypeMirror.html" title="javax.lang.model.type 包中的接口"><code>javax.lang.model.type.TypeMirror</code></a>
+    <tr><th scope="row"><code>AnnotationDesc</code>           <td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationMirror.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.AnnotationMirror</code></a>
+    <tr><th scope="row"><code>AnnotationDesc.ElementValuePair</code><td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationValue.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.AnnotationValue</code></a>
+    <tr><th scope="row"><code>AnnotationTypeDoc</code>        <td><a href="../../../../java.compiler/javax/lang/model/element/TypeElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.TypeElement</code></a>
+    <tr><th scope="row"><code>AnnotationTypeElementDoc</code> <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.ExecutableElement</code></a>
+    <tr><th scope="row"><code>AnnotationValue</code>          <td><a href="../../../../java.compiler/javax/lang/model/element/AnnotationValue.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.AnnotationValue</code></a>
+    <tr><th scope="row"><code>ClassDoc</code>                 <td><a href="../../../../java.compiler/javax/lang/model/element/TypeElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.TypeElement</code></a>
+    <tr><th scope="row"><code>ConstructorDoc</code>           <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.ExecutableElement</code></a>
+    <tr><th scope="row"><code>Doc</code>                      <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.Element</code></a>
+    <tr><th scope="row"><code>DocErrorReporter</code>         <td><a href="Reporter.html" title="jdk.javadoc.doclet 包中的接口"><code>jdk.javadoc.doclet.Reporter</code></a>
+    <tr><th scope="row"><code>Doclet</code>                   <td><a href="Doclet.html" title="jdk.javadoc.doclet 包中的接口"><code>jdk.javadoc.doclet.Doclet</code></a>
+    <tr><th scope="row"><code>ExecutableMemberDoc</code>      <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.ExecutableElement</code></a>
+    <tr><th scope="row"><code>FieldDoc</code>                 <td><a href="../../../../java.compiler/javax/lang/model/element/VariableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.VariableElement</code></a>
+    <tr><th scope="row"><code>LanguageVersion</code>          <td><a href="../../../../java.compiler/javax/lang/model/SourceVersion.html" title="javax.lang.model 包中的枚举类"><code>javax.lang.model.SourceVersion</code></a>
+    <tr><th scope="row"><code>MemberDoc</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.Element</code></a>
+    <tr><th scope="row"><code>MethodDoc</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/ExecutableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.ExecutableElement</code></a>
+    <tr><th scope="row"><code>PackageDoc</code>               <td><a href="../../../../java.compiler/javax/lang/model/element/PackageElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.PackageElement</code></a>
+    <tr><th scope="row"><code>Parameter</code>                <td><a href="../../../../java.compiler/javax/lang/model/element/VariableElement.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.VariableElement</code></a>
+    <tr><th scope="row"><code>ParameterizedType</code>        <td><a href="../../../../java.compiler/javax/lang/model/type/DeclaredType.html" title="javax.lang.model.type 包中的接口"><code>javax.lang.model.type.DeclaredType</code></a>
+    <tr><th scope="row"><code>ParamTag</code>                 <td><a href="../../../../jdk.compiler/com/sun/source/doctree/ParamTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.ParamTree</code></a>
+    <tr><th scope="row"><code>ProgramElementDoc</code>        <td><a href="../../../../java.compiler/javax/lang/model/element/Element.html" title="javax.lang.model.element 包中的接口"><code>javax.lang.model.element.Element</code></a>
+    <tr><th scope="row"><code>RootDoc</code>                  <td><a href="DocletEnvironment.html" title="jdk.javadoc.doclet 包中的接口"><code>jdk.javadoc.doclet.DocletEnvironment</code></a>
+    <tr><th scope="row"><code>SeeTag</code>                   <td><a href="../../../../jdk.compiler/com/sun/source/doctree/LinkTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.LinkTree</code></a><br>
+                                                             <a href="../../../../jdk.compiler/com/sun/source/doctree/SeeTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.SeeTree</code></a>
+    <tr><th scope="row"><code>SerialFieldTag</code>           <td><a href="../../../../jdk.compiler/com/sun/source/doctree/SerialFieldTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.SerialFieldTree</code></a>
+    <tr><th scope="row"><code>SourcePosition</code>           <td><a href="../../../../jdk.compiler/com/sun/source/util/SourcePositions.html" title="com.sun.source.util 包中的接口"><code>com.sun.source.util.SourcePositions</code></a>
+    <tr><th scope="row"><code>Tag</code>                      <td><a href="../../../../jdk.compiler/com/sun/source/doctree/DocTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.DocTree</code></a>
+    <tr><th scope="row"><code>ThrowsTag</code>                <td><a href="../../../../jdk.compiler/com/sun/source/doctree/ThrowsTree.html" title="com.sun.source.doctree 包中的接口"><code>com.sun.source.doctree.ThrowsTree</code></a>
+    <tr><th scope="row"><code>Type</code>                     <td><a href="../../../../java.compiler/javax/lang/model/type/TypeMirror.html" title="javax.lang.model.type 包中的接口"><code>javax.lang.model.type.TypeMirror</code></a>
+    <tr><th scope="row"><code>TypeVariable</code>             <td><a href="../../../../java.compiler/javax/lang/model/type/TypeVariable.html" title="javax.lang.model.type 包中的接口"><code>javax.lang.model.type.TypeVariable</code></a>
+    <tr><th scope="row"><code>WildcardType</code>             <td><a href="../../../../java.compiler/javax/lang/model/type/WildcardType.html" title="javax.lang.model.type 包中的接口"><code>javax.lang.model.type.WildcardType</code></a>
   </tbody>
 </table></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="Doclet.html" title="interface in jdk.javadoc.doclet"><code>Doclet</code></a></li>
-<li><a href="DocletEnvironment.html" title="interface in jdk.javadoc.doclet"><code>DocletEnvironment</code></a></li>
+<li><a href="Doclet.html" title="jdk.javadoc.doclet 包中的接口"><code>Doclet</code></a></li>
+<li><a href="DocletEnvironment.html" title="jdk.javadoc.doclet 包中的接口"><code>DocletEnvironment</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -440,49 +440,49 @@ In some cases, there is no direct equivalent.
 <ul class="summary-list">
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Doclet.html" title="interface in jdk.javadoc.doclet">Doclet</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Doclet.html" title="jdk.javadoc.doclet 包中的接口">Doclet</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The user doclet must implement this interface, as described in the
 <a href="package-summary.html#package-description">package description</a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Doclet.Option.html" title="interface in jdk.javadoc.doclet">Doclet.Option</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Doclet.Option.html" title="jdk.javadoc.doclet 包中的接口">Doclet.Option</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An encapsulation of option name, aliases, parameters and descriptions
 as used by the Doclet.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Doclet.Option.Kind.html" title="enum class in jdk.javadoc.doclet">Doclet.Option.Kind</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Doclet.Option.Kind.html" title="jdk.javadoc.doclet 包中的枚举类">Doclet.Option.Kind</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The kind of an option.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DocletEnvironment.html" title="interface in jdk.javadoc.doclet">DocletEnvironment</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="DocletEnvironment.html" title="jdk.javadoc.doclet 包中的接口">DocletEnvironment</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Represents the operating environment of a single invocation
 of the doclet.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="DocletEnvironment.ModuleMode.html" title="enum class in jdk.javadoc.doclet">DocletEnvironment.ModuleMode</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="DocletEnvironment.ModuleMode.html" title="jdk.javadoc.doclet 包中的枚举类">DocletEnvironment.ModuleMode</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The mode specifying the level of detail of module documentation.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Reporter.html" title="interface in jdk.javadoc.doclet">Reporter</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Reporter.html" title="jdk.javadoc.doclet 包中的接口">Reporter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface for reporting diagnostics and other messages.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StandardDoclet.html" title="class in jdk.javadoc.doclet">StandardDoclet</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="StandardDoclet.html" title="jdk.javadoc.doclet 包中的类">StandardDoclet</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">This doclet generates HTML-formatted documentation for the specified modules,
 packages and types.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Taglet.html" title="interface in jdk.javadoc.doclet">Taglet</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Taglet.html" title="jdk.javadoc.doclet 包中的接口">Taglet</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The interface for a custom taglet supported by doclets such as
-the <a href="StandardDoclet.html" title="class in jdk.javadoc.doclet"><code>standard doclet</code></a>.</div>
+the <a href="StandardDoclet.html" title="jdk.javadoc.doclet 包中的类"><code>standard doclet</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Taglet.Location.html" title="enum class in jdk.javadoc.doclet">Taglet.Location</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Taglet.Location.html" title="jdk.javadoc.doclet 包中的枚举类">Taglet.Location</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">The kind of location in which a tag may be used.</div>
 </div>

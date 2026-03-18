@@ -63,7 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.invoke</a></li>
 <li><a href="MethodHandle.html" class="current-selection">MethodHandle</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -71,9 +71,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#method-handle-contents-heading" tabindex="0">Method handle contents</a></li>
 <li><a href="#method-handle-compilation-heading" tabindex="0">Method handle compilation</a></li>
@@ -88,8 +88,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#maxarity" tabindex="0">Arity limits</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#type()" tabindex="0">type()</a></li>
 <li><a href="#invokeExact(java.lang.Object...)" tabindex="0">invokeExact(Object...)</a></li>
@@ -115,21 +115,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class MethodHandle" class="title">Class MethodHandle</h1>
+<h1 title="类 MethodHandle" class="title">类 MethodHandle</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.lang.invoke.MethodHandle</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract sealed class </span><span class="element-name type-name-label">MethodHandle</span>
-<span class="extends-implements">extends <a href="../Object.html" title="class in java.lang">Object</a>
-implements <a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></span></div>
+<span class="extends-implements">extends <a href="../Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></span></div>
 <div class="block">A method handle is a typed, directly executable reference to an underlying method,
  constructor, field, or similar low-level operation, with optional
  transformations of arguments or return values.
@@ -146,7 +146,7 @@ implements <a href="../constant/Constable.html" title="interface in java.lang.co
  the method handle's own <a href="#type()">type descriptor</a>.
  <p>
  Every method handle reports its type descriptor via the <a href="#type()"><code>type</code></a> accessor.
- This type descriptor is a <a href="MethodType.html" title="class in java.lang.invoke"><code>MethodType</code></a> object,
+ This type descriptor is a <a href="MethodType.html" title="java.lang.invoke 包中的类"><code>MethodType</code></a> object,
  whose structure is a series of classes, one of which is
  the return type of the method (or <code>void.class</code> if none).
  <p>
@@ -253,7 +253,7 @@ implements <a href="../constant/Constable.html" title="interface in java.lang.co
 
  <h2 id="invocation-checking-heading">Invocation checking</h2>
  In typical programs, method handle type matching will usually succeed.
- But if a match fails, the JVM will throw a <a href="WrongMethodTypeException.html" title="class in java.lang.invoke"><code>WrongMethodTypeException</code></a>,
+ But if a match fails, the JVM will throw a <a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类"><code>WrongMethodTypeException</code></a>,
  either directly (in the case of <code>invokeExact</code>) or indirectly as if
  by a failed call to <code>asType</code> (in the case of <code>invoke</code>).
  <p>
@@ -296,7 +296,7 @@ implements <a href="../constant/Constable.html" title="interface in java.lang.co
  Java code can create a method handle that directly accesses
  any method, constructor, or field that is accessible to that code.
  This is done via a reflective, capability-based API called
- <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>MethodHandles.Lookup</code></a>.
+ <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>MethodHandles.Lookup</code></a>.
  For example, a static method handle can be obtained
  from <a href="MethodHandles.Lookup.html#findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)"><code>Lookup.findStatic</code></a>.
  There are also conversion methods from Core Reflection API objects,
@@ -401,7 +401,7 @@ mh.invokeExact(System.out, "Hello, world.");
 
  <h2 id="exceptions-heading">Exceptions</h2>
  The methods <code>invokeExact</code> and <code>invoke</code> are declared
- to throw <a href="../Throwable.html" title="class in java.lang"><code>Throwable</code></a>,
+ to throw <a href="../Throwable.html" title="java.lang 包中的类"><code>Throwable</code></a>,
  which is to say that there is no static restriction on what a method handle
  can throw.  Since the JVM does not distinguish between checked
  and unchecked exceptions (other than by their class, of course),
@@ -438,10 +438,10 @@ mh.invokeExact(System.out, "Hello, world.");
  untransformed descriptors, without reporting linkage errors.
 
  <h2 id="interoperation-between-method-handles-and-the-core-reflection-api-heading">Interoperation between method handles and the Core Reflection API</h2>
- Using factory methods in the <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke"><code>Lookup</code></a> API,
+ Using factory methods in the <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类"><code>Lookup</code></a> API,
  any class member represented by a Core Reflection API object
  can be converted to a behaviorally equivalent method handle.
- For example, a reflective <a href="../reflect/Method.html" title="class in java.lang.reflect"><code>Method</code></a> can
+ For example, a reflective <a href="../reflect/Method.html" title="java.lang.reflect 包中的类"><code>Method</code></a> can
  be converted to a method handle using
  <a href="MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)"><code>Lookup.unreflect</code></a>.
  The resulting method handles generally provide more direct and efficient
@@ -519,16 +519,16 @@ mh.invokeExact(System.out, "Hello, world.");
  </ul>
  These limits imply that certain method handles cannot be created, solely because of the JVM limit on stacked arguments.
  For example, if a static JVM method accepts exactly 255 arguments, a method handle cannot be created for it.
- Attempts to create method handles with impossible method types lead to an <a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a>.
+ Attempts to create method handles with impossible method types lead to an <a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a>.
  In particular, a method handle&rsquo;s type must not have an arity of the exact maximum 255.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MethodType.html" title="class in java.lang.invoke"><code>MethodType</code></a></li>
-<li><a href="MethodHandles.html" title="class in java.lang.invoke"><code>MethodHandles</code></a></li>
+<li><a href="MethodType.html" title="java.lang.invoke 包中的类"><code>MethodType</code></a></li>
+<li><a href="MethodHandles.html" title="java.lang.invoke 包中的类"><code>MethodHandles</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -539,95 +539,95 @@ mh.invokeExact(System.out, "Hello, world.");
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asCollector(int,java.lang.Class,int)" class="member-name-link">asCollector</a><wbr>(int&nbsp;collectArgPos,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes an <em>array-collecting</em> method handle, which accepts a given number of positional arguments starting
 at a given position, and collects them into an array argument.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asCollector(java.lang.Class,int)" class="member-name-link">asCollector</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asCollector(java.lang.Class,int)" class="member-name-link">asCollector</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes an <em>array-collecting</em> method handle, which accepts a given number of trailing
  positional arguments and collects them into an array argument.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asFixedArity()" class="member-name-link">asFixedArity</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes a <em>fixed arity</em> method handle which is otherwise
  equivalent to the current method handle.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asSpreader(int,java.lang.Class,int)" class="member-name-link">asSpreader</a><wbr>(int&nbsp;spreadArgPos,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes an <em>array-spreading</em> method handle, which accepts an array argument at a given position and spreads
 its elements as positional arguments in place of the array.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asSpreader(java.lang.Class,int)" class="member-name-link">asSpreader</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asSpreader(java.lang.Class,int)" class="member-name-link">asSpreader</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes an <em>array-spreading</em> method handle, which accepts a trailing array argument
  and spreads its elements as positional arguments.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asType(java.lang.invoke.MethodType)" class="member-name-link">asType</a><wbr>(<a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asType(java.lang.invoke.MethodType)" class="member-name-link">asType</a><wbr>(<a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Produces an adapter method handle which adapts the type of the
 current method handle to a new type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asVarargsCollector(java.lang.Class)" class="member-name-link">asVarargsCollector</a><wbr>(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#asVarargsCollector(java.lang.Class)" class="member-name-link">asVarargsCollector</a><wbr>(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Makes a <em>variable arity</em> adapter which is able to accept
  any number of trailing positional arguments and collect them
  into an array argument.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindTo(java.lang.Object)" class="member-name-link">bindTo</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;x)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#bindTo(java.lang.Object)" class="member-name-link">bindTo</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;x)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Binds a value <code>x</code> to the first argument of a method handle, without invoking it.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="class in java.util">Optional</a><wbr>&lt;<a href="../constant/MethodHandleDesc.html" title="interface in java.lang.constant">MethodHandleDesc</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a><wbr>&lt;<a href="../constant/MethodHandleDesc.html" title="java.lang.constant 包中的接口">MethodHandleDesc</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#describeConstable()" class="member-name-link">describeConstable</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Return a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invoke(java.lang.Object...)" class="member-name-link">invoke</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invoke(java.lang.Object...)" class="member-name-link">invoke</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Invokes the method handle, allowing any caller type descriptor,
 and optionally performing conversions on arguments and return values.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeExact(java.lang.Object...)" class="member-name-link">invokeExact</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeExact(java.lang.Object...)" class="member-name-link">invokeExact</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Invokes the method handle, allowing any caller type descriptor, but requiring an exact type match.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeWithArguments(java.lang.Object...)" class="member-name-link">invokeWithArguments</a><wbr>(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;arguments)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeWithArguments(java.lang.Object...)" class="member-name-link">invokeWithArguments</a><wbr>(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;arguments)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs a variable arity invocation, passing the arguments in the given array
 to the method handle, as if via an inexact <a href="#invoke(java.lang.Object...)"><code>invoke</code></a> from a call site
 which mentions only the type <code>Object</code>, and whose actual argument count is the length
 of the argument array.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeWithArguments(java.util.List)" class="member-name-link">invokeWithArguments</a><wbr>(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;?&gt;&nbsp;arguments)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeWithArguments(java.util.List)" class="member-name-link">invokeWithArguments</a><wbr>(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;?&gt;&nbsp;arguments)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs a variable arity invocation, passing the arguments in the given list
 to the method handle, as if via an inexact <a href="#invoke(java.lang.Object...)"><code>invoke</code></a> from a call site
@@ -640,19 +640,19 @@ of the argument list.</div>
 <div class="block">Determines if this method handle
 supports <a href="#asVarargsCollector(java.lang.Class)">variable arity</a> calls.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string representation of the method handle,
 starting with the string <code>"MethodHandle"</code> and
 ending with the string representation of the method handle's type.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#type()" class="member-name-link">type</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reports the type of this method handle.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withVarargs(boolean)" class="member-name-link">withVarargs</a><wbr>(boolean&nbsp;makeVarargs)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adapts this method handle to be <a href="#asVarargsCollector(java.lang.Class)">variable arity</a>
@@ -662,7 +662,7 @@ if the boolean flag is true, else <a href="#asFixedArity()">fixed arity</a>.</di
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../Object.html#clone()" title="clone()">clone</a>, <a href="../Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../Object.html#finalize()" title="finalize()">finalize</a>, <a href="../Object.html#getClass()" title="getClass()">getClass</a>, <a href="../Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../Object.html#notify()" title="notify()">notify</a>, <a href="../Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../Object.html#wait()" title="wait()">wait</a>, <a href="../Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -673,17 +673,17 @@ if the boolean flag is true, else <a href="#asFixedArity()">fixed arity</a>.</di
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="type()">
 <h3>type</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="class in java.lang.invoke">MethodType</a></span>&nbsp;<span class="element-name">type</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a></span>&nbsp;<span class="element-name">type</span>()</div>
 <div class="block">Reports the type of this method handle.
 Every invocation of this method handle via <code>invokeExact</code> must exactly match this type.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the method handle type</dd>
 </dl>
 </div>
@@ -693,8 +693,8 @@ Every invocation of this method handle via <code>invokeExact</code> must exactly
 <section class="detail" id="invokeExact(java.lang.Object...)">
 <h3>invokeExact</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">invokeExact</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span>
-                         throws <span class="exceptions"><a href="../Throwable.html" title="class in java.lang">Throwable</a></span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">invokeExact</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span>
+                         throws <span class="exceptions"><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></span></div>
 <div class="block">Invokes the method handle, allowing any caller type descriptor, but requiring an exact type match.
 The symbolic type descriptor at the call site of <code>invokeExact</code> must
 exactly match this method handle's <a href="#type()"><code>type</code></a>.
@@ -707,13 +707,13 @@ If this native method is invoked directly via
 or indirectly via <a href="MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)"><code>Lookup.unreflect</code></a>,
 it will throw an <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list, statically represented using varargs</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result, statically represented using <code>Object</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the target's type is not identical with the caller's symbolic type descriptor</dd>
-<dd><code><a href="../Throwable.html" title="class in java.lang">Throwable</a></code> - anything thrown by the underlying method propagates unchanged through the method handle call</dd>
+<dt>抛出:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the target's type is not identical with the caller's symbolic type descriptor</dd>
+<dd><code><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></code> - anything thrown by the underlying method propagates unchanged through the method handle call</dd>
 </dl>
 </div>
 </section>
@@ -722,8 +722,8 @@ it will throw an <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="invoke(java.lang.Object...)">
 <h3>invoke</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">invoke</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;args)</span>
-                    throws <span class="exceptions"><a href="../Throwable.html" title="class in java.lang">Throwable</a></span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">invoke</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;args)</span>
+                    throws <span class="exceptions"><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></span></div>
 <div class="block">Invokes the method handle, allowing any caller type descriptor,
 and optionally performing conversions on arguments and return values.
 <p>
@@ -753,14 +753,14 @@ If this native method is invoked directly via
 or indirectly via <a href="MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)"><code>Lookup.unreflect</code></a>,
 it will throw an <code>UnsupportedOperationException</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>args</code> - the signature-polymorphic parameter list, statically represented using varargs</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the signature-polymorphic result, statically represented using <code>Object</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to the caller's symbolic type descriptor</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the target's type can be adjusted to the caller, but a reference cast fails</dd>
-<dd><code><a href="../Throwable.html" title="class in java.lang">Throwable</a></code> - anything thrown by the underlying method propagates unchanged through the method handle call</dd>
+<dt>抛出:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to the caller's symbolic type descriptor</dd>
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the target's type can be adjusted to the caller, but a reference cast fails</dd>
+<dd><code><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></code> - anything thrown by the underlying method propagates unchanged through the method handle call</dd>
 </dl>
 </div>
 </section>
@@ -769,8 +769,8 @@ it will throw an <code>UnsupportedOperationException</code>.</div>
 <section class="detail" id="invokeWithArguments(java.lang.Object...)">
 <h3>invokeWithArguments</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">invokeWithArguments</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>...&nbsp;arguments)</span>
-                           throws <span class="exceptions"><a href="../Throwable.html" title="class in java.lang">Throwable</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">invokeWithArguments</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>...&nbsp;arguments)</span>
+                           throws <span class="exceptions"><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></span></div>
 <div class="block">Performs a variable arity invocation, passing the arguments in the given array
 to the method handle, as if via an inexact <a href="#invoke(java.lang.Object...)"><code>invoke</code></a> from a call site
 which mentions only the type <code>Object</code>, and whose actual argument count is the length
@@ -855,7 +855,7 @@ Unlike the signature polymorphic methods <code>invokeExact</code> and <code>invo
 <code>invokeWithArguments</code> can be accessed normally via the Core Reflection API and JNI.
 It can therefore be used as a bridge between native or reflective code and method handles.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This call is approximately equivalent to the following code:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-invokeWithArguments(java.lang.Object...)1"><code class="language-java">// for jumbo argument lists, adapt varargs explicitly:
@@ -883,15 +883,15 @@ Object result = invoker.invokeExact(this, arguments);
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>arguments</code> - the arguments to pass to the target</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result returned by the target</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if an argument cannot be converted by reference casting</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to take the given number of <code>Object</code> arguments</dd>
-<dd><code><a href="../Throwable.html" title="class in java.lang">Throwable</a></code> - anything thrown by the target method invocation</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if an argument cannot be converted by reference casting</dd>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to take the given number of <code>Object</code> arguments</dd>
+<dd><code><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></code> - anything thrown by the target method invocation</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="MethodHandles.html#spreadInvoker(java.lang.invoke.MethodType,int)"><code>MethodHandles.spreadInvoker(MethodType, int)</code></a></li>
@@ -905,8 +905,8 @@ Object result = invoker.invokeExact(this, arguments);
 <section class="detail" id="invokeWithArguments(java.util.List)">
 <h3>invokeWithArguments</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">invokeWithArguments</span><wbr><span class="parameters">(<a href="../../util/List.html" title="interface in java.util">List</a>&lt;?&gt;&nbsp;arguments)</span>
-                           throws <span class="exceptions"><a href="../Throwable.html" title="class in java.lang">Throwable</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">invokeWithArguments</span><wbr><span class="parameters">(<a href="../../util/List.html" title="java.util 包中的接口">List</a>&lt;?&gt;&nbsp;arguments)</span>
+                           throws <span class="exceptions"><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></span></div>
 <div class="block">Performs a variable arity invocation, passing the arguments in the given list
 to the method handle, as if via an inexact <a href="#invoke(java.lang.Object...)"><code>invoke</code></a> from a call site
 which mentions only the type <code>Object</code>, and whose actual argument count is the length
@@ -922,15 +922,15 @@ This method is also equivalent to the following code:
 Jumbo-sized lists are acceptable if this method handle has variable arity.
 See <a href="#invokeWithArguments(java.lang.Object...)"><code>invokeWithArguments(Object[])</code></a> for details.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>arguments</code> - the arguments to pass to the target</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the result returned by the target</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arguments</code> is a null reference</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if an argument cannot be converted by reference casting</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to take the given number of <code>Object</code> arguments</dd>
-<dd><code><a href="../Throwable.html" title="class in java.lang">Throwable</a></code> - anything thrown by the target method invocation</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arguments</code> is a null reference</dd>
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if an argument cannot be converted by reference casting</dd>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the target's type cannot be adjusted to take the given number of <code>Object</code> arguments</dd>
+<dd><code><a href="../Throwable.html" title="java.lang 包中的类">Throwable</a></code> - anything thrown by the target method invocation</dd>
 </dl>
 </div>
 </section>
@@ -939,7 +939,7 @@ See <a href="#invokeWithArguments(java.lang.Object...)"><code>invokeWithArgument
 <section class="detail" id="asType(java.lang.invoke.MethodType)">
 <h3>asType</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asType</span><wbr><span class="parameters">(<a href="MethodType.html" title="class in java.lang.invoke">MethodType</a>&nbsp;newType)</span></div>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asType</span><wbr><span class="parameters">(<a href="MethodType.html" title="java.lang.invoke 包中的类">MethodType</a>&nbsp;newType)</span></div>
 <div class="block">Produces an adapter method handle which adapts the type of the
 current method handle to a new type.
 The resulting method handle is guaranteed to report a type
@@ -1022,23 +1022,23 @@ pairwise conversions cannot be made.
 At runtime, the conversions applied to reference arguments
 or return values may require additional runtime checks which can fail.
 An unboxing operation may fail because the original reference is null,
-causing a <a href="../NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a>.
+causing a <a href="../NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a>.
 An unboxing operation or a reference cast may also fail on a reference
 to an object of the wrong type,
-causing a <a href="../ClassCastException.html" title="class in java.lang"><code>ClassCastException</code></a>.
+causing a <a href="../ClassCastException.html" title="java.lang 包中的类"><code>ClassCastException</code></a>.
 Although an unboxing operation may accept several kinds of wrappers,
 if none are available, a <code>ClassCastException</code> will be thrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>newType</code> - the expected type of the new method handle</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method handle which delegates to <code>this</code> after performing
           any necessary argument conversions, and arranges for any
           necessary return value conversions</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>newType</code> is a null reference</dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the conversion cannot be made</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>newType</code> is a null reference</dd>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the conversion cannot be made</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="MethodHandles.html#explicitCastArguments(java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)"><code>MethodHandles.explicitCastArguments(MethodHandle, MethodType)</code></a></li>
@@ -1052,7 +1052,7 @@ if none are available, a <code>ClassCastException</code> will be thrown.</div>
 <section class="detail" id="asSpreader(java.lang.Class,int)">
 <h3>asSpreader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asSpreader</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asSpreader</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</span></div>
 <div class="block">Makes an <em>array-spreading</em> method handle, which accepts a trailing array argument
  and spreads its elements as positional arguments.
@@ -1085,7 +1085,7 @@ if none are available, a <code>ClassCastException</code> will be thrown.</div>
  bytecode. If the adapter accepts a zero-length trailing array argument,
  the supplied <code>array</code> argument can either be a zero-length array or
  <code>null</code>; otherwise, the adapter will throw a <code>NullPointerException</code>
- if the array is <code>null</code> and throw an <a href="../IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a>
+ if the array is <code>null</code> and throw an <a href="../IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a>
  if the array does not have the correct number of elements.
  <p>
  Here are some simple examples of array-spreading method handles:
@@ -1136,22 +1136,22 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>arrayType</code> - usually <code>Object[]</code>, the type of the array argument from which to extract the spread arguments</dd>
 <dd><code>arrayLength</code> - the number of arguments to spread from an incoming array argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which spreads its final array argument,
          before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type,
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type,
          or if target does not have at least
          <code>arrayLength</code> parameter types,
          or if <code>arrayLength</code> is negative,
          or if the resulting method handle's type would have
          <a href="MethodHandle.html#maxarity">too many parameters</a></dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
-<dt>See Also:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#asCollector(java.lang.Class,int)"><code>asCollector(Class, int)</code></a></li>
@@ -1165,8 +1165,8 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 <section class="detail" id="asSpreader(int,java.lang.Class,int)">
 <h3>asSpreader</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asSpreader</span><wbr><span class="parameters">(int&nbsp;spreadArgPos,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asSpreader</span><wbr><span class="parameters">(int&nbsp;spreadArgPos,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</span></div>
 <div class="block">Makes an <em>array-spreading</em> method handle, which accepts an array argument at a given position and spreads
 its elements as positional arguments in place of the array. The new method handle adapts, as its <i>target</i>,
@@ -1177,7 +1177,7 @@ are replaced by a single array parameter of type <code>arrayType</code>.
 This method behaves very much like <a href="#asSpreader(java.lang.Class,int)"><code>asSpreader(Class, int)</code></a>, but accepts an additional <code>spreadArgPos</code>
 argument to indicate at which position in the parameter list the spreading should take place.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Example:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-asSpreader(int,java.lang.Class,int)1"><code class="language-java">   MethodHandle compare = LOOKUP.findStatic(Objects.class, "compare", methodType(int.class, Object.class, Object.class, Comparator.class));
@@ -1190,16 +1190,16 @@ argument to indicate at which position in the parameter list the spreading shoul
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>spreadArgPos</code> - the position (zero-based index) in the argument list at which spreading should start.</dd>
 <dd><code>arrayType</code> - usually <code>Object[]</code>, the type of the array argument from which to extract the spread arguments</dd>
 <dd><code>arrayLength</code> - the number of arguments to spread from an incoming array argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which spreads an array argument at a given position,
         before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type,
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type,
         or if target does not have at least
         <code>arrayLength</code> parameter types,
         or if <code>arrayLength</code> is negative,
@@ -1207,10 +1207,10 @@ argument to indicate at which position in the parameter list the spreading shoul
         number of arguments),
         or if the resulting method handle's type would have
         <a href="MethodHandle.html#maxarity">too many parameters</a></dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
-<dt>Since:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#asSpreader(java.lang.Class,int)"><code>asSpreader(Class, int)</code></a></li>
@@ -1224,13 +1224,13 @@ argument to indicate at which position in the parameter list the spreading shoul
 <section class="detail" id="withVarargs(boolean)">
 <h3>withVarargs</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">withVarargs</span><wbr><span class="parameters">(boolean&nbsp;makeVarargs)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">withVarargs</span><wbr><span class="parameters">(boolean&nbsp;makeVarargs)</span></div>
 <div class="block">Adapts this method handle to be <a href="#asVarargsCollector(java.lang.Class)">variable arity</a>
 if the boolean flag is true, else <a href="#asFixedArity()">fixed arity</a>.
 If the method handle is already of the proper arity mode, it is returned
 unchanged.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd><p>This method is sometimes useful when adapting a method handle that
 may be variable arity, to ensure that the resulting adapter is also
 variable arity if and only if the original handle was.  For example,
@@ -1250,16 +1250,16 @@ else
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>makeVarargs</code> - true if the return method handle should have variable arity behavior</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method handle of the same type, with possibly adjusted variable arity behavior</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>makeVarargs</code> is true and
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>makeVarargs</code> is true and
         this method handle does not have a trailing array parameter</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#asVarargsCollector(java.lang.Class)"><code>asVarargsCollector(Class)</code></a></li>
@@ -1274,7 +1274,7 @@ else
 <section class="detail" id="asCollector(java.lang.Class,int)">
 <h3>asCollector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asCollector</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asCollector</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</span></div>
 <div class="block">Makes an <em>array-collecting</em> method handle, which accepts a given number of trailing
  positional arguments and collects them into an array argument.
@@ -1340,21 +1340,21 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));
  <p>
  <em>Note:</em> The resulting adapter is never a <a href="#asVarargsCollector(java.lang.Class)">variable-arity method handle</a>, even if the original target method handle was.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>arrayType</code> - often <code>Object[]</code>, the type of the array argument which will collect the arguments</dd>
 <dd><code>arrayLength</code> - the number of arguments to collect into a new array argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which collects some trailing argument
          into an array, before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
          or <code>arrayType</code> is not assignable to this method handle's trailing parameter type,
          or <code>arrayLength</code> is not a legal array size,
          or the resulting method handle's type would have
          <a href="MethodHandle.html#maxarity">too many parameters</a></dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
-<dt>See Also:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#asSpreader(java.lang.Class,int)"><code>asSpreader(Class, int)</code></a></li>
@@ -1369,8 +1369,8 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));
 <section class="detail" id="asCollector(int,java.lang.Class,int)">
 <h3>asCollector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asCollector</span><wbr><span class="parameters">(int&nbsp;collectArgPos,
- <a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asCollector</span><wbr><span class="parameters">(int&nbsp;collectArgPos,
+ <a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType,
  int&nbsp;arrayLength)</span></div>
 <div class="block">Makes an <em>array-collecting</em> method handle, which accepts a given number of positional arguments starting
 at a given position, and collects them into an array argument. The new method handle adapts, as its
@@ -1382,7 +1382,7 @@ This method behaves very much like <a href="#asCollector(java.lang.Class,int)"><
 collectArgPos</code> argument indicates at which position in the parameter list arguments should be collected. This
 index is zero-based.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Examples:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-asCollector(int,java.lang.Class,int)1"><code class="language-java">   StringWriter swr = new StringWriter();
@@ -1399,25 +1399,25 @@ index is zero-based.</div>
 
 <p>
 <em>Note:</em> The resulting adapter is never a <a href="#asVarargsCollector(java.lang.Class)">variable-arity method handle</a>, even if the original target method handle was.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>collectArgPos</code> - the zero-based position in the parameter list at which to start collecting.</dd>
 <dd><code>arrayType</code> - often <code>Object[]</code>, the type of the array argument which will collect the arguments</dd>
 <dd><code>arrayLength</code> - the number of arguments to collect into a new array argument</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which collects some arguments
         into an array, before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
         or <code>arrayType</code> is not assignable to this method handle's array parameter type,
         or <code>arrayLength</code> is not a legal array size,
         or <code>collectArgPos</code> has an illegal value (negative, or greater than the number of arguments),
         or the resulting method handle's type would have
         <a href="MethodHandle.html#maxarity">too many parameters</a></dd>
-<dd><code><a href="WrongMethodTypeException.html" title="class in java.lang.invoke">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
-<dt>Since:</dt>
+<dd><code><a href="WrongMethodTypeException.html" title="java.lang.invoke 包中的类">WrongMethodTypeException</a></code> - if the implied <code>asType</code> call fails</dd>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#asCollector(java.lang.Class,int)"><code>asCollector(Class, int)</code></a></li>
@@ -1431,7 +1431,7 @@ index is zero-based.</div>
 <section class="detail" id="asVarargsCollector(java.lang.Class)">
 <h3>asVarargsCollector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asVarargsCollector</span><wbr><span class="parameters">(<a href="../Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;arrayType)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asVarargsCollector</span><wbr><span class="parameters">(<a href="../Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;arrayType)</span></div>
 <div class="block">Makes a <em>variable arity</em> adapter which is able to accept
  any number of trailing positional arguments and collect them
  into an array argument.
@@ -1576,16 +1576,16 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));
  effect on this decision, only a comparison between the symbolic
  type descriptor of the call site and the type descriptor of the method handle.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>arrayType</code> - often <code>Object[]</code>, the type of the array argument which will collect the arguments</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which can collect any number of trailing arguments
          into an array, before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
+<dt>抛出:</dt>
+<dd><code><a href="../NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>arrayType</code> is a null reference</dd>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>arrayType</code> is not an array type
          or <code>arrayType</code> is not assignable to this method handle's trailing parameter type</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#asCollector(java.lang.Class,int)"><code>asCollector(Class, int)</code></a></li>
@@ -1608,15 +1608,15 @@ supports <a href="#asVarargsCollector(java.lang.Class)">variable arity</a> calls
 Such method handles arise from the following sources:
 <ul>
 <li>a call to <a href="#asVarargsCollector(java.lang.Class)">asVarargsCollector</a>
-<li>a call to a <a href="MethodHandles.Lookup.html" title="class in java.lang.invoke">lookup method</a>
+<li>a call to a <a href="MethodHandles.Lookup.html" title="java.lang.invoke 包中的类">lookup method</a>
     which resolves to a variable arity Java method or constructor
 <li>an <code>ldc</code> instruction of a <code>CONSTANT_MethodHandle</code>
     which resolves to a variable arity Java method or constructor
 </ul></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if this method handle accepts more than one arity of plain, inexact <code>invoke</code> calls</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#asVarargsCollector(java.lang.Class)"><code>asVarargsCollector(Class)</code></a></li>
@@ -1631,7 +1631,7 @@ Such method handles arise from the following sources:
 <section class="detail" id="asFixedArity()">
 <h3>asFixedArity</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">asFixedArity</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">asFixedArity</span>()</div>
 <div class="block">Makes a <em>fixed arity</em> method handle which is otherwise
  equivalent to the current method handle.
  <p>
@@ -1673,9 +1673,9 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());
 </div>
 </div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which accepts only a fixed number of arguments</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#asVarargsCollector(java.lang.Class)"><code>asVarargsCollector(Class)</code></a></li>
@@ -1691,7 +1691,7 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());
 <section class="detail" id="bindTo(java.lang.Object)">
 <h3>bindTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">bindTo</span><wbr><span class="parameters">(<a href="../Object.html" title="class in java.lang">Object</a>&nbsp;x)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">bindTo</span><wbr><span class="parameters">(<a href="../Object.html" title="java.lang 包中的类">Object</a>&nbsp;x)</span></div>
 <div class="block">Binds a value <code>x</code> to the first argument of a method handle, without invoking it.
 The new method handle adapts, as its <i>target</i>,
 the current method handle by binding it to the given argument.
@@ -1712,17 +1712,17 @@ retains its original type and behavior.
 <p>
 <em>Note:</em> The resulting adapter is never a <a href="#asVarargsCollector(java.lang.Class)">variable-arity method handle</a>, even if the original target method handle was.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>x</code> - the value to bind to the first argument of the target</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new method handle which prepends the given value to the incoming
         argument list, before calling the original method handle</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the target does not have a
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the target does not have a
         leading parameter type that is a reference type</dd>
-<dd><code><a href="../ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if <code>x</code> cannot be converted
+<dd><code><a href="../ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if <code>x</code> cannot be converted
         to the leading parameter type of the target</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="MethodHandles.html#insertArguments(java.lang.invoke.MethodHandle,int,java.lang.Object...)"><code>MethodHandles.insertArguments(MethodHandle, int, Object...)</code></a></li>
@@ -1736,16 +1736,16 @@ retains its original type and behavior.
 <section class="detail" id="describeConstable()">
 <h3>describeConstable</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="class in java.util">Optional</a>&lt;<a href="../constant/MethodHandleDesc.html" title="interface in java.lang.constant">MethodHandleDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../util/Optional.html" title="java.util 包中的类">Optional</a>&lt;<a href="../constant/MethodHandleDesc.html" title="java.lang.constant 包中的接口">MethodHandleDesc</a>&gt;</span>&nbsp;<span class="element-name">describeConstable</span>()</div>
 <div class="block">Return a nominal descriptor for this instance, if one can be
-constructed, or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be.</div>
+constructed, or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="interface in java.lang.constant">Constable</a></code></dd>
-<dt>Returns:</dt>
-<dd>An <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> containing the resulting nominal descriptor,
-or an empty <a href="../../util/Optional.html" title="class in java.util"><code>Optional</code></a> if one cannot be constructed.</dd>
-<dt>Since:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../constant/Constable.html#describeConstable()">describeConstable</a></code>&nbsp;in interface&nbsp;<code><a href="../constant/Constable.html" title="java.lang.constant 包中的接口">Constable</a></code></dd>
+<dt>返回:</dt>
+<dd>An <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> containing the resulting nominal descriptor,
+or an empty <a href="../../util/Optional.html" title="java.util 包中的类"><code>Optional</code></a> if one cannot be constructed.</dd>
+<dt>自:</dt>
 <dd>12</dd>
 </dl>
 </div>
@@ -1755,7 +1755,7 @@ or an empty <a href="../../util/Optional.html" title="class in java.util"><code>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string representation of the method handle,
 starting with the string <code>"MethodHandle"</code> and
 ending with the string representation of the method handle's type.
@@ -1770,9 +1770,9 @@ In other words, this method returns a string equal to the value of:
 to the string representation.
 Therefore, the present syntax should not be parsed by applications.)</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the method handle</dd>
 </dl>
 </div>

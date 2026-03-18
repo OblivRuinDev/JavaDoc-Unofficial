@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time</a></li>
 <li><a href="InstantSource.html" class="current-selection">InstantSource</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -64,11 +64,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#system()" tabindex="0">system()</a></li>
 <li><a href="#tick(java.time.InstantSource,java.time.Duration)" tabindex="0">tick(InstantSource, Duration)</a></li>
@@ -84,12 +84,12 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface InstantSource" class="title">Interface InstantSource</h1>
+<h1 title="接口 InstantSource" class="title">接口 InstantSource</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Known Implementing Classes:</dt>
-<dd><code><a href="Clock.html" title="class in java.time">Clock</a></code></dd>
+<dt>所有已知实现类:</dt>
+<dd><code><a href="Clock.html" title="java.time 包中的类">Clock</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
@@ -128,7 +128,7 @@ The <code>system</code> factory method provides a source based on the best avail
 system clock. This may use <a href="../lang/System.html#currentTimeMillis()"><code>System.currentTimeMillis()</code></a>, or a higher
 resolution clock if one is available.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This interface must be implemented with care to ensure other classes operate correctly.
 All implementations must be thread-safe - a single instance must be capable of be invoked
 from multiple threads without negative consequences such as race conditions.
@@ -139,7 +139,7 @@ obtain the time from a central time server across the network. Obviously, in thi
 lookup could fail, and so the method is permitted to throw an exception.
 <p>
 The returned instants from <code>InstantSource</code> work on a time-scale that ignores leap seconds,
-as described in <a href="Instant.html" title="class in java.time"><code>Instant</code></a>. If the implementation wraps a source that provides leap
+as described in <a href="Instant.html" title="java.time 包中的类"><code>Instant</code></a>. If the implementation wraps a source that provides leap
 second information, then a mechanism should be used to "smooth" the leap second.
 The Java Time-Scale mandates the use of UTC-SLS, however implementations may choose
 how accurate they are with the time-scale so long as they document how they work.
@@ -148,7 +148,7 @@ otherwise be aware of leap seconds.
 <p>
 Implementations should implement <code>Serializable</code> wherever possible and must
 document whether or not they do support serialization.</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The implementation provided here is based on the same underlying system clock
 as <a href="../lang/System.html#currentTimeMillis()"><code>System.currentTimeMillis()</code></a>, but may have a precision finer than
 milliseconds if available.
@@ -156,7 +156,7 @@ However, little to no guarantee is provided about the accuracy of the
 underlying system clock. Applications requiring a more accurate system clock must
 implement this abstract class themselves using a different external system clock,
 such as an NTP server.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </div>
@@ -166,20 +166,20 @@ such as an NTP server.</dd>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#fixed(java.time.Instant)" class="member-name-link">fixed</a><wbr>(<a href="Instant.html" title="class in java.time">Instant</a>&nbsp;fixedInstant)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#fixed(java.time.Instant)" class="member-name-link">fixed</a><wbr>(<a href="Instant.html" title="java.time 包中的类">Instant</a>&nbsp;fixedInstant)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Obtains a source that always returns the same instant.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Instant.html" title="class in java.time">Instant</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Instant.html" title="java.time 包中的类">Instant</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#instant()" class="member-name-link">instant</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Gets the current instant of the source.</div>
@@ -189,28 +189,28 @@ such as an NTP server.</dd>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Gets the current millisecond instant of the source.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#offset(java.time.InstantSource,java.time.Duration)" class="member-name-link">offset</a><wbr>(<a href="InstantSource.html" title="interface in java.time">InstantSource</a>&nbsp;baseSource,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;offsetDuration)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#offset(java.time.InstantSource,java.time.Duration)" class="member-name-link">offset</a><wbr>(<a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a>&nbsp;baseSource,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;offsetDuration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Obtains a source that returns instants from the specified source with the
 specified duration added.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#system()" class="member-name-link">system</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Obtains a source that returns the current instant using the best available
 system clock.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="interface in java.time">InstantSource</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#tick(java.time.InstantSource,java.time.Duration)" class="member-name-link">tick</a><wbr>(<a href="InstantSource.html" title="interface in java.time">InstantSource</a>&nbsp;baseSource,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;tickDuration)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#tick(java.time.InstantSource,java.time.Duration)" class="member-name-link">tick</a><wbr>(<a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a>&nbsp;baseSource,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;tickDuration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Obtains a source that returns instants from the specified source truncated to
 the nearest occurrence of the specified duration.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Clock.html" title="class in java.time">Clock</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withZone(java.time.ZoneId)" class="member-name-link">withZone</a><wbr>(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Clock.html" title="java.time 包中的类">Clock</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#withZone(java.time.ZoneId)" class="member-name-link">withZone</a><wbr>(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns a clock with the specified time-zone.</div>
 </div>
@@ -226,13 +226,13 @@ the nearest occurrence of the specified duration.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="system()">
 <h3>system</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="interface in java.time">InstantSource</a></span>&nbsp;<span class="element-name">system</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></span>&nbsp;<span class="element-name">system</span>()</div>
 <div class="block">Obtains a source that returns the current instant using the best available
 system clock.
 <p>
@@ -243,7 +243,7 @@ one is available.
 The returned implementation is immutable, thread-safe and
 <code>Serializable</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a source that uses the best available system clock, not null</dd>
 </dl>
 </div>
@@ -253,8 +253,8 @@ The returned implementation is immutable, thread-safe and
 <section class="detail" id="tick(java.time.InstantSource,java.time.Duration)">
 <h3>tick</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="interface in java.time">InstantSource</a></span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="InstantSource.html" title="interface in java.time">InstantSource</a>&nbsp;baseSource,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;tickDuration)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></span>&nbsp;<span class="element-name">tick</span><wbr><span class="parameters">(<a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a>&nbsp;baseSource,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;tickDuration)</span></div>
 <div class="block">Obtains a source that returns instants from the specified source truncated to
 the nearest occurrence of the specified duration.
 <p>
@@ -278,16 +278,16 @@ source will be later than that observed directly via the underlying source.
 The returned implementation is immutable, thread-safe and
 <code>Serializable</code> providing that the base source is.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseSource</code> - the base source to base the ticking source on, not null</dd>
 <dd><code>tickDuration</code> - the duration of each visible tick, not negative, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a source that ticks in whole units of the duration, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the duration is negative, or has a
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the duration is negative, or has a
  part smaller than a whole millisecond such that the whole duration is not
  divisible into one second</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if the duration is too large to be represented as nanos</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if the duration is too large to be represented as nanos</dd>
 </dl>
 </div>
 </section>
@@ -296,7 +296,7 @@ The returned implementation is immutable, thread-safe and
 <section class="detail" id="fixed(java.time.Instant)">
 <h3>fixed</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="interface in java.time">InstantSource</a></span>&nbsp;<span class="element-name">fixed</span><wbr><span class="parameters">(<a href="Instant.html" title="class in java.time">Instant</a>&nbsp;fixedInstant)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></span>&nbsp;<span class="element-name">fixed</span><wbr><span class="parameters">(<a href="Instant.html" title="java.time 包中的类">Instant</a>&nbsp;fixedInstant)</span></div>
 <div class="block">Obtains a source that always returns the same instant.
 <p>
 This source simply returns the specified instant.
@@ -306,9 +306,9 @@ tests are not dependent on the current source.
 <p>
 The returned implementation is immutable, thread-safe and <code>Serializable</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>fixedInstant</code> - the instant to use, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a source that always returns the same instant, not null</dd>
 </dl>
 </div>
@@ -318,8 +318,8 @@ The returned implementation is immutable, thread-safe and <code>Serializable</co
 <section class="detail" id="offset(java.time.InstantSource,java.time.Duration)">
 <h3>offset</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="interface in java.time">InstantSource</a></span>&nbsp;<span class="element-name">offset</span><wbr><span class="parameters">(<a href="InstantSource.html" title="interface in java.time">InstantSource</a>&nbsp;baseSource,
- <a href="Duration.html" title="class in java.time">Duration</a>&nbsp;offsetDuration)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a></span>&nbsp;<span class="element-name">offset</span><wbr><span class="parameters">(<a href="InstantSource.html" title="java.time 包中的接口">InstantSource</a>&nbsp;baseSource,
+ <a href="Duration.html" title="java.time 包中的类">Duration</a>&nbsp;offsetDuration)</span></div>
 <div class="block">Obtains a source that returns instants from the specified source with the
 specified duration added.
 <p>
@@ -334,10 +334,10 @@ Passing zero will return the underlying source.
 The returned implementation is immutable, thread-safe and <code>Serializable</code>
 providing that the base source is.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>baseSource</code> - the base source to add the duration to, not null</dd>
 <dd><code>offsetDuration</code> - the duration to add, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a source based on the base source with the duration added, not null</dd>
 </dl>
 </div>
@@ -347,15 +347,15 @@ providing that the base source is.</div>
 <section class="detail" id="instant()">
 <h3>instant</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Instant.html" title="class in java.time">Instant</a></span>&nbsp;<span class="element-name">instant</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Instant.html" title="java.time 包中的类">Instant</a></span>&nbsp;<span class="element-name">instant</span>()</div>
 <div class="block">Gets the current instant of the source.
 <p>
 This returns an instant representing the current instant as defined by the source.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current instant from this source, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
 </dl>
 </div>
 </section>
@@ -370,18 +370,18 @@ This returns an instant representing the current instant as defined by the sourc
 This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
 This is equivalent to the definition of <a href="../lang/System.html#currentTimeMillis()"><code>System.currentTimeMillis()</code></a>.
 <p>
-Most applications should avoid this method and use <a href="Instant.html" title="class in java.time"><code>Instant</code></a> to represent
+Most applications should avoid this method and use <a href="Instant.html" title="java.time 包中的类"><code>Instant</code></a> to represent
 an instant on the time-line rather than a raw millisecond value.
 This method is provided to allow the use of the source in high performance use cases
 where the creation of an object would be unacceptable.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation calls <a href="#instant()"><code>instant()</code></a>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current millisecond instant from this source, measured from
  the Java epoch of 1970-01-01T00:00Z (UTC), not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the instant cannot be obtained, not thrown by most implementations</dd>
 </dl>
 </div>
 </section>
@@ -390,22 +390,22 @@ where the creation of an object would be unacceptable.</div>
 <section class="detail" id="withZone(java.time.ZoneId)">
 <h3>withZone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Clock.html" title="class in java.time">Clock</a></span>&nbsp;<span class="element-name">withZone</span><wbr><span class="parameters">(<a href="ZoneId.html" title="class in java.time">ZoneId</a>&nbsp;zone)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Clock.html" title="java.time 包中的类">Clock</a></span>&nbsp;<span class="element-name">withZone</span><wbr><span class="parameters">(<a href="ZoneId.html" title="java.time 包中的类">ZoneId</a>&nbsp;zone)</span></div>
 <div class="block">Returns a clock with the specified time-zone.
 <p>
-This returns a <a href="Clock.html" title="class in java.time"><code>Clock</code></a>, which is an extension of this interface
+This returns a <a href="Clock.html" title="java.time 包中的类"><code>Clock</code></a>, which is an extension of this interface
 that combines this source and the specified time-zone.
 <p>
 The returned implementation is immutable, thread-safe and <code>Serializable</code>
 providing that this source is.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation returns an immutable, thread-safe and
-<code>Serializable</code> subclass of <a href="Clock.html" title="class in java.time"><code>Clock</code></a> that combines this
+<code>Serializable</code> subclass of <a href="Clock.html" title="java.time 包中的类"><code>Clock</code></a> that combines this
 source and the specified zone.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>zone</code> - the time-zone to use, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a clock based on this source with the specified time-zone, not null</dd>
 </dl>
 </div>

@@ -61,7 +61,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.tools</a></li>
 <li><a href="StandardJavaFileManager.html" class="current-selection">StandardJavaFileManager</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -69,12 +69,12 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#isSameFile(javax.tools.FileObject,javax.tools.FileObject)" tabindex="0">isSameFile(FileObject, FileObject)</a></li>
 <li><a href="#getJavaFileObjectsFromFiles(java.lang.Iterable)" tabindex="0">getJavaFileObjectsFromFiles(Iterable)</a></li>
@@ -98,18 +98,18 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface StandardJavaFileManager" class="title">Interface StandardJavaFileManager</h1>
+<h1 title="接口 StandardJavaFileManager" class="title">接口 StandardJavaFileManager</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../../java.base/java/lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="../../../java.base/java/io/Closeable.html" title="interface in java.io">Closeable</a>, <a href="../../../java.base/java/io/Flushable.html" title="interface in java.io">Flushable</a>, <a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a>, <a href="OptionChecker.html" title="interface in javax.tools">OptionChecker</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../../java.base/java/lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="../../../java.base/java/io/Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="../../../java.base/java/io/Flushable.html" title="java.io 包中的接口">Flushable</a>, <a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a>, <a href="OptionChecker.html" title="javax.tools 包中的接口">OptionChecker</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">StandardJavaFileManager</span><span class="extends-implements">
-extends <a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a></span></div>
-<div class="block">File manager based on <a href="../../../java.base/java/io/File.html" title="class in java.io"><code>java.io.File</code></a> and <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file"><code>java.nio.file.Path</code></a>.
+extends <a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a></span></div>
+<div class="block">File manager based on <a href="../../../java.base/java/io/File.html" title="java.io 包中的类"><code>java.io.File</code></a> and <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口"><code>java.nio.file.Path</code></a>.
 
 A common way to obtain an instance of this class is using
 <a href="JavaCompiler.html#getStandardFileManager(javax.tools.DiagnosticListener,java.util.Locale,java.nio.charset.Charset)">getStandardFileManager</a>, for example:
@@ -122,8 +122,8 @@ A common way to obtain an instance of this class is using
 </pre>
 
 This file manager creates file objects representing regular
-<a href="../../../java.base/java/io/File.html" title="class in java.io">files</a>,
-<a href="../../../java.base/java/util/zip/ZipEntry.html" title="class in java.util.zip">zip file entries</a>, or entries in
+<a href="../../../java.base/java/io/File.html" title="java.io 包中的类">files</a>,
+<a href="../../../java.base/java/util/zip/ZipEntry.html" title="java.util.zip 包中的类">zip file entries</a>, or entries in
 similar file system based containers.  Any file object returned
 from a file manager implementing this interface must observe the
 following behavior:
@@ -151,7 +151,7 @@ following behavior:
         encoding issues):
         
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
-<pre class="snippet" id="equiv-input"><code class="language-java">new <a href="../../../java.base/java/io/FileInputStream.html#%3Cinit%3E(java.io.File)"><code>FileInputStream</code></a>(new <a href="../../../java.base/java/io/File.html#%3Cinit%3E(java.net.URI)"><code>File</code></a>(<a href="FileObject.html" title="interface in javax.tools"><code>fileObject</code></a>.<a href="FileObject.html#toUri()"><code>toUri</code></a>()))
+<pre class="snippet" id="equiv-input"><code class="language-java">new <a href="../../../java.base/java/io/FileInputStream.html#%3Cinit%3E(java.io.File)"><code>FileInputStream</code></a>(new <a href="../../../java.base/java/io/File.html#%3Cinit%3E(java.net.URI)"><code>File</code></a>(<a href="FileObject.html" title="javax.tools 包中的接口"><code>fileObject</code></a>.<a href="FileObject.html#toUri()"><code>toUri</code></a>()))
 </code></pre>
 </div>
 
@@ -164,7 +164,7 @@ following behavior:
         issues):
         
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
-<pre class="snippet" id="equiv-output"><code class="language-java">new <a href="../../../java.base/java/io/FileOutputStream.html#%3Cinit%3E(java.io.File)"><code>FileOutputStream</code></a>(new <a href="../../../java.base/java/io/File.html#%3Cinit%3E(java.net.URI)"><code>File</code></a>(<a href="FileObject.html" title="interface in javax.tools"><code>fileObject</code></a>.<a href="FileObject.html#toUri()"><code>toUri</code></a>()))
+<pre class="snippet" id="equiv-output"><code class="language-java">new <a href="../../../java.base/java/io/FileOutputStream.html#%3Cinit%3E(java.io.File)"><code>FileOutputStream</code></a>(new <a href="../../../java.base/java/io/File.html#%3Cinit%3E(java.net.URI)"><code>File</code></a>(<a href="FileObject.html" title="javax.tools 包中的接口"><code>fileObject</code></a>.<a href="FileObject.html#toUri()"><code>toUri</code></a>()))
 </code></pre>
 </div>
 
@@ -172,7 +172,7 @@ following behavior:
     </ul>
   </li>
   <li>
-    The <a href="../../../java.base/java/net/URI.html" title="class in java.net">URI</a> returned from
+    The <a href="../../../java.base/java/net/URI.html" title="java.net 包中的类">URI</a> returned from
     <code><a href="FileObject.html#toUri()">FileObject.toUri()</a></code>
     <ul>
       <li>
@@ -223,7 +223,7 @@ Whereas these are not (reason in parentheses):
 files in the <a href="../../../java.base/java/nio/file/FileSystems.html#getDefault()">default file system</a>.
 It is recommended that implementations should support Path objects from any filesystem.</p></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Some methods on this interface take a <code>Collection&lt;? extends Path&gt;</code>
 instead of <code>Iterable&lt;? extends Path&gt;</code>.
 This is to prevent the possibility of accidentally calling the method
@@ -231,7 +231,7 @@ with a single <code>Path</code> as such an argument, because although
 <code>Path</code> implements <code>Iterable&lt;Path&gt;</code>, it would almost never be
 correct to call these methods with a single <code>Path</code> and have it be treated as
 an <code>Iterable</code> of its components.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -241,61 +241,61 @@ an <code>Iterable</code> of its components.</dd>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Interface</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">接口</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="StandardJavaFileManager.PathFactory.html" class="type-name-link" title="interface in javax.tools">StandardJavaFileManager.PathFactory</a></code></div>
+<div class="col-second even-row-color"><code><a href="StandardJavaFileManager.PathFactory.html" title="javax.tools 包中的接口">StandardJavaFileManager.PathFactory</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Factory to create <code>Path</code> objects from strings.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="nested-classes-inherited-from-class-javax.tools.JavaFileManager">Nested classes/interfaces declared in interface&nbsp;<a href="JavaFileManager.html#nested-class-summary" title="interface in javax.tools">JavaFileManager</a></h3>
-<code><a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a></code></div>
+<h3 id="nested-classes-inherited-from-class-javax.tools.JavaFileManager">在接口 <a href="JavaFileManager.html#nested-class-summary" title="javax.tools 包中的接口">JavaFileManager</a> 中声明的嵌套类/接口</h3>
+<code><a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a></code></div>
 </section>
 </li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">已弃用方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#asPath(javax.tools.FileObject)" class="member-name-link">asPath</a><wbr>(<a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;file)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#asPath(javax.tools.FileObject)" class="member-name-link">asPath</a><wbr>(<a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;file)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the path, if any, underlying this file object (optional operation).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjects(java.io.File...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>...&nbsp;files)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjects(java.io.File...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>...&nbsp;files)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns file objects representing the given files.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjects(java.lang.String...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>...&nbsp;names)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjects(java.lang.String...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;names)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns file objects representing the given file names.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getJavaFileObjects(java.nio.file.Path...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>...&nbsp;paths)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getJavaFileObjects(java.nio.file.Path...)" class="member-name-link">getJavaFileObjects</a><wbr>(<a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>...&nbsp;paths)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns file objects representing the given paths.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjectsFromFiles(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromFiles</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;&nbsp;files)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjectsFromFiles(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromFiles</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;&nbsp;files)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns file objects representing the given files.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#getJavaFileObjectsFromPaths(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromPaths</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#getJavaFileObjectsFromPaths(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromPaths</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">use <a href="#getJavaFileObjectsFromPaths(java.util.Collection)"><code>getJavaFileObjectsFromPaths(Collection)</code></a> instead,
@@ -303,56 +303,56 @@ to prevent the possibility of accidentally calling the method with a
 single <code>Path</code> as such an argument.</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getJavaFileObjectsFromPaths(java.util.Collection)" class="member-name-link">getJavaFileObjectsFromPaths</a><wbr>(<a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getJavaFileObjectsFromPaths(java.util.Collection)" class="member-name-link">getJavaFileObjectsFromPaths</a><wbr>(<a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns file objects representing the given paths.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjectsFromStrings(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromStrings</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;names)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJavaFileObjectsFromStrings(java.lang.Iterable)" class="member-name-link">getJavaFileObjectsFromStrings</a><wbr>(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;names)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns file objects representing the given file names.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLocation(javax.tools.JavaFileManager.Location)" class="member-name-link">getLocation</a><wbr>(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLocation(javax.tools.JavaFileManager.Location)" class="member-name-link">getLocation</a><wbr>(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the search path associated with the given location.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a><wbr>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLocationAsPaths(javax.tools.JavaFileManager.Location)" class="member-name-link">getLocationAsPaths</a><wbr>(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a><wbr>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLocationAsPaths(javax.tools.JavaFileManager.Location)" class="member-name-link">getLocationAsPaths</a><wbr>(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns the search path associated with the given location.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSameFile(javax.tools.FileObject,javax.tools.FileObject)" class="member-name-link">isSameFile</a><wbr>(<a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;a,
- <a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;b)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSameFile(javax.tools.FileObject,javax.tools.FileObject)" class="member-name-link">isSameFile</a><wbr>(<a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;a,
+ <a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;b)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compares two file objects and return true if they represent the
 same canonical file, zip file entry, or entry in any file
 system based container.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)" class="member-name-link">setLocation</a><wbr>(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;&nbsp;files)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)" class="member-name-link">setLocation</a><wbr>(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;&nbsp;files)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates the given search path with the given location.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Collection)" class="member-name-link">setLocationForModule</a><wbr>(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Collection)" class="member-name-link">setLocationForModule</a><wbr>(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Associates the given search path with the given module and location,
 which must be a module-oriented or output location.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLocationFromPaths(javax.tools.JavaFileManager.Location,java.util.Collection)" class="member-name-link">setLocationFromPaths</a><wbr>(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setLocationFromPaths(javax.tools.JavaFileManager.Location,java.util.Collection)" class="member-name-link">setLocationFromPaths</a><wbr>(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Associates the given search path with the given location.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setPathFactory(javax.tools.StandardJavaFileManager.PathFactory)" class="member-name-link">setPathFactory</a><wbr>(<a href="StandardJavaFileManager.PathFactory.html" title="interface in javax.tools">StandardJavaFileManager.PathFactory</a>&nbsp;f)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#setPathFactory(javax.tools.StandardJavaFileManager.PathFactory)" class="member-name-link">setPathFactory</a><wbr>(<a href="StandardJavaFileManager.PathFactory.html" title="javax.tools 包中的接口">StandardJavaFileManager.PathFactory</a>&nbsp;f)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Specify a factory that can be used to generate a path from a string, or series of strings.</div>
 </div>
@@ -360,10 +360,10 @@ which must be a module-oriented or output location.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.tools.JavaFileManager">Methods declared in interface&nbsp;<a href="JavaFileManager.html#method-summary" title="interface in javax.tools">JavaFileManager</a></h3>
+<h3 id="methods-inherited-from-class-javax.tools.JavaFileManager">在接口 <a href="JavaFileManager.html#method-summary" title="javax.tools 包中的接口">JavaFileManager</a> 中声明的方法</h3>
 <code><a href="JavaFileManager.html#close()" title="close()">close</a>, <a href="JavaFileManager.html#contains(javax.tools.JavaFileManager.Location,javax.tools.FileObject)" title="contains(JavaFileManager.Location, FileObject)">contains</a>, <a href="JavaFileManager.html#flush()" title="flush()">flush</a>, <a href="JavaFileManager.html#getClassLoader(javax.tools.JavaFileManager.Location)" title="getClassLoader(JavaFileManager.Location)">getClassLoader</a>, <a href="JavaFileManager.html#getFileForInput(javax.tools.JavaFileManager.Location,java.lang.String,java.lang.String)" title="getFileForInput(JavaFileManager.Location, String, String)">getFileForInput</a>, <a href="JavaFileManager.html#getFileForOutput(javax.tools.JavaFileManager.Location,java.lang.String,java.lang.String,javax.tools.FileObject)" title="getFileForOutput(JavaFileManager.Location, String, String, FileObject)">getFileForOutput</a>, <a href="JavaFileManager.html#getFileForOutputForOriginatingFiles(javax.tools.JavaFileManager.Location,java.lang.String,java.lang.String,javax.tools.FileObject...)" title="getFileForOutputForOriginatingFiles(JavaFileManager.Location, String, String, FileObject...)">getFileForOutputForOriginatingFiles</a>, <a href="JavaFileManager.html#getJavaFileForInput(javax.tools.JavaFileManager.Location,java.lang.String,javax.tools.JavaFileObject.Kind)" title="getJavaFileForInput(JavaFileManager.Location, String, JavaFileObject.Kind)">getJavaFileForInput</a>, <a href="JavaFileManager.html#getJavaFileForOutput(javax.tools.JavaFileManager.Location,java.lang.String,javax.tools.JavaFileObject.Kind,javax.tools.FileObject)" title="getJavaFileForOutput(JavaFileManager.Location, String, JavaFileObject.Kind, FileObject)">getJavaFileForOutput</a>, <a href="JavaFileManager.html#getJavaFileForOutputForOriginatingFiles(javax.tools.JavaFileManager.Location,java.lang.String,javax.tools.JavaFileObject.Kind,javax.tools.FileObject...)" title="getJavaFileForOutputForOriginatingFiles(JavaFileManager.Location, String, JavaFileObject.Kind, FileObject...)">getJavaFileForOutputForOriginatingFiles</a>, <a href="JavaFileManager.html#getLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String)" title="getLocationForModule(JavaFileManager.Location, String)">getLocationForModule</a>, <a href="JavaFileManager.html#getLocationForModule(javax.tools.JavaFileManager.Location,javax.tools.JavaFileObject)" title="getLocationForModule(JavaFileManager.Location, JavaFileObject)">getLocationForModule</a>, <a href="JavaFileManager.html#getServiceLoader(javax.tools.JavaFileManager.Location,java.lang.Class)" title="getServiceLoader(JavaFileManager.Location, Class)">getServiceLoader</a>, <a href="JavaFileManager.html#handleOption(java.lang.String,java.util.Iterator)" title="handleOption(String, Iterator)">handleOption</a>, <a href="JavaFileManager.html#hasLocation(javax.tools.JavaFileManager.Location)" title="hasLocation(JavaFileManager.Location)">hasLocation</a>, <a href="JavaFileManager.html#inferBinaryName(javax.tools.JavaFileManager.Location,javax.tools.JavaFileObject)" title="inferBinaryName(JavaFileManager.Location, JavaFileObject)">inferBinaryName</a>, <a href="JavaFileManager.html#inferModuleName(javax.tools.JavaFileManager.Location)" title="inferModuleName(JavaFileManager.Location)">inferModuleName</a>, <a href="JavaFileManager.html#list(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Set,boolean)" title="list(JavaFileManager.Location, String, Set, boolean)">list</a>, <a href="JavaFileManager.html#listLocationsForModules(javax.tools.JavaFileManager.Location)" title="listLocationsForModules(JavaFileManager.Location)">listLocationsForModules</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.tools.OptionChecker">Methods declared in interface&nbsp;<a href="OptionChecker.html#method-summary" title="interface in javax.tools">OptionChecker</a></h3>
+<h3 id="methods-inherited-from-class-javax.tools.OptionChecker">在接口 <a href="OptionChecker.html#method-summary" title="javax.tools 包中的接口">OptionChecker</a> 中声明的方法</h3>
 <code><a href="OptionChecker.html#isSupportedOption(java.lang.String)" title="isSupportedOption(String)">isSupportedOption</a></code></div>
 </section>
 </li>
@@ -374,28 +374,28 @@ which must be a module-oriented or output location.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="isSameFile(javax.tools.FileObject,javax.tools.FileObject)">
 <h3>isSameFile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isSameFile</span><wbr><span class="parameters">(<a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;a,
- <a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;b)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isSameFile</span><wbr><span class="parameters">(<a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;a,
+ <a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;b)</span></div>
 <div class="block">Compares two file objects and return true if they represent the
 same canonical file, zip file entry, or entry in any file
 system based container.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="JavaFileManager.html#isSameFile(javax.tools.FileObject,javax.tools.FileObject)">isSameFile</a></code>&nbsp;in interface&nbsp;<code><a href="JavaFileManager.html" title="interface in javax.tools">JavaFileManager</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="JavaFileManager.html#isSameFile(javax.tools.FileObject,javax.tools.FileObject)">isSameFile</a></code>&nbsp;in interface&nbsp;<code><a href="JavaFileManager.html" title="javax.tools 包中的接口">JavaFileManager</a></code></dd>
+<dt>参数:</dt>
 <dd><code>a</code> - a file object</dd>
 <dd><code>b</code> - a file object</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the given file objects represent the same
 canonical file, zip file entry or path; false otherwise</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either of the arguments
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either of the arguments
 were created with another file manager implementation</dd>
 </dl>
 </div>
@@ -405,15 +405,15 @@ were created with another file manager implementation</dd>
 <section class="detail" id="getJavaFileObjectsFromFiles(java.lang.Iterable)">
 <h3>getJavaFileObjectsFromFiles</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromFiles</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;&nbsp;files)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromFiles</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;&nbsp;files)</span></div>
 <div class="block">Returns file objects representing the given files.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>files</code> - a list of files</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the list of files includes
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the list of files includes
 a directory</dd>
 </dl>
 </div>
@@ -423,23 +423,23 @@ a directory</dd>
 <section class="detail" id="getJavaFileObjectsFromPaths(java.util.Collection)">
 <h3>getJavaFileObjectsFromPaths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromPaths</span><wbr><span class="parameters">(<a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromPaths</span><wbr><span class="parameters">(<a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</span></div>
 <div class="block">Returns file objects representing the given paths.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation lazily converts each path to a file and calls
 <a href="#getJavaFileObjectsFromFiles(java.lang.Iterable)"><code>getJavaFileObjectsFromFiles</code></a>.
 <code>IllegalArgumentException</code> will be thrown
 if any of the paths cannot be converted to a file at the point the conversion happens.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>paths</code> - a list of paths</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the list of paths includes
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the list of paths includes
 a directory or if this file manager does not support any of the
 given paths</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>13</dd>
 </dl>
 </div>
@@ -449,8 +449,8 @@ given paths</dd>
 <section class="detail" id="getJavaFileObjectsFromPaths(java.lang.Iterable)">
 <h3>getJavaFileObjectsFromPaths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations"><a href="../../../java.base/java/lang/Deprecated.html" title="annotation interface in java.lang">@Deprecated</a>(<a href="../../../java.base/java/lang/Deprecated.html#since()">since</a>="13")
-</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromPaths</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</span></div>
+<div class="member-signature"><span class="annotations"><a href="../../../java.base/java/lang/Deprecated.html" title="java.lang 包中的注解接口">@Deprecated</a>(<a href="../../../java.base/java/lang/Deprecated.html#since()">since</a>="13")
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromPaths</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">use <a href="#getJavaFileObjectsFromPaths(java.util.Collection)"><code>getJavaFileObjectsFromPaths(Collection)</code></a> instead,
 to prevent the possibility of accidentally calling the method with a
@@ -461,20 +461,20 @@ components.</div>
 </div>
 <div class="block">Returns file objects representing the given paths.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation lazily converts each path to a file and calls
 <a href="#getJavaFileObjectsFromPaths(java.util.Collection)"><code>getJavaFileObjectsFromPaths</code></a>.
 <code>IllegalArgumentException</code> will be thrown
 if any of the paths cannot be converted to a file at the point the conversion happens.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>paths</code> - a list of paths</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the list of paths includes
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the list of paths includes
 a directory or if this file manager does not support any of the
 given paths.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -484,7 +484,7 @@ given paths.</dd>
 <section class="detail" id="getJavaFileObjects(java.io.File...)">
 <h3>getJavaFileObjects</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>...&nbsp;files)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>...&nbsp;files)</span></div>
 <div class="block">Returns file objects representing the given files.
 Convenience method equivalent to:
 
@@ -494,15 +494,15 @@ Convenience method equivalent to:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>files</code> - an array of files</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the array of files includes
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the array of files includes
 a directory or if this file manager does not support any of the
 given paths</dd>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the given array contains null
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the given array contains null
 elements</dd>
 </dl>
 </div>
@@ -512,7 +512,7 @@ elements</dd>
 <section class="detail" id="getJavaFileObjects(java.nio.file.Path...)">
 <h3>getJavaFileObjects</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>...&nbsp;paths)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>...&nbsp;paths)</span></div>
 <div class="block">Returns file objects representing the given paths.
 Convenience method equivalent to:
 
@@ -522,20 +522,20 @@ Convenience method equivalent to:
 </div>
 </div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation will only throw <code>NullPointerException</code>
 if <a href="#getJavaFileObjectsFromPaths(java.util.Collection)">getJavaFileObjectsFromPaths(Collection)</a> throws it.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>paths</code> - an array of paths</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the array of files includes
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the array of files includes
 a directory or if this file manager does not support any of the
 given paths</dd>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the given array contains null
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the given array contains null
 elements</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -545,15 +545,15 @@ elements</dd>
 <section class="detail" id="getJavaFileObjectsFromStrings(java.lang.Iterable)">
 <h3>getJavaFileObjectsFromStrings</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromStrings</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;names)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjectsFromStrings</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;names)</span></div>
 <div class="block">Returns file objects representing the given file names.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>names</code> - a list of file names</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the list of file names
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the list of file names
 includes a directory</dd>
 </dl>
 </div>
@@ -563,7 +563,7 @@ includes a directory</dd>
 <section class="detail" id="getJavaFileObjects(java.lang.String...)">
 <h3>getJavaFileObjects</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="interface in javax.tools">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>...&nbsp;names)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="JavaFileObject.html" title="javax.tools 包中的接口">JavaFileObject</a>&gt;</span>&nbsp;<span class="element-name">getJavaFileObjects</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;names)</span></div>
 <div class="block">Returns file objects representing the given file names.
 Convenience method equivalent to:
 
@@ -573,14 +573,14 @@ Convenience method equivalent to:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>names</code> - a list of file names</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of file objects</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the array of file names
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the array of file names
 includes a directory</dd>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the given array contains null
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the given array contains null
 elements</dd>
 </dl>
 </div>
@@ -590,9 +590,9 @@ elements</dd>
 <section class="detail" id="setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)">
 <h3>setLocation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setLocation</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;&nbsp;files)</span>
-          throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setLocation</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;&nbsp;files)</span>
+          throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Associates the given search path with the given location.  Any
 previous value will be discarded.
 
@@ -600,16 +600,16 @@ If the location is a module-oriented or output location, any module-specific
 associations set up by <a href="#setLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Collection)">setLocationForModule</a>
 will be cancelled.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>location</code> - a location</dd>
 <dd><code>files</code> - a list of files, if <code>null</code> use the default
 search path for this location</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>location</code> is an output
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>location</code> is an output
 location and <code>files</code> does not contain exactly one element</dd>
-<dd><code><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if <code>location</code> is an output location and
+<dd><code><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if <code>location</code> is an output location and
 does not represent an existing directory</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getLocation(javax.tools.JavaFileManager.Location)"><code>getLocation(JavaFileManager.Location)</code></a></li>
@@ -623,9 +623,9 @@ does not represent an existing directory</dd>
 <section class="detail" id="setLocationFromPaths(javax.tools.JavaFileManager.Location,java.util.Collection)">
 <h3>setLocationFromPaths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLocationFromPaths</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</span>
-                           throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLocationFromPaths</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</span>
+                           throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Associates the given search path with the given location.
 Any previous value will be discarded.
 
@@ -633,24 +633,24 @@ If the location is a module-oriented or output location, any module-specific
 associations set up by <a href="#setLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Collection)">setLocationForModule</a>
 will be cancelled.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation lazily converts each path to a file and calls
 <a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)"><code>setLocation</code></a>.
 <code>IllegalArgumentException</code> will be thrown if any of the paths cannot
 be converted to a file at the point the conversion happens.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>location</code> - a location</dd>
 <dd><code>paths</code> - a list of paths, if <code>null</code> use the default
 search path for this location</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>location</code> is an output
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>location</code> is an output
 location and <code>paths</code> does not contain exactly one element
 or if this file manager does not support any of the given paths</dd>
-<dd><code><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if <code>location</code> is an output location and
+<dd><code><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if <code>location</code> is an output location and
 <code>paths</code> does not represent an existing directory</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getLocation(javax.tools.JavaFileManager.Location)"><code>getLocation(JavaFileManager.Location)</code></a></li>
@@ -664,10 +664,10 @@ or if this file manager does not support any of the given paths</dd>
 <section class="detail" id="setLocationForModule(javax.tools.JavaFileManager.Location,java.lang.String,java.util.Collection)">
 <h3>setLocationForModule</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLocationForModule</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;moduleName,
- <a href="../../../java.base/java/util/Collection.html" title="interface in java.util">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;&nbsp;paths)</span>
-                           throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setLocationForModule</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;moduleName,
+ <a href="../../../java.base/java/util/Collection.html" title="java.util 包中的接口">Collection</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;&nbsp;paths)</span>
+                           throws <span class="exceptions"><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Associates the given search path with the given module and location,
 which must be a module-oriented or output location.
 Any previous value will be discarded.
@@ -679,22 +679,22 @@ new search path is associated with the location by calling
 <a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)">setLocation</a> or
 <a href="#setLocationFromPaths(javax.tools.JavaFileManager.Location,java.util.Collection)">setLocationFromPaths</a>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
-<dd>The default implementation throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.</dd>
-<dt>Parameters:</dt>
+<dt>实现要求:</dt>
+<dd>The default implementation throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.</dd>
+<dt>参数:</dt>
 <dd><code>location</code> - the location</dd>
 <dd><code>moduleName</code> - the name of the module</dd>
 <dd><code>paths</code> - the search path to associate with the location and module.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the location is not a module-oriented
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the location is not a module-oriented
  or output location.</dd>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this operation is not supported by
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this operation is not supported by
  this file manager.</dd>
-<dd><code><a href="../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if <code>location</code> is an output location and
+<dd><code><a href="../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if <code>location</code> is an output location and
 <code>paths</code> does not represent an existing directory</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)"><code>setLocation(JavaFileManager.Location, Iterable)</code></a></li>
@@ -709,19 +709,19 @@ new search path is associated with the location by calling
 <section class="detail" id="getLocation(javax.tools.JavaFileManager.Location)">
 <h3>getLocation</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>&gt;</span>&nbsp;<span class="element-name">getLocation</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location)</span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>&gt;</span>&nbsp;<span class="element-name">getLocation</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location)</span></div>
 <div class="block">Returns the search path associated with the given location.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>location</code> - a location</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of files or <code>null</code> if this location has no
 associated search path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if any element of the search path
-cannot be converted to a <a href="../../../java.base/java/io/File.html" title="class in java.io">File</a>, or if the search path
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if any element of the search path
+cannot be converted to a <a href="../../../java.base/java/io/File.html" title="java.io 包中的类">File</a>, or if the search path
 cannot be represented as a simple series of files.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#setLocation(javax.tools.JavaFileManager.Location,java.lang.Iterable)"><code>setLocation(JavaFileManager.Location, Iterable)</code></a></li>
@@ -736,24 +736,24 @@ cannot be represented as a simple series of files.</dd>
 <section class="detail" id="getLocationAsPaths(javax.tools.JavaFileManager.Location)">
 <h3>getLocationAsPaths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a>&gt;</span>&nbsp;<span class="element-name">getLocationAsPaths</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="interface in javax.tools">JavaFileManager.Location</a>&nbsp;location)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;? extends <a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</span>&nbsp;<span class="element-name">getLocationAsPaths</span><wbr><span class="parameters">(<a href="JavaFileManager.Location.html" title="javax.tools 包中的接口">JavaFileManager.Location</a>&nbsp;location)</span></div>
 <div class="block">Returns the search path associated with the given location.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation calls <a href="#getLocation(javax.tools.JavaFileManager.Location)"><code>getLocation</code></a>
 and then returns an <code>Iterable</code> formed by calling <code>toPath()</code>
 on each <code>File</code> returned from <code>getLocation</code>.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>location</code> - a location</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a list of paths or <code>null</code> if this location has no
 associated search path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the search path cannot be represented
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the search path cannot be represented
 as a simple series of paths.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#setLocationFromPaths(javax.tools.JavaFileManager.Location,java.util.Collection)"><code>setLocationFromPaths(JavaFileManager.Location, Collection)</code></a></li>
@@ -767,24 +767,24 @@ as a simple series of paths.</dd>
 <section class="detail" id="asPath(javax.tools.FileObject)">
 <h3>asPath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">asPath</span><wbr><span class="parameters">(<a href="FileObject.html" title="interface in javax.tools">FileObject</a>&nbsp;file)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">asPath</span><wbr><span class="parameters">(<a href="FileObject.html" title="javax.tools 包中的接口">FileObject</a>&nbsp;file)</span></div>
 <div class="block">Returns the path, if any, underlying this file object (optional operation).
-File objects derived from a <a href="../../../java.base/java/nio/file/FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a>,
+File objects derived from a <a href="../../../java.base/java/nio/file/FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a>,
 including the default file system, typically have a corresponding underlying
-<a href="../../../java.base/java/nio/file/Path.html" title="interface in java.nio.file"><code>Path</code></a> object. In such cases, this method may be
+<a href="../../../java.base/java/nio/file/Path.html" title="java.nio.file 包中的接口"><code>Path</code></a> object. In such cases, this method may be
 used to access that object.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
-<dd>The default implementation throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>
+<dt>实现要求:</dt>
+<dd>The default implementation throws <a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>
 for all files.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>file</code> - a file object</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path representing the same underlying file system artifact</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the file object does not have an underlying path</dd>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the operation is not supported by this file manager</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the file object does not have an underlying path</dd>
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the operation is not supported by this file manager</dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -794,7 +794,7 @@ for all files.</dd>
 <section class="detail" id="setPathFactory(javax.tools.StandardJavaFileManager.PathFactory)">
 <h3>setPathFactory</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPathFactory</span><wbr><span class="parameters">(<a href="StandardJavaFileManager.PathFactory.html" title="interface in javax.tools">StandardJavaFileManager.PathFactory</a>&nbsp;f)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPathFactory</span><wbr><span class="parameters">(<a href="StandardJavaFileManager.PathFactory.html" title="javax.tools 包中的接口">StandardJavaFileManager.PathFactory</a>&nbsp;f)</span></div>
 <div class="block">Specify a factory that can be used to generate a path from a string, or series of strings.
 
 If this method is not called, a factory whose <code>getPath</code> method is
@@ -802,11 +802,11 @@ equivalent to calling
 <a href="../../../java.base/java/nio/file/Paths.html#get(java.lang.String,java.lang.String...)"><code>java.nio.file.Paths.get(first, more)</code></a>
 will be used.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation of this method ignores the factory that is provided.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>f</code> - the factory</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>

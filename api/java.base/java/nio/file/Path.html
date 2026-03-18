@@ -74,7 +74,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.file</a></li>
 <li><a href="Path.html" class="current-selection">Path</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -82,17 +82,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#accessing-files-heading" tabindex="0">Accessing Files</a></li>
 <li><a href="#interoperability-heading" tabindex="0">Interoperability</a></li>
 <li><a href="#concurrency-heading" tabindex="0">Concurrency</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#of(java.lang.String,java.lang.String...)" tabindex="0">of(String, String...)</a></li>
 <li><a href="#of(java.net.URI)" tabindex="0">of(URI)</a></li>
@@ -134,17 +134,17 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Path" class="title">Interface Path</h1>
+<h1 title="接口 Path" class="title">接口 Path</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;, <a href="../../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;, <a href="Watchable.html" title="interface in java.nio.file">Watchable</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;, <a href="../../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;, <a href="Watchable.html" title="java.nio.file 包中的接口">Watchable</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Path</span><span class="extends-implements">
-extends <a href="../../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;, <a href="../../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;, <a href="Watchable.html" title="interface in java.nio.file">Watchable</a></span></div>
+extends <a href="../../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;, <a href="../../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;, <a href="Watchable.html" title="java.nio.file 包中的接口">Watchable</a></span></div>
 <div class="block">An object that may be used to locate a file in a file system. It will
 typically represent a system dependent file path.
 
@@ -168,16 +168,16 @@ method that can be used to construct a relative path between two paths.
 Paths can be <a href="#compareTo(java.nio.file.Path)"><code>compared</code></a>, and tested against each other using
 the <a href="#startsWith(java.nio.file.Path)"><code>startsWith</code></a> and <a href="#endsWith(java.nio.file.Path)"><code>endsWith</code></a> methods.
 
-<p> This interface extends <a href="Watchable.html" title="interface in java.nio.file"><code>Watchable</code></a> interface so that a directory
-located by a path can be <a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)"><code>registered</code></a> with a <a href="WatchService.html" title="interface in java.nio.file"><code>WatchService</code></a> and entries in the directory watched. </p>
+<p> This interface extends <a href="Watchable.html" title="java.nio.file 包中的接口"><code>Watchable</code></a> interface so that a directory
+located by a path can be <a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)"><code>registered</code></a> with a <a href="WatchService.html" title="java.nio.file 包中的接口"><code>WatchService</code></a> and entries in the directory watched. </p>
 
 <p> <b>WARNING:</b> This interface is only intended to be implemented by
 those developing custom file system implementations. Methods may be added to
 this interface in future releases. </p>
 
 <h2 id="accessing-files-heading">Accessing Files</h2>
-<p> Paths may be used with the <a href="Files.html" title="class in java.nio.file"><code>Files</code></a> class to operate on files,
-directories, and other types of files. For example, suppose we want a <a href="../../io/BufferedReader.html" title="class in java.io"><code>BufferedReader</code></a> to read text from a file "<code>access.log</code>". The
+<p> Paths may be used with the <a href="Files.html" title="java.nio.file 包中的类"><code>Files</code></a> class to operate on files,
+directories, and other types of files. For example, suppose we want a <a href="../../io/BufferedReader.html" title="java.io 包中的类"><code>BufferedReader</code></a> to read text from a file "<code>access.log</code>". The
 file is located in a directory "<code>logs</code>" relative to the current working
 directory and is UTF-8 encoded.
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -188,8 +188,8 @@ directory and is UTF-8 encoded.
 
 
 <a id="interop"></a><h2 id="interoperability-heading">Interoperability</h2>
-<p> Paths associated with the default <a href="spi/FileSystemProvider.html" title="class in java.nio.file.spi"><code>provider</code></a> are generally interoperable
-with the <a href="../../io/File.html" title="class in java.io"><code>java.io.File</code></a> class. Paths created by other
+<p> Paths associated with the default <a href="spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类"><code>provider</code></a> are generally interoperable
+with the <a href="../../io/File.html" title="java.io 包中的类"><code>java.io.File</code></a> class. Paths created by other
 providers are unlikely to be interoperable with the abstract path names
 represented by <code>java.io.File</code>. The <a href="../../io/File.html#toPath()"><code>toPath</code></a>
 method may be used to obtain a <code>Path</code> from the abstract path name
@@ -202,7 +202,7 @@ File</code> from the <code>String</code> representation of a <code>Path</code>.
 <p> Implementations of this interface are immutable and safe for use by
 multiple concurrent threads.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
 </dl>
 </div>
@@ -212,47 +212,47 @@ multiple concurrent threads.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#compareTo(java.nio.file.Path)" class="member-name-link">compareTo</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#compareTo(java.nio.file.Path)" class="member-name-link">compareTo</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Compares two abstract paths lexicographically.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#endsWith(java.lang.String)" class="member-name-link">endsWith</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#endsWith(java.lang.String)" class="member-name-link">endsWith</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Tests if this path ends with a <code>Path</code>, constructed by converting
 the given path string, in exactly the manner specified by the <a href="#endsWith(java.nio.file.Path)"><code>endsWith(Path)</code></a> method.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#endsWith(java.nio.file.Path)" class="member-name-link">endsWith</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#endsWith(java.nio.file.Path)" class="member-name-link">endsWith</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tests if this path ends with the given path.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tests this path for equality with the given object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileName()" class="member-name-link">getFileName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the name of the file or directory denoted by this path as a
 <code>Path</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFileSystem()" class="member-name-link">getFileSystem</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the file system that created this object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getName(int)" class="member-name-link">getName</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a name element of this path as a <code>Path</code> object.</div>
@@ -262,13 +262,13 @@ the given path string, in exactly the manner specified by the <a href="#endsWith
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the number of name elements in the path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getParent()" class="member-name-link">getParent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the <em>parent path</em>, or <code>null</code> if this path does not
 have a parent.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRoot()" class="member-name-link">getRoot</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the root component of this path as a <code>Path</code> object,
@@ -284,125 +284,125 @@ or <code>null</code> if this path does not have a root component.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tells whether or not this path is absolute.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../util/Iterator.html" title="interface in java.util">Iterator</a><wbr>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../util/Iterator.html" title="java.util 包中的接口">Iterator</a><wbr>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#iterator()" class="member-name-link">iterator</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Returns an iterator over the name elements of this path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#normalize()" class="member-name-link">normalize</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a path that is this path with redundant name elements eliminated.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.lang.String,java.lang.String...)" class="member-name-link">of</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;first,
- <a href="../../lang/String.html" title="class in java.lang">String</a>...&nbsp;more)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.lang.String,java.lang.String...)" class="member-name-link">of</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;first,
+ <a href="../../lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;more)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a <code>Path</code> by converting a path string, or a sequence of
 strings that when joined form a path string.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.net.URI)" class="member-name-link">of</a><wbr>(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(java.net.URI)" class="member-name-link">of</a><wbr>(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a <code>Path</code> by converting a URI.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)" class="member-name-link">register</a><wbr>(<a href="WatchService.html" title="interface in java.nio.file">WatchService</a>&nbsp;watcher,
- <a href="WatchEvent.Kind.html" title="interface in java.nio.file">WatchEvent.Kind</a>&lt;?&gt;...&nbsp;events)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)" class="member-name-link">register</a><wbr>(<a href="WatchService.html" title="java.nio.file 包中的接口">WatchService</a>&nbsp;watcher,
+ <a href="WatchEvent.Kind.html" title="java.nio.file 包中的接口">WatchEvent.Kind</a>&lt;?&gt;...&nbsp;events)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Registers the file located by this path with a watch service.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)" class="member-name-link">register</a><wbr>(<a href="WatchService.html" title="interface in java.nio.file">WatchService</a>&nbsp;watcher,
- <a href="WatchEvent.Kind.html" title="interface in java.nio.file">WatchEvent.Kind</a>&lt;?&gt;[]&nbsp;events,
- <a href="WatchEvent.Modifier.html" title="interface in java.nio.file">WatchEvent.Modifier</a>...&nbsp;modifiers)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)" class="member-name-link">register</a><wbr>(<a href="WatchService.html" title="java.nio.file 包中的接口">WatchService</a>&nbsp;watcher,
+ <a href="WatchEvent.Kind.html" title="java.nio.file 包中的接口">WatchEvent.Kind</a>&lt;?&gt;[]&nbsp;events,
+ <a href="WatchEvent.Modifier.html" title="java.nio.file 包中的接口">WatchEvent.Modifier</a>...&nbsp;modifiers)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Registers the file located by this path with a watch service.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#relativize(java.nio.file.Path)" class="member-name-link">relativize</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#relativize(java.nio.file.Path)" class="member-name-link">relativize</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Constructs a relative path between this path and a given path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.lang.String)" class="member-name-link">resolve</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.lang.String)" class="member-name-link">resolve</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Converts a given path string to a <code>Path</code> and resolves it against
 this <code>Path</code> in exactly the manner specified by the <a href="#resolve(java.nio.file.Path)"><code>resolve</code></a> method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.lang.String,java.lang.String...)" class="member-name-link">resolve</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;first,
- <a href="../../lang/String.html" title="class in java.lang">String</a>...&nbsp;more)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.lang.String,java.lang.String...)" class="member-name-link">resolve</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;first,
+ <a href="../../lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;more)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Converts a path string to a path, resolves that path against this path,
 and then iteratively performs the same procedure for any additional
 path strings.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resolve(java.nio.file.Path)" class="member-name-link">resolve</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#resolve(java.nio.file.Path)" class="member-name-link">resolve</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Resolve the given path against this path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.nio.file.Path,java.nio.file.Path...)" class="member-name-link">resolve</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;first,
- <a href="Path.html" title="interface in java.nio.file">Path</a>...&nbsp;more)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolve(java.nio.file.Path,java.nio.file.Path...)" class="member-name-link">resolve</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;first,
+ <a href="Path.html" title="java.nio.file 包中的接口">Path</a>...&nbsp;more)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Resolves a path against this path, and then iteratively resolves any
 additional paths.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolveSibling(java.lang.String)" class="member-name-link">resolveSibling</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolveSibling(java.lang.String)" class="member-name-link">resolveSibling</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Converts a given path string to a <code>Path</code> and resolves it against
 this path's <a href="#getParent()"><code>parent</code></a> path in exactly the manner
 specified by the <a href="#resolveSibling(java.nio.file.Path)"><code>resolveSibling</code></a> method.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolveSibling(java.nio.file.Path)" class="member-name-link">resolveSibling</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#resolveSibling(java.nio.file.Path)" class="member-name-link">resolveSibling</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Resolves the given path against this path's <a href="#getParent()"><code>parent</code></a>
 path.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#startsWith(java.lang.String)" class="member-name-link">startsWith</a><wbr>(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#startsWith(java.lang.String)" class="member-name-link">startsWith</a><wbr>(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Tests if this path starts with a <code>Path</code>, constructed by converting
 the given path string, in exactly the manner specified by the <a href="#startsWith(java.nio.file.Path)"><code>startsWith(Path)</code></a> method.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startsWith(java.nio.file.Path)" class="member-name-link">startsWith</a><wbr>(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#startsWith(java.nio.file.Path)" class="member-name-link">startsWith</a><wbr>(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tests if this path starts with the given path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#subpath(int,int)" class="member-name-link">subpath</a><wbr>(int&nbsp;beginIndex,
  int&nbsp;endIndex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a relative <code>Path</code> that is a subsequence of the name
 elements of this path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toAbsolutePath()" class="member-name-link">toAbsolutePath</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a <code>Path</code> object representing the absolute path of this
 path.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../io/File.html" title="class in java.io">File</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../io/File.html" title="java.io 包中的类">File</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#toFile()" class="member-name-link">toFile</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Returns a <a href="../../io/File.html" title="class in java.io"><code>File</code></a> object representing this path.</div>
+<div class="block">Returns a <a href="../../io/File.html" title="java.io 包中的类"><code>File</code></a> object representing this path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="interface in java.nio.file">Path</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toRealPath(java.nio.file.LinkOption...)" class="member-name-link">toRealPath</a><wbr>(<a href="LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="Path.html" title="java.nio.file 包中的接口">Path</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toRealPath(java.nio.file.LinkOption...)" class="member-name-link">toRealPath</a><wbr>(<a href="LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the <em>real</em> path of an existing file.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the string representation of this path.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../net/URI.html" title="class in java.net">URI</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../net/URI.html" title="java.net 包中的类">URI</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toUri()" class="member-name-link">toUri</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a URI to represent this path.</div>
@@ -411,7 +411,7 @@ path.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Iterable">Methods declared in interface&nbsp;<a href="../../lang/Iterable.html#method-summary" title="interface in java.lang">Iterable</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Iterable">在接口 <a href="../../lang/Iterable.html#method-summary" title="java.lang 包中的接口">Iterable</a> 中声明的方法</h3>
 <code><a href="../../lang/Iterable.html#forEach(java.util.function.Consumer)" title="forEach(Consumer)">forEach</a>, <a href="../../lang/Iterable.html#spliterator()" title="spliterator()">spliterator</a></code></div>
 </section>
 </li>
@@ -422,14 +422,14 @@ path.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="of(java.lang.String,java.lang.String...)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;first,
- <a href="../../lang/String.html" title="class in java.lang">String</a>...&nbsp;more)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;first,
+ <a href="../../lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;more)</span></div>
 <div class="block">Returns a <code>Path</code> by converting a path string, or a sequence of
 strings that when joined form a path string. If <code>more</code> does not
 specify any elements then the value of the <code>first</code> parameter is
@@ -445,7 +445,7 @@ For example, if the name separator is "<code>/</code>" and
 representing an empty path is returned if <code>first</code> is the empty
 string and <code>more</code> does not contain any non-empty strings.
 
-<p> The <code>Path</code> is obtained by invoking the <a href="FileSystem.html#getPath(java.lang.String,java.lang.String...)"><code>getPath</code></a> method of the <a href="FileSystems.html#getDefault()"><code>default</code></a> <a href="FileSystem.html" title="class in java.nio.file"><code>FileSystem</code></a>.
+<p> The <code>Path</code> is obtained by invoking the <a href="FileSystem.html#getPath(java.lang.String,java.lang.String...)"><code>getPath</code></a> method of the <a href="FileSystems.html#getDefault()"><code>default</code></a> <a href="FileSystem.html" title="java.nio.file 包中的类"><code>FileSystem</code></a>.
 
 <p> Note that while this method is very convenient, using it will imply
 an assumed reference to the default <code>FileSystem</code> and limit the
@@ -459,16 +459,16 @@ existing <code>Path</code> instance as an anchor, such as:
 </div>
 </div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>first</code> - the path string or initial part of the path string</dd>
 <dd><code>more</code> - additional strings to be joined to form the path string</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting <code>Path</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - if the path string cannot be converted to a <code>Path</code></dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - if the path string cannot be converted to a <code>Path</code></dd>
+<dt>自:</dt>
 <dd>11</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="FileSystem.html#getPath(java.lang.String,java.lang.String...)"><code>FileSystem.getPath(String, String...)</code></a></li>
@@ -482,7 +482,7 @@ existing <code>Path</code> instance as an anchor, such as:
 <section class="detail" id="of(java.net.URI)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="class in java.net">URI</a>&nbsp;uri)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(<a href="../../net/URI.html" title="java.net 包中的类">URI</a>&nbsp;uri)</span></div>
 <div class="block">Returns a <code>Path</code> by converting a URI.
 
 <p> This method iterates over the <a href="spi/FileSystemProvider.html#installedProviders()"><code>installed</code></a> providers to locate the provider that is identified by the
@@ -497,7 +497,7 @@ is platform specific. The returned <code>Path</code> is associated with the
 <a href="FileSystems.html#getDefault()"><code>default</code></a> file system.
 
 <p> The default provider provides a similar <em>round-trip</em> guarantee
-to the <a href="../../io/File.html" title="class in java.io"><code>File</code></a> class. For a given <code>Path</code> <i>p</i> it
+to the <a href="../../io/File.html" title="java.io 包中的类"><code>File</code></a> class. For a given <code>Path</code> <i>p</i> it
 is guaranteed that
 <blockquote><code>
 Path.of(</code><i>p</i><code>.</code><a href="#toUri()"><code>toUri</code></a><code>()).equals(</code>
@@ -508,17 +508,17 @@ Path</code> are all created in (possibly different invocations of) the same
 Java virtual machine. Whether other providers make any guarantees is
 provider specific and therefore unspecified.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>uri</code> - the URI to convert</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting <code>Path</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if preconditions on the <code>uri</code> parameter do not hold. The
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if preconditions on the <code>uri</code> parameter do not hold. The
          format of the URI is provider specific.</dd>
-<dd><code><a href="FileSystemNotFoundException.html" title="class in java.nio.file">FileSystemNotFoundException</a></code> - The file system, identified by the URI, does not exist and
+<dd><code><a href="FileSystemNotFoundException.html" title="java.nio.file 包中的类">FileSystemNotFoundException</a></code> - The file system, identified by the URI, does not exist and
          cannot be created automatically, or the provider identified by
          the URI's scheme component is not installed</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>11</dd>
 </dl>
 </div>
@@ -528,10 +528,10 @@ provider specific and therefore unspecified.</div>
 <section class="detail" id="getFileSystem()">
 <h3>getFileSystem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="FileSystem.html" title="class in java.nio.file">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="FileSystem.html" title="java.nio.file 包中的类">FileSystem</a></span>&nbsp;<span class="element-name">getFileSystem</span>()</div>
 <div class="block">Returns the file system that created this object.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the file system that created this object</dd>
 </dl>
 </div>
@@ -547,7 +547,7 @@ provider specific and therefore unspecified.</div>
 <p> An absolute path is complete in that it doesn't need to be combined
 with other path information in order to locate a file.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this path is absolute</dd>
 </dl>
 </div>
@@ -557,11 +557,11 @@ with other path information in order to locate a file.</div>
 <section class="detail" id="getRoot()">
 <h3>getRoot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">getRoot</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">getRoot</span>()</div>
 <div class="block">Returns the root component of this path as a <code>Path</code> object,
 or <code>null</code> if this path does not have a root component.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path representing the root component of this path,
          or <code>null</code></dd>
 </dl>
@@ -572,12 +572,12 @@ or <code>null</code> if this path does not have a root component.</div>
 <section class="detail" id="getFileName()">
 <h3>getFileName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">getFileName</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">getFileName</span>()</div>
 <div class="block">Returns the name of the file or directory denoted by this path as a
 <code>Path</code> object. The file name is the <em>farthest</em> element from
 the root in the directory hierarchy.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path representing the name of the file or directory, or
          <code>null</code> if this path has zero elements</dd>
 </dl>
@@ -588,7 +588,7 @@ the root in the directory hierarchy.</div>
 <section class="detail" id="getParent()">
 <h3>getParent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">getParent</span>()</div>
 <div class="block">Returns the <em>parent path</em>, or <code>null</code> if this path does not
 have a parent.
 
@@ -610,7 +610,7 @@ this method is equivalent to evaluating the expression:
 </div>
 </div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a path representing the path's parent</dd>
 </dl>
 </div>
@@ -623,7 +623,7 @@ this method is equivalent to evaluating the expression:
 <div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getNameCount</span>()</div>
 <div class="block">Returns the number of name elements in the path.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the number of elements in the path, or <code>0</code> if this path
          only represents a root component</dd>
 </dl>
@@ -634,7 +634,7 @@ this method is equivalent to evaluating the expression:
 <section class="detail" id="getName(int)">
 <h3>getName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">getName</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">getName</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
 <div class="block">Returns a name element of this path as a <code>Path</code> object.
 
 <p> The <code>index</code> parameter is the index of the name element to return.
@@ -642,12 +642,12 @@ The element that is <em>closest</em> to the root in the directory hierarchy
 has index <code>0</code>. The element that is <em>farthest</em> from the root
 has index <a href="#getNameCount()"><code>count</code></a><code>-1</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>index</code> - the index of the element</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the name element</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>index</code> is negative, <code>index</code> is greater than or
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>index</code> is negative, <code>index</code> is greater than or
          equal to the number of elements, or this path has zero name
          elements</dd>
 </dl>
@@ -658,7 +658,7 @@ has index <a href="#getNameCount()"><code>count</code></a><code>-1</code>.</div>
 <section class="detail" id="subpath(int,int)">
 <h3>subpath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">subpath</span><wbr><span class="parameters">(int&nbsp;beginIndex,
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">subpath</span><wbr><span class="parameters">(int&nbsp;beginIndex,
  int&nbsp;endIndex)</span></div>
 <div class="block">Returns a relative <code>Path</code> that is a subsequence of the name
 elements of this path.
@@ -670,14 +670,14 @@ in the directory hierarchy has index <code>0</code>. The name that is
 that begin at <code>beginIndex</code> and extend to the element at index <code>
 endIndex-1</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>beginIndex</code> - the index of the first element, inclusive</dd>
 <dd><code>endIndex</code> - the index of the last element, exclusive</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new <code>Path</code> object that is a subsequence of the name
          elements in this <code>Path</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>beginIndex</code> is negative, or greater than or equal to
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>beginIndex</code> is negative, or greater than or equal to
          the number of elements. If <code>endIndex</code> is less than or
          equal to <code>beginIndex</code>, or larger than the number of elements.</dd>
 </dl>
@@ -688,7 +688,7 @@ endIndex-1</code>.</div>
 <section class="detail" id="startsWith(java.nio.file.Path)">
 <h3>startsWith</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">startsWith</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">startsWith</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Tests if this path starts with the given path.
 
 <p> This path <em>starts</em> with the given path if this path's root
@@ -705,9 +705,9 @@ this path does not start with the given path.
 <p> If the given path is associated with a different <code>FileSystem</code>
 to this path then <code>false</code> is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the given path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this path starts with the given path; otherwise
          <code>false</code></dd>
 </dl>
@@ -718,26 +718,26 @@ to this path then <code>false</code> is returned.</div>
 <section class="detail" id="startsWith(java.lang.String)">
 <h3>startsWith</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">startsWith</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">startsWith</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</span></div>
 <div class="block">Tests if this path starts with a <code>Path</code>, constructed by converting
 the given path string, in exactly the manner specified by the <a href="#startsWith(java.nio.file.Path)"><code>startsWith(Path)</code></a> method. On UNIX for example, the path
 "<code>foo/bar</code>" starts with "<code>foo</code>" and "<code>foo/bar</code>". It
 does not start with "<code>f</code>" or "<code>fo</code>".</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-startsWith(java.lang.String)1"><code class="language-java">    startsWith(getFileSystem().getPath(other));
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the given path string</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this path starts with the given path; otherwise
          <code>false</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - If the path string cannot be converted to a Path.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - If the path string cannot be converted to a Path.</dd>
 </dl>
 </div>
 </section>
@@ -746,7 +746,7 @@ does not start with "<code>f</code>" or "<code>fo</code>".</div>
 <section class="detail" id="endsWith(java.nio.file.Path)">
 <h3>endsWith</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">endsWith</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">endsWith</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Tests if this path ends with the given path.
 
 <p> If the given path has <em>N</em> elements, and no root component,
@@ -765,9 +765,9 @@ then this path does not end with the given path.
 <p> If the given path is associated with a different <code>FileSystem</code>
 to this path then <code>false</code> is returned.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the given path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this path ends with the given path; otherwise
          <code>false</code></dd>
 </dl>
@@ -778,7 +778,7 @@ to this path then <code>false</code> is returned.</div>
 <section class="detail" id="endsWith(java.lang.String)">
 <h3>endsWith</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">endsWith</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">endsWith</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</span></div>
 <div class="block">Tests if this path ends with a <code>Path</code>, constructed by converting
 the given path string, in exactly the manner specified by the <a href="#endsWith(java.nio.file.Path)"><code>endsWith(Path)</code></a> method. On UNIX for example, the path
 "<code>foo/bar</code>" ends with "<code>foo/bar</code>" and "<code>bar</code>". It does
@@ -787,20 +787,20 @@ are not taken into account, and so invoking this method on the <code>
 Path</code> "<code>foo/bar</code>" with the <code>String</code> "<code>bar/</code>" returns
 <code>true</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-endsWith(java.lang.String)1"><code class="language-java">    endsWith(getFileSystem().getPath(other));
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the given path string</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this path ends with the given path; otherwise
          <code>false</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - If the path string cannot be converted to a Path.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - If the path string cannot be converted to a Path.</dd>
 </dl>
 </div>
 </section>
@@ -809,7 +809,7 @@ Path</code> "<code>foo/bar</code>" with the <code>String</code> "<code>bar/</cod
 <section class="detail" id="normalize()">
 <h3>normalize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">normalize</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">normalize</span>()</div>
 <div class="block">Returns a path that is this path with redundant name elements eliminated.
 
 <p> The precise definition of this method is implementation dependent but
@@ -827,11 +827,11 @@ a file that exists. Eliminating "<code>..</code>" and a preceding name from a
 path may result in the path that locates a different file than the original
 path. This can arise when the preceding name is a symbolic link.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path or this path if it does not contain
          redundant name elements; an empty path is returned if this path
          does not have a root component and all name elements are redundant</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getParent()"><code>getParent()</code></a></li>
@@ -846,7 +846,7 @@ path. This can arise when the preceding name is a symbolic link.</div>
 <section class="detail" id="resolve(java.nio.file.Path)">
 <h3>resolve</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Resolve the given path against this path.
 
 <p> If the <code>other</code> parameter is an <a href="#isAbsolute()"><code>absolute</code></a>
@@ -860,11 +860,11 @@ that <a href="#endsWith(java.nio.file.Path)"><code>ends</code></a> with the give
 a root component then resolution is highly implementation dependent and
 therefore unspecified.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the path to resolve against this path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#relativize(java.nio.file.Path)"><code>relativize(Path)</code></a></li>
@@ -878,27 +878,27 @@ therefore unspecified.</div>
 <section class="detail" id="resolve(java.lang.String)">
 <h3>resolve</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</span></div>
 <div class="block">Converts a given path string to a <code>Path</code> and resolves it against
 this <code>Path</code> in exactly the manner specified by the <a href="#resolve(java.nio.file.Path)"><code>resolve</code></a> method. For example, suppose that the name
 separator is "<code>/</code>" and a path represents "<code>foo/bar</code>", then
 invoking this method with the path string "<code>gus</code>" will result in
 the <code>Path</code> "<code>foo/bar/gus</code>".</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-resolve(java.lang.String)1"><code class="language-java">    resolve(getFileSystem().getPath(other));
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the path string to resolve against this path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - if the path string cannot be converted to a Path.</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - if the path string cannot be converted to a Path.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="FileSystem.html#getPath(java.lang.String,java.lang.String...)"><code>FileSystem.getPath(String, String...)</code></a></li>
@@ -912,8 +912,8 @@ the <code>Path</code> "<code>foo/bar/gus</code>".</div>
 <section class="detail" id="resolve(java.nio.file.Path,java.nio.file.Path...)">
 <h3>resolve</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;first,
- <a href="Path.html" title="interface in java.nio.file">Path</a>...&nbsp;more)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;first,
+ <a href="Path.html" title="java.nio.file 包中的接口">Path</a>...&nbsp;more)</span></div>
 <div class="block">Resolves a path against this path, and then iteratively resolves any
 additional paths.
 
@@ -923,7 +923,7 @@ elements then it resolves the first element against the result, then
 iteratively resolves all subsequent elements. This method returns the
 result from the final resolve.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to the result obtained with:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-resolve(java.nio.file.Path,java.nio.file.Path...)1"><code class="language-java">    Path result = resolve(first);
@@ -933,14 +933,14 @@ result from the final resolve.</div>
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>first</code> - the first path to resolve against this path</dd>
 <dd><code>more</code> - additional paths to iteratively resolve</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>22</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#resolve(java.nio.file.Path)"><code>resolve(Path)</code></a></li>
@@ -954,8 +954,8 @@ result from the final resolve.</div>
 <section class="detail" id="resolve(java.lang.String,java.lang.String...)">
 <h3>resolve</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;first,
- <a href="../../lang/String.html" title="class in java.lang">String</a>...&nbsp;more)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolve</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;first,
+ <a href="../../lang/String.html" title="java.lang 包中的类">String</a>...&nbsp;more)</span></div>
 <div class="block">Converts a path string to a path, resolves that path against this path,
 and then iteratively performs the same procedure for any additional
 path strings.
@@ -967,7 +967,7 @@ then it converts the first element to a path, resolves that path against
 the result, then iteratively converts and resolves all subsequent
 elements. This method returns the result from the final resolve.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent to the result obtained with:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-resolve(java.lang.String,java.lang.String...)1"><code class="language-java">Path result = resolve(first);
@@ -977,18 +977,18 @@ for (String s : more) {
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>first</code> - the first path string to convert to a path and
          resolve against this path</dd>
 <dd><code>more</code> - additional path strings to be iteratively converted to
          paths and resolved</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - if a path string cannot be converted to a Path.</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - if a path string cannot be converted to a Path.</dd>
+<dt>自:</dt>
 <dd>22</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#resolve(java.nio.file.Path,java.nio.file.Path...)"><code>resolve(Path,Path...)</code></a></li>
@@ -1003,7 +1003,7 @@ for (String s : more) {
 <section class="detail" id="resolveSibling(java.nio.file.Path)">
 <h3>resolveSibling</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolveSibling</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolveSibling</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Resolves the given path against this path's <a href="#getParent()"><code>parent</code></a>
 path. This is useful where a file name needs to be <i>replaced</i> with
 another file name. For example, suppose that the name separator is
@@ -1015,7 +1015,7 @@ returns <code>other</code>. If <code>other</code> is an empty path then this met
 returns this path's parent, or where this path doesn't have a parent, the
 empty path.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-resolveSibling(java.nio.file.Path)1"><code class="language-java">    (getParent() == null) ? other : getParent().resolve(other);
@@ -1024,11 +1024,11 @@ empty path.</div>
 
 unless <code>other == null</code>, in which case a
 <code>NullPointerException</code> is thrown.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the path to resolve against this path's parent</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#resolve(java.nio.file.Path)"><code>resolve(Path)</code></a></li>
@@ -1042,25 +1042,25 @@ unless <code>other == null</code>, in which case a
 <section class="detail" id="resolveSibling(java.lang.String)">
 <h3>resolveSibling</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">resolveSibling</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="class in java.lang">String</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">resolveSibling</span><wbr><span class="parameters">(<a href="../../lang/String.html" title="java.lang 包中的类">String</a>&nbsp;other)</span></div>
 <div class="block">Converts a given path string to a <code>Path</code> and resolves it against
 this path's <a href="#getParent()"><code>parent</code></a> path in exactly the manner
 specified by the <a href="#resolveSibling(java.nio.file.Path)"><code>resolveSibling</code></a> method.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-resolveSibling(java.lang.String)1"><code class="language-java">    resolveSibling(getFileSystem().getPath(other));
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the path string to resolve against this path's parent</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="InvalidPathException.html" title="class in java.nio.file">InvalidPathException</a></code> - if the path string cannot be converted to a Path.</dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="InvalidPathException.html" title="java.nio.file 包中的类">InvalidPathException</a></code> - if the path string cannot be converted to a Path.</dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="FileSystem.html#getPath(java.lang.String,java.lang.String...)"><code>FileSystem.getPath(String, String...)</code></a></li>
@@ -1074,7 +1074,7 @@ specified by the <a href="#resolveSibling(java.nio.file.Path)"><code>resolveSibl
 <section class="detail" id="relativize(java.nio.file.Path)">
 <h3>relativize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">relativize</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">relativize</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Constructs a relative path between this path and a given path.
 
 <p> Relativization is the inverse of <a href="#resolve(java.nio.file.Path)"><code>resolution</code></a>.
@@ -1105,13 +1105,13 @@ path is <code>"/a/x"</code> then the resulting relative path may be <code>
 "../x"</code>. If <code>"b"</code> is a symbolic link then is implementation
 dependent if <code>"a/b/../x"</code> would locate the same file as <code>"/a/x"</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - the path to relativize against this path</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the resulting relative path, or an empty path if both paths are
          equal</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>other</code> is not a <code>Path</code> that can be relativized
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>other</code> is not a <code>Path</code> that can be relativized
          against this path</dd>
 </dl>
 </div>
@@ -1121,10 +1121,10 @@ dependent if <code>"a/b/../x"</code> would locate the same file as <code>"/a/x"<
 <section class="detail" id="toUri()">
 <h3>toUri</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../net/URI.html" title="class in java.net">URI</a></span>&nbsp;<span class="element-name">toUri</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../net/URI.html" title="java.net 包中的类">URI</a></span>&nbsp;<span class="element-name">toUri</span>()</div>
 <div class="block">Returns a URI to represent this path.
 
-<p> This method constructs an absolute <a href="../../net/URI.html" title="class in java.net"><code>URI</code></a> with a <a href="../../net/URI.html#getScheme()"><code>scheme</code></a> equal to the URI scheme that identifies the
+<p> This method constructs an absolute <a href="../../net/URI.html" title="java.net 包中的类"><code>URI</code></a> with a <a href="../../net/URI.html#getScheme()"><code>scheme</code></a> equal to the URI scheme that identifies the
 provider. The exact form of the scheme specific part is highly provider
 dependent.
 
@@ -1132,7 +1132,7 @@ dependent.
 a <a href="../../net/URI.html#getPath()"><code>path</code></a> component that is absolute. The query and
 fragment components are undefined. Whether the authority component is
 defined or not is implementation dependent. There is no guarantee that
-the <code>URI</code> may be used to construct a <a href="../../io/File.html" title="class in java.io"><code>java.io.File</code></a>.
+the <code>URI</code> may be used to construct a <a href="../../io/File.html" title="java.io 包中的类"><code>java.io.File</code></a>.
 In particular, if this path represents a Universal Naming Convention (UNC)
 path, then the UNC server name may be encoded in the authority component
 of the resulting URI. In the case of the default provider, and the file
@@ -1140,7 +1140,7 @@ exists, and it can be determined that the file is a directory, then the
 resulting <code>URI</code> will end with a slash.
 
 <p> The default provider provides a similar <em>round-trip</em> guarantee
-to the <a href="../../io/File.html" title="class in java.io"><code>File</code></a> class. For a given <code>Path</code> <i>p</i> it
+to the <a href="../../io/File.html" title="java.io 包中的类"><code>File</code></a> class. For a given <code>Path</code> <i>p</i> it
 is guaranteed that
 <blockquote>
 <a href="#of(java.net.URI)"><code>Path.of</code></a><code>(</code><i>p</i><code>.toUri()).equals(</code><i>p</i>
@@ -1158,10 +1158,10 @@ URI represents the given path in the file system or it represents a
 A format for compound URIs is not defined in this release; such a scheme
 may be added in a future release.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the URI representing this path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOError.html" title="class in java.io">IOError</a></code> - if an I/O error occurs obtaining the absolute path, or where a
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOError.html" title="java.io 包中的类">IOError</a></code> - if an I/O error occurs obtaining the absolute path, or where a
          file system is constructed to access the contents of a file as
          a file system, and the URI of the enclosing file system cannot be
          obtained</dd>
@@ -1173,7 +1173,7 @@ may be added in a future release.</div>
 <section class="detail" id="toAbsolutePath()">
 <h3>toAbsolutePath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">toAbsolutePath</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">toAbsolutePath</span>()</div>
 <div class="block">Returns a <code>Path</code> object representing the absolute path of this
 path. Where this <code>Path</code> is associated with the default provider,
 then the returned absolute path will have a non-<code>null</code>
@@ -1185,10 +1185,10 @@ in an implementation dependent manner, typically by resolving the path
 against a file system default directory. Depending on the implementation,
 this method may throw an I/O error if the file system is not accessible.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Path</code> object representing the absolute path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOError.html" title="class in java.io">IOError</a></code> - if an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOError.html" title="java.io 包中的类">IOError</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1197,8 +1197,8 @@ this method may throw an I/O error if the file system is not accessible.</div>
 <section class="detail" id="toRealPath(java.nio.file.LinkOption...)">
 <h3>toRealPath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="Path.html" title="interface in java.nio.file">Path</a></span>&nbsp;<span class="element-name">toRealPath</span><wbr><span class="parameters">(<a href="LinkOption.html" title="enum class in java.nio.file">LinkOption</a>...&nbsp;options)</span>
-         throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="Path.html" title="java.nio.file 包中的接口">Path</a></span>&nbsp;<span class="element-name">toRealPath</span><wbr><span class="parameters">(<a href="LinkOption.html" title="java.nio.file 包中的枚举类">LinkOption</a>...&nbsp;options)</span>
+         throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Returns the <em>real</em> path of an existing file.
 
 <p> The precise definition of this method is implementation dependent but
@@ -1226,13 +1226,13 @@ not resolving symbolic links and the preceding name is a symbolic link
 then the names are only removed if it is guaranteed that the resulting
 path will locate the same file as this path.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>options</code> - options indicating how symbolic links are handled</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an absolute path represent the <em>real</em> path of the file
          located by this object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if the file does not exist or an I/O error occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if the file does not exist or an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1241,8 +1241,8 @@ path will locate the same file as this path.</div>
 <section class="detail" id="toFile()">
 <h3>toFile</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../io/File.html" title="class in java.io">File</a></span>&nbsp;<span class="element-name">toFile</span>()</div>
-<div class="block">Returns a <a href="../../io/File.html" title="class in java.io"><code>File</code></a> object representing this path. Where this <code>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../io/File.html" title="java.io 包中的类">File</a></span>&nbsp;<span class="element-name">toFile</span>()</div>
+<div class="block">Returns a <a href="../../io/File.html" title="java.io 包中的类"><code>File</code></a> object representing this path. Where this <code>
 Path</code> is associated with the default provider, then this method is
 equivalent to returning a <code>File</code> object constructed with the
 <code>String</code> representation of this path.
@@ -1251,7 +1251,7 @@ equivalent to returning a <code>File</code> object constructed with the
 File</code> object returned by this method is <a href="#equals(java.lang.Object)"><code>equal</code></a> to the
 original <code>File</code>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-toFile()1"><code class="language-java">    new File(toString());
@@ -1261,10 +1261,10 @@ original <code>File</code>.</div>
 if the <code>FileSystem</code> which created this <code>Path</code> is the default
 file system; otherwise an <code>UnsupportedOperationException</code> is
 thrown.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>File</code> object representing this path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this <code>Path</code> is not associated with the default provider</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this <code>Path</code> is not associated with the default provider</dd>
 </dl>
 </div>
 </section>
@@ -1273,10 +1273,10 @@ thrown.</dd>
 <section class="detail" id="register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind[],java.nio.file.WatchEvent.Modifier...)">
 <h3>register</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="WatchService.html" title="interface in java.nio.file">WatchService</a>&nbsp;watcher,
- <a href="WatchEvent.Kind.html" title="interface in java.nio.file">WatchEvent.Kind</a>&lt;?&gt;[]&nbsp;events,
- <a href="WatchEvent.Modifier.html" title="interface in java.nio.file">WatchEvent.Modifier</a>...&nbsp;modifiers)</span>
-           throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="WatchService.html" title="java.nio.file 包中的接口">WatchService</a>&nbsp;watcher,
+ <a href="WatchEvent.Kind.html" title="java.nio.file 包中的接口">WatchEvent.Kind</a>&lt;?&gt;[]&nbsp;events,
+ <a href="WatchEvent.Modifier.html" title="java.nio.file 包中的接口">WatchEvent.Modifier</a>...&nbsp;modifiers)</span>
+           throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Registers the file located by this path with a watch service.
 
 <p> In this release, this path locates a directory that exists. The
@@ -1297,7 +1297,7 @@ relative path between the directory located by this path, and the path
 that locates the directory entry that is created, deleted, or modified.
 
 <p> The set of events may include additional implementation specific
-event that are not defined by the enum <a href="StandardWatchEventKinds.html" title="class in java.nio.file"><code>StandardWatchEventKinds</code></a>
+event that are not defined by the enum <a href="StandardWatchEventKinds.html" title="java.nio.file 包中的类"><code>StandardWatchEventKinds</code></a>
 
 <p> The <code>modifiers</code> parameter specifies <em>modifiers</em> that
 qualify how the directory is registered. This release does not define any
@@ -1308,22 +1308,22 @@ modifiers.
 link then it is implementation specific if the watch continues to depend
 on the existence of the symbolic link after it is registered.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)">register</a></code>&nbsp;in interface&nbsp;<code><a href="Watchable.html" title="interface in java.nio.file">Watchable</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)">register</a></code>&nbsp;in interface&nbsp;<code><a href="Watchable.html" title="java.nio.file 包中的接口">Watchable</a></code></dd>
+<dt>参数:</dt>
 <dd><code>watcher</code> - the watch service to which this object is to be registered</dd>
 <dd><code>events</code> - the events for which this object should be registered</dd>
 <dd><code>modifiers</code> - the modifiers, if any, that modify how the object is registered</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a key representing the registration of this object with the
          given watch service</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if unsupported events or modifiers are specified</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if an invalid combination of events or modifiers is specified</dd>
-<dd><code><a href="ClosedWatchServiceException.html" title="class in java.nio.file">ClosedWatchServiceException</a></code> - if the watch service is closed</dd>
-<dd><code><a href="NotDirectoryException.html" title="class in java.nio.file">NotDirectoryException</a></code> - if the file is registered to watch the entries in a directory
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if unsupported events or modifiers are specified</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if an invalid combination of events or modifiers is specified</dd>
+<dd><code><a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类">ClosedWatchServiceException</a></code> - if the watch service is closed</dd>
+<dd><code><a href="NotDirectoryException.html" title="java.nio.file 包中的类">NotDirectoryException</a></code> - if the file is registered to watch the entries in a directory
          and the file is not a directory  <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - if an I/O error occurs</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - if an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1332,9 +1332,9 @@ on the existence of the symbolic link after it is registered.</div>
 <section class="detail" id="register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)">
 <h3>register</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="WatchKey.html" title="interface in java.nio.file">WatchKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="WatchService.html" title="interface in java.nio.file">WatchService</a>&nbsp;watcher,
- <a href="WatchEvent.Kind.html" title="interface in java.nio.file">WatchEvent.Kind</a>&lt;?&gt;...&nbsp;events)</span>
-                   throws <span class="exceptions"><a href="../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="WatchKey.html" title="java.nio.file 包中的接口">WatchKey</a></span>&nbsp;<span class="element-name">register</span><wbr><span class="parameters">(<a href="WatchService.html" title="java.nio.file 包中的接口">WatchService</a>&nbsp;watcher,
+ <a href="WatchEvent.Kind.html" title="java.nio.file 包中的接口">WatchEvent.Kind</a>&lt;?&gt;...&nbsp;events)</span>
+                   throws <span class="exceptions"><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Registers the file located by this path with a watch service.
 
 <p> An invocation of this method behaves in exactly the same way as the
@@ -1357,28 +1357,28 @@ events:
 </div>
 </div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)">register</a></code>&nbsp;in interface&nbsp;<code><a href="Watchable.html" title="interface in java.nio.file">Watchable</a></code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)">register</a></code>&nbsp;in interface&nbsp;<code><a href="Watchable.html" title="java.nio.file 包中的接口">Watchable</a></code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation is equivalent for this path to:
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../../resource-files/copy.svg" alt="Copy snippet"></button>
 <pre class="snippet" id="snippet-register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind...)3"><code class="language-java">    register(watcher, events, new WatchEvent.Modifier[0]);
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>watcher</code> - The watch service to which this object is to be registered</dd>
 <dd><code>events</code> - The events for which this object should be registered</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A key representing the registration of this object with the
          given watch service</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - If unsupported events are specified</dd>
-<dd><code><a href="../../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If an invalid combination of events is specified</dd>
-<dd><code><a href="ClosedWatchServiceException.html" title="class in java.nio.file">ClosedWatchServiceException</a></code> - If the watch service is closed</dd>
-<dd><code><a href="NotDirectoryException.html" title="class in java.nio.file">NotDirectoryException</a></code> - If the file is registered to watch the entries in a directory
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - If unsupported events are specified</dd>
+<dd><code><a href="../../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If an invalid combination of events is specified</dd>
+<dd><code><a href="ClosedWatchServiceException.html" title="java.nio.file 包中的类">ClosedWatchServiceException</a></code> - If the watch service is closed</dd>
+<dd><code><a href="NotDirectoryException.html" title="java.nio.file 包中的类">NotDirectoryException</a></code> - If the file is registered to watch the entries in a directory
          and the file is not a directory  <i>(optional specific exception)</i></dd>
-<dd><code><a href="../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dd><code><a href="../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -1387,7 +1387,7 @@ events:
 <section class="detail" id="iterator()">
 <h3>iterator</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../util/Iterator.html" title="interface in java.util">Iterator</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../util/Iterator.html" title="java.util 包中的接口">Iterator</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</span>&nbsp;<span class="element-name">iterator</span>()</div>
 <div class="block">Returns an iterator over the name elements of this path.
 
 <p> The first element returned by the iterator represents the name
@@ -1395,14 +1395,14 @@ element that is closest to the root in the directory hierarchy, the
 second element is the next closest, and so on. The last element returned
 is the name of the file or directory denoted by this path. The <a href="#getRoot()"><code>root</code></a> component, if present, is not returned by the iterator.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/Iterable.html#iterator()">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Iterable.html" title="interface in java.lang">Iterable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;</code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/Iterable.html#iterator()">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</code></dd>
+<dt>实现要求:</dt>
 <dd>The default implementation returns an <code>Iterator&lt;Path&gt;</code> which, for
 this path, traverses the <code>Path</code>s returned by
 <code>getName(index)</code>, where <code>index</code> ranges from zero to
 <code>getNameCount() - 1</code>, inclusive.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an iterator over the name elements of this path</dd>
 </dl>
 </div>
@@ -1412,7 +1412,7 @@ this path, traverses the <code>Path</code>s returned by
 <section class="detail" id="compareTo(java.nio.file.Path)">
 <h3>compareTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="Path.html" title="interface in java.nio.file">Path</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&nbsp;other)</span></div>
 <div class="block">Compares two abstract paths lexicographically. The ordering defined by
 this method is provider specific, and in the case of the default
 provider, platform specific. This method does not access the file system
@@ -1421,17 +1421,17 @@ and neither file is required to exist.
 <p> This method may not be used to compare paths that are associated
 with different file system providers.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../lang/Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Comparable.html" title="interface in java.lang">Comparable</a>&lt;<a href="Path.html" title="interface in java.nio.file">Path</a>&gt;</code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../../lang/Comparable.html#compareTo(T)">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="../../lang/Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;<a href="Path.html" title="java.nio.file 包中的接口">Path</a>&gt;</code></dd>
+<dt>参数:</dt>
 <dd><code>other</code> - the path compared to this path.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>zero if the argument is <a href="#equals(java.lang.Object)"><code>equal</code></a> to this path, a
          value less than zero if this path is lexicographically less than
          the argument, or a value greater than zero if this path is
          lexicographically greater than the argument</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the paths are associated with different providers</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the paths are associated with different providers</dd>
 </dl>
 </div>
 </section>
@@ -1440,7 +1440,7 @@ with different file system providers.</div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="class in java.lang">Object</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;other)</span></div>
 <div class="block">Tests this path for equality with the given object.
 
 <p> If the given object is not a Path, or is a Path associated with a
@@ -1455,18 +1455,18 @@ paths locate the same file.
 
 <p> This method satisfies the general contract of the <a href="../../lang/Object.html#equals(java.lang.Object)"><code>Object.equals</code></a> method. </p></div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>other</code> - the object to which this object is to be compared</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, the given object is a <code>Path</code>
          that is identical to this <code>Path</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1483,11 +1483,11 @@ paths locate the same file.
 <p> The hash code is based upon the components of the path, and
 satisfies the general contract of the <a href="../../lang/Object.html#hashCode()"><code>Object.hashCode</code></a> method.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>the hash-code value for this path</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -1502,7 +1502,7 @@ satisfies the general contract of the <a href="../../lang/Object.html#hashCode()
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="../../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns the string representation of this path.
 
 <p> If this path was created by converting a path string using the
@@ -1511,9 +1511,9 @@ by this method may differ from the original String used to create the path.
 
 <p> The returned path string uses the default name <a href="FileSystem.html#getSeparator()"><code>separator</code></a> to separate names in the path.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>the string representation of this path</dd>
 </dl>
 </div>

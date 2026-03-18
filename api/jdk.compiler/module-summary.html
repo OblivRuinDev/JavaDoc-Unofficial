@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <ol class="sub-nav-list">
 <li><a href="module-summary.html" class="current-selection">jdk.compiler</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -54,9 +54,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#javac-heading" tabindex="0">javac</a>
 <ol class="toc-list">
@@ -66,14 +66,14 @@ loadScripts(document, 'script');</script>
 </li>
 </ol>
 </li>
-<li><a href="#packages-summary" tabindex="0">Packages</a></li>
-<li><a href="#modules-summary" tabindex="0">Modules</a></li>
-<li><a href="#services-summary" tabindex="0">Services</a></li>
+<li><a href="#packages-summary" tabindex="0">包</a></li>
+<li><a href="#modules-summary" tabindex="0">模块</a></li>
+<li><a href="#services-summary" tabindex="0">服务</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Module jdk.compiler" class="title">Module jdk.compiler</h1>
+<h1 title="模块 jdk.compiler" class="title">模块 jdk.compiler</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -92,24 +92,24 @@ and documentation comments, used by <em>javac</em>, <em>javadoc</em> and related
 
 <p>
 This module provides the equivalent of command-line access to <em>javac</em>
-via the <a href="../java.base/java/util/spi/ToolProvider.html" title="interface in java.util.spi"><code>ToolProvider</code></a> and
-<a href="../java.compiler/javax/tools/Tool.html" title="interface in javax.tools"><code>Tool</code></a> service provider interfaces (SPIs),
-and more flexible access via the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in javax.tools"><code>JavaCompiler</code></a>
+via the <a href="../java.base/java/util/spi/ToolProvider.html" title="java.util.spi 包中的接口"><code>ToolProvider</code></a> and
+<a href="../java.compiler/javax/tools/Tool.html" title="javax.tools 包中的接口"><code>Tool</code></a> service provider interfaces (SPIs),
+and more flexible access via the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="javax.tools 包中的接口"><code>JavaCompiler</code></a>
 SPI.</p>
 
 <p> Instances of the tools can be obtained by calling
 <a href="../java.base/java/util/spi/ToolProvider.html#findFirst(java.lang.String)"><code>ToolProvider.findFirst</code></a>
-or the <a href="../java.base/java/util/ServiceLoader.html" title="class in java.util">service loader</a> with the name
+or the <a href="../java.base/java/util/ServiceLoader.html" title="java.util 包中的类">service loader</a> with the name
 <code>"javac"</code>.
 
 <p>
-In addition, instances of <a href="../java.compiler/javax/tools/JavaCompiler.CompilationTask.html" title="interface in javax.tools"><code>JavaCompiler.CompilationTask</code></a>
-obtained from <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in javax.tools">JavaCompiler</a> can be
-downcast to <a href="com/sun/source/util/JavacTask.html" title="class in com.sun.source.util"><code>JavacTask</code></a> for access to
+In addition, instances of <a href="../java.compiler/javax/tools/JavaCompiler.CompilationTask.html" title="javax.tools 包中的接口"><code>JavaCompiler.CompilationTask</code></a>
+obtained from <a href="../java.compiler/javax/tools/JavaCompiler.html" title="javax.tools 包中的接口">JavaCompiler</a> can be
+downcast to <a href="com/sun/source/util/JavacTask.html" title="com.sun.source.util 包中的类"><code>JavacTask</code></a> for access to
 lower level aspects of <em>javac</em>, such as the
 <a href="com/sun/source/tree/package-summary.html"><code>Abstract Syntax Tree</code></a> (AST).</p>
 
-<p>This module uses the <a href="../java.base/java/nio/file/spi/FileSystemProvider.html" title="class in java.nio.file.spi"><code>FileSystemProvider</code></a> API to locate file system providers. In particular,
+<p>This module uses the <a href="../java.base/java/nio/file/spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类"><code>FileSystemProvider</code></a> API to locate file system providers. In particular,
 this means that a jar file system provider, such as that in the
 <code>jdk.zipfs</code> module, must be available if the compiler is to be able
 to read JAR files.
@@ -127,8 +127,8 @@ its API.
          <code>IllegalArgumentException</code> will be thrown if the option
          is used when invoking the tool through the <code>JavaCompiler</code> API;
          an error will be reported if the option is used when invoking
-         <em>javac</em> through the <a href="../java.base/java/util/spi/ToolProvider.html" title="interface in java.util.spi"><code>ToolProvider</code></a>
-         or legacy <a href="com/sun/tools/javac/Main.html" title="class in com.sun.tools.javac"><code>Main</code></a> API.
+         <em>javac</em> through the <a href="../java.base/java/util/spi/ToolProvider.html" title="java.util.spi 包中的接口"><code>ToolProvider</code></a>
+         or legacy <a href="com/sun/tools/javac/Main.html" title="com.sun.tools.javac 包中的类"><code>Main</code></a> API.
 
     <li><p>The "classpath wildcard" feature is not supported.
          The feature is only supported by the native launcher.
@@ -143,7 +143,7 @@ its API.
 </ul>
 
 The following restrictions apply when invoking the compiler through
-the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in javax.tools"><code>JavaCompiler</code></a> interface.
+the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="javax.tools 包中的接口"><code>JavaCompiler</code></a> interface.
 
 <ul>
     <li><p>Argument files (so-called @-files) are not supported.
@@ -161,7 +161,7 @@ the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in
     <li><p>Options that are just used to obtain information (such as
          <code>--help</code>, <code>--help-extended</code>, <code>--version</code> and
          <code>--full-version</code>) are not supported.
-         <a href="../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> will be thrown if any of
+         <a href="../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> will be thrown if any of
          these options are used when invoking the tool through this API.
 
      <li>Path-related options depend on the file manager being used
@@ -171,7 +171,7 @@ the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in
          or one derived from it. These options may not be available
          and different options may be available, when using a different
          file manager.
-         <a href="../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> will be thrown if any option
+         <a href="../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> will be thrown if any option
          that is unknown to the tool or the file manager is used when
          invoking the tool through this API.
 </ul>
@@ -184,7 +184,7 @@ when starting a VM that will be used to invoke the compiler.
 However, if a value has been set, any such value can be overridden by
 using the <code>--class-path</code> option when invoking the compiler,
 or setting <a href="../java.compiler/javax/tools/StandardLocation.html#CLASS_PATH"><code>StandardLocation.CLASS_PATH</code></a> in the file manager
-when invoking the compiler through the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in javax.tools"><code>JavaCompiler</code></a> interface.
+when invoking the compiler through the <a href="../java.compiler/javax/tools/JavaCompiler.html" title="javax.tools 包中的接口"><code>JavaCompiler</code></a> interface.
 
 <h3 id="suppresswarnings-heading">SuppressWarnings</h3>
 
@@ -232,10 +232,10 @@ strings that can be used with <code>@SuppressWarnings</code>.
 <tr><th scope="row"><code>restricted</code>           <td>use of restricted methods
 <tr><th scope="row"><code>requires-automatic</code>   <td>use of automatic modules in the <code>requires</code> clauses
 <tr><th scope="row"><code>requires-transitive-automatic</code> <td>automatic modules in <code>requires transitive</code>
-<tr><th scope="row"><code>serial</code>               <td><a href="../java.base/java/io/Serializable.html" title="interface in java.io"><code>Serializable</code></a> classes
+<tr><th scope="row"><code>serial</code>               <td><a href="../java.base/java/io/Serializable.html" title="java.io 包中的接口"><code>Serializable</code></a> classes
                                                      that do not have a <code>serialVersionUID</code> field, or other
                                                      suspect declarations in <code>Serializable</code> and
-                                                     <a href="../java.base/java/io/Externalizable.html" title="interface in java.io"><code>Externalizable</code></a> classes
+                                                     <a href="../java.base/java/io/Externalizable.html" title="java.io 包中的接口"><code>Externalizable</code></a> classes
                                                      and interfaces
 <tr><th scope="row"><code>static</code>               <td>accessing a static member using an instance
 <tr><th scope="row"><code>strictfp</code>             <td>unnecessary use of the <code>strictfp</code> modifier
@@ -258,9 +258,9 @@ strings that can be used with <code>@SuppressWarnings</code>.
 <tr><th scope="row"><code>doclint:syntax</code>       <td>syntax issues found in documentation comments
 </tbody>
 </table></div>
-<dl class="notes"><dt>Module Graph:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.compiler" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.compiler" src="module-graph.svg"></span></a></dd><dt>Tool Guides:</dt>
+<dl class="notes"><dt>模块图:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.compiler" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.compiler" src="module-graph.svg"></span></a></dd><dt>工具指南:</dt>
 <dd><a href="../../specs/man/javac.html">javac</a></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </section>
@@ -270,12 +270,12 @@ strings that can be used with <code>@SuppressWarnings</code>.
 <li>
 <section class="packages-summary" id="packages-summary">
 <!-- ============ PACKAGES SUMMARY =========== -->
-<h2>Packages</h2>
+<h2>包</h2>
 <div id="package-summary-table">
-<div class="caption"><span>Exports</span></div>
+<div class="caption"><span>导出</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color package-summary-table package-summary-table-tab1"><a href="com/sun/source/doctree/package-summary.html">com.sun.source.doctree</a></div>
 <div class="col-last even-row-color package-summary-table package-summary-table-tab1">
 <div class="block">Provides interfaces to represent documentation comments as abstract syntax
@@ -296,10 +296,10 @@ trees (AST).</div>
 </div>
 </div>
 </div>
-<div class="caption"><span>Indirect Exports</span></div>
+<div class="caption"><span>间接导出</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">From</div>
-<div class="table-header col-last">Packages</div>
+<div class="table-header col-first">来源</div>
+<div class="table-header col-last">包</div>
 <div class="col-first even-row-color"><a href="../java.compiler/module-summary.html">java.compiler</a></div>
 <div class="col-last even-row-color"><a href="../java.compiler/javax/annotation/processing/package-summary.html">javax.annotation.processing</a> <a href="../java.compiler/javax/lang/model/package-summary.html">javax.lang.model</a> <a href="../java.compiler/javax/lang/model/element/package-summary.html">javax.lang.model.element</a> <a href="../java.compiler/javax/lang/model/type/package-summary.html">javax.lang.model.type</a> <a href="../java.compiler/javax/lang/model/util/package-summary.html">javax.lang.model.util</a> <a href="../java.compiler/javax/tools/package-summary.html">javax.tools</a></div>
 </div>
@@ -308,12 +308,12 @@ trees (AST).</div>
 <li>
 <section class="modules-summary" id="modules-summary">
 <!-- ============ MODULES SUMMARY =========== -->
-<h2>Modules</h2>
-<div class="caption"><span>Requires</span></div>
+<h2>模块</h2>
+<div class="caption"><span>依赖</span></div>
 <div class="details-table three-column-summary">
-<div class="table-header col-first">Modifier</div>
-<div class="table-header col-second">Module</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符</div>
+<div class="table-header col-second">模块</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color">transitive</div>
 <div class="col-second even-row-color"><a href="../java.compiler/module-summary.html">java.compiler</a></div>
 <div class="col-last even-row-color">
@@ -326,36 +326,36 @@ Java Compiler APIs.</div>
 <li>
 <section class="services-summary" id="services-summary">
 <!-- ============ SERVICES SUMMARY =========== -->
-<h2>Services</h2>
-<div class="caption"><span>Provides</span></div>
+<h2>服务</h2>
+<div class="caption"><span>提供</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="../java.compiler/javax/tools/JavaCompiler.html" title="interface in javax.tools">JavaCompiler</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="../java.compiler/javax/tools/JavaCompiler.html" title="javax.tools 包中的接口">JavaCompiler</a></div>
 <div class="col-last even-row-color">
 <div class="block">Interface to invoke Java programming language compilers from
 programs.</div>
 </div>
-<div class="col-first odd-row-color"><a href="../java.compiler/javax/tools/Tool.html" title="interface in javax.tools">Tool</a></div>
+<div class="col-first odd-row-color"><a href="../java.compiler/javax/tools/Tool.html" title="javax.tools 包中的接口">Tool</a></div>
 <div class="col-last odd-row-color">
 <div class="block">Common interface for tools that can be invoked from a program.</div>
 </div>
-<div class="col-first even-row-color"><a href="../java.base/java/util/spi/ToolProvider.html" title="interface in java.util.spi">ToolProvider</a></div>
+<div class="col-first even-row-color"><a href="../java.base/java/util/spi/ToolProvider.html" title="java.util.spi 包中的接口">ToolProvider</a></div>
 <div class="col-last even-row-color">
 <div class="block">Use <a href="../java.base/java/util/spi/ToolProvider.html#findFirst(java.lang.String)"><code>ToolProvider.findFirst("javac")</code></a>
     to obtain an instance of a <code>ToolProvider</code> that provides the equivalent
     of command-line access to the <code>javac</code> tool.</div>
 </div>
 </div>
-<div class="caption"><span>Uses</span></div>
+<div class="caption"><span>使用</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="com/sun/source/util/Plugin.html" title="interface in com.sun.source.util">Plugin</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="com/sun/source/util/Plugin.html" title="com.sun.source.util 包中的接口">Plugin</a></div>
 <div class="col-last even-row-color">
 <div class="block">The interface for a javac plug-in.</div>
 </div>
-<div class="col-first odd-row-color"><a href="../java.compiler/javax/annotation/processing/Processor.html" title="interface in javax.annotation.processing">Processor</a></div>
+<div class="col-first odd-row-color"><a href="../java.compiler/javax/annotation/processing/Processor.html" title="javax.annotation.processing 包中的接口">Processor</a></div>
 <div class="col-last odd-row-color">
 <div class="block">The interface for an <dfn>annotation processor</dfn>.</div>
 </div>

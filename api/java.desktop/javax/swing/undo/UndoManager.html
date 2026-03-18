@@ -71,7 +71,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.swing.undo</a></li>
 <li><a href="UndoManager.html" class="current-selection">UndoManager</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -79,18 +79,18 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">UndoManager()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getLimit()" tabindex="0">getLimit()</a></li>
 <li><a href="#discardAllEdits()" tabindex="0">discardAllEdits()</a></li>
@@ -121,25 +121,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class UndoManager" class="title">Class UndoManager</h1>
+<h1 title="类 UndoManager" class="title">类 UndoManager</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
-<div class="inheritance"><a href="AbstractUndoableEdit.html" title="class in javax.swing.undo">javax.swing.undo.AbstractUndoableEdit</a>
-<div class="inheritance"><a href="CompoundEdit.html" title="class in javax.swing.undo">javax.swing.undo.CompoundEdit</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
+<div class="inheritance"><a href="AbstractUndoableEdit.html" title="javax.swing.undo 包中的类">javax.swing.undo.AbstractUndoableEdit</a>
+<div class="inheritance"><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">javax.swing.undo.CompoundEdit</a>
 <div class="inheritance">javax.swing.undo.UndoManager</div>
 </div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../../java.base/java/io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="../../../../java.base/java/util/EventListener.html" title="interface in java.util">EventListener</a>, <a href="../event/UndoableEditListener.html" title="interface in javax.swing.event">UndoableEditListener</a>, <a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../../../java.base/java/io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="../../../../java.base/java/util/EventListener.html" title="java.util 包中的接口">EventListener</a>, <a href="../event/UndoableEditListener.html" title="javax.swing.event 包中的接口">UndoableEditListener</a>, <a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">UndoManager</span>
-<span class="extends-implements">extends <a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a>
-implements <a href="../event/UndoableEditListener.html" title="interface in javax.swing.event">UndoableEditListener</a></span></div>
+<span class="extends-implements">extends <a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a>
+implements <a href="../event/UndoableEditListener.html" title="javax.swing.event 包中的接口">UndoableEditListener</a></span></div>
 <div class="block"><code>UndoManager</code> manages a list of <code>UndoableEdits</code>,
 providing a way to undo or redo the appropriate edits.  There are
 two ways to add edits to an <code>UndoManager</code>.  Add the edit
@@ -241,7 +241,7 @@ appropriate for short term storage or RMI between applications running
 the same version of Swing.  As of 1.4, support for long term storage
 of all JavaBeans
 has been added to the <code>java.beans</code> package.
-Please see <a href="../../../java/beans/XMLEncoder.html" title="class in java.beans"><code>XMLEncoder</code></a>.</div>
+Please see <a href="../../../java/beans/XMLEncoder.html" title="java.beans 包中的类"><code>XMLEncoder</code></a>.</div>
 </div>
 </section>
 <section class="summary">
@@ -249,23 +249,23 @@ Please see <a href="../../../java/beans/XMLEncoder.html" title="class in java.be
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
+<h2>字段概要</h2>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-javax.swing.undo.CompoundEdit">Fields declared in class&nbsp;<a href="CompoundEdit.html#field-summary" title="class in javax.swing.undo">CompoundEdit</a></h3>
+<h3 id="fields-inherited-from-class-javax.swing.undo.CompoundEdit">在类 <a href="CompoundEdit.html#field-summary" title="javax.swing.undo 包中的类">CompoundEdit</a> 中声明的字段</h3>
 <code><a href="CompoundEdit.html#edits">edits</a></code></div>
 <div class="inherited-list">
-<h3 id="fields-inherited-from-class-javax.swing.undo.AbstractUndoableEdit">Fields declared in class&nbsp;<a href="AbstractUndoableEdit.html#field-summary" title="class in javax.swing.undo">AbstractUndoableEdit</a></h3>
+<h3 id="fields-inherited-from-class-javax.swing.undo.AbstractUndoableEdit">在类 <a href="AbstractUndoableEdit.html#field-summary" title="javax.swing.undo 包中的类">AbstractUndoableEdit</a> 中声明的字段</h3>
 <code><a href="AbstractUndoableEdit.html#RedoName">RedoName</a>, <a href="AbstractUndoableEdit.html#UndoName">UndoName</a></code></div>
 </section>
 </li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">UndoManager</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a new <code>UndoManager</code>.</div>
@@ -276,16 +276,16 @@ Please see <a href="../../../java/beans/XMLEncoder.html" title="class in java.be
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdit(javax.swing.undo.UndoableEdit)" class="member-name-link">addEdit</a><wbr>(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;anEdit)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addEdit(javax.swing.undo.UndoableEdit)" class="member-name-link">addEdit</a><wbr>(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;anEdit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds an <code>UndoableEdit</code> to this
 <code>UndoManager</code>, if it's possible.</div>
@@ -312,13 +312,13 @@ Please see <a href="../../../java/beans/XMLEncoder.html" title="class in java.be
 <div class="block">Empties the undo manager sending each edit a <code>die</code> message
 in the process.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#editToBeRedone()" class="member-name-link">editToBeRedone</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the next significant edit to be redone if <code>redo</code>
 is invoked.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#editToBeUndone()" class="member-name-link">editToBeUndone</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the next significant edit to be undone if <code>undo</code>
@@ -336,19 +336,19 @@ is invoked.</div>
 <div class="block">Returns the maximum number of edits this <code>UndoManager</code>
 holds.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRedoPresentationName()" class="member-name-link">getRedoPresentationName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a description of the redoable form of this edit.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUndoOrRedoPresentationName()" class="member-name-link">getUndoOrRedoPresentationName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Convenience method that returns either
 <code>getUndoPresentationName</code> or
 <code>getRedoPresentationName</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUndoPresentationName()" class="member-name-link">getUndoPresentationName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a description of the undoable form of this edit.</div>
@@ -359,7 +359,7 @@ holds.</div>
 <div class="block">Redoes the appropriate edits.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#redoTo(javax.swing.undo.UndoableEdit)" class="member-name-link">redoTo</a><wbr>(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;edit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#redoTo(javax.swing.undo.UndoableEdit)" class="member-name-link">redoTo</a><wbr>(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;edit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Redoes all changes from the index of the next edit to
 <code>edit</code>, updating the index of the next edit appropriately.</div>
@@ -370,7 +370,7 @@ holds.</div>
 <div class="block">Sets the maximum number of edits this <code>UndoManager</code>
 holds.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a string that displays and identifies this
@@ -394,7 +394,7 @@ centered on the index of the next edit.</div>
 <div class="block">Undoes the appropriate edits.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undoableEditHappened(javax.swing.event.UndoableEditEvent)" class="member-name-link">undoableEditHappened</a><wbr>(<a href="../event/UndoableEditEvent.html" title="class in javax.swing.event">UndoableEditEvent</a>&nbsp;e)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undoableEditHappened(javax.swing.event.UndoableEditEvent)" class="member-name-link">undoableEditHappened</a><wbr>(<a href="../event/UndoableEditEvent.html" title="javax.swing.event 包中的类">UndoableEditEvent</a>&nbsp;e)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">An <code>UndoableEditListener</code> method.</div>
 </div>
@@ -405,7 +405,7 @@ centered on the index of the next edit.</div>
 <code>redo</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undoTo(javax.swing.undo.UndoableEdit)" class="member-name-link">undoTo</a><wbr>(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;edit)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#undoTo(javax.swing.undo.UndoableEdit)" class="member-name-link">undoTo</a><wbr>(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;edit)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Undoes all changes from the index of the next edit to
 <code>edit</code>, updating the index of the next edit appropriately.</div>
@@ -414,13 +414,13 @@ centered on the index of the next edit.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.swing.undo.CompoundEdit">Methods declared in class&nbsp;<a href="CompoundEdit.html#method-summary" title="class in javax.swing.undo">CompoundEdit</a></h3>
+<h3 id="methods-inherited-from-class-javax.swing.undo.CompoundEdit">在类 <a href="CompoundEdit.html#method-summary" title="javax.swing.undo 包中的类">CompoundEdit</a> 中声明的方法</h3>
 <code><a href="CompoundEdit.html#die()" title="die()">die</a>, <a href="CompoundEdit.html#getPresentationName()" title="getPresentationName()">getPresentationName</a>, <a href="CompoundEdit.html#isInProgress()" title="isInProgress()">isInProgress</a>, <a href="CompoundEdit.html#isSignificant()" title="isSignificant()">isSignificant</a>, <a href="CompoundEdit.html#lastEdit()" title="lastEdit()">lastEdit</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-javax.swing.undo.AbstractUndoableEdit">Methods declared in class&nbsp;<a href="AbstractUndoableEdit.html#method-summary" title="class in javax.swing.undo">AbstractUndoableEdit</a></h3>
+<h3 id="methods-inherited-from-class-javax.swing.undo.AbstractUndoableEdit">在类 <a href="AbstractUndoableEdit.html#method-summary" title="javax.swing.undo 包中的类">AbstractUndoableEdit</a> 中声明的方法</h3>
 <code><a href="AbstractUndoableEdit.html#replaceEdit(javax.swing.undo.UndoableEdit)" title="replaceEdit(UndoableEdit)">replaceEdit</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -431,7 +431,7 @@ centered on the index of the next edit.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -448,7 +448,7 @@ centered on the index of the next edit.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getLimit()">
@@ -459,9 +459,9 @@ centered on the index of the next edit.</div>
 holds. A value less than 0 indicates the number of edits is not
 limited.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum number of edits this <code>UndoManager</code> holds</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#addEdit(javax.swing.undo.UndoableEdit)"><code>addEdit(UndoableEdit)</code></a></li>
@@ -480,7 +480,7 @@ limited.</div>
 <div class="block">Empties the undo manager sending each edit a <code>die</code> message
 in the process.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="AbstractUndoableEdit.html#die()"><code>AbstractUndoableEdit.die()</code></a></li>
@@ -512,7 +512,7 @@ will have <code>die</code> invoked on them and are removed from
 the list of edits. This has no effect if
 <code>from</code> &gt; <code>to</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>from</code> - the minimum index to remove</dd>
 <dd><code>to</code> - the maximum index to remove</dd>
 </dl>
@@ -530,12 +530,12 @@ limited. If edits need to be discarded to shrink the limit,
 <code>die</code> will be invoked on them in the reverse
 order they were added.  The default is 100.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>l</code> - the new limit</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/RuntimeException.html" title="class in java.lang">RuntimeException</a></code> - if this <code>UndoManager</code> is not in progress
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/RuntimeException.html" title="java.lang 包中的类">RuntimeException</a></code> - if this <code>UndoManager</code> is not in progress
                          (<code>end</code> has been invoked)</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#isInProgress()"><code>CompoundEdit.isInProgress()</code></a></li>
@@ -552,12 +552,12 @@ order they were added.  The default is 100.</div>
 <section class="detail" id="editToBeUndone()">
 <h3>editToBeUndone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></span>&nbsp;<span class="element-name">editToBeUndone</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></span>&nbsp;<span class="element-name">editToBeUndone</span>()</div>
 <div class="block">Returns the next significant edit to be undone if <code>undo</code>
 is invoked. This returns <code>null</code> if there are no edits
 to be undone.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the next significant edit to be undone</dd>
 </dl>
 </div>
@@ -567,12 +567,12 @@ to be undone.</div>
 <section class="detail" id="editToBeRedone()">
 <h3>editToBeRedone</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></span>&nbsp;<span class="element-name">editToBeRedone</span>()</div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></span>&nbsp;<span class="element-name">editToBeRedone</span>()</div>
 <div class="block">Returns the next significant edit to be redone if <code>redo</code>
 is invoked. This returns <code>null</code> if there are no edits
 to be redone.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the next significant edit to be redone</dd>
 </dl>
 </div>
@@ -582,15 +582,15 @@ to be redone.</div>
 <section class="detail" id="undoTo(javax.swing.undo.UndoableEdit)">
 <h3>undoTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undoTo</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;edit)</span>
-               throws <span class="exceptions"><a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undoTo</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;edit)</span>
+               throws <span class="exceptions"><a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></span></div>
 <div class="block">Undoes all changes from the index of the next edit to
 <code>edit</code>, updating the index of the next edit appropriately.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>edit</code> - the edit to be undo to</dd>
-<dt>Throws:</dt>
-<dd><code><a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></code> - if one of the edits throws
+<dt>抛出:</dt>
+<dd><code><a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></code> - if one of the edits throws
         <code>CannotUndoException</code></dd>
 </dl>
 </div>
@@ -600,15 +600,15 @@ to be redone.</div>
 <section class="detail" id="redoTo(javax.swing.undo.UndoableEdit)">
 <h3>redoTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">redoTo</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;edit)</span>
-               throws <span class="exceptions"><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a></span></div>
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">redoTo</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;edit)</span>
+               throws <span class="exceptions"><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a></span></div>
 <div class="block">Redoes all changes from the index of the next edit to
 <code>edit</code>, updating the index of the next edit appropriately.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>edit</code> - the edit to be redo to</dd>
-<dt>Throws:</dt>
-<dd><code><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a></code> - if one of the edits throws
+<dt>抛出:</dt>
+<dd><code><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a></code> - if one of the edits throws
         <code>CannotRedoException</code></dd>
 </dl>
 </div>
@@ -619,19 +619,19 @@ to be redone.</div>
 <h3>undoOrRedo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undoOrRedo</span>()
-                throws <span class="exceptions"><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a>,
-<a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></span></div>
+                throws <span class="exceptions"><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a>,
+<a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></span></div>
 <div class="block">Convenience method that invokes one of <code>undo</code> or
 <code>redo</code>. If any edits have been undone (the index of
 the next edit is less than the length of the edits list) this
 invokes <code>redo</code>, otherwise it invokes <code>undo</code>.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></code> - if one of the edits throws
+<dt>抛出:</dt>
+<dd><code><a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></code> - if one of the edits throws
         <code>CannotUndoException</code></dd>
-<dd><code><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a></code> - if one of the edits throws
+<dd><code><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a></code> - if one of the edits throws
         <code>CannotRedoException</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#canUndoOrRedo()"><code>canUndoOrRedo()</code></a></li>
@@ -650,9 +650,9 @@ invokes <code>redo</code>, otherwise it invokes <code>undo</code>.</div>
 <div class="block">Returns true if it is possible to invoke <code>undo</code> or
 <code>redo</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if invoking <code>canUndoOrRedo</code> is valid</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#undoOrRedo()"><code>undoOrRedo()</code></a></li>
@@ -667,22 +667,22 @@ invokes <code>redo</code>, otherwise it invokes <code>undo</code>.</div>
 <h3>undo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undo</span>()
-          throws <span class="exceptions"><a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></span></div>
+          throws <span class="exceptions"><a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></span></div>
 <div class="block">Undoes the appropriate edits.  If <code>end</code> has been
 invoked this calls through to the superclass, otherwise
 this invokes <code>undo</code> on all edits between the
 index of the next edit and the last significant edit, updating
 the index of the next edit appropriately.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#undo()">undo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#undo()">undo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="CannotUndoException.html" title="class in javax.swing.undo">CannotUndoException</a></code> - if one of the edits throws
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#undo()">undo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#undo()">undo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="CannotUndoException.html" title="javax.swing.undo 包中的类">CannotUndoException</a></code> - if one of the edits throws
         <code>CannotUndoException</code> or there are no edits
         to be undone</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#end()"><code>CompoundEdit.end()</code></a></li>
@@ -704,13 +704,13 @@ been invoked, this returns the value from super.  Otherwise
 this returns true if there are any edits to be undone
 (<code>editToBeUndone</code> returns non-<code>null</code>).</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#canUndo()">canUndo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#canUndo()">canUndo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#canUndo()">canUndo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#canUndo()">canUndo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>返回:</dt>
 <dd>true if there are edits to be undone</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#canUndo()"><code>CompoundEdit.canUndo()</code></a></li>
@@ -726,22 +726,22 @@ this returns true if there are any edits to be undone
 <h3>redo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">redo</span>()
-          throws <span class="exceptions"><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a></span></div>
+          throws <span class="exceptions"><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a></span></div>
 <div class="block">Redoes the appropriate edits.  If <code>end</code> has been
 invoked this calls through to the superclass.  Otherwise
 this invokes <code>redo</code> on all edits between the
 index of the next edit and the next significant edit, updating
 the index of the next edit appropriately.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#redo()">redo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#redo()">redo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="CannotRedoException.html" title="class in javax.swing.undo">CannotRedoException</a></code> - if one of the edits throws
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#redo()">redo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#redo()">redo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="CannotRedoException.html" title="javax.swing.undo 包中的类">CannotRedoException</a></code> - if one of the edits throws
         <code>CannotRedoException</code> or there are no edits
         to be redone</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#end()"><code>CompoundEdit.end()</code></a></li>
@@ -763,13 +763,13 @@ been invoked, this returns the value from super.  Otherwise,
 this returns true if there are any edits to be redone
 (<code>editToBeRedone</code> returns non-<code>null</code>).</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#canRedo()">canRedo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#canRedo()">canRedo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#canRedo()">canRedo</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#canRedo()">canRedo</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>返回:</dt>
 <dd>true if there are edits to be redone</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#canRedo()"><code>CompoundEdit.canRedo()</code></a></li>
@@ -784,7 +784,7 @@ this returns true if there are any edits to be redone
 <section class="detail" id="addEdit(javax.swing.undo.UndoableEdit)">
 <h3>addEdit</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addEdit</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a>&nbsp;anEdit)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">addEdit</span><wbr><span class="parameters">(<a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a>&nbsp;anEdit)</span></div>
 <div class="block">Adds an <code>UndoableEdit</code> to this
 <code>UndoManager</code>, if it's possible.  This removes all
 edits from the index of the next edit to the end of the edits
@@ -792,16 +792,16 @@ list.  If <code>end</code> has been invoked the edit is not added
 and <code>false</code> is returned.  If <code>end</code> hasn't
 been invoked this returns <code>true</code>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#addEdit(javax.swing.undo.UndoableEdit)">addEdit</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#addEdit(javax.swing.undo.UndoableEdit)">addEdit</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#addEdit(javax.swing.undo.UndoableEdit)">addEdit</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#addEdit(javax.swing.undo.UndoableEdit)">addEdit</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>参数:</dt>
 <dd><code>anEdit</code> - the edit to be added</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if <code>anEdit</code> can be incorporated into this
              edit</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="CompoundEdit.html#end()"><code>CompoundEdit.end()</code></a></li>
@@ -821,9 +821,9 @@ been invoked this returns <code>true</code>.</div>
 <code>CompoundEdit</code>.  This removes all edits that have
 been undone.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#end()">end</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>See Also:</dt>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#end()">end</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="CompoundEdit.html#end()"><code>CompoundEdit.end()</code></a></li>
@@ -837,7 +837,7 @@ been undone.</div>
 <section class="detail" id="getUndoOrRedoPresentationName()">
 <h3>getUndoOrRedoPresentationName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getUndoOrRedoPresentationName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getUndoOrRedoPresentationName</span>()</div>
 <div class="block">Convenience method that returns either
 <code>getUndoPresentationName</code> or
 <code>getRedoPresentationName</code>.  If the index of the next
@@ -845,7 +845,7 @@ edit equals the size of the edits list,
 <code>getUndoPresentationName</code> is returned, otherwise
 <code>getRedoPresentationName</code> is returned.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>undo or redo name</dd>
 </dl>
 </div>
@@ -855,7 +855,7 @@ edit equals the size of the edits list,
 <section class="detail" id="getUndoPresentationName()">
 <h3>getUndoPresentationName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getUndoPresentationName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getUndoPresentationName</span>()</div>
 <div class="block">Returns a description of the undoable form of this edit.
 If <code>end</code> has been invoked this calls into super.
 Otherwise if there are edits to be undone, this returns
@@ -864,13 +864,13 @@ If there are no edits to be undone and <code>end</code> has not
 been invoked this returns the value from the <code>UIManager</code>
 property "AbstractUndoableEdit.undoText".</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#getUndoPresentationName()">getUndoPresentationName</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#getUndoPresentationName()">getUndoPresentationName</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#getUndoPresentationName()">getUndoPresentationName</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#getUndoPresentationName()">getUndoPresentationName</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>返回:</dt>
 <dd>a description of the undoable form of this edit</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#undo()"><code>undo()</code></a></li>
@@ -885,7 +885,7 @@ property "AbstractUndoableEdit.undoText".</div>
 <section class="detail" id="getRedoPresentationName()">
 <h3>getRedoPresentationName</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getRedoPresentationName</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getRedoPresentationName</span>()</div>
 <div class="block">Returns a description of the redoable form of this edit.
 If <code>end</code> has been invoked this calls into super.
 Otherwise if there are edits to be redone, this returns
@@ -894,13 +894,13 @@ If there are no edits to be redone and <code>end</code> has not
 been invoked this returns the value from the <code>UIManager</code>
 property "AbstractUndoableEdit.redoText".</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="UndoableEdit.html#getRedoPresentationName()">getRedoPresentationName</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="interface in javax.swing.undo">UndoableEdit</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#getRedoPresentationName()">getRedoPresentationName</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="UndoableEdit.html#getRedoPresentationName()">getRedoPresentationName</a></code>&nbsp;in interface&nbsp;<code><a href="UndoableEdit.html" title="javax.swing.undo 包中的接口">UndoableEdit</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#getRedoPresentationName()">getRedoPresentationName</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>返回:</dt>
 <dd>a description of the redoable form of this edit</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#redo()"><code>redo()</code></a></li>
@@ -915,16 +915,16 @@ property "AbstractUndoableEdit.redoText".</div>
 <section class="detail" id="undoableEditHappened(javax.swing.event.UndoableEditEvent)">
 <h3>undoableEditHappened</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undoableEditHappened</span><wbr><span class="parameters">(<a href="../event/UndoableEditEvent.html" title="class in javax.swing.event">UndoableEditEvent</a>&nbsp;e)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">undoableEditHappened</span><wbr><span class="parameters">(<a href="../event/UndoableEditEvent.html" title="javax.swing.event 包中的类">UndoableEditEvent</a>&nbsp;e)</span></div>
 <div class="block">An <code>UndoableEditListener</code> method. This invokes
 <code>addEdit</code> with <code>e.getEdit()</code>.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../event/UndoableEditListener.html#undoableEditHappened(javax.swing.event.UndoableEditEvent)">undoableEditHappened</a></code>&nbsp;in interface&nbsp;<code><a href="../event/UndoableEditListener.html" title="interface in javax.swing.event">UndoableEditListener</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../event/UndoableEditListener.html#undoableEditHappened(javax.swing.event.UndoableEditEvent)">undoableEditHappened</a></code>&nbsp;in interface&nbsp;<code><a href="../event/UndoableEditListener.html" title="javax.swing.event 包中的接口">UndoableEditListener</a></code></dd>
+<dt>参数:</dt>
 <dd><code>e</code> - the <code>UndoableEditEvent</code> the
        <code>UndoableEditEvent</code> will be added from</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#addEdit(javax.swing.undo.UndoableEdit)"><code>addEdit(UndoableEdit)</code></a></li>
@@ -938,13 +938,13 @@ property "AbstractUndoableEdit.redoText".</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string that displays and identifies this
 object's properties.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="CompoundEdit.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="class in javax.swing.undo">CompoundEdit</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="CompoundEdit.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="CompoundEdit.html" title="javax.swing.undo 包中的类">CompoundEdit</a></code></dd>
+<dt>返回:</dt>
 <dd>a String representation of this object</dd>
 </dl>
 </div>

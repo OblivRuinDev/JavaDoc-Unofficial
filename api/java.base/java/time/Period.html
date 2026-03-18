@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.time</a></li>
 <li><a href="Period.html" class="current-selection">Period</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -94,17 +94,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#ZERO" tabindex="0">ZERO</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#ofYears(int)" tabindex="0">ofYears(int)</a></li>
 <li><a href="#ofMonths(int)" tabindex="0">ofMonths(int)</a></li>
@@ -149,29 +149,29 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Period" class="title">Class Period</h1>
+<h1 title="类 Period" class="title">类 Period</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.time.Period</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../io/Serializable.html" title="interface in java.io">Serializable</a>, <a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a>, <a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../io/Serializable.html" title="java.io 包中的接口">Serializable</a>, <a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a>, <a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Period</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a>, <a href="../io/Serializable.html" title="interface in java.io">Serializable</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a>, <a href="../io/Serializable.html" title="java.io 包中的接口">Serializable</a></span></div>
 <div class="block">A date-based amount of time in the ISO-8601 calendar system,
 such as '2 years, 3 months and 4 days'.
 <p>
 This class models a quantity or amount of time in terms of years, months and days.
-See <a href="Duration.html" title="class in java.time"><code>Duration</code></a> for the time-based equivalent to this class.
+See <a href="Duration.html" title="java.time 包中的类"><code>Duration</code></a> for the time-based equivalent to this class.
 <p>
 Durations and periods differ in their treatment of daylight savings time
-when added to <a href="ZonedDateTime.html" title="class in java.time"><code>ZonedDateTime</code></a>. A <code>Duration</code> will add an exact
+when added to <a href="ZonedDateTime.html" title="java.time 包中的类"><code>ZonedDateTime</code></a>. A <code>Duration</code> will add an exact
 number of seconds, thus a duration of one day is always exactly 24 hours.
 By contrast, a <code>Period</code> will add a conceptual day, trying to maintain
 the local time.
@@ -200,11 +200,11 @@ use instances for synchronization, or unpredictable behavior may
 occur. For example, in a future release, synchronization may fail.
 The <code>equals</code> method should be used for comparisons.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>This class is immutable and thread-safe.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../serialized-form.html#java.time.Period">Serialized Form</a></li>
@@ -218,13 +218,13 @@ The <code>equals</code> method should be used for comparisons.</div>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><code>static final <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ZERO" class="member-name-link">ZERO</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">A constant for a period of zero.</div>
@@ -235,42 +235,42 @@ The <code>equals</code> method should be used for comparisons.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTo(java.time.temporal.Temporal)" class="member-name-link">addTo</a><wbr>(<a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addTo(java.time.temporal.Temporal)" class="member-name-link">addTo</a><wbr>(<a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds this period to the specified temporal object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#between(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">between</a><wbr>(<a href="LocalDate.html" title="class in java.time">LocalDate</a>&nbsp;startDateInclusive,
- <a href="LocalDate.html" title="class in java.time">LocalDate</a>&nbsp;endDateExclusive)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#between(java.time.LocalDate,java.time.LocalDate)" class="member-name-link">between</a><wbr>(<a href="LocalDate.html" title="java.time 包中的类">LocalDate</a>&nbsp;startDateInclusive,
+ <a href="LocalDate.html" title="java.time 包中的类">LocalDate</a>&nbsp;endDateExclusive)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> consisting of the number of years, months,
 and days between two dates.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if this period is equal to another period.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#from(java.time.temporal.TemporalAmount)" class="member-name-link">from</a><wbr>(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amount)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#from(java.time.temporal.TemporalAmount)" class="member-name-link">from</a><wbr>(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amount)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains an instance of <code>Period</code> from a temporal amount.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.time.temporal.TemporalUnit)" class="member-name-link">get</a><wbr>(<a href="temporal/TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&nbsp;unit)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#get(java.time.temporal.TemporalUnit)" class="member-name-link">get</a><wbr>(<a href="temporal/TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&nbsp;unit)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the value of the requested unit.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chrono/IsoChronology.html" title="class in java.time.chrono">IsoChronology</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="chrono/IsoChronology.html" title="java.time.chrono 包中的类">IsoChronology</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getChronology()" class="member-name-link">getChronology</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the chronology of this period, which is the ISO calendar system.</div>
@@ -285,7 +285,7 @@ and days between two dates.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the amount of months of this period.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/List.html" title="interface in java.util">List</a><wbr>&lt;<a href="temporal/TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;<a href="temporal/TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnits()" class="member-name-link">getUnits</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the set of units supported by this period.</div>
@@ -310,100 +310,100 @@ and days between two dates.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Checks if all three units of this period are zero.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minus(java.time.temporal.TemporalAmount)" class="member-name-link">minus</a><wbr>(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amountToSubtract)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minus(java.time.temporal.TemporalAmount)" class="member-name-link">minus</a><wbr>(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amountToSubtract)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified period subtracted.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minusDays(long)" class="member-name-link">minusDays</a><wbr>(long&nbsp;daysToSubtract)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified days subtracted.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minusMonths(long)" class="member-name-link">minusMonths</a><wbr>(long&nbsp;monthsToSubtract)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified months subtracted.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#minusYears(long)" class="member-name-link">minusYears</a><wbr>(long&nbsp;yearsToSubtract)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified years subtracted.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#multipliedBy(int)" class="member-name-link">multipliedBy</a><wbr>(int&nbsp;scalar)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new instance with each element in this period multiplied
 by the specified scalar.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#negated()" class="member-name-link">negated</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a new instance with each amount in this period negated.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#normalized()" class="member-name-link">normalized</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the years and months normalized.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#of(int,int,int)" class="member-name-link">of</a><wbr>(int&nbsp;years,
  int&nbsp;months,
  int&nbsp;days)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> representing a number of years, months and days.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofDays(int)" class="member-name-link">ofDays</a><wbr>(int&nbsp;days)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> representing a number of days.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofMonths(int)" class="member-name-link">ofMonths</a><wbr>(int&nbsp;months)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> representing a number of months.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofWeeks(int)" class="member-name-link">ofWeeks</a><wbr>(int&nbsp;weeks)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> representing a number of weeks.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#ofYears(int)" class="member-name-link">ofYears</a><wbr>(int&nbsp;years)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> representing a number of years.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="class in java.time">Period</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.CharSequence)" class="member-name-link">parse</a><wbr>(<a href="../lang/CharSequence.html" title="interface in java.lang">CharSequence</a>&nbsp;text)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Period.html" title="java.time 包中的类">Period</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#parse(java.lang.CharSequence)" class="member-name-link">parse</a><wbr>(<a href="../lang/CharSequence.html" title="java.lang 包中的接口">CharSequence</a>&nbsp;text)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Obtains a <code>Period</code> from a text string such as <code>PnYnMnD</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#plus(java.time.temporal.TemporalAmount)" class="member-name-link">plus</a><wbr>(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amountToAdd)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#plus(java.time.temporal.TemporalAmount)" class="member-name-link">plus</a><wbr>(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amountToAdd)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified period added.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#plusDays(long)" class="member-name-link">plusDays</a><wbr>(long&nbsp;daysToAdd)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified days added.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#plusMonths(long)" class="member-name-link">plusMonths</a><wbr>(long&nbsp;monthsToAdd)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified months added.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#plusYears(long)" class="member-name-link">plusYears</a><wbr>(long&nbsp;yearsToAdd)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified years added.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subtractFrom(java.time.temporal.Temporal)" class="member-name-link">subtractFrom</a><wbr>(<a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#subtractFrom(java.time.temporal.Temporal)" class="member-name-link">subtractFrom</a><wbr>(<a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Subtracts this period from the specified temporal object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Outputs this period as a <code>String</code>, such as <code>P6Y3M1D</code>.</div>
@@ -413,17 +413,17 @@ by the specified scalar.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gets the total number of months in this period.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withDays(int)" class="member-name-link">withDays</a><wbr>(int&nbsp;days)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified amount of days.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withMonths(int)" class="member-name-link">withMonths</a><wbr>(int&nbsp;months)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified amount of months.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="class in java.time">Period</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Period.html" title="java.time 包中的类">Period</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#withYears(int)" class="member-name-link">withYears</a><wbr>(int&nbsp;years)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a copy of this period with the specified amount of years.</div>
@@ -432,7 +432,7 @@ by the specified scalar.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -443,13 +443,13 @@ by the specified scalar.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="ZERO">
 <h3>ZERO</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">ZERO</span></div>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">ZERO</span></div>
 <div class="block">A constant for a period of zero.</div>
 </div>
 </section>
@@ -460,21 +460,21 @@ by the specified scalar.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="ofYears(int)">
 <h3>ofYears</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">ofYears</span><wbr><span class="parameters">(int&nbsp;years)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">ofYears</span><wbr><span class="parameters">(int&nbsp;years)</span></div>
 <div class="block">Obtains a <code>Period</code> representing a number of years.
 <p>
 The resulting period will have the specified years.
 The months and days units will be zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>years</code> - the number of years, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period of years, not null</dd>
 </dl>
 </div>
@@ -484,15 +484,15 @@ The months and days units will be zero.</div>
 <section class="detail" id="ofMonths(int)">
 <h3>ofMonths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">ofMonths</span><wbr><span class="parameters">(int&nbsp;months)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">ofMonths</span><wbr><span class="parameters">(int&nbsp;months)</span></div>
 <div class="block">Obtains a <code>Period</code> representing a number of months.
 <p>
 The resulting period will have the specified months.
 The years and days units will be zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>months</code> - the number of months, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period of months, not null</dd>
 </dl>
 </div>
@@ -502,16 +502,16 @@ The years and days units will be zero.</div>
 <section class="detail" id="ofWeeks(int)">
 <h3>ofWeeks</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">ofWeeks</span><wbr><span class="parameters">(int&nbsp;weeks)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">ofWeeks</span><wbr><span class="parameters">(int&nbsp;weeks)</span></div>
 <div class="block">Obtains a <code>Period</code> representing a number of weeks.
 <p>
 The resulting period will be day-based, with the amount of days
 equal to the number of weeks multiplied by 7.
 The years and months units will be zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>weeks</code> - the number of weeks, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period, with the input weeks converted to days, not null</dd>
 </dl>
 </div>
@@ -521,15 +521,15 @@ The years and months units will be zero.</div>
 <section class="detail" id="ofDays(int)">
 <h3>ofDays</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">ofDays</span><wbr><span class="parameters">(int&nbsp;days)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">ofDays</span><wbr><span class="parameters">(int&nbsp;days)</span></div>
 <div class="block">Obtains a <code>Period</code> representing a number of days.
 <p>
 The resulting period will have the specified days.
 The years and months units will be zero.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>days</code> - the number of days, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period of days, not null</dd>
 </dl>
 </div>
@@ -539,18 +539,18 @@ The years and months units will be zero.</div>
 <section class="detail" id="of(int,int,int)">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;years,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(int&nbsp;years,
  int&nbsp;months,
  int&nbsp;days)</span></div>
 <div class="block">Obtains a <code>Period</code> representing a number of years, months and days.
 <p>
 This creates an instance based on years, months and days.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>years</code> - the amount of years, may be negative</dd>
 <dd><code>months</code> - the amount of months, may be negative</dd>
 <dd><code>days</code> - the amount of days, may be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period of years, months and days, not null</dd>
 </dl>
 </div>
@@ -560,7 +560,7 @@ This creates an instance based on years, months and days.</div>
 <section class="detail" id="from(java.time.temporal.TemporalAmount)">
 <h3>from</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amount)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">from</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amount)</span></div>
 <div class="block">Obtains an instance of <code>Period</code> from a temporal amount.
 <p>
 This obtains a period based on the specified amount.
@@ -574,13 +574,13 @@ If any other units are found then an exception is thrown.
 <p>
 If the amount is a <code>ChronoPeriod</code> then it must use the ISO chronology.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>amount</code> - the temporal amount to convert, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the equivalent period, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to convert to a <code>Period</code></dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if the amount of years, months or days exceeds an int</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to convert to a <code>Period</code></dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if the amount of years, months or days exceeds an int</dd>
 </dl>
 </div>
 </section>
@@ -589,7 +589,7 @@ If the amount is a <code>ChronoPeriod</code> then it must use the ISO chronology
 <section class="detail" id="parse(java.lang.CharSequence)">
 <h3>parse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../lang/CharSequence.html" title="interface in java.lang">CharSequence</a>&nbsp;text)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">parse</span><wbr><span class="parameters">(<a href="../lang/CharSequence.html" title="java.lang 包中的接口">CharSequence</a>&nbsp;text)</span></div>
 <div class="block">Obtains a <code>Period</code> from a text string such as <code>PnYnMnD</code>.
 <p>
 This will parse the string produced by <code>toString()</code> which is
@@ -624,12 +624,12 @@ For example, the following are valid inputs:
   "-P1Y2M"          -- Period.of(-1, -2, 0)
 </pre></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>text</code> - the text to parse, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the parsed period, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="format/DateTimeParseException.html" title="class in java.time.format">DateTimeParseException</a></code> - if the text cannot be parsed to a period</dd>
+<dt>抛出:</dt>
+<dd><code><a href="format/DateTimeParseException.html" title="java.time.format 包中的类">DateTimeParseException</a></code> - if the text cannot be parsed to a period</dd>
 </dl>
 </div>
 </section>
@@ -638,8 +638,8 @@ For example, the following are valid inputs:
 <section class="detail" id="between(java.time.LocalDate,java.time.LocalDate)">
 <h3>between</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">between</span><wbr><span class="parameters">(<a href="LocalDate.html" title="class in java.time">LocalDate</a>&nbsp;startDateInclusive,
- <a href="LocalDate.html" title="class in java.time">LocalDate</a>&nbsp;endDateExclusive)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">between</span><wbr><span class="parameters">(<a href="LocalDate.html" title="java.time 包中的类">LocalDate</a>&nbsp;startDateInclusive,
+ <a href="LocalDate.html" title="java.time 包中的类">LocalDate</a>&nbsp;endDateExclusive)</span></div>
 <div class="block">Obtains a <code>Period</code> consisting of the number of years, months,
 and days between two dates.
 <p>
@@ -653,12 +653,12 @@ For example, from <code>2010-01-15</code> to <code>2011-03-18</code> is one year
 The result of this method can be a negative period if the end is before the start.
 The negative sign will be the same in each of year, month and day.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>startDateInclusive</code> - the start date, inclusive, not null</dd>
 <dd><code>endDateExclusive</code> - the end date, exclusive, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the period between this date and the end date, not null</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="chrono/ChronoLocalDate.html#until(java.time.chrono.ChronoLocalDate)"><code>ChronoLocalDate.until(ChronoLocalDate)</code></a></li>
@@ -672,7 +672,7 @@ The negative sign will be the same in each of year, month and day.</div>
 <section class="detail" id="get(java.time.temporal.TemporalUnit)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="temporal/TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&nbsp;unit)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="temporal/TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&nbsp;unit)</span></div>
 <div class="block">Gets the value of the requested unit.
 <p>
 This returns a value for each of the three supported units,
@@ -680,17 +680,17 @@ This returns a value for each of the three supported units,
 <a href="temporal/ChronoUnit.html#DAYS"><code>DAYS</code></a>.
 All other units throw an exception.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#get(java.time.temporal.TemporalUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="temporal/TemporalAmount.html#get(java.time.temporal.TemporalUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#get(java.time.temporal.TemporalUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="temporal/TemporalAmount.html#get(java.time.temporal.TemporalUnit)">get</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a></code></dd>
+<dt>参数:</dt>
 <dd><code>unit</code> - the <code>TemporalUnit</code> for which to return the value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the long value of the unit</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the unit is not supported</dd>
-<dd><code><a href="temporal/UnsupportedTemporalTypeException.html" title="class in java.time.temporal">UnsupportedTemporalTypeException</a></code> - if the unit is not supported</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the unit is not supported</dd>
+<dd><code><a href="temporal/UnsupportedTemporalTypeException.html" title="java.time.temporal 包中的类">UnsupportedTemporalTypeException</a></code> - if the unit is not supported</dd>
 </dl>
 </div>
 </section>
@@ -699,7 +699,7 @@ All other units throw an exception.</div>
 <section class="detail" id="getUnits()">
 <h3>getUnits</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/List.html" title="interface in java.util">List</a>&lt;<a href="temporal/TemporalUnit.html" title="interface in java.time.temporal">TemporalUnit</a>&gt;</span>&nbsp;<span class="element-name">getUnits</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="temporal/TemporalUnit.html" title="java.time.temporal 包中的接口">TemporalUnit</a>&gt;</span>&nbsp;<span class="element-name">getUnits</span>()</div>
 <div class="block">Gets the set of units supported by this period.
 <p>
 The supported units are <a href="temporal/ChronoUnit.html#YEARS"><code>YEARS</code></a>,
@@ -709,11 +709,11 @@ They are returned in the order years, months, days.
 This set can be used in conjunction with <a href="#get(java.time.temporal.TemporalUnit)"><code>get(TemporalUnit)</code></a>
 to access the entire state of the period.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#getUnits()">getUnits</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="temporal/TemporalAmount.html#getUnits()">getUnits</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#getUnits()">getUnits</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="temporal/TemporalAmount.html#getUnits()">getUnits</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a></code></dd>
+<dt>返回:</dt>
 <dd>a list containing the years, months and days units, not null</dd>
 </dl>
 </div>
@@ -723,7 +723,7 @@ to access the entire state of the period.</div>
 <section class="detail" id="getChronology()">
 <h3>getChronology</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="chrono/IsoChronology.html" title="class in java.time.chrono">IsoChronology</a></span>&nbsp;<span class="element-name">getChronology</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="chrono/IsoChronology.html" title="java.time.chrono 包中的类">IsoChronology</a></span>&nbsp;<span class="element-name">getChronology</span>()</div>
 <div class="block">Gets the chronology of this period, which is the ISO calendar system.
 <p>
 The <code>Chronology</code> represents the calendar system in use.
@@ -731,9 +731,9 @@ The ISO-8601 calendar system is the modern civil calendar system used today
 in most of the world. It is equivalent to the proleptic Gregorian calendar
 system, in which today's rules for leap years are applied for all time.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#getChronology()">getChronology</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#getChronology()">getChronology</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>返回:</dt>
 <dd>the ISO chronology, not null</dd>
 </dl>
 </div>
@@ -748,9 +748,9 @@ system, in which today's rules for leap years are applied for all time.</div>
 <p>
 A zero period has the value zero for the years, months and days units.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#isZero()">isZero</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#isZero()">isZero</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>返回:</dt>
 <dd>true if this period is zero-length</dd>
 </dl>
 </div>
@@ -765,9 +765,9 @@ A zero period has the value zero for the years, months and days units.</div>
 <p>
 This checks whether the years, months or days units are less than zero.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#isNegative()">isNegative</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#isNegative()">isNegative</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>返回:</dt>
 <dd>true if any unit of this period is negative</dd>
 </dl>
 </div>
@@ -786,7 +786,7 @@ The months unit is not automatically normalized with the years unit.
 This means that a period of "15 months" is different to a period
 of "1 year and 3 months".</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the amount of years of this period, may be negative</dd>
 </dl>
 </div>
@@ -805,7 +805,7 @@ The months unit is not automatically normalized with the years unit.
 This means that a period of "15 months" is different to a period
 of "1 year and 3 months".</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the amount of months of this period, may be negative</dd>
 </dl>
 </div>
@@ -820,7 +820,7 @@ of "1 year and 3 months".</div>
 <p>
 This returns the days unit.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the amount of days of this period, may be negative</dd>
 </dl>
 </div>
@@ -830,7 +830,7 @@ This returns the days unit.</div>
 <section class="detail" id="withYears(int)">
 <h3>withYears</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">withYears</span><wbr><span class="parameters">(int&nbsp;years)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">withYears</span><wbr><span class="parameters">(int&nbsp;years)</span></div>
 <div class="block">Returns a copy of this period with the specified amount of years.
 <p>
 This sets the amount of the years unit in a copy of this period.
@@ -842,9 +842,9 @@ of "1 year and 3 months".
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>years</code> - the years to represent, may be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the requested years, not null</dd>
 </dl>
 </div>
@@ -854,7 +854,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="withMonths(int)">
 <h3>withMonths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">withMonths</span><wbr><span class="parameters">(int&nbsp;months)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">withMonths</span><wbr><span class="parameters">(int&nbsp;months)</span></div>
 <div class="block">Returns a copy of this period with the specified amount of months.
 <p>
 This sets the amount of the months unit in a copy of this period.
@@ -866,9 +866,9 @@ of "1 year and 3 months".
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>months</code> - the months to represent, may be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the requested months, not null</dd>
 </dl>
 </div>
@@ -878,7 +878,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="withDays(int)">
 <h3>withDays</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">withDays</span><wbr><span class="parameters">(int&nbsp;days)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">withDays</span><wbr><span class="parameters">(int&nbsp;days)</span></div>
 <div class="block">Returns a copy of this period with the specified amount of days.
 <p>
 This sets the amount of the days unit in a copy of this period.
@@ -886,9 +886,9 @@ The years and months units are unaffected.
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>days</code> - the days to represent, may be negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the requested days, not null</dd>
 </dl>
 </div>
@@ -898,7 +898,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="plus(java.time.temporal.TemporalAmount)">
 <h3>plus</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">plus</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amountToAdd)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">plus</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amountToAdd)</span></div>
 <div class="block">Returns a copy of this period with the specified period added.
 <p>
 This operates separately on the years, months and days.
@@ -912,16 +912,16 @@ Other types are interpreted using <a href="#from(java.time.temporal.TemporalAmou
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#plus(java.time.temporal.TemporalAmount)">plus</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#plus(java.time.temporal.TemporalAmount)">plus</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>参数:</dt>
 <dd><code>amountToAdd</code> - the amount to add, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the requested period added, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the specified amount has a non-ISO chronology or
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the specified amount has a non-ISO chronology or
  contains an invalid unit</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -930,7 +930,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="plusYears(long)">
 <h3>plusYears</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">plusYears</span><wbr><span class="parameters">(long&nbsp;yearsToAdd)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">plusYears</span><wbr><span class="parameters">(long&nbsp;yearsToAdd)</span></div>
 <div class="block">Returns a copy of this period with the specified years added.
 <p>
 This adds the amount to the years unit in a copy of this period.
@@ -939,12 +939,12 @@ For example, "1 year, 6 months and 3 days" plus 2 years returns "3 years, 6 mont
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>yearsToAdd</code> - the years to add, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified years added, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -953,7 +953,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="plusMonths(long)">
 <h3>plusMonths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">plusMonths</span><wbr><span class="parameters">(long&nbsp;monthsToAdd)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">plusMonths</span><wbr><span class="parameters">(long&nbsp;monthsToAdd)</span></div>
 <div class="block">Returns a copy of this period with the specified months added.
 <p>
 This adds the amount to the months unit in a copy of this period.
@@ -962,12 +962,12 @@ For example, "1 year, 6 months and 3 days" plus 2 months returns "1 year, 8 mont
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>monthsToAdd</code> - the months to add, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified months added, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -976,7 +976,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="plusDays(long)">
 <h3>plusDays</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">plusDays</span><wbr><span class="parameters">(long&nbsp;daysToAdd)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">plusDays</span><wbr><span class="parameters">(long&nbsp;daysToAdd)</span></div>
 <div class="block">Returns a copy of this period with the specified days added.
 <p>
 This adds the amount to the days unit in a copy of this period.
@@ -985,12 +985,12 @@ For example, "1 year, 6 months and 3 days" plus 2 days returns "1 year, 6 months
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>daysToAdd</code> - the days to add, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified days added, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -999,7 +999,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="minus(java.time.temporal.TemporalAmount)">
 <h3>minus</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">minus</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a>&nbsp;amountToSubtract)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">minus</span><wbr><span class="parameters">(<a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a>&nbsp;amountToSubtract)</span></div>
 <div class="block">Returns a copy of this period with the specified period subtracted.
 <p>
 This operates separately on the years, months and days.
@@ -1013,16 +1013,16 @@ Other types are interpreted using <a href="#from(java.time.temporal.TemporalAmou
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#minus(java.time.temporal.TemporalAmount)">minus</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#minus(java.time.temporal.TemporalAmount)">minus</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>参数:</dt>
 <dd><code>amountToSubtract</code> - the amount to subtract, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the requested period subtracted, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if the specified amount has a non-ISO chronology or
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if the specified amount has a non-ISO chronology or
  contains an invalid unit</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1031,7 +1031,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="minusYears(long)">
 <h3>minusYears</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">minusYears</span><wbr><span class="parameters">(long&nbsp;yearsToSubtract)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">minusYears</span><wbr><span class="parameters">(long&nbsp;yearsToSubtract)</span></div>
 <div class="block">Returns a copy of this period with the specified years subtracted.
 <p>
 This subtracts the amount from the years unit in a copy of this period.
@@ -1040,12 +1040,12 @@ For example, "1 year, 6 months and 3 days" minus 2 years returns "-1 years, 6 mo
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>yearsToSubtract</code> - the years to subtract, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified years subtracted, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1054,7 +1054,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="minusMonths(long)">
 <h3>minusMonths</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">minusMonths</span><wbr><span class="parameters">(long&nbsp;monthsToSubtract)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">minusMonths</span><wbr><span class="parameters">(long&nbsp;monthsToSubtract)</span></div>
 <div class="block">Returns a copy of this period with the specified months subtracted.
 <p>
 This subtracts the amount from the months unit in a copy of this period.
@@ -1063,12 +1063,12 @@ For example, "1 year, 6 months and 3 days" minus 2 months returns "1 year, 4 mon
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>monthsToSubtract</code> - the years to subtract, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified months subtracted, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1077,7 +1077,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="minusDays(long)">
 <h3>minusDays</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">minusDays</span><wbr><span class="parameters">(long&nbsp;daysToSubtract)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">minusDays</span><wbr><span class="parameters">(long&nbsp;daysToSubtract)</span></div>
 <div class="block">Returns a copy of this period with the specified days subtracted.
 <p>
 This subtracts the amount from the days unit in a copy of this period.
@@ -1086,12 +1086,12 @@ For example, "1 year, 6 months and 3 days" minus 2 days returns "1 year, 6 month
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>daysToSubtract</code> - the months to subtract, positive or negative</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the specified days subtracted, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1100,7 +1100,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="multipliedBy(int)">
 <h3>multipliedBy</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">multipliedBy</span><wbr><span class="parameters">(int&nbsp;scalar)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">multipliedBy</span><wbr><span class="parameters">(int&nbsp;scalar)</span></div>
 <div class="block">Returns a new instance with each element in this period multiplied
 by the specified scalar.
 <p>
@@ -1110,14 +1110,14 @@ For example, a period of "2 years, -3 months and 4 days" multiplied by
 3 will return "6 years, -9 months and 12 days".
 No normalization is performed.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#multipliedBy(int)">multipliedBy</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#multipliedBy(int)">multipliedBy</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>参数:</dt>
 <dd><code>scalar</code> - the scalar to multiply by, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the amounts multiplied by the scalar, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1126,7 +1126,7 @@ No normalization is performed.</div>
 <section class="detail" id="negated()">
 <h3>negated</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">negated</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">negated</span>()</div>
 <div class="block">Returns a new instance with each amount in this period negated.
 <p>
 This returns a period with each of the years, months and days units
@@ -1135,12 +1135,12 @@ For example, a period of "2 years, -3 months and 4 days" will be
 negated to "-2 years, 3 months and -4 days".
 No normalization is performed.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#negated()">negated</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#negated()">negated</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with the amounts negated, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs, which only happens if
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs, which only happens if
  one of the units has the value <code>Integer.MIN_VALUE</code></dd>
 </dl>
 </div>
@@ -1150,7 +1150,7 @@ No normalization is performed.</div>
 <section class="detail" id="normalized()">
 <h3>normalized</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="class in java.time">Period</a></span>&nbsp;<span class="element-name">normalized</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Period.html" title="java.time 包中的类">Period</a></span>&nbsp;<span class="element-name">normalized</span>()</div>
 <div class="block">Returns a copy of this period with the years and months normalized.
 <p>
 This normalizes the years and months units, leaving the days unit unchanged.
@@ -1164,12 +1164,12 @@ For example, a period of "1 year and -25 months" will be normalized to
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#normalized()">normalized</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#normalized()">normalized</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>返回:</dt>
 <dd>a <code>Period</code> based on this period with excess months normalized to years, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1186,7 +1186,7 @@ number of years by 12 and adding the number of months.
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the total number of months in the period, may be negative</dd>
 </dl>
 </div>
@@ -1196,7 +1196,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="addTo(java.time.temporal.Temporal)">
 <h3>addTo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a></span>&nbsp;<span class="element-name">addTo</span><wbr><span class="parameters">(<a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></span>&nbsp;<span class="element-name">addTo</span><wbr><span class="parameters">(<a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</span></div>
 <div class="block">Adds this period to the specified temporal object.
 <p>
 This returns a temporal object of the same observable type as the input
@@ -1225,17 +1225,17 @@ correct behaviour at the end of the month.
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#addTo(java.time.temporal.Temporal)">addTo</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="temporal/TemporalAmount.html#addTo(java.time.temporal.Temporal)">addTo</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#addTo(java.time.temporal.Temporal)">addTo</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="temporal/TemporalAmount.html#addTo(java.time.temporal.Temporal)">addTo</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a></code></dd>
+<dt>参数:</dt>
 <dd><code>temporal</code> - the temporal object to adjust, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an object of the same type with the adjustment made, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to add</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to add</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1244,7 +1244,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="subtractFrom(java.time.temporal.Temporal)">
 <h3>subtractFrom</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a></span>&nbsp;<span class="element-name">subtractFrom</span><wbr><span class="parameters">(<a href="temporal/Temporal.html" title="interface in java.time.temporal">Temporal</a>&nbsp;temporal)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a></span>&nbsp;<span class="element-name">subtractFrom</span><wbr><span class="parameters">(<a href="temporal/Temporal.html" title="java.time.temporal 包中的接口">Temporal</a>&nbsp;temporal)</span></div>
 <div class="block">Subtracts this period from the specified temporal object.
 <p>
 This returns a temporal object of the same observable type as the input
@@ -1273,17 +1273,17 @@ correct behaviour at the end of the month.
 <p>
 This instance is immutable and unaffected by this method call.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#subtractFrom(java.time.temporal.Temporal)">subtractFrom</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="temporal/TemporalAmount.html#subtractFrom(java.time.temporal.Temporal)">subtractFrom</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="interface in java.time.temporal">TemporalAmount</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#subtractFrom(java.time.temporal.Temporal)">subtractFrom</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="temporal/TemporalAmount.html#subtractFrom(java.time.temporal.Temporal)">subtractFrom</a></code>&nbsp;in interface&nbsp;<code><a href="temporal/TemporalAmount.html" title="java.time.temporal 包中的接口">TemporalAmount</a></code></dd>
+<dt>参数:</dt>
 <dd><code>temporal</code> - the temporal object to adjust, not null</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an object of the same type with the adjustment made, not null</dd>
-<dt>Throws:</dt>
-<dd><code><a href="DateTimeException.html" title="class in java.time">DateTimeException</a></code> - if unable to subtract</dd>
-<dd><code><a href="../lang/ArithmeticException.html" title="class in java.lang">ArithmeticException</a></code> - if numeric overflow occurs</dd>
+<dt>抛出:</dt>
+<dd><code><a href="DateTimeException.html" title="java.time 包中的类">DateTimeException</a></code> - if unable to subtract</dd>
+<dd><code><a href="../lang/ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></code> - if numeric overflow occurs</dd>
 </dl>
 </div>
 </section>
@@ -1292,7 +1292,7 @@ This instance is immutable and unaffected by this method call.</div>
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="../lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Checks if this period is equal to another period.
 <p>
 The comparison is based on the type <code>Period</code> and each of the three amounts.
@@ -1300,19 +1300,19 @@ To be equal, the years, months and days units must be individually equal.
 Note that this means that a period of "15 Months" is not equal to a period
 of "1 Year and 3 Months".</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#equals(java.lang.Object)">equals</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - the object to check, null returns false</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if this is equal to the other period</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../lang/Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1326,13 +1326,13 @@ of "1 Year and 3 Months".</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
 <div class="block">A hash code for this period.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#hashCode()">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#hashCode()">hashCode</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a suitable hash code</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -1347,17 +1347,17 @@ of "1 Year and 3 Months".</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Outputs this period as a <code>String</code>, such as <code>P6Y3M1D</code>.
 <p>
 The output will be in the ISO-8601 period format.
 A zero period will be represented as zero days, 'P0D'.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="chrono/ChronoPeriod.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="interface in java.time.chrono">ChronoPeriod</a></code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="chrono/ChronoPeriod.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="chrono/ChronoPeriod.html" title="java.time.chrono 包中的接口">ChronoPeriod</a></code></dd>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of this period, not null</dd>
 </dl>
 </div>

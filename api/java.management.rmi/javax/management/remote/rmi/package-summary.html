@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../../module-summary.html">java.management.rmi</a></li>
 <li><a href="package-summary.html" class="current-selection">javax.management.remote.rmi</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#creating-an-rmi-connector-server-heading" tabindex="0">Creating an RMI connector server</a>
 <ol class="toc-list">
@@ -74,13 +74,13 @@ entries</a></li>
 <li><a href="#dynamic-code-downloading-heading" tabindex="0">Dynamic code downloading</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package javax.management.remote.rmi" class="title">Package javax.management.remote.rmi</h1>
+<h1 title="包 javax.management.remote.rmi" class="title">包 javax.management.remote.rmi</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -99,7 +99,7 @@ entries</a></li>
 
   <p>Like most connectors in the JMX Remote API, an RMI connector
     usually has an address, which
-    is a <a href="../../../../../java.management/javax/management/remote/JMXServiceURL.html" title="class in javax.management.remote"><code>JMXServiceURL</code></a>.  The protocol part of this address is
+    is a <a href="../../../../../java.management/javax/management/remote/JMXServiceURL.html" title="javax.management.remote 包中的类"><code>JMXServiceURL</code></a>.  The protocol part of this address is
     <code>rmi</code> for a connector that uses the default RMI
     transport (JRMP).</p>
 
@@ -109,7 +109,7 @@ entries</a></li>
     <li>
 In the <em>JNDI form</em>, the URL indicates <em>where to find
 an RMI stub for the connector</em>.  This RMI stub is a Java
-object of type <a href="RMIServer.html" title="interface in javax.management.remote.rmi"><code>RMIServer</code></a> that gives remote access to the connector server.
+object of type <a href="RMIServer.html" title="javax.management.remote.rmi 包中的接口"><code>RMIServer</code></a> that gives remote access to the connector server.
 With this address form, the RMI stub is obtained from an
 external directory entry included in the URL.  An external
 directory is any directory recognized by <a href="../../../../../java.naming/javax/naming/package-summary.html"><code>JNDI</code></a>, typically the RMI registry, LDAP, or COS Naming.
@@ -135,7 +135,7 @@ newlines.
     server.</p>
 
   <p>An RMI connector server can also be created by constructing an
-    instance of <a href="RMIConnectorServer.html" title="class in javax.management.remote.rmi"><code>RMIConnectorServer</code></a>, explicitly or through the MBean server's
+    instance of <a href="RMIConnectorServer.html" title="javax.management.remote.rmi 包中的类"><code>RMIConnectorServer</code></a>, explicitly or through the MBean server's
     <code>createMBean</code> method.</p>
 
   <h3 id="choosing-the-rmi-transport-heading">Choosing the RMI transport</h3>
@@ -144,7 +144,7 @@ newlines.
     <code>rmi</code> in the <code><em>protocol</em></code> part of the
     <code>serviceURL</code> when creating the connector server.  You
     can also create specialized connector servers by instantiating
-    an appropriate subclass of <a href="RMIServerImpl.html" title="class in javax.management.remote.rmi"><code>RMIServerImpl</code></a> and
+    an appropriate subclass of <a href="RMIServerImpl.html" title="javax.management.remote.rmi 包中的类"><code>RMIServerImpl</code></a> and
     supplying it to the <code>RMIConnectorServer</code>
     constructor.</p>
 
@@ -166,7 +166,7 @@ server</a></h3>
 <code>service:jmx:rmi://<em>host</em>:<em>port</em></code>
 </pre>
 
-<p>then the connector server will generate an <a href="RMIJRMPServerImpl.html" title="class in javax.management.remote.rmi"><code>RMIJRMPServerImpl</code></a> and the returned <code>JMXServiceURL</code>
+<p>then the connector server will generate an <a href="RMIJRMPServerImpl.html" title="javax.management.remote.rmi 包中的类"><code>RMIJRMPServerImpl</code></a> and the returned <code>JMXServiceURL</code>
 looks like:</p>
 
 <pre>
@@ -319,13 +319,13 @@ entries</a></h3>
     <code>jmx.remote.rmi.server.socket.factory</code> in the
     <code>environment</code> given to the
     <code>RMIConnectorServer</code> constructor.  The values of these
-    attributes must be of type <a href="../../../../../java.rmi/java/rmi/server/RMIClientSocketFactory.html" title="interface in java.rmi.server"><code>RMIClientSocketFactory</code></a> and <a href="../../../../../java.rmi/java/rmi/server/RMIServerSocketFactory.html" title="interface in java.rmi.server"><code>RMIServerSocketFactory</code></a>, respectively.  These
+    attributes must be of type <a href="../../../../../java.rmi/java/rmi/server/RMIClientSocketFactory.html" title="java.rmi.server 包中的接口"><code>RMIClientSocketFactory</code></a> and <a href="../../../../../java.rmi/java/rmi/server/RMIServerSocketFactory.html" title="java.rmi.server 包中的接口"><code>RMIServerSocketFactory</code></a>, respectively.  These
     factories are used when creating the RMI objects associated with
     the connector.</p>
 
   <h2 id="creating-an-rmi-connector-client-heading">Creating an RMI connector client</h2>
 
-  <p>An RMI connector client is usually constructed using <a href="../../../../../java.management/javax/management/remote/JMXConnectorFactory.html" title="class in javax.management.remote"><code>JMXConnectorFactory</code></a>, with a
+  <p>An RMI connector client is usually constructed using <a href="../../../../../java.management/javax/management/remote/JMXConnectorFactory.html" title="javax.management.remote 包中的类"><code>JMXConnectorFactory</code></a>, with a
     <code>JMXServiceURL</code> that has <code>rmi</code> as its protocol.</p>
 
   <p>If the <code>JMXServiceURL</code> was generated by the server,
@@ -349,9 +349,9 @@ entries</a></h3>
   <code>service:jmx:rmi:///jndi/rmi://myhost/whatsit-agent-connector</code>
   </pre>
 
-  <p>If you have an RMI stub of type <a href="RMIServer.html" title="interface in javax.management.remote.rmi"><code>RMIServer</code></a>, you can
+  <p>If you have an RMI stub of type <a href="RMIServer.html" title="javax.management.remote.rmi 包中的接口"><code>RMIServer</code></a>, you can
     construct an RMI connection directly by using the appropriate
-    constructor of <a href="RMIConnector.html" title="class in javax.management.remote.rmi"><code>RMIConnector</code></a>.</p>
+    constructor of <a href="RMIConnector.html" title="javax.management.remote.rmi 包中的类"><code>RMIConnector</code></a>.</p>
 
   <h2 id="dynamic-code-downloading-heading">Dynamic code downloading</h2>
 
@@ -361,9 +361,9 @@ entries</a></h3>
     be downloaded from a codebase specified by the peer.
     <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase25&amp;id=rmi_guide">Java RMI Guide</a> explains this in more detail.</p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045,
@@ -377,11 +377,11 @@ entries</a></h3>
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Module</div>
-<div class="table-header col-second">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">模块</div>
+<div class="table-header col-second">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-plain even-row-color"><a href="../../../../../java.management/module-summary.html">java.management</a></div>
 <div class="col-first even-row-color"><a href="../../../../../java.management/javax/management/remote/package-summary.html">javax.management.remote</a></div>
 <div class="col-last even-row-color">
@@ -393,47 +393,47 @@ JMX MBean servers.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RMIConnection.html" title="interface in javax.management.remote.rmi">RMIConnection</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RMIConnection.html" title="javax.management.remote.rmi 包中的接口">RMIConnection</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">RMI object used to forward an MBeanServer request from a client
 to its MBeanServer implementation on the server side.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIConnectionImpl.html" title="class in javax.management.remote.rmi">RMIConnectionImpl</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIConnectionImpl.html" title="javax.management.remote.rmi 包中的类">RMIConnectionImpl</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Implementation of the <a href="RMIConnection.html" title="interface in javax.management.remote.rmi"><code>RMIConnection</code></a> interface.</div>
+<div class="block">Implementation of the <a href="RMIConnection.html" title="javax.management.remote.rmi 包中的接口"><code>RMIConnection</code></a> interface.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIConnectionImpl_Stub.html" title="class in javax.management.remote.rmi">RMIConnectionImpl_Stub</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIConnectionImpl_Stub.html" title="javax.management.remote.rmi 包中的类">RMIConnectionImpl_Stub</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">RMIConnectionImpl remote stub.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIConnector.html" title="class in javax.management.remote.rmi">RMIConnector</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIConnector.html" title="javax.management.remote.rmi 包中的类">RMIConnector</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A connection to a remote RMI connector.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIConnectorServer.html" title="class in javax.management.remote.rmi">RMIConnectorServer</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIConnectorServer.html" title="javax.management.remote.rmi 包中的类">RMIConnectorServer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A JMX API connector server that creates RMI-based connections
 from remote clients.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIJRMPServerImpl.html" title="class in javax.management.remote.rmi">RMIJRMPServerImpl</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIJRMPServerImpl.html" title="javax.management.remote.rmi 包中的类">RMIJRMPServerImpl</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">An <a href="RMIServer.html" title="interface in javax.management.remote.rmi"><code>RMIServer</code></a> object that is exported through JRMP and that
+<div class="block">An <a href="RMIServer.html" title="javax.management.remote.rmi 包中的接口"><code>RMIServer</code></a> object that is exported through JRMP and that
 creates client connections as RMI objects exported through JRMP.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RMIServer.html" title="interface in javax.management.remote.rmi">RMIServer</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RMIServer.html" title="javax.management.remote.rmi 包中的接口">RMIServer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">RMI object used to establish connections to an RMI connector.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIServerImpl.html" title="class in javax.management.remote.rmi">RMIServerImpl</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RMIServerImpl.html" title="javax.management.remote.rmi 包中的类">RMIServerImpl</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">An RMI object representing a connector server.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIServerImpl_Stub.html" title="class in javax.management.remote.rmi">RMIServerImpl_Stub</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RMIServerImpl_Stub.html" title="javax.management.remote.rmi 包中的类">RMIServerImpl_Stub</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">RMIServerImpl remote stub.</div>
 </div>

@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.desktop</a></li>
 <li><a href="../package-summary.html" class="current-selection">java.awt</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -87,12 +87,12 @@ here, and their value types.</caption>
 <tbody>
 <tr>
 <th scope="row"><A href="#awt.font.desktophints">awt.font.desktophints</A></th>
-<td><a href="../../../../java.base/java/util/Map.html" title="interface in java.util"><code>java.util.Map</code></a></td>
+<td><a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口"><code>java.util.Map</code></a></td>
 <td>Font smoothing (text antialiasing) settings.</td>
 </tr>
 <tr>
 <th scope="row"><A href="#sun.awt.enableExtraMouseButtons">sun.awt.enableExtraMouseButtons</A></th>
-<td><a href="../../../../java.base/java/lang/Boolean.html" title="class in java.lang"><code>java.lang.Boolean</code></a></td>
+<td><a href="../../../../java.base/java/lang/Boolean.html" title="java.lang 包中的类"><code>java.lang.Boolean</code></a></td>
 <td>Controls if mouse events from extra buttons are to be generated or not</td>
 </tr>
 </tbody>
@@ -106,9 +106,9 @@ Modern desktops support various forms of text antialiasing (font smoothing).
 These are applied by platform-specific heavyweight components.
 However an application may want to render text using the same text
 antialiasing on a drawing surface or lightweight (non-platform) component using
-<a href="../Graphics2D.html" title="class in java.awt"><code>Graphics2D</code></a> methods.
+<a href="../Graphics2D.html" title="java.awt 包中的类"><code>Graphics2D</code></a> methods.
 This is particularly important when creating
-<a href="../../../javax/swing/JComponent.html" title="class in javax.swing"><code>Swing components</code></a> which
+<a href="../../../javax/swing/JComponent.html" title="javax.swing 包中的类"><code>Swing components</code></a> which
 are required to appear consistent with native desktop components or other
 Swing components.
 
@@ -117,8 +117,8 @@ The standard desktop property named
 <b>"awt.font.desktophints"</b>
 can be used to obtain the rendering hints that best match the desktop settings.
 
-The return value is a <a href="../../../../java.base/java/util/Map.html" title="interface in java.util"><code>Map</code></a> of
-<a href="../RenderingHints.html" title="class in java.awt"><code>RenderingHints</code></a> which
+The return value is a <a href="../../../../java.base/java/util/Map.html" title="java.util 包中的接口"><code>Map</code></a> of
+<a href="../RenderingHints.html" title="java.awt 包中的类"><code>RenderingHints</code></a> which
 can be directly applied to a <code>Graphics2D</code>.
 <p>
 It is a <code>Map</code> as more than one hint may be needed.
@@ -135,7 +135,7 @@ if (map != null) {
 <h4 id="listening-for-changes-heading">Listening for changes</h4>
 <p>
 An application can listen for changes in the property
-using a <a href="../../beans/PropertyChangeListener.html" title="interface in java.beans"><code>PropertyChangeListener</code></a>:
+using a <a href="../../beans/PropertyChangeListener.html" title="java.beans 包中的接口"><code>PropertyChangeListener</code></a>:
 <pre><code>
 tk.addPropertyChangeListener("awt.font.desktophints", pcl);
 </code></pre>
@@ -152,10 +152,10 @@ do provide this capability.
 <h4 id="text-measurement-heading">Text Measurement</h4>
 <p>
 Text always needs to be measured using the same
-<a href="../font/FontRenderContext.html" title="class in java.awt.font"><code>FontRenderContext</code></a>
+<a href="../font/FontRenderContext.html" title="java.awt.font 包中的类"><code>FontRenderContext</code></a>
 as used for rendering. The text anti-aliasing hint is a component of
 the <code>FontRenderContext</code>.
-A <a href="../FontMetrics.html" title="class in java.awt"><code>FontMetrics</code></a>
+A <a href="../FontMetrics.html" title="java.awt 包中的类"><code>FontMetrics</code></a>
 obtained from the <code>Graphics</code> object on which the hint
 has been set will measure text appropriately.
 This is not a unique requirement for clients that specify this hint

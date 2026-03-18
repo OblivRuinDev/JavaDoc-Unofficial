@@ -56,7 +56,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang.foreign</a></li>
 <li><a href="Arena.html" class="current-selection">Arena</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -64,16 +64,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#thread-confinement" tabindex="0">Safety and thread-confinement</a></li>
 <li><a href="#custom-arenas" tabindex="0">Custom arenas</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#ofAuto()" tabindex="0">ofAuto()</a></li>
 <li><a href="#global()" tabindex="0">global()</a></li>
@@ -89,27 +89,27 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface Arena" class="title">Interface Arena</h1>
+<h1 title="接口 Arena" class="title">接口 Arena</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Superinterfaces:</dt>
-<dd><code><a href="../AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="SegmentAllocator.html" title="interface in java.lang.foreign">SegmentAllocator</a></code></dd>
+<dt>所有父接口:</dt>
+<dd><code><a href="../AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="SegmentAllocator.html" title="java.lang.foreign 包中的接口">SegmentAllocator</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Arena</span><span class="extends-implements">
-extends <a href="SegmentAllocator.html" title="interface in java.lang.foreign">SegmentAllocator</a>, <a href="../AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></span></div>
+extends <a href="SegmentAllocator.html" title="java.lang.foreign 包中的接口">SegmentAllocator</a>, <a href="../AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></span></div>
 <div class="block">An arena controls the lifecycle of native memory segments, providing both flexible
  allocation and timely deallocation.
  <p>
- An arena has a <a href="MemorySegment.Scope.html" title="interface in java.lang.foreign">scope</a> - the <em>arena scope</em>.
+ An arena has a <a href="MemorySegment.Scope.html" title="java.lang.foreign 包中的接口">scope</a> - the <em>arena scope</em>.
  All the segments allocated by the arena are associated with the arena scope. As such,
  the arena determines the temporal bounds of all the memory segments allocated by it.
  <p>
  Moreover, an arena also determines whether access to memory segments allocated by it
  should be <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">restricted</a> to specific
- threads. An arena is a <a href="SegmentAllocator.html" title="interface in java.lang.foreign"><code>SegmentAllocator</code></a> and features several allocation
+ threads. An arena is a <a href="SegmentAllocator.html" title="java.lang.foreign 包中的接口"><code>SegmentAllocator</code></a> and features several allocation
  methods that can be used by clients to obtain native segments.
  <p>
  The simplest arena is the <a href="#global()">global arena</a>. The global arena
@@ -225,7 +225,7 @@ extends <a href="SegmentAllocator.html" title="interface in java.lang.foreign">S
  operation. The segments created by a confined arena can only be
  <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by the owner thread.
  Moreover, any attempt to close the confined arena from a thread other than the owner
- thread will fail with a <a href="../WrongThreadException.html" title="class in java.lang"><code>WrongThreadException</code></a>.
+ thread will fail with a <a href="../WrongThreadException.html" title="java.lang 包中的类"><code>WrongThreadException</code></a>.
  <p>
  Shared arenas, on the other hand, have no owner thread. The segments created by a
  shared arena can be <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by
@@ -288,14 +288,14 @@ extends <a href="SegmentAllocator.html" title="interface in java.lang.foreign">S
 </div>
 </div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>Implementations of this interface are thread-safe.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>22</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="MemorySegment.html" title="interface in java.lang.foreign"><code>MemorySegment</code></a></li>
+<li><a href="MemorySegment.html" title="java.lang.foreign 包中的接口"><code>MemorySegment</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -306,15 +306,15 @@ extends <a href="SegmentAllocator.html" title="interface in java.lang.foreign">S
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#allocate(long,long)" class="member-name-link">allocate</a><wbr>(long&nbsp;byteSize,
  long&nbsp;byteAlignment)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -326,27 +326,27 @@ constraint (in bytes).</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Closes this arena.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="interface in java.lang.foreign">Arena</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#global()" class="member-name-link">global</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns the global arena.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="interface in java.lang.foreign">Arena</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofAuto()" class="member-name-link">ofAuto</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Creates a new arena that is managed, automatically, by the garbage collector.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="interface in java.lang.foreign">Arena</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofConfined()" class="member-name-link">ofConfined</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new confined arena.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="interface in java.lang.foreign">Arena</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static <a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#ofShared()" class="member-name-link">ofShared</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new shared arena.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.Scope.html" title="interface in java.lang.foreign">MemorySegment.Scope</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="MemorySegment.Scope.html" title="java.lang.foreign 包中的接口">MemorySegment.Scope</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#scope()" class="member-name-link">scope</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the arena scope.</div>
@@ -355,7 +355,7 @@ constraint (in bytes).</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.foreign.SegmentAllocator">Methods declared in interface&nbsp;<a href="SegmentAllocator.html#method-summary" title="interface in java.lang.foreign">SegmentAllocator</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.foreign.SegmentAllocator">在接口 <a href="SegmentAllocator.html#method-summary" title="java.lang.foreign 包中的接口">SegmentAllocator</a> 中声明的方法</h3>
 <code><a href="SegmentAllocator.html#allocate(long)" title="allocate(long)">allocate</a>, <a href="SegmentAllocator.html#allocate(java.lang.foreign.MemoryLayout)" title="allocate(MemoryLayout)">allocate</a>, <a href="SegmentAllocator.html#allocate(java.lang.foreign.MemoryLayout,long)" title="allocate(MemoryLayout, long)">allocate</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.AddressLayout,java.lang.foreign.MemorySegment)" title="allocateFrom(AddressLayout, MemorySegment)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfByte,byte)" title="allocateFrom(ValueLayout.OfByte, byte)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfByte,byte...)" title="allocateFrom(ValueLayout.OfByte, byte...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfChar,char)" title="allocateFrom(ValueLayout.OfChar, char)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfChar,char...)" title="allocateFrom(ValueLayout.OfChar, char...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfDouble,double)" title="allocateFrom(ValueLayout.OfDouble, double)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfDouble,double...)" title="allocateFrom(ValueLayout.OfDouble, double...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfFloat,float)" title="allocateFrom(ValueLayout.OfFloat, float)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfFloat,float...)" title="allocateFrom(ValueLayout.OfFloat, float...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfInt,int)" title="allocateFrom(ValueLayout.OfInt, int)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfInt,int...)" title="allocateFrom(ValueLayout.OfInt, int...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfLong,long)" title="allocateFrom(ValueLayout.OfLong, long)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfLong,long...)" title="allocateFrom(ValueLayout.OfLong, long...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfShort,short)" title="allocateFrom(ValueLayout.OfShort, short)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout.OfShort,short...)" title="allocateFrom(ValueLayout.OfShort, short...)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.foreign.ValueLayout,java.lang.foreign.MemorySegment,java.lang.foreign.ValueLayout,long,long)" title="allocateFrom(ValueLayout, MemorySegment, ValueLayout, long, long)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.String)" title="allocateFrom(String)">allocateFrom</a>, <a href="SegmentAllocator.html#allocateFrom(java.lang.String,java.nio.charset.Charset)" title="allocateFrom(String, Charset)">allocateFrom</a></code></div>
 </section>
 </li>
@@ -366,22 +366,22 @@ constraint (in bytes).</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="ofAuto()">
 <h3>ofAuto</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="interface in java.lang.foreign">Arena</a></span>&nbsp;<span class="element-name">ofAuto</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></span>&nbsp;<span class="element-name">ofAuto</span>()</div>
 <div class="block">Creates a new arena that is managed, automatically, by the garbage collector.
 Segments allocated with the returned arena can be
 <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by any thread.
-Calling <a href="#close()"><code>close()</code></a> on the returned arena will result in an <a href="../UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.
+Calling <a href="#close()"><code>close()</code></a> on the returned arena will result in an <a href="../UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.
 <p>
 Memory segments <a href="#allocate(long,long)">allocated</a> by the returned arena
 are zero-initialized.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new arena that is managed, automatically, by the garbage collector</dd>
 </dl>
 </div>
@@ -391,16 +391,16 @@ are zero-initialized.</div>
 <section class="detail" id="global()">
 <h3>global</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="interface in java.lang.foreign">Arena</a></span>&nbsp;<span class="element-name">global</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></span>&nbsp;<span class="element-name">global</span>()</div>
 <div class="block">Returns the global arena. Segments allocated with the global arena can be
          <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by any thread.
          Calling <a href="#close()"><code>close()</code></a> on the returned arena will result in
-         an <a href="../UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>.
+         an <a href="../UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>.
 <p>
 Memory segments <a href="#allocate(long,long)">allocated</a> by the returned arena
 are zero-initialized.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the global arena</dd>
 </dl>
 </div>
@@ -410,7 +410,7 @@ are zero-initialized.</div>
 <section class="detail" id="ofConfined()">
 <h3>ofConfined</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="interface in java.lang.foreign">Arena</a></span>&nbsp;<span class="element-name">ofConfined</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></span>&nbsp;<span class="element-name">ofConfined</span>()</div>
 <div class="block">Returns a new confined arena. Segments allocated with the confined arena can
          only be <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by the
          thread that created the arena, the arena's <em>owner thread</em>.
@@ -418,7 +418,7 @@ are zero-initialized.</div>
 Memory segments <a href="#allocate(long,long)">allocated</a> by the returned arena
 are zero-initialized.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new confined arena</dd>
 </dl>
 </div>
@@ -428,14 +428,14 @@ are zero-initialized.</div>
 <section class="detail" id="ofShared()">
 <h3>ofShared</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="interface in java.lang.foreign">Arena</a></span>&nbsp;<span class="element-name">ofShared</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type"><a href="Arena.html" title="java.lang.foreign 包中的接口">Arena</a></span>&nbsp;<span class="element-name">ofShared</span>()</div>
 <div class="block">Returns a new shared arena. Segments allocated with the shared arena can be
          <a href="MemorySegment.html#isAccessibleBy(java.lang.Thread)">accessed</a> by any thread.
 <p>
 Memory segments <a href="#allocate(long,long)">allocated</a> by the returned arena
 are zero-initialized.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new shared arena</dd>
 </dl>
 </div>
@@ -445,7 +445,7 @@ are zero-initialized.</div>
 <section class="detail" id="allocate(long,long)">
 <h3>allocate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MemorySegment.html" title="interface in java.lang.foreign">MemorySegment</a></span>&nbsp;<span class="element-name">allocate</span><wbr><span class="parameters">(long&nbsp;byteSize,
+<div class="member-signature"><span class="return-type"><a href="MemorySegment.html" title="java.lang.foreign 包中的接口">MemorySegment</a></span>&nbsp;<span class="element-name">allocate</span><wbr><span class="parameters">(long&nbsp;byteSize,
  long&nbsp;byteAlignment)</span></div>
 <div class="block">Returns a native memory segment with the given size (in bytes) and alignment
 constraint (in bytes).
@@ -454,9 +454,9 @@ The segment's <a href="MemorySegment.html#address()"><code>address</code></a> is
 the allocated off-heap region of memory backing the segment, and the address is
 aligned according the provided alignment constraint.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="SegmentAllocator.html#allocate(long,long)">allocate</a></code>&nbsp;in interface&nbsp;<code><a href="SegmentAllocator.html" title="interface in java.lang.foreign">SegmentAllocator</a></code></dd>
-<dt>Implementation Requirements:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="SegmentAllocator.html#allocate(long,long)">allocate</a></code>&nbsp;in interface&nbsp;<code><a href="SegmentAllocator.html" title="java.lang.foreign 包中的接口">SegmentAllocator</a></code></dd>
+<dt>实现要求:</dt>
 <dd>Implementations of this method must return a native segment featuring the
 requested size, and that is compatible with the provided alignment constraint.
 Furthermore, for any two segments <code>S1, S2</code> returned by this method, the
@@ -467,18 +467,18 @@ following invariant must hold:
 </code></pre>
 </div>
 </dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>byteSize</code> - the size (in bytes) of the off-heap region of memory backing
                 the native memory segment</dd>
 <dd><code>byteAlignment</code> - the alignment constraint (in bytes) of the off-heap region
                      of memory backing the native memory segment</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new native memory segment</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>bytesSize &lt; 0</code>, <code>byteAlignment &lt;= 0</code>,
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>bytesSize &lt; 0</code>, <code>byteAlignment &lt;= 0</code>,
         or if <code>byteAlignment</code> is not a power of 2</dd>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this arena has already been <a href="#close()">closed</a></dd>
-<dd><code><a href="../WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if this arena is confined, and this method is called
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this arena has already been <a href="#close()">closed</a></dd>
+<dd><code><a href="../WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if this arena is confined, and this method is called
         from a thread other than the arena's owner thread</dd>
 </dl>
 </div>
@@ -488,10 +488,10 @@ following invariant must hold:
 <section class="detail" id="scope()">
 <h3>scope</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="MemorySegment.Scope.html" title="interface in java.lang.foreign">MemorySegment.Scope</a></span>&nbsp;<span class="element-name">scope</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="MemorySegment.Scope.html" title="java.lang.foreign 包中的接口">MemorySegment.Scope</a></span>&nbsp;<span class="element-name">scope</span>()</div>
 <div class="block">Returns the arena scope.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the arena scope</dd>
 </dl>
 </div>
@@ -507,31 +507,31 @@ following invariant must hold:
 can no longer be accessed. Furthermore, any off-heap region of memory backing the
 segments obtained from this arena are also released.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>API Note:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>API说明:</dt>
 <dd>This operation is not idempotent; that is, closing an already closed arena
          <em>always</em> results in an exception being thrown. This reflects a
          deliberate design choice: failure to close an arena might reveal a bug
          in the underlying application logic.</dd>
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>If this method completes normally, then
           <code>this.scope().isAlive() == false</code>.
-          Implementations are allowed to throw <a href="../UnsupportedOperationException.html" title="class in java.lang"><code>UnsupportedOperationException</code></a>
+          Implementations are allowed to throw <a href="../UnsupportedOperationException.html" title="java.lang 包中的类"><code>UnsupportedOperationException</code></a>
           if an explicit close operation is not supported.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the arena has already been closed</dd>
-<dd><code><a href="../IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if a segment associated with this arena is being
+<dt>抛出:</dt>
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the arena has already been closed</dd>
+<dd><code><a href="../IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if a segment associated with this arena is being
         accessed concurrently, e.g. by a
         <a href="Linker.html#downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">downcall method handle</a><sup class="restricted-mark"><a href="Linker.html#restricted-downcallHandle(java.lang.foreign.FunctionDescriptor,java.lang.foreign.Linker.Option...)">RESTRICTED</a></sup></dd>
-<dd><code><a href="../WrongThreadException.html" title="class in java.lang">WrongThreadException</a></code> - if this arena is confined, and this method is called
+<dd><code><a href="../WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></code> - if this arena is confined, and this method is called
         from a thread other than the arena's owner thread</dd>
-<dd><code><a href="../UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this arena cannot be closed explicitly</dd>
-<dd><code><a href="../RuntimeException.html" title="class in java.lang">RuntimeException</a></code> - if an exception is thrown while executing a custom cleanup action
+<dd><code><a href="../UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this arena cannot be closed explicitly</dd>
+<dd><code><a href="../RuntimeException.html" title="java.lang 包中的类">RuntimeException</a></code> - if an exception is thrown while executing a custom cleanup action
                          associated with this arena (e.g. as a result of calling
                          <a href="MemorySegment.html#reinterpret(long,java.lang.foreign.Arena,java.util.function.Consumer)"><code>MemorySegment.reinterpret(long, Arena, Consumer)</code></a><sup class="restricted-mark"><a href="MemorySegment.html#restricted-reinterpret(long,java.lang.foreign.Arena,java.util.function.Consumer)">RESTRICTED</a></sup> or
                          <a href="MemorySegment.html#reinterpret(java.lang.foreign.Arena,java.util.function.Consumer)"><code>MemorySegment.reinterpret(Arena, Consumer)</code></a><sup class="restricted-mark"><a href="MemorySegment.html#restricted-reinterpret(java.lang.foreign.Arena,java.util.function.Consumer)">RESTRICTED</a></sup>).</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="MemorySegment.Scope.html#isAlive()"><code>MemorySegment.Scope.isAlive()</code></a></li>

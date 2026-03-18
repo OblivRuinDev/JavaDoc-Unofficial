@@ -50,7 +50,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">jdk.dynalink.beans</a></li>
 <li><a href="MissingMemberHandlerFactory.html" class="current-selection">MissingMemberHandlerFactory</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -58,16 +58,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#default-missing-member-behavior-heading" tabindex="0">Default missing member behavior</a></li>
 <li><a href="#implementing-exception-throwing-behavior-heading" tabindex="0">Implementing exception-throwing behavior</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#createMissingMemberHandler(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" tabindex="0">createMissingMemberHandler(LinkRequest, LinkerServices)</a></li>
 </ol>
@@ -77,7 +77,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface MissingMemberHandlerFactory" class="title">Interface MissingMemberHandlerFactory</h1>
+<h1 title="接口 MissingMemberHandlerFactory" class="title">接口 MissingMemberHandlerFactory</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
@@ -86,14 +86,14 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="annotations"><a href="../../../../java.base/java/lang/FunctionalInterface.html" title="annotation interface in java.lang">@FunctionalInterface</a>
+<div class="type-signature"><span class="annotations"><a href="../../../../java.base/java/lang/FunctionalInterface.html" title="java.lang 包中的注解接口">@FunctionalInterface</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">MissingMemberHandlerFactory</span></div>
 <div class="block">A factory for creating method handles for linking missing member behavior
-in <a href="BeansLinker.html" title="class in jdk.dynalink.beans"><code>BeansLinker</code></a>. BeansLinker links these method handles into guarded
+in <a href="BeansLinker.html" title="jdk.dynalink.beans 包中的类"><code>BeansLinker</code></a>. BeansLinker links these method handles into guarded
 invocations for link requests specifying <code>GET_*</code> and <code>SET_*</code>
-<a href="../StandardOperation.html" title="enum class in jdk.dynalink"><code>StandardOperation</code></a>s when it is either certain or possible that the
+<a href="../StandardOperation.html" title="jdk.dynalink 包中的枚举类"><code>StandardOperation</code></a>s when it is either certain or possible that the
 requested member (property, method, or element) is missing. They will be
-linked both for <a href="../NamedOperation.html" title="class in jdk.dynalink"><code>named</code></a> and unnamed operations. The
+linked both for <a href="../NamedOperation.html" title="jdk.dynalink 包中的类"><code>named</code></a> and unnamed operations. The
 implementer must ensure that the parameter types of the returned method
 handle match the parameter types of the call site described in the link
 request. The return types can differ, though, to allow
@@ -101,7 +101,7 @@ request. The return types can differ, though, to allow
 late return type transformations}. It is allowed to return <code>null</code> for a
 method handle if the default behavior is sufficient.
 <h2 id="default-missing-member-behavior-heading">Default missing member behavior</h2>
-When a <a href="BeansLinker.html" title="class in jdk.dynalink.beans"><code>BeansLinker</code></a> is configured without a missing member handler
+When a <a href="BeansLinker.html" title="jdk.dynalink.beans 包中的类"><code>BeansLinker</code></a> is configured without a missing member handler
 factory, or the factory returns <code>null</code> for a particular handler
 creation invocation, the default behavior is used. The default behavior is to
 return <code>null</code> from
@@ -109,7 +109,7 @@ return <code>null</code> from
 can be determined at link time that the linked operation will never address
 an existing member. This lets the <code>DynamicLinker</code> attempt the next
 linker if there is one, or ultimately fail the link request with
-<a href="../NoSuchDynamicMethodException.html" title="class in jdk.dynalink"><code>NoSuchDynamicMethodException</code></a>. For other cases (typically all unnamed
+<a href="../NoSuchDynamicMethodException.html" title="jdk.dynalink 包中的类"><code>NoSuchDynamicMethodException</code></a>. For other cases (typically all unnamed
 member operations as well as most named operations on collection elements)
 <code>BeansLinker</code> will produce a conditional linkage that will return
 <code>null</code> when invoked at runtime with a name that does not match any
@@ -120,9 +120,9 @@ member is to throw an exception then the factory should produce a method
 handle that throws the exception when invoked, and must not throw an
 exception itself, as the linkage for the missing member is often conditional.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="BeansLinker.html#%3Cinit%3E(jdk.dynalink.beans.MissingMemberHandlerFactory)"><code>BeansLinker(MissingMemberHandlerFactory)</code></a></li>
@@ -136,17 +136,17 @@ exception itself, as the linkage for the missing member is often conditional.</d
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMissingMemberHandler(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" class="member-name-link">createMissingMemberHandler</a><wbr>(<a href="../linker/LinkRequest.html" title="interface in jdk.dynalink.linker">LinkRequest</a>&nbsp;linkRequest,
- <a href="../linker/LinkerServices.html" title="interface in jdk.dynalink.linker">LinkerServices</a>&nbsp;linkerServices)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createMissingMemberHandler(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)" class="member-name-link">createMissingMemberHandler</a><wbr>(<a href="../linker/LinkRequest.html" title="jdk.dynalink.linker 包中的接口">LinkRequest</a>&nbsp;linkRequest,
+ <a href="../linker/LinkerServices.html" title="jdk.dynalink.linker 包中的接口">LinkerServices</a>&nbsp;linkerServices)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a method handle suitable for implementing missing member behavior
 for a particular link request.</div>
@@ -163,27 +163,27 @@ for a particular link request.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="createMissingMemberHandler(jdk.dynalink.linker.LinkRequest,jdk.dynalink.linker.LinkerServices)">
 <h3>createMissingMemberHandler</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/invoke/MethodHandle.html" title="class in java.lang.invoke">MethodHandle</a></span>&nbsp;<span class="element-name">createMissingMemberHandler</span><wbr><span class="parameters">(<a href="../linker/LinkRequest.html" title="interface in jdk.dynalink.linker">LinkRequest</a>&nbsp;linkRequest,
- <a href="../linker/LinkerServices.html" title="interface in jdk.dynalink.linker">LinkerServices</a>&nbsp;linkerServices)</span>
-                                 throws <span class="exceptions"><a href="../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/invoke/MethodHandle.html" title="java.lang.invoke 包中的类">MethodHandle</a></span>&nbsp;<span class="element-name">createMissingMemberHandler</span><wbr><span class="parameters">(<a href="../linker/LinkRequest.html" title="jdk.dynalink.linker 包中的接口">LinkRequest</a>&nbsp;linkRequest,
+ <a href="../linker/LinkerServices.html" title="jdk.dynalink.linker 包中的接口">LinkerServices</a>&nbsp;linkerServices)</span>
+                                 throws <span class="exceptions"><a href="../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></span></div>
 <div class="block">Returns a method handle suitable for implementing missing member behavior
 for a particular link request. See the class description for details.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>linkRequest</code> - the current link request</dd>
 <dd><code>linkerServices</code> - the current link services</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a method handle that can be invoked if the property, element, or
 method being addressed by an operation is missing. The return value can
 be null.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/Exception.html" title="class in java.lang">Exception</a></code> - if the operation fails for any reason. Please observe
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/Exception.html" title="java.lang 包中的类">Exception</a></code> - if the operation fails for any reason. Please observe
 the class documentation notes for implementing exception-throwing
 missing member behavior.</dd>
 </dl>

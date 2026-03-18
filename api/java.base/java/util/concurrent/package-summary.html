@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.util.concurrent</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#executors-heading" tabindex="0">Executors</a></li>
 <li><a href="#queues-heading" tabindex="0">Queues</a></li>
@@ -68,13 +68,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#MemoryVisibility" tabindex="0">Memory Consistency Properties</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.util.concurrent" class="title">Package java.util.concurrent</h1>
+<h1 title="包 java.util.concurrent" class="title">包 java.util.concurrent</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -92,30 +92,30 @@ descriptions of the main components.  See also the
 
 <b>Interfaces.</b>
 
-<a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a> is a simple standardized
+<a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a> is a simple standardized
 interface for defining custom thread-like subsystems, including
 thread pools, asynchronous I/O, and lightweight task frameworks.
 Depending on which concrete Executor class is being used, tasks may
 execute in a newly created thread, an existing task-execution thread,
 or the thread calling <a href="Executor.html#execute(java.lang.Runnable)"><code>execute</code></a>, and may execute sequentially or concurrently.
 
-<a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a> provides a more
+<a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a> provides a more
 complete asynchronous task execution framework.  An
 ExecutorService manages queuing and scheduling of tasks,
 and allows controlled shutdown.
 
-The <a href="ScheduledExecutorService.html" title="interface in java.util.concurrent"><code>ScheduledExecutorService</code></a>
+The <a href="ScheduledExecutorService.html" title="java.util.concurrent 包中的接口"><code>ScheduledExecutorService</code></a>
 subinterface and associated interfaces add support for
 delayed and periodic task execution.  ExecutorServices
 provide methods arranging asynchronous execution of any
-function expressed as <a href="Callable.html" title="interface in java.util.concurrent"><code>Callable</code></a>,
-the result-bearing analog of <a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a>.
+function expressed as <a href="Callable.html" title="java.util.concurrent 包中的接口"><code>Callable</code></a>,
+the result-bearing analog of <a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a>.
 
-A <a href="Future.html" title="interface in java.util.concurrent"><code>Future</code></a> returns the results of
+A <a href="Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a> returns the results of
 a function, allows determination of whether execution has
 completed, and provides a means to cancel execution.
 
-A <a href="RunnableFuture.html" title="interface in java.util.concurrent"><code>RunnableFuture</code></a> is a <code>Future</code>
+A <a href="RunnableFuture.html" title="java.util.concurrent 包中的接口"><code>RunnableFuture</code></a> is a <code>Future</code>
 that possesses a <code>run</code> method that upon execution,
 sets its results.
 
@@ -123,61 +123,61 @@ sets its results.
 
 <b>Implementations.</b>
 
-Classes <a href="ThreadPoolExecutor.html" title="class in java.util.concurrent"><code>ThreadPoolExecutor</code></a> and
-<a href="ScheduledThreadPoolExecutor.html" title="class in java.util.concurrent"><code>ScheduledThreadPoolExecutor</code></a>
+Classes <a href="ThreadPoolExecutor.html" title="java.util.concurrent 包中的类"><code>ThreadPoolExecutor</code></a> and
+<a href="ScheduledThreadPoolExecutor.html" title="java.util.concurrent 包中的类"><code>ScheduledThreadPoolExecutor</code></a>
 provide tunable, flexible thread pools.
 
-The <a href="Executors.html" title="class in java.util.concurrent"><code>Executors</code></a> class provides
+The <a href="Executors.html" title="java.util.concurrent 包中的类"><code>Executors</code></a> class provides
 factory methods for the most common kinds and configurations
 of Executors, as well as a few utility methods for using
 them.  Other utilities based on <code>Executors</code> include the
-concrete class <a href="FutureTask.html" title="class in java.util.concurrent"><code>FutureTask</code></a>
+concrete class <a href="FutureTask.html" title="java.util.concurrent 包中的类"><code>FutureTask</code></a>
 providing a common extensible implementation of Futures, and
-<a href="ExecutorCompletionService.html" title="class in java.util.concurrent"><code>ExecutorCompletionService</code></a>, that
+<a href="ExecutorCompletionService.html" title="java.util.concurrent 包中的类"><code>ExecutorCompletionService</code></a>, that
 assists in coordinating the processing of groups of
 asynchronous tasks.
 
-<p>Class <a href="ForkJoinPool.html" title="class in java.util.concurrent"><code>ForkJoinPool</code></a> provides an
-Executor primarily designed for processing instances of <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a> and its subclasses.  These
+<p>Class <a href="ForkJoinPool.html" title="java.util.concurrent 包中的类"><code>ForkJoinPool</code></a> provides an
+Executor primarily designed for processing instances of <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a> and its subclasses.  These
 classes employ a work-stealing scheduler that attains high
 throughput for tasks conforming to restrictions that often hold in
 computation-intensive parallel processing.
 
 <h2 id="queues-heading">Queues</h2>
 
-The <a href="ConcurrentLinkedQueue.html" title="class in java.util.concurrent"><code>ConcurrentLinkedQueue</code></a> class
+The <a href="ConcurrentLinkedQueue.html" title="java.util.concurrent 包中的类"><code>ConcurrentLinkedQueue</code></a> class
 supplies an efficient scalable thread-safe non-blocking FIFO queue.
-The <a href="ConcurrentLinkedDeque.html" title="class in java.util.concurrent"><code>ConcurrentLinkedDeque</code></a> class is
-similar, but additionally supports the <a href="../Deque.html" title="interface in java.util"><code>Deque</code></a>
+The <a href="ConcurrentLinkedDeque.html" title="java.util.concurrent 包中的类"><code>ConcurrentLinkedDeque</code></a> class is
+similar, but additionally supports the <a href="../Deque.html" title="java.util 包中的接口"><code>Deque</code></a>
 interface.
 
 <p>Five implementations in <code>java.util.concurrent</code> support
-the extended <a href="BlockingQueue.html" title="interface in java.util.concurrent"><code>BlockingQueue</code></a>
+the extended <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口"><code>BlockingQueue</code></a>
 interface, that defines blocking versions of put and take:
-<a href="LinkedBlockingQueue.html" title="class in java.util.concurrent"><code>LinkedBlockingQueue</code></a>,
-<a href="ArrayBlockingQueue.html" title="class in java.util.concurrent"><code>ArrayBlockingQueue</code></a>,
-<a href="SynchronousQueue.html" title="class in java.util.concurrent"><code>SynchronousQueue</code></a>,
-<a href="PriorityBlockingQueue.html" title="class in java.util.concurrent"><code>PriorityBlockingQueue</code></a>, and
-<a href="DelayQueue.html" title="class in java.util.concurrent"><code>DelayQueue</code></a>.
+<a href="LinkedBlockingQueue.html" title="java.util.concurrent 包中的类"><code>LinkedBlockingQueue</code></a>,
+<a href="ArrayBlockingQueue.html" title="java.util.concurrent 包中的类"><code>ArrayBlockingQueue</code></a>,
+<a href="SynchronousQueue.html" title="java.util.concurrent 包中的类"><code>SynchronousQueue</code></a>,
+<a href="PriorityBlockingQueue.html" title="java.util.concurrent 包中的类"><code>PriorityBlockingQueue</code></a>, and
+<a href="DelayQueue.html" title="java.util.concurrent 包中的类"><code>DelayQueue</code></a>.
 The different classes cover the most common usage contexts
 for producer-consumer, messaging, parallel tasking, and
 related concurrent designs.
 
-<p>Extended interface <a href="TransferQueue.html" title="interface in java.util.concurrent"><code>TransferQueue</code></a>,
-and implementation <a href="LinkedTransferQueue.html" title="class in java.util.concurrent"><code>LinkedTransferQueue</code></a>
+<p>Extended interface <a href="TransferQueue.html" title="java.util.concurrent 包中的接口"><code>TransferQueue</code></a>,
+and implementation <a href="LinkedTransferQueue.html" title="java.util.concurrent 包中的类"><code>LinkedTransferQueue</code></a>
 introduce a synchronous <code>transfer</code> method (along with related
 features) in which a producer may optionally block awaiting its
 consumer.
 
-<p>The <a href="BlockingDeque.html" title="interface in java.util.concurrent"><code>BlockingDeque</code></a> interface
+<p>The <a href="BlockingDeque.html" title="java.util.concurrent 包中的接口"><code>BlockingDeque</code></a> interface
 extends <code>BlockingQueue</code> to support both FIFO and LIFO
 (stack-based) operations.
-Class <a href="LinkedBlockingDeque.html" title="class in java.util.concurrent"><code>LinkedBlockingDeque</code></a>
+Class <a href="LinkedBlockingDeque.html" title="java.util.concurrent 包中的类"><code>LinkedBlockingDeque</code></a>
 provides an implementation.
 
 <h2 id="timing-heading">Timing</h2>
 
-The <a href="TimeUnit.html" title="enum class in java.util.concurrent"><code>TimeUnit</code></a> class provides
+The <a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类"><code>TimeUnit</code></a> class provides
 multiple granularities (including nanoseconds) for
 specifying and controlling time-out based operations.  Most
 classes in the package contain operations based on time-outs
@@ -198,21 +198,21 @@ of <code>Long.MAX_VALUE</code>.
 Five classes aid common special-purpose synchronization idioms.
 <ul>
 
-<li><a href="Semaphore.html" title="class in java.util.concurrent"><code>Semaphore</code></a> is a classic concurrency tool.
+<li><a href="Semaphore.html" title="java.util.concurrent 包中的类"><code>Semaphore</code></a> is a classic concurrency tool.
 
-<li><a href="CountDownLatch.html" title="class in java.util.concurrent"><code>CountDownLatch</code></a> is a very simple yet
+<li><a href="CountDownLatch.html" title="java.util.concurrent 包中的类"><code>CountDownLatch</code></a> is a very simple yet
 very common utility for blocking until a given number of signals,
 events, or conditions hold.
 
-<li>A <a href="CyclicBarrier.html" title="class in java.util.concurrent"><code>CyclicBarrier</code></a> is a resettable
+<li>A <a href="CyclicBarrier.html" title="java.util.concurrent 包中的类"><code>CyclicBarrier</code></a> is a resettable
 multiway synchronization point useful in some styles of parallel
 programming.
 
-<li>A <a href="Phaser.html" title="class in java.util.concurrent"><code>Phaser</code></a> provides
+<li>A <a href="Phaser.html" title="java.util.concurrent 包中的类"><code>Phaser</code></a> provides
 a more flexible form of barrier that may be used to control phased
 computation among multiple threads.
 
-<li>An <a href="Exchanger.html" title="class in java.util.concurrent"><code>Exchanger</code></a> allows two threads to
+<li>An <a href="Exchanger.html" title="java.util.concurrent 包中的类"><code>Exchanger</code></a> allows two threads to
 exchange objects at a rendezvous point, and is useful in several
 pipeline designs.
 
@@ -222,11 +222,11 @@ pipeline designs.
 
 Besides Queues, this package supplies Collection implementations
 designed for use in multithreaded contexts:
-<a href="ConcurrentHashMap.html" title="class in java.util.concurrent"><code>ConcurrentHashMap</code></a>,
-<a href="ConcurrentSkipListMap.html" title="class in java.util.concurrent"><code>ConcurrentSkipListMap</code></a>,
-<a href="ConcurrentSkipListSet.html" title="class in java.util.concurrent"><code>ConcurrentSkipListSet</code></a>,
-<a href="CopyOnWriteArrayList.html" title="class in java.util.concurrent"><code>CopyOnWriteArrayList</code></a>, and
-<a href="CopyOnWriteArraySet.html" title="class in java.util.concurrent"><code>CopyOnWriteArraySet</code></a>.
+<a href="ConcurrentHashMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentHashMap</code></a>,
+<a href="ConcurrentSkipListMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentSkipListMap</code></a>,
+<a href="ConcurrentSkipListSet.html" title="java.util.concurrent 包中的类"><code>ConcurrentSkipListSet</code></a>,
+<a href="CopyOnWriteArrayList.html" title="java.util.concurrent 包中的类"><code>CopyOnWriteArrayList</code></a>, and
+<a href="CopyOnWriteArraySet.html" title="java.util.concurrent 包中的类"><code>CopyOnWriteArraySet</code></a>.
 When many threads are expected to access a given collection, a
 <code>ConcurrentHashMap</code> is normally preferable to a synchronized
 <code>HashMap</code>, and a <code>ConcurrentSkipListMap</code> is normally
@@ -239,7 +239,7 @@ greatly outnumber the number of updates to a list.
 is a shorthand indicating several differences from similar
 "synchronized" classes.  For example <code>java.util.Hashtable</code> and
 <code>Collections.synchronizedMap(new HashMap())</code> are
-synchronized.  But <a href="ConcurrentHashMap.html" title="class in java.util.concurrent"><code>ConcurrentHashMap</code></a> is "concurrent".  A
+synchronized.  But <a href="ConcurrentHashMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentHashMap</code></a> is "concurrent".  A
 concurrent collection is thread-safe, but not governed by a
 single exclusion lock.  In the particular case of
 ConcurrentHashMap, it safely permits any number of
@@ -255,12 +255,12 @@ holding other locks.
 
 <p id="Weakly">Most concurrent Collection implementations
 (including most Queues) also differ from the usual <code>java.util</code>
-conventions in that their <a href="../Iterator.html" title="interface in java.util">Iterators</a>
-and <a href="../Spliterator.html" title="interface in java.util">Spliterators</a> provide
+conventions in that their <a href="../Iterator.html" title="java.util 包中的接口">Iterators</a>
+and <a href="../Spliterator.html" title="java.util 包中的接口">Spliterators</a> provide
 <em>weakly consistent</em> rather than fast-fail traversal:
 <ul>
 <li>they may proceed concurrently with other operations
-<li>they will never throw <a href="../ConcurrentModificationException.html" title="class in java.util"><code>ConcurrentModificationException</code></a>
+<li>they will never throw <a href="../ConcurrentModificationException.html" title="java.util 包中的类"><code>ConcurrentModificationException</code></a>
 <li>they are guaranteed to traverse elements as they existed upon
 construction exactly once, and may (but are not guaranteed to)
 reflect any modifications subsequent to construction.
@@ -345,7 +345,7 @@ synchronization.  In particular:
 <dl class="notes"><dt>See <i>Java Language Specification</i>:</dt>
 <dd>
 <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5">17.4.5 Happens-before Order</a><br></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </section>
@@ -354,10 +354,10 @@ synchronization.  In particular:
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.util</a></div>
 <div class="col-last even-row-color">
 <div class="block">Contains the collections framework, some internationalization support classes,
@@ -381,413 +381,413 @@ monitors.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">Exception Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button><button id="class-summary-tab5" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab5', 2)" class="table-tab">异常类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="AbstractExecutorService.html" title="class in java.util.concurrent">AbstractExecutorService</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="AbstractExecutorService.html" title="java.util.concurrent 包中的类">AbstractExecutorService</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Provides default implementations of <a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a>
+<div class="block">Provides default implementations of <a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a>
 execution methods.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ArrayBlockingQueue.html" title="class in java.util.concurrent">ArrayBlockingQueue</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ArrayBlockingQueue.html" title="java.util.concurrent 包中的类">ArrayBlockingQueue</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A bounded <a href="BlockingQueue.html" title="interface in java.util.concurrent">blocking queue</a> backed by an
+<div class="block">A bounded <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">blocking queue</a> backed by an
 array.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BlockingDeque.html" title="interface in java.util.concurrent">BlockingDeque</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BlockingDeque.html" title="java.util.concurrent 包中的接口">BlockingDeque</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="../Deque.html" title="interface in java.util"><code>Deque</code></a> that additionally supports blocking operations that wait
+<div class="block">A <a href="../Deque.html" title="java.util 包中的接口"><code>Deque</code></a> that additionally supports blocking operations that wait
 for the deque to become non-empty when retrieving an element, and wait for
 space to become available in the deque when storing an element.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BlockingQueue.html" title="interface in java.util.concurrent">BlockingQueue</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">BlockingQueue</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="../Queue.html" title="interface in java.util"><code>Queue</code></a> that additionally supports operations that wait for
+<div class="block">A <a href="../Queue.html" title="java.util 包中的接口"><code>Queue</code></a> that additionally supports operations that wait for
 the queue to become non-empty when retrieving an element, and wait
 for space to become available in the queue when storing an element.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="BrokenBarrierException.html" title="class in java.util.concurrent">BrokenBarrierException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="BrokenBarrierException.html" title="java.util.concurrent 包中的类">BrokenBarrierException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Exception thrown when a thread tries to wait upon a barrier that is
 in a broken state, or which enters the broken state while the thread
 is waiting.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Callable.html" title="interface in java.util.concurrent">Callable</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Callable.html" title="java.util.concurrent 包中的接口">Callable</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A task that returns a result and may throw an exception.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="CancellationException.html" title="class in java.util.concurrent">CancellationException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="CancellationException.html" title="java.util.concurrent 包中的类">CancellationException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Exception indicating that the result of a value-producing task,
-such as a <a href="FutureTask.html" title="class in java.util.concurrent"><code>FutureTask</code></a>, cannot be retrieved because the task
+such as a <a href="FutureTask.html" title="java.util.concurrent 包中的类"><code>FutureTask</code></a>, cannot be retrieved because the task
 was cancelled.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CompletableFuture.html" title="class in java.util.concurrent">CompletableFuture</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CompletableFuture.html" title="java.util.concurrent 包中的类">CompletableFuture</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="Future.html" title="interface in java.util.concurrent"><code>Future</code></a> that may be explicitly completed (setting its
-value and status), and may be used as a <a href="CompletionStage.html" title="interface in java.util.concurrent"><code>CompletionStage</code></a>,
+<div class="block">A <a href="Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a> that may be explicitly completed (setting its
+value and status), and may be used as a <a href="CompletionStage.html" title="java.util.concurrent 包中的接口"><code>CompletionStage</code></a>,
 supporting dependent functions and actions that trigger upon its
 completion.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompletableFuture.AsynchronousCompletionTask.html" title="interface in java.util.concurrent">CompletableFuture.AsynchronousCompletionTask</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompletableFuture.AsynchronousCompletionTask.html" title="java.util.concurrent 包中的接口">CompletableFuture.AsynchronousCompletionTask</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A marker interface identifying asynchronous tasks produced by
 <code>async</code> methods.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="CompletionException.html" title="class in java.util.concurrent">CompletionException</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="CompletionException.html" title="java.util.concurrent 包中的类">CompletionException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block">Exception thrown when an error or other exception is encountered
 in the course of completing a result or task.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompletionService.html" title="interface in java.util.concurrent">CompletionService</a>&lt;V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompletionService.html" title="java.util.concurrent 包中的接口">CompletionService</a>&lt;V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A service that decouples the production of new asynchronous tasks
 from the consumption of the results of completed tasks.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CompletionStage.html" title="interface in java.util.concurrent">CompletionStage</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CompletionStage.html" title="java.util.concurrent 包中的接口">CompletionStage</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A stage of a possibly asynchronous computation, that performs an
 action or computes a value when another CompletionStage completes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentHashMap.html" title="class in java.util.concurrent">ConcurrentHashMap</a>&lt;K,<wbr>V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentHashMap.html" title="java.util.concurrent 包中的类">ConcurrentHashMap</a>&lt;K,<wbr>V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A hash table supporting full concurrency of retrievals and
 high expected concurrency for updates.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentHashMap.KeySetView.html" title="class in java.util.concurrent">ConcurrentHashMap.KeySetView</a>&lt;K,<wbr>V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentHashMap.KeySetView.html" title="java.util.concurrent 包中的类">ConcurrentHashMap.KeySetView</a>&lt;K,<wbr>V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A view of a ConcurrentHashMap as a <a href="../Set.html" title="interface in java.util"><code>Set</code></a> of keys, in
+<div class="block">A view of a ConcurrentHashMap as a <a href="../Set.html" title="java.util 包中的接口"><code>Set</code></a> of keys, in
 which additions may optionally be enabled by mapping to a
 common value.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentLinkedDeque.html" title="class in java.util.concurrent">ConcurrentLinkedDeque</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentLinkedDeque.html" title="java.util.concurrent 包中的类">ConcurrentLinkedDeque</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An unbounded concurrent <a href="../Deque.html" title="interface in java.util">deque</a> based on linked nodes.</div>
+<div class="block">An unbounded concurrent <a href="../Deque.html" title="java.util 包中的接口">deque</a> based on linked nodes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentLinkedQueue.html" title="class in java.util.concurrent">ConcurrentLinkedQueue</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentLinkedQueue.html" title="java.util.concurrent 包中的类">ConcurrentLinkedQueue</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">An unbounded thread-safe <a href="../Queue.html" title="interface in java.util">queue</a> based on linked nodes.</div>
+<div class="block">An unbounded thread-safe <a href="../Queue.html" title="java.util 包中的接口">queue</a> based on linked nodes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConcurrentMap.html" title="interface in java.util.concurrent">ConcurrentMap</a>&lt;K,<wbr>V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConcurrentMap.html" title="java.util.concurrent 包中的接口">ConcurrentMap</a>&lt;K,<wbr>V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="../Map.html" title="interface in java.util"><code>Map</code></a> providing thread safety and atomicity guarantees.</div>
+<div class="block">A <a href="../Map.html" title="java.util 包中的接口"><code>Map</code></a> providing thread safety and atomicity guarantees.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConcurrentNavigableMap.html" title="interface in java.util.concurrent">ConcurrentNavigableMap</a>&lt;K,<wbr>V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ConcurrentNavigableMap.html" title="java.util.concurrent 包中的接口">ConcurrentNavigableMap</a>&lt;K,<wbr>V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="ConcurrentMap.html" title="interface in java.util.concurrent"><code>ConcurrentMap</code></a> supporting <a href="../NavigableMap.html" title="interface in java.util"><code>NavigableMap</code></a> operations,
+<div class="block">A <a href="ConcurrentMap.html" title="java.util.concurrent 包中的接口"><code>ConcurrentMap</code></a> supporting <a href="../NavigableMap.html" title="java.util 包中的接口"><code>NavigableMap</code></a> operations,
 and recursively so for its navigable sub-maps.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentSkipListMap.html" title="class in java.util.concurrent">ConcurrentSkipListMap</a>&lt;K,<wbr>V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ConcurrentSkipListMap.html" title="java.util.concurrent 包中的类">ConcurrentSkipListMap</a>&lt;K,<wbr>V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A scalable concurrent <a href="ConcurrentNavigableMap.html" title="interface in java.util.concurrent"><code>ConcurrentNavigableMap</code></a> implementation.</div>
+<div class="block">A scalable concurrent <a href="ConcurrentNavigableMap.html" title="java.util.concurrent 包中的接口"><code>ConcurrentNavigableMap</code></a> implementation.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentSkipListSet.html" title="class in java.util.concurrent">ConcurrentSkipListSet</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ConcurrentSkipListSet.html" title="java.util.concurrent 包中的类">ConcurrentSkipListSet</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A scalable concurrent <a href="../NavigableSet.html" title="interface in java.util"><code>NavigableSet</code></a> implementation based on
-a <a href="ConcurrentSkipListMap.html" title="class in java.util.concurrent"><code>ConcurrentSkipListMap</code></a>.</div>
+<div class="block">A scalable concurrent <a href="../NavigableSet.html" title="java.util 包中的接口"><code>NavigableSet</code></a> implementation based on
+a <a href="ConcurrentSkipListMap.html" title="java.util.concurrent 包中的类"><code>ConcurrentSkipListMap</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CopyOnWriteArrayList.html" title="class in java.util.concurrent">CopyOnWriteArrayList</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CopyOnWriteArrayList.html" title="java.util.concurrent 包中的类">CopyOnWriteArrayList</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A thread-safe variant of <a href="../ArrayList.html" title="class in java.util"><code>ArrayList</code></a> in which all mutative
+<div class="block">A thread-safe variant of <a href="../ArrayList.html" title="java.util 包中的类"><code>ArrayList</code></a> in which all mutative
 operations (<code>add</code>, <code>set</code>, and so on) are implemented by
 making a fresh copy of the underlying array.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CopyOnWriteArraySet.html" title="class in java.util.concurrent">CopyOnWriteArraySet</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CopyOnWriteArraySet.html" title="java.util.concurrent 包中的类">CopyOnWriteArraySet</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="../Set.html" title="interface in java.util"><code>Set</code></a> that uses an internal <a href="CopyOnWriteArrayList.html" title="class in java.util.concurrent"><code>CopyOnWriteArrayList</code></a>
+<div class="block">A <a href="../Set.html" title="java.util 包中的接口"><code>Set</code></a> that uses an internal <a href="CopyOnWriteArrayList.html" title="java.util.concurrent 包中的类"><code>CopyOnWriteArrayList</code></a>
 for all of its operations.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CountDownLatch.html" title="class in java.util.concurrent">CountDownLatch</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CountDownLatch.html" title="java.util.concurrent 包中的类">CountDownLatch</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A synchronization aid that allows one or more threads to wait until
 a set of operations being performed in other threads completes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CountedCompleter.html" title="class in java.util.concurrent">CountedCompleter</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CountedCompleter.html" title="java.util.concurrent 包中的类">CountedCompleter</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a> with a completion action performed when
+<div class="block">A <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a> with a completion action performed when
 triggered and there are no remaining pending actions.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CyclicBarrier.html" title="class in java.util.concurrent">CyclicBarrier</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CyclicBarrier.html" title="java.util.concurrent 包中的类">CyclicBarrier</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A synchronization aid that allows a set of threads to all wait for
 each other to reach a common barrier point.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Delayed.html" title="interface in java.util.concurrent">Delayed</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Delayed.html" title="java.util.concurrent 包中的接口">Delayed</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A mix-in style interface for marking objects that should be
 acted upon after a given delay.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DelayQueue.html" title="class in java.util.concurrent">DelayQueue</a>&lt;E extends <a href="Delayed.html" title="interface in java.util.concurrent">Delayed</a>&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="DelayQueue.html" title="java.util.concurrent 包中的类">DelayQueue</a>&lt;E extends <a href="Delayed.html" title="java.util.concurrent 包中的接口">Delayed</a>&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An unbounded <a href="BlockingQueue.html" title="interface in java.util.concurrent">blocking queue</a> of <a href="Delayed.html" title="interface in java.util.concurrent"><code>Delayed</code></a>
+<div class="block">An unbounded <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">blocking queue</a> of <a href="Delayed.html" title="java.util.concurrent 包中的接口"><code>Delayed</code></a>
 elements, in which an element generally becomes eligible for removal when its
 delay has expired.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Exchanger.html" title="class in java.util.concurrent">Exchanger</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Exchanger.html" title="java.util.concurrent 包中的类">Exchanger</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A synchronization point at which threads can pair and swap elements
 within pairs.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="ExecutionException.html" title="class in java.util.concurrent">ExecutionException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="ExecutionException.html" title="java.util.concurrent 包中的类">ExecutionException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Exception thrown when attempting to retrieve the result of a task
 that aborted by throwing an exception.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Executor.html" title="interface in java.util.concurrent">Executor</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Executor.html" title="java.util.concurrent 包中的接口">Executor</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">An object that executes submitted <a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a> tasks.</div>
+<div class="block">An object that executes submitted <a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a> tasks.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExecutorCompletionService.html" title="class in java.util.concurrent">ExecutorCompletionService</a>&lt;V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ExecutorCompletionService.html" title="java.util.concurrent 包中的类">ExecutorCompletionService</a>&lt;V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="CompletionService.html" title="interface in java.util.concurrent"><code>CompletionService</code></a> that uses a supplied <a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a>
+<div class="block">A <a href="CompletionService.html" title="java.util.concurrent 包中的接口"><code>CompletionService</code></a> that uses a supplied <a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a>
 to execute tasks.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Executors.html" title="class in java.util.concurrent">Executors</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Executors.html" title="java.util.concurrent 包中的类">Executors</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Factory and utility methods for <a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a>, <a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a>, <a href="ScheduledExecutorService.html" title="interface in java.util.concurrent"><code>ScheduledExecutorService</code></a>, <a href="ThreadFactory.html" title="interface in java.util.concurrent"><code>ThreadFactory</code></a>, and <a href="Callable.html" title="interface in java.util.concurrent"><code>Callable</code></a> classes defined in this
+<div class="block">Factory and utility methods for <a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a>, <a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a>, <a href="ScheduledExecutorService.html" title="java.util.concurrent 包中的接口"><code>ScheduledExecutorService</code></a>, <a href="ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a>, and <a href="Callable.html" title="java.util.concurrent 包中的接口"><code>Callable</code></a> classes defined in this
 package.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ExecutorService.html" title="interface in java.util.concurrent">ExecutorService</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ExecutorService.html" title="java.util.concurrent 包中的接口">ExecutorService</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">An <a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a> that provides methods to manage termination and
-methods that can produce a <a href="Future.html" title="interface in java.util.concurrent"><code>Future</code></a> for tracking progress of
+<div class="block">An <a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a> that provides methods to manage termination and
+methods that can produce a <a href="Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a> for tracking progress of
 one or more asynchronous tasks.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Flow.html" title="class in java.util.concurrent">Flow</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Flow.html" title="java.util.concurrent 包中的类">Flow</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Interrelated interfaces and static methods for establishing
-flow-controlled components in which <a href="Flow.Publisher.html" title="interface in java.util.concurrent"><code>Publishers</code></a>
-produce items consumed by one or more <a href="Flow.Subscriber.html" title="interface in java.util.concurrent"><code>Subscribers</code></a>, each managed by a <a href="Flow.Subscription.html" title="interface in java.util.concurrent"><code>Subscription</code></a>.</div>
+flow-controlled components in which <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口"><code>Publishers</code></a>
+produce items consumed by one or more <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口"><code>Subscribers</code></a>, each managed by a <a href="Flow.Subscription.html" title="java.util.concurrent 包中的接口"><code>Subscription</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Flow.Processor.html" title="interface in java.util.concurrent">Flow.Processor</a>&lt;T,<wbr>R&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Flow.Processor.html" title="java.util.concurrent 包中的接口">Flow.Processor</a>&lt;T,<wbr>R&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A component that acts as both a Subscriber and Publisher.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Flow.Publisher.html" title="interface in java.util.concurrent">Flow.Publisher</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口">Flow.Publisher</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A producer of items (and related control messages) received by
 Subscribers.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Flow.Subscriber.html" title="interface in java.util.concurrent">Flow.Subscriber</a>&lt;T&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口">Flow.Subscriber</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A receiver of messages.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Flow.Subscription.html" title="interface in java.util.concurrent">Flow.Subscription</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Flow.Subscription.html" title="java.util.concurrent 包中的接口">Flow.Subscription</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Message control linking a <a href="Flow.Publisher.html" title="interface in java.util.concurrent"><code>Flow.Publisher</code></a> and <a href="Flow.Subscriber.html" title="interface in java.util.concurrent"><code>Flow.Subscriber</code></a>.</div>
+<div class="block">Message control linking a <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口"><code>Flow.Publisher</code></a> and <a href="Flow.Subscriber.html" title="java.util.concurrent 包中的接口"><code>Flow.Subscriber</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ForkJoinPool.html" title="class in java.util.concurrent">ForkJoinPool</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ForkJoinPool.html" title="java.util.concurrent 包中的类">ForkJoinPool</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An <a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a> for running <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a>s.</div>
+<div class="block">An <a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a> for running <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a>s.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ForkJoinPool.ForkJoinWorkerThreadFactory.html" title="interface in java.util.concurrent">ForkJoinPool.ForkJoinWorkerThreadFactory</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ForkJoinPool.ForkJoinWorkerThreadFactory.html" title="java.util.concurrent 包中的接口">ForkJoinPool.ForkJoinWorkerThreadFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Factory for creating new <a href="ForkJoinWorkerThread.html" title="class in java.util.concurrent"><code>ForkJoinWorkerThread</code></a>s.</div>
+<div class="block">Factory for creating new <a href="ForkJoinWorkerThread.html" title="java.util.concurrent 包中的类"><code>ForkJoinWorkerThread</code></a>s.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ForkJoinPool.ManagedBlocker.html" title="interface in java.util.concurrent">ForkJoinPool.ManagedBlocker</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ForkJoinPool.ManagedBlocker.html" title="java.util.concurrent 包中的接口">ForkJoinPool.ManagedBlocker</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface for extending managed parallelism for tasks running
-in <a href="ForkJoinPool.html" title="class in java.util.concurrent"><code>ForkJoinPool</code></a>s.</div>
+in <a href="ForkJoinPool.html" title="java.util.concurrent 包中的类"><code>ForkJoinPool</code></a>s.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ForkJoinTask.html" title="class in java.util.concurrent">ForkJoinTask</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ForkJoinTask.html" title="java.util.concurrent 包中的类">ForkJoinTask</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Abstract base class for tasks that run within a <a href="ForkJoinPool.html" title="class in java.util.concurrent"><code>ForkJoinPool</code></a>.</div>
+<div class="block">Abstract base class for tasks that run within a <a href="ForkJoinPool.html" title="java.util.concurrent 包中的类"><code>ForkJoinPool</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ForkJoinWorkerThread.html" title="class in java.util.concurrent">ForkJoinWorkerThread</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ForkJoinWorkerThread.html" title="java.util.concurrent 包中的类">ForkJoinWorkerThread</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A thread managed by a <a href="ForkJoinPool.html" title="class in java.util.concurrent"><code>ForkJoinPool</code></a>, which executes
-<a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a>s.</div>
+<div class="block">A thread managed by a <a href="ForkJoinPool.html" title="java.util.concurrent 包中的类"><code>ForkJoinPool</code></a>, which executes
+<a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a>s.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Future.html" title="interface in java.util.concurrent">Future</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Future.html" title="java.util.concurrent 包中的接口">Future</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A <code>Future</code> represents the result of an asynchronous
 computation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Future.State.html" title="enum class in java.util.concurrent">Future.State</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="Future.State.html" title="java.util.concurrent 包中的枚举类">Future.State</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Represents the computation state.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FutureTask.html" title="class in java.util.concurrent">FutureTask</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="FutureTask.html" title="java.util.concurrent 包中的类">FutureTask</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A cancellable asynchronous computation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LinkedBlockingDeque.html" title="class in java.util.concurrent">LinkedBlockingDeque</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LinkedBlockingDeque.html" title="java.util.concurrent 包中的类">LinkedBlockingDeque</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An optionally-bounded <a href="BlockingDeque.html" title="interface in java.util.concurrent">blocking deque</a> based on
+<div class="block">An optionally-bounded <a href="BlockingDeque.html" title="java.util.concurrent 包中的接口">blocking deque</a> based on
 linked nodes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="LinkedBlockingQueue.html" title="class in java.util.concurrent">LinkedBlockingQueue</a>&lt;E&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="LinkedBlockingQueue.html" title="java.util.concurrent 包中的类">LinkedBlockingQueue</a>&lt;E&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">An optionally-bounded <a href="BlockingQueue.html" title="interface in java.util.concurrent">blocking queue</a> based on
+<div class="block">An optionally-bounded <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">blocking queue</a> based on
 linked nodes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LinkedTransferQueue.html" title="class in java.util.concurrent">LinkedTransferQueue</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LinkedTransferQueue.html" title="java.util.concurrent 包中的类">LinkedTransferQueue</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An unbounded <a href="TransferQueue.html" title="interface in java.util.concurrent"><code>TransferQueue</code></a> based on linked nodes.</div>
+<div class="block">An unbounded <a href="TransferQueue.html" title="java.util.concurrent 包中的接口"><code>TransferQueue</code></a> based on linked nodes.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Phaser.html" title="class in java.util.concurrent">Phaser</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Phaser.html" title="java.util.concurrent 包中的类">Phaser</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A reusable synchronization barrier, similar in functionality to
-<a href="CyclicBarrier.html" title="class in java.util.concurrent"><code>CyclicBarrier</code></a> and <a href="CountDownLatch.html" title="class in java.util.concurrent"><code>CountDownLatch</code></a> but supporting
+<a href="CyclicBarrier.html" title="java.util.concurrent 包中的类"><code>CyclicBarrier</code></a> and <a href="CountDownLatch.html" title="java.util.concurrent 包中的类"><code>CountDownLatch</code></a> but supporting
 more flexible usage.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PriorityBlockingQueue.html" title="class in java.util.concurrent">PriorityBlockingQueue</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="PriorityBlockingQueue.html" title="java.util.concurrent 包中的类">PriorityBlockingQueue</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An unbounded <a href="BlockingQueue.html" title="interface in java.util.concurrent">blocking queue</a> that uses
-the same ordering rules as class <a href="../PriorityQueue.html" title="class in java.util"><code>PriorityQueue</code></a> and supplies
+<div class="block">An unbounded <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">blocking queue</a> that uses
+the same ordering rules as class <a href="../PriorityQueue.html" title="java.util 包中的类"><code>PriorityQueue</code></a> and supplies
 blocking retrieval operations.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RecursiveAction.html" title="class in java.util.concurrent">RecursiveAction</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="RecursiveAction.html" title="java.util.concurrent 包中的类">RecursiveAction</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A recursive resultless <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a>.</div>
+<div class="block">A recursive resultless <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RecursiveTask.html" title="class in java.util.concurrent">RecursiveTask</a>&lt;V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RecursiveTask.html" title="java.util.concurrent 包中的类">RecursiveTask</a>&lt;V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A recursive result-bearing <a href="ForkJoinTask.html" title="class in java.util.concurrent"><code>ForkJoinTask</code></a>.</div>
+<div class="block">A recursive result-bearing <a href="ForkJoinTask.html" title="java.util.concurrent 包中的类"><code>ForkJoinTask</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="RejectedExecutionException.html" title="class in java.util.concurrent">RejectedExecutionException</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类">RejectedExecutionException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Exception thrown by an <a href="Executor.html" title="interface in java.util.concurrent"><code>Executor</code></a> when a task cannot be
+<div class="block">Exception thrown by an <a href="Executor.html" title="java.util.concurrent 包中的接口"><code>Executor</code></a> when a task cannot be
 accepted for execution.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RejectedExecutionHandler.html" title="interface in java.util.concurrent">RejectedExecutionHandler</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RejectedExecutionHandler.html" title="java.util.concurrent 包中的接口">RejectedExecutionHandler</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A handler for tasks that cannot be executed by a <a href="ThreadPoolExecutor.html" title="class in java.util.concurrent"><code>ThreadPoolExecutor</code></a>.</div>
+<div class="block">A handler for tasks that cannot be executed by a <a href="ThreadPoolExecutor.html" title="java.util.concurrent 包中的类"><code>ThreadPoolExecutor</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RunnableFuture.html" title="interface in java.util.concurrent">RunnableFuture</a>&lt;V&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RunnableFuture.html" title="java.util.concurrent 包中的接口">RunnableFuture</a>&lt;V&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="Future.html" title="interface in java.util.concurrent"><code>Future</code></a> that is <a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a>.</div>
+<div class="block">A <a href="Future.html" title="java.util.concurrent 包中的接口"><code>Future</code></a> that is <a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RunnableScheduledFuture.html" title="interface in java.util.concurrent">RunnableScheduledFuture</a>&lt;V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RunnableScheduledFuture.html" title="java.util.concurrent 包中的接口">RunnableScheduledFuture</a>&lt;V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="ScheduledFuture.html" title="interface in java.util.concurrent"><code>ScheduledFuture</code></a> that is <a href="../../lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a>.</div>
+<div class="block">A <a href="ScheduledFuture.html" title="java.util.concurrent 包中的接口"><code>ScheduledFuture</code></a> that is <a href="../../lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ScheduledExecutorService.html" title="interface in java.util.concurrent">ScheduledExecutorService</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ScheduledExecutorService.html" title="java.util.concurrent 包中的接口">ScheduledExecutorService</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">An <a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a> that can schedule commands to run after a given
+<div class="block">An <a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a> that can schedule commands to run after a given
 delay, or to execute periodically.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ScheduledFuture.html" title="interface in java.util.concurrent">ScheduledFuture</a>&lt;V&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ScheduledFuture.html" title="java.util.concurrent 包中的接口">ScheduledFuture</a>&lt;V&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">A delayed result-bearing action that can be cancelled.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ScheduledThreadPoolExecutor.html" title="class in java.util.concurrent">ScheduledThreadPoolExecutor</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ScheduledThreadPoolExecutor.html" title="java.util.concurrent 包中的类">ScheduledThreadPoolExecutor</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="ThreadPoolExecutor.html" title="class in java.util.concurrent"><code>ThreadPoolExecutor</code></a> that can additionally schedule
+<div class="block">A <a href="ThreadPoolExecutor.html" title="java.util.concurrent 包中的类"><code>ThreadPoolExecutor</code></a> that can additionally schedule
 commands to run after a given delay, or to execute periodically.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Semaphore.html" title="class in java.util.concurrent">Semaphore</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="Semaphore.html" title="java.util.concurrent 包中的类">Semaphore</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A counting semaphore.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.html" title="interface in java.util.concurrent">StructuredTaskScope</a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup>&lt;T,<wbr>R&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口">StructuredTaskScope</a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup>&lt;T,<wbr>R&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">An API for <em>structured concurrency</em>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Configuration.html" title="interface in java.util.concurrent">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">PREVIEW</a></sup></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Configuration.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Configuration</a><sup class="preview-mark"><a href="StructuredTaskScope.Configuration.html#preview-java.util.concurrent.StructuredTaskScope.Configuration">预览</a></sup></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Represents the configuration for a <code>StructuredTaskScope</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="StructuredTaskScope.FailedException.html" title="class in java.util.concurrent">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">PREVIEW</a></sup></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="StructuredTaskScope.FailedException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.FailedException</a><sup class="preview-mark"><a href="StructuredTaskScope.FailedException.html#preview-java.util.concurrent.StructuredTaskScope.FailedException">预览</a></sup></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">Exception thrown by <a href="StructuredTaskScope.html#join()"><code>StructuredTaskScope.join()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> when the outcome is an exception rather than a
+<div class="block">Exception thrown by <a href="StructuredTaskScope.html#join()"><code>StructuredTaskScope.join()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> when the outcome is an exception rather than a
 result.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Joiner.html" title="interface in java.util.concurrent">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">PREVIEW</a></sup>&lt;T,<wbr>R&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Joiner.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Joiner</a><sup class="preview-mark"><a href="StructuredTaskScope.Joiner.html#preview-java.util.concurrent.StructuredTaskScope.Joiner">预览</a></sup>&lt;T,<wbr>R&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">An object used with a <a href="StructuredTaskScope.html" title="interface in java.util.concurrent"><code>StructuredTaskScope</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> to handle subtask completion and
-produce the result for the scope owner waiting in the <a href="StructuredTaskScope.html#join()"><code>join</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> method
+<div class="block">An object used with a <a href="StructuredTaskScope.html" title="java.util.concurrent 包中的接口"><code>StructuredTaskScope</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> to handle subtask completion and
+produce the result for the scope owner waiting in the <a href="StructuredTaskScope.html#join()"><code>join</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> method
 for subtasks to complete.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Subtask.html" title="interface in java.util.concurrent">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">PREVIEW</a></sup>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StructuredTaskScope.Subtask.html" title="java.util.concurrent 包中的接口">StructuredTaskScope.Subtask</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.html#preview-java.util.concurrent.StructuredTaskScope.Subtask">预览</a></sup>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">Represents a subtask forked with <a href="StructuredTaskScope.html#fork(java.util.concurrent.Callable)"><code>StructuredTaskScope.fork(Callable)</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> or <a href="StructuredTaskScope.html#fork(java.lang.Runnable)"><code>StructuredTaskScope.fork(Runnable)</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup>.</div>
+<div class="block">Represents a subtask forked with <a href="StructuredTaskScope.html#fork(java.util.concurrent.Callable)"><code>StructuredTaskScope.fork(Callable)</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> or <a href="StructuredTaskScope.html#fork(java.lang.Runnable)"><code>StructuredTaskScope.fork(Runnable)</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="StructuredTaskScope.Subtask.State.html" title="enum class in java.util.concurrent">StructuredTaskScope.Subtask.State</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">PREVIEW</a></sup></div>
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="StructuredTaskScope.Subtask.State.html" title="java.util.concurrent 包中的枚举类">StructuredTaskScope.Subtask.State</a><sup class="preview-mark"><a href="StructuredTaskScope.Subtask.State.html#preview-java.util.concurrent.StructuredTaskScope.Subtask.State">预览</a></sup></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Represents the state of a subtask.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="StructuredTaskScope.TimeoutException.html" title="class in java.util.concurrent">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">PREVIEW</a></sup></div>
+<div class="col-first odd-row-color class-summary class-summary-tab5"><a href="StructuredTaskScope.TimeoutException.html" title="java.util.concurrent 包中的类">StructuredTaskScope.TimeoutException</a><sup class="preview-mark"><a href="StructuredTaskScope.TimeoutException.html#preview-java.util.concurrent.StructuredTaskScope.TimeoutException">预览</a></sup></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
 <div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">Exception thrown by <a href="StructuredTaskScope.html#join()"><code>StructuredTaskScope.join()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">PREVIEW</a></sup> if the scope was created with a timeout and
+<div class="block">Exception thrown by <a href="StructuredTaskScope.html#join()"><code>StructuredTaskScope.join()</code></a><sup class="preview-mark"><a href="StructuredTaskScope.html#preview-java.util.concurrent.StructuredTaskScope">预览</a></sup> if the scope was created with a timeout and
 the timeout expired before or while waiting in <code>join</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="StructureViolationException.html" title="class in java.util.concurrent">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">PREVIEW</a></sup></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="StructureViolationException.html" title="java.util.concurrent 包中的类">StructureViolationException</a><sup class="preview-mark"><a href="StructureViolationException.html#preview-java.util.concurrent.StructureViolationException">预览</a></sup></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block"><span class="preview-label">Preview.</span></div>
 <div class="block">Thrown when a structure violation is detected.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SubmissionPublisher.html" title="class in java.util.concurrent">SubmissionPublisher</a>&lt;T&gt;</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="SubmissionPublisher.html" title="java.util.concurrent 包中的类">SubmissionPublisher</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="Flow.Publisher.html" title="interface in java.util.concurrent"><code>Flow.Publisher</code></a> that asynchronously issues submitted
+<div class="block">A <a href="Flow.Publisher.html" title="java.util.concurrent 包中的接口"><code>Flow.Publisher</code></a> that asynchronously issues submitted
 (non-null) items to current subscribers until it is closed.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SynchronousQueue.html" title="class in java.util.concurrent">SynchronousQueue</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="SynchronousQueue.html" title="java.util.concurrent 包中的类">SynchronousQueue</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="BlockingQueue.html" title="interface in java.util.concurrent">blocking queue</a> in which each insert
+<div class="block">A <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口">blocking queue</a> in which each insert
 operation must wait for a corresponding remove operation by another
 thread, and vice versa.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThreadFactory.html" title="interface in java.util.concurrent">ThreadFactory</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThreadFactory.html" title="java.util.concurrent 包中的接口">ThreadFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">An object that creates new threads on demand.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadLocalRandom.html" title="class in java.util.concurrent">ThreadLocalRandom</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadLocalRandom.html" title="java.util.concurrent 包中的类">ThreadLocalRandom</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A random number generator (with period 2<sup>64</sup>) isolated
 to the current thread.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.html" title="class in java.util.concurrent">ThreadPoolExecutor</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.html" title="java.util.concurrent 包中的类">ThreadPoolExecutor</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">An <a href="ExecutorService.html" title="interface in java.util.concurrent"><code>ExecutorService</code></a> that executes each submitted task using
+<div class="block">An <a href="ExecutorService.html" title="java.util.concurrent 包中的接口"><code>ExecutorService</code></a> that executes each submitted task using
 one of possibly several pooled threads, normally configured
-using <a href="Executors.html" title="class in java.util.concurrent"><code>Executors</code></a> factory methods.</div>
+using <a href="Executors.html" title="java.util.concurrent 包中的类"><code>Executors</code></a> factory methods.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.AbortPolicy.html" title="class in java.util.concurrent">ThreadPoolExecutor.AbortPolicy</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.AbortPolicy.html" title="java.util.concurrent 包中的类">ThreadPoolExecutor.AbortPolicy</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A handler for rejected tasks that throws a
-<a href="RejectedExecutionException.html" title="class in java.util.concurrent"><code>RejectedExecutionException</code></a>.</div>
+<a href="RejectedExecutionException.html" title="java.util.concurrent 包中的类"><code>RejectedExecutionException</code></a>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.CallerRunsPolicy.html" title="class in java.util.concurrent">ThreadPoolExecutor.CallerRunsPolicy</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.CallerRunsPolicy.html" title="java.util.concurrent 包中的类">ThreadPoolExecutor.CallerRunsPolicy</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A handler for rejected tasks that runs the rejected task
 directly in the calling thread of the <code>execute</code> method,
 unless the executor has been shut down, in which case the task
 is discarded.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.DiscardOldestPolicy.html" title="class in java.util.concurrent">ThreadPoolExecutor.DiscardOldestPolicy</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.DiscardOldestPolicy.html" title="java.util.concurrent 包中的类">ThreadPoolExecutor.DiscardOldestPolicy</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A handler for rejected tasks that discards the oldest unhandled
 request and then retries <code>execute</code>, unless the executor
 is shut down, in which case the task is discarded.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.DiscardPolicy.html" title="class in java.util.concurrent">ThreadPoolExecutor.DiscardPolicy</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadPoolExecutor.DiscardPolicy.html" title="java.util.concurrent 包中的类">ThreadPoolExecutor.DiscardPolicy</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A handler for rejected tasks that silently discards the
 rejected task.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab5"><a href="TimeoutException.html" title="class in java.util.concurrent">TimeoutException</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab5"><a href="TimeoutException.html" title="java.util.concurrent 包中的类">TimeoutException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
 <div class="block">Exception thrown when a blocking operation times out.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TimeUnit.html" title="enum class in java.util.concurrent">TimeUnit</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="TimeUnit.html" title="java.util.concurrent 包中的枚举类">TimeUnit</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">A <code>TimeUnit</code> represents time durations at a given unit of
 granularity and provides utility methods to convert across units,
 and to perform timing and delay operations in these units.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TransferQueue.html" title="interface in java.util.concurrent">TransferQueue</a>&lt;E&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="TransferQueue.html" title="java.util.concurrent 包中的接口">TransferQueue</a>&lt;E&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A <a href="BlockingQueue.html" title="interface in java.util.concurrent"><code>BlockingQueue</code></a> in which producers may wait for consumers
+<div class="block">A <a href="BlockingQueue.html" title="java.util.concurrent 包中的接口"><code>BlockingQueue</code></a> in which producers may wait for consumers
 to receive elements.</div>
 </div>
 </div>

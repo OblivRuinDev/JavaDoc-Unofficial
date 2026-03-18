@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.nio.channels.spi</a></li>
 <li><a href="AbstractInterruptibleChannel.html" class="current-selection">AbstractInterruptibleChannel</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,17 +62,17 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">AbstractInterruptibleChannel()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#close()" tabindex="0">close()</a></li>
 <li><a href="#implCloseChannel()" tabindex="0">implCloseChannel()</a></li>
@@ -86,25 +86,25 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class AbstractInterruptibleChannel" class="title">Class AbstractInterruptibleChannel</h1>
+<h1 title="类 AbstractInterruptibleChannel" class="title">类 AbstractInterruptibleChannel</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.nio.channels.spi.AbstractInterruptibleChannel</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../../../io/Closeable.html" title="interface in java.io">Closeable</a>, <a href="../../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a>, <a href="../Channel.html" title="interface in java.nio.channels">Channel</a>, <a href="../InterruptibleChannel.html" title="interface in java.nio.channels">InterruptibleChannel</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="../../../io/Closeable.html" title="java.io 包中的接口">Closeable</a>, <a href="../../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a>, <a href="../Channel.html" title="java.nio.channels 包中的接口">Channel</a>, <a href="../InterruptibleChannel.html" title="java.nio.channels 包中的接口">InterruptibleChannel</a></code></dd>
 </dl>
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="../FileChannel.html" title="class in java.nio.channels">FileChannel</a>, <a href="../SelectableChannel.html" title="class in java.nio.channels">SelectableChannel</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="../FileChannel.html" title="java.nio.channels 包中的类">FileChannel</a>, <a href="../SelectableChannel.html" title="java.nio.channels 包中的类">SelectableChannel</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">AbstractInterruptibleChannel</span>
-<span class="extends-implements">extends <a href="../../../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="../Channel.html" title="interface in java.nio.channels">Channel</a>, <a href="../InterruptibleChannel.html" title="interface in java.nio.channels">InterruptibleChannel</a></span></div>
+<span class="extends-implements">extends <a href="../../../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="../Channel.html" title="java.nio.channels 包中的接口">Channel</a>, <a href="../InterruptibleChannel.html" title="java.nio.channels 包中的接口">InterruptibleChannel</a></span></div>
 <div class="block">Base implementation class for interruptible channels.
 
 <p> This class encapsulates the low-level machinery required to implement
@@ -142,10 +142,10 @@ exception or by returning normally.  If a thread is interrupted or the
 channel upon which it is blocked is asynchronously closed then the channel's
 <a href="#end(boolean)"><code>end</code></a> method will throw the appropriate exception.
 
-<p> This class performs the synchronization required to implement the <a href="../Channel.html" title="interface in java.nio.channels"><code>Channel</code></a> specification.  Implementations of the <a href="#implCloseChannel()"><code>implCloseChannel</code></a> method need not synchronize against
+<p> This class performs the synchronization required to implement the <a href="../Channel.html" title="java.nio.channels 包中的接口"><code>Channel</code></a> specification.  Implementations of the <a href="#implCloseChannel()"><code>implCloseChannel</code></a> method need not synchronize against
 other threads that might be attempting to close the channel.  </p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -155,8 +155,8 @@ other threads that might be attempting to close the channel.  </p></div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -172,14 +172,14 @@ other threads that might be attempting to close the channel.  </p></div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#begin()" class="member-name-link">begin</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -209,7 +209,7 @@ other threads that might be attempting to close the channel.  </p></div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -220,7 +220,7 @@ other threads that might be attempting to close the channel.  </p></div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -237,14 +237,14 @@ other threads that might be attempting to close the channel.  </p></div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="close()">
 <h3>close</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">close</span>()
-                 throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                 throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this channel.
 
 <p> If the channel has already been closed then this method returns
@@ -252,16 +252,16 @@ immediately.  Otherwise it marks the channel as closed and then invokes
 the <a href="#implCloseChannel()"><code>implCloseChannel</code></a> method in order to
 complete the close operation.  </p></div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../lang/AutoCloseable.html" title="interface in java.lang">AutoCloseable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../Channel.html" title="interface in java.nio.channels">Channel</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/Closeable.html" title="interface in java.io">Closeable</a></code></dd>
-<dt>Specified by:</dt>
-<dd><code><a href="../InterruptibleChannel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../InterruptibleChannel.html" title="interface in java.nio.channels">InterruptibleChannel</a></code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs</dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../../lang/AutoCloseable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../lang/AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../Channel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../Channel.html" title="java.nio.channels 包中的接口">Channel</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../../../io/Closeable.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../../../io/Closeable.html" title="java.io 包中的接口">Closeable</a></code></dd>
+<dt>指定于:</dt>
+<dd><code><a href="../InterruptibleChannel.html#close()">close</a></code>&nbsp;in interface&nbsp;<code><a href="../InterruptibleChannel.html" title="java.nio.channels 包中的接口">InterruptibleChannel</a></code></dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs</dd>
 </dl>
 </div>
 </section>
@@ -271,7 +271,7 @@ complete the close operation.  </p></div>
 <h3>implCloseChannel</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">implCloseChannel</span>()
-                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="class in java.io">IOException</a></span></div>
+                                  throws <span class="exceptions"><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></span></div>
 <div class="block">Closes this channel.
 
 <p> This method is invoked by the <a href="#close()"><code>close</code></a> method in order
@@ -284,8 +284,8 @@ that is blocked in an I/O operation upon this channel to return
 immediately, either by throwing an exception or by returning normally.
 </p></div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../../io/IOException.html" title="class in java.io">IOException</a></code> - If an I/O error occurs while closing the channel</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../io/IOException.html" title="java.io 包中的类">IOException</a></code> - If an I/O error occurs while closing the channel</dd>
 </dl>
 </div>
 </section>
@@ -298,9 +298,9 @@ immediately, either by throwing an exception or by returning normally.
 <div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Channel.html#isOpen()">Channel</a></code></span></div>
 <div class="block">Tells whether or not this channel is open.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Channel.html#isOpen()">isOpen</a></code>&nbsp;in interface&nbsp;<code><a href="../Channel.html" title="interface in java.nio.channels">Channel</a></code></dd>
-<dt>Returns:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="../Channel.html#isOpen()">isOpen</a></code>&nbsp;in interface&nbsp;<code><a href="../Channel.html" title="java.nio.channels 包中的接口">Channel</a></code></dd>
+<dt>返回:</dt>
 <dd><code>true</code> if, and only if, this channel is open</dd>
 </dl>
 </div>
@@ -325,20 +325,20 @@ closing and interruption for this channel.  </p></div>
 <h3>end</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">end</span><wbr><span class="parameters">(boolean&nbsp;completed)</span>
-                  throws <span class="exceptions"><a href="../AsynchronousCloseException.html" title="class in java.nio.channels">AsynchronousCloseException</a></span></div>
+                  throws <span class="exceptions"><a href="../AsynchronousCloseException.html" title="java.nio.channels 包中的类">AsynchronousCloseException</a></span></div>
 <div class="block">Marks the end of an I/O operation that might block indefinitely.
 
 <p> This method should be invoked in tandem with the <a href="#begin()"><code>begin</code></a> method, using a <code>try</code>&nbsp;...&nbsp;<code>finally</code> block
 as shown <a href="#be">above</a>, in order to implement asynchronous
 closing and interruption for this channel.  </p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>completed</code> - <code>true</code> if, and only if, the I/O operation completed
         successfully, that is, had some effect that would be visible to
         the operation's invoker</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../AsynchronousCloseException.html" title="class in java.nio.channels">AsynchronousCloseException</a></code> - If the channel was asynchronously closed</dd>
-<dd><code><a href="../ClosedByInterruptException.html" title="class in java.nio.channels">ClosedByInterruptException</a></code> - If the thread blocked in the I/O operation was interrupted</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../AsynchronousCloseException.html" title="java.nio.channels 包中的类">AsynchronousCloseException</a></code> - If the channel was asynchronously closed</dd>
+<dd><code><a href="../ClosedByInterruptException.html" title="java.nio.channels 包中的类">ClosedByInterruptException</a></code> - If the thread blocked in the I/O operation was interrupted</dd>
 </dl>
 </div>
 </section>

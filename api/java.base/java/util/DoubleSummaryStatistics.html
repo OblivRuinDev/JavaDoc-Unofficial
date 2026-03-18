@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util</a></li>
 <li><a href="DoubleSummaryStatistics.html" class="current-selection">DoubleSummaryStatistics</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -65,18 +65,18 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">DoubleSummaryStatistics()</a></li>
 <li><a href="#%3Cinit%3E(long,double,double,double)" tabindex="0">DoubleSummaryStatistics(long, double, double, double)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#accept(double)" tabindex="0">accept(double)</a></li>
 <li><a href="#combine(java.util.DoubleSummaryStatistics)" tabindex="0">combine(DoubleSummaryStatistics)</a></li>
@@ -93,21 +93,21 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class DoubleSummaryStatistics" class="title">Class DoubleSummaryStatistics</h1>
+<h1 title="类 DoubleSummaryStatistics" class="title">类 DoubleSummaryStatistics</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.DoubleSummaryStatistics</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>All Implemented Interfaces:</dt>
-<dd><code><a href="function/DoubleConsumer.html" title="interface in java.util.function">DoubleConsumer</a></code></dd>
+<dt>所有已实现的接口:</dt>
+<dd><code><a href="function/DoubleConsumer.html" title="java.util.function 包中的接口">DoubleConsumer</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DoubleSummaryStatistics</span>
-<span class="extends-implements">extends <a href="../lang/Object.html" title="class in java.lang">Object</a>
-implements <a href="function/DoubleConsumer.html" title="interface in java.util.function">DoubleConsumer</a></span></div>
+<span class="extends-implements">extends <a href="../lang/Object.html" title="java.lang 包中的类">Object</a>
+implements <a href="function/DoubleConsumer.html" title="java.util.function 包中的接口">DoubleConsumer</a></span></div>
 <div class="block">A state object for collecting statistics such as count, min, max, sum, and
  average.
 
@@ -121,7 +121,7 @@ implements <a href="function/DoubleConsumer.html" title="interface in java.util.
 
  <p><code>DoubleSummaryStatistics</code> can be used as a
  <a href="stream/Stream.html#collect(java.util.stream.Collector)">reduction</a>
- target for a <a href="stream/Stream.html" title="interface in java.util.stream">stream</a>. For example:
+ target for a <a href="stream/Stream.html" title="java.util.stream 包中的接口">stream</a>. For example:
 
  <pre><code> DoubleSummaryStatistics stats = people.stream()
      .collect(Collectors.summarizingDouble(Person::getWeight));
@@ -130,7 +130,7 @@ implements <a href="function/DoubleConsumer.html" title="interface in java.util.
  This computes, in a single pass, the count of people, as well as the minimum,
  maximum, sum, and average of their weights.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>This implementation is not thread safe. However, it is safe to use
  <a href="stream/Collectors.html#summarizingDouble(java.util.function.ToDoubleFunction)"><code>Collectors.summarizingDouble()</code></a> on a parallel stream, because the parallel
  implementation of <a href="stream/Stream.html#collect(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BiConsumer)"><code>Stream.collect()</code></a>
@@ -138,7 +138,7 @@ implements <a href="function/DoubleConsumer.html" title="interface in java.util.
  safe and efficient parallel execution.
 
  <p>This implementation does not check for overflow of the count.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.8</dd>
 </dl>
 </div>
@@ -148,11 +148,11 @@ implements <a href="function/DoubleConsumer.html" title="interface in java.util.
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">DoubleSummaryStatistics</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Constructs an empty instance with zero count, zero sum,
@@ -173,21 +173,21 @@ max and zero average.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#accept(double)" class="member-name-link">accept</a><wbr>(double&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Records another value into the summary information.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#combine(java.util.DoubleSummaryStatistics)" class="member-name-link">combine</a><wbr>(<a href="DoubleSummaryStatistics.html" title="class in java.util">DoubleSummaryStatistics</a>&nbsp;other)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#combine(java.util.DoubleSummaryStatistics)" class="member-name-link">combine</a><wbr>(<a href="DoubleSummaryStatistics.html" title="java.util 包中的类">DoubleSummaryStatistics</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Combines the state of another <code>DoubleSummaryStatistics</code> into this
 one.</div>
@@ -223,7 +223,7 @@ recorded.</div>
 <div class="block">Returns the sum of values recorded, or zero if no values have been
 recorded.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns a non-empty string representation of this object suitable for
@@ -233,10 +233,10 @@ debugging.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../lang/Object.html#clone()" title="clone()">clone</a>, <a href="../lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../lang/Object.html#notify()" title="notify()">notify</a>, <a href="../lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../lang/Object.html#wait()" title="wait()">wait</a>, <a href="../lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.util.function.DoubleConsumer">Methods declared in interface&nbsp;<a href="function/DoubleConsumer.html#method-summary" title="interface in java.util.function">DoubleConsumer</a></h3>
+<h3 id="methods-inherited-from-class-java.util.function.DoubleConsumer">在接口 <a href="function/DoubleConsumer.html#method-summary" title="java.util.function 包中的接口">DoubleConsumer</a> 中声明的方法</h3>
 <code><a href="function/DoubleConsumer.html#andThen(java.util.function.DoubleConsumer)" title="andThen(DoubleConsumer)">andThen</a></code></div>
 </section>
 </li>
@@ -247,7 +247,7 @@ debugging.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -268,7 +268,7 @@ max and zero average.</div>
  double&nbsp;min,
  double&nbsp;max,
  double&nbsp;sum)</span>
-                        throws <span class="exceptions"><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></span></div>
+                        throws <span class="exceptions"><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></span></div>
 <div class="block">Constructs a non-empty instance with the specified <code>count</code>,
 <code>min</code>, <code>max</code>, and <code>sum</code>.
 
@@ -282,7 +282,7 @@ is thrown.  The necessary consistent argument conditions are:
   <li><code>(min &lt;= max &amp;&amp; !isNaN(sum)) || (isNaN(min) &amp;&amp; isNaN(max) &amp;&amp; isNaN(sum))</code></li>
 </ul></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>The enforcement of argument correctness means that the retrieved set of
 recorded values obtained from a <code>DoubleSummaryStatistics</code> source
 instance may not be a legal set of arguments for this constructor due to
@@ -291,14 +291,14 @@ The consistent argument conditions are not sufficient to prevent the
 creation of an internally inconsistent instance.  An example of such a
 state would be an instance with: <code>count</code> = 2, <code>min</code> = 1,
 <code>max</code> = 2, and <code>sum</code> = 0.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>count</code> - the count of values</dd>
 <dd><code>min</code> - the minimum value</dd>
 <dd><code>max</code> - the maximum value</dd>
 <dd><code>sum</code> - the sum of all values</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the arguments are inconsistent</dd>
-<dt>Since:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the arguments are inconsistent</dd>
+<dt>自:</dt>
 <dd>10</dd>
 </dl>
 </div>
@@ -310,7 +310,7 @@ state would be an instance with: <code>count</code> = 2, <code>min</code> = 1,
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="accept(double)">
@@ -319,9 +319,9 @@ state would be an instance with: <code>count</code> = 2, <code>min</code> = 1,
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">accept</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
 <div class="block">Records another value into the summary information.</div>
 <dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="function/DoubleConsumer.html#accept(double)">accept</a></code>&nbsp;in interface&nbsp;<code><a href="function/DoubleConsumer.html" title="interface in java.util.function">DoubleConsumer</a></code></dd>
-<dt>Parameters:</dt>
+<dt>指定于:</dt>
+<dd><code><a href="function/DoubleConsumer.html#accept(double)">accept</a></code>&nbsp;in interface&nbsp;<code><a href="function/DoubleConsumer.html" title="java.util.function 包中的接口">DoubleConsumer</a></code></dd>
+<dt>参数:</dt>
 <dd><code>value</code> - the input value</dd>
 </dl>
 </div>
@@ -331,14 +331,14 @@ state would be an instance with: <code>count</code> = 2, <code>min</code> = 1,
 <section class="detail" id="combine(java.util.DoubleSummaryStatistics)">
 <h3>combine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">combine</span><wbr><span class="parameters">(<a href="DoubleSummaryStatistics.html" title="class in java.util">DoubleSummaryStatistics</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">combine</span><wbr><span class="parameters">(<a href="DoubleSummaryStatistics.html" title="java.util 包中的类">DoubleSummaryStatistics</a>&nbsp;other)</span></div>
 <div class="block">Combines the state of another <code>DoubleSummaryStatistics</code> into this
 one.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - another <code>DoubleSummaryStatistics</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>other</code> is null</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>other</code> is null</dd>
 </dl>
 </div>
 </section>
@@ -350,7 +350,7 @@ one.</div>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getCount</span>()</div>
 <div class="block">Return the count of values recorded.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the count of values</dd>
 </dl>
 </div>
@@ -413,10 +413,10 @@ finite.
 If all the recorded values are zero, the sign of zero is
 <em>not</em> guaranteed to be preserved in the final sum.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Values sorted by increasing absolute magnitude tend to yield
 more accurate results.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the sum of values, or zero if none</dd>
 </dl>
 </div>
@@ -432,7 +432,7 @@ value was NaN or <code>Double.POSITIVE_INFINITY</code> if no values were
 recorded. Unlike the numerical comparison operators, this method
 considers negative zero to be strictly smaller than positive zero.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the minimum recorded value, <code>Double.NaN</code> if any recorded
 value was NaN or <code>Double.POSITIVE_INFINITY</code> if no values were
 recorded</dd>
@@ -450,7 +450,7 @@ value was NaN or <code>Double.NEGATIVE_INFINITY</code> if no values were
 recorded. Unlike the numerical comparison operators, this method
 considers negative zero to be strictly smaller than positive zero.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the maximum recorded value, <code>Double.NaN</code> if any recorded
 value was NaN or <code>Double.NEGATIVE_INFINITY</code> if no values were
 recorded</dd>
@@ -470,10 +470,10 @@ values have been recorded.
 special case behavior as computing the sum; see <a href="#getSum()"><code>getSum()</code></a>
 for details.</div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>Values sorted by increasing absolute magnitude tend to yield
 more accurate results.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the arithmetic mean of values, or zero if none</dd>
 </dl>
 </div>
@@ -483,14 +483,14 @@ more accurate results.</dd>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a non-empty string representation of this object suitable for
 debugging. The exact presentation format is unspecified and may vary
 between implementations and versions.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>

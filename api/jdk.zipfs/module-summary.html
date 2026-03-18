@@ -46,7 +46,7 @@ loadScripts(document, 'script');</script>
 <ol class="sub-nav-list">
 <li><a href="module-summary.html" class="current-selection">jdk.zipfs</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -54,9 +54,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#accessing-a-zip-file-system-heading" tabindex="0">Accessing a ZIP File System</a></li>
 <li><a href="#uri-scheme-used-to-identify-the-zip-file-system-heading" tabindex="0">URI Scheme Used to Identify the ZIP File System</a></li>
@@ -65,12 +65,12 @@ loadScripts(document, 'script');</script>
 <li><a href="#examples--heading" tabindex="0">Examples:</a></li>
 </ol>
 </li>
-<li><a href="#services-summary" tabindex="0">Services</a></li>
+<li><a href="#services-summary" tabindex="0">服务</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Module jdk.zipfs" class="title">Module jdk.zipfs</h1>
+<h1 title="模块 jdk.zipfs" class="title">模块 jdk.zipfs</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -82,7 +82,7 @@ The ZIP file system provider treats the contents of a ZIP or JAR file as a file 
 
 <h2 id="accessing-a-zip-file-system-heading">Accessing a ZIP File System</h2>
 
-The <a href="../java.base/java/nio/file/FileSystems.html" title="class in java.nio.file">FileSystems</a> <code>newFileSystem</code>
+The <a href="../java.base/java/nio/file/FileSystems.html" title="java.nio.file 包中的类">FileSystems</a> <code>newFileSystem</code>
 static factory methods can be used to:
 <ul>
   <li>Create a ZIP file system</li>
@@ -98,7 +98,7 @@ The URI <a href="../java.base/java/net/URI.html#getScheme()"><code>scheme</code>
 
 <h2 id="posix-file-attributes-heading">POSIX file attributes</h2>
 
-A ZIP file system supports a file attribute <a href="../java.base/java/nio/file/attribute/FileAttributeView.html" title="interface in java.nio.file.attribute"><code>view</code></a>
+A ZIP file system supports a file attribute <a href="../java.base/java/nio/file/attribute/FileAttributeView.html" title="java.nio.file.attribute 包中的接口"><code>view</code></a>
 named "<code>zip</code>" that defines the following file attribute:
 
 <blockquote>
@@ -113,7 +113,7 @@ named "<code>zip</code>" that defines the following file attribute:
 <tbody>
   <tr>
     <th scope="row">permissions</th>
-    <td><a href="../java.base/java/util/Set.html" title="interface in java.util"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="enum class in java.nio.file.attribute"><code>PosixFilePermission</code></a>&gt;</td>
+    <td><a href="../java.base/java/util/Set.html" title="java.util 包中的接口"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="java.nio.file.attribute 包中的枚举类"><code>PosixFilePermission</code></a>&gt;</td>
   </tr>
 </tbody>
 </table>
@@ -136,7 +136,7 @@ methods. The following example uses these methods to read and set the attribute:
 </code> </pre>
 
 <p> In addition to the "<code>zip</code>" view, a ZIP file system optionally supports
-the <a href="../java.base/java/nio/file/attribute/PosixFileAttributeView.html" title="interface in java.nio.file.attribute"><code>PosixFileAttributeView</code></a> ("<code>posix</code>").
+the <a href="../java.base/java/nio/file/attribute/PosixFileAttributeView.html" title="java.nio.file.attribute 包中的接口"><code>PosixFileAttributeView</code></a> ("<code>posix</code>").
 This view extends the "<code>basic</code>" view with type safe access to the
 <a href="../java.base/java/nio/file/attribute/PosixFileAttributes.html#owner()"><code>owner</code></a>, <a href="../java.base/java/nio/file/attribute/PosixFileAttributes.html#group()"><code>group-owner</code></a>,
 and <a href="../java.base/java/nio/file/attribute/PosixFileAttributes.html#permissions()"><code>permissions</code></a> attributes. The
@@ -192,7 +192,7 @@ file system:
 <tbody>
 <tr>
   <th scope="row">accessMode</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>null/unset</td>
   <td>
       A value defining the desired access mode of the file system.
@@ -226,7 +226,7 @@ file system:
 </tr>
 <tr>
   <th scope="row">create</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a> or <a href="../java.base/java/lang/Boolean.html" title="class in java.lang"><code>Boolean</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a> or <a href="../java.base/java/lang/Boolean.html" title="java.lang 包中的类"><code>Boolean</code></a></td>
   <td>false</td>
   <td>
       If the value is <code>true</code>, the ZIP file system provider creates a
@@ -238,7 +238,7 @@ file system:
 </tr>
 <tr>
   <th scope="row">encoding</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>UTF-8</td>
   <td>
       The value indicates the encoding scheme for the
@@ -247,17 +247,17 @@ file system:
 </tr>
 <tr>
   <th scope="row">enablePosixFileAttributes</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a> or <a href="../java.base/java/lang/Boolean.html" title="class in java.lang"><code>Boolean</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a> or <a href="../java.base/java/lang/Boolean.html" title="java.lang 包中的类"><code>Boolean</code></a></td>
   <td>false</td>
   <td>
       If the value is <code>true</code>, the ZIP file system will support
-      the <a href="../java.base/java/nio/file/attribute/PosixFileAttributeView.html" title="interface in java.nio.file.attribute"><code>PosixFileAttributeView</code></a>.
+      the <a href="../java.base/java/nio/file/attribute/PosixFileAttributeView.html" title="java.nio.file.attribute 包中的接口"><code>PosixFileAttributeView</code></a>.
   </td>
 </tr>
 <tr>
   <th scope="row">defaultOwner</th>
-  <td><a href="../java.base/java/nio/file/attribute/UserPrincipal.html" title="interface in java.nio.file.attribute"><code>UserPrincipal</code></a><br> or
-  <a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/nio/file/attribute/UserPrincipal.html" title="java.nio.file.attribute 包中的接口"><code>UserPrincipal</code></a><br> or
+  <a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>null/unset</td>
   <td>
       Override the default owner for entries in the ZIP file system.<br>
@@ -266,8 +266,8 @@ file system:
 </tr>
 <tr>
   <th scope="row">defaultGroup</th>
-  <td><a href="../java.base/java/nio/file/attribute/GroupPrincipal.html" title="interface in java.nio.file.attribute"><code>GroupPrincipal</code></a><br> or
-  <a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/nio/file/attribute/GroupPrincipal.html" title="java.nio.file.attribute 包中的接口"><code>GroupPrincipal</code></a><br> or
+  <a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>null/unset</td>
   <td>
       Override the default group for entries in the ZIP file system.<br>
@@ -276,18 +276,18 @@ file system:
 </tr>
 <tr>
   <th scope="row">defaultPermissions</th>
-  <td><a href="../java.base/java/util/Set.html" title="interface in java.util"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="enum class in java.nio.file.attribute"><code>PosixFilePermission</code></a>&gt;<br>
-      or <a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/util/Set.html" title="java.util 包中的接口"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="java.nio.file.attribute 包中的枚举类"><code>PosixFilePermission</code></a>&gt;<br>
+      or <a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>null/unset</td>
   <td>
       Override the default Set of permissions for entries in the ZIP file system.<br>
-      The value can be a <a href="../java.base/java/util/Set.html" title="interface in java.util"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="enum class in java.nio.file.attribute"><code>PosixFilePermission</code></a>&gt; or<br>
+      The value can be a <a href="../java.base/java/util/Set.html" title="java.util 包中的接口"><code>Set</code></a>&lt;<a href="../java.base/java/nio/file/attribute/PosixFilePermission.html" title="java.nio.file.attribute 包中的枚举类"><code>PosixFilePermission</code></a>&gt; or<br>
       a String that is parsed by <a href="../java.base/java/nio/file/attribute/PosixFilePermissions.html#fromString(java.lang.String)"><code>PosixFilePermissions::fromString</code></a>
   </td>
 </tr>
 <tr>
   <th scope="row">compressionMethod</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a></td>
   <td>"DEFLATED"</td>
   <td>
       The value representing the compression method to use when writing entries
@@ -312,7 +312,7 @@ file system:
 </tr>
 <tr>
   <th scope="row">releaseVersion</th>
-  <td><a href="../java.base/java/lang/String.html" title="class in java.lang"><code>String</code></a> or <a href="../java.base/java/lang/Integer.html" title="class in java.lang"><code>Integer</code></a></td>
+  <td><a href="../java.base/java/lang/String.html" title="java.lang 包中的类"><code>String</code></a> or <a href="../java.base/java/lang/Integer.html" title="java.lang 包中的类"><code>Integer</code></a></td>
   <td>null/unset</td>
   <td>
       A value representing the version entry to use when accessing a
@@ -323,7 +323,7 @@ file system:
       considered un-versioned.
       <p>
       The value must be either the string "runtime" or represent a valid
-      <a href="../java.base/java/lang/Runtime.Version.html" title="class in java.lang">Java SE Platform version number</a>,
+      <a href="../java.base/java/lang/Runtime.Version.html" title="java.lang 包中的类">Java SE Platform version number</a>,
       such as <code>9</code> or <code>14</code>, in order to determine the version entry.
 
       <ul>
@@ -338,7 +338,7 @@ file system:
           </li>
           <li>
               If the value does not represent a valid
-              <a href="../java.base/java/lang/Runtime.Version.html" title="class in java.lang">Java SE Platform version number</a>,
+              <a href="../java.base/java/lang/Runtime.Version.html" title="java.lang 包中的类">Java SE Platform version number</a>,
               an <code>IllegalArgumentException</code> will be thrown when creating
               the ZIP file system.
           </li>
@@ -373,8 +373,8 @@ found entry:
            .forEach(System.out::println);
 </code>
 </pre></div>
-<dl class="notes"><dt>Module Graph:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.zipfs" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.zipfs" src="module-graph.svg"></span></a></dd>
-<dt>Since:</dt>
+<dl class="notes"><dt>模块图:</dt><dd><a class="module-graph" href="module-graph.svg"><img style="vertical-align:top" alt="Module graph for jdk.zipfs" src="module-graph.svg" height="100"><span><img style="border: solid lightgray 1px; vertical-align:top" alt="Module graph for jdk.zipfs" src="module-graph.svg"></span></a></dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </section>
@@ -384,12 +384,12 @@ found entry:
 <li>
 <section class="services-summary" id="services-summary">
 <!-- ============ SERVICES SUMMARY =========== -->
-<h2>Services</h2>
-<div class="caption"><span>Provides</span></div>
+<h2>服务</h2>
+<div class="caption"><span>提供</span></div>
 <div class="details-table two-column-summary">
-<div class="table-header col-first">Type</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="../java.base/java/nio/file/spi/FileSystemProvider.html" title="class in java.nio.file.spi">FileSystemProvider</a></div>
+<div class="table-header col-first">类型</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color"><a href="../java.base/java/nio/file/spi/FileSystemProvider.html" title="java.nio.file.spi 包中的类">FileSystemProvider</a></div>
 <div class="col-last even-row-color">
 <div class="block">Service-provider class for file systems.</div>
 </div>

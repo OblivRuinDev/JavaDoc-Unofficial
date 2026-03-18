@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.base</a></li>
 <li><a href="package-summary.html" class="current-selection">java.util.random</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#using-the-random-number-generator-interfaces-heading" tabindex="0">Using the Random Number Generator Interfaces</a></li>
 <li><a href="#choosing-a-random-number-generator-algorithm-heading" tabindex="0">Choosing a Random Number Generator Algorithm</a></li>
@@ -67,13 +67,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#the-lxm-family-of-random-number-generator-algorithms-heading" tabindex="0">The LXM Family of Random Number Generator Algorithms</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.util.random" class="title">Package java.util.random</h1>
+<h1 title="包 java.util.random" class="title">包 java.util.random</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -90,7 +90,7 @@ deterministic (pseudorandom) algorithms but also generators of values that
 use some "truly random" physical source (stochastic algorithms perhaps making
 use of thermal noise, for example, or quantum-mechanical effects).
 
-<p> The principal interface is <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a>, which provides
+<p> The principal interface is <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a>, which provides
 methods for requesting individual values of type <code>int</code>, <code>long</code>,
 <code>float</code>, <code>double</code>, or <code>boolean</code> chosen pseudorandomly
 from a uniform distribution; methods for requesting values of type
@@ -102,17 +102,17 @@ parallel processing of their elements). There are also static factory methods
 for creating an instance of a specific random number generator algorithm
 given its name.
 
-<p> The principal supporting class is <a href="RandomGeneratorFactory.html" title="class in java.util.random"><code>RandomGeneratorFactory</code></a>. This
+<p> The principal supporting class is <a href="RandomGeneratorFactory.html" title="java.util.random 包中的类"><code>RandomGeneratorFactory</code></a>. This
 can be used to generate multiple random number generators for a specific
-algorithm. <a href="RandomGeneratorFactory.html" title="class in java.util.random"><code>RandomGeneratorFactory</code></a> also provides methods for
+algorithm. <a href="RandomGeneratorFactory.html" title="java.util.random 包中的类"><code>RandomGeneratorFactory</code></a> also provides methods for
 selecting random number generator algorithms.
 
 <p> An important subsidiary interface is
-<a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.StreamableGenerator</code></a>, which provides methods for
-creating spliterator-based streams of <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> objects,
+<a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.StreamableGenerator</code></a>, which provides methods for
+creating spliterator-based streams of <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> objects,
 allowing for parallel processing of these objects using multiple threads.
-Unlike <a href="../Random.html" title="class in java.util"><code>Random</code></a>, most implementations of
-<a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> are <i>not</i> thread-safe. The intent is that
+Unlike <a href="../Random.html" title="java.util 包中的类"><code>Random</code></a>, most implementations of
+<a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> are <i>not</i> thread-safe. The intent is that
 instances should not be shared among threads; rather, each thread should have
 its own random generator(s) to use. The various pseudorandom algorithms
 provided by this package are designed so that multiple instances will (with
@@ -121,10 +121,10 @@ very high probability) behave as if statistically independent.
 <p> For many purposes, these are the only two interfaces that a consumer of
 pseudorandom values will need. There are also some more specialized
 interfaces that describe more specialized categories of random number
-generators <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>SplittableGenerator</code></a>,
-<a href="RandomGenerator.JumpableGenerator.html" title="interface in java.util.random"><code>JumpableGenerator</code></a>,
-<a href="RandomGenerator.LeapableGenerator.html" title="interface in java.util.random"><code>LeapableGenerator</code></a>, and
-<a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="interface in java.util.random"><code>ArbitrarilyJumpableGenerator</code></a>
+generators <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>SplittableGenerator</code></a>,
+<a href="RandomGenerator.JumpableGenerator.html" title="java.util.random 包中的接口"><code>JumpableGenerator</code></a>,
+<a href="RandomGenerator.LeapableGenerator.html" title="java.util.random 包中的接口"><code>LeapableGenerator</code></a>, and
+<a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="java.util.random 包中的接口"><code>ArbitrarilyJumpableGenerator</code></a>
 that have specific strategies for creating statistically independent instances.
 
 <h2 id="using-the-random-number-generator-interfaces-heading">Using the Random Number Generator Interfaces</h2>
@@ -137,7 +137,7 @@ generator class. Assume that the contents of the package
 
 Then one can choose a specific implementation by giving the name of a generator
 algorithm to the static method <a href="RandomGenerator.html#of(java.lang.String)"><code>RandomGenerator.of(String)</code></a>, in which case
-a <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> is constructed without any seed value:
+a <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> is constructed without any seed value:
 
 <blockquote><code>RandomGenerator g = RandomGenerator.of("L64X128MixRandom");</code></blockquote>
 
@@ -157,20 +157,20 @@ chosen values. The methods
 values from nonuniform distributions.
 
 <p> For a multi-threaded application, one can repeat the preceding steps
-to create additional <a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerators</a>, but
+to create additional <a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerators</a>, but
 often it is preferable to use methods of the one single initially
 created generator to create others like it. (One reason is that some
 generator algorithms, if asked to create a new set of generators all at
 once, can make a special effort to ensure that the new generators are
 statistically independent.) If the initial generator implements the
-interface <a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.StreamableGenerator</code></a>, then the method
+interface <a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.StreamableGenerator</code></a>, then the method
 <a href="RandomGenerator.StreamableGenerator.html#rngs()"><code>rngs()</code></a> can be used to
 create a stream of generators. If this is a parallel stream, then it is
 easy to get parallel execution by using the
 <a href="../stream/Stream.html#map(java.util.function.Function)"><code>map()</code></a> method on the stream.
 <p> For a multi-threaded application that forks new threads dynamically,
 another approach is to use an initial generator that implements the interface
-<a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>, which is then considered to
+<a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>, which is then considered to
 "belong" to the initial thread for its exclusive use; then whenever any
 thread needs to fork a new thread, it first uses the
 <a href="RandomGenerator.SplittableGenerator.html#split()"><code>split()</code></a> method of its own
@@ -188,7 +188,7 @@ before JDK 17: Random, ThreadLocalRandom, SplittableRandom, and
 SecureRandom. Random (LCG) is the weakest of the available algorithms, and it
 is recommended that users migrate to newer algorithms. If an application
 requires a random number generator algorithm that is cryptographically
-secure, then it should continue to use an instance of the class <a href="../../security/SecureRandom.html" title="class in java.security"><code>SecureRandom</code></a>.
+secure, then it should continue to use an instance of the class <a href="../../security/SecureRandom.html" title="java.security 包中的类"><code>SecureRandom</code></a>.
 
 <p> The algorithms in the LXM group are similar to each other. The parameters
 of each algorithm can be found in the algorithm name. The number after "L" indicates the
@@ -204,7 +204,7 @@ the number in the name indicates the number of state bits.
 
 <p> For applications (such as physical simulation, machine learning, and
 games) that do not require a cryptographically secure algorithm, this package
-provides multiple implementations of interface <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> that
+provides multiple implementations of interface <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> that
 provide trade-offs among speed, space, period, accidental correlation, and
 equidistribution properties.
 
@@ -402,13 +402,13 @@ long distance around the cycle (perhaps 2<sup>64</sup> steps or more); the
 jump function is applied repeatedly and sequentially, to identify widely
 spaced states that are then doled out, one to each thread, to serve as the
 initial state for the generator to be used by that thread. This strategy is
-supported by the interface <a href="RandomGenerator.JumpableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.JumpableGenerator</code></a>.
+supported by the interface <a href="RandomGenerator.JumpableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.JumpableGenerator</code></a>.
 Sometimes it is desirable to support two levels of jumping (by long distances
 and by <i>really</i> long distances); this strategy is supported by the
-interface <a href="RandomGenerator.LeapableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.LeapableGenerator</code></a>. In this package,
+interface <a href="RandomGenerator.LeapableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.LeapableGenerator</code></a>. In this package,
 implementations of this interface include "Xoroshiro128PlusPlus" and
 "Xoshiro256PlusPlus". There is also an interface
-<a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.ArbitrarilyJumpableGenerator</code></a> for algorithms that allow
+<a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.ArbitrarilyJumpableGenerator</code></a> for algorithms that allow
 jumping along the state cycle by any user-specified distance; there are currently
 no implementations of this interface in this package.
 
@@ -417,7 +417,7 @@ uses a large family of state cycles and makes some attempt to ensure that
 distinct instances use different state cycles; but even if two instances
 "accidentally" use the same state cycle, they are highly likely to traverse
 different regions of that shared state cycle. This strategy is
-supported by the interface <a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.SplittableGenerator</code></a>.
+supported by the interface <a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.SplittableGenerator</code></a>.
 In this package, implementations of this interface include
 "L32X64MixRandom",
 "L64X128StarStarRandom",
@@ -427,7 +427,7 @@ In this package, implementations of this interface include
 "L128X128MixRandom",
 "L128X256MixRandom", and
 "L128X1024MixRandom"; note that the class
-<a href="../SplittableRandom.html" title="class in java.util"><code>SplittableRandom</code></a> also implements this interface.
+<a href="../SplittableRandom.html" title="java.util 包中的类"><code>SplittableRandom</code></a> also implements this interface.
 
 
 <h2 id="the-lxm-family-of-random-number-generator-algorithms-heading">The LXM Family of Random Number Generator Algorithms</h2>
@@ -691,7 +691,7 @@ used in the LCG.)
 </tbody>
 </table></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>17</dd>
 </dl>
 </section>
@@ -700,10 +700,10 @@ used in the LCG.)
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">java.util</a></div>
 <div class="col-last even-row-color">
 <div class="block">Contains the collections framework, some internationalization support classes,
@@ -716,50 +716,50 @@ several miscellaneous utility classes.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">The <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface is designed to provide a common
+<div class="block">The <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface is designed to provide a common
 protocol for objects that generate random or (more typically) pseudorandom
 sequences of numbers (or Boolean values).</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="interface in java.util.random">RandomGenerator.ArbitrarilyJumpableGenerator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.ArbitrarilyJumpableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.ArbitrarilyJumpableGenerator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">This interface is designed to provide a common protocol for objects that
 generate sequences of pseudorandom values and can easily <i>jump</i>
 forward, by an arbitrary amount, to a distant point in the state cycle.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.JumpableGenerator.html" title="interface in java.util.random">RandomGenerator.JumpableGenerator</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.JumpableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.JumpableGenerator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">This interface is designed to provide a common protocol for objects that
 generate pseudorandom values and can easily <i>jump</i> forward, by a
 moderate amount (ex. 2<sup>64</sup>) to a distant point in the state cycle.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.LeapableGenerator.html" title="interface in java.util.random">RandomGenerator.LeapableGenerator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.LeapableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.LeapableGenerator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">This interface is designed to provide a common protocol for objects that
 generate sequences of pseudorandom values and can easily not only jump
 but also <i>leap</i> forward, by a large amount (ex. 2<sup>128</sup>), to
 a very distant point in the state cycle.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.SplittableGenerator.html" title="interface in java.util.random">RandomGenerator.SplittableGenerator</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="RandomGenerator.SplittableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.SplittableGenerator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">This interface is designed to provide a common protocol for objects that
 generate sequences of pseudorandom values and can be <i>split</i> into
 two objects (the original one and a new one) each of which obey that same
 protocol (and therefore can be recursively split indefinitely).</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random">RandomGenerator.StreamableGenerator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口">RandomGenerator.StreamableGenerator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">The <a href="RandomGenerator.StreamableGenerator.html" title="interface in java.util.random"><code>RandomGenerator.StreamableGenerator</code></a> interface augments the
-<a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> interface to provide methods that return streams
-of <a href="RandomGenerator.html" title="interface in java.util.random"><code>RandomGenerator</code></a> objects.</div>
+<div class="block">The <a href="RandomGenerator.StreamableGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator.StreamableGenerator</code></a> interface augments the
+<a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> interface to provide methods that return streams
+of <a href="RandomGenerator.html" title="java.util.random 包中的接口"><code>RandomGenerator</code></a> objects.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RandomGeneratorFactory.html" title="class in java.util.random">RandomGeneratorFactory</a>&lt;T extends <a href="RandomGenerator.html" title="interface in java.util.random">RandomGenerator</a>&gt;</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="RandomGeneratorFactory.html" title="java.util.random 包中的类">RandomGeneratorFactory</a>&lt;T extends <a href="RandomGenerator.html" title="java.util.random 包中的接口">RandomGenerator</a>&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">This is a factory class for generating multiple random number generators
 of a specific <a href="package-summary.html#algorithms">algorithm</a>.</div>

@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">java.management</a></li>
 <li><a href="package-summary.html" class="current-selection">java.lang.management</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,9 +56,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#MXBean" tabindex="0">Platform MXBean</a></li>
 <li><a href="#managementfactory-heading" tabindex="0">ManagementFactory</a></li>
@@ -67,13 +67,13 @@ loadScripts(document, 'script');</script>
 <li><a href="#extension" tabindex="0">Platform Extension</a></li>
 </ol>
 </li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package java.lang.management" class="title">Package java.lang.management</h1>
+<h1 title="包 java.lang.management" class="title">包 java.lang.management</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -89,12 +89,12 @@ monitoring and management of the running Java virtual machine.
 A platform MXBean is a <i>managed bean</i> that
 conforms to the <a href="../../../javax/management/package-summary.html">JMX</a>
 Instrumentation Specification and only uses a set of basic data types.
-Each platform MXBean is a <a href="PlatformManagedObject.html" title="interface in java.lang.management"><code>PlatformManagedObject</code></a>
+Each platform MXBean is a <a href="PlatformManagedObject.html" title="java.lang.management 包中的接口"><code>PlatformManagedObject</code></a>
 with a unique
 <a href="PlatformManagedObject.html#getObjectName()">name</a>.
 <h2 id="managementfactory-heading">ManagementFactory</h2>
 
-<p>The <a href="ManagementFactory.html" title="class in java.lang.management"><code>ManagementFactory</code></a> class is the management
+<p>The <a href="ManagementFactory.html" title="java.lang.management 包中的类"><code>ManagementFactory</code></a> class is the management
 factory class for the Java platform.  This class provides a set of
 static factory methods to obtain the MXBeans for the Java platform
 to allow an application to access the MXBeans directly.
@@ -102,7 +102,7 @@ to allow an application to access the MXBeans directly.
 <p>A <em>platform MBeanServer</em> can be accessed with the
 <a href="ManagementFactory.html#getPlatformMBeanServer()"><code>getPlatformMBeanServer</code></a> method.  On the first call to this method,
 it creates the platform MBeanServer and registers all platform MXBeans
-including <a href="PlatformManagedObject.html" title="interface in java.lang.management">platform MXBeans</a>.
+including <a href="PlatformManagedObject.html" title="java.lang.management 包中的接口">platform MXBeans</a>.
 Each platform MXBean is registered with a unique name defined in
 the specification of the management interface.
 This is a single MBeanServer that can be shared by different managed
@@ -115,7 +115,7 @@ virtual machine can interoperate
 without requiring classes used by the platform MXBean interfaces.
 The data types being transmitted between the JMX connector
 server and the connector client are JMX
-<a href="../../../javax/management/openmbean/OpenType.html" title="class in javax.management.openmbean">open types</a> and
+<a href="../../../javax/management/openmbean/OpenType.html" title="javax.management.openmbean 包中的类">open types</a> and
 this allows interoperation across versions.
 A data type used by the MXBean interfaces are mapped to an
 open type when being accessed via MBeanServer interface.
@@ -182,9 +182,9 @@ Java virtual machine and the runtime in the following ways:
     MXBeans remotely.
     The attributes and operations of an MXBean use only
     <em>JMX open types</em> which include basic data types,
-    <a href="../../../javax/management/openmbean/CompositeData.html" title="interface in javax.management.openmbean"><code>CompositeData</code></a>,
-    and <a href="../../../javax/management/openmbean/TabularData.html" title="interface in javax.management.openmbean"><code>TabularData</code></a>
-    defined in <a href="../../../javax/management/openmbean/OpenType.html" title="class in javax.management.openmbean"><code>OpenType</code></a>.
+    <a href="../../../javax/management/openmbean/CompositeData.html" title="javax.management.openmbean 包中的接口"><code>CompositeData</code></a>,
+    and <a href="../../../javax/management/openmbean/TabularData.html" title="javax.management.openmbean 包中的接口"><code>TabularData</code></a>
+    defined in <a href="../../../javax/management/openmbean/OpenType.html" title="javax.management.openmbean 包中的类"><code>OpenType</code></a>.
 <pre>
    MBeanServerConnection mbs;
 
@@ -274,13 +274,13 @@ from the platform extension:
 </pre></blockquote>
 
 <p> Unless otherwise noted, passing a <code>null</code> argument to a constructor
-or method in any class or interface in this package will cause a <a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a> to be thrown.
+or method in any class or interface in this package will cause a <a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a> to be thrown.
 
 <p> The java.lang.management API is thread-safe.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../javax/management/package-summary.html">JMX Specification</a></li>
@@ -293,11 +293,11 @@ or method in any class or interface in this package will cause a <a href="../../
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Module</div>
-<div class="table-header col-second">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">模块</div>
+<div class="table-header col-second">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-plain even-row-color"><a href="../../../../java.base/module-summary.html">java.base</a></div>
 <div class="col-first even-row-color"><a href="../../../../java.base/java/lang/package-summary.html">java.lang</a></div>
 <div class="col-last even-row-color">
@@ -309,98 +309,98 @@ programming language.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BufferPoolMXBean.html" title="interface in java.lang.management">BufferPoolMXBean</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="BufferPoolMXBean.html" title="java.lang.management 包中的接口">BufferPoolMXBean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for a buffer pool, for example a pool of
-<a href="../../../../java.base/java/nio/ByteBuffer.html#allocateDirect(int)"><code>direct</code></a> or <a href="../../../../java.base/java/nio/MappedByteBuffer.html" title="class in java.nio"><code>mapped</code></a> buffers.</div>
+<a href="../../../../java.base/java/nio/ByteBuffer.html#allocateDirect(int)"><code>direct</code></a> or <a href="../../../../java.base/java/nio/MappedByteBuffer.html" title="java.nio 包中的类"><code>mapped</code></a> buffers.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassLoadingMXBean.html" title="interface in java.lang.management">ClassLoadingMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ClassLoadingMXBean.html" title="java.lang.management 包中的接口">ClassLoadingMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the class loading system of
 the Java virtual machine.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompilationMXBean.html" title="interface in java.lang.management">CompilationMXBean</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CompilationMXBean.html" title="java.lang.management 包中的接口">CompilationMXBean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the compilation system of
 the Java virtual machine.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GarbageCollectorMXBean.html" title="interface in java.lang.management">GarbageCollectorMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GarbageCollectorMXBean.html" title="java.lang.management 包中的接口">GarbageCollectorMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the garbage collection of
 the Java virtual machine.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LockInfo.html" title="class in java.lang.management">LockInfo</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="LockInfo.html" title="java.lang.management 包中的类">LockInfo</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Information about a <em>lock</em>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ManagementFactory.html" title="class in java.lang.management">ManagementFactory</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ManagementFactory.html" title="java.lang.management 包中的类">ManagementFactory</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">The <code>ManagementFactory</code> class is a factory class for getting
 managed beans for the Java platform.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ManagementPermission.html" title="class in java.lang.management">ManagementPermission</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ManagementPermission.html" title="java.lang.management 包中的类">ManagementPermission</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">Deprecated, for removal: This API element is subject to removal in a future version.
 <div class="deprecation-comment">This class was only useful in conjunction with the Security Manager,
 which is no longer supported.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MemoryManagerMXBean.html" title="interface in java.lang.management">MemoryManagerMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MemoryManagerMXBean.html" title="java.lang.management 包中的接口">MemoryManagerMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for a memory manager.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemoryMXBean.html" title="interface in java.lang.management">MemoryMXBean</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemoryMXBean.html" title="java.lang.management 包中的接口">MemoryMXBean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the memory system of
 the Java virtual machine.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MemoryNotificationInfo.html" title="class in java.lang.management">MemoryNotificationInfo</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MemoryNotificationInfo.html" title="java.lang.management 包中的类">MemoryNotificationInfo</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">The information about a memory notification.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemoryPoolMXBean.html" title="interface in java.lang.management">MemoryPoolMXBean</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MemoryPoolMXBean.html" title="java.lang.management 包中的接口">MemoryPoolMXBean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for a memory pool.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="MemoryType.html" title="enum class in java.lang.management">MemoryType</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="MemoryType.html" title="java.lang.management 包中的枚举类">MemoryType</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
-<div class="block">Types of <a href="MemoryPoolMXBean.html" title="interface in java.lang.management"><code>memory pools</code></a>.</div>
+<div class="block">Types of <a href="MemoryPoolMXBean.html" title="java.lang.management 包中的接口"><code>memory pools</code></a>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MemoryUsage.html" title="class in java.lang.management">MemoryUsage</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="MemoryUsage.html" title="java.lang.management 包中的类">MemoryUsage</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">A <code>MemoryUsage</code> object represents a snapshot of memory usage.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MonitorInfo.html" title="class in java.lang.management">MonitorInfo</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="MonitorInfo.html" title="java.lang.management 包中的类">MonitorInfo</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Information about an object monitor lock.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="OperatingSystemMXBean.html" title="interface in java.lang.management">OperatingSystemMXBean</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="OperatingSystemMXBean.html" title="java.lang.management 包中的接口">OperatingSystemMXBean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the operating system on which
 the Java virtual machine is running.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PlatformLoggingMXBean.html" title="interface in java.lang.management">PlatformLoggingMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="PlatformLoggingMXBean.html" title="java.lang.management 包中的接口">PlatformLoggingMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the <a href="../../../../java.logging/java/util/logging/package-summary.html">logging</a> facility.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="PlatformManagedObject.html" title="interface in java.lang.management">PlatformManagedObject</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="PlatformManagedObject.html" title="java.lang.management 包中的接口">PlatformManagedObject</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A platform managed object is a <a href="../../../javax/management/MXBean.html" title="annotation interface in javax.management">JMX MXBean</a>
+<div class="block">A platform managed object is a <a href="../../../javax/management/MXBean.html" title="javax.management 包中的注解接口">JMX MXBean</a>
 for monitoring and managing a component in the Java platform.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RuntimeMXBean.html" title="interface in java.lang.management">RuntimeMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="RuntimeMXBean.html" title="java.lang.management 包中的接口">RuntimeMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the runtime system of
 the Java virtual machine.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadInfo.html" title="class in java.lang.management">ThreadInfo</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadInfo.html" title="java.lang.management 包中的类">ThreadInfo</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Thread information.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThreadMXBean.html" title="interface in java.lang.management">ThreadMXBean</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ThreadMXBean.html" title="java.lang.management 包中的接口">ThreadMXBean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">The management interface for the thread system of the Java virtual machine.</div>
 </div>

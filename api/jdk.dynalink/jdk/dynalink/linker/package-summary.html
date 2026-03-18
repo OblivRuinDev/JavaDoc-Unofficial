@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <li><a href="../../../module-summary.html">jdk.dynalink</a></li>
 <li><a href="package-summary.html" class="current-selection">jdk.dynalink.linker</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -56,16 +56,16 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents</div>
+<div class="toc-header">目录</div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#related-package-summary" tabindex="0">Related Packages</a></li>
-<li><a href="#class-summary" tabindex="0">Classes and Interfaces</a></li>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#related-package-summary" tabindex="0">相关包</a></li>
+<li><a href="#class-summary" tabindex="0">所有类和接口</a></li>
 </ol>
 <button class="hide-sidebar"><span>Hide sidebar&nbsp;</span><img src="../../../../resource-files/left.svg" alt="Hide sidebar"></button><button class="show-sidebar"><img src="../../../../resource-files/right.svg" alt="Show sidebar"><span>&nbsp;Show sidebar</span></button></nav>
 <main role="main">
 <div class="header">
-<h1 title="Package jdk.dynalink.linker" class="title">Package jdk.dynalink.linker</h1>
+<h1 title="包 jdk.dynalink.linker" class="title">包 jdk.dynalink.linker</h1>
 </div>
 <hr>
 <div class="horizontal-scroll">
@@ -75,31 +75,31 @@ loadScripts(document, 'script');</script>
 Contains interfaces and classes needed by language runtimes to implement
 their own language-specific object models and type conversions. The main
 entry point is the
-<a href="GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>GuardingDynamicLinker</code></a> interface. It needs to be
+<a href="GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingDynamicLinker</code></a> interface. It needs to be
 implemented in order to provide linking for the runtime's own object model.
 A language runtime can have more than one guarding dynamic linker
 implementation. When a runtime is configuring Dynalink for itself, it will
 normally set these guarding linkers as the prioritized linkers in its
-<a href="../DynamicLinkerFactory.html" title="class in jdk.dynalink"><code>DynamicLinkerFactory</code></a> (and maybe some of them as fallback
+<a href="../DynamicLinkerFactory.html" title="jdk.dynalink 包中的类"><code>DynamicLinkerFactory</code></a> (and maybe some of them as fallback
 linkers, for e.g. handling "method not found" and similar errors in a
 language-specific manner if no other linker managed to handle the operation.)
 </p><p>
 A language runtime that wishes to make at least some of its linkers available
 to other language runtimes for interoperability will need to use a
-<a href="GuardingDynamicLinkerExporter.html" title="class in jdk.dynalink.linker"><code>GuardingDynamicLinkerExporter</code></a>.
+<a href="GuardingDynamicLinkerExporter.html" title="jdk.dynalink.linker 包中的类"><code>GuardingDynamicLinkerExporter</code></a>.
 </p><p>
 Most language runtimes will be able to implement their own linking logic by
-implementing <a href="TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>TypeBasedGuardingDynamicLinker</code></a>
-instead of <a href="GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>GuardingDynamicLinker</code></a>; it allows for
+implementing <a href="TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>TypeBasedGuardingDynamicLinker</code></a>
+instead of <a href="GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingDynamicLinker</code></a>; it allows for
 faster type-based linking dispatch.
 </p><p>
 Language runtimes that allow type conversions other than those provided by
 Java will need to have their guarding dynamic linker (or linkers) also
-implement the <a href="GuardingTypeConverterFactory.html" title="interface in jdk.dynalink.linker"><code>GuardingTypeConverterFactory</code></a>
+implement the <a href="GuardingTypeConverterFactory.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingTypeConverterFactory</code></a>
 interface to provide the logic for these conversions.
 </p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </section>
@@ -108,10 +108,10 @@ interface to provide the logic for these conversions.
 <ul class="summary-list">
 <li>
 <div id="related-package-summary">
-<div class="caption"><span>Related Packages</span></div>
+<div class="caption"><span>相关包</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Package</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">包</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><a href="../package-summary.html">jdk.dynalink</a></div>
 <div class="col-last even-row-color">
 <div class="block">Contains interfaces and classes that are used to link an <code>invokedynamic</code> call site.</div>
@@ -137,63 +137,63 @@ basic implementations of some classes as well as various utilities.</div>
 </li>
 <li>
 <div id="class-summary">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">Interfaces</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">Classes</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="class-summary-tab0" role="tab" aria-selected="true" aria-controls="class-summary.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary', 2)" class="active-table-tab">所有类和接口</button><button id="class-summary-tab1" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab1', 2)" class="table-tab">接口</button><button id="class-summary-tab2" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab2', 2)" class="table-tab">类</button><button id="class-summary-tab3" role="tab" aria-selected="false" aria-controls="class-summary.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('class-summary', 'class-summary-tab3', 2)" class="table-tab">枚举类</button></div>
 <div id="class-summary.tabpanel" role="tabpanel" aria-labelledby="class-summary-tab0">
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConversionComparator.html" title="interface in jdk.dynalink.linker">ConversionComparator</a></div>
+<div class="table-header col-first">类</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="ConversionComparator.html" title="jdk.dynalink.linker 包中的接口">ConversionComparator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Optional interface to be implemented by <a href="GuardingTypeConverterFactory.html" title="interface in jdk.dynalink.linker"><code>GuardingTypeConverterFactory</code></a>
+<div class="block">Optional interface to be implemented by <a href="GuardingTypeConverterFactory.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingTypeConverterFactory</code></a>
 implementers.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ConversionComparator.Comparison.html" title="enum class in jdk.dynalink.linker">ConversionComparator.Comparison</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="ConversionComparator.Comparison.html" title="jdk.dynalink.linker 包中的枚举类">ConversionComparator.Comparison</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Enumeration of possible outcomes of comparing one conversion to another.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="GuardedInvocation.html" title="class in jdk.dynalink.linker">GuardedInvocation</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="GuardedInvocation.html" title="jdk.dynalink.linker 包中的类">GuardedInvocation</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Represents a conditionally valid method handle.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GuardedInvocationTransformer.html" title="interface in jdk.dynalink.linker">GuardedInvocationTransformer</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="GuardedInvocationTransformer.html" title="jdk.dynalink.linker 包中的接口">GuardedInvocationTransformer</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface for objects that are used to transform one guarded invocation into
 another one.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">GuardingDynamicLinker</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">GuardingDynamicLinker</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">The base interface for language-specific dynamic linkers.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="GuardingDynamicLinkerExporter.html" title="class in jdk.dynalink.linker">GuardingDynamicLinkerExporter</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="GuardingDynamicLinkerExporter.html" title="jdk.dynalink.linker 包中的类">GuardingDynamicLinkerExporter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">A class acting as a supplier of guarding dynamic linkers that can be
 automatically loaded by other language runtimes.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="GuardingTypeConverterFactory.html" title="interface in jdk.dynalink.linker">GuardingTypeConverterFactory</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="GuardingTypeConverterFactory.html" title="jdk.dynalink.linker 包中的接口">GuardingTypeConverterFactory</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Optional interface that can be implemented by <a href="GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>GuardingDynamicLinker</code></a>
+<div class="block">Optional interface that can be implemented by <a href="GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingDynamicLinker</code></a>
 implementations to provide language-specific type conversion capabilities.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LinkerServices.html" title="interface in jdk.dynalink.linker">LinkerServices</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="LinkerServices.html" title="jdk.dynalink.linker 包中的接口">LinkerServices</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Interface for services provided to <a href="GuardingDynamicLinker.html" title="interface in jdk.dynalink.linker"><code>GuardingDynamicLinker</code></a> instances by
-the <a href="../DynamicLinker.html" title="class in jdk.dynalink"><code>DynamicLinker</code></a> that owns them.</div>
+<div class="block">Interface for services provided to <a href="GuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口"><code>GuardingDynamicLinker</code></a> instances by
+the <a href="../DynamicLinker.html" title="jdk.dynalink 包中的类"><code>DynamicLinker</code></a> that owns them.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LinkRequest.html" title="interface in jdk.dynalink.linker">LinkRequest</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="LinkRequest.html" title="jdk.dynalink.linker 包中的接口">LinkRequest</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Represents a request to link a particular invocation at a particular call
 site.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodHandleTransformer.html" title="interface in jdk.dynalink.linker">MethodHandleTransformer</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="MethodHandleTransformer.html" title="jdk.dynalink.linker 包中的接口">MethodHandleTransformer</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A generic interface describing operations that transform method handles.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodTypeConversionStrategy.html" title="interface in jdk.dynalink.linker">MethodTypeConversionStrategy</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="MethodTypeConversionStrategy.html" title="jdk.dynalink.linker 包中的接口">MethodTypeConversionStrategy</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface for objects representing a strategy for converting a method handle
 to a new type.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeBasedGuardingDynamicLinker.html" title="interface in jdk.dynalink.linker">TypeBasedGuardingDynamicLinker</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="TypeBasedGuardingDynamicLinker.html" title="jdk.dynalink.linker 包中的接口">TypeBasedGuardingDynamicLinker</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">A guarding dynamic linker that can determine whether it can link the call site solely based on the type of the first
 argument at linking invocation time.</div>

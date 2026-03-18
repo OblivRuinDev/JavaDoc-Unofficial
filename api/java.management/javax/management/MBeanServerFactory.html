@@ -54,7 +54,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.management</a></li>
 <li><a href="MBeanServerFactory.html" class="current-selection">MBeanServerFactory</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -62,11 +62,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#releaseMBeanServer(javax.management.MBeanServer)" tabindex="0">releaseMBeanServer(MBeanServer)</a></li>
 <li><a href="#createMBeanServer()" tabindex="0">createMBeanServer()</a></li>
@@ -82,30 +82,30 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class MBeanServerFactory" class="title">Class MBeanServerFactory</h1>
+<h1 title="类 MBeanServerFactory" class="title">类 MBeanServerFactory</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">javax.management.MBeanServerFactory</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">MBeanServerFactory</span>
-<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block"><p>Provides MBean server references.  There are no instances of
 this class.</p>
 
 <p>Since JMX 1.2 this class makes it possible to replace the default
 MBeanServer implementation. This is done using the
-<a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a> class.
+<a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a> class.
 The class of the initial MBeanServerBuilder to be
 instantiated can be specified through the
 <b>javax.management.builder.initial</b> system property.
 The specified class must be a public subclass of
-<a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a>, and must have a public
+<a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a>, and must have a public
 empty constructor.
 <p>By default, if no value for that property is specified, an instance of
-<a href="MBeanServerBuilder.html" title="class in javax.management"><code>javax.management.MBeanServerBuilder</code></a>
+<a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>javax.management.MBeanServerBuilder</code></a>
 is created. Otherwise, the MBeanServerFactory attempts to load the
 specified class using
 <a href="../../../java.base/java/lang/Thread.html#getContextClassLoader()"><code>Thread.currentThread().getContextClassLoader()</code></a>, or if that is null,
@@ -113,8 +113,8 @@ specified class using
 it creates an initial instance of that Class using
 <a href="../../../java.base/java/lang/Class.html#newInstance()"><code>Class.newInstance()</code></a>. If any checked exception
 is raised during this process (e.g.
-<a href="../../../java.base/java/lang/ClassNotFoundException.html" title="class in java.lang"><code>ClassNotFoundException</code></a>,
-<a href="../../../java.base/java/lang/InstantiationException.html" title="class in java.lang"><code>InstantiationException</code></a>) the MBeanServerFactory
+<a href="../../../java.base/java/lang/ClassNotFoundException.html" title="java.lang 包中的类"><code>ClassNotFoundException</code></a>,
+<a href="../../../java.base/java/lang/InstantiationException.html" title="java.lang 包中的类"><code>InstantiationException</code></a>) the MBeanServerFactory
 will propagate this exception from within a RuntimeException.</p>
 
 <p>The <b>javax.management.builder.initial</b> system property is
@@ -134,7 +134,7 @@ valid value.</p>
 returned by the default MBeanServerBuilder implementation, for the purpose
 of e.g. adding an additional security layer.</p></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
 </dl>
 </div>
@@ -144,52 +144,52 @@ of e.g. adding an additional security layer.</p></div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createMBeanServer()" class="member-name-link">createMBeanServer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a new object implementing the MBeanServer interface
 with a standard default domain name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createMBeanServer(java.lang.String)" class="member-name-link">createMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;domain)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createMBeanServer(java.lang.String)" class="member-name-link">createMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Return a new object implementing the <a href="MBeanServer.html" title="interface in javax.management"><code>MBeanServer</code></a>
+<div class="block">Return a new object implementing the <a href="MBeanServer.html" title="javax.management 包中的接口"><code>MBeanServer</code></a>
 interface with the specified default domain name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../java.base/java/util/ArrayList.html" title="class in java.util">ArrayList</a><wbr>&lt;<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findMBeanServer(java.lang.String)" class="member-name-link">findMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentId)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../../java.base/java/util/ArrayList.html" title="java.util 包中的类">ArrayList</a><wbr>&lt;<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findMBeanServer(java.lang.String)" class="member-name-link">findMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a list of registered MBeanServer objects.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="loading/ClassLoaderRepository.html" title="interface in javax.management.loading">ClassLoaderRepository</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassLoaderRepository(javax.management.MBeanServer)" class="member-name-link">getClassLoaderRepository</a><wbr>(<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&nbsp;server)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="loading/ClassLoaderRepository.html" title="javax.management.loading 包中的接口">ClassLoaderRepository</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getClassLoaderRepository(javax.management.MBeanServer)" class="member-name-link">getClassLoaderRepository</a><wbr>(<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&nbsp;server)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return the ClassLoaderRepository used by the given MBeanServer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newMBeanServer()" class="member-name-link">newMBeanServer</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a new object implementing the MBeanServer interface
 with a standard default domain name, without keeping an
 internal reference to this new object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newMBeanServer(java.lang.String)" class="member-name-link">newMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;domain)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#newMBeanServer(java.lang.String)" class="member-name-link">newMBeanServer</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;domain)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Return a new object implementing the MBeanServer interface
 with the specified default domain name, without keeping an
 internal reference to this new object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#releaseMBeanServer(javax.management.MBeanServer)" class="member-name-link">releaseMBeanServer</a><wbr>(<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&nbsp;mbeanServer)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#releaseMBeanServer(javax.management.MBeanServer)" class="member-name-link">releaseMBeanServer</a><wbr>(<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&nbsp;mbeanServer)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Remove internal MBeanServerFactory references to a created
 MBeanServer.</div>
@@ -198,7 +198,7 @@ MBeanServer.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -209,21 +209,21 @@ MBeanServer.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="releaseMBeanServer(javax.management.MBeanServer)">
 <h3>releaseMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">releaseMBeanServer</span><wbr><span class="parameters">(<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&nbsp;mbeanServer)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">releaseMBeanServer</span><wbr><span class="parameters">(<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&nbsp;mbeanServer)</span></div>
 <div class="block">Remove internal MBeanServerFactory references to a created
 MBeanServer. This allows the garbage collector to remove the
 MBeanServer object.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mbeanServer</code> - the MBeanServer object to remove.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if
 <code>mbeanServer</code> was not generated by one of the
 <code>createMBeanServer</code> methods, or if
 <code>releaseMBeanServer</code> was already called on it.</dd>
@@ -235,7 +235,7 @@ MBeanServer object.</div>
 <section class="detail" id="createMBeanServer()">
 <h3>createMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></span>&nbsp;<span class="element-name">createMBeanServer</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></span>&nbsp;<span class="element-name">createMBeanServer</span>()</div>
 <div class="block"><p>Return a new object implementing the MBeanServer interface
 with a standard default domain name.  The default domain name
 is used as the domain part in the ObjectName of MBeans when the
@@ -250,17 +250,17 @@ this MBeanServer object.</p>
 
 <p>This method is equivalent to <code>createMBeanServer(null)</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the newly created MBeanServer.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="JMRuntimeException.html" title="class in javax.management">JMRuntimeException</a></code> - if the property
+<dt>抛出:</dt>
+<dd><code><a href="JMRuntimeException.html" title="javax.management 包中的类">JMRuntimeException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists but the
 class it names cannot be instantiated through a public
 no-argument constructor; or if the instantiated builder returns
 null from its <a href="MBeanServerBuilder.html#newMBeanServerDelegate()"><code>newMBeanServerDelegate</code></a> or <a href="MBeanServerBuilder.html#newMBeanServer(java.lang.String,javax.management.MBeanServer,javax.management.MBeanServerDelegate)"><code>newMBeanServer</code></a> methods.</dd>
-<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the property
+<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists and can be
-instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a>.</dd>
+instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -269,8 +269,8 @@ instantiated but is not assignment compatible with <a href="MBeanServerBuilder.h
 <section class="detail" id="createMBeanServer(java.lang.String)">
 <h3>createMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></span>&nbsp;<span class="element-name">createMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;domain)</span></div>
-<div class="block"><p>Return a new object implementing the <a href="MBeanServer.html" title="interface in javax.management"><code>MBeanServer</code></a>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></span>&nbsp;<span class="element-name">createMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;domain)</span></div>
+<div class="block"><p>Return a new object implementing the <a href="MBeanServer.html" title="javax.management 包中的接口"><code>MBeanServer</code></a>
 interface with the specified default domain name.  The given
 domain name is used as the domain part in the ObjectName of
 MBeans when the domain is specified by the user is null.</p>
@@ -279,20 +279,20 @@ MBeans when the domain is specified by the user is null.</p>
 allow <CODE>findMBeanServer</CODE> to return a reference to
 this MBeanServer object.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>domain</code> - the default domain name for the created
 MBeanServer.  This is the value that will be returned by <a href="MBeanServer.html#getDefaultDomain()"><code>MBeanServer.getDefaultDomain()</code></a>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the newly created MBeanServer.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="JMRuntimeException.html" title="class in javax.management">JMRuntimeException</a></code> - if the property
+<dt>抛出:</dt>
+<dd><code><a href="JMRuntimeException.html" title="javax.management 包中的类">JMRuntimeException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists but the
 class it names cannot be instantiated through a public
 no-argument constructor; or if the instantiated builder returns
 null from its <a href="MBeanServerBuilder.html#newMBeanServerDelegate()"><code>newMBeanServerDelegate</code></a> or <a href="MBeanServerBuilder.html#newMBeanServer(java.lang.String,javax.management.MBeanServer,javax.management.MBeanServerDelegate)"><code>newMBeanServer</code></a> methods.</dd>
-<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the property
+<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists and can be
-instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a>.</dd>
+instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -301,7 +301,7 @@ instantiated but is not assignment compatible with <a href="MBeanServerBuilder.h
 <section class="detail" id="newMBeanServer()">
 <h3>newMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></span>&nbsp;<span class="element-name">newMBeanServer</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></span>&nbsp;<span class="element-name">newMBeanServer</span>()</div>
 <div class="block"><p>Return a new object implementing the MBeanServer interface
 with a standard default domain name, without keeping an
 internal reference to this new object.  The default domain name
@@ -318,17 +318,17 @@ object when it is no longer referenced.</p>
 
 <p>This method is equivalent to <code>newMBeanServer(null)</code>.</p></div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the newly created MBeanServer.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="JMRuntimeException.html" title="class in javax.management">JMRuntimeException</a></code> - if the property
+<dt>抛出:</dt>
+<dd><code><a href="JMRuntimeException.html" title="javax.management 包中的类">JMRuntimeException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists but the
 class it names cannot be instantiated through a public
 no-argument constructor; or if the instantiated builder returns
 null from its <a href="MBeanServerBuilder.html#newMBeanServerDelegate()"><code>newMBeanServerDelegate</code></a> or <a href="MBeanServerBuilder.html#newMBeanServer(java.lang.String,javax.management.MBeanServer,javax.management.MBeanServerDelegate)"><code>newMBeanServer</code></a> methods.</dd>
-<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the property
+<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists and can be
-instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a>.</dd>
+instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -337,7 +337,7 @@ instantiated but is not assignment compatible with <a href="MBeanServerBuilder.h
 <section class="detail" id="newMBeanServer(java.lang.String)">
 <h3>newMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a></span>&nbsp;<span class="element-name">newMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;domain)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a></span>&nbsp;<span class="element-name">newMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;domain)</span></div>
 <div class="block"><p>Return a new object implementing the MBeanServer interface
 with the specified default domain name, without keeping an
 internal reference to this new object.  The given domain name
@@ -349,20 +349,20 @@ be able to return a reference to this MBeanServer object, but
 the garbage collector will be able to remove the MBeanServer
 object when it is no longer referenced.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>domain</code> - the default domain name for the created
 MBeanServer.  This is the value that will be returned by <a href="MBeanServer.html#getDefaultDomain()"><code>MBeanServer.getDefaultDomain()</code></a>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the newly created MBeanServer.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="JMRuntimeException.html" title="class in javax.management">JMRuntimeException</a></code> - if the property
+<dt>抛出:</dt>
+<dd><code><a href="JMRuntimeException.html" title="javax.management 包中的类">JMRuntimeException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists but the
 class it names cannot be instantiated through a public
 no-argument constructor; or if the instantiated builder returns
 null from its <a href="MBeanServerBuilder.html#newMBeanServerDelegate()"><code>newMBeanServerDelegate</code></a> or <a href="MBeanServerBuilder.html#newMBeanServer(java.lang.String,javax.management.MBeanServer,javax.management.MBeanServerDelegate)"><code>newMBeanServer</code></a> methods.</dd>
-<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="class in java.lang">ClassCastException</a></code> - if the property
+<dd><code><a href="../../../java.base/java/lang/ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></code> - if the property
 <code>javax.management.builder.initial</code> exists and can be
-instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="class in javax.management"><code>MBeanServerBuilder</code></a>.</dd>
+instantiated but is not assignment compatible with <a href="MBeanServerBuilder.html" title="javax.management 包中的类"><code>MBeanServerBuilder</code></a>.</dd>
 </dl>
 </div>
 </section>
@@ -371,20 +371,20 @@ instantiated but is not assignment compatible with <a href="MBeanServerBuilder.h
 <section class="detail" id="findMBeanServer(java.lang.String)">
 <h3>findMBeanServer</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/util/ArrayList.html" title="class in java.util">ArrayList</a>&lt;<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&gt;</span>&nbsp;<span class="element-name">findMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;agentId)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/util/ArrayList.html" title="java.util 包中的类">ArrayList</a>&lt;<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&gt;</span>&nbsp;<span class="element-name">findMBeanServer</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;agentId)</span></div>
 <div class="block"><p>Return a list of registered MBeanServer objects.  A
 registered MBeanServer object is one that was created by one of
 the <code>createMBeanServer</code> methods and not subsequently
 released with <code>releaseMBeanServer</code>.</p></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>agentId</code> - The agent identifier of the MBeanServer to
 retrieve.  If this parameter is null, all registered
 MBeanServers in this JVM are returned.  Otherwise, only
 MBeanServers whose id is equal to <code>agentId</code> are
 returned.  The id of an MBeanServer is the
 <code>MBeanServerId</code> attribute of its delegate MBean.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>A list of MBeanServer objects.</dd>
 </dl>
 </div>
@@ -394,20 +394,20 @@ returned.  The id of an MBeanServer is the
 <section class="detail" id="getClassLoaderRepository(javax.management.MBeanServer)">
 <h3>getClassLoaderRepository</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="loading/ClassLoaderRepository.html" title="interface in javax.management.loading">ClassLoaderRepository</a></span>&nbsp;<span class="element-name">getClassLoaderRepository</span><wbr><span class="parameters">(<a href="MBeanServer.html" title="interface in javax.management">MBeanServer</a>&nbsp;server)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="loading/ClassLoaderRepository.html" title="javax.management.loading 包中的接口">ClassLoaderRepository</a></span>&nbsp;<span class="element-name">getClassLoaderRepository</span><wbr><span class="parameters">(<a href="MBeanServer.html" title="javax.management 包中的接口">MBeanServer</a>&nbsp;server)</span></div>
 <div class="block">Return the ClassLoaderRepository used by the given MBeanServer.
 This method is equivalent to <a href="MBeanServer.html#getClassLoaderRepository()"><code>server.getClassLoaderRepository()</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>server</code> - The MBeanServer under examination. Since JMX 1.2,
 if <code>server</code> is <code>null</code>, the result is a
-<a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a>.  This behavior differs from what
+<a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a>.  This behavior differs from what
 was implemented in JMX 1.1 - where the possibility to use
 <code>null</code> was deprecated.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The Class Loader Repository used by the given MBeanServer.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>server</code> is null.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>server</code> is null.</dd>
 </dl>
 </div>
 </section>

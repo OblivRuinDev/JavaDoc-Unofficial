@@ -63,7 +63,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.lang</a></li>
 <li><a href="StableValue.html" class="current-selection">StableValue</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -71,9 +71,9 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a>
+<li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
 <li><a href="#stable-functions" tabindex="0">Stable Functions</a></li>
 <li><a href="#stable-collections" tabindex="0">Stable Collections</a></li>
@@ -82,8 +82,8 @@ loadScripts(document, 'script');</script>
 <li><a href="#performance" tabindex="0">Performance</a></li>
 </ol>
 </li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#trySet(T)" tabindex="0">trySet(T)</a></li>
 <li><a href="#orElse(T)" tabindex="0">orElse(T)</a></li>
@@ -107,11 +107,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface StableValue" class="title">Interface StableValue&lt;T&gt;</h1>
+<h1 title="接口 StableValue" class="title">接口 StableValue&lt;T&gt;</h1>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="type-param-T"><code>T</code> - type of the contents</span></dd>
 </dl>
 <hr>
@@ -168,7 +168,7 @@ loadScripts(document, 'script');</script>
  In order to guarantee that, even under races, only one instance of <code>Logger</code> is
  ever created, the <a href="#orElseSet(java.util.function.Supplier)">orElseSet()</a> method can be used
  instead, where the contents are lazily computed, and atomically set, via a
- <a href="../util/function/Supplier.html" title="interface in java.util.function">supplier</a>. In the example below, the supplier is provided in the
+ <a href="../util/function/Supplier.html" title="java.util.function 包中的接口">supplier</a>. In the example below, the supplier is provided in the
  form of a lambda expression:
 
  
@@ -208,7 +208,7 @@ loadScripts(document, 'script');</script>
  <em>stable supplier</em> is a supplier that computes a value and then caches it into
  a backing stable value storage for subsequent use. A stable supplier is created via the
  <a href="#supplier(java.util.function.Supplier)">StableValue.supplier()</a> factory, by
- providing an underlying <a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a> which is invoked when the stable supplier
+ providing an underlying <a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a> which is invoked when the stable supplier
  is first accessed:
 
  
@@ -232,12 +232,12 @@ loadScripts(document, 'script');</script>
  <p>
  A <em>stable int function</em> is a function that takes an <code>int</code> parameter and
  uses it to compute a result that is then cached by the backing stable value storage
- for that parameter value. A stable <a href="../util/function/IntFunction.html" title="interface in java.util.function"><code>IntFunction</code></a> is created via the
+ for that parameter value. A stable <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口"><code>IntFunction</code></a> is created via the
  <a href="#intFunction(int,java.util.function.IntFunction)">StableValue.intFunction()</a>
  factory. Upon creation, the input range (i.e. <code>[0, size)</code>) is specified together
- with an underlying <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a> which is invoked at most once per input
+ with an underlying <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a> which is invoked at most once per input
  value. In effect, the stable int function will act like a cache for the underlying
- <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>:
+ <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>:
 
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -271,9 +271,9 @@ loadScripts(document, 'script');</script>
  uses it to compute a result (of type <code>R</code>) that is then cached by the backing
  stable value storage for that parameter value. A stable function is created via the
  <a href="#function(java.util.Set,java.util.function.Function)">StableValue.function()</a> factory.
- Upon creation, the input <a href="../util/Set.html" title="interface in java.util">Set</a> is specified together with an underlying
- <a href="../util/function/Function.html" title="interface in java.util.function">Function</a> which is invoked at most once per input value. In effect, the
- stable function will act like a cache for the underlying <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>:
+ Upon creation, the input <a href="../util/Set.html" title="java.util 包中的接口">Set</a> is specified together with an underlying
+ <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a> which is invoked at most once per input value. In effect, the
+ stable function will act like a cache for the underlying <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>:
 
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -308,7 +308,7 @@ loadScripts(document, 'script');</script>
  Stable values can also be used as backing storage for
  <a href="../util/Collection.html#unmodifiable">unmodifiable collections</a>. A <em>stable list</em>
  is an unmodifiable list, backed by an array of stable values. The stable list elements
- are computed when they are first accessed, using a provided <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>:
+ are computed when they are first accessed, using a provided <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>:
 
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -336,7 +336,7 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
  <p>
  Similarly, a <em>stable map</em> is an unmodifiable map whose keys are known at
  construction. The stable map values are computed when they are first accessed,
- using a provided <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>:
+ using a provided <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>:
 
  
 <div class="snippet-container"><button class="copy snippet-copy" aria-label="Copy snippet" onclick="copySnippet(this)"><span data-copied="Copied!">Copy</span><img src="../../../resource-files/copy.svg" alt="Copy snippet"></button>
@@ -450,7 +450,7 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
 
 
  If there are circular dependencies in a dependency graph, a stable value will
- eventually throw an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> upon referencing elements in
+ eventually throw an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> upon referencing elements in
  a circularity.
 
  <h2 id="thread-safety">Thread Safety</h2>
@@ -478,7 +478,7 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
  </ul>
  <p>
  The method <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a> guarantees that the provided
- <a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a> is invoked successfully at most once, even under race.
+ <a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a> is invoked successfully at most once, even under race.
  Invocations of <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a> form a total order of zero or
  more exceptional invocations followed by zero (if the contents were already set) or one
  successful invocation. Since stable functions and stable collections are built on top
@@ -494,7 +494,7 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
  and collections are built on top of StableValue. As such, they might also be eligible
  for the same JVM optimizations as for StableValue.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>Implementing classes of <code>StableValue</code> are free to synchronize on
            <code>this</code> and consequently, it should be avoided to
            (directly or indirectly) synchronize on a <code>StableValue</code>. Hence,
@@ -503,9 +503,9 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
            Except for a <code>StableValue</code>'s contents itself,
            an <a href="#orElse(T)">orElse(other)</a> parameter, and
            an <a href="#equals(java.lang.Object)">equals(obj)</a> parameter; all
-           method parameters must be <em>non-null</em> or a <a href="NullPointerException.html" title="class in java.lang"><code>NullPointerException</code></a>
+           method parameters must be <em>non-null</em> or a <a href="NullPointerException.html" title="java.lang 包中的类"><code>NullPointerException</code></a>
            will be thrown.</dd>
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>A <code>StableValue</code> is mainly intended to be a non-public field in
            a class and is usually neither exposed directly via accessors nor passed as
            a method parameter.
@@ -530,8 +530,8 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
            stable value can hold other stable values of arbitrary depth and still
            provide transitive constantness.
            <p>
-           Stable values, functions, and collections are not <a href="../io/Serializable.html" title="interface in java.io"><code>Serializable</code></a>.</dd>
-<dt>Since:</dt>
+           Stable values, functions, and collections are not <a href="../io/Serializable.html" title="java.io 包中的接口"><code>Serializable</code></a>.</dd>
+<dt>自:</dt>
 <dd>25</dd>
 </dl>
 </div>
@@ -541,24 +541,24 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="Object.html" title="class in java.lang">Object</a>&nbsp;obj)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if <code>this == obj</code>, <code>false</code> otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="../util/function/Function.html" title="interface in java.util.function">Function</a><wbr>&lt;T,<wbr>R&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#function(java.util.Set,java.util.function.Function)" class="member-name-link">function</a><wbr>(<a href="../util/Set.html" title="interface in java.util">Set</a>&lt;? extends T&gt;&nbsp;inputs,
- <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>&lt;? super T, ? extends R&gt;&nbsp;underlying)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T,<wbr>R&gt;&nbsp;<a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a><wbr>&lt;T,<wbr>R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#function(java.util.Set,java.util.function.Function)" class="member-name-link">function</a><wbr>(<a href="../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends T&gt;&nbsp;inputs,
+ <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super T, ? extends R&gt;&nbsp;underlying)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
-<div class="block">Returns a new stable <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>.</div>
+<div class="block">Returns a new stable <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
@@ -566,68 +566,68 @@ int result = PowerOf2Util.powerOfTwo(4);   // May eventually constant fold to 16
 <div class="block">Returns the <a href="System.html#identityHashCode(java.lang.Object)">identity hash code</a> of
          <code>this</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;R&gt;&nbsp;<a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a><wbr>&lt;R&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;R&gt;&nbsp;<a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a><wbr>&lt;R&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#intFunction(int,java.util.function.IntFunction)" class="member-name-link">intFunction</a><wbr>(int&nbsp;size,
- <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;? extends R&gt;&nbsp;underlying)</code></div>
+ <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;? extends R&gt;&nbsp;underlying)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
-<div class="block">Returns a new stable <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>.</div>
+<div class="block">Returns a new stable <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isSet()" class="member-name-link">isSet</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns <code>true</code> if the contents is set, <code>false</code> otherwise.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E&gt;&nbsp;<a href="../util/List.html" title="interface in java.util">List</a><wbr>&lt;E&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;E&gt;&nbsp;<a href="../util/List.html" title="java.util 包中的接口">List</a><wbr>&lt;E&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#list(int,java.util.function.IntFunction)" class="member-name-link">list</a><wbr>(int&nbsp;size,
- <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;? extends E&gt;&nbsp;mapper)</code></div>
+ <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;? extends E&gt;&nbsp;mapper)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new stable list with the provided <code>size</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;K,<wbr>V&gt;&nbsp;<a href="../util/Map.html" title="interface in java.util">Map</a><wbr>&lt;K,<wbr>V&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#map(java.util.Set,java.util.function.Function)" class="member-name-link">map</a><wbr>(<a href="../util/Set.html" title="interface in java.util">Set</a>&lt;K&gt;&nbsp;keys,
- <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>&lt;? super K, ? extends V&gt;&nbsp;mapper)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;K,<wbr>V&gt;&nbsp;<a href="../util/Map.html" title="java.util 包中的接口">Map</a><wbr>&lt;K,<wbr>V&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#map(java.util.Set,java.util.function.Function)" class="member-name-link">map</a><wbr>(<a href="../util/Set.html" title="java.util 包中的接口">Set</a>&lt;K&gt;&nbsp;keys,
+ <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super K, ? extends V&gt;&nbsp;mapper)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new stable map with the provided <code>keys</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StableValue.html" title="interface in java.lang">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">PREVIEW</a></sup><wbr>&lt;T&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StableValue.html" title="java.lang 包中的接口">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">预览</a></sup><wbr>&lt;T&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#of()" class="member-name-link">of</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new unset stable value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StableValue.html" title="interface in java.lang">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">PREVIEW</a></sup><wbr>&lt;T&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="StableValue.html" title="java.lang 包中的接口">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">预览</a></sup><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#of(T)" class="member-name-link">of</a><wbr>(T&nbsp;contents)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new pre-set stable value with the provided <code>contents</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="type parameter in StableValue">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElse(T)" class="member-name-link">orElse</a><wbr>(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;other)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="StableValue 中的类型参数">T</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElse(T)" class="member-name-link">orElse</a><wbr>(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;other)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the contents if set, otherwise, returns the provided <code>other</code> value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="type parameter in StableValue">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElseSet(java.util.function.Supplier)" class="member-name-link">orElseSet</a><wbr>(<a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends <a href="#type-param-T" title="type parameter in StableValue">T</a>&gt;&nbsp;supplier)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="StableValue 中的类型参数">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElseSet(java.util.function.Supplier)" class="member-name-link">orElseSet</a><wbr>(<a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends <a href="#type-param-T" title="StableValue 中的类型参数">T</a>&gt;&nbsp;supplier)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the contents; if unset, first attempts to compute and set the
          contents using the provided <code>supplier</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="type parameter in StableValue">T</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#type-param-T" title="StableValue 中的类型参数">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#orElseThrow()" class="member-name-link">orElseThrow</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the contents if set, otherwise, throws <code>NoSuchElementException</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setOrThrow(T)" class="member-name-link">setOrThrow</a><wbr>(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;contents)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setOrThrow(T)" class="member-name-link">setOrThrow</a><wbr>(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;contents)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the contents of this StableValue to the provided <code>contents</code>, or, if
 already set, throws <code>IllegalStateException</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#supplier(java.util.function.Supplier)" class="member-name-link">supplier</a><wbr>(<a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends T&gt;&nbsp;underlying)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static &lt;T&gt;&nbsp;<a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#supplier(java.util.function.Supplier)" class="member-name-link">supplier</a><wbr>(<a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends T&gt;&nbsp;underlying)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
 <div class="block">Returns a new stable supplier.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#trySet(T)" class="member-name-link">trySet</a><wbr>(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;contents)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#trySet(T)" class="member-name-link">trySet</a><wbr>(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;contents)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Tries to set the contents of this StableValue to the provided <code>contents</code>.</div>
 </div>
@@ -643,26 +643,26 @@ already set, throws <code>IllegalStateException</code>.</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="trySet(T)">
 <h3 id="trySet(java.lang.Object)">trySet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">trySet</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;contents)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">trySet</span><wbr><span class="parameters">(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;contents)</span></div>
 <div class="block">Tries to set the contents of this StableValue to the provided <code>contents</code>.
 The contents of this StableValue can only be set once, implying this method only
 returns <code>true</code> once.
 <p>
 When this method returns, the contents of this StableValue is always set.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>contents</code> - to set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the contents of this StableValue was set to the
         provided <code>contents</code>, <code>false</code> otherwise</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if a supplier invoked by <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if a supplier invoked by <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a>
         recursively attempts to set this stable value by calling this method
         directly or indirectly.</dd>
 </dl>
@@ -673,12 +673,12 @@ When this method returns, the contents of this StableValue is always set.</div>
 <section class="detail" id="orElse(T)">
 <h3 id="orElse(java.lang.Object)">orElse</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in StableValue">T</a></span>&nbsp;<span class="element-name">orElse</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;other)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="StableValue 中的类型参数">T</a></span>&nbsp;<span class="element-name">orElse</span><wbr><span class="parameters">(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;other)</span></div>
 <div class="block">Returns the contents if set, otherwise, returns the provided <code>other</code> value.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>other</code> - to return if the contents is not set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the contents if set, otherwise, returns the provided <code>other</code> value</dd>
 </dl>
 </div>
@@ -688,13 +688,13 @@ When this method returns, the contents of this StableValue is always set.</div>
 <section class="detail" id="orElseThrow()">
 <h3>orElseThrow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in StableValue">T</a></span>&nbsp;<span class="element-name">orElseThrow</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="StableValue 中的类型参数">T</a></span>&nbsp;<span class="element-name">orElseThrow</span>()</div>
 <div class="block">Returns the contents if set, otherwise, throws <code>NoSuchElementException</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the contents if set, otherwise, throws <code>NoSuchElementException</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="../util/NoSuchElementException.html" title="class in java.util">NoSuchElementException</a></code> - if no contents is set</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../util/NoSuchElementException.html" title="java.util 包中的类">NoSuchElementException</a></code> - if no contents is set</dd>
 </dl>
 </div>
 </section>
@@ -706,7 +706,7 @@ When this method returns, the contents of this StableValue is always set.</div>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">isSet</span>()</div>
 <div class="block">Returns <code>true</code> if the contents is set, <code>false</code> otherwise.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the contents is set, <code>false</code> otherwise</dd>
 </dl>
 </div>
@@ -716,7 +716,7 @@ When this method returns, the contents of this StableValue is always set.</div>
 <section class="detail" id="orElseSet(java.util.function.Supplier)">
 <h3>orElseSet</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="type parameter in StableValue">T</a></span>&nbsp;<span class="element-name">orElseSet</span><wbr><span class="parameters">(<a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends <a href="#type-param-T" title="type parameter in StableValue">T</a>&gt;&nbsp;supplier)</span></div>
+<div class="member-signature"><span class="return-type"><a href="#type-param-T" title="StableValue 中的类型参数">T</a></span>&nbsp;<span class="element-name">orElseSet</span><wbr><span class="parameters">(<a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends <a href="#type-param-T" title="StableValue 中的类型参数">T</a>&gt;&nbsp;supplier)</span></div>
 <div class="block">Returns the contents; if unset, first attempts to compute and set the
          contents using the provided <code>supplier</code>.
 <p>
@@ -740,13 +740,13 @@ When this method returns successfully, the contents is always set.
 The provided <code>supplier</code> will only be invoked once even if invoked from
 several threads unless the <code>supplier</code> throws an exception.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>supplier</code> - to be used for computing the contents, if not previously set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the contents; if unset, first attempts to compute and set the
          contents using the provided <code>supplier</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the provided <code>supplier</code> recursively
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the provided <code>supplier</code> recursively
                               attempts to set this stable value.</dd>
 </dl>
 </div>
@@ -756,17 +756,17 @@ several threads unless the <code>supplier</code> throws an exception.</div>
 <section class="detail" id="setOrThrow(T)">
 <h3 id="setOrThrow(java.lang.Object)">setOrThrow</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setOrThrow</span><wbr><span class="parameters">(<a href="#type-param-T" title="type parameter in StableValue">T</a>&nbsp;contents)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">setOrThrow</span><wbr><span class="parameters">(<a href="#type-param-T" title="StableValue 中的类型参数">T</a>&nbsp;contents)</span></div>
 <div class="block">Sets the contents of this StableValue to the provided <code>contents</code>, or, if
 already set, throws <code>IllegalStateException</code>.
 <p>
 When this method returns (or throws an exception), the contents is always set.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>contents</code> - to set</dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the contents was already set</dd>
-<dd><code><a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if a supplier invoked by <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the contents was already set</dd>
+<dd><code><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if a supplier invoked by <a href="#orElseSet(java.util.function.Supplier)"><code>orElseSet(Supplier)</code></a>
         recursively attempts to set this stable value by calling this method
         directly or indirectly.</dd>
 </dl>
@@ -777,20 +777,20 @@ When this method returns (or throws an exception), the contents is always set.</
 <section class="detail" id="equals(java.lang.Object)">
 <h3>equals</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="Object.html" title="class in java.lang">Object</a>&nbsp;obj)</span></div>
+<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="Object.html" title="java.lang 包中的类">Object</a>&nbsp;obj)</span></div>
 <div class="block">Returns <code>true</code> if <code>this == obj</code>, <code>false</code> otherwise.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Parameters:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Object.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>参数:</dt>
 <dd><code>obj</code> - to check for equality</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if <code>this == obj</code>, <code>false</code> otherwise</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="Object.html#hashCode()"><code>Object.hashCode()</code></a></li>
-<li><a href="../util/HashMap.html" title="class in java.util"><code>HashMap</code></a></li>
+<li><a href="../util/HashMap.html" title="java.util 包中的类"><code>HashMap</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -805,12 +805,12 @@ When this method returns (or throws an exception), the contents is always set.</
 <div class="block">Returns the <a href="System.html#identityHashCode(java.lang.Object)">identity hash code</a> of
          <code>this</code> object.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="Object.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>the <a href="System.html#identityHashCode(java.lang.Object)">identity hash code</a> of
          <code>this</code> object</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="Object.html#equals(java.lang.Object)"><code>Object.equals(java.lang.Object)</code></a></li>
@@ -825,14 +825,14 @@ When this method returns (or throws an exception), the contents is always set.</
 <section class="detail" id="of()">
 <h3>of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StableValue.html" title="interface in java.lang">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">PREVIEW</a></sup>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span>()</div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StableValue.html" title="java.lang 包中的接口">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">预览</a></sup>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span>()</div>
 <div class="block">Returns a new unset stable value.
 <p>
 An unset stable value has no contents.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of()-type-param-T"><code>T</code> - type of the contents</span></dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new unset stable value</dd>
 </dl>
 </div>
@@ -842,14 +842,14 @@ An unset stable value has no contents.</div>
 <section class="detail" id="of(T)">
 <h3 id="of(java.lang.Object)">of</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StableValue.html" title="interface in java.lang">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">PREVIEW</a></sup>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T&nbsp;contents)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="StableValue.html" title="java.lang 包中的接口">StableValue</a><sup class="preview-mark"><a href="#preview-java.lang.StableValue">预览</a></sup>&lt;T&gt;</span>&nbsp;<span class="element-name">of</span><wbr><span class="parameters">(T&nbsp;contents)</span></div>
 <div class="block">Returns a new pre-set stable value with the provided <code>contents</code>.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="of(T)-type-param-T"><code>T</code> - type of the contents</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>contents</code> - to set</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new pre-set stable value with the provided <code>contents</code></dd>
 </dl>
 </div>
@@ -859,10 +859,10 @@ An unset stable value has no contents.</div>
 <section class="detail" id="supplier(java.util.function.Supplier)">
 <h3>supplier</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name">supplier</span><wbr><span class="parameters">(<a href="../util/function/Supplier.html" title="interface in java.util.function">Supplier</a>&lt;? extends T&gt;&nbsp;underlying)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;T&gt;</span>&nbsp;<span class="element-name">supplier</span><wbr><span class="parameters">(<a href="../util/function/Supplier.html" title="java.util.function 包中的接口">Supplier</a>&lt;? extends T&gt;&nbsp;underlying)</span></div>
 <div class="block">Returns a new stable supplier.
 <p>
-The returned <a href="../util/function/Supplier.html" title="interface in java.util.function">supplier</a> is a caching supplier that records
+The returned <a href="../util/function/Supplier.html" title="java.util.function 包中的接口">supplier</a> is a caching supplier that records
 the value of the provided <code>underlying</code> supplier upon being first accessed via
 the returned supplier's <a href="../util/function/Supplier.html#get()">get()</a> method.
 <p>
@@ -877,13 +877,13 @@ If the provided <code>underlying</code> supplier throws an exception, it is reth
 to the initial caller and no contents is recorded.
 <p>
 If the provided <code>underlying</code> supplier recursively calls the returned
-supplier, an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> will be thrown.</div>
+supplier, an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> will be thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="supplier(java.util.function.Supplier)-type-param-T"><code>T</code> - the type of results supplied by the returned supplier</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>underlying</code> - supplier used to compute a cached value</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new stable supplier</dd>
 </dl>
 </div>
@@ -893,16 +893,16 @@ supplier, an <a href="IllegalStateException.html" title="class in java.lang">Ill
 <section class="detail" id="intFunction(int,java.util.function.IntFunction)">
 <h3>intFunction</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;R&gt;</span>&nbsp;<span class="element-name">intFunction</span><wbr><span class="parameters">(int&nbsp;size,
- <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;? extends R&gt;&nbsp;underlying)</span></div>
-<div class="block">Returns a new stable <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>.
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;R&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;R&gt;</span>&nbsp;<span class="element-name">intFunction</span><wbr><span class="parameters">(int&nbsp;size,
+ <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;? extends R&gt;&nbsp;underlying)</span></div>
+<div class="block">Returns a new stable <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>.
 <p>
 The returned function is a caching function that, for each allowed <code>int</code>
 input, records the values of the provided <code>underlying</code>
 function upon being first accessed via the returned function's
 <a href="../util/function/IntFunction.html#apply(int)">apply()</a> method. If the returned function is
 invoked with an input that is not in the range <code>[0, size)</code>, an
-<a href="IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a> will be thrown.
+<a href="IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a> will be thrown.
 <p>
 The provided <code>underlying</code> function is guaranteed to be successfully invoked
 at most once per allowed input, even in a multi-threaded environment. Competing
@@ -915,19 +915,19 @@ If invoking the provided <code>underlying</code> function throws an exception, i
 rethrown to the initial caller and no contents is recorded.
 <p>
 If the provided <code>underlying</code> function recursively calls the returned
-function for the same input, an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> will
+function for the same input, an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> will
 be thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="intFunction(int,java.util.function.IntFunction)-type-param-R"><code>R</code> - the type of results delivered by the returned IntFunction</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>size</code> - the upper bound of the range <code>[0, size)</code> indicating
                   the allowed inputs</dd>
 <dd><code>underlying</code> - <code>IntFunction</code> used to compute cached values</dd>
-<dt>Returns:</dt>
-<dd>a new stable <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the provided <code>size</code> is negative.</dd>
+<dt>返回:</dt>
+<dd>a new stable <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a></dd>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the provided <code>size</code> is negative.</dd>
 </dl>
 </div>
 </section>
@@ -936,15 +936,15 @@ be thrown.</div>
 <section class="detail" id="function(java.util.Set,java.util.function.Function)">
 <h3>function</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/Function.html" title="interface in java.util.function">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">function</span><wbr><span class="parameters">(<a href="../util/Set.html" title="interface in java.util">Set</a>&lt;? extends T&gt;&nbsp;inputs,
- <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>&lt;? super T, ? extends R&gt;&nbsp;underlying)</span></div>
-<div class="block">Returns a new stable <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>.
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>R&gt;</span>&nbsp;<span class="return-type"><a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;T,<wbr>R&gt;</span>&nbsp;<span class="element-name">function</span><wbr><span class="parameters">(<a href="../util/Set.html" title="java.util 包中的接口">Set</a>&lt;? extends T&gt;&nbsp;inputs,
+ <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super T, ? extends R&gt;&nbsp;underlying)</span></div>
+<div class="block">Returns a new stable <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>.
 <p>
 The returned function is a caching function that, for each allowed
 input in the given set of <code>inputs</code>, records the values of the provided
 <code>underlying</code> function upon being first accessed via the returned function's
 <a href="../util/function/Function.html#apply(T)">apply()</a> method. If the returned function is
-invoked with an input that is not in <code>inputs</code>, an <a href="IllegalArgumentException.html" title="class in java.lang"><code>IllegalArgumentException</code></a>
+invoked with an input that is not in <code>inputs</code>, an <a href="IllegalArgumentException.html" title="java.lang 包中的类"><code>IllegalArgumentException</code></a>
 will be thrown.
 <p>
 The provided <code>underlying</code> function is guaranteed to be successfully invoked
@@ -957,19 +957,19 @@ If invoking the provided <code>underlying</code> function throws an exception, i
 rethrown to the initial caller and no contents is recorded.
 <p>
 If the provided <code>underlying</code> function recursively calls the returned
-function for the same input, an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> will
+function for the same input, an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> will
 be thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="function(java.util.Set,java.util.function.Function)-type-param-T"><code>T</code> - the type of the input to the returned Function</span></dd>
 <dd><span id="function(java.util.Set,java.util.function.Function)-type-param-R"><code>R</code> - the type of results delivered by the returned Function</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>inputs</code> - the set of (non-null) allowed input values</dd>
 <dd><code>underlying</code> - <code>Function</code> used to compute cached values</dd>
-<dt>Returns:</dt>
-<dd>a new stable <a href="../util/function/Function.html" title="interface in java.util.function">Function</a></dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the provided set of <code>inputs</code> contains a
+<dt>返回:</dt>
+<dd>a new stable <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a></dd>
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the provided set of <code>inputs</code> contains a
                              <code>null</code> element.</dd>
 </dl>
 </div>
@@ -979,8 +979,8 @@ be thrown.</div>
 <section class="detail" id="list(int,java.util.function.IntFunction)">
 <h3>list</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;E&gt;</span>&nbsp;<span class="return-type"><a href="../util/List.html" title="interface in java.util">List</a>&lt;E&gt;</span>&nbsp;<span class="element-name">list</span><wbr><span class="parameters">(int&nbsp;size,
- <a href="../util/function/IntFunction.html" title="interface in java.util.function">IntFunction</a>&lt;? extends E&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;E&gt;</span>&nbsp;<span class="return-type"><a href="../util/List.html" title="java.util 包中的接口">List</a>&lt;E&gt;</span>&nbsp;<span class="element-name">list</span><wbr><span class="parameters">(int&nbsp;size,
+ <a href="../util/function/IntFunction.html" title="java.util.function 包中的接口">IntFunction</a>&lt;? extends E&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a new stable list with the provided <code>size</code>.
 <p>
 The returned list is an <a href="../util/Collection.html#unmodifiable">unmodifiable</a> list
@@ -1000,25 +1000,25 @@ Any <a href="../util/List.html#subList(int,int)"><code>subList</code></a> or <a 
 of the returned list are also stable.
 <p>
 The returned list and its <a href="../util/List.html#subList(int,int)"><code>subList</code></a> or
-<a href="../util/List.html#reversed()"><code>List.reversed()</code></a> views implement the <a href="../util/RandomAccess.html" title="interface in java.util"><code>RandomAccess</code></a> interface.
+<a href="../util/List.html#reversed()"><code>List.reversed()</code></a> views implement the <a href="../util/RandomAccess.html" title="java.util 包中的接口"><code>RandomAccess</code></a> interface.
 <p>
 The returned list is unmodifiable and does not implement the
 <a href="../util/Collection.html#optional-operation">optional operations</a> in the
-<a href="../util/List.html" title="interface in java.util">List</a> interface.
+<a href="../util/List.html" title="java.util 包中的接口">List</a> interface.
 <p>
 If the provided <code>mapper</code> recursively calls the returned list for the
-same index, an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> will be thrown.</div>
+same index, an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> will be thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="list(int,java.util.function.IntFunction)-type-param-E"><code>E</code> - the type of elements in the returned list</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>size</code> - the size of the returned list</dd>
 <dd><code>mapper</code> - to invoke whenever an element is first accessed
               (may return <code>null</code>)</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new stable list with the provided <code>size</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the provided <code>size</code> is negative.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the provided <code>size</code> is negative.</dd>
 </dl>
 </div>
 </section>
@@ -1027,8 +1027,8 @@ same index, an <a href="IllegalStateException.html" title="class in java.lang">I
 <section class="detail" id="map(java.util.Set,java.util.function.Function)">
 <h3>map</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;K,<wbr>V&gt;</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="interface in java.util">Map</a>&lt;K,<wbr>V&gt;</span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="../util/Set.html" title="interface in java.util">Set</a>&lt;K&gt;&nbsp;keys,
- <a href="../util/function/Function.html" title="interface in java.util.function">Function</a>&lt;? super K, ? extends V&gt;&nbsp;mapper)</span></div>
+<div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="type-parameters">&lt;K,<wbr>V&gt;</span>&nbsp;<span class="return-type"><a href="../util/Map.html" title="java.util 包中的接口">Map</a>&lt;K,<wbr>V&gt;</span>&nbsp;<span class="element-name">map</span><wbr><span class="parameters">(<a href="../util/Set.html" title="java.util 包中的接口">Set</a>&lt;K&gt;&nbsp;keys,
+ <a href="../util/function/Function.html" title="java.util.function 包中的接口">Function</a>&lt;? super K, ? extends V&gt;&nbsp;mapper)</span></div>
 <div class="block">Returns a new stable map with the provided <code>keys</code>.
 <p>
 The returned map is an <a href="../util/Collection.html#unmodifiable">unmodifiable</a> map whose
@@ -1050,22 +1050,22 @@ also stable.
 <p>
 The returned map is unmodifiable and does not implement the
 <a href="../util/Collection.html#optional-operations">optional operations</a> in the
-<a href="../util/Map.html" title="interface in java.util">Map</a> interface.
+<a href="../util/Map.html" title="java.util 包中的接口">Map</a> interface.
 <p>
 If the provided <code>mapper</code> recursively calls the returned map for
-the same key, an <a href="IllegalStateException.html" title="class in java.lang">IllegalStateException</a> will be thrown.</div>
+the same key, an <a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a> will be thrown.</div>
 <dl class="notes">
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="map(java.util.Set,java.util.function.Function)-type-param-K"><code>K</code> - the type of keys maintained by the returned map</span></dd>
 <dd><span id="map(java.util.Set,java.util.function.Function)-type-param-V"><code>V</code> - the type of mapped values in the returned map</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>keys</code> - the (non-null) keys in the returned map</dd>
 <dd><code>mapper</code> - to invoke whenever an associated value is first accessed
               (may return <code>null</code>)</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a new stable map with the provided <code>keys</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if the provided set of <code>inputs</code> contains a
+<dt>抛出:</dt>
+<dd><code><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if the provided set of <code>inputs</code> contains a
                              <code>null</code> element.</dd>
 </dl>
 </div>

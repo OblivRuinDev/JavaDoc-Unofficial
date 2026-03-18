@@ -51,7 +51,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.xml.xpath</a></li>
 <li><a href="XPathExpression.html" class="current-selection">XPathExpression</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -59,11 +59,11 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#evaluate(java.lang.Object,javax.xml.namespace.QName)" tabindex="0">evaluate(Object, QName)</a></li>
 <li><a href="#evaluate(java.lang.Object)" tabindex="0">evaluate(Object)</a></li>
@@ -80,7 +80,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Interface XPathExpression" class="title">Interface XPathExpression</h1>
+<h1 title="接口 XPathExpression" class="title">接口 XPathExpression</h1>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -113,8 +113,8 @@ The XPath evaluation is affected by the factors described in the following table
    <tr>
      <th scope="row">variables</th>
      <td>
-       If the expression contains a variable reference, its value will be found through the <a href="XPathVariableResolver.html" title="interface in javax.xml.xpath"><code>XPathVariableResolver</code></a>.
-       An <a href="XPathExpressionException.html" title="class in javax.xml.xpath"><code>XPathExpressionException</code></a> is raised if the variable resolver is undefined or
+       If the expression contains a variable reference, its value will be found through the <a href="XPathVariableResolver.html" title="javax.xml.xpath 包中的接口"><code>XPathVariableResolver</code></a>.
+       An <a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类"><code>XPathExpressionException</code></a> is raised if the variable resolver is undefined or
        the resolver returns <code>null</code> for the variable.
        The value of a variable must be immutable through the course of any single evaluation.
      </td>
@@ -122,8 +122,8 @@ The XPath evaluation is affected by the factors described in the following table
    <tr>
      <th scope="row">functions</th>
      <td>
-       If the expression contains a function reference, the function will be found through the <a href="XPathFunctionResolver.html" title="interface in javax.xml.xpath"><code>XPathFunctionResolver</code></a>.
-       An <a href="XPathExpressionException.html" title="class in javax.xml.xpath"><code>XPathExpressionException</code></a> is raised if the function resolver is undefined or
+       If the expression contains a function reference, the function will be found through the <a href="XPathFunctionResolver.html" title="javax.xml.xpath 包中的接口"><code>XPathFunctionResolver</code></a>.
+       An <a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类"><code>XPathExpressionException</code></a> is raised if the function resolver is undefined or
        the function resolver returns <code>null</code> for the function.
      </td>
    </tr>
@@ -137,7 +137,7 @@ The XPath evaluation is affected by the factors described in the following table
      <th scope="row">result</th>
      <td>
        This result of evaluating an expression is converted to an instance of the desired return type.
-       Valid return types are defined in <a href="XPathConstants.html" title="class in javax.xml.xpath"><code>XPathConstants</code></a>.
+       Valid return types are defined in <a href="XPathConstants.html" title="javax.xml.xpath 包中的类"><code>XPathConstants</code></a>.
        Conversion to the return type follows XPath conversion rules.
      </td>
    </tr>
@@ -146,14 +146,14 @@ The XPath evaluation is affected by the factors described in the following table
 
 <p>An XPath expression is not thread-safe and not reentrant.
 In other words, it is the application's responsibility to make
-sure that one <a href="XPathExpression.html" title="interface in javax.xml.xpath"><code>XPathExpression</code></a> object is not used from
+sure that one <a href="XPathExpression.html" title="javax.xml.xpath 包中的接口"><code>XPathExpression</code></a> object is not used from
 more than one thread at any given time, and while the <code>evaluate</code>
 method is invoked, applications may not recursively call
 the <code>evaluate</code> method.</div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="http://www.w3.org/TR/xpath#section-Expressions">XML Path Language (XPath) Version 1.0, Expressions</a></li>
@@ -167,60 +167,60 @@ the <code>evaluate</code> method.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">Default Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab5" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab5', 3)" class="table-tab">默认方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(java.lang.Object)" class="member-name-link">evaluate</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item)</code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(java.lang.Object)" class="member-name-link">evaluate</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Evaluate the compiled XPath expression in the specified context and return the result as a <code>String</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(java.lang.Object,javax.xml.namespace.QName)" class="member-name-link">evaluate</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item,
- <a href="../namespace/QName.html" title="class in javax.xml.namespace">QName</a>&nbsp;returnType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(java.lang.Object,javax.xml.namespace.QName)" class="member-name-link">evaluate</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item,
+ <a href="../namespace/QName.html" title="javax.xml.namespace 包中的类">QName</a>&nbsp;returnType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Evaluate the compiled XPath expression in the specified context and return the result as the specified type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(org.xml.sax.InputSource)" class="member-name-link">evaluate</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(org.xml.sax.InputSource)" class="member-name-link">evaluate</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Evaluate the compiled XPath expression in the context
 of the specified <code>InputSource</code> and return the result as a
 <code>String</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(org.xml.sax.InputSource,javax.xml.namespace.QName)" class="member-name-link">evaluate</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source,
- <a href="../namespace/QName.html" title="class in javax.xml.namespace">QName</a>&nbsp;returnType)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#evaluate(org.xml.sax.InputSource,javax.xml.namespace.QName)" class="member-name-link">evaluate</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source,
+ <a href="../namespace/QName.html" title="javax.xml.namespace 包中的类">QName</a>&nbsp;returnType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Evaluate the compiled XPath expression in the context
 of the specified <code>InputSource</code> and return the result as the
 specified type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath">XPathEvaluationResult</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(java.lang.Object)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口">XPathEvaluationResult</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(java.lang.Object)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Evaluate the compiled XPath expression in the specified context.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(java.lang.Object,java.lang.Class)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item,
- <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;T&gt;&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(java.lang.Object,java.lang.Class)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item,
+ <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;T&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Evaluate the compiled XPath expression in the specified context, and return
 the result with the type specified through the <code>class type</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath">XPathEvaluationResult</a><wbr>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(org.xml.sax.InputSource)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口">XPathEvaluationResult</a><wbr>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(org.xml.sax.InputSource)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Evaluate the compiled XPath expression in the specified context.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(org.xml.sax.InputSource,java.lang.Class)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source,
- <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;T&gt;&nbsp;type)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#evaluateExpression(org.xml.sax.InputSource,java.lang.Class)" class="member-name-link">evaluateExpression</a><wbr>(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source,
+ <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;T&gt;&nbsp;type)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Evaluate the compiled XPath expression in the specified context,
 and return the result with the type specified through the <code>class type</code></div>
@@ -237,15 +237,15 @@ and return the result with the type specified through the <code>class type</code
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="evaluate(java.lang.Object,javax.xml.namespace.QName)">
 <h3>evaluate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item,
- <a href="../namespace/QName.html" title="class in javax.xml.namespace">QName</a>&nbsp;returnType)</span>
-         throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item,
+ <a href="../namespace/QName.html" title="javax.xml.namespace 包中的类">QName</a>&nbsp;returnType)</span>
+         throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context and return the result as the specified type.
 
 <p>See <a href="#XPathExpression-evaluation">Evaluation of XPath Expressions</a> for context item evaluation,
@@ -257,18 +257,18 @@ will be operated on. The type of the context is implementation-dependent.
 If the value is <code>null</code>, the operation must have no dependency on
 the context, otherwise an XPathExpressionException will be thrown.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
-<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="interface in org.w3c.dom"><code>Node</code></a>.</dd>
-<dt>Parameters:</dt>
+<dt>实现说明:</dt>
+<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="org.w3c.dom 包中的接口"><code>Node</code></a>.</dd>
+<dt>参数:</dt>
 <dd><code>item</code> - The context the XPath expression will be evaluated in.</dd>
 <dd><code>returnType</code> - The result type expected to be returned by the XPath expression.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Object</code> that is the result of evaluating the expression and converting the result to
   <code>returnType</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="class in javax.xml.xpath"><code>XPathConstants</code></a>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>returnType</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="javax.xml.xpath 包中的类"><code>XPathConstants</code></a>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>returnType</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -277,8 +277,8 @@ the context, otherwise an XPathExpressionException will be thrown.</div>
 <section class="detail" id="evaluate(java.lang.Object)">
 <h3>evaluate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item)</span>
-         throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item)</span>
+         throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context and return the result as a <code>String</code>.
 
 <p>This method calls <a href="#evaluate(java.lang.Object,javax.xml.namespace.QName)"><code>evaluate(Object item, QName returnType)</code></a> with a <code>returnType</code> of
@@ -293,14 +293,14 @@ will be operated on. The type of the context is implementation-dependent.
 If the value is <code>null</code>, the operation must have no dependency on
 the context, otherwise an XPathExpressionException will be thrown.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
-<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="interface in org.w3c.dom"><code>Node</code></a>.</dd>
-<dt>Parameters:</dt>
+<dt>实现说明:</dt>
+<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="org.w3c.dom 包中的接口"><code>Node</code></a>.</dd>
+<dt>参数:</dt>
 <dd><code>item</code> - The context the XPath expression will be evaluated in.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The result of evaluating an XPath expression as a <code>String</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
 </dl>
 </div>
 </section>
@@ -309,35 +309,35 @@ the context, otherwise an XPathExpressionException will be thrown.</div>
 <section class="detail" id="evaluate(org.xml.sax.InputSource,javax.xml.namespace.QName)">
 <h3>evaluate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source,
- <a href="../namespace/QName.html" title="class in javax.xml.namespace">QName</a>&nbsp;returnType)</span>
-         throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source,
+ <a href="../namespace/QName.html" title="javax.xml.namespace 包中的类">QName</a>&nbsp;returnType)</span>
+         throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the context
 of the specified <code>InputSource</code> and return the result as the
 specified type.
 
-<p>This method builds a data model for the <a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax"><code>InputSource</code></a> and calls
+<p>This method builds a data model for the <a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类"><code>InputSource</code></a> and calls
 <a href="#evaluate(java.lang.Object,javax.xml.namespace.QName)"><code>evaluate(Object item, QName returnType)</code></a> on the resulting document object.
 
 <p>See <a href="#XPathExpression-evaluation">Evaluation of XPath Expressions</a> for context item evaluation,
 variable, function and QName resolution and return type conversion.
 
-<p>If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="class in javax.xml.xpath"><code>XPathConstants</code></a>,
+<p>If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="javax.xml.xpath 包中的类"><code>XPathConstants</code></a>,
 then an <code>IllegalArgumentException</code> is thrown.
 
 <p>If <code>source</code> or <code>returnType</code> is <code>null</code>,
 then a <code>NullPointerException</code> is thrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - The <code>InputSource</code> of the document to evaluate over.</dd>
 <dd><code>returnType</code> - The desired return type.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>Object</code> that is the result of evaluating the expression and converting the result to
   <code>returnType</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="class in javax.xml.xpath"><code>XPathConstants</code></a>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>source or returnType</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If <code>returnType</code> is not one of the types defined in <a href="XPathConstants.html" title="javax.xml.xpath 包中的类"><code>XPathConstants</code></a>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>source or returnType</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -346,8 +346,8 @@ then a <code>NullPointerException</code> is thrown.</div>
 <section class="detail" id="evaluate(org.xml.sax.InputSource)">
 <h3>evaluate</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source)</span>
-         throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">evaluate</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source)</span>
+         throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the context
 of the specified <code>InputSource</code> and return the result as a
 <code>String</code>.
@@ -360,14 +360,14 @@ variable, function and QName resolution and return type conversion.
 
 <p>If <code>source</code> is <code>null</code>, then a <code>NullPointerException</code> is thrown.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - The <code>InputSource</code> of the document to evaluate over.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The <code>String</code> that is the result of evaluating the expression and converting the result to a
   <code>String</code>.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>source</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>source</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -376,9 +376,9 @@ variable, function and QName resolution and return type conversion.
 <section class="detail" id="evaluateExpression(java.lang.Object,java.lang.Class)">
 <h3>evaluateExpression</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item,
- <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;T&gt;&nbsp;type)</span>
-                          throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item,
+ <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;T&gt;&nbsp;type)</span>
+                          throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context, and return
 the result with the type specified through the <code>class type</code>.
 
@@ -388,7 +388,7 @@ will be operated on. The type of the context is implementation-dependent.
 If the value is <code>null</code>, the operation must have no dependency on
 the context, otherwise an XPathExpressionException will be thrown.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation in the XPath API is equivalent to:
 <pre><code>    (T)evaluate(item, XPathEvaluationResult.XPathResultType.getQNameType(type));
 </code></pre>
@@ -399,26 +399,26 @@ XPathEvaluationResult as the type will result in IllegalArgumentException.
 Any implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type must override
 this method.</dd>
-<dt>Implementation Note:</dt>
-<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="interface in org.w3c.dom"><code>Node</code></a>.</dd>
-<dt>Type Parameters:</dt>
+<dt>实现说明:</dt>
+<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="org.w3c.dom 包中的接口"><code>Node</code></a>.</dd>
+<dt>类型参数:</dt>
 <dd><span id="evaluateExpression(java.lang.Object,java.lang.Class)-type-param-T"><code>T</code> - The class type that will be returned by the XPath expression.</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>item</code> - The context the XPath expression will be evaluated in.</dd>
 <dd><code>type</code> - The class type expected to be returned by the XPath expression,
 must be one of the types described in section
 <a href="package-summary.html#XPath.Datatypes.Class">3.2 Class types</a>
 in the package summary.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The result of evaluating the expression.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If <code>type</code> is not of the types
-corresponding to the types defined in the <a href="XPathEvaluationResult.XPathResultType.html" title="enum class in javax.xml.xpath"><code>XPathResultType</code></a>, or XPathEvaluationResult is specified as the type but an
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If <code>type</code> is not of the types
+corresponding to the types defined in the <a href="XPathEvaluationResult.XPathResultType.html" title="javax.xml.xpath 包中的枚举类"><code>XPathResultType</code></a>, or XPathEvaluationResult is specified as the type but an
 implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type is not available.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>type</code> is <code>null</code>.</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>type</code> is <code>null</code>.</dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -428,11 +428,11 @@ implementation supporting the
 <section class="detail" id="evaluateExpression(java.lang.Object)">
 <h3>evaluateExpression</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath">XPathEvaluationResult</a>&lt;?&gt;</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a>&nbsp;item)</span>
-                                             throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口">XPathEvaluationResult</a>&lt;?&gt;</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a>&nbsp;item)</span>
+                                             throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context. This is
 equivalent to calling <a href="#evaluateExpression(java.lang.Object,java.lang.Class)"><code>evaluateExpression(Object item, Class type)</code></a>
-with type <a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath"><code>XPathEvaluationResult</code></a>:
+with type <a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口"><code>XPathEvaluationResult</code></a>:
 <pre><code>    evaluateExpression(item, XPathEvaluationResult.class);
 </code></pre>
 <p>
@@ -441,7 +441,7 @@ will be operated on. The type of the context is implementation-dependent.
 If the value is <code>null</code>, the operation must have no dependency on
 the context, otherwise an XPathExpressionException will be thrown.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation in the XPath API is equivalent to:
 <pre><code>    evaluateExpression(item, XPathEvaluationResult.class);
 </code></pre>
@@ -452,18 +452,18 @@ type, the default implementation of this method will always throw an
 IllegalArgumentException. Any implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type must therefore
 override this method.</dd>
-<dt>Implementation Note:</dt>
-<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="interface in org.w3c.dom"><code>Node</code></a>.</dd>
-<dt>Parameters:</dt>
+<dt>实现说明:</dt>
+<dd>The type of the context is usually <a href="../../../org/w3c/dom/Node.html" title="org.w3c.dom 包中的接口"><code>Node</code></a>.</dd>
+<dt>参数:</dt>
 <dd><code>item</code> - The context the XPath expression will be evaluated in.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The result of evaluating the expression.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the implementation of this method
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the implementation of this method
 does not support the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -473,19 +473,19 @@ does not support the
 <section class="detail" id="evaluateExpression(org.xml.sax.InputSource,java.lang.Class)">
 <h3>evaluateExpression</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source,
- <a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;T&gt;&nbsp;type)</span>
-                          throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source,
+ <a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;T&gt;&nbsp;type)</span>
+                          throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context,
 and return the result with the type specified through the <code>class type</code>
 <p>
-This method builds a data model for the <a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax"><code>InputSource</code></a> and calls
+This method builds a data model for the <a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类"><code>InputSource</code></a> and calls
 <a href="#evaluateExpression(java.lang.Object,java.lang.Class)"><code>evaluateExpression(Object item, Class type)</code></a> on the resulting
 document object.
 <P>
-By default, the JDK's data model is <a href="../../../org/w3c/dom/Document.html" title="interface in org.w3c.dom"><code>Document</code></a>.</div>
+By default, the JDK's data model is <a href="../../../org/w3c/dom/Document.html" title="org.w3c.dom 包中的接口"><code>Document</code></a>.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation in the XPath API is equivalent to:
 <pre><code>          (T)evaluate(source, XPathEvaluationResult.XPathResultType.getQNameType(type));
 </code></pre>
@@ -496,25 +496,25 @@ XPathEvaluationResult as the type will result in IllegalArgumentException.
 Any implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type must override
 this method.</dd>
-<dt>Type Parameters:</dt>
+<dt>类型参数:</dt>
 <dd><span id="evaluateExpression(org.xml.sax.InputSource,java.lang.Class)-type-param-T"><code>T</code> - The class type that will be returned by the XPath expression.</span></dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - The <code>InputSource</code> of the document to evaluate over.</dd>
 <dd><code>type</code> - The class type expected to be returned by the XPath expression,
 must be one of the types described in section
 <a href="package-summary.html#XPath.Datatypes.Class">3.2 Class types</a>
 in the package summary.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The result of evaluating the expression.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If <code>type</code> is not of the types
-corresponding to the types defined in the <a href="XPathEvaluationResult.XPathResultType.html" title="enum class in javax.xml.xpath"><code>XPathResultType</code></a>, or XPathEvaluationResult is specified as the type but an
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If <code>type</code> is not of the types
+corresponding to the types defined in the <a href="XPathEvaluationResult.XPathResultType.html" title="javax.xml.xpath 包中的枚举类"><code>XPathResultType</code></a>, or XPathEvaluationResult is specified as the type but an
 implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type
 is not available.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>source or type</code> is <code>null</code>.</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>source or type</code> is <code>null</code>.</dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -524,15 +524,15 @@ is not available.</dd>
 <section class="detail" id="evaluateExpression(org.xml.sax.InputSource)">
 <h3>evaluateExpression</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath">XPathEvaluationResult</a>&lt;?&gt;</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="class in org.xml.sax">InputSource</a>&nbsp;source)</span>
-                                             throws <span class="exceptions"><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></span></div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口">XPathEvaluationResult</a>&lt;?&gt;</span>&nbsp;<span class="element-name">evaluateExpression</span><wbr><span class="parameters">(<a href="../../../org/xml/sax/InputSource.html" title="org.xml.sax 包中的类">InputSource</a>&nbsp;source)</span>
+                                             throws <span class="exceptions"><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></span></div>
 <div class="block">Evaluate the compiled XPath expression in the specified context. This is
 equivalent to calling <a href="#evaluateExpression(org.xml.sax.InputSource,java.lang.Class)"><code>evaluateExpression(InputSource source, Class type)</code></a>
-with type <a href="XPathEvaluationResult.html" title="interface in javax.xml.xpath"><code>XPathEvaluationResult</code></a>:
+with type <a href="XPathEvaluationResult.html" title="javax.xml.xpath 包中的接口"><code>XPathEvaluationResult</code></a>:
 <pre><code>    evaluateExpression(source, XPathEvaluationResult.class);
 </code></pre></div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The default implementation in the XPath API is equivalent to:
 <pre><code>    (XPathEvaluationResult)evaluateExpression(source, XPathEvaluationResult.class);
 </code></pre>
@@ -543,17 +543,17 @@ type, the default implementation of this method will always throw an
 IllegalArgumentException. Any implementation supporting the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type must therefore
 override this method.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>source</code> - The <code>InputSource</code> of the document to evaluate over.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>The result of evaluating the expression.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="XPathExpressionException.html" title="class in javax.xml.xpath">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - If the implementation of this method
+<dt>抛出:</dt>
+<dd><code><a href="XPathExpressionException.html" title="javax.xml.xpath 包中的类">XPathExpressionException</a></code> - If the expression cannot be evaluated.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - If the implementation of this method
 does not support the
 <a href="XPathEvaluationResult.XPathResultType.html#ANY"><code>ANY</code></a> type.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - If <code>source</code> is <code>null</code>.</dd>
-<dt>Since:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - If <code>source</code> is <code>null</code>.</dd>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>

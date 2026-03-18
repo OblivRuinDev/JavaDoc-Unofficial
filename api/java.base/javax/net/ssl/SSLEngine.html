@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">javax.net.ssl</a></li>
 <li><a href="SSLEngine.html" class="current-selection">SSLEngine</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -90,18 +90,18 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">SSLEngine()</a></li>
 <li><a href="#%3Cinit%3E(java.lang.String,int)" tabindex="0">SSLEngine(String, int)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#getPeerHost()" tabindex="0">getPeerHost()</a></li>
 <li><a href="#getPeerPort()" tabindex="0">getPeerPort()</a></li>
@@ -147,16 +147,16 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class SSLEngine" class="title">Class SSLEngine</h1>
+<h1 title="类 SSLEngine" class="title">类 SSLEngine</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">javax.net.ssl.SSLEngine</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">SSLEngine</span>
-<span class="extends-implements">extends <a href="../../../java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A class which enables secure communications using protocols such as
 the Secure Sockets Layer (SSL) or
 <A HREF="http://www.ietf.org/rfc/rfc2246.txt"> IETF RFC 2246 "Transport
@@ -194,7 +194,7 @@ using the <a href="#getSession()"><code>getSession()</code></a> method.
 <P>
 The <code>SSLSocket</code> class provides much of the same security
 functionality, but all the inbound and outbound data is
-automatically transported using the underlying <a href="../../../java/net/Socket.html" title="class in java.net"><code>Socket</code></a>, which by design uses a blocking model.
+automatically transported using the underlying <a href="../../../java/net/Socket.html" title="java.net 包中的类"><code>Socket</code></a>, which by design uses a blocking model.
 While this is appropriate for many applications, this model does not
 provide the scalability required by large servers.
 <P>
@@ -204,8 +204,8 @@ transport mechanism.  It is the responsibility of the
 <code>SSLEngine</code> user to arrange for reliable I/O transport to
 the peer.  By separating the SSL/TLS/DTLS abstraction from the I/O
 transport mechanism, the <code>SSLEngine</code> can be used for a
-wide variety of I/O types, such as <a href="../../../java/nio/channels/spi/AbstractSelectableChannel.html#configureBlocking(boolean)"><code>non-blocking I/O (polling)</code></a>, <a href="../../../java/nio/channels/Selector.html" title="class in java.nio.channels"><code>selectable non-blocking I/O</code></a>, <a href="../../../java/net/Socket.html" title="class in java.net"><code>Socket</code></a> and the
-traditional Input/OutputStreams, local <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio"><code>ByteBuffers</code></a> or byte arrays, <A HREF="http://www.jcp.org/en/jsr/detail?id=203"> future asynchronous
+wide variety of I/O types, such as <a href="../../../java/nio/channels/spi/AbstractSelectableChannel.html#configureBlocking(boolean)"><code>non-blocking I/O (polling)</code></a>, <a href="../../../java/nio/channels/Selector.html" title="java.nio.channels 包中的类"><code>selectable non-blocking I/O</code></a>, <a href="../../../java/net/Socket.html" title="java.net 包中的类"><code>Socket</code></a> and the
+traditional Input/OutputStreams, local <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类"><code>ByteBuffers</code></a> or byte arrays, <A HREF="http://www.jcp.org/en/jsr/detail?id=203"> future asynchronous
 I/O models </A>, and so on.
 <P>
 At a high level, the <code>SSLEngine</code> appears thus:
@@ -321,7 +321,7 @@ maximum record that can be produced.  Calls to <a href="SSLSession.html#getPacke
 the appropriate buffer sizes.  The size of the outbound application
 data buffer generally does not matter.  If buffer conditions do not
 allow for the proper consumption/production of data, the application
-must determine (via <a href="SSLEngineResult.html" title="class in javax.net.ssl"><code>SSLEngineResult</code></a>) and correct the
+must determine (via <a href="SSLEngineResult.html" title="javax.net.ssl 包中的类"><code>SSLEngineResult</code></a>) and correct the
 problem, and then try the call again.
 <P>
 For example, <code>unwrap()</code> will return a <a href="SSLEngineResult.Status.html#BUFFER_OVERFLOW"><code>SSLEngineResult.Status.BUFFER_OVERFLOW</code></a> result if the engine
@@ -374,7 +374,7 @@ creating cryptographic signatures and verifying them can be slow,
 seemingly blocking.
 <P>
 For any operation which may potentially block, the
-<code>SSLEngine</code> will create a <a href="../../../java/lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a>
+<code>SSLEngine</code> will create a <a href="../../../java/lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a>
 delegated task.  When <code>SSLEngineResult</code> indicates that a
 delegated task result is needed, the application must call <a href="#getDelegatedTask()"><code>getDelegatedTask()</code></a> to obtain an outstanding delegated task and
 call its <a href="../../../java/lang/Runnable.html#run()"><code>run()</code></a> method (possibly using
@@ -514,22 +514,22 @@ There are two concurrency issues to be aware of:
      because there is no way to guarantee the eventual packet ordering.
 </OL></div>
 <dl class="notes">
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.5</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc2246"><span id="RFC2246:TheTLSProtocolVersion1.0" class="search-tag-result">RFC 2246: The TLS Protocol Version 1.0</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SSLContext.html" title="class in javax.net.ssl"><code>SSLContext</code></a></li>
-<li><a href="SSLSocket.html" title="class in javax.net.ssl"><code>SSLSocket</code></a></li>
-<li><a href="SSLServerSocket.html" title="class in javax.net.ssl"><code>SSLServerSocket</code></a></li>
-<li><a href="SSLSession.html" title="interface in javax.net.ssl"><code>SSLSession</code></a></li>
-<li><a href="../../../java/net/Socket.html" title="class in java.net"><code>Socket</code></a></li>
+<li><a href="SSLContext.html" title="javax.net.ssl 包中的类"><code>SSLContext</code></a></li>
+<li><a href="SSLSocket.html" title="javax.net.ssl 包中的类"><code>SSLSocket</code></a></li>
+<li><a href="SSLServerSocket.html" title="javax.net.ssl 包中的类"><code>SSLServerSocket</code></a></li>
+<li><a href="SSLSession.html" title="javax.net.ssl 包中的接口"><code>SSLSession</code></a></li>
+<li><a href="../../../java/net/Socket.html" title="java.net 包中的类"><code>Socket</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -540,8 +540,8 @@ There are two concurrency issues to be aware of:
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -553,7 +553,7 @@ There are two concurrency issues to be aware of:
 for an internal session reuse strategy.</div>
 </div>
 <div class="col-first odd-row-color"><code>protected </code></div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int)" class="member-name-link">SSLEngine</a><wbr>(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&nbsp;peerHost,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,int)" class="member-name-link">SSLEngine</a><wbr>(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;peerHost,
  int&nbsp;peerPort)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Constructor for an <code>SSLEngine</code>.</div>
@@ -564,14 +564,14 @@ for an internal session reuse strategy.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginHandshake()" class="member-name-link">beginHandshake</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -589,25 +589,25 @@ to this <code>SSLEngine</code>.</div>
 <div class="block">Signals that no more outbound application data will be sent
 on this <code>SSLEngine</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getApplicationProtocol()" class="member-name-link">getApplicationProtocol</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the most recent application protocol value negotiated for this
 connection.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/Runnable.html" title="interface in java.lang">Runnable</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/Runnable.html" title="java.lang 包中的接口">Runnable</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDelegatedTask()" class="member-name-link">getDelegatedTask</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a delegated <code>Runnable</code> task for
 this <code>SSLEngine</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEnabledCipherSuites()" class="member-name-link">getEnabledCipherSuites</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the names of the SSL cipher suites which are currently
 enabled for use on this engine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getEnabledProtocols()" class="member-name-link">getEnabledProtocols</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the names of the protocol versions which are currently
@@ -618,25 +618,25 @@ enabled for use with this <code>SSLEngine</code>.</div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns true if new SSL sessions may be established by this engine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandshakeApplicationProtocol()" class="member-name-link">getHandshakeApplicationProtocol</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the application protocol value negotiated on a SSL/TLS
 handshake currently in progress.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/util/function/BiFunction.html" title="interface in java.util.function">BiFunction</a><wbr>&lt;<a href="SSLEngine.html" title="class in javax.net.ssl">SSLEngine</a>, <a href="../../../java/util/List.html" title="interface in java.util">List</a>&lt;<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;, <a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/util/function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a><wbr>&lt;<a href="SSLEngine.html" title="javax.net.ssl 包中的类">SSLEngine</a>, <a href="../../../java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;, <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandshakeApplicationProtocolSelector()" class="member-name-link">getHandshakeApplicationProtocolSelector</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieves the callback function that selects an application protocol
 value during a SSL/TLS/DTLS handshake.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLSession.html" title="interface in javax.net.ssl">SSLSession</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLSession.html" title="javax.net.ssl 包中的接口">SSLSession</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHandshakeSession()" class="member-name-link">getHandshakeSession</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the <code>SSLSession</code> being constructed during a SSL/TLS/DTLS
 handshake.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.HandshakeStatus.html" title="enum class in javax.net.ssl">SSLEngineResult.HandshakeStatus</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.HandshakeStatus.html" title="javax.net.ssl 包中的枚举类">SSLEngineResult.HandshakeStatus</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getHandshakeStatus()" class="member-name-link">getHandshakeStatus</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the current handshake status for this <code>SSLEngine</code>.</div>
@@ -646,7 +646,7 @@ handshake.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns true if the engine will <i>require</i> client authentication.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPeerHost()" class="member-name-link">getPeerHost</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the host name of the peer.</div>
@@ -656,24 +656,24 @@ handshake.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the port number of the peer.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLSession.html" title="interface in javax.net.ssl">SSLSession</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLSession.html" title="javax.net.ssl 包中的接口">SSLSession</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSession()" class="member-name-link">getSession</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the <code>SSLSession</code> in use in this
 <code>SSLEngine</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLParameters.html" title="class in javax.net.ssl">SSLParameters</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLParameters.html" title="javax.net.ssl 包中的类">SSLParameters</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSSLParameters()" class="member-name-link">getSSLParameters</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the SSLParameters in effect for this SSLEngine.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSupportedCipherSuites()" class="member-name-link">getSupportedCipherSuites</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the names of the cipher suites which could be enabled for use
 on this engine.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSupportedProtocols()" class="member-name-link">getSupportedProtocols</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the names of the protocols which could be enabled for use
@@ -703,12 +703,12 @@ accept any more inbound data messages.</div>
 produce any more outbound data messages.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabledCipherSuites(java.lang.String%5B%5D)" class="member-name-link">setEnabledCipherSuites</a><wbr>(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;suites)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabledCipherSuites(java.lang.String%5B%5D)" class="member-name-link">setEnabledCipherSuites</a><wbr>(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;suites)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sets the cipher suites enabled for use on this engine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabledProtocols(java.lang.String%5B%5D)" class="member-name-link">setEnabledProtocols</a><wbr>(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;protocols)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#setEnabledProtocols(java.lang.String%5B%5D)" class="member-name-link">setEnabledProtocols</a><wbr>(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;protocols)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Set the protocol versions enabled for use on this engine.</div>
 </div>
@@ -718,7 +718,7 @@ produce any more outbound data messages.</div>
 <div class="block">Controls whether new SSL sessions may be established by this engine.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHandshakeApplicationProtocolSelector(java.util.function.BiFunction)" class="member-name-link">setHandshakeApplicationProtocolSelector</a><wbr>(<a href="../../../java/util/function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;<a href="SSLEngine.html" title="class in javax.net.ssl">SSLEngine</a>, <a href="../../../java/util/List.html" title="interface in java.util">List</a>&lt;<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;, <a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;selector)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHandshakeApplicationProtocolSelector(java.util.function.BiFunction)" class="member-name-link">setHandshakeApplicationProtocolSelector</a><wbr>(<a href="../../../java/util/function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;<a href="SSLEngine.html" title="javax.net.ssl 包中的类">SSLEngine</a>, <a href="../../../java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;, <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;selector)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Registers a callback function that selects an application protocol
 value for a SSL/TLS/DTLS handshake.</div>
@@ -729,7 +729,7 @@ value for a SSL/TLS/DTLS handshake.</div>
 <div class="block">Configures the engine to <i>require</i> client authentication.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSSLParameters(javax.net.ssl.SSLParameters)" class="member-name-link">setSSLParameters</a><wbr>(<a href="SSLParameters.html" title="class in javax.net.ssl">SSLParameters</a>&nbsp;params)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSSLParameters(javax.net.ssl.SSLParameters)" class="member-name-link">setSSLParameters</a><wbr>(<a href="SSLParameters.html" title="javax.net.ssl 包中的类">SSLParameters</a>&nbsp;params)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Applies SSLParameters to this engine.</div>
 </div>
@@ -744,48 +744,48 @@ handshaking.</div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Configures the engine to <i>request</i> client authentication.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a plaintext
 application data buffer.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;dsts)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;dsts)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a sequence of plaintext
 application data buffers.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;dsts,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)" class="member-name-link">unwrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;dsts,
  int&nbsp;offset,
  int&nbsp;length)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a subsequence of
 plaintext application data buffers.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;srcs,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;srcs,
  int&nbsp;offset,
  int&nbsp;length,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</code></div>
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Attempts to encode plaintext bytes from a subsequence of data
 buffers into SSL/TLS/DTLS network data.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.nio.ByteBuffer%5B%5D,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;srcs,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.nio.ByteBuffer%5B%5D,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;srcs,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to encode plaintext bytes from a sequence of data
 buffers into SSL/TLS/DTLS network data.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(java.nio.ByteBuffer,java.nio.ByteBuffer)" class="member-name-link">wrap</a><wbr>(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to encode a buffer of plaintext application data into
 SSL/TLS/DTLS network data.</div>
@@ -794,7 +794,7 @@ SSL/TLS/DTLS network data.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -805,7 +805,7 @@ SSL/TLS/DTLS network data.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -815,11 +815,11 @@ SSL/TLS/DTLS network data.</div>
 <div class="block">Constructor for an <code>SSLEngine</code> providing no hints
 for an internal session reuse strategy.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="SSLContext.html#createSSLEngine()"><code>SSLContext.createSSLEngine()</code></a></li>
-<li><a href="SSLSessionContext.html" title="interface in javax.net.ssl"><code>SSLSessionContext</code></a></li>
+<li><a href="SSLSessionContext.html" title="javax.net.ssl 包中的接口"><code>SSLSessionContext</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -830,7 +830,7 @@ for an internal session reuse strategy.</div>
 <section class="detail" id="&lt;init&gt;(java.lang.String,int)">
 <h3>SSLEngine</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">SSLEngine</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&nbsp;peerHost,
+<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="element-name">SSLEngine</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;peerHost,
  int&nbsp;peerPort)</span></div>
 <div class="block">Constructor for an <code>SSLEngine</code>.
 <P>
@@ -845,14 +845,14 @@ constructor to use Kerberos.
 The parameters are not authenticated by the
 <code>SSLEngine</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>peerHost</code> - the name of the peer host</dd>
 <dd><code>peerPort</code> - the port number of the peer</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="SSLContext.html#createSSLEngine(java.lang.String,int)"><code>SSLContext.createSSLEngine(String, int)</code></a></li>
-<li><a href="SSLSessionContext.html" title="interface in javax.net.ssl"><code>SSLSessionContext</code></a></li>
+<li><a href="SSLSessionContext.html" title="javax.net.ssl 包中的接口"><code>SSLSessionContext</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -865,19 +865,19 @@ The parameters are not authenticated by the
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="getPeerHost()">
 <h3>getPeerHost</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getPeerHost</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getPeerHost</span>()</div>
 <div class="block">Returns the host name of the peer.
 <P>
 Note that the value is not authenticated, and should not be
 relied upon.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the host name of the peer, or null if nothing is
          available.</dd>
 </dl>
@@ -894,7 +894,7 @@ relied upon.</div>
 Note that the value is not authenticated, and should not be
 relied upon.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the port number of the peer, or -1 if nothing is
          available.</dd>
 </dl>
@@ -905,9 +905,9 @@ relied upon.</div>
 <section class="detail" id="wrap(java.nio.ByteBuffer,java.nio.ByteBuffer)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</span>
-                     throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</span>
+                     throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to encode a buffer of plaintext application data into
 SSL/TLS/DTLS network data.
 <P>
@@ -917,23 +917,23 @@ as the invocation:
 <a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)"><code>engine.wrap(new ByteBuffer[] { src }, 0, 1, dst);</code></a>
 </pre></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - a <code>ByteBuffer</code> containing outbound application data</dd>
 <dd><code>dst</code> - a <code>ByteBuffer</code> to hold outbound network data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dst</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dst</code>
          is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)"><code>wrap(ByteBuffer[], int, int, ByteBuffer)</code></a></li>
@@ -947,9 +947,9 @@ as the invocation:
 <section class="detail" id="wrap(java.nio.ByteBuffer[],java.nio.ByteBuffer)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;srcs,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</span>
-                     throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;srcs,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</span>
+                     throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to encode plaintext bytes from a sequence of data
 buffers into SSL/TLS/DTLS network data.
 <P>
@@ -959,24 +959,24 @@ as the invocation:
 <a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)"><code>engine.wrap(srcs, 0, srcs.length, dst);</code></a>
 </pre></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>srcs</code> - an array of <code>ByteBuffers</code> containing the
          outbound application data</dd>
 <dd><code>dst</code> - a <code>ByteBuffer</code> to hold outbound network data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>srcs</code> or <code>dst</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>srcs</code> or <code>dst</code>
          is null, or if any element in <code>srcs</code> is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#wrap(java.nio.ByteBuffer%5B%5D,int,int,java.nio.ByteBuffer)"><code>wrap(ByteBuffer[], int, int, ByteBuffer)</code></a></li>
@@ -990,11 +990,11 @@ as the invocation:
 <section class="detail" id="wrap(java.nio.ByteBuffer[],int,int,java.nio.ByteBuffer)">
 <h3>wrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;srcs,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;srcs,
  int&nbsp;offset,
  int&nbsp;length,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</span>
-                              throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</span>
+                              throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to encode plaintext bytes from a subsequence of data
 buffers into SSL/TLS/DTLS network data.  This <i>"gathering"</i>
 operation encodes, in a single invocation, a sequence of bytes
@@ -1003,7 +1003,7 @@ wraps are often useful when implementing network protocols or
 file formats that, for example, group data into segments
 consisting of one or more fixed-length headers followed by a
 variable-length body.  See
-<a href="../../../java/nio/channels/GatheringByteChannel.html" title="interface in java.nio.channels"><code>GatheringByteChannel</code></a> for more
+<a href="../../../java/nio/channels/GatheringByteChannel.html" title="java.nio.channels 包中的接口"><code>GatheringByteChannel</code></a> for more
 information on gathering, and <a href="../../../java/nio/channels/GatheringByteChannel.html#write(java.nio.ByteBuffer%5B%5D,int,int)"><code>GatheringByteChannel.write(ByteBuffer[], int, int)</code></a> for more information on the subsequence
 behavior.
 <P>
@@ -1032,7 +1032,7 @@ The underlying memory used by the <code>srcs</code> and
 <P>
 See the class description for more information on engine closure.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>srcs</code> - an array of <code>ByteBuffers</code> containing the
          outbound application data</dd>
 <dd><code>offset</code> - The offset within the buffer array of the first buffer from
@@ -1042,26 +1042,26 @@ See the class description for more information on engine closure.</div>
          non-negative and no larger than
          <code>srcs.length</code>&nbsp;-&nbsp;<code>offset</code></dd>
 <dd><code>dst</code> - a <code>ByteBuffer</code> to hold outbound network data</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - if the preconditions on the <code>offset</code> and
+<dd><code><a href="../../../java/lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - if the preconditions on the <code>offset</code> and
          <code>length</code> parameters do not hold.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>srcs</code> or <code>dst</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>srcs</code> or <code>dst</code>
          is null, or if any element in the <code>srcs</code>
          subsequence specified is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="../../../java/nio/channels/GatheringByteChannel.html" title="interface in java.nio.channels"><code>GatheringByteChannel</code></a></li>
+<li><a href="../../../java/nio/channels/GatheringByteChannel.html" title="java.nio.channels 包中的接口"><code>GatheringByteChannel</code></a></li>
 <li><a href="../../../java/nio/channels/GatheringByteChannel.html#write(java.nio.ByteBuffer%5B%5D,int,int)"><code>GatheringByteChannel.write(ByteBuffer[], int, int)</code></a></li>
 </ul>
 </dd>
@@ -1073,9 +1073,9 @@ See the class description for more information on engine closure.</div>
 <section class="detail" id="unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer)">
 <h3>unwrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;dst)</span>
-                       throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;dst)</span>
+                       throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a plaintext
 application data buffer.
 <P>
@@ -1085,23 +1085,23 @@ as the invocation:
 <a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)"><code>engine.unwrap(src, new ByteBuffer[] { dst }, 0, 1);</code></a>
 </pre></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - a <code>ByteBuffer</code> containing inbound network data.</dd>
 <dd><code>dst</code> - a <code>ByteBuffer</code> to hold inbound application data.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dst</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if the <code>dst</code> buffer is read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dst</code>
          is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)"><code>unwrap(ByteBuffer, ByteBuffer[], int, int)</code></a></li>
@@ -1115,9 +1115,9 @@ as the invocation:
 <section class="detail" id="unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer[])">
 <h3>unwrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;dsts)</span>
-                       throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;dsts)</span>
+                       throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a sequence of plaintext
 application data buffers.
 <P>
@@ -1127,24 +1127,24 @@ as the invocation:
 <a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)"><code>engine.unwrap(src, dsts, 0, dsts.length);</code></a>
 </pre></blockquote></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - a <code>ByteBuffer</code> containing inbound network data.</dd>
 <dd><code>dsts</code> - an array of <code>ByteBuffer</code>s to hold inbound
          application data.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if any of the <code>dst</code> buffers are read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dsts</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if any of the <code>dst</code> buffers are read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dsts</code>
          is null, or if any element in <code>dsts</code> is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer%5B%5D,int,int)"><code>unwrap(ByteBuffer, ByteBuffer[], int, int)</code></a></li>
@@ -1158,11 +1158,11 @@ as the invocation:
 <section class="detail" id="unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer[],int,int)">
 <h3>unwrap</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="class in javax.net.ssl">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>&nbsp;src,
- <a href="../../../java/nio/ByteBuffer.html" title="class in java.nio">ByteBuffer</a>[]&nbsp;dsts,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.html" title="javax.net.ssl 包中的类">SSLEngineResult</a></span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>&nbsp;src,
+ <a href="../../../java/nio/ByteBuffer.html" title="java.nio 包中的类">ByteBuffer</a>[]&nbsp;dsts,
  int&nbsp;offset,
  int&nbsp;length)</span>
-                                throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+                                throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Attempts to decode SSL/TLS/DTLS network data into a subsequence of
 plaintext application data buffers.  This <i>"scattering"</i>
 operation decodes, in a single invocation, a sequence of bytes
@@ -1171,7 +1171,7 @@ unwraps are often useful when implementing network protocols or
 file formats that, for example, group data into segments
 consisting of one or more fixed-length headers followed by a
 variable-length body.  See
-<a href="../../../java/nio/channels/ScatteringByteChannel.html" title="interface in java.nio.channels"><code>ScatteringByteChannel</code></a> for more
+<a href="../../../java/nio/channels/ScatteringByteChannel.html" title="java.nio.channels 包中的接口"><code>ScatteringByteChannel</code></a> for more
 information on scattering, and <a href="../../../java/nio/channels/ScatteringByteChannel.html#read(java.nio.ByteBuffer%5B%5D,int,int)"><code>ScatteringByteChannel.read(ByteBuffer[], int, int)</code></a> for more information on the subsequence
 behavior.
 <P>
@@ -1205,7 +1205,7 @@ influences the SSL/TLS/DTLS messages.
 <P>
 See the class description for more information on engine closure.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>src</code> - a <code>ByteBuffer</code> containing inbound network data.</dd>
 <dd><code>dsts</code> - an array of <code>ByteBuffer</code>s to hold inbound
          application data.</dd>
@@ -1215,26 +1215,26 @@ See the class description for more information on engine closure.</div>
 <dd><code>length</code> - The maximum number of buffers to be accessed; it must be
          non-negative and no larger than
          <code>dsts.length</code>&nbsp;-&nbsp;<code>offset</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an <code>SSLEngineResult</code> describing the result
          of this operation.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - A problem was encountered while processing the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - A problem was encountered while processing the
          data that caused the <code>SSLEngine</code> to abort.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/lang/IndexOutOfBoundsException.html" title="class in java.lang">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and
+<dd><code><a href="../../../java/lang/IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></code> - If the preconditions on the <code>offset</code> and
          <code>length</code> parameters do not hold.</dd>
-<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="class in java.nio">ReadOnlyBufferException</a></code> - if any of the <code>dst</code> buffers are read-only.</dd>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dsts</code>
+<dd><code><a href="../../../java/nio/ReadOnlyBufferException.html" title="java.nio 包中的类">ReadOnlyBufferException</a></code> - if any of the <code>dst</code> buffers are read-only.</dd>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either <code>src</code> or <code>dsts</code>
          is null, or if any element in the <code>dsts</code>
          subsequence specified is null.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="../../../java/nio/channels/ScatteringByteChannel.html" title="interface in java.nio.channels"><code>ScatteringByteChannel</code></a></li>
+<li><a href="../../../java/nio/channels/ScatteringByteChannel.html" title="java.nio.channels 包中的接口"><code>ScatteringByteChannel</code></a></li>
 <li><a href="../../../java/nio/channels/ScatteringByteChannel.html#read(java.nio.ByteBuffer%5B%5D,int,int)"><code>ScatteringByteChannel.read(ByteBuffer[], int, int)</code></a></li>
 </ul>
 </dd>
@@ -1246,13 +1246,13 @@ See the class description for more information on engine closure.</div>
 <section class="detail" id="getDelegatedTask()">
 <h3>getDelegatedTask</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/Runnable.html" title="interface in java.lang">Runnable</a></span>&nbsp;<span class="element-name">getDelegatedTask</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/Runnable.html" title="java.lang 包中的接口">Runnable</a></span>&nbsp;<span class="element-name">getDelegatedTask</span>()</div>
 <div class="block">Returns a delegated <code>Runnable</code> task for
 this <code>SSLEngine</code>.
 <P>
 <code>SSLEngine</code> operations may require the results of
 operations that block, or may take an extended period of time to
-complete.  This method is used to obtain an outstanding <a href="../../../java/lang/Runnable.html" title="interface in java.lang"><code>Runnable</code></a> operation (task).  Each task must be assigned
+complete.  This method is used to obtain an outstanding <a href="../../../java/lang/Runnable.html" title="java.lang 包中的接口"><code>Runnable</code></a> operation (task).  Each task must be assigned
 a thread (possibly the current) to perform the <a href="../../../java/lang/Runnable.html#run()"><code>run</code></a> operation.  Once the
 <code>run</code> method returns, the <code>Runnable</code> object
 is no longer needed and may be discarded.
@@ -1262,7 +1262,7 @@ exactly once.
 <P>
 Multiple delegated tasks can be run in parallel.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>a delegated <code>Runnable</code> task, or null
          if none are available.</dd>
 </dl>
@@ -1274,7 +1274,7 @@ Multiple delegated tasks can be run in parallel.</div>
 <h3>closeInbound</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">closeInbound</span>()
-                           throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+                           throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Signals that no more inbound network data will be sent
 to this <code>SSLEngine</code>.
 <P>
@@ -1298,16 +1298,16 @@ been closed, this method does not do anything.
 <a href="#wrap(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>wrap()</code></a> should be
 called to flush any remaining handshake data.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - if this engine has not received the proper SSL/TLS/DTLS close
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - if this engine has not received the proper SSL/TLS/DTLS close
          notification message from the peer.</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc2246"><span id="RFC2246:TheTLSProtocolVersion1.0-1" class="search-tag-result">RFC 2246: The TLS Protocol Version 1.0</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#isInboundDone()"><code>isInboundDone()</code></a></li>
@@ -1326,11 +1326,11 @@ called to flush any remaining handshake data.</div>
 <div class="block">Returns whether <a href="#unwrap(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>unwrap(ByteBuffer, ByteBuffer)</code></a> will
 accept any more inbound data messages.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the <code>SSLEngine</code> will not
          consume any more network data (and by implication,
          will not produce any more application data.)</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#closeInbound()"><code>closeInbound()</code></a></li>
@@ -1354,7 +1354,7 @@ been closed, this method does not do anything.
 <a href="#wrap(java.nio.ByteBuffer,java.nio.ByteBuffer)"><code>wrap(ByteBuffer, ByteBuffer)</code></a> should be
 called to flush any remaining handshake data.</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#isOutboundDone()"><code>isOutboundDone()</code></a></li>
@@ -1377,10 +1377,10 @@ generate handshake closure data that must be sent to the peer.
 <code>wrap()</code> must be called to generate this data.  When
 this method returns true, no more outbound data will be created.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the <code>SSLEngine</code> will not produce
          any more network data</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#closeOutbound()"><code>closeOutbound()</code></a></li>
@@ -1395,7 +1395,7 @@ this method returns true, no more outbound data will be created.</div>
 <section class="detail" id="getSupportedCipherSuites()">
 <h3>getSupportedCipherSuites</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getSupportedCipherSuites</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getSupportedCipherSuites</span>()</div>
 <div class="block">Returns the names of the cipher suites which could be enabled for use
 on this engine.  Normally, only a subset of these will actually
 be enabled by default, since this list may include cipher suites which
@@ -1408,15 +1408,15 @@ JSSE Cipher Suite Names</a> section of the Java Security Standard
 Algorithm Names Specification, and may also include other cipher
 suites that the provider supports.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of cipher suite names</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../specs/security/standard-names.html"><span id="JavaSecurityStandardAlgorithmNames" class="search-tag-result">Java Security Standard Algorithm Names</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getEnabledCipherSuites()"><code>getEnabledCipherSuites()</code></a></li>
@@ -1431,7 +1431,7 @@ suites that the provider supports.</div>
 <section class="detail" id="getEnabledCipherSuites()">
 <h3>getEnabledCipherSuites</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getEnabledCipherSuites</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getEnabledCipherSuites</span>()</div>
 <div class="block">Returns the names of the SSL cipher suites which are currently
 enabled for use on this engine.  When an SSLEngine is first
 created, all enabled cipher suites support a minimum quality of
@@ -1449,15 +1449,15 @@ JSSE Cipher Suite Names</a> section of the Java Security Standard
 Algorithm Names Specification, and may also include other cipher
 suites that the provider supports.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of cipher suite names</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../specs/security/standard-names.html"><span id="JavaSecurityStandardAlgorithmNames-1" class="search-tag-result">Java Security Standard Algorithm Names</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getSupportedCipherSuites()"><code>getSupportedCipherSuites()</code></a></li>
@@ -1472,7 +1472,7 @@ suites that the provider supports.</div>
 <section class="detail" id="setEnabledCipherSuites(java.lang.String[])">
 <h3>setEnabledCipherSuites</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setEnabledCipherSuites</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;suites)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setEnabledCipherSuites</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;suites)</span></div>
 <div class="block">Sets the cipher suites enabled for use on this engine.
 <P>
 Each cipher suite in the <code>suites</code> parameter must have
@@ -1490,19 +1490,19 @@ for a certain cipher suite.
 See <a href="#getEnabledCipherSuites()"><code>getEnabledCipherSuites()</code></a> for more information
 on why a specific cipher suite may never be used on an engine.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>suites</code> - Names of all the cipher suites to enable</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - when one or more of the ciphers
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - when one or more of the ciphers
          named by the parameter is not supported, or when the
          parameter is null.</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="../../../../../specs/security/standard-names.html"><span id="JavaSecurityStandardAlgorithmNames-2" class="search-tag-result">Java Security Standard Algorithm Names</span></a></li>
 </ul>
 </dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getSupportedCipherSuites()"><code>getSupportedCipherSuites()</code></a></li>
@@ -1517,11 +1517,11 @@ on why a specific cipher suite may never be used on an engine.</div>
 <section class="detail" id="getSupportedProtocols()">
 <h3>getSupportedProtocols</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getSupportedProtocols</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getSupportedProtocols</span>()</div>
 <div class="block">Returns the names of the protocols which could be enabled for use
 with this <code>SSLEngine</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of protocols supported</dd>
 </dl>
 </div>
@@ -1531,7 +1531,7 @@ with this <code>SSLEngine</code>.</div>
 <section class="detail" id="getEnabledProtocols()">
 <h3>getEnabledProtocols</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">getEnabledProtocols</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">getEnabledProtocols</span>()</div>
 <div class="block">Returns the names of the protocol versions which are currently
 enabled for use with this <code>SSLEngine</code>.
 <P>
@@ -1540,9 +1540,9 @@ This can occur if the peer does not support the protocol, or its
 use is restricted, or there are no enabled cipher suites supported
 by the protocol.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of protocols</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setEnabledProtocols(java.lang.String%5B%5D)"><code>setEnabledProtocols(String[])</code></a></li>
@@ -1556,7 +1556,7 @@ by the protocol.</div>
 <section class="detail" id="setEnabledProtocols(java.lang.String[])">
 <h3>setEnabledProtocols</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setEnabledProtocols</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="class in java.lang">String</a>[]&nbsp;protocols)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setEnabledProtocols</span><wbr><span class="parameters">(<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>[]&nbsp;protocols)</span></div>
 <div class="block">Set the protocol versions enabled for use on this engine.
 <P>
 The protocols must have been listed by getSupportedProtocols()
@@ -1564,13 +1564,13 @@ as being supported.  Following a successful call to this method,
 only protocols listed in the <code>protocols</code> parameter
 are enabled for use.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>protocols</code> - Names of all the protocols to enable.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - when one or more of
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - when one or more of
          the protocols named by the parameter is not supported or
          when the protocols parameter is null.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getEnabledProtocols()"><code>getEnabledProtocols()</code></a></li>
@@ -1584,7 +1584,7 @@ are enabled for use.</div>
 <section class="detail" id="getSession()">
 <h3>getSession</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLSession.html" title="interface in javax.net.ssl">SSLSession</a></span>&nbsp;<span class="element-name">getSession</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLSession.html" title="javax.net.ssl 包中的接口">SSLSession</a></span>&nbsp;<span class="element-name">getSession</span>()</div>
 <div class="block">Returns the <code>SSLSession</code> in use in this
 <code>SSLEngine</code>.
 <P>
@@ -1601,12 +1601,12 @@ Until the initial handshake has completed, this method returns
 a session object which reports an invalid cipher suite of
 "SSL_NULL_WITH_NULL_NULL".</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the <code>SSLSession</code> for this <code>SSLEngine</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SSLSession.html" title="interface in javax.net.ssl"><code>SSLSession</code></a></li>
+<li><a href="SSLSession.html" title="javax.net.ssl 包中的接口"><code>SSLSession</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1617,7 +1617,7 @@ a session object which reports an invalid cipher suite of
 <section class="detail" id="getHandshakeSession()">
 <h3>getHandshakeSession</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLSession.html" title="interface in javax.net.ssl">SSLSession</a></span>&nbsp;<span class="element-name">getHandshakeSession</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLSession.html" title="javax.net.ssl 包中的接口">SSLSession</a></span>&nbsp;<span class="element-name">getHandshakeSession</span>()</div>
 <div class="block">Returns the <code>SSLSession</code> being constructed during a SSL/TLS/DTLS
 handshake.
 <p>
@@ -1638,24 +1638,24 @@ method of <code>SSLSession</code> will throw a
 SSLPeerUnverifiedException.  Once that chain has been processed,
 <code>getPeerCertificates</code> will return the proper value.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>null if this instance is not currently handshaking, or
         if the current handshake has not progressed far enough to
         create a basic SSLSession.  Otherwise, this method returns the
         <code>SSLSession</code> currently being negotiated.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the underlying provider
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the underlying provider
         does not implement the operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.7</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
-<li><a href="SSLSocket.html" title="class in javax.net.ssl"><code>SSLSocket</code></a></li>
-<li><a href="SSLSession.html" title="interface in javax.net.ssl"><code>SSLSession</code></a></li>
-<li><a href="ExtendedSSLSession.html" title="class in javax.net.ssl"><code>ExtendedSSLSession</code></a></li>
-<li><a href="X509ExtendedKeyManager.html" title="class in javax.net.ssl"><code>X509ExtendedKeyManager</code></a></li>
-<li><a href="X509ExtendedTrustManager.html" title="class in javax.net.ssl"><code>X509ExtendedTrustManager</code></a></li>
+<li><a href="SSLSocket.html" title="javax.net.ssl 包中的类"><code>SSLSocket</code></a></li>
+<li><a href="SSLSession.html" title="javax.net.ssl 包中的接口"><code>SSLSession</code></a></li>
+<li><a href="ExtendedSSLSession.html" title="javax.net.ssl 包中的类"><code>ExtendedSSLSession</code></a></li>
+<li><a href="X509ExtendedKeyManager.html" title="javax.net.ssl 包中的类"><code>X509ExtendedKeyManager</code></a></li>
+<li><a href="X509ExtendedTrustManager.html" title="javax.net.ssl 包中的类"><code>X509ExtendedTrustManager</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -1667,7 +1667,7 @@ SSLPeerUnverifiedException.  Once that chain has been processed,
 <h3>beginHandshake</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">beginHandshake</span>()
-                             throws <span class="exceptions"><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></span></div>
+                             throws <span class="exceptions"><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></span></div>
 <div class="block">Initiates handshaking (initial or renegotiation) on this SSLEngine.
 <P>
 This method is not needed for the initial handshake, as the
@@ -1687,14 +1687,14 @@ session should be invalidated prior to calling this method.
 Some protocols may not support multiple handshakes on an existing
 engine and may throw an <code>SSLException</code>.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="SSLException.html" title="class in javax.net.ssl">SSLException</a></code> - if a problem was encountered while signaling the
+<dt>抛出:</dt>
+<dd><code><a href="SSLException.html" title="javax.net.ssl 包中的类">SSLException</a></code> - if a problem was encountered while signaling the
          <code>SSLEngine</code> to begin a new handshake.
          See the class description for more information on
          engine closure.</dd>
-<dd><code><a href="../../../java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if the client/server mode
+<dd><code><a href="../../../java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if the client/server mode
          has not yet been set.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="SSLSession.html#invalidate()"><code>SSLSession.invalidate()</code></a></li>
@@ -1708,10 +1708,10 @@ engine and may throw an <code>SSLException</code>.</div>
 <section class="detail" id="getHandshakeStatus()">
 <h3>getHandshakeStatus</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.HandshakeStatus.html" title="enum class in javax.net.ssl">SSLEngineResult.HandshakeStatus</a></span>&nbsp;<span class="element-name">getHandshakeStatus</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="SSLEngineResult.HandshakeStatus.html" title="javax.net.ssl 包中的枚举类">SSLEngineResult.HandshakeStatus</a></span>&nbsp;<span class="element-name">getHandshakeStatus</span>()</div>
 <div class="block">Returns the current handshake status for this <code>SSLEngine</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the current <code>SSLEngineResult.HandshakeStatus</code>.</dd>
 </dl>
 </div>
@@ -1732,15 +1732,15 @@ life of this engine.
 Servers normally authenticate themselves, and clients
 are not required to do so.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The JDK SunJSSE provider implementation default for this mode is false.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>mode</code> - true if the engine should start its handshaking
          in "client" mode</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if a mode change is attempted
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if a mode change is attempted
          after the initial handshake has begun.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getUseClientMode()"><code>getUseClientMode()</code></a></li>
@@ -1758,13 +1758,13 @@ are not required to do so.</div>
 <div class="block">Returns true if the engine is set to use client mode when
 handshaking.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The JDK SunJSSE provider implementation returns false unless
 <a href="#setUseClientMode(boolean)"><code>setUseClientMode(boolean)</code></a> is used to change the mode to true.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the engine should do handshaking
          in "client" mode</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setUseClientMode(boolean)"><code>setUseClientMode(boolean)</code></a></li>
@@ -1797,10 +1797,10 @@ begin its closure procedure</i>.
 Calling this method overrides any previous setting made by
 this method or <a href="#setWantClientAuth(boolean)"><code>setWantClientAuth(boolean)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>need</code> - set to true if client authentication is required,
          or false if no client authentication is desired.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getNeedClientAuth()"><code>getNeedClientAuth()</code></a></li>
@@ -1821,10 +1821,10 @@ this method or <a href="#setWantClientAuth(boolean)"><code>setWantClientAuth(boo
 <div class="block">Returns true if the engine will <i>require</i> client authentication.
 This option is only useful to engines in the server mode.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if client authentication is required,
          or false if no client authentication is desired.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setNeedClientAuth(boolean)"><code>setNeedClientAuth(boolean)</code></a></li>
@@ -1859,10 +1859,10 @@ about itself, <i>the negotiations will continue</i>.
 Calling this method overrides any previous setting made by
 this method or <a href="#setNeedClientAuth(boolean)"><code>setNeedClientAuth(boolean)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>want</code> - set to true if client authentication is requested,
          or false if no client authentication is desired.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getWantClientAuth()"><code>getWantClientAuth()</code></a></li>
@@ -1883,10 +1883,10 @@ this method or <a href="#setNeedClientAuth(boolean)"><code>setNeedClientAuth(boo
 <div class="block">Returns true if the engine will <i>request</i> client authentication.
 This option is only useful for engines in the server mode.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if client authentication is requested,
          or false if no client authentication is desired.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setNeedClientAuth(boolean)"><code>setNeedClientAuth(boolean)</code></a></li>
@@ -1909,11 +1909,11 @@ If session creations are not allowed, and there are no
 existing sessions to resume, there will be no successful
 handshaking.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>flag</code> - true indicates that sessions may be created; this
          is the default.  false indicates that an existing session
          must be resumed</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getEnableSessionCreation()"><code>getEnableSessionCreation()</code></a></li>
@@ -1930,11 +1930,11 @@ handshaking.</div>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getEnableSessionCreation</span>()</div>
 <div class="block">Returns true if new SSL sessions may be established by this engine.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true indicates that sessions may be created; this
          is the default.  false indicates that an existing session
          must be resumed</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#setEnableSessionCreation(boolean)"><code>setEnableSessionCreation(boolean)</code></a></li>
@@ -1948,14 +1948,14 @@ handshaking.</div>
 <section class="detail" id="getSSLParameters()">
 <h3>getSSLParameters</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLParameters.html" title="class in javax.net.ssl">SSLParameters</a></span>&nbsp;<span class="element-name">getSSLParameters</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SSLParameters.html" title="javax.net.ssl 包中的类">SSLParameters</a></span>&nbsp;<span class="element-name">getSSLParameters</span>()</div>
 <div class="block">Returns the SSLParameters in effect for this SSLEngine.
 The ciphersuites and protocols of the returned SSLParameters
 are always non-null.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the SSLParameters in effect for this SSLEngine.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -1965,7 +1965,7 @@ are always non-null.</div>
 <section class="detail" id="setSSLParameters(javax.net.ssl.SSLParameters)">
 <h3>setSSLParameters</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSSLParameters</span><wbr><span class="parameters">(<a href="SSLParameters.html" title="class in javax.net.ssl">SSLParameters</a>&nbsp;params)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setSSLParameters</span><wbr><span class="parameters">(<a href="SSLParameters.html" title="javax.net.ssl 包中的类">SSLParameters</a>&nbsp;params)</span></div>
 <div class="block">Applies SSLParameters to this engine.
 
 <p>This means:
@@ -1985,12 +1985,12 @@ are always non-null.</div>
   configure its SNI matchers with that value.</li>
 </ul></div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>params</code> - the parameters</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the setEnabledCipherSuites() or
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the setEnabledCipherSuites() or
    the setEnabledProtocols() call fails</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
 </dl>
 </div>
@@ -2000,7 +2000,7 @@ are always non-null.</div>
 <section class="detail" id="getApplicationProtocol()">
 <h3>getApplicationProtocol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getApplicationProtocol</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getApplicationProtocol</span>()</div>
 <div class="block">Returns the most recent application protocol value negotiated for this
 connection.
 <p>
@@ -2009,21 +2009,21 @@ application name negotiation mechanisms such as <a href="http://www.ietf.org/rfc
 Application-Layer Protocol Negotiation (ALPN), can negotiate
 application-level values between peers.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation in this class throws
 <code>UnsupportedOperationException</code> and performs no other action.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>null if it has not yet been determined if application
         protocols might be used for this connection, an empty
         <code>String</code> if application protocols values will not
         be used, or a non-empty application protocol <code>String</code>
         if a value was successfully negotiated.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the underlying provider
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the underlying provider
         does not implement the operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
-<dt>External Specifications</dt>
+<dt>外部规范</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="https://www.rfc-editor.org/info/rfc7301"><span id="RFC7301:TransportLayerSecurity(TLS)Application-LayerProtocolNegotiationExtension" class="search-tag-result">RFC 7301: Transport Layer Security (TLS) Application-Layer Protocol Negotiation Extension</span></a></li>
@@ -2037,7 +2037,7 @@ application-level values between peers.</div>
 <section class="detail" id="getHandshakeApplicationProtocol()">
 <h3>getHandshakeApplicationProtocol</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getHandshakeApplicationProtocol</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getHandshakeApplicationProtocol</span>()</div>
 <div class="block">Returns the application protocol value negotiated on a SSL/TLS
 handshake currently in progress.
 <p>
@@ -2045,19 +2045,19 @@ Like <a href="#getHandshakeSession()"><code>getHandshakeSession()</code></a>,
 a connection may be in the middle of a handshake. The
 application protocol may or may not yet be available.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation in this class throws
 <code>UnsupportedOperationException</code> and performs no other action.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>null if it has not yet been determined if application
         protocols might be used for this handshake, an empty
         <code>String</code> if application protocols values will not
         be used, or a non-empty application protocol <code>String</code>
         if a value was successfully negotiated.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the underlying provider
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the underlying provider
         does not implement the operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -2067,7 +2067,7 @@ application protocol may or may not yet be available.</div>
 <section class="detail" id="setHandshakeApplicationProtocolSelector(java.util.function.BiFunction)">
 <h3>setHandshakeApplicationProtocolSelector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setHandshakeApplicationProtocolSelector</span><wbr><span class="parameters">(<a href="../../../java/util/function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;<a href="SSLEngine.html" title="class in javax.net.ssl">SSLEngine</a>, <a href="../../../java/util/List.html" title="interface in java.util">List</a>&lt;<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;, <a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;&nbsp;selector)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setHandshakeApplicationProtocolSelector</span><wbr><span class="parameters">(<a href="../../../java/util/function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;<a href="SSLEngine.html" title="javax.net.ssl 包中的类">SSLEngine</a>, <a href="../../../java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;, <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;&nbsp;selector)</span></div>
 <div class="block">Registers a callback function that selects an application protocol
 value for a SSL/TLS/DTLS handshake.
 The function overrides any values supplied using
@@ -2108,23 +2108,23 @@ name:
         });
 </code></pre></div>
 <dl class="notes">
-<dt>API Note:</dt>
+<dt>API说明:</dt>
 <dd>This method should be called by TLS server applications before the TLS
 handshake begins. Also, this <code>SSLEngine</code> should be configured with
 parameters that are compatible with the application protocol selected by
 the callback function. For example, enabling a poor choice of cipher
 suites could result in no suitable application protocol.
-See <a href="SSLParameters.html" title="class in javax.net.ssl"><code>SSLParameters</code></a>.</dd>
-<dt>Implementation Requirements:</dt>
+See <a href="SSLParameters.html" title="javax.net.ssl 包中的类"><code>SSLParameters</code></a>.</dd>
+<dt>实现要求:</dt>
 <dd>The implementation in this class throws
 <code>UnsupportedOperationException</code> and performs no other action.</dd>
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>selector</code> - the callback function, or null to disable the callback
         functionality.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the underlying provider
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the underlying provider
         does not implement the operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>
@@ -2134,21 +2134,21 @@ See <a href="SSLParameters.html" title="class in javax.net.ssl"><code>SSLParamet
 <section class="detail" id="getHandshakeApplicationProtocolSelector()">
 <h3>getHandshakeApplicationProtocolSelector</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/util/function/BiFunction.html" title="interface in java.util.function">BiFunction</a>&lt;<a href="SSLEngine.html" title="class in javax.net.ssl">SSLEngine</a>, <a href="../../../java/util/List.html" title="interface in java.util">List</a>&lt;<a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;, <a href="../../../java/lang/String.html" title="class in java.lang">String</a>&gt;</span>&nbsp;<span class="element-name">getHandshakeApplicationProtocolSelector</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java/util/function/BiFunction.html" title="java.util.function 包中的接口">BiFunction</a>&lt;<a href="SSLEngine.html" title="javax.net.ssl 包中的类">SSLEngine</a>, <a href="../../../java/util/List.html" title="java.util 包中的接口">List</a>&lt;<a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;, <a href="../../../java/lang/String.html" title="java.lang 包中的类">String</a>&gt;</span>&nbsp;<span class="element-name">getHandshakeApplicationProtocolSelector</span>()</div>
 <div class="block">Retrieves the callback function that selects an application protocol
 value during a SSL/TLS/DTLS handshake.
 See <a href="#setHandshakeApplicationProtocolSelector(java.util.function.BiFunction)"><code>setHandshakeApplicationProtocolSelector</code></a>
 for the function's type parameters.</div>
 <dl class="notes">
-<dt>Implementation Requirements:</dt>
+<dt>实现要求:</dt>
 <dd>The implementation in this class throws
 <code>UnsupportedOperationException</code> and performs no other action.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the callback function, or null if none has been set.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the underlying provider
+<dt>抛出:</dt>
+<dd><code><a href="../../../java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the underlying provider
         does not implement the operation.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>9</dd>
 </dl>
 </div>

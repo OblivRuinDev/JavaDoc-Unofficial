@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.util.prefs</a></li>
 <li><a href="Preferences.html" class="current-selection">Preferences</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -99,25 +99,25 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#field-summary" tabindex="0">Field Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#field-detail" tabindex="0">Field Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#field-summary" tabindex="0">字段概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#field-detail" tabindex="0">字段详情</a>
 <ol class="toc-list">
 <li><a href="#MAX_KEY_LENGTH" tabindex="0">MAX_KEY_LENGTH</a></li>
 <li><a href="#MAX_VALUE_LENGTH" tabindex="0">MAX_VALUE_LENGTH</a></li>
 <li><a href="#MAX_NAME_LENGTH" tabindex="0">MAX_NAME_LENGTH</a></li>
 </ol>
 </li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E()" tabindex="0">Preferences()</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#userNodeForPackage(java.lang.Class)" tabindex="0">userNodeForPackage(Class)</a></li>
 <li><a href="#systemNodeForPackage(java.lang.Class)" tabindex="0">systemNodeForPackage(Class)</a></li>
@@ -165,20 +165,20 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class Preferences" class="title">Class Preferences</h1>
+<h1 title="类 Preferences" class="title">类 Preferences</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.util.prefs.Preferences</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
-<dt>Direct Known Subclasses:</dt>
-<dd><code><a href="AbstractPreferences.html" title="class in java.util.prefs">AbstractPreferences</a></code></dd>
+<dt>直接已知子类:</dt>
+<dd><code><a href="AbstractPreferences.html" title="java.util.prefs 包中的类">AbstractPreferences</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">Preferences</span>
-<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A node in a hierarchical collection of preference data.  This class
 allows applications to store and retrieve user and system
 preference and configuration data.  This data is stored
@@ -252,7 +252,7 @@ with slightly degraded functionality, even if the backing store becomes
 unavailable.  Several methods, like <code>flush</code>, have semantics that
 prevent them from operating if the backing store is unavailable.  Ordinary
 applications should have no need to invoke any of these methods, which can
-be identified by the fact that they are declared to throw <a href="BackingStoreException.html" title="class in java.util.prefs"><code>BackingStoreException</code></a>.
+be identified by the fact that they are declared to throw <a href="BackingStoreException.html" title="java.util.prefs 包中的类"><code>BackingStoreException</code></a>.
 
 <p>The methods in this class may be invoked concurrently by multiple threads
 in a single JVM without the need for external synchronization, and the
@@ -314,13 +314,13 @@ serves as a string to uniquely identify the DTD, which is:
              value CDATA #REQUIRED &gt;
 </code></pre>
 
-Every <code>Preferences</code> implementation must have an associated <a href="PreferencesFactory.html" title="interface in java.util.prefs"><code>PreferencesFactory</code></a> implementation.  Every Java(TM) SE implementation must provide
+Every <code>Preferences</code> implementation must have an associated <a href="PreferencesFactory.html" title="java.util.prefs 包中的接口"><code>PreferencesFactory</code></a> implementation.  Every Java(TM) SE implementation must provide
 some means of specifying which <code>PreferencesFactory</code> implementation
 is used to generate the root preferences nodes.  This allows the
 administrator to replace the default preferences implementation with an
 alternative implementation.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>The <code>PreferencesFactory</code> implementation is located as follows:
 
 <ol>
@@ -349,7 +349,7 @@ an extension jar file is provided, then the system-wide default
 platform is loaded and instantiated.</p></li>
 
 </ol></dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.4</dd>
 </dl>
 </div>
@@ -359,12 +359,12 @@ platform is loaded and instantiated.</p></li>
 <!-- =========== FIELD SUMMARY =========== -->
 <li>
 <section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
+<h2>字段概要</h2>
+<div class="caption"><span>字段</span></div>
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">字段</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color"><code>static final int</code></div>
 <div class="col-second even-row-color"><code><a href="#MAX_KEY_LENGTH" class="member-name-link">MAX_KEY_LENGTH</a></code></div>
 <div class="col-last even-row-color">
@@ -386,8 +386,8 @@ platform is loaded and instantiated.</p></li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier</div>
 <div class="table-header col-second">Constructor</div>
@@ -403,32 +403,32 @@ platform is loaded and instantiated.</p></li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">Abstract Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">静态方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#absolutePath()" class="member-name-link">absolutePath</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns this preference node's absolute path name.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addNodeChangeListener(java.util.prefs.NodeChangeListener)" class="member-name-link">addNodeChangeListener</a><wbr>(<a href="NodeChangeListener.html" title="interface in java.util.prefs">NodeChangeListener</a>&nbsp;ncl)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addNodeChangeListener(java.util.prefs.NodeChangeListener)" class="member-name-link">addNodeChangeListener</a><wbr>(<a href="NodeChangeListener.html" title="java.util.prefs 包中的接口">NodeChangeListener</a>&nbsp;ncl)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Registers the specified listener to receive <i>node change events</i>
 for this node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)" class="member-name-link">addPreferenceChangeListener</a><wbr>(<a href="PreferenceChangeListener.html" title="interface in java.util.prefs">PreferenceChangeListener</a>&nbsp;pcl)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)" class="member-name-link">addPreferenceChangeListener</a><wbr>(<a href="PreferenceChangeListener.html" title="java.util.prefs 包中的接口">PreferenceChangeListener</a>&nbsp;pcl)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Registers the specified listener to receive <i>preference change
 events</i> for this preference node.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#childrenNames()" class="member-name-link">childrenNames</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the names of the children of this preference node, relative to
@@ -441,13 +441,13 @@ this node.</div>
 preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportNode(java.io.OutputStream)" class="member-name-link">exportNode</a><wbr>(<a href="../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;os)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportNode(java.io.OutputStream)" class="member-name-link">exportNode</a><wbr>(<a href="../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;os)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Emits on the specified output stream an XML document representing all
 of the preferences contained in this node (but not its descendants).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportSubtree(java.io.OutputStream)" class="member-name-link">exportSubtree</a><wbr>(<a href="../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;os)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportSubtree(java.io.OutputStream)" class="member-name-link">exportSubtree</a><wbr>(<a href="../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;os)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Emits an XML document representing all of the preferences contained
 in this node and all of its descendants.</div>
@@ -458,57 +458,57 @@ in this node and all of its descendants.</div>
 <div class="block">Forces any changes in the contents of this preference node and its
 descendants to the persistent store.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.String,java.lang.String)" class="member-name-link">get</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;def)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#get(java.lang.String,java.lang.String)" class="member-name-link">get</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;def)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the value associated with the specified key in this preference
 node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoolean(java.lang.String,boolean)" class="member-name-link">getBoolean</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getBoolean(java.lang.String,boolean)" class="member-name-link">getBoolean</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  boolean&nbsp;def)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the boolean value represented by the string associated with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract byte[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getByteArray(java.lang.String,byte%5B%5D)" class="member-name-link">getByteArray</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getByteArray(java.lang.String,byte%5B%5D)" class="member-name-link">getByteArray</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  byte[]&nbsp;def)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the byte array value represented by the string associated with
 the specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDouble(java.lang.String,double)" class="member-name-link">getDouble</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getDouble(java.lang.String,double)" class="member-name-link">getDouble</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  double&nbsp;def)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the double value represented by the string associated with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract float</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFloat(java.lang.String,float)" class="member-name-link">getFloat</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getFloat(java.lang.String,float)" class="member-name-link">getFloat</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  float&nbsp;def)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the float value represented by the string associated with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getInt(java.lang.String,int)" class="member-name-link">getInt</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getInt(java.lang.String,int)" class="member-name-link">getInt</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  int&nbsp;def)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the int value represented by the string associated with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract long</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLong(java.lang.String,long)" class="member-name-link">getLong</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLong(java.lang.String,long)" class="member-name-link">getLong</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  long&nbsp;def)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the long value represented by the string associated with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#importPreferences(java.io.InputStream)" class="member-name-link">importPreferences</a><wbr>(<a href="../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#importPreferences(java.io.InputStream)" class="member-name-link">importPreferences</a><wbr>(<a href="../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Imports all of the preferences represented by the XML document on the
 specified input stream.</div>
@@ -519,86 +519,86 @@ specified input stream.</div>
 <div class="block">Returns <code>true</code> if this preference node is in the user
 preference tree, <code>false</code> if it's in the system preference tree.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#keys()" class="member-name-link">keys</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns all of the keys that have an associated value in this
 preference node.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#name()" class="member-name-link">name</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns this preference node's name, relative to its parent.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#node(java.lang.String)" class="member-name-link">node</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;pathName)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#node(java.lang.String)" class="member-name-link">node</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pathName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the named preference node in the same tree as this node,
 creating it and any of its ancestors if they do not already exist.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#nodeExists(java.lang.String)" class="member-name-link">nodeExists</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;pathName)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#nodeExists(java.lang.String)" class="member-name-link">nodeExists</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pathName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns true if the named preference node exists in the same tree
 as this node.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#parent()" class="member-name-link">parent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns the parent of this preference node, or <code>null</code> if this is
 the root.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#put(java.lang.String,java.lang.String)" class="member-name-link">put</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#put(java.lang.String,java.lang.String)" class="member-name-link">put</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates the specified value with the specified key in this
 preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putBoolean(java.lang.String,boolean)" class="member-name-link">putBoolean</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putBoolean(java.lang.String,boolean)" class="member-name-link">putBoolean</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  boolean&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified boolean value with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putByteArray(java.lang.String,byte%5B%5D)" class="member-name-link">putByteArray</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putByteArray(java.lang.String,byte%5B%5D)" class="member-name-link">putByteArray</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  byte[]&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified byte array with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putDouble(java.lang.String,double)" class="member-name-link">putDouble</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putDouble(java.lang.String,double)" class="member-name-link">putDouble</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  double&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified double value with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putFloat(java.lang.String,float)" class="member-name-link">putFloat</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putFloat(java.lang.String,float)" class="member-name-link">putFloat</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  float&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified float value with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putInt(java.lang.String,int)" class="member-name-link">putInt</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putInt(java.lang.String,int)" class="member-name-link">putInt</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  int&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified int value with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putLong(java.lang.String,long)" class="member-name-link">putLong</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#putLong(java.lang.String,long)" class="member-name-link">putLong</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  long&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Associates a string representing the specified long value with the
 specified key in this preference node.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.String)" class="member-name-link">remove</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#remove(java.lang.String)" class="member-name-link">remove</a><wbr>(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes the value associated with the specified key in this preference
 node, if any.</div>
@@ -610,13 +610,13 @@ node, if any.</div>
 any preferences contained in the removed nodes.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeNodeChangeListener(java.util.prefs.NodeChangeListener)" class="member-name-link">removeNodeChangeListener</a><wbr>(<a href="NodeChangeListener.html" title="interface in java.util.prefs">NodeChangeListener</a>&nbsp;ncl)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeNodeChangeListener(java.util.prefs.NodeChangeListener)" class="member-name-link">removeNodeChangeListener</a><wbr>(<a href="NodeChangeListener.html" title="java.util.prefs 包中的接口">NodeChangeListener</a>&nbsp;ncl)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes the specified <code>NodeChangeListener</code>, so it no longer
 receives change events.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)" class="member-name-link">removePreferenceChangeListener</a><wbr>(<a href="PreferenceChangeListener.html" title="interface in java.util.prefs">PreferenceChangeListener</a>&nbsp;pcl)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)" class="member-name-link">removePreferenceChangeListener</a><wbr>(<a href="PreferenceChangeListener.html" title="java.util.prefs 包中的接口">PreferenceChangeListener</a>&nbsp;pcl)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Removes the specified preference change listener, so it no longer
 receives preference change events.</div>
@@ -628,31 +628,31 @@ receives preference change events.</div>
 descendants reflect any changes that were committed to the persistent
 store (from any VM) prior to the <code>sync</code> invocation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemNodeForPackage(java.lang.Class)" class="member-name-link">systemNodeForPackage</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemNodeForPackage(java.lang.Class)" class="member-name-link">systemNodeForPackage</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the preference node from the system preference tree that is
 associated (by convention) with the specified class's package.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#systemRoot()" class="member-name-link">systemRoot</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the root preference node for the system.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Returns a string representation of this preferences node,
 as if computed by the expression:<code>(this.isUserNode() ? "User" :
 "System") + " Preference Node: " + this.absolutePath()</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#userNodeForPackage(java.lang.Class)" class="member-name-link">userNodeForPackage</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#userNodeForPackage(java.lang.Class)" class="member-name-link">userNodeForPackage</a><wbr>(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the preference node from the calling user's preference tree
 that is associated (by convention) with the specified class's package.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="class in java.util.prefs">Preferences</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#userRoot()" class="member-name-link">userRoot</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Returns the root preference node for the calling user.</div>
@@ -661,7 +661,7 @@ that is associated (by convention) with the specified class's package.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -672,7 +672,7 @@ that is associated (by convention) with the specified class's package.</div>
 <!-- ============ FIELD DETAIL =========== -->
 <li>
 <section class="field-details" id="field-detail">
-<h2>Field Details</h2>
+<h2>字段详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="MAX_KEY_LENGTH">
@@ -681,7 +681,7 @@ that is associated (by convention) with the specified class's package.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_KEY_LENGTH</span></div>
 <div class="block">Maximum length of string allowed as a key (80 characters).</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#java.util.prefs.Preferences.MAX_KEY_LENGTH">Constant Field Values</a></li>
@@ -698,7 +698,7 @@ that is associated (by convention) with the specified class's package.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_VALUE_LENGTH</span></div>
 <div class="block">Maximum length of string allowed as a value (8192 characters).</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#java.util.prefs.Preferences.MAX_VALUE_LENGTH">Constant Field Values</a></li>
@@ -715,7 +715,7 @@ that is associated (by convention) with the specified class's package.</div>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">MAX_NAME_LENGTH</span></div>
 <div class="block">Maximum length of a node name (80 characters).</div>
 <dl class="notes">
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="../../../../constant-values.html#java.util.prefs.Preferences.MAX_NAME_LENGTH">Constant Field Values</a></li>
@@ -731,7 +731,7 @@ that is associated (by convention) with the specified class's package.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;()">
@@ -749,13 +749,13 @@ implicit.)</div>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="userNodeForPackage(java.lang.Class)">
 <h3>userNodeForPackage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">userNodeForPackage</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">userNodeForPackage</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</span></div>
 <div class="block">Returns the preference node from the calling user's preference tree
 that is associated (by convention) with the specified class's package.
 The convention is as follows: the absolute path name of the node is the
@@ -787,13 +787,13 @@ were created by this call are not guaranteed to become permanent until
 the <code>flush</code> method is called on the returned node (or one of its
 ancestors or descendants).</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>c</code> - the class for whose package a user preference node is desired.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the user preference node associated with the package of which
         <code>c</code> is a member.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>c</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>c</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -802,7 +802,7 @@ ancestors or descendants).</div>
 <section class="detail" id="systemNodeForPackage(java.lang.Class)">
 <h3>systemNodeForPackage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">systemNodeForPackage</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="class in java.lang">Class</a>&lt;?&gt;&nbsp;c)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">systemNodeForPackage</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/Class.html" title="java.lang 包中的类">Class</a>&lt;?&gt;&nbsp;c)</span></div>
 <div class="block">Returns the preference node from the system preference tree that is
 associated (by convention) with the specified class's package.  The
 convention is as follows: the absolute path name of the node is the
@@ -834,13 +834,13 @@ were created by this call are not guaranteed to become permanent until
 the <code>flush</code> method is called on the returned node (or one of its
 ancestors or descendants).</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>c</code> - the class for whose package a system preference node is desired.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the system preference node associated with the package of which
         <code>c</code> is a member.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>c</code> is <code>null</code>.</dd>
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>c</code> is <code>null</code>.</dd>
 </dl>
 </div>
 </section>
@@ -849,10 +849,10 @@ ancestors or descendants).</div>
 <section class="detail" id="userRoot()">
 <h3>userRoot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">userRoot</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">userRoot</span>()</div>
 <div class="block">Returns the root preference node for the calling user.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the root preference node for the calling user.</dd>
 </dl>
 </div>
@@ -862,10 +862,10 @@ ancestors or descendants).</div>
 <section class="detail" id="systemRoot()">
 <h3>systemRoot</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">systemRoot</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">systemRoot</span>()</div>
 <div class="block">Returns the root preference node for the system.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the root preference node for the system.</dd>
 </dl>
 </div>
@@ -875,22 +875,22 @@ ancestors or descendants).</div>
 <section class="detail" id="put(java.lang.String,java.lang.String)">
 <h3>put</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;value)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">put</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;value)</span></div>
 <div class="block">Associates the specified value with the specified key in this
 preference node.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the specified value is to be associated.</dd>
 <dd><code>value</code> - value to be associated with the specified key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if key or value is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if key or value is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
       <code>MAX_KEY_LENGTH</code> or if <code>value.length</code> exceeds
       <code>MAX_VALUE_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if either key or value contain
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if either key or value contain
         the null control character, code point U+0000.</dd>
 </dl>
 </div>
@@ -900,8 +900,8 @@ preference node.</div>
 <section class="detail" id="get(java.lang.String,java.lang.String)">
 <h3>get</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
- <a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;def)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
+ <a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;def)</span></div>
 <div class="block">Returns the value associated with the specified key in this preference
 node.  Returns the specified default if there is no value associated
 with the key, or the backing store is inaccessible.
@@ -911,20 +911,20 @@ stores.  If there is no value associated with the specified key
 but there is such a <i>stored default</i>, it is returned in
 preference to the specified default.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the value associated with <code>key</code>, or <code>def</code>
         if no value is associated with <code>key</code>, or the backing
         store is inaccessible.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.  (A
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.  (A
         <code>null</code> value for <code>def</code> <i>is</i> permitted.)</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
 </dl>
 </div>
@@ -934,7 +934,7 @@ preference to the specified default.</div>
 <section class="detail" id="remove(java.lang.String)">
 <h3>remove</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key)</span></div>
 <div class="block">Removes the value associated with the specified key in this preference
 node, if any.
 
@@ -943,13 +943,13 @@ such a default for the specified preference, the stored default will be
 "exposed" by this call, in the sense that it will be returned
 by a succeeding call to <code>get</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose mapping is to be removed from the preference node.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
 </dl>
 </div>
@@ -960,7 +960,7 @@ by a succeeding call to <code>get</code>.</div>
 <h3>clear</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()
-                    throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+                    throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Removes all of the preferences (key-value associations) in this
 preference node.  This call has no effect on any descendants
 of this node.
@@ -970,13 +970,13 @@ node in the preferences hierarchy contains any such defaults,
 the stored defaults will be "exposed" by this call, in the sense that
 they will be returned by succeeding calls to <code>get</code>.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#removeNode()"><code>removeNode()</code></a></li>
@@ -990,7 +990,7 @@ they will be returned by succeeding calls to <code>get</code>.</div>
 <section class="detail" id="putInt(java.lang.String,int)">
 <h3>putInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putInt</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  int&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified int value with the
 specified key in this preference node.  The associated string is the
@@ -998,18 +998,18 @@ one that would be returned if the int value were passed to
 <a href="../../../../java.base/java/lang/Integer.html#toString(int)"><code>Integer.toString(int)</code></a>.  This method is intended for use in
 conjunction with <a href="#getInt(java.lang.String,int)"><code>getInt(String, int)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
         <code>MAX_KEY_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getInt(java.lang.String,int)"><code>getInt(String,int)</code></a></li>
@@ -1023,14 +1023,14 @@ conjunction with <a href="#getInt(java.lang.String,int)"><code>getInt(String, in
 <section class="detail" id="getInt(java.lang.String,int)">
 <h3>getInt</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getInt</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getInt</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  int&nbsp;def)</span></div>
 <div class="block">Returns the int value represented by the string associated with the
 specified key in this preference node.  The string is converted to
 an integer as by <a href="../../../../java.base/java/lang/Integer.html#parseInt(java.lang.String)"><code>Integer.parseInt(String)</code></a>.  Returns the
 specified default if there is no value associated with the key,
 the backing store is inaccessible, or if
-<code>Integer.parseInt(String)</code> would throw a <a href="../../../../java.base/java/lang/NumberFormatException.html" title="class in java.lang"><code>NumberFormatException</code></a> if the associated value were passed.  This
+<code>Integer.parseInt(String)</code> would throw a <a href="../../../../java.base/java/lang/NumberFormatException.html" title="java.lang 包中的类"><code>NumberFormatException</code></a> if the associated value were passed.  This
 method is intended for use in conjunction with <a href="#putInt(java.lang.String,int)"><code>putInt(String, int)</code></a>.
 
 <p>If the implementation supports <i>stored defaults</i> and such a
@@ -1038,24 +1038,24 @@ default exists, is accessible, and could be converted to an int
 with <code>Integer.parseInt</code>, this int is returned in preference to
 the specified default.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as an int.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as an int,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the int value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         an int.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#putInt(java.lang.String,int)"><code>putInt(String,int)</code></a></li>
@@ -1070,7 +1070,7 @@ the specified default.</div>
 <section class="detail" id="putLong(java.lang.String,long)">
 <h3>putLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putLong</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  long&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified long value with the
 specified key in this preference node.  The associated string is the
@@ -1078,18 +1078,18 @@ one that would be returned if the long value were passed to
 <a href="../../../../java.base/java/lang/Long.html#toString(long)"><code>Long.toString(long)</code></a>.  This method is intended for use in
 conjunction with <a href="#getLong(java.lang.String,long)"><code>getLong(String, long)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
         <code>MAX_KEY_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getLong(java.lang.String,long)"><code>getLong(String,long)</code></a></li>
@@ -1103,14 +1103,14 @@ conjunction with <a href="#getLong(java.lang.String,long)"><code>getLong(String,
 <section class="detail" id="getLong(java.lang.String,long)">
 <h3>getLong</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getLong</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getLong</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  long&nbsp;def)</span></div>
 <div class="block">Returns the long value represented by the string associated with the
 specified key in this preference node.  The string is converted to
 a long as by <a href="../../../../java.base/java/lang/Long.html#parseLong(java.lang.String)"><code>Long.parseLong(String)</code></a>.  Returns the
 specified default if there is no value associated with the key,
 the backing store is inaccessible, or if
-<code>Long.parseLong(String)</code> would throw a <a href="../../../../java.base/java/lang/NumberFormatException.html" title="class in java.lang"><code>NumberFormatException</code></a> if the associated value were passed.  This
+<code>Long.parseLong(String)</code> would throw a <a href="../../../../java.base/java/lang/NumberFormatException.html" title="java.lang 包中的类"><code>NumberFormatException</code></a> if the associated value were passed.  This
 method is intended for use in conjunction with <a href="#putLong(java.lang.String,long)"><code>putLong(String, long)</code></a>.
 
 <p>If the implementation supports <i>stored defaults</i> and such a
@@ -1118,24 +1118,24 @@ default exists, is accessible, and could be converted to a long
 with <code>Long.parseLong</code>, this long is returned in preference to
 the specified default.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as a long.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as a long,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the long value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         a long.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#putLong(java.lang.String,long)"><code>putLong(String,long)</code></a></li>
@@ -1150,7 +1150,7 @@ the specified default.</div>
 <section class="detail" id="putBoolean(java.lang.String,boolean)">
 <h3>putBoolean</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putBoolean</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putBoolean</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  boolean&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified boolean value with the
 specified key in this preference node.  The associated string is
@@ -1158,18 +1158,18 @@ specified key in this preference node.  The associated string is
 false.  This method is intended for use in conjunction with
 <a href="#getBoolean(java.lang.String,boolean)"><code>getBoolean(String, boolean)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
         <code>MAX_KEY_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getBoolean(java.lang.String,boolean)"><code>getBoolean(String,boolean)</code></a></li>
@@ -1184,7 +1184,7 @@ false.  This method is intended for use in conjunction with
 <section class="detail" id="getBoolean(java.lang.String,boolean)">
 <h3>getBoolean</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getBoolean</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getBoolean</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  boolean&nbsp;def)</span></div>
 <div class="block">Returns the boolean value represented by the string associated with the
 specified key in this preference node.  Valid strings
@@ -1204,24 +1204,24 @@ specified default, unless the stored default is something other than
 <code>"true"</code> or <code>"false"</code>, ignoring case, in which case the
 specified default is used.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as a boolean.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as a boolean,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the boolean value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         a boolean.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#get(java.lang.String,java.lang.String)"><code>get(String,String)</code></a></li>
@@ -1236,7 +1236,7 @@ specified default is used.</div>
 <section class="detail" id="putFloat(java.lang.String,float)">
 <h3>putFloat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putFloat</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  float&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified float value with the
 specified key in this preference node.  The associated string is the
@@ -1244,18 +1244,18 @@ one that would be returned if the float value were passed to
 <a href="../../../../java.base/java/lang/Float.html#toString(float)"><code>Float.toString(float)</code></a>.  This method is intended for use in
 conjunction with <a href="#getFloat(java.lang.String,float)"><code>getFloat(String, float)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
         <code>MAX_KEY_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getFloat(java.lang.String,float)"><code>getFloat(String,float)</code></a></li>
@@ -1269,14 +1269,14 @@ conjunction with <a href="#getFloat(java.lang.String,float)"><code>getFloat(Stri
 <section class="detail" id="getFloat(java.lang.String,float)">
 <h3>getFloat</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getFloat</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">float</span>&nbsp;<span class="element-name">getFloat</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  float&nbsp;def)</span></div>
 <div class="block">Returns the float value represented by the string associated with the
 specified key in this preference node.  The string is converted to an
 integer as by <a href="../../../../java.base/java/lang/Float.html#parseFloat(java.lang.String)"><code>Float.parseFloat(String)</code></a>.  Returns the specified
 default if there is no value associated with the key, the backing store
 is inaccessible, or if <code>Float.parseFloat(String)</code> would throw a
-<a href="../../../../java.base/java/lang/NumberFormatException.html" title="class in java.lang"><code>NumberFormatException</code></a> if the associated value were passed.
+<a href="../../../../java.base/java/lang/NumberFormatException.html" title="java.lang 包中的类"><code>NumberFormatException</code></a> if the associated value were passed.
 This method is intended for use in conjunction with <a href="#putFloat(java.lang.String,float)"><code>putFloat(String, float)</code></a>.
 
 <p>If the implementation supports <i>stored defaults</i> and such a
@@ -1284,24 +1284,24 @@ default exists, is accessible, and could be converted to a float
 with <code>Float.parseFloat</code>, this float is returned in preference to
 the specified default.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as a float.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as a float,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the float value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         a float.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#putFloat(java.lang.String,float)"><code>putFloat(String,float)</code></a></li>
@@ -1316,7 +1316,7 @@ the specified default.</div>
 <section class="detail" id="putDouble(java.lang.String,double)">
 <h3>putDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putDouble</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  double&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified double value with the
 specified key in this preference node.  The associated string is the
@@ -1324,18 +1324,18 @@ one that would be returned if the double value were passed to
 <a href="../../../../java.base/java/lang/Double.html#toString(double)"><code>Double.toString(double)</code></a>.  This method is intended for use in
 conjunction with <a href="#getDouble(java.lang.String,double)"><code>getDouble(String, double)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>key.length()</code> exceeds
         <code>MAX_KEY_LENGTH</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getDouble(java.lang.String,double)"><code>getDouble(String,double)</code></a></li>
@@ -1349,14 +1349,14 @@ conjunction with <a href="#getDouble(java.lang.String,double)"><code>getDouble(S
 <section class="detail" id="getDouble(java.lang.String,double)">
 <h3>getDouble</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getDouble</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getDouble</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  double&nbsp;def)</span></div>
 <div class="block">Returns the double value represented by the string associated with the
 specified key in this preference node.  The string is converted to an
 integer as by <a href="../../../../java.base/java/lang/Double.html#parseDouble(java.lang.String)"><code>Double.parseDouble(String)</code></a>.  Returns the specified
 default if there is no value associated with the key, the backing store
 is inaccessible, or if <code>Double.parseDouble(String)</code> would throw a
-<a href="../../../../java.base/java/lang/NumberFormatException.html" title="class in java.lang"><code>NumberFormatException</code></a> if the associated value were passed.
+<a href="../../../../java.base/java/lang/NumberFormatException.html" title="java.lang 包中的类"><code>NumberFormatException</code></a> if the associated value were passed.
 This method is intended for use in conjunction with <a href="#putDouble(java.lang.String,double)"><code>putDouble(String, double)</code></a>.
 
 <p>If the implementation supports <i>stored defaults</i> and such a
@@ -1364,24 +1364,24 @@ default exists, is accessible, and could be converted to a double
 with <code>Double.parseDouble</code>, this double is returned in preference
 to the specified default.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as a double.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as a double,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the double value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         a double.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#putDouble(java.lang.String,double)"><code>putDouble(String,double)</code></a></li>
@@ -1396,7 +1396,7 @@ to the specified default.</div>
 <section class="detail" id="putByteArray(java.lang.String,byte[])">
 <h3>putByteArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putByteArray</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">putByteArray</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  byte[]&nbsp;value)</span></div>
 <div class="block">Associates a string representing the specified byte array with the
 specified key in this preference node.  The associated string is
@@ -1409,18 +1409,18 @@ of the Base64 encoded String does not exceed <code>MAX_VALUE_LENGTH</code>.
 This method is intended for use in conjunction with
 <a href="#getByteArray(java.lang.String,byte%5B%5D)"><code>getByteArray(String, byte[])</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key with which the string form of value is to be associated.</dd>
 <dd><code>value</code> - value whose string form is to be associated with key.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if key or value is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key.length() exceeds MAX_KEY_LENGTH
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if key or value is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key.length() exceeds MAX_KEY_LENGTH
         or if value.length exceeds MAX_VALUE_LENGTH*3/4.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains
         the null control character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getByteArray(java.lang.String,byte%5B%5D)"><code>getByteArray(String,byte[])</code></a></li>
@@ -1435,7 +1435,7 @@ This method is intended for use in conjunction with
 <section class="detail" id="getByteArray(java.lang.String,byte[])">
 <h3>getByteArray</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getByteArray</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getByteArray</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;key,
  byte[]&nbsp;def)</span></div>
 <div class="block">Returns the byte array value represented by the string associated with
 the specified key in this preference node.  Valid strings are
@@ -1456,25 +1456,25 @@ specified default, unless the stored default is not a valid Base64
 encoded byte array (as defined above), in which case the
 specified default is used.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>key</code> - key whose associated value is to be returned as a byte array.</dd>
 <dd><code>def</code> - the value to be returned in the event that this
        preference node has no value associated with <code>key</code>
        or the associated value cannot be interpreted as a byte array,
        or the backing store is inaccessible.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the byte array value represented by the string associated with
         <code>key</code> in this preference node, or <code>def</code> if the
         associated value does not exist or cannot be interpreted as
         a byte array.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.  (A
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>key</code> is <code>null</code>.  (A
         <code>null</code> value for <code>def</code> <i>is</i> permitted.)</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if key contains the null control
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if key contains the null control
         character, code point U+0000.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#get(java.lang.String,java.lang.String)"><code>get(String,String)</code></a></li>
@@ -1489,8 +1489,8 @@ specified default is used.</div>
 <section class="detail" id="keys()">
 <h3>keys</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">keys</span>()
-                       throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">keys</span>()
+                       throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Returns all of the keys that have an associated value in this
 preference node.  (The returned array will be of size zero if
 this node has no preferences.)
@@ -1500,14 +1500,14 @@ are any such defaults at this node that have not been overridden,
 by explicit preferences, the defaults are returned in the array in
 addition to any explicit preferences.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>an array of the keys that have an associated value in this
         preference node.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
 </dl>
 </div>
@@ -1517,19 +1517,19 @@ addition to any explicit preferences.</div>
 <section class="detail" id="childrenNames()">
 <h3>childrenNames</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>[]</span>&nbsp;<span class="element-name">childrenNames</span>()
-                                throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>[]</span>&nbsp;<span class="element-name">childrenNames</span>()
+                                throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Returns the names of the children of this preference node, relative to
 this node.  (The returned array will be of size zero if this node has
 no children.)</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the names of the children of this preference node.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
 </dl>
 </div>
@@ -1539,14 +1539,14 @@ no children.)</div>
 <section class="detail" id="parent()">
 <h3>parent</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">parent</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">parent</span>()</div>
 <div class="block">Returns the parent of this preference node, or <code>null</code> if this is
 the root.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the parent of this preference node.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
 </dl>
 </div>
@@ -1556,7 +1556,7 @@ the root.</div>
 <section class="detail" id="node(java.lang.String)">
 <h3>node</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="class in java.util.prefs">Preferences</a></span>&nbsp;<span class="element-name">node</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;pathName)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Preferences.html" title="java.util.prefs 包中的类">Preferences</a></span>&nbsp;<span class="element-name">node</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pathName)</span></div>
 <div class="block">Returns the named preference node in the same tree as this node,
 creating it and any of its ancestors if they do not already exist.
 Accepts a relative or absolute path name.  Relative path names
@@ -1568,18 +1568,18 @@ any ancestors that were created by this call are not guaranteed
 to become permanent until the <code>flush</code> method is called on
 the returned node (or one of its ancestors or descendants).</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pathName</code> - the path name of the preference node to return.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the specified preference node.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the path name is invalid (i.e.,
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the path name is invalid (i.e.,
         it contains multiple consecutive slash characters, or ends
         with a slash character and is more than one character long).</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if path name is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if path name is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flush()"><code>flush()</code></a></li>
@@ -1593,8 +1593,8 @@ the returned node (or one of its ancestors or descendants).</div>
 <section class="detail" id="nodeExists(java.lang.String)">
 <h3>nodeExists</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nodeExists</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;pathName)</span>
-                            throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">nodeExists</span><wbr><span class="parameters">(<a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;pathName)</span>
+                            throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Returns true if the named preference node exists in the same tree
 as this node.  Relative path names (which do not begin with the slash
 character <code>('/')</code>) are interpreted relative to this preference
@@ -1606,20 +1606,20 @@ but only with the path name <code>""</code>; the invocation will return
 <code>false</code>.  Thus, the idiom <code>p.nodeExists("")</code> may be
 used to test whether <code>p</code> has been removed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pathName</code> - the path name of the node whose existence
        is to be checked.</dd>
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>true if the specified node exists.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the path name is invalid (i.e.,
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the path name is invalid (i.e.,
         it contains multiple consecutive slash characters, or ends
         with a slash character and is more than one character long).</dd>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if path name is <code>null</code>.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if path name is <code>null</code>.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method and
         <code>pathName</code> is not the empty string (<code>""</code>).</dd>
 </dl>
@@ -1631,14 +1631,14 @@ used to test whether <code>p</code> has been removed.</div>
 <h3>removeNode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeNode</span>()
-                         throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+                         throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Removes this preference node and all of its descendants, invalidating
 any preferences contained in the removed nodes.  Once a node has been
 removed, attempting any method other than <a href="#name()"><code>name()</code></a>,
 <a href="#absolutePath()"><code>absolutePath()</code></a>, <a href="#isUserNode()"><code>isUserNode()</code></a>, <a href="#flush()"><code>flush()</code></a> or
 <a href="#node(java.lang.String)"><code>nodeExists("")</code></a> on the corresponding
 <code>Preferences</code> instance will fail with an
-<code>IllegalStateException</code>.  (The methods defined on <a href="../../../../java.base/java/lang/Object.html" title="class in java.lang"><code>Object</code></a>
+<code>IllegalStateException</code>.  (The methods defined on <a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类"><code>Object</code></a>
 can still be invoked on a node after it has been removed; they will not
 throw <code>IllegalStateException</code>.)
 
@@ -1652,15 +1652,15 @@ return <code>true</code>, and a subsequent call to <code>node</code> on this
 path name may return a (different) <code>Preferences</code> instance
 representing a non-empty collection of preferences and/or children.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has already
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has already
         been removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if this method is invoked on
+<dd><code><a href="../../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if this method is invoked on
         the root node.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flush()"><code>flush()</code></a></li>
@@ -1674,10 +1674,10 @@ representing a non-empty collection of preferences and/or children.</div>
 <section class="detail" id="name()">
 <h3>name</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">name</span>()</div>
 <div class="block">Returns this preference node's name, relative to its parent.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this preference node's name, relative to its parent.</dd>
 </dl>
 </div>
@@ -1687,10 +1687,10 @@ representing a non-empty collection of preferences and/or children.</div>
 <section class="detail" id="absolutePath()">
 <h3>absolutePath</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">absolutePath</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">absolutePath</span>()</div>
 <div class="block">Returns this preference node's absolute path name.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>this preference node's absolute path name.</dd>
 </dl>
 </div>
@@ -1704,7 +1704,7 @@ representing a non-empty collection of preferences and/or children.</div>
 <div class="block">Returns <code>true</code> if this preference node is in the user
 preference tree, <code>false</code> if it's in the system preference tree.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if this preference node is in the user
         preference tree, <code>false</code> if it's in the system
         preference tree.</dd>
@@ -1716,14 +1716,14 @@ preference tree, <code>false</code> if it's in the system preference tree.</div>
 <section class="detail" id="toString()">
 <h3>toString</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="../../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
 <div class="block">Returns a string representation of this preferences node,
 as if computed by the expression:<code>(this.isUserNode() ? "User" :
 "System") + " Preference Node: " + this.absolutePath()</code>.</div>
 <dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="../../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></code></dd>
-<dt>Returns:</dt>
+<dt>重写:</dt>
+<dd><code><a href="../../../../java.base/java/lang/Object.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></code></dd>
+<dt>返回:</dt>
 <dd>a string representation of the object</dd>
 </dl>
 </div>
@@ -1734,7 +1734,7 @@ as if computed by the expression:<code>(this.isUserNode() ? "User" :
 <h3>flush</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">flush</span>()
-                    throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+                    throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Forces any changes in the contents of this preference node and its
 descendants to the persistent store.  Once this method returns
 successfully, it is safe to assume that all changes made in the
@@ -1753,11 +1753,11 @@ ancestors are <i>not</i> guaranteed to be made persistent.
 the <a href="#removeNode()"><code>removeNode()</code></a> method, flushSpi() is invoked on this node,
 but not on others.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#sync()"><code>sync()</code></a></li>
@@ -1772,7 +1772,7 @@ but not on others.</div>
 <h3>sync</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sync</span>()
-                   throws <span class="exceptions"><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+                   throws <span class="exceptions"><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Ensures that future reads from this preference node and its
 descendants reflect any changes that were committed to the persistent
 store (from any VM) prior to the <code>sync</code> invocation.  As a
@@ -1780,13 +1780,13 @@ side-effect, forces any changes in the contents of this preference node
 and its descendants to the persistent store, as if the <code>flush</code>
 method had been invoked on this node.</div>
 <dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if this operation cannot be completed
+<dt>抛出:</dt>
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if this operation cannot be completed
         due to a failure in the backing store, or inability to
         communicate with it.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#flush()"><code>flush()</code></a></li>
@@ -1800,7 +1800,7 @@ method had been invoked on this node.</div>
 <section class="detail" id="addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">
 <h3>addPreferenceChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPreferenceChangeListener</span><wbr><span class="parameters">(<a href="PreferenceChangeListener.html" title="interface in java.util.prefs">PreferenceChangeListener</a>&nbsp;pcl)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addPreferenceChangeListener</span><wbr><span class="parameters">(<a href="PreferenceChangeListener.html" title="java.util.prefs 包中的接口">PreferenceChangeListener</a>&nbsp;pcl)</span></div>
 <div class="block">Registers the specified listener to receive <i>preference change
 events</i> for this preference node.  A preference change event is
 generated when a preference is added to this node, removed from this
@@ -1816,13 +1816,13 @@ before the changes have been made persistent.  Events are not generated
 when preferences are modified in descendants of this node; a caller
 desiring such events must register with each descendant.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pcl</code> - The preference change listener to add.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>pcl</code> is null.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>pcl</code> is null.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)"><code>removePreferenceChangeListener(PreferenceChangeListener)</code></a></li>
@@ -1837,18 +1837,18 @@ desiring such events must register with each descendant.</div>
 <section class="detail" id="removePreferenceChangeListener(java.util.prefs.PreferenceChangeListener)">
 <h3>removePreferenceChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removePreferenceChangeListener</span><wbr><span class="parameters">(<a href="PreferenceChangeListener.html" title="interface in java.util.prefs">PreferenceChangeListener</a>&nbsp;pcl)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removePreferenceChangeListener</span><wbr><span class="parameters">(<a href="PreferenceChangeListener.html" title="java.util.prefs 包中的接口">PreferenceChangeListener</a>&nbsp;pcl)</span></div>
 <div class="block">Removes the specified preference change listener, so it no longer
 receives preference change events.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>pcl</code> - The preference change listener to remove.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>pcl</code> was not a registered
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>pcl</code> was not a registered
         preference change listener on this node.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addPreferenceChangeListener(java.util.prefs.PreferenceChangeListener)"><code>addPreferenceChangeListener(PreferenceChangeListener)</code></a></li>
@@ -1862,7 +1862,7 @@ receives preference change events.</div>
 <section class="detail" id="addNodeChangeListener(java.util.prefs.NodeChangeListener)">
 <h3>addNodeChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addNodeChangeListener</span><wbr><span class="parameters">(<a href="NodeChangeListener.html" title="interface in java.util.prefs">NodeChangeListener</a>&nbsp;ncl)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addNodeChangeListener</span><wbr><span class="parameters">(<a href="NodeChangeListener.html" title="java.util.prefs 包中的接口">NodeChangeListener</a>&nbsp;ncl)</span></div>
 <div class="block">Registers the specified listener to receive <i>node change events</i>
 for this node.  A node change event is generated when a child node is
 added to or removed from this node.  (A single <a href="#removeNode()"><code>removeNode()</code></a>
@@ -1884,13 +1884,13 @@ unreachable or cached information is out of date).  Under these
 circumstances, implementations are neither required to generate node
 change events nor prohibited from doing so.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ncl</code> - The <code>NodeChangeListener</code> to add.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>ncl</code> is null.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>ncl</code> is null.</dd>
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#removeNodeChangeListener(java.util.prefs.NodeChangeListener)"><code>removeNodeChangeListener(NodeChangeListener)</code></a></li>
@@ -1905,18 +1905,18 @@ change events nor prohibited from doing so.</div>
 <section class="detail" id="removeNodeChangeListener(java.util.prefs.NodeChangeListener)">
 <h3>removeNodeChangeListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeNodeChangeListener</span><wbr><span class="parameters">(<a href="NodeChangeListener.html" title="interface in java.util.prefs">NodeChangeListener</a>&nbsp;ncl)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeNodeChangeListener</span><wbr><span class="parameters">(<a href="NodeChangeListener.html" title="java.util.prefs 包中的接口">NodeChangeListener</a>&nbsp;ncl)</span></div>
 <div class="block">Removes the specified <code>NodeChangeListener</code>, so it no longer
 receives change events.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>ncl</code> - The <code>NodeChangeListener</code> to remove.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>ncl</code> was not a registered
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>ncl</code> was not a registered
         <code>NodeChangeListener</code> on this node.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addNodeChangeListener(java.util.prefs.NodeChangeListener)"><code>addNodeChangeListener(NodeChangeListener)</code></a></li>
@@ -1930,9 +1930,9 @@ receives change events.</div>
 <section class="detail" id="exportNode(java.io.OutputStream)">
 <h3>exportNode</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportNode</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;os)</span>
-                         throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a>,
-<a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportNode</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;os)</span>
+                         throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Emits on the specified output stream an XML document representing all
 of the preferences contained in this node (but not its descendants).
 This XML document is, in effect, an offline backup of the node.
@@ -1950,16 +1950,16 @@ method, the exported preferences comprise a "fuzzy snapshot" of the
 preferences contained in the node; some of the concurrent modifications
 may be reflected in the exported data while others may not.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>os</code> - the output stream on which to emit the XML document.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if writing to the specified output stream
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if writing to the specified output stream
         results in an <code>IOException</code>.</dd>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if preference data cannot be read from
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if preference data cannot be read from
         backing store.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#importPreferences(java.io.InputStream)"><code>importPreferences(InputStream)</code></a></li>
@@ -1973,9 +1973,9 @@ may be reflected in the exported data while others may not.</div>
 <section class="detail" id="exportSubtree(java.io.OutputStream)">
 <h3>exportSubtree</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportSubtree</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/OutputStream.html" title="class in java.io">OutputStream</a>&nbsp;os)</span>
-                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a>,
-<a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportSubtree</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/OutputStream.html" title="java.io 包中的类">OutputStream</a>&nbsp;os)</span>
+                            throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></span></div>
 <div class="block">Emits an XML document representing all of the preferences contained
 in this node and all of its descendants.  This XML document is, in
 effect, an offline backup of the subtree rooted at the node.
@@ -1993,16 +1993,16 @@ with an invocation of this method, the exported preferences comprise a
 "fuzzy snapshot" of the subtree; some of the concurrent modifications
 may be reflected in the exported data while others may not.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>os</code> - the output stream on which to emit the XML document.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if writing to the specified output stream
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if writing to the specified output stream
         results in an <code>IOException</code>.</dd>
-<dd><code><a href="BackingStoreException.html" title="class in java.util.prefs">BackingStoreException</a></code> - if preference data cannot be read from
+<dd><code><a href="BackingStoreException.html" title="java.util.prefs 包中的类">BackingStoreException</a></code> - if preference data cannot be read from
         backing store.</dd>
-<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="class in java.lang">IllegalStateException</a></code> - if this node (or an ancestor) has been
+<dd><code><a href="../../../../java.base/java/lang/IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></code> - if this node (or an ancestor) has been
         removed with the <a href="#removeNode()"><code>removeNode()</code></a> method.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#importPreferences(java.io.InputStream)"><code>importPreferences(InputStream)</code></a></li>
@@ -2017,9 +2017,9 @@ may be reflected in the exported data while others may not.</div>
 <section class="detail" id="importPreferences(java.io.InputStream)">
 <h3>importPreferences</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importPreferences</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/InputStream.html" title="class in java.io">InputStream</a>&nbsp;is)</span>
-                              throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a>,
-<a href="InvalidPreferencesFormatException.html" title="class in java.util.prefs">InvalidPreferencesFormatException</a></span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">importPreferences</span><wbr><span class="parameters">(<a href="../../../../java.base/java/io/InputStream.html" title="java.io 包中的类">InputStream</a>&nbsp;is)</span>
+                              throws <span class="exceptions"><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a>,
+<a href="InvalidPreferencesFormatException.html" title="java.util.prefs 包中的类">InvalidPreferencesFormatException</a></span></div>
 <div class="block">Imports all of the preferences represented by the XML document on the
 specified input stream.  The document may represent user preferences or
 system preferences.  If it represents user preferences, the preferences
@@ -2041,12 +2041,12 @@ results equivalent to some serial execution.  The method behaves
 as if implemented on top of the other public methods in this class,
 notably <a href="#node(java.lang.String)"><code>node(String)</code></a> and <a href="#put(java.lang.String,java.lang.String)"><code>put(String, String)</code></a>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>is</code> - the input stream from which to read the XML document.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../../java.base/java/io/IOException.html" title="class in java.io">IOException</a></code> - if reading from the specified input stream
+<dt>抛出:</dt>
+<dd><code><a href="../../../../java.base/java/io/IOException.html" title="java.io 包中的类">IOException</a></code> - if reading from the specified input stream
         results in an <code>IOException</code>.</dd>
-<dd><code><a href="InvalidPreferencesFormatException.html" title="class in java.util.prefs">InvalidPreferencesFormatException</a></code> - Data on input stream does not
+<dd><code><a href="InvalidPreferencesFormatException.html" title="java.util.prefs 包中的类">InvalidPreferencesFormatException</a></code> - Data on input stream does not
         constitute a valid XML document with the mandated document type.</dd>
 </dl>
 </div>

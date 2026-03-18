@@ -70,7 +70,7 @@ loadScripts(document, 'script');</script>
 <li><a href="package-summary.html">java.awt</a></li>
 <li><a href="TrayIcon.html" class="current-selection">TrayIcon</a></li>
 </ol>
-<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (输入 /)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
+<div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档 (按/键)" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="清除"></div>
 </div>
 </div>
 <!-- ========= END OF TOP NAVBAR ========= -->
@@ -78,20 +78,20 @@ loadScripts(document, 'script');</script>
 </header>
 <div class="main-grid">
 <nav role="navigation" class="toc" aria-label="Table of contents">
-<div class="toc-header">Contents&nbsp;<input type="text" class="filter-input" disabled placeholder="Filter contents (type .)" aria-label="Filter table of contents" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
+<div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选目录 (按.键)" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="Reset"></div>
 <ol class="toc-list" tabindex="-1">
-<li><a href="#" tabindex="0">Description</a></li>
-<li><a href="#nested-class-summary" tabindex="0">Nested Class Summary</a></li>
-<li><a href="#constructor-summary" tabindex="0">Constructor Summary</a></li>
-<li><a href="#method-summary" tabindex="0">Method Summary</a></li>
-<li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
+<li><a href="#" tabindex="0">描述</a></li>
+<li><a href="#nested-class-summary" tabindex="0">嵌套类概要</a></li>
+<li><a href="#constructor-summary" tabindex="0">构造函数概要</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#constructor-detail" tabindex="0">构造函数详情</a>
 <ol class="toc-list">
 <li><a href="#%3Cinit%3E(java.awt.Image)" tabindex="0">TrayIcon(Image)</a></li>
 <li><a href="#%3Cinit%3E(java.awt.Image,java.lang.String)" tabindex="0">TrayIcon(Image, String)</a></li>
 <li><a href="#%3Cinit%3E(java.awt.Image,java.lang.String,java.awt.PopupMenu)" tabindex="0">TrayIcon(Image, String, PopupMenu)</a></li>
 </ol>
 </li>
-<li><a href="#method-detail" tabindex="0">Method Details</a>
+<li><a href="#method-detail" tabindex="0">方法详情</a>
 <ol class="toc-list">
 <li><a href="#setImage(java.awt.Image)" tabindex="0">setImage(Image)</a></li>
 <li><a href="#getImage()" tabindex="0">getImage()</a></li>
@@ -121,22 +121,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<h1 title="Class TrayIcon" class="title">Class TrayIcon</h1>
+<h1 title="类 TrayIcon" class="title">类 TrayIcon</h1>
 </div>
-<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="class in java.lang">java.lang.Object</a>
+<div class="inheritance" title="Inheritance Tree"><a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">java.lang.Object</a>
 <div class="inheritance">java.awt.TrayIcon</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TrayIcon</span>
-<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="class in java.lang">Object</a></span></div>
+<span class="extends-implements">extends <a href="../../../java.base/java/lang/Object.html" title="java.lang 包中的类">Object</a></span></div>
 <div class="block">A <code>TrayIcon</code> object represents a tray icon that can be
-added to the <a href="SystemTray.html" title="class in java.awt"><code>system tray</code></a>. A
+added to the <a href="SystemTray.html" title="java.awt 包中的类"><code>system tray</code></a>. A
 <code>TrayIcon</code> can have a tooltip (text), an image, a popup
 menu, and a set of listeners associated with it.
 
-<p>A <code>TrayIcon</code> can generate various <a href="event/MouseEvent.html" title="class in java.awt.event"><code>MouseEvents</code></a> and supports adding corresponding listeners to receive
+<p>A <code>TrayIcon</code> can generate various <a href="event/MouseEvent.html" title="java.awt.event 包中的类"><code>MouseEvents</code></a> and supports adding corresponding listeners to receive
 notification of these events.  <code>TrayIcon</code> processes some
 of the events by itself.  For example, by default, when the
 right-mouse click is performed on the <code>TrayIcon</code> it
@@ -150,26 +150,26 @@ property will be set to <code>null</code>.  (See <a href="event/ComponentEvent.h
 <code>source</code> property will be set to this
 <code>TrayIcon</code>. (See <a href="../../../java.base/java/util/EventObject.html#getSource()"><code>EventObject.getSource()</code></a>)
 
-<p><b>Note:</b> A well-behaved <a href="TrayIcon.html" title="class in java.awt"><code>TrayIcon</code></a> implementation
+<p><b>Note:</b> A well-behaved <a href="TrayIcon.html" title="java.awt 包中的类"><code>TrayIcon</code></a> implementation
 will assign different gestures to showing a popup menu and
 selecting a tray icon.
 
-<p>A <code>TrayIcon</code> can generate an <a href="event/ActionEvent.html" title="class in java.awt.event"><code>ActionEvent</code></a>.  On some platforms, this occurs when the user selects
+<p>A <code>TrayIcon</code> can generate an <a href="event/ActionEvent.html" title="java.awt.event 包中的类"><code>ActionEvent</code></a>.  On some platforms, this occurs when the user selects
 the tray icon using either the mouse or keyboard.
 
-<p> See the <a href="SystemTray.html" title="class in java.awt"><code>SystemTray</code></a> class overview for an example on how
+<p> See the <a href="SystemTray.html" title="java.awt 包中的类"><code>SystemTray</code></a> class overview for an example on how
 to use the <code>TrayIcon</code> API.</div>
 <dl class="notes">
-<dt>Implementation Note:</dt>
+<dt>实现说明:</dt>
 <dd>When the <code><span id="apple.awt.enableTemplateImages" class="search-tag-result">apple.awt.enableTemplateImages</span></code> property is
 set, all images associated with instances of this class are treated
 as template images by the native desktop system. This means all color
 information is discarded, and the image is adapted automatically to
 be visible when desktop theme and/or colors change. This property
 only affects MacOSX.</dd>
-<dt>Since:</dt>
+<dt>自:</dt>
 <dd>1.6</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="SystemTray.html#add(java.awt.TrayIcon)"><code>SystemTray.add(TrayIcon)</code></a></li>
@@ -185,14 +185,14 @@ only affects MacOSX.</dd>
 <!-- ======== NESTED CLASS SUMMARY ======== -->
 <li>
 <section class="nested-class-summary" id="nested-class-summary">
-<h2>Nested Class Summary</h2>
-<div class="caption"><span>Nested Classes</span></div>
+<h2>嵌套类概要</h2>
+<div class="caption"><span>嵌套类</span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="TrayIcon.MessageType.html" class="type-name-link" title="enum class in java.awt">TrayIcon.MessageType</a></code></div>
+<div class="col-second even-row-color"><code><a href="TrayIcon.MessageType.html" title="java.awt 包中的枚举类">TrayIcon.MessageType</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">The message type determines which icon will be displayed in the
 caption of the message, and a possible system sound a message
@@ -204,24 +204,24 @@ may generate upon showing.</div>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
-<h2>Constructor Summary</h2>
-<div class="caption"><span>Constructors</span></div>
+<h2>构造函数概要</h2>
+<div class="caption"><span>构造函数</span></div>
 <div class="summary-table two-column-summary">
-<div class="table-header col-first">Constructor</div>
-<div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.awt.Image)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image)</code></div>
+<div class="table-header col-first">构造函数</div>
+<div class="table-header col-last">描述</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.awt.Image)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a <code>TrayIcon</code> with the specified image.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.awt.Image,java.lang.String)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip)</code></div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.awt.Image,java.lang.String)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a <code>TrayIcon</code> with the specified image and
 tooltip text.</div>
 </div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.awt.Image,java.lang.String,java.awt.PopupMenu)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip,
- <a href="PopupMenu.html" title="class in java.awt">PopupMenu</a>&nbsp;popup)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.awt.Image,java.lang.String,java.awt.PopupMenu)" class="member-name-link">TrayIcon</a><wbr>(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip,
+ <a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a>&nbsp;popup)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Creates a <code>TrayIcon</code> with the specified image,
 tooltip and popup menu.</div>
@@ -232,79 +232,79 @@ tooltip and popup menu.</div>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
-<h2>Method Summary</h2>
+<h2>方法概要</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">具体方法</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
+<div class="table-header col-first">修饰符与类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">描述</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addActionListener(java.awt.event.ActionListener)" class="member-name-link">addActionListener</a><wbr>(<a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>&nbsp;listener)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addActionListener(java.awt.event.ActionListener)" class="member-name-link">addActionListener</a><wbr>(<a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds the specified action listener to receive
 <code>ActionEvent</code>s from this <code>TrayIcon</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMouseListener(java.awt.event.MouseListener)" class="member-name-link">addMouseListener</a><wbr>(<a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>&nbsp;listener)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMouseListener(java.awt.event.MouseListener)" class="member-name-link">addMouseListener</a><wbr>(<a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds the specified mouse listener to receive mouse events from
 this <code>TrayIcon</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMouseMotionListener(java.awt.event.MouseMotionListener)" class="member-name-link">addMouseMotionListener</a><wbr>(<a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>&nbsp;listener)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addMouseMotionListener(java.awt.event.MouseMotionListener)" class="member-name-link">addMouseMotionListener</a><wbr>(<a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds the specified mouse listener to receive mouse-motion
 events from this <code>TrayIcon</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayMessage(java.lang.String,java.lang.String,java.awt.TrayIcon.MessageType)" class="member-name-link">displayMessage</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;caption,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;text,
- <a href="TrayIcon.MessageType.html" title="enum class in java.awt">TrayIcon.MessageType</a>&nbsp;messageType)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#displayMessage(java.lang.String,java.lang.String,java.awt.TrayIcon.MessageType)" class="member-name-link">displayMessage</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;caption,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;text,
+ <a href="TrayIcon.MessageType.html" title="java.awt 包中的枚举类">TrayIcon.MessageType</a>&nbsp;messageType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Displays a popup message near the tray icon.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getActionCommand()" class="member-name-link">getActionCommand</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the command name of the action event fired by this tray icon.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getActionListeners()" class="member-name-link">getActionListeners</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array of all the action listeners
 registered on this <code>TrayIcon</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Image.html" title="class in java.awt">Image</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Image.html" title="java.awt 包中的类">Image</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getImage()" class="member-name-link">getImage</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the current image used for this <code>TrayIcon</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseListeners()" class="member-name-link">getMouseListeners</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array of all the mouse listeners
 registered on this <code>TrayIcon</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>[]</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMouseMotionListeners()" class="member-name-link">getMouseMotionListeners</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns an array of all the mouse-motion listeners
 registered on this <code>TrayIcon</code>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PopupMenu.html" title="class in java.awt">PopupMenu</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPopupMenu()" class="member-name-link">getPopupMenu</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the popup menu associated with this <code>TrayIcon</code>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Dimension.html" title="class in java.awt">Dimension</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Dimension.html" title="java.awt 包中的类">Dimension</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSize()" class="member-name-link">getSize</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the size, in pixels, of the space that the tray icon
 occupies in the system tray.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getToolTip()" class="member-name-link">getToolTip</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns the tooltip string associated with this
@@ -316,28 +316,28 @@ occupies in the system tray.</div>
 <div class="block">Returns the value of the auto-size property.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeActionListener(java.awt.event.ActionListener)" class="member-name-link">removeActionListener</a><wbr>(<a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>&nbsp;listener)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeActionListener(java.awt.event.ActionListener)" class="member-name-link">removeActionListener</a><wbr>(<a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes the specified action listener.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMouseListener(java.awt.event.MouseListener)" class="member-name-link">removeMouseListener</a><wbr>(<a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>&nbsp;listener)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMouseListener(java.awt.event.MouseListener)" class="member-name-link">removeMouseListener</a><wbr>(<a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>&nbsp;listener)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes the specified mouse listener.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMouseMotionListener(java.awt.event.MouseMotionListener)" class="member-name-link">removeMouseMotionListener</a><wbr>(<a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>&nbsp;listener)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMouseMotionListener(java.awt.event.MouseMotionListener)" class="member-name-link">removeMouseMotionListener</a><wbr>(<a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>&nbsp;listener)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes the specified mouse-motion listener.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActionCommand(java.lang.String)" class="member-name-link">setActionCommand</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;command)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setActionCommand(java.lang.String)" class="member-name-link">setActionCommand</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;command)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the command name for the action event fired by this tray
 icon.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImage(java.awt.Image)" class="member-name-link">setImage</a><wbr>(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setImage(java.awt.Image)" class="member-name-link">setImage</a><wbr>(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the image for this <code>TrayIcon</code>.</div>
 </div>
@@ -347,12 +347,12 @@ icon.</div>
 <div class="block">Sets the auto-size property.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPopupMenu(java.awt.PopupMenu)" class="member-name-link">setPopupMenu</a><wbr>(<a href="PopupMenu.html" title="class in java.awt">PopupMenu</a>&nbsp;popup)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPopupMenu(java.awt.PopupMenu)" class="member-name-link">setPopupMenu</a><wbr>(<a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a>&nbsp;popup)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the popup menu for this <code>TrayIcon</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setToolTip(java.lang.String)" class="member-name-link">setToolTip</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setToolTip(java.lang.String)" class="member-name-link">setToolTip</a><wbr>(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets the tooltip string for this <code>TrayIcon</code>.</div>
 </div>
@@ -360,7 +360,7 @@ icon.</div>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-java.lang.Object">Methods declared in class&nbsp;<a href="../../../java.base/java/lang/Object.html#method-summary" title="class in java.lang">Object</a></h3>
+<h3 id="methods-inherited-from-class-java.lang.Object">在类 <a href="../../../java.base/java/lang/Object.html#method-summary" title="java.lang 包中的类">Object</a> 中声明的方法</h3>
 <code><a href="../../../java.base/java/lang/Object.html#clone()" title="clone()">clone</a>, <a href="../../../java.base/java/lang/Object.html#equals(java.lang.Object)" title="equals(Object)">equals</a>, <a href="../../../java.base/java/lang/Object.html#finalize()" title="finalize()">finalize</a>, <a href="../../../java.base/java/lang/Object.html#getClass()" title="getClass()">getClass</a>, <a href="../../../java.base/java/lang/Object.html#hashCode()" title="hashCode()">hashCode</a>, <a href="../../../java.base/java/lang/Object.html#notify()" title="notify()">notify</a>, <a href="../../../java.base/java/lang/Object.html#notifyAll()" title="notifyAll()">notifyAll</a>, <a href="../../../java.base/java/lang/Object.html#toString()" title="toString()">toString</a>, <a href="../../../java.base/java/lang/Object.html#wait()" title="wait()">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long)" title="wait(long)">wait</a>, <a href="../../../java.base/java/lang/Object.html#wait(long,int)" title="wait(long, int)">wait</a></code></div>
 </section>
 </li>
@@ -371,25 +371,25 @@ icon.</div>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <li>
 <section class="constructor-details" id="constructor-detail">
-<h2>Constructor Details</h2>
+<h2>构造函数详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="&lt;init&gt;(java.awt.Image)">
 <h3>TrayIcon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image)</span></div>
 <div class="block">Creates a <code>TrayIcon</code> with the specified image.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>image</code> - the <code>Image</code> to be used</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>image</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>image</code> is
 <code>null</code></dd>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the system tray isn't
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the system tray isn't
 supported by the current platform</dd>
-<dd><code><a href="HeadlessException.html" title="class in java.awt">HeadlessException</a></code> - if
+<dd><code><a href="HeadlessException.html" title="java.awt 包中的类">HeadlessException</a></code> - if
 <code>GraphicsEnvironment.isHeadless()</code> returns <code>true</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="SystemTray.html#add(java.awt.TrayIcon)"><code>SystemTray.add(TrayIcon)</code></a></li>
@@ -405,23 +405,23 @@ supported by the current platform</dd>
 <section class="detail" id="&lt;init&gt;(java.awt.Image,java.lang.String)">
 <h3>TrayIcon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip)</span></div>
 <div class="block">Creates a <code>TrayIcon</code> with the specified image and
 tooltip text. Tooltip may be not visible on some platforms.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>image</code> - the <code>Image</code> to be used</dd>
 <dd><code>tooltip</code> - the string to be used as tooltip text; if the
 value is <code>null</code> no tooltip is shown</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>image</code> is
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>image</code> is
 <code>null</code></dd>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the system tray isn't
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the system tray isn't
 supported by the current platform</dd>
-<dd><code><a href="HeadlessException.html" title="class in java.awt">HeadlessException</a></code> - if
+<dd><code><a href="HeadlessException.html" title="java.awt 包中的类">HeadlessException</a></code> - if
 <code>GraphicsEnvironment.isHeadless()</code> returns <code>true</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="SystemTray.html#add(java.awt.TrayIcon)"><code>SystemTray.add(TrayIcon)</code></a></li>
@@ -437,32 +437,32 @@ supported by the current platform</dd>
 <section class="detail" id="&lt;init&gt;(java.awt.Image,java.lang.String,java.awt.PopupMenu)">
 <h3>TrayIcon</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip,
- <a href="PopupMenu.html" title="class in java.awt">PopupMenu</a>&nbsp;popup)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">TrayIcon</span><wbr><span class="parameters">(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip,
+ <a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a>&nbsp;popup)</span></div>
 <div class="block">Creates a <code>TrayIcon</code> with the specified image,
 tooltip and popup menu. Tooltip may be not visible on some platforms.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>image</code> - the <code>Image</code> to be used</dd>
 <dd><code>tooltip</code> - the string to be used as tooltip text; if the
 value is <code>null</code> no tooltip is shown</dd>
 <dd><code>popup</code> - the menu to be used for the tray icon's popup
 menu; if the value is <code>null</code> no popup menu is shown</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if <code>image</code> is <code>null</code></dd>
-<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="class in java.lang">UnsupportedOperationException</a></code> - if the system tray isn't
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if <code>image</code> is <code>null</code></dd>
+<dd><code><a href="../../../java.base/java/lang/UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></code> - if the system tray isn't
 supported by the current platform</dd>
-<dd><code><a href="HeadlessException.html" title="class in java.awt">HeadlessException</a></code> - if
+<dd><code><a href="HeadlessException.html" title="java.awt 包中的类">HeadlessException</a></code> - if
 <code>GraphicsEnvironment.isHeadless()</code> returns <code>true</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="SystemTray.html#add(java.awt.TrayIcon)"><code>SystemTray.add(TrayIcon)</code></a></li>
 <li><a href="#%3Cinit%3E(java.awt.Image,java.lang.String)"><code>TrayIcon(Image, String)</code></a></li>
 <li><a href="#%3Cinit%3E(java.awt.Image)"><code>TrayIcon(Image)</code></a></li>
-<li><a href="PopupMenu.html" title="class in java.awt"><code>PopupMenu</code></a></li>
-<li><a href="event/MouseListener.html" title="interface in java.awt.event"><code>MouseListener</code></a></li>
+<li><a href="PopupMenu.html" title="java.awt 包中的类"><code>PopupMenu</code></a></li>
+<li><a href="event/MouseListener.html" title="java.awt.event 包中的接口"><code>MouseListener</code></a></li>
 <li><a href="#addMouseListener(java.awt.event.MouseListener)"><code>addMouseListener(MouseListener)</code></a></li>
 </ul>
 </dd>
@@ -476,13 +476,13 @@ supported by the current platform</dd>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
-<h2>Method Details</h2>
+<h2>方法详情</h2>
 <ul class="member-list">
 <li>
 <section class="detail" id="setImage(java.awt.Image)">
 <h3>setImage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImage</span><wbr><span class="parameters">(<a href="Image.html" title="class in java.awt">Image</a>&nbsp;image)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setImage</span><wbr><span class="parameters">(<a href="Image.html" title="java.awt 包中的类">Image</a>&nbsp;image)</span></div>
 <div class="block">Sets the image for this <code>TrayIcon</code>.  The previous
 tray icon image is discarded without calling the <a href="Image.html#flush()"><code>Image.flush()</code></a> method &#8212; you will need to call it
 manually.
@@ -496,15 +496,15 @@ details on the size of the displayed image.
 <p> Calling this method with the same image that is currently
 being used has no effect.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>image</code> - the non-null <code>Image</code> to be used</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if <code>image</code> is <code>null</code></dd>
-<dt>See Also:</dt>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if <code>image</code> is <code>null</code></dd>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#getImage()"><code>getImage()</code></a></li>
-<li><a href="Image.html" title="class in java.awt"><code>Image</code></a></li>
+<li><a href="Image.html" title="java.awt 包中的类"><code>Image</code></a></li>
 <li><a href="SystemTray.html#add(java.awt.TrayIcon)"><code>SystemTray.add(TrayIcon)</code></a></li>
 <li><a href="#%3Cinit%3E(java.awt.Image,java.lang.String)"><code>TrayIcon(Image, String)</code></a></li>
 </ul>
@@ -517,16 +517,16 @@ being used has no effect.</div>
 <section class="detail" id="getImage()">
 <h3>getImage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Image.html" title="class in java.awt">Image</a></span>&nbsp;<span class="element-name">getImage</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Image.html" title="java.awt 包中的类">Image</a></span>&nbsp;<span class="element-name">getImage</span>()</div>
 <div class="block">Returns the current image used for this <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the image</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setImage(java.awt.Image)"><code>setImage(Image)</code></a></li>
-<li><a href="Image.html" title="class in java.awt"><code>Image</code></a></li>
+<li><a href="Image.html" title="java.awt 包中的类"><code>Image</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -537,7 +537,7 @@ being used has no effect.</div>
 <section class="detail" id="setPopupMenu(java.awt.PopupMenu)">
 <h3>setPopupMenu</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPopupMenu</span><wbr><span class="parameters">(<a href="PopupMenu.html" title="class in java.awt">PopupMenu</a>&nbsp;popup)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setPopupMenu</span><wbr><span class="parameters">(<a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a>&nbsp;popup)</span></div>
 <div class="block">Sets the popup menu for this <code>TrayIcon</code>.  If
 <code>popup</code> is <code>null</code>, no popup menu will be
 associated with this <code>TrayIcon</code>.
@@ -557,13 +557,13 @@ right-clicks the tray icon.  In this situation, either no menu
 will be displayed or, on some systems, a native version of the
 menu may be displayed.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>popup</code> - a <code>PopupMenu</code> or <code>null</code> to
 remove any popup menu</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="class in java.lang">IllegalArgumentException</a></code> - if the <code>popup</code> is already
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></code> - if the <code>popup</code> is already
 set for another <code>TrayIcon</code></dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getPopupMenu()"><code>getPopupMenu()</code></a></li>
@@ -577,12 +577,12 @@ set for another <code>TrayIcon</code></dd>
 <section class="detail" id="getPopupMenu()">
 <h3>getPopupMenu</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PopupMenu.html" title="class in java.awt">PopupMenu</a></span>&nbsp;<span class="element-name">getPopupMenu</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="PopupMenu.html" title="java.awt 包中的类">PopupMenu</a></span>&nbsp;<span class="element-name">getPopupMenu</span>()</div>
 <div class="block">Returns the popup menu associated with this <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the popup menu or <code>null</code> if none exists</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setPopupMenu(java.awt.PopupMenu)"><code>setPopupMenu(PopupMenu)</code></a></li>
@@ -596,7 +596,7 @@ set for another <code>TrayIcon</code></dd>
 <section class="detail" id="setToolTip(java.lang.String)">
 <h3>setToolTip</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setToolTip</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;tooltip)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setToolTip</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;tooltip)</span></div>
 <div class="block">Sets the tooltip string for this <code>TrayIcon</code>. The
 tooltip is displayed automatically when the mouse hovers over
 the icon.  Tooltip may be not visible on some platforms.
@@ -605,10 +605,10 @@ Setting the tooltip to <code>null</code> removes any tooltip text.
 When displayed, the tooltip string may be truncated on some platforms;
 the number of characters that may be displayed is platform-dependent.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>tooltip</code> - the string for the tooltip; if the value is
 <code>null</code> no tooltip is shown</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#getToolTip()"><code>getToolTip()</code></a></li>
@@ -622,13 +622,13 @@ the number of characters that may be displayed is platform-dependent.</div>
 <section class="detail" id="getToolTip()">
 <h3>getToolTip</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getToolTip</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getToolTip</span>()</div>
 <div class="block">Returns the tooltip string associated with this
 <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the tooltip string or <code>null</code> if none exists</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setToolTip(java.lang.String)"><code>setToolTip(String)</code></a></li>
@@ -656,10 +656,10 @@ be cropped.
 <p> If auto-size is <code>true</code>, the image is stretched or shrunk to
 fit the tray icon space.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>autosize</code> - <code>true</code> to auto-size the image,
 <code>false</code> otherwise</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#isImageAutoSize()"><code>isImageAutoSize()</code></a></li>
@@ -676,10 +676,10 @@ fit the tray icon space.</div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isImageAutoSize</span>()</div>
 <div class="block">Returns the value of the auto-size property.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd><code>true</code> if the image will be auto-sized,
 <code>false</code> otherwise</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setImageAutoSize(boolean)"><code>setImageAutoSize(boolean)</code></a></li>
@@ -693,7 +693,7 @@ fit the tray icon space.</div>
 <section class="detail" id="addMouseListener(java.awt.event.MouseListener)">
 <h3>addMouseListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMouseListener</span><wbr><span class="parameters">(<a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMouseListener</span><wbr><span class="parameters">(<a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds the specified mouse listener to receive mouse events from
 this <code>TrayIcon</code>.  Calling this method with a
 <code>null</code> value has no effect.
@@ -706,13 +706,13 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <code>MOUSE_EXITED</code> mouse events are not supported.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the mouse listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/MouseEvent.html" title="class in java.awt.event"><code>MouseEvent</code></a></li>
-<li><a href="event/MouseListener.html" title="interface in java.awt.event"><code>MouseListener</code></a></li>
+<li><a href="event/MouseEvent.html" title="java.awt.event 包中的类"><code>MouseEvent</code></a></li>
+<li><a href="event/MouseListener.html" title="java.awt.event 包中的接口"><code>MouseListener</code></a></li>
 <li><a href="#removeMouseListener(java.awt.event.MouseListener)"><code>removeMouseListener(MouseListener)</code></a></li>
 <li><a href="#getMouseListeners()"><code>getMouseListeners()</code></a></li>
 </ul>
@@ -725,18 +725,18 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <section class="detail" id="removeMouseListener(java.awt.event.MouseListener)">
 <h3>removeMouseListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeMouseListener</span><wbr><span class="parameters">(<a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeMouseListener</span><wbr><span class="parameters">(<a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes the specified mouse listener.  Calling this method with
 <code>null</code> or an invalid value has no effect.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the mouse listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/MouseEvent.html" title="class in java.awt.event"><code>MouseEvent</code></a></li>
-<li><a href="event/MouseListener.html" title="interface in java.awt.event"><code>MouseListener</code></a></li>
+<li><a href="event/MouseEvent.html" title="java.awt.event 包中的类"><code>MouseEvent</code></a></li>
+<li><a href="event/MouseListener.html" title="java.awt.event 包中的接口"><code>MouseListener</code></a></li>
 <li><a href="#addMouseListener(java.awt.event.MouseListener)"><code>addMouseListener(MouseListener)</code></a></li>
 <li><a href="#getMouseListeners()"><code>getMouseListeners()</code></a></li>
 </ul>
@@ -749,20 +749,20 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <section class="detail" id="getMouseListeners()">
 <h3>getMouseListeners</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/MouseListener.html" title="interface in java.awt.event">MouseListener</a>[]</span>&nbsp;<span class="element-name">getMouseListeners</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/MouseListener.html" title="java.awt.event 包中的接口">MouseListener</a>[]</span>&nbsp;<span class="element-name">getMouseListeners</span>()</div>
 <div class="block">Returns an array of all the mouse listeners
 registered on this <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>all of the <code>MouseListeners</code> registered on
 this <code>TrayIcon</code> or an empty array if no mouse
 listeners are currently registered</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addMouseListener(java.awt.event.MouseListener)"><code>addMouseListener(MouseListener)</code></a></li>
 <li><a href="#removeMouseListener(java.awt.event.MouseListener)"><code>removeMouseListener(MouseListener)</code></a></li>
-<li><a href="event/MouseListener.html" title="interface in java.awt.event"><code>MouseListener</code></a></li>
+<li><a href="event/MouseListener.html" title="java.awt.event 包中的接口"><code>MouseListener</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -773,7 +773,7 @@ listeners are currently registered</dd>
 <section class="detail" id="addMouseMotionListener(java.awt.event.MouseMotionListener)">
 <h3>addMouseMotionListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMouseMotionListener</span><wbr><span class="parameters">(<a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addMouseMotionListener</span><wbr><span class="parameters">(<a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds the specified mouse listener to receive mouse-motion
 events from this <code>TrayIcon</code>.  Calling this method
 with a <code>null</code> value has no effect.
@@ -785,13 +785,13 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <p> <b>Note: </b>The <code>MOUSE_DRAGGED</code> mouse event is not supported.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the mouse listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/MouseEvent.html" title="class in java.awt.event"><code>MouseEvent</code></a></li>
-<li><a href="event/MouseMotionListener.html" title="interface in java.awt.event"><code>MouseMotionListener</code></a></li>
+<li><a href="event/MouseEvent.html" title="java.awt.event 包中的类"><code>MouseEvent</code></a></li>
+<li><a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口"><code>MouseMotionListener</code></a></li>
 <li><a href="#removeMouseMotionListener(java.awt.event.MouseMotionListener)"><code>removeMouseMotionListener(MouseMotionListener)</code></a></li>
 <li><a href="#getMouseMotionListeners()"><code>getMouseMotionListeners()</code></a></li>
 </ul>
@@ -804,18 +804,18 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <section class="detail" id="removeMouseMotionListener(java.awt.event.MouseMotionListener)">
 <h3>removeMouseMotionListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeMouseMotionListener</span><wbr><span class="parameters">(<a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeMouseMotionListener</span><wbr><span class="parameters">(<a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes the specified mouse-motion listener.  Calling this method with
 <code>null</code> or an invalid value has no effect.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the mouse listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/MouseEvent.html" title="class in java.awt.event"><code>MouseEvent</code></a></li>
-<li><a href="event/MouseMotionListener.html" title="interface in java.awt.event"><code>MouseMotionListener</code></a></li>
+<li><a href="event/MouseEvent.html" title="java.awt.event 包中的类"><code>MouseEvent</code></a></li>
+<li><a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口"><code>MouseMotionListener</code></a></li>
 <li><a href="#addMouseMotionListener(java.awt.event.MouseMotionListener)"><code>addMouseMotionListener(MouseMotionListener)</code></a></li>
 <li><a href="#getMouseMotionListeners()"><code>getMouseMotionListeners()</code></a></li>
 </ul>
@@ -828,20 +828,20 @@ from the <code>TrayIcon</code>) are relative to the screen, not the
 <section class="detail" id="getMouseMotionListeners()">
 <h3>getMouseMotionListeners</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/MouseMotionListener.html" title="interface in java.awt.event">MouseMotionListener</a>[]</span>&nbsp;<span class="element-name">getMouseMotionListeners</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口">MouseMotionListener</a>[]</span>&nbsp;<span class="element-name">getMouseMotionListeners</span>()</div>
 <div class="block">Returns an array of all the mouse-motion listeners
 registered on this <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>all of the <code>MouseInputListeners</code> registered on
 this <code>TrayIcon</code> or an empty array if no mouse
 listeners are currently registered</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addMouseMotionListener(java.awt.event.MouseMotionListener)"><code>addMouseMotionListener(MouseMotionListener)</code></a></li>
 <li><a href="#removeMouseMotionListener(java.awt.event.MouseMotionListener)"><code>removeMouseMotionListener(MouseMotionListener)</code></a></li>
-<li><a href="event/MouseMotionListener.html" title="interface in java.awt.event"><code>MouseMotionListener</code></a></li>
+<li><a href="event/MouseMotionListener.html" title="java.awt.event 包中的接口"><code>MouseMotionListener</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -852,12 +852,12 @@ listeners are currently registered</dd>
 <section class="detail" id="getActionCommand()">
 <h3>getActionCommand</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a></span>&nbsp;<span class="element-name">getActionCommand</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a></span>&nbsp;<span class="element-name">getActionCommand</span>()</div>
 <div class="block">Returns the command name of the action event fired by this tray icon.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the action command name, or <code>null</code> if none exists</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addActionListener(java.awt.event.ActionListener)"><code>addActionListener(ActionListener)</code></a></li>
@@ -872,18 +872,18 @@ listeners are currently registered</dd>
 <section class="detail" id="setActionCommand(java.lang.String)">
 <h3>setActionCommand</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setActionCommand</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;command)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setActionCommand</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;command)</span></div>
 <div class="block">Sets the command name for the action event fired by this tray
 icon.  By default, this action command is set to
 <code>null</code>.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>command</code> - a string used to set the tray icon's
                 action command.</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/ActionEvent.html" title="class in java.awt.event"><code>ActionEvent</code></a></li>
+<li><a href="event/ActionEvent.html" title="java.awt.event 包中的类"><code>ActionEvent</code></a></li>
 <li><a href="#addActionListener(java.awt.event.ActionListener)"><code>addActionListener(ActionListener)</code></a></li>
 <li><a href="#getActionCommand()"><code>getActionCommand()</code></a></li>
 </ul>
@@ -896,7 +896,7 @@ icon.  By default, this action command is set to
 <section class="detail" id="addActionListener(java.awt.event.ActionListener)">
 <h3>addActionListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addActionListener</span><wbr><span class="parameters">(<a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addActionListener</span><wbr><span class="parameters">(<a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>&nbsp;listener)</span></div>
 <div class="block">Adds the specified action listener to receive
 <code>ActionEvent</code>s from this <code>TrayIcon</code>.
 Action events usually occur when a user selects the tray icon,
@@ -907,14 +907,14 @@ action events are generated are platform-dependent.
 effect.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the action listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#removeActionListener(java.awt.event.ActionListener)"><code>removeActionListener(ActionListener)</code></a></li>
 <li><a href="#getActionListeners()"><code>getActionListeners()</code></a></li>
-<li><a href="event/ActionListener.html" title="interface in java.awt.event"><code>ActionListener</code></a></li>
+<li><a href="event/ActionListener.html" title="java.awt.event 包中的接口"><code>ActionListener</code></a></li>
 <li><a href="#setActionCommand(java.lang.String)"><code>setActionCommand(String)</code></a></li>
 </ul>
 </dd>
@@ -926,18 +926,18 @@ effect.
 <section class="detail" id="removeActionListener(java.awt.event.ActionListener)">
 <h3>removeActionListener</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeActionListener</span><wbr><span class="parameters">(<a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>&nbsp;listener)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeActionListener</span><wbr><span class="parameters">(<a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>&nbsp;listener)</span></div>
 <div class="block">Removes the specified action listener.  Calling this method with
 <code>null</code> or an invalid value has no effect.
 <p>Refer to <a href="doc-files/AWTThreadIssues.html#ListenersThreads">AWT Threading Issues</a> for details on AWT's threading model.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>listener</code> - the action listener</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="event/ActionEvent.html" title="class in java.awt.event"><code>ActionEvent</code></a></li>
-<li><a href="event/ActionListener.html" title="interface in java.awt.event"><code>ActionListener</code></a></li>
+<li><a href="event/ActionEvent.html" title="java.awt.event 包中的类"><code>ActionEvent</code></a></li>
+<li><a href="event/ActionListener.html" title="java.awt.event 包中的接口"><code>ActionListener</code></a></li>
 <li><a href="#addActionListener(java.awt.event.ActionListener)"><code>addActionListener(ActionListener)</code></a></li>
 <li><a href="#getActionListeners()"><code>getActionListeners()</code></a></li>
 <li><a href="#setActionCommand(java.lang.String)"><code>setActionCommand(String)</code></a></li>
@@ -951,20 +951,20 @@ effect.
 <section class="detail" id="getActionListeners()">
 <h3>getActionListeners</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/ActionListener.html" title="interface in java.awt.event">ActionListener</a>[]</span>&nbsp;<span class="element-name">getActionListeners</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="event/ActionListener.html" title="java.awt.event 包中的接口">ActionListener</a>[]</span>&nbsp;<span class="element-name">getActionListeners</span>()</div>
 <div class="block">Returns an array of all the action listeners
 registered on this <code>TrayIcon</code>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>all of the <code>ActionListeners</code> registered on
 this <code>TrayIcon</code> or an empty array if no action
 listeners are currently registered</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="#addActionListener(java.awt.event.ActionListener)"><code>addActionListener(ActionListener)</code></a></li>
 <li><a href="#removeActionListener(java.awt.event.ActionListener)"><code>removeActionListener(ActionListener)</code></a></li>
-<li><a href="event/ActionListener.html" title="interface in java.awt.event"><code>ActionListener</code></a></li>
+<li><a href="event/ActionListener.html" title="java.awt.event 包中的接口"><code>ActionListener</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -975,9 +975,9 @@ listeners are currently registered</dd>
 <section class="detail" id="displayMessage(java.lang.String,java.lang.String,java.awt.TrayIcon.MessageType)">
 <h3>displayMessage</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">displayMessage</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;caption,
- <a href="../../../java.base/java/lang/String.html" title="class in java.lang">String</a>&nbsp;text,
- <a href="TrayIcon.MessageType.html" title="enum class in java.awt">TrayIcon.MessageType</a>&nbsp;messageType)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">displayMessage</span><wbr><span class="parameters">(<a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;caption,
+ <a href="../../../java.base/java/lang/String.html" title="java.lang 包中的类">String</a>&nbsp;text,
+ <a href="TrayIcon.MessageType.html" title="java.awt 包中的枚举类">TrayIcon.MessageType</a>&nbsp;messageType)</span></div>
 <div class="block">Displays a popup message near the tray icon.  The message will
 disappear after a time or if the user clicks on it.  Clicking
 on the message may trigger an <code>ActionEvent</code>.
@@ -993,14 +993,14 @@ platform-dependent.
 <p><strong>Note:</strong> Some platforms may not support
 showing a message.</div>
 <dl class="notes">
-<dt>Parameters:</dt>
+<dt>参数:</dt>
 <dd><code>caption</code> - the caption displayed above the text, usually in
 bold; may be <code>null</code></dd>
 <dd><code>text</code> - the text displayed for the particular message; may be
 <code>null</code></dd>
 <dd><code>messageType</code> - an enum indicating the message type</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="class in java.lang">NullPointerException</a></code> - if both <code>caption</code>
+<dt>抛出:</dt>
+<dd><code><a href="../../../java.base/java/lang/NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></code> - if both <code>caption</code>
 and <code>text</code> are <code>null</code></dd>
 </dl>
 </div>
@@ -1010,19 +1010,19 @@ and <code>text</code> are <code>null</code></dd>
 <section class="detail" id="getSize()">
 <h3>getSize</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dimension.html" title="class in java.awt">Dimension</a></span>&nbsp;<span class="element-name">getSize</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Dimension.html" title="java.awt 包中的类">Dimension</a></span>&nbsp;<span class="element-name">getSize</span>()</div>
 <div class="block">Returns the size, in pixels, of the space that the tray icon
 occupies in the system tray.  For the tray icon that is not yet
 added to the system tray, the returned size is equal to the
 result of the <a href="SystemTray.html#getTrayIconSize()"><code>SystemTray.getTrayIconSize()</code></a>.</div>
 <dl class="notes">
-<dt>Returns:</dt>
+<dt>返回:</dt>
 <dd>the size of the tray icon, in pixels</dd>
-<dt>See Also:</dt>
+<dt>另见:</dt>
 <dd>
 <ul class="tag-list">
 <li><a href="#setImageAutoSize(boolean)"><code>setImageAutoSize(boolean)</code></a></li>
-<li><a href="Image.html" title="class in java.awt"><code>Image</code></a></li>
+<li><a href="Image.html" title="java.awt 包中的类"><code>Image</code></a></li>
 <li><a href="#getSize()"><code>getSize()</code></a></li>
 </ul>
 </dd>
