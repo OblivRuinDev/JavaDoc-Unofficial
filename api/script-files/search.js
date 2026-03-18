@@ -11,15 +11,15 @@ const messages = {
     oneResult: "Found one result",
     manyResults: "Found {0} results",
     loading: "Loading search index...",
-    searching: "Searching...",
+    searching: "搜索中...",
     redirecting: "Redirecting to first result...",
 }
 const categories = {
-    modules: "Modules",
-    packages: "Packages",
-    types: "Classes and Interfaces",
-    members: "Members",
-    searchTags: "Search Tags"
+    modules: "模块",
+    packages: "包",
+    types: "类和接口",
+    members: "成员",
+    searchTags: "搜索标签"
 };
 // Localized element descriptors must match values in enum IndexItem.Kind.
 const itemDesc = [
@@ -47,8 +47,8 @@ const itemDesc = [
     // Other
     ["Summary Page"],
 ];
-const mbrDesc = "Member";
-const clsDesc = "Class"
+const mbrDesc = "成员";
+const clsDesc = "类";
 const pkgDesc = "Package";
 const mdlDesc = "Module";
 const pkgDescLower = "package";
