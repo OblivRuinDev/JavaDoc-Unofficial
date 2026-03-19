@@ -2,6 +2,8 @@
 
 **[点击此处查看原始镜像](https://github.com/OblivRuinDev/JavaDoc-Unofficial/tree/en)**
 
+[点击此处在线阅览Java API文档](https://javadoc.pages.dev)
+
 此分支包含 **Java Platform, Standard Edition 25 API 规范** 的非官方中文翻译。
 
 > [!IMPORTANT]

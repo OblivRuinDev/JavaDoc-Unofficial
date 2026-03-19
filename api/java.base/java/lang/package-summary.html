@@ -60,7 +60,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">描述</a>
 <ol class="toc-list">
-<li><a href="#character-encodings-heading" tabindex="0">Character Encodings</a></li>
+<li><a href="#character-encodings-heading" tabindex="0">字符编码</a></li>
 </ol>
 </li>
 <li><a href="#related-package-summary" tabindex="0">相关包</a></li>
@@ -75,42 +75,32 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="package-signature">package <span class="element-name">java.lang</span></div>
 <section class="package-description" id="package-description">
-<div class="block">提供 Java 编程语言设计基础的类。 The most important classes are <a href="Object.html" title="java.lang 包中的类"><code>Object</code></a>, which is the root of the class hierarchy, and <a href="Class.html" title="java.lang 包中的类"><code>Class</code></a>, instances of which represent classes at run time.
+<div class="block">提供 Java 编程语言设计基础的类。最重要的两个类是 <a href="Object.html" title="java.lang 包中的类"><code>Object</code></a>，它是类层次结构的根，以及
+<a href="Class.html" title="java.lang 包中的类"><code>Class</code></a>，它的实例代表运行时的类。
 
-<p id=wrapperClass>Frequently it is necessary to represent a
-value of primitive type as if it were an object.The <dfn><span id="wrapperclasses" class="search-tag-result">wrapper classes</span></dfn> <a href="Boolean.html" title="java.lang 包中的类"><code>Boolean</code></a>, <a href="Byte.html" title="java.lang 包中的类"><code>Byte</code></a>, <a href="Character.html" title="java.lang 包中的类"><code>Character</code></a>, <a href="Short.html" title="java.lang 包中的类"><code>Short</code></a>, <a href="Integer.html" title="java.lang 包中的类"><code>Integer</code></a>, <a href="Long.html" title="java.lang 包中的类"><code>Long</code></a>, <a href="Float.html" title="java.lang 包中的类"><code>Float</code></a>, and <a href="Double.html" title="java.lang 包中的类"><code>Double</code></a> serve this purpose.  An object of type
-<code>Double</code>, for example, contains a field whose type is <code>
-double</code>, representing that value in such a way that a reference to
-it can be stored in a variable of reference type. As discussed in
-<cite>The Java Language Specification</cite>, the wrapper classes
-are involved in boxing (JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-5.html#jls-5.1.7">5.1.7</a>) and unboxing (JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-5.html#jls-5.1.8">5.1.8</a>) conversions. These classes provide a number of methods for
-converting among primitive values, as well as methods supporting
-such standard functionality as <code>equals</code> and <code>hashCode</code>.
-The <a href="Void.html" title="java.lang 包中的类"><code>Void</code></a> class is a non-instantiable class that holds a
-reference to a <code>Class</code> object representing the type <code>
-void</code>.
+<p id="wrapperClass">通常需要将基本类型的值表示为对象。<dfn><span id="wrapperclasses" class="search-tag-result">包装类</span></dfn>
+<a href="Boolean.html" title="java.lang 包中的类"><code>Boolean</code></a>、<a href="Byte.html" title="java.lang 包中的类"><code>Byte</code></a>、<a href="Character.html" title="java.lang 包中的类"><code>Character</code></a>、<a href="Short.html" title="java.lang 包中的类"><code>Short</code></a>、<a href="Integer.html" title="java.lang 包中的类"><code>Integer</code></a>、<a href="Long.html" title="java.lang 包中的类"><code>Long</code></a>、<a href="Float.html" title="java.lang 包中的类"><code>Float</code></a> 和 <a href="Double.html" title="java.lang 包中的类"><code>Double</code></a>
+就用于此目的。例如，<code>Double</code> 类型的对象包含一个类型为 <code>double</code> 的字段，以这样一种方式表示该值：从而可以将对该值的引用储存在引用类型的变量中。正如
+<cite>Java 语言规范</cite> 中所讨论的，包装类参与了装箱（JLS <a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-5.html#jls-5.1.7">5.1.7</a>）和拆箱（JLS
+<a href="https://docs.oracle.com/javase/specs/jls/se25/html/jls-5.html#jls-5.1.8">5.1.8</a>）转换。这些类提供了许多用于在基本值之间进行转换的方法，以及支持诸如
+<code>equals</code> 和 <code>hashCode</code> 等标准功能的方法。<a href="Void.html" title="java.lang 包中的类"><code>Void</code></a> 类是一个不可实例化的类，它持有对表示
+<code>void</code> 类型的 <code>Class</code> 对象的引用。
 
-<p>The class <a href="Math.html" title="java.lang 包中的类"><code>Math</code></a> provides commonly used mathematical
-functions such as <a href="Math.html#sin(double)">sine</a>, <a href="Math.html#cos(double)">cosine</a>, and <a href="Math.html#sqrt(double)">square
-root</a>. The classes <a href="String.html" title="java.lang 包中的类"><code>String</code></a>, <a href="StringBuffer.html" title="java.lang 包中的类"><code>StringBuffer</code></a>, and <a href="StringBuilder.html" title="java.lang 包中的类"><code>StringBuilder</code></a> similarly provide commonly used operations on
-character strings.
+<p><a href="Math.html" title="java.lang 包中的类"><code>Math</code></a> 类提供常用的数学函数，例如
+<a href="Math.html#sin(double)">正弦</a>、<a href="Math.html#cos(double)">余弦</a> 和 <a href="Math.html#sqrt(double)">平方根</a>。<a href="String.html" title="java.lang 包中的类"><code>String</code></a>、<a href="StringBuffer.html" title="java.lang 包中的类"><code>StringBuffer</code></a> 和 <a href="StringBuilder.html" title="java.lang 包中的类"><code>StringBuilder</code></a>
+类则提供了对字符串的进行常用操作的方法。
 
-<p>Classes <a href="ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>, <a href="Process.html" title="java.lang 包中的类"><code>Process</code></a>, <a href="ProcessBuilder.html" title="java.lang 包中的类"><code>ProcessBuilder</code></a>,
-<a href="Runtime.html" title="java.lang 包中的类"><code>Runtime</code></a>, and <a href="System.html" title="java.lang 包中的类"><code>System</code></a> provide "system operations" that
-manage the dynamic loading of classes, creation of external processes,
-and host environment inquiries such as the time of day.
+<p><a href="ClassLoader.html" title="java.lang 包中的类"><code>ClassLoader</code></a>、<a href="Process.html" title="java.lang 包中的类"><code>Process</code></a>、<a href="ProcessBuilder.html" title="java.lang 包中的类"><code>ProcessBuilder</code></a>、<a href="Runtime.html" title="java.lang 包中的类"><code>Runtime</code></a> 和
+<a href="System.html" title="java.lang 包中的类"><code>System</code></a> 类提供“系统操作”，用于管理类的动态加载、外部进程的创建以及主机环境查询（如当前时间）。
 
-<p>Class <a href="Throwable.html" title="java.lang 包中的类"><code>Throwable</code></a> encompasses objects that may be thrown
-by the <code>throw</code> statement. Subclasses of <code>Throwable</code>
-represent errors and exceptions.
+<p><a href="Throwable.html" title="java.lang 包中的类"><code>Throwable</code></a>
+类包含可能由 <code>throw</code> 语句抛出的对象。<code>Throwable</code> 的子类表示错误和异常。
 
 <a id="charenc"></a>
-<h2 id="character-encodings-heading">Character Encodings</h2>
+<h2 id="character-encodings-heading">字符编码</h2>
 
-The specification of the <a href="../nio/charset/Charset.html" title="java.nio.charset 包中的类"><code>java.nio.charset.Charset</code></a> class describes the naming conventions
-for character encodings as well as the set of standard encodings
-that must be supported by every implementation of the Java
-platform.</div>
+<a href="../nio/charset/Charset.html" title="java.nio.charset 包中的类"><code>java.nio.charset.Charset</code></a>
+类的规范描述了字符编码的命名约定以及每个 Java 平台实现必须支持的标准编码。</div>
 <dl class="notes">
 <dt>自:</dt>
 <dd>1.0</dd>
@@ -159,8 +149,7 @@ platform.</div>
 <div class="col-plain even-row-color"><a href="../../../java.management/module-summary.html">java.management</a></div>
 <div class="col-first even-row-color"><a href="../../../java.management/java/lang/management/package-summary.html">java.lang.management</a></div>
 <div class="col-last even-row-color">
-<div class="block">Provides the management interfaces for monitoring and management of the
-Java virtual machine and other components in the Java runtime.</div>
+<div class="block">提供用于监视和管理 Java 虚拟机以及 Java 运行时中其他组件的管理接口。</div>
 </div>
 <div class="col-plain odd-row-color"><a href="../../module-summary.html">java.base</a></div>
 <div class="col-first odd-row-color"><a href="module/package-summary.html">java.lang.module</a></div>
@@ -194,550 +183,441 @@ Java virtual machine and other components in the Java runtime.</div>
 <div class="table-header col-last">描述</div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="AbstractMethodError.html" title="java.lang 包中的类">AbstractMethodError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to call an abstract method.</div>
+<div class="block">当应用程序试图调用抽象方法时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Appendable.html" title="java.lang 包中的接口">Appendable</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">An object to which <code>char</code> sequences and values can be appended.</div>
+<div class="block">可向其附加字符序列和字符的对象。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ArithmeticException.html" title="java.lang 包中的类">ArithmeticException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an exceptional arithmetic condition has occurred.</div>
+<div class="block">当发生异常的算术条件时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="ArrayIndexOutOfBoundsException.html" title="java.lang 包中的类">ArrayIndexOutOfBoundsException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that an array has been accessed with an illegal index.</div>
+<div class="block">表明使用非法索引访问了数组。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ArrayStoreException.html" title="java.lang 包中的类">ArrayStoreException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that an attempt has been made to store the
-wrong type of object into an array of objects.</div>
+<div class="block">表明试图将错误类型的对象存储到对象数组中。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="AssertionError.html" title="java.lang 包中的类">AssertionError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that an assertion has failed.</div>
+<div class="block">表明断言失败时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="AutoCloseable.html" title="java.lang 包中的接口">AutoCloseable</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">An object that may hold resources (such as file or socket handles)
-until it is closed.</div>
+<div class="block">可能持有资源（如文件或套接字句柄）直到关闭的对象。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Boolean.html" title="java.lang 包中的类">Boolean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Boolean</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>boolean</code>.</div>
+<div class="block"><code>Boolean</code> 类是基本类型 <code>boolean</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="BootstrapMethodError.html" title="java.lang 包中的类">BootstrapMethodError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that an <code>invokedynamic</code> instruction or a dynamic
-constant failed to resolve its bootstrap method and arguments,
-or for <code>invokedynamic</code> instruction the bootstrap method has failed to
-provide a
-<a href="invoke/CallSite.html" title="java.lang.invoke 包中的类">call site</a> with a
-<a href="invoke/CallSite.html#getTarget()">target</a>
-of the correct <a href="invoke/MethodHandle.html#type()">method type</a>,
-or for a dynamic constant the bootstrap method has failed to provide a
-constant value of the required type.</div>
+<div class="block">表明 <code>invokedynamic</code> 指令或动态常量无法解析其引导方法和参数，或者对于 <code>invokedynamic</code>
+指令，引导方法未能提供具有正确<a href="invoke/MethodHandle.html#type()">方法类型</a>的<a href="invoke/CallSite.html" title="java.lang.invoke 包中的类">调用站点</a>及其<a href="invoke/CallSite.html#getTarget()">目标</a>，或者对于动态常量，引导方法未能提供所需类型的常量值。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Byte.html" title="java.lang 包中的类">Byte</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Byte</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>byte</code>.</div>
+<div class="block"><code>Byte</code> 类是基本类型 <code>byte</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Character.html" title="java.lang 包中的类">Character</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Character</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>char</code>.</div>
+<div class="block"><code>Character</code> 类是基本类型 <code>char</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Character.Subset.html" title="java.lang 包中的类">Character.Subset</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Instances of this class represent particular subsets of the Unicode
-character set.</div>
+<div class="block">此类的实例表示 Unicode 字符集的特定子集。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Character.UnicodeBlock.html" title="java.lang 包中的类">Character.UnicodeBlock</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A family of character subsets representing the character blocks in the
-Unicode specification.</div>
+<div class="block">表示 Unicode 规范中字符块的字符子集系列。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab3"><a href="Character.UnicodeScript.html" title="java.lang 包中的枚举类">Character.UnicodeScript</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab3">
-<div class="block">A family of character subsets representing the character scripts
-defined in the <a href="http://www.unicode.org/reports/tr24/">
-<i>Unicode Standard Annex #24: Script Names</i></a>.</div>
+<div class="block">表示 <a href="http://www.unicode.org/reports/tr24/"><i>Unicode 标准附录 #24：脚本名称</i></a> 中定义的字符脚本的字符子集系列。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="CharSequence.html" title="java.lang 包中的接口">CharSequence</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A <code>CharSequence</code> is a readable sequence of <code>char</code> values.</div>
+<div class="block"><code>CharSequence</code> 是可读的 <code>char</code> 值序列。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Class.html" title="java.lang 包中的类">Class</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Instances of the class <code>Class</code> represent classes and
-interfaces in a running Java application.</div>
+<div class="block"><code>Class</code> 类的实例表示正在运行的 Java 应用程序中的类和接口。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ClassCastException.html" title="java.lang 包中的类">ClassCastException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that the code has attempted to cast an object
-to a subclass of which it is not an instance.</div>
+<div class="block">表明代码试图将对象强制转换为它不是其实例的子类。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="ClassCircularityError.html" title="java.lang 包中的类">ClassCircularityError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when the Java Virtual Machine detects a circularity in the
-superclass hierarchy of a class being loaded.</div>
+<div class="block">当 Java 虚拟机检测到正在加载的类的超类层次结构中存在循环时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ClassFormatError.html" title="java.lang 包中的类">ClassFormatError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when the Java Virtual Machine attempts to read a class
-file and determines that the file is malformed or otherwise cannot
-be interpreted as a class file.</div>
+<div class="block">当 Java 虚拟机试图读取类文件并确定该文件格式错误或无法解析为类文件时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ClassLoader.html" title="java.lang 包中的类">ClassLoader</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A class loader is an object that is responsible for loading classes.</div>
+<div class="block">类加载器是负责加载类的对象。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ClassNotFoundException.html" title="java.lang 包中的类">ClassNotFoundException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to load in a class through its
-string name using:
-
-The <code>forName</code> method in class <code>Class</code>.</div>
+<div class="block">当应用程序试图通过其字符串名称加载类时抛出，使用：<code>Class</code> 类中的 <code>forName</code> 方法。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ClassValue.html" title="java.lang 包中的类">ClassValue</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Lazily associate a computed value with any <code>Class</code> object.</div>
+<div class="block">将计算值与任何 <code>Class</code> 对象延迟关联。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Cloneable.html" title="java.lang 包中的接口">Cloneable</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A class implements the <code>Cloneable</code> interface to
-indicate to the <a href="Object.html#clone()"><code>Object.clone()</code></a> method that it
-is legal for that method to make a
-field-for-field copy of instances of that class.</div>
+<div class="block">类实现了 <code>Cloneable</code> 接口，以向 <a href="Object.html#clone()"><code>Object.clone()</code></a> 方法表明，该方法对该类实例进行逐字段复制是合法的。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="CloneNotSupportedException.html" title="java.lang 包中的类">CloneNotSupportedException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that the <code>clone</code> method in class
-<code>Object</code> has been called to clone an object, but that
-the object's class does not implement the <code>Cloneable</code>
-interface.</div>
+<div class="block">表明已经调用了 <code>Object</code> 类中的 <code>clone</code> 方法来克隆对象，但该对象的类未实现 <code>Cloneable</code> 接口。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Comparable.html" title="java.lang 包中的接口">Comparable</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">This interface imposes a total ordering on the objects of each class that
-implements it.</div>
+<div class="block">此接口对实现它的每个类的对象施加总排序。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab6"><a href="Deprecated.html" title="java.lang 包中的注解接口">Deprecated</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab6">
-<div class="block">A program element annotated <code>@Deprecated</code> is one that programmers
-are discouraged from using.</div>
+<div class="block">使用 <code>@Deprecated</code> 注解的程序元素是不鼓励程序员使用的。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Double.html" title="java.lang 包中的类">Double</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Double</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
- type <code>double</code>.</div>
+<div class="block"><code>Double</code> 类是基本类型 <code>double</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Enum.html" title="java.lang 包中的类">Enum</a>&lt;E extends <a href="Enum.html" title="java.lang 包中的类">Enum</a>&lt;E&gt;&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">This is the common base class of all Java language enumeration classes.</div>
+<div class="block">这是所有 Java 语言枚举类的公共基类。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Enum.EnumDesc.html" title="java.lang 包中的类">Enum.EnumDesc</a>&lt;E extends <a href="Enum.html" title="java.lang 包中的类">Enum</a>&lt;E&gt;&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <a href="../../../java.base/java/lang/constant/package-summary.html#nominal">nominal descriptor</a> for an
-<code>enum</code> constant.</div>
+<div class="block"><code>enum</code> 的<a href="../../../java.base/java/lang/constant/package-summary.html#nominal">名义描述符</a>。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="EnumConstantNotPresentException.html" title="java.lang 包中的类">EnumConstantNotPresentException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to access an enum constant by name
-and the enum type contains no constant with the specified name.</div>
+<div class="block">当应用程序试图通过名称访问枚举常量，而枚举类型不包含具有指定名称的常量时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="Error.html" title="java.lang 包中的类">Error</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">An <code>Error</code> is a subclass of <code>Throwable</code>
-that indicates serious problems that a reasonable application
-should not try to catch.</div>
+<div class="block"><code>Error</code> 是 <code>Throwable</code> 的子类，表示合理的、应用程序不应试图捕获的严重问题。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="Exception.html" title="java.lang 包中的类">Exception</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">The class <code>Exception</code> and its subclasses are a form of
-<code>Throwable</code> that indicates conditions that a reasonable
-application might want to catch.</div>
+<div class="block"><code>Exception</code> 类及其子类是 <code>Throwable</code> 的一种形式，表示合理的应用程序可能想要捕获的条件。<code>Exception</code> 类及其子类是 <code>Throwable</code> 的一种形式，表示合理的、应用程序可能想要捕获的条件。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ExceptionInInitializerError.html" title="java.lang 包中的类">ExceptionInInitializerError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Signals that an unexpected exception has occurred in a static initializer.</div>
+<div class="block">表示静态初始化器中发生了意外的异常。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Float.html" title="java.lang 包中的类">Float</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Float</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>float</code>.</div>
+<div class="block"><code>Float</code> 类是基本类型 <code>float</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab6"><a href="FunctionalInterface.html" title="java.lang 包中的注解接口">FunctionalInterface</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab6">
-<div class="block">An informative annotation type used to indicate that an interface
-type declaration is intended to be a <i>functional interface</i> as
-defined by the Java Language Specification.</div>
+<div class="block">一种信息性注解类型，用于表明接口类型声明旨在成为 Java 语言规范定义的<i>函数式接口</i>。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="IllegalAccessError.html" title="java.lang 包中的类">IllegalAccessError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if an application attempts to access or modify a field, or
-to call a method that it does not have access to.</div>
+<div class="block">如果应用程序试图访问或修改它无权访问的字段，或调用它无权访问的方法，则抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="IllegalAccessException.html" title="java.lang 包中的类">IllegalAccessException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">An IllegalAccessException is thrown when an application tries
-to reflectively create an instance (other than an array),
-set or get a field, or invoke a method, but the currently
-executing method does not have access to the definition of
-the specified class, field, method or constructor.</div>
+<div class="block">当应用程序试图反射性地创建实例（数组除外）、赋值或获取字段、或调用方法，但当前执行的方法无权访问指定类、字段、方法或构造器的定义时，抛出 IllegalAccessException。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="IllegalArgumentException.html" title="java.lang 包中的类">IllegalArgumentException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that a method has been passed an illegal or
-inappropriate argument.</div>
+<div class="block">表明向方法传递了非法或不当的参数。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="IllegalCallerException.html" title="java.lang 包中的类">IllegalCallerException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that a method has been called by an inappropriate caller.</div>
+<div class="block">表明方法被不当的调用者调用。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="IllegalMonitorStateException.html" title="java.lang 包中的类">IllegalMonitorStateException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that a thread has attempted to wait on an
-object's monitor or to notify other threads waiting on an object's
-monitor without owning the specified monitor.</div>
+<div class="block">表明线程试图等待对象的监视器，或通知其他线程等待对象的监视器但没有拥有指定的监视器。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="IllegalStateException.html" title="java.lang 包中的类">IllegalStateException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Signals that a method has been invoked at an illegal or
-inappropriate time.</div>
+<div class="block">表示在非法或不当的时间调用了方法。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="IllegalThreadStateException.html" title="java.lang 包中的类">IllegalThreadStateException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that a thread is not in an appropriate state
-for the requested operation.</div>
+<div class="block">表明线程对于所请求的操作不处于适当状态。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="IncompatibleClassChangeError.html" title="java.lang 包中的类">IncompatibleClassChangeError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an incompatible class change has occurred to some class
-definition.</div>
+<div class="block">当某个类定义发生了不兼容的类更改时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="IndexOutOfBoundsException.html" title="java.lang 包中的类">IndexOutOfBoundsException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that an index of some sort (such as to an array, to a
-string, or to a vector) is out of range.</div>
+<div class="block">表明某种索引（如数组、字符串或向量的索引）越界。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="InheritableThreadLocal.html" title="java.lang 包中的类">InheritableThreadLocal</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">This class extends <code>ThreadLocal</code> to provide inheritance of values
-from parent thread to child thread: when a child thread is created, the
-child receives initial values for all inheritable thread-local variables
-for which the parent has values.</div>
+<div class="block">此类继承 <code>ThreadLocal</code> 以提供从父线程到子线程传递值的功能：当创建子线程时，子线程会接收父线程已设定值的所有可继承线程局部变量的初始值。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="InstantiationError.html" title="java.lang 包中的类">InstantiationError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to use the Java <code>new</code>
-construct to instantiate an abstract class or an interface.</div>
+<div class="block">当应用程序试图使用 Java <code>new</code> 构造来实例化抽象类或接口时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="InstantiationException.html" title="java.lang 包中的类">InstantiationException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to create an instance of a class
- using the <code>newInstance</code> method in class
- <code>Class</code>, but the specified class object cannot be
- instantiated.</div>
+<div class="block">当应用程序试图使用 <code>Class</code> 类中的 <code>newInstance</code> 方法创建类的实例，但指定的类对象无法实例化时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Integer.html" title="java.lang 包中的类">Integer</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Integer</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>int</code>.</div>
+<div class="block"><code>Integer</code> 类是基本类型 <code>int</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="InternalError.html" title="java.lang 包中的类">InternalError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate some unexpected internal error has occurred in
-the Java Virtual Machine.</div>
+<div class="block">表明 Java 虚拟机中发生了某些意外的内部错误。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="InterruptedException.html" title="java.lang 包中的类">InterruptedException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when a thread is waiting, sleeping, or otherwise occupied,
-and the thread is interrupted, either before or during the activity.</div>
+<div class="block">当线程正在等待、休眠或以其他方式被占用，并且线程在活动之前或期间被中断时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="IO.html" title="java.lang 包中的类">IO</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A collection of static methods that provide convenient access to <a href="System.html#in"><code>System.in</code></a>
-and <a href="System.html#out"><code>System.out</code></a> for line-oriented input and output.</div>
+<div class="block">提供对 <a href="System.html#in"><code>System.in</code></a> 和 <a href="System.html#out"><code>System.out</code></a> 的便捷访问的静态方法集合，用于面向行的输入和输出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Iterable.html" title="java.lang 包中的接口">Iterable</a>&lt;T&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Implementing this interface allows an object to be the target of the enhanced
-<code>for</code> statement (sometimes called the "for-each loop" statement).</div>
+<div class="block">实现此接口允许对象成为增强型 <code>for</code> 语句（有时称为“for-each 循环”语句）的目标。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="LayerInstantiationException.html" title="java.lang 包中的类">LayerInstantiationException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when creating a <a href="ModuleLayer.html" title="java.lang 包中的类">module layer</a> fails.</div>
+<div class="block">创建<a href="ModuleLayer.html" title="java.lang 包中的类">模块层</a>失败时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="LinkageError.html" title="java.lang 包中的类">LinkageError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Subclasses of <code>LinkageError</code> indicate that a class has
-some dependency on another class; however, the latter class has
-incompatibly changed after the compilation of the former class.</div>
+<div class="block"><code>LinkageError</code> 的子类表明一个类对另一个类有某种依赖；然而，后一类在前一类编译之后发生了不兼容的更改。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Long.html" title="java.lang 包中的类">Long</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Long</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>long</code>.</div>
+<div class="block"><code>Long</code> 类是基本类型 <code>long</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="MatchException.html" title="java.lang 包中的类">MatchException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate an unexpected failure in pattern matching.</div>
+<div class="block">表明模式匹配中发生了意外的失败。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Math.html" title="java.lang 包中的类">Math</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The class <code>Math</code> contains methods for performing basic
-numeric operations such as the elementary exponential, logarithm,
-square root, and trigonometric functions.</div>
+<div class="block"><code>Math</code> 类包含执行基本数值运算的方法，如基本指数、对数、平方根和三角函数。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Module.html" title="java.lang 包中的类">Module</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Represents a run-time module, either <a href="Module.html#isNamed()"><code>named</code></a> or unnamed.</div>
+<div class="block">表示运行时模块，可以是<a href="Module.html#isNamed()">命名的</a>或未命名的。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ModuleLayer.html" title="java.lang 包中的类">ModuleLayer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A layer of modules in the Java virtual machine.</div>
+<div class="block">Java 虚拟机中的模块层。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ModuleLayer.Controller.html" title="java.lang 包中的类">ModuleLayer.Controller</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Controls a module layer.</div>
+<div class="block">控制模块层。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="NegativeArraySizeException.html" title="java.lang 包中的类">NegativeArraySizeException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if an application tries to create an array with negative size.</div>
+<div class="block">如果应用程序试图创建大小为负数的数组，则抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="NoClassDefFoundError.html" title="java.lang 包中的类">NoClassDefFoundError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if the Java Virtual Machine or a <code>ClassLoader</code> instance
-tries to load in the definition of a class (as part of a normal method call
-or as part of creating a new instance using the <code>new</code> expression)
-and no definition of the class could be found.</div>
+<div class="block">如果 Java 虚拟机或 <code>ClassLoader</code> 实例试图加载类的定义（作为正常方法调用的一部分，或作为使用 <code>new</code> 表达式创建新实例的一部分），但找不到该类的定义，则抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="NoSuchFieldError.html" title="java.lang 包中的类">NoSuchFieldError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if an application tries to access or modify a specified
-field of an object, and that object no longer has that field.</div>
+<div class="block">如果应用程序试图访问或修改对象的指定字段，而该对象不再具有该字段，则抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="NoSuchFieldException.html" title="java.lang 包中的类">NoSuchFieldException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Signals that the class doesn't have a field of a specified name.</div>
+<div class="block">表示类没有指定名称的字段。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="NoSuchMethodError.html" title="java.lang 包中的类">NoSuchMethodError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if an application tries to call a specified method of a
-class (either static or instance), and that class no longer has a
-definition of that method.</div>
+<div class="block">如果应用程序试图调用类的指定方法（静态或实例），而该类不再具有该方法的定义，则抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="NoSuchMethodException.html" title="java.lang 包中的类">NoSuchMethodException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when a particular method cannot be found.</div>
+<div class="block">当找不到特定方法时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="NullPointerException.html" title="java.lang 包中的类">NullPointerException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application attempts to use <code>null</code> in a
-case where an object is required.</div>
+<div class="block">当应用程序试图在需要对象的情况下使用 <code>null</code> 时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Number.html" title="java.lang 包中的类">Number</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The abstract class <code>Number</code> is the superclass of platform
-classes representing numeric values that are convertible to the
-primitive types <code>byte</code>, <code>double</code>, <code>float</code>, <code>
-int</code>, <code>long</code>, and <code>short</code>.</div>
+<div class="block">抽象类 <code>Number</code> 是表示可转换为基本类型 <code>byte</code>、<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code> 和 <code>short</code> 的数值的平台类的超类。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="NumberFormatException.html" title="java.lang 包中的类">NumberFormatException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that the application has attempted to convert
-a string to one of the numeric types, but that the string does not
-have the appropriate format.</div>
+<div class="block">表明应用程序试图将字符串转换为数值类型之一，但该字符串没有适当的格式。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Object.html" title="java.lang 包中的类">Object</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class <code>Object</code> is the root of the class hierarchy.</div>
+<div class="block"><code>Object</code> 类是类层次结构的根。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="OutOfMemoryError.html" title="java.lang 包中的类">OutOfMemoryError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when the Java Virtual Machine cannot allocate an object
-because it is out of memory, and no more memory could be made
-available by the garbage collector.</div>
+<div class="block">当 Java 虚拟机由于内存不足而无法分配对象，并且垃圾收集器无法提供更多可用内存时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab6"><a href="Override.html" title="java.lang 包中的注解接口">Override</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab6">
-<div class="block">Indicates that a method declaration is intended to override a
-method declaration in a supertype.</div>
+<div class="block">表明方法声明旨在覆盖超类型中的方法声明。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Package.html" title="java.lang 包中的类">Package</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Represents metadata about a run-time package associated with a class loader.</div>
+<div class="block">表示与类加载器关联的运行时包的元数据。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Process.html" title="java.lang 包中的类">Process</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block"><code>Process</code> provides control of native processes started by
-<code>ProcessBuilder.start</code> and <code>Runtime.exec</code>.</div>
+<div class="block"><code>Process</code> 提供对由 <code>ProcessBuilder.start</code> 和 <code>Runtime.exec</code> 启动的本机进程的控制。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ProcessBuilder.html" title="java.lang 包中的类">ProcessBuilder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">This class is used to create operating system processes.</div>
+<div class="block">此类用于创建操作系统进程。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ProcessBuilder.Redirect.html" title="java.lang 包中的类">ProcessBuilder.Redirect</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Represents a source of subprocess input or a destination of
-subprocess output.</div>
+<div class="block">表示子进程输入的来源或子进程输出的目的地。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab3"><a href="ProcessBuilder.Redirect.Type.html" title="java.lang 包中的枚举类">ProcessBuilder.Redirect.Type</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">The type of a <a href="ProcessBuilder.Redirect.html" title="java.lang 包中的类"><code>ProcessBuilder.Redirect</code></a>.</div>
+<div class="block"><a href="ProcessBuilder.Redirect.html" title="java.lang 包中的类"><code>ProcessBuilder.Redirect</code></a> 的类型。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ProcessHandle.html" title="java.lang 包中的接口">ProcessHandle</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">ProcessHandle identifies and provides control of native processes.</div>
+<div class="block">ProcessHandle 标识并提供对本机进程的控制。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="ProcessHandle.Info.html" title="java.lang 包中的接口">ProcessHandle.Info</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Information snapshot about the process.</div>
+<div class="block">有关进程的信息快照。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Readable.html" title="java.lang 包中的接口">Readable</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <code>Readable</code> is a source of characters.</div>
+<div class="block"><code>Readable</code> 是字符源。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Record.html" title="java.lang 包中的类">Record</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">This is the common base class of all Java language record classes.</div>
+<div class="block">这是所有 Java 语言记录类的公共基类。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="ReflectiveOperationException.html" title="java.lang 包中的类">ReflectiveOperationException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Common superclass of exceptions thrown by reflective operations in
-core reflection.</div>
+<div class="block">核心反射中反射操作抛出的异常的公共超类。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Runnable.html" title="java.lang 包中的接口">Runnable</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">Represents an operation that does not return a result.</div>
+<div class="block">表示不返回结果的操作。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Runtime.html" title="java.lang 包中的类">Runtime</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Every Java application has a single instance of class
-<code>Runtime</code> that allows the application to interface with
-the environment in which the application is running.</div>
+<div class="block">每个 Java 应用程序都有一个 <code>Runtime</code> 类实例，允许应用程序与运行环境交互。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Runtime.Version.html" title="java.lang 包中的类">Runtime.Version</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A representation of a version string for an implementation of the
-Java&nbsp;SE Platform.</div>
+<div class="block">Java&nbsp;SE 平台实现的版本字符串的表示形式。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="RuntimeException.html" title="java.lang 包中的类">RuntimeException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block"><code>RuntimeException</code> is the superclass of those
-exceptions that can be thrown during the normal operation of the
-Java Virtual Machine.</div>
+<div class="block"><code>RuntimeException</code> 是在 Java 虚拟机正常运行期间可以抛出的那些异常的超类。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="RuntimePermission.html" title="java.lang 包中的类">RuntimePermission</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">Deprecated, for removal: This API element is subject to removal in a future version.
-<div class="deprecation-comment">This permission cannot be used for controlling access to resources
-as the Security Manager is no longer supported.</div>
+<div class="col-last even-row-color class-summary class-summary-tab2">已弃用，待移除：此 API 元素可能会在未来版本中被移除。
+<div class="deprecation-comment">此权限不能用于控制对资源的访问，因为安全管理器不再受支持。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab6"><a href="SafeVarargs.html" title="java.lang 包中的注解接口">SafeVarargs</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab6">
-<div class="block">A programmer assertion that the body of the annotated method or
-constructor does not perform potentially unsafe operations on its
-varargs parameter.</div>
+<div class="block">程序员断言：带注解的方法或构造器的主体不会对其可变参数执行潜在的不安全操作。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ScopedValue.html" title="java.lang 包中的类">ScopedValue</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A value that may be safely and efficiently shared to methods without using method
-parameters.</div>
+<div class="block">一种可以安全有效地与方法共享而无需使用方法参数的值。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="ScopedValue.CallableOp.html" title="java.lang 包中的接口">ScopedValue.CallableOp</a>&lt;T, X extends <a href="Throwable.html" title="java.lang 包中的类">Throwable</a>&gt;</div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">An operation that returns a result and may throw an exception.</div>
+<div class="block">返回结果并可能抛出异常的操作。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ScopedValue.Carrier.html" title="java.lang 包中的类">ScopedValue.Carrier</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A mapping of scoped values, as <em>keys</em>, to values.</div>
+<div class="block">作用域值（作为<em>键</em>）到值的映射。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="SecurityException.html" title="java.lang 包中的类">SecurityException</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate a security violation.</div>
+<div class="block">表明安全违规时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="SecurityManager.html" title="java.lang 包中的类">SecurityManager</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">Deprecated, for removal: This API element is subject to removal in a future version.
-<div class="deprecation-comment">There is no replacement for this class.</div>
+<div class="col-last even-row-color class-summary class-summary-tab2">已弃用，待移除：此 API 元素可能会在未来版本中被移除。
+<div class="deprecation-comment">此类没有替代。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Short.html" title="java.lang 包中的类">Short</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Short</code> class is the <a href="#wrapperClass">wrapper class</a> for values of the primitive
-type <code>short</code>.</div>
+<div class="block"><code>Short</code> 类是基本类型 <code>short</code> 值的<a href="#wrapperClass">包装类</a>。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="StableValue.html" title="java.lang 包中的接口">StableValue</a><sup class="preview-mark"><a href="StableValue.html#preview-java.lang.StableValue">预览</a></sup>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block"><span class="preview-label">Preview.</span></div>
-<div class="block">A stable value is a holder of contents that can be set at most once.</div>
+<div class="block"><span class="preview-label">预览。</span></div>
+<div class="block">稳定值是内容的持有者，最多只能设置一次。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="StackOverflowError.html" title="java.lang 包中的类">StackOverflowError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when a stack overflow occurs because an application
-recurses too deeply.</div>
+<div class="block">当应用程序递归过深导致栈溢出时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="StackTraceElement.html" title="java.lang 包中的类">StackTraceElement</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">An element in a stack trace, as returned by <a href="Throwable.html#getStackTrace()"><code>Throwable.getStackTrace()</code></a>.</div>
+<div class="block">堆栈跟踪中的元素，由 <a href="Throwable.html#getStackTrace()"><code>Throwable.getStackTrace()</code></a> 返回。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StackWalker.html" title="java.lang 包中的类">StackWalker</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A stack walker.</div>
+<div class="block">栈遍历器。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab3"><a href="StackWalker.Option.html" title="java.lang 包中的枚举类">StackWalker.Option</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">Stack walker option to configure the <a href="StackWalker.StackFrame.html" title="java.lang 包中的接口">stack frame</a>
-information obtained by a <code>StackWalker</code>.</div>
+<div class="block">栈遍历选项，用于配置 <code>StackWalker</code> 获取的<a href="StackWalker.StackFrame.html" title="java.lang 包中的接口">栈帧</a>信息。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="StackWalker.StackFrame.html" title="java.lang 包中的接口">StackWalker.StackFrame</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A <code>StackFrame</code> object represents a method invocation returned by
-<a href="StackWalker.html" title="java.lang 包中的类"><code>StackWalker</code></a>.</div>
+<div class="block"><code>StackFrame</code> 对象表示由 <a href="StackWalker.html" title="java.lang 包中的类"><code>StackWalker</code></a> 返回的方法调用。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="StrictMath.html" title="java.lang 包中的类">StrictMath</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The class <code>StrictMath</code> contains methods for performing basic
-numeric operations such as the elementary exponential, logarithm,
-square root, and trigonometric functions.</div>
+<div class="block"><code>StrictMath</code> 类包含执行基本数值运算的方法，如基本指数、对数、平方根和三角函数。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="String.html" title="java.lang 包中的类">String</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>String</code> class represents character strings.</div>
+<div class="block"><code>String</code> 类表示字符串。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="StringBuffer.html" title="java.lang 包中的类">StringBuffer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A thread-safe, mutable sequence of characters.</div>
+<div class="block">线程安全、可变的字符序列。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="StringBuilder.html" title="java.lang 包中的类">StringBuilder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A mutable sequence of characters.</div>
+<div class="block">可变的字符序列。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="StringIndexOutOfBoundsException.html" title="java.lang 包中的类">StringIndexOutOfBoundsException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown by <code>String</code> methods to indicate that an index is either negative
-or greater than the size of the string.</div>
+<div class="block">由 <code>String</code> 方法抛出，表明索引为负数或大于字符串的大小。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab6"><a href="SuppressWarnings.html" title="java.lang 包中的注解接口">SuppressWarnings</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab6">
-<div class="block">Indicates the warnings to be suppressed at compile time in the
-annotated element, and in all elements contained in the annotated
-element.</div>
+<div class="block">指示在带注解的元素以及该元素中包含的所有元素中，在编译时抑制哪些警告。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="System.html" title="java.lang 包中的类">System</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">The <code>System</code> class contains several useful class fields
-and methods.</div>
+<div class="block"><code>System</code> 类包含一些有用的类字段和方法。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="System.Logger.html" title="java.lang 包中的接口">System.Logger</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block"><code>System.Logger</code> instances log messages that will be
-routed to the underlying logging framework the <a href="System.LoggerFinder.html" title="java.lang 包中的类"><code>LoggerFinder</code></a> uses.</div>
+<div class="block"><code>System.Logger</code> 实例记录消息，这些消息将被路由到 <a href="System.LoggerFinder.html" title="java.lang 包中的类"><code>LoggerFinder</code></a> 使用的底层日志记录框架。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab3"><a href="System.Logger.Level.html" title="java.lang 包中的枚举类">System.Logger.Level</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">System <a href="System.Logger.html" title="java.lang 包中的接口">loggers</a> levels.</div>
+<div class="block">系统<a href="System.Logger.html" title="java.lang 包中的接口">日志记录器</a>级别。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="System.LoggerFinder.html" title="java.lang 包中的类">System.LoggerFinder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -745,95 +625,79 @@ routed to the underlying logging framework the <a href="System.LoggerFinder.html
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="Thread.html" title="java.lang 包中的类">Thread</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">A <i>thread</i> is a thread of execution in a program.</div>
+<div class="block"><i>线程</i>是程序中的执行线程。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Thread.Builder.html" title="java.lang 包中的接口">Thread.Builder</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A builder for <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> and <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> objects.</div>
+<div class="block">用于构建 <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> 和 <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> 对象的构建器。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="Thread.Builder.OfPlatform.html" title="java.lang 包中的接口">Thread.Builder.OfPlatform</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">A builder for creating a platform <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> or <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a>
-that creates platform threads.</div>
+<div class="block">用于创建平台 <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> 或创建平台线程的 <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> 的构建器。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Thread.Builder.OfVirtual.html" title="java.lang 包中的接口">Thread.Builder.OfVirtual</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">A builder for creating a virtual <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> or <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a>
-that creates virtual threads.</div>
+<div class="block">用于创建虚拟 <a href="Thread.html" title="java.lang 包中的类"><code>Thread</code></a> 或创建虚拟线程的 <a href="../util/concurrent/ThreadFactory.html" title="java.util.concurrent 包中的接口"><code>ThreadFactory</code></a> 的构建器。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab3"><a href="Thread.State.html" title="java.lang 包中的枚举类">Thread.State</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">A thread state.</div>
+<div class="block">线程状态。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="Thread.UncaughtExceptionHandler.html" title="java.lang 包中的接口">Thread.UncaughtExceptionHandler</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Interface for handlers invoked when a <code>Thread</code> abruptly
-terminates due to an uncaught exception.</div>
+<div class="block">当 <code>Thread</code> 由于未捕获的异常而突然终止时调用的处理程序接口。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="ThreadDeath.html" title="java.lang 包中的类">ThreadDeath</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab5">Deprecated, for removal: This API element is subject to removal in a future version.
-<div class="deprecation-comment"><a href="Thread.html#stop()"><code>Thread.stop()</code></a> was originally specified to "stop" a victim
-     thread by causing the victim thread to throw a <code>ThreadDeath</code>.</div>
+<div class="col-last even-row-color class-summary class-summary-tab5">已弃用，待移除：此 API 元素可能会在未来版本中被移除。
+<div class="deprecation-comment"><a href="Thread.html#stop()"><code>Thread.stop()</code></a> 最初被指定为通过使受害线程抛出 <code>ThreadDeath</code> 来“停止”受害线程。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="ThreadGroup.html" title="java.lang 包中的类">ThreadGroup</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">A thread group represents a set of threads.</div>
+<div class="block">线程组表示一组线程。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="ThreadLocal.html" title="java.lang 包中的类">ThreadLocal</a>&lt;T&gt;</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">This class provides thread-local variables.</div>
+<div class="block">此类提供线程局部变量。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="Throwable.html" title="java.lang 包中的类">Throwable</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">The <code>Throwable</code> class is the superclass of all errors and
-exceptions in the Java language.</div>
+<div class="block"><code>Throwable</code> 类是 Java 语言中所有错误和异常的超类。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="TypeNotPresentException.html" title="java.lang 包中的类">TypeNotPresentException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an application tries to access a type using a string
-representing the type's name, but no definition for the type with
-the specified name can be found.</div>
+<div class="block">当应用程序试图使用表示类型名称的字符串访问类型，但找不到具有指定名称的类型的定义时抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="UnknownError.html" title="java.lang 包中的类">UnknownError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when an unknown but serious exception has occurred in the
-Java Virtual Machine.</div>
+<div class="block">当 Java 虚拟机中发生未知但严重的异常时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="UnsatisfiedLinkError.html" title="java.lang 包中的类">UnsatisfiedLinkError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown if the Java Virtual Machine cannot find an appropriate
-native-language definition of a method declared <code>native</code>.</div>
+<div class="block">如果 Java 虚拟机找不到声明为 <code>native</code> 的方法的适当本地语言定义，则抛出。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="UnsupportedClassVersionError.html" title="java.lang 包中的类">UnsupportedClassVersionError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when the Java Virtual Machine attempts to read a class
-file and determines that the major and minor version numbers
-in the file are not supported.</div>
+<div class="block">当 Java 虚拟机试图读取类文件并确定文件中的主次版本号不受支持时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="UnsupportedOperationException.html" title="java.lang 包中的类">UnsupportedOperationException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that the requested operation is not supported.</div>
+<div class="block">表明不支持所请求的操作。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab5"><a href="VerifyError.html" title="java.lang 包中的类">VerifyError</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab5">
-<div class="block">Thrown when the "verifier" detects that a class file,
-though well formed, contains some sort of internal inconsistency
-or security problem.</div>
+<div class="block">当“验证器”检测到类文件虽然格式正确，但包含某种内部不一致或安全问题时抛出。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="VirtualMachineError.html" title="java.lang 包中的类">VirtualMachineError</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that the Java Virtual Machine is broken or has
-run out of resources necessary for it to continue operating.</div>
+<div class="block">表明 Java 虚拟机已损坏或已耗尽继续运行所需的资源。</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="Void.html" title="java.lang 包中的类">Void</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">The <code>Void</code> class is an uninstantiable placeholder class to hold a
-reference to the <code>Class</code> object representing the Java keyword
-void.</div>
+<div class="block"><code>Void</code> 类是一个不可实例化的占位符类，用于持有表示 Java 关键字 void 的 <code>Class</code> 对象的引用。</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab5"><a href="WrongThreadException.html" title="java.lang 包中的类">WrongThreadException</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab5">
-<div class="block">Thrown to indicate that a method has been called on the wrong thread.</div>
+<div class="block">表明在错误的线程上调用了方法。</div>
 </div>
 </div>
 </div>
